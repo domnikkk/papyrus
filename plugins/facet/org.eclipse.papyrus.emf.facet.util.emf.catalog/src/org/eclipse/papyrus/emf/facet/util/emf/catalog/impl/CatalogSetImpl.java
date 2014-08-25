@@ -44,7 +44,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	 * The cached value of the '{@link #getCatalogs() <em>Catalogs</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCatalogs()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CatalogSetImpl() {
@@ -64,7 +64,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Catalog> getCatalogs() {
@@ -88,7 +88,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -136,7 +136,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

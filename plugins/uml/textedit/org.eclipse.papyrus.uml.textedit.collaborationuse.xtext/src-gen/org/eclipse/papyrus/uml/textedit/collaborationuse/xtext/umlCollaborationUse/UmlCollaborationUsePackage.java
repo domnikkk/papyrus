@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage;
 
 /**
@@ -20,7 +19,7 @@ import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.UmlCollaborationUseFactory
  * @model kind="package"
  * @generated
@@ -31,7 +30,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "umlCollaborationUse";
@@ -40,7 +39,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/uml/textedit/collaborationuse/xtext/UmlCollaborationUse";
@@ -49,7 +48,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "umlCollaborationUse";
@@ -58,7 +57,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	UmlCollaborationUsePackage eINSTANCE = org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.UmlCollaborationUsePackageImpl.init();
@@ -67,7 +66,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.CollaborationUseRuleImpl <em>Collaboration Use Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.CollaborationUseRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.UmlCollaborationUsePackageImpl#getCollaborationUseRule()
 	 * @generated
@@ -78,7 +77,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -88,7 +87,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +97,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +107,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The number of structural features of the '<em>Collaboration Use Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,7 +117,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.TypeRuleImpl <em>Type Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.TypeRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.UmlCollaborationUsePackageImpl#getTypeRule()
 	 * @generated
@@ -129,7 +128,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -139,7 +138,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -149,7 +148,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * The number of structural features of the '<em>Type Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -160,7 +159,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.CollaborationUseRule <em>Collaboration Use Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Collaboration Use Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.CollaborationUseRule
 	 * @generated
@@ -171,7 +170,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.CollaborationUseRule#getVisibility <em>Visibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Visibility</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.CollaborationUseRule#getVisibility()
 	 * @see #getCollaborationUseRule()
@@ -183,7 +182,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.CollaborationUseRule#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.CollaborationUseRule#getName()
 	 * @see #getCollaborationUseRule()
@@ -195,7 +194,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.CollaborationUseRule#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.CollaborationUseRule#getType()
 	 * @see #getCollaborationUseRule()
@@ -207,7 +206,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.TypeRule <em>Type Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Type Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.TypeRule
 	 * @generated
@@ -218,7 +217,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -234,7 +233,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals
@@ -243,7 +242,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.CollaborationUseRuleImpl <em>Collaboration Use Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.CollaborationUseRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.UmlCollaborationUsePackageImpl#getCollaborationUseRule()
 		 * @generated
@@ -254,7 +253,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 		 * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute COLLABORATION_USE_RULE__VISIBILITY = eINSTANCE.getCollaborationUseRule_Visibility();
@@ -263,7 +262,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute COLLABORATION_USE_RULE__NAME = eINSTANCE.getCollaborationUseRule_Name();
@@ -272,7 +271,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference COLLABORATION_USE_RULE__TYPE = eINSTANCE.getCollaborationUseRule_Type();
@@ -281,7 +280,7 @@ public interface UmlCollaborationUsePackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.TypeRuleImpl <em>Type Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.TypeRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl.UmlCollaborationUsePackageImpl#getTypeRule()
 		 * @generated

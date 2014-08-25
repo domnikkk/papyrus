@@ -13,9 +13,7 @@
 package org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.FeatureValue;
 
@@ -32,7 +30,7 @@ public abstract class FeatureValueImpl extends EObjectImpl implements FeatureVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FeatureValueImpl() {
@@ -42,7 +40,7 @@ public abstract class FeatureValueImpl extends EObjectImpl implements FeatureVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

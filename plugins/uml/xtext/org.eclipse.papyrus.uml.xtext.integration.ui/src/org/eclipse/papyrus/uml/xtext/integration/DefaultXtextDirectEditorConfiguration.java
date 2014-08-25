@@ -96,7 +96,7 @@ public abstract class DefaultXtextDirectEditorConfiguration extends DefaultDirec
 
 	/**
 	 * Clients may override, if the objectToEdit is not equal to the context element
-	 * 
+	 *
 	 * @return the context provider
 	 */
 	public IContextElementProvider getContextProvider() {

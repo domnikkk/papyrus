@@ -42,7 +42,7 @@ public interface Element extends Node {
 	 * If the meaning of the '<em>Children</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Children</em>' containment reference list.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage#getElement_Children()
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getParent

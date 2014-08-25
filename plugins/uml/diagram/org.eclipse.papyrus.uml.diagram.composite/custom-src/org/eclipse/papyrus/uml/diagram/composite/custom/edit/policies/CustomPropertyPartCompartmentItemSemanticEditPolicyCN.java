@@ -32,7 +32,7 @@ public class CustomPropertyPartCompartmentItemSemanticEditPolicyCN extends org.e
 	 * Calls a custom creation command that allow the creation of a Property
 	 * on an existing Property.
 	 * Semantically the Property is created owned by the type the edited Property.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

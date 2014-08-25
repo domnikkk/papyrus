@@ -40,7 +40,7 @@ public interface Media extends Content
 	 * If the meaning of the '<em>Media</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Media</em>' attribute list.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getMedia_Media()
 	 * @model unique="false"
@@ -56,7 +56,7 @@ public interface Media extends Content
 	 * If the meaning of the '<em>Rules</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Rules</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getMedia_Rules()
 	 * @model containment="true"

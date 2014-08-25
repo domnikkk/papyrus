@@ -61,7 +61,7 @@ public class PapyrusModelFromExistingDomainModelCommand extends RecordingCommand
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
 	 */
 	@Override

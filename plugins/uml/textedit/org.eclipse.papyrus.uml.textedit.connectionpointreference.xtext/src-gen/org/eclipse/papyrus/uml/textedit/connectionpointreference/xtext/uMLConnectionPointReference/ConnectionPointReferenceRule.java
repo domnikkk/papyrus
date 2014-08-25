@@ -3,9 +3,7 @@
 package org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.uMLConnectionPointReference;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Pseudostate;
 
 /**
@@ -35,7 +33,7 @@ public interface ConnectionPointReferenceRule extends EObject
 	 * If the meaning of the '<em>Entry</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Entry</em>' reference list.
 	 * @see org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.uMLConnectionPointReference.UMLConnectionPointReferencePackage#getConnectionPointReferenceRule_Entry()
 	 * @model
@@ -51,7 +49,7 @@ public interface ConnectionPointReferenceRule extends EObject
 	 * If the meaning of the '<em>Exit</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Exit</em>' reference list.
 	 * @see org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.uMLConnectionPointReference.UMLConnectionPointReferencePackage#getConnectionPointReferenceRule_Exit()
 	 * @model

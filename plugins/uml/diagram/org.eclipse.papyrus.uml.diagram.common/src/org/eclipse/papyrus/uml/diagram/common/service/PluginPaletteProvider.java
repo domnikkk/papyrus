@@ -15,6 +15,7 @@ package org.eclipse.papyrus.uml.diagram.common.service;
 
 import java.io.IOException;
 import java.io.InputStream;
+
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.papyrus.infra.core.pluginexplorer.Plugin;

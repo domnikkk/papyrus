@@ -13,12 +13,9 @@
 package org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.HierarchyPermission;
 import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfigurationPackage;
 
@@ -42,7 +39,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	 * The default value of the '{@link #getChildType() <em>Child Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChildType()
 	 * @generated
 	 * @ordered
@@ -53,7 +50,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getChildType() <em>Child Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChildType()
 	 * @generated
 	 * @ordered
@@ -64,7 +61,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	 * The default value of the '{@link #isIsPermitted() <em>Is Permitted</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsPermitted()
 	 * @generated
 	 * @ordered
@@ -75,7 +72,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #isIsPermitted() <em>Is Permitted</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsPermitted()
 	 * @generated
 	 * @ordered
@@ -86,7 +83,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	 * The default value of the '{@link #isIsStrict() <em>Is Strict</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsStrict()
 	 * @generated
 	 * @ordered
@@ -97,7 +94,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #isIsStrict() <em>Is Strict</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsStrict()
 	 * @generated
 	 * @ordered
@@ -107,7 +104,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HierarchyPermissionImpl() {
@@ -117,7 +114,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +125,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getChildType() {
@@ -138,7 +135,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setChildType(String newChildType) {
@@ -152,7 +149,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isIsPermitted() {
@@ -162,7 +159,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIsPermitted(boolean newIsPermitted) {
@@ -176,7 +173,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isIsStrict() {
@@ -186,7 +183,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIsStrict(boolean newIsStrict) {
@@ -200,7 +197,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +216,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +238,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +260,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +279,7 @@ public class HierarchyPermissionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

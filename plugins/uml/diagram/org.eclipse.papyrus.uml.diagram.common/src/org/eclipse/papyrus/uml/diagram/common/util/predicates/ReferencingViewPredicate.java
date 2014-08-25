@@ -23,7 +23,7 @@ import com.google.common.base.Predicate;
 /**
  * This predicate return true if the EObject(notation) passed into apply method is a view which:
  * -> refer to the element (semantic) element passed in argument to the constructor
- * 
+ *
  * @author arthur daussy
  *
  */

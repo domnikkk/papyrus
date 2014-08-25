@@ -17,18 +17,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Concern;
@@ -55,7 +50,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	 * The cached value of the '{@link #getModelKinds() <em>Model Kinds</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getModelKinds()
 	 * @generated
 	 * @ordered
@@ -66,7 +61,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	 * The cached value of the '{@link #getGoverns() <em>Governs</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGoverns()
 	 * @generated
 	 * @ordered
@@ -77,7 +72,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	 * The cached value of the '{@link #getFrames() <em>Frames</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFrames()
 	 * @generated
 	 * @ordered
@@ -87,7 +82,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureViewpointImpl() {
@@ -97,7 +92,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +103,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ModelKind> getModelKinds() {
@@ -121,7 +116,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureView getGoverns() {
@@ -140,7 +135,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureView basicGetGoverns() {
@@ -150,7 +145,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetGoverns(ArchitectureView newGoverns, NotificationChain msgs) {
@@ -170,7 +165,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setGoverns(ArchitectureView newGoverns) {
@@ -195,7 +190,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Concern> getFrames() {
@@ -208,7 +203,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -231,7 +226,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +245,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +267,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -297,7 +292,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,7 +314,7 @@ public class ArchitectureViewpointImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

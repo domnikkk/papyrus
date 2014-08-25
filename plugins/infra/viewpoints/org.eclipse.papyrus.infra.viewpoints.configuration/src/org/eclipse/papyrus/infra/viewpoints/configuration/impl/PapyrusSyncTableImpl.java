@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.infra.viewpoints.configuration.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusSyncTable;
 
@@ -31,7 +30,7 @@ public class PapyrusSyncTableImpl extends PapyrusViewImpl implements PapyrusSync
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PapyrusSyncTableImpl() {
@@ -41,7 +40,7 @@ public class PapyrusSyncTableImpl extends PapyrusViewImpl implements PapyrusSync
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

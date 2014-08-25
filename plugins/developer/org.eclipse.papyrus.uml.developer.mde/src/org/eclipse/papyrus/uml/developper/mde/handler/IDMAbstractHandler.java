@@ -44,7 +44,7 @@ public abstract class IDMAbstractHandler extends AbstractHandler {
 
 	/**
 	 * get the root package
-	 * 
+	 *
 	 * @param elem
 	 * @return the root package
 	 */
@@ -70,7 +70,7 @@ public abstract class IDMAbstractHandler extends AbstractHandler {
 
 	/**
 	 * getSelected element in the diagram or in hte model explorer
-	 * 
+	 *
 	 * @return Element or null
 	 */
 	protected Element getSelection() {
@@ -92,7 +92,7 @@ public abstract class IDMAbstractHandler extends AbstractHandler {
 
 	/**
 	 * getSelected element in the diagram or in hte model explorer
-	 * 
+	 *
 	 * @return Element or null
 	 */
 	protected ArrayList<Element> getSelectionSet() {

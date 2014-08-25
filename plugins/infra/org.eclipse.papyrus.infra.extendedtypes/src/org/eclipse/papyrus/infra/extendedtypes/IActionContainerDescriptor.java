@@ -22,7 +22,7 @@ public interface IActionContainerDescriptor<T extends ActionConfiguration> exten
 
 	/**
 	 * Initializes the container descriptor using the given configuration
-	 * 
+	 *
 	 * @param actionConfiguration
 	 *            the confiugration for this container descriptor
 	 */

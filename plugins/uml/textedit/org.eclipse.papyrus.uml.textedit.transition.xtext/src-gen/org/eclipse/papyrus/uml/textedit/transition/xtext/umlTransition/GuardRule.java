@@ -29,7 +29,7 @@ public interface GuardRule extends EObject
 	 * If the meaning of the '<em>Constraint</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Constraint</em>' attribute.
 	 * @see #setConstraint(String)
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage#getGuardRule_Constraint()
@@ -42,7 +42,7 @@ public interface GuardRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.GuardRule#getConstraint <em>Constraint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Constraint</em>' attribute.
 	 * @see #getConstraint()

@@ -18,7 +18,7 @@ import org.eclipse.gef.commands.Command;
 /**
  * This command proxy wraps a GEF command into a GMF one, with result stored in
  * the CommandResult.
- * 
+ *
  * @author mvelten
  *
  * @deprecated use {@link org.eclipse.papyrus.commands.wrappers.CommandProxyWithResult} instead

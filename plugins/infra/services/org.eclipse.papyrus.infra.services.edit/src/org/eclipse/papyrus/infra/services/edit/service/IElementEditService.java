@@ -16,17 +16,18 @@ package org.eclipse.papyrus.infra.services.edit.service;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 
 /**
  * <pre>
  *
  * This interface provide the public API for edit service in Papyrus.
- * 
+ *
  * Currently the implementation mostly rely on GMF extensible type framework,
  * which was used as the basis to identify methods in this interface (also, it is
  * currently the only proposed implementation of the edit service for Papyrus.
- * 
+ *
  * @see org.eclipse.gmf.runtime.emf.type.core.IElementType
  *
  * </pre>
@@ -37,9 +38,9 @@ public interface IElementEditService extends IAdaptable {
 	 * <pre>
 	 *
 	 * Test if the service can fulfill the request in parameter.
-	 * 
+	 *
 	 * @see {@link IElementType#canEdit(IEditCommandRequest)}
-	 * 
+	 *
 	 * @param req the edit request
 	 * @return true if the service can fulfill the request in parameter
 	 *
@@ -51,9 +52,9 @@ public interface IElementEditService extends IAdaptable {
 	 * <pre>
 	 *
 	 * Get the edit command that fulfills the edit request
-	 * 
+	 *
 	 * @see {@link IElementType#getEditCommand(IEditCommandRequest)}
-	 * 
+	 *
 	 * @param request the edit request
 	 * @return the edit command
 	 *
@@ -65,9 +66,9 @@ public interface IElementEditService extends IAdaptable {
 	 * <pre>
 	 *
 	 * Get the display name associated to the element related to the edit service.
-	 * 
+	 *
 	 * @see {@link IElementType#getDisplayName()}
-	 * 
+	 *
 	 * @return the display name
 	 *
 	 * </pre>

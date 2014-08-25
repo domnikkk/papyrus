@@ -336,7 +336,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 
 	/**
 	 * create the element section from the package
-	 * 
+	 *
 	 * @param documentModelOUT
 	 * @param sectiontitle
 	 * @return
@@ -352,7 +352,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 
 	/**
 	 * transform a comment to content Comment
-	 * 
+	 *
 	 * @param documentModel
 	 * @param currentComment
 	 */
@@ -366,7 +366,7 @@ public class CreateDocumentModelCommand extends RecordingCommand {
 
 	/**
 	 * Transform a diagram to imageRefComment
-	 * 
+	 *
 	 * @param copyImageUtil
 	 * @param currentModel
 	 * @param currentDiagram

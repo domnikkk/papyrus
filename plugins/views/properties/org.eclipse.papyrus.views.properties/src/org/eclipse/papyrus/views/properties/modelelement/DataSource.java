@@ -389,7 +389,7 @@ public class DataSource implements IChangeListener {
 
 	/**
 	 * return the IValidator for a property path
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return
 	 */

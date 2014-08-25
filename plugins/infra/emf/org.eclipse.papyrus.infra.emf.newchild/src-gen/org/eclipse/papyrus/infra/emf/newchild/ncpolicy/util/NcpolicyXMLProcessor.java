@@ -17,7 +17,7 @@ import org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NcpolicyXMLProcessor extends XMLProcessor {
@@ -26,7 +26,7 @@ public class NcpolicyXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NcpolicyXMLProcessor() {
@@ -38,7 +38,7 @@ public class NcpolicyXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the NcpolicyResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

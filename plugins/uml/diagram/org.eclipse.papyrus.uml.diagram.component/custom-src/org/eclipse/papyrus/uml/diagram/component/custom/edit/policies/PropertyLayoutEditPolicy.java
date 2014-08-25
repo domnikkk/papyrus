@@ -13,6 +13,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.component.custom.edit.policies;
 
+import org.eclipse.papyrus.uml.diagram.component.custom.edit.part.CustomPropertyPartEditPartCN;
+
 
 /**
  * This edit policy replaces the GMF generated edit policy for Property used as Part in composite structure diagram.

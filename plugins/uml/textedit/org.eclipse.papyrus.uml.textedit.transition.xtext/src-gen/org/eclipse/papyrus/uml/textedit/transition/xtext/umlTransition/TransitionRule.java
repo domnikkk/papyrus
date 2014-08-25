@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -34,7 +33,7 @@ public interface TransitionRule extends EObject
 	 * If the meaning of the '<em>Triggers</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Triggers</em>' containment reference list.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage#getTransitionRule_Triggers()
 	 * @model containment="true"
@@ -49,7 +48,7 @@ public interface TransitionRule extends EObject
 	 * If the meaning of the '<em>Guard</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Guard</em>' containment reference.
 	 * @see #setGuard(GuardRule)
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage#getTransitionRule_Guard()
@@ -62,7 +61,7 @@ public interface TransitionRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TransitionRule#getGuard <em>Guard</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Guard</em>' containment reference.
 	 * @see #getGuard()
@@ -77,7 +76,7 @@ public interface TransitionRule extends EObject
 	 * If the meaning of the '<em>Effect</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Effect</em>' containment reference.
 	 * @see #setEffect(EffectRule)
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage#getTransitionRule_Effect()
@@ -90,7 +89,7 @@ public interface TransitionRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TransitionRule#getEffect <em>Effect</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Effect</em>' containment reference.
 	 * @see #getEffect()

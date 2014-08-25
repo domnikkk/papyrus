@@ -228,7 +228,7 @@ public class ApplyStereotypeActionEditHelperAdvice extends AbstractEditHelperAdv
 
 		/**
 		 * Default Constructor
-		 * 
+		 *
 		 * @param domain
 		 *            editing domain to modify the element
 		 * @param element

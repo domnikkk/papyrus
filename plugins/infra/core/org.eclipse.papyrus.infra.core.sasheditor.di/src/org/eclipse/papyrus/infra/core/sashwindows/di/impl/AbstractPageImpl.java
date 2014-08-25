@@ -32,7 +32,7 @@ public class AbstractPageImpl extends EObjectImpl implements AbstractPage {
 	 * The default value of the '{@link #getPageIdentifier() <em>Page Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPageIdentifier()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class AbstractPageImpl extends EObjectImpl implements AbstractPage {
 	 * The cached value of the '{@link #getPageIdentifier() <em>Page Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPageIdentifier()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class AbstractPageImpl extends EObjectImpl implements AbstractPage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AbstractPageImpl() {
@@ -63,7 +63,7 @@ public class AbstractPageImpl extends EObjectImpl implements AbstractPage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +74,7 @@ public class AbstractPageImpl extends EObjectImpl implements AbstractPage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +85,7 @@ public class AbstractPageImpl extends EObjectImpl implements AbstractPage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class AbstractPageImpl extends EObjectImpl implements AbstractPage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class AbstractPageImpl extends EObjectImpl implements AbstractPage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +131,7 @@ public class AbstractPageImpl extends EObjectImpl implements AbstractPage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class AbstractPageImpl extends EObjectImpl implements AbstractPage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class AbstractPageImpl extends EObjectImpl implements AbstractPage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

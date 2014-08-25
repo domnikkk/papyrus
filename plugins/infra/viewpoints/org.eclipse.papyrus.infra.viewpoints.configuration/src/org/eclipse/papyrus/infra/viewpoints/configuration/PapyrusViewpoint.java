@@ -39,7 +39,7 @@ public interface PapyrusViewpoint extends ArchitectureViewpoint {
 	 * If the meaning of the '<em>Parent</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Parent</em>' reference.
 	 * @see #setParent(PapyrusViewpoint)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusViewpoint_Parent()
@@ -52,7 +52,7 @@ public interface PapyrusViewpoint extends ArchitectureViewpoint {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint#getParent <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Parent</em>' reference.
 	 * @see #getParent()

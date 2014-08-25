@@ -82,7 +82,7 @@ public class ShowHideCompartmentAction extends AbstractShowHideAction {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param representedEditPart
 		 *            the represented EditPart
 		 * @param eObject

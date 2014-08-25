@@ -46,7 +46,7 @@ public class BlockEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Returns the command to destroy any {@link Connector} breaking encapsulation rules.
 	 * </pre>
 	 *
@@ -96,7 +96,7 @@ public class BlockEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * Get any {@link Property} typed by the given {@link Block} (its base class).
-	 * 
+	 *
 	 * @param block
 	 *            the block.
 	 * @return a collection of {@link Property}
@@ -111,7 +111,7 @@ public class BlockEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * Get any {@link NestedConnectorEnd} stereotype application that holds the property in its path.
-	 * 
+	 *
 	 * @param property
 	 *            the property that should be in the path.
 	 * @return a collection of {@link NestedConnectorEnd}

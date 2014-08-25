@@ -145,7 +145,7 @@ public abstract class CreateInvocationActionDialog extends FormDialog {
 
 	/**
 	 * Invocation action about to be created
-	 * 
+	 *
 	 * @return
 	 */
 	public InvocationAction getInvocationAction() {

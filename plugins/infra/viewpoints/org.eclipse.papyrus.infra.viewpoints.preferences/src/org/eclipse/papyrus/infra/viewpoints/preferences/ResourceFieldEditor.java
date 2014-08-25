@@ -37,7 +37,7 @@ import org.eclipse.ui.model.WorkbenchLabelProvider;
 
 /**
  * Represents the preference field for the custom configuration selection
- * 
+ *
  * @author Laurent Wouters
  */
 public class ResourceFieldEditor extends StringButtonFieldEditor {
@@ -60,7 +60,7 @@ public class ResourceFieldEditor extends StringButtonFieldEditor {
 
 	/**
 	 * Initializes this field
-	 * 
+	 *
 	 * @param name
 	 *            The field's name
 	 * @param labelText
@@ -79,7 +79,7 @@ public class ResourceFieldEditor extends StringButtonFieldEditor {
 
 	/**
 	 * Changes the field mode
-	 * 
+	 *
 	 * @param mode
 	 *            The new mode
 	 */

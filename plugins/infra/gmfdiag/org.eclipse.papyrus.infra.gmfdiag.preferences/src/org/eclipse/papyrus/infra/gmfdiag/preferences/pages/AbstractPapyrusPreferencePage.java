@@ -179,7 +179,7 @@ public abstract class AbstractPapyrusPreferencePage extends PreferencePage imple
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.PreferencePage#performDefaults()
 	 */
 	@Override

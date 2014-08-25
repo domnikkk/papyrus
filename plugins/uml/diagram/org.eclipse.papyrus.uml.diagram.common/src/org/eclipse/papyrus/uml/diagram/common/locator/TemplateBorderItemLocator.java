@@ -19,7 +19,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
 /**
  *
  * This code comes form composite diagram. I was copied to avoid dependencies
- * 
+ *
  * <pre>
  * <---------+
  * 	 +------------+------|  |

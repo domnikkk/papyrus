@@ -24,7 +24,7 @@ public class StereotypeQualifiedLabelProvider extends StereotypeLabelProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.ui.dialogs.ChooseSetStereotypeDialog.StereotypeLabelProvider#getText(java.lang.Object)
 	 */
 	@Override

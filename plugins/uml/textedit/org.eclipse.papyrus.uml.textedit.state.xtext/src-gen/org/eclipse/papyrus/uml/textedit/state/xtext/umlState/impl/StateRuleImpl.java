@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.DoRule;
 import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.EntryRule;
 import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.ExitRule;
@@ -41,7 +38,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -52,7 +49,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -63,7 +60,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	 * The cached value of the '{@link #getSubmachine() <em>Submachine</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSubmachine()
 	 * @generated
 	 * @ordered
@@ -74,7 +71,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	 * The cached value of the '{@link #getEntry() <em>Entry</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEntry()
 	 * @generated
 	 * @ordered
@@ -85,7 +82,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	 * The cached value of the '{@link #getDo() <em>Do</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDo()
 	 * @generated
 	 * @ordered
@@ -96,7 +93,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	 * The cached value of the '{@link #getExit() <em>Exit</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExit()
 	 * @generated
 	 * @ordered
@@ -106,7 +103,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StateRuleImpl()
@@ -117,7 +114,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +126,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +138,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +154,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +166,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSubmachine(SubmachineRule newSubmachine, NotificationChain msgs)
@@ -191,7 +188,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +216,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +228,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetEntry(EntryRule newEntry, NotificationChain msgs)
@@ -253,7 +250,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +278,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -293,7 +290,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDo(DoRule newDo, NotificationChain msgs)
@@ -315,7 +312,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -343,7 +340,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +352,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetExit(ExitRule newExit, NotificationChain msgs)
@@ -377,7 +374,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -405,7 +402,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +425,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -453,7 +450,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -483,7 +480,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -513,7 +510,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -538,7 +535,7 @@ public class StateRuleImpl extends MinimalEObjectImpl.Container implements State
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

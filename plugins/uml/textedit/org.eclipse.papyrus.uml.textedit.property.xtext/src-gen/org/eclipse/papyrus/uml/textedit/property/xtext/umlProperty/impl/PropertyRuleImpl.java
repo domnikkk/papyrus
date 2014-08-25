@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifiersRule;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.MultiplicityRule;
@@ -44,7 +41,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVisibility()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getVisibility()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The default value of the '{@link #getIsDerived() <em>Is Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsDerived()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The cached value of the '{@link #getIsDerived() <em>Is Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIsDerived()
 	 * @generated
 	 * @ordered
@@ -88,7 +85,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -99,7 +96,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -110,7 +107,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -121,7 +118,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMultiplicity()
 	 * @generated
 	 * @ordered
@@ -132,7 +129,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The cached value of the '{@link #getModifiers() <em>Modifiers</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getModifiers()
 	 * @generated
 	 * @ordered
@@ -143,7 +140,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	 * The cached value of the '{@link #getDefault() <em>Default</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefault()
 	 * @generated
 	 * @ordered
@@ -153,7 +150,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyRuleImpl()
@@ -164,7 +161,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +173,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +185,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +201,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +213,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +229,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +241,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +257,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +269,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetType(TypeRule newType, NotificationChain msgs)
@@ -294,7 +291,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,7 +319,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +331,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetMultiplicity(MultiplicityRule newMultiplicity, NotificationChain msgs)
@@ -356,7 +353,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,7 +381,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -396,7 +393,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetModifiers(ModifiersRule newModifiers, NotificationChain msgs)
@@ -418,7 +415,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -446,7 +443,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -458,7 +455,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDefault(DefaultValueRule newDefault, NotificationChain msgs)
@@ -480,7 +477,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -508,7 +505,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -531,7 +528,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -560,7 +557,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -596,7 +593,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -632,7 +629,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -661,7 +658,7 @@ public class PropertyRuleImpl extends MinimalEObjectImpl.Container implements Pr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

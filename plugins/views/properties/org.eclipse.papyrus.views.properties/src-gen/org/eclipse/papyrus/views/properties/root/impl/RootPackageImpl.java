@@ -21,7 +21,7 @@ import org.eclipse.papyrus.views.properties.ui.UiPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RootPackageImpl extends EPackageImpl implements RootPackage {
@@ -29,7 +29,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass propertiesRootEClass = null;
@@ -39,7 +39,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.views.properties.root.RootPackage#eNS_URI
 	 * @see #init()
@@ -52,7 +52,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -62,7 +62,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link RootPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -102,7 +102,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPropertiesRoot() {
@@ -112,7 +112,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPropertiesRoot_Environments() {
@@ -122,7 +122,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPropertiesRoot_Contexts() {
@@ -132,7 +132,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RootFactory getRootFactory() {
@@ -142,7 +142,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -152,7 +152,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -170,7 +170,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -180,7 +180,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

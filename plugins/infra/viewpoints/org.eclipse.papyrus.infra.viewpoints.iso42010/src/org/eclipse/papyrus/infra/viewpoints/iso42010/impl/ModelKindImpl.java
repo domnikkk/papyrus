@@ -17,18 +17,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
@@ -53,7 +48,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	 * The cached value of the '{@link #getGoverns() <em>Governs</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGoverns()
 	 * @generated
 	 * @ordered
@@ -63,7 +58,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ModelKindImpl() {
@@ -73,7 +68,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +79,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureModel> getGoverns() {
@@ -97,7 +92,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureViewpoint getViewpoint() {
@@ -110,7 +105,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetViewpoint(ArchitectureViewpoint newViewpoint, NotificationChain msgs) {
@@ -121,7 +116,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setViewpoint(ArchitectureViewpoint newViewpoint) {
@@ -149,7 +144,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -170,7 +165,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +182,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +197,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +214,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -240,7 +235,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +254,7 @@ public class ModelKindImpl extends ADElementImpl implements ModelKind {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -43,7 +43,7 @@ public abstract class CustomPropertyPartEditPartCN extends NamedElementEditPart 
 	 * <pre>
 	 * Calls the figure refresh when a change event is detected on
 	 * UMLPackage.eINSTANCE.getProperty_Aggregation().
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -63,7 +63,7 @@ public abstract class CustomPropertyPartEditPartCN extends NamedElementEditPart 
 	 * <pre>
 	 * Refresh the figure with dashed border when Property aggregation value is SHARED.
 	 * Else set the border style to solid line.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

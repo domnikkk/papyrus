@@ -13,8 +13,8 @@
  */
 package org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.wizard.page;
 
-import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.Messages;
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;

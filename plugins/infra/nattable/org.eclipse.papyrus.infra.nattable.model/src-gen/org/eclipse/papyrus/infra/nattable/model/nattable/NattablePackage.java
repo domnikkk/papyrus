@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.NattableconfigurationPackage;
 
 /**
@@ -132,7 +131,7 @@ public interface NattablePackage extends EPackage {
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -142,7 +141,7 @@ public interface NattablePackage extends EPackage {
 	 * The feature id for the '<em><b>Prototype</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -296,7 +295,7 @@ public interface NattablePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getOwner <em>Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Owner</em>'.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.Table#getOwner()
 	 * @see #getTable()
@@ -308,7 +307,7 @@ public interface NattablePackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getPrototype <em>Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Prototype</em>'.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.Table#getPrototype()
 	 * @see #getTable()
@@ -478,7 +477,7 @@ public interface NattablePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owner</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TABLE__OWNER = eINSTANCE.getTable_Owner();
@@ -487,7 +486,7 @@ public interface NattablePackage extends EPackage {
 		 * The meta object literal for the '<em><b>Prototype</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TABLE__PROTOTYPE = eINSTANCE.getTable_Prototype();

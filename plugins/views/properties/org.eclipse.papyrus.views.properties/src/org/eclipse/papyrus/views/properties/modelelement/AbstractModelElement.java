@@ -25,7 +25,6 @@ import org.eclipse.core.databinding.validation.IValidator;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.infra.tools.databinding.DelegatingObservable;
-import org.eclipse.papyrus.infra.tools.databinding.DelegatingObservableValue;
 import org.eclipse.papyrus.infra.tools.databinding.IDelegatingObservable;
 import org.eclipse.papyrus.infra.tools.databinding.ReferenceCountedObservable;
 import org.eclipse.papyrus.infra.widgets.creation.ReferenceValueFactory;

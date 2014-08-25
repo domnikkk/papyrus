@@ -277,7 +277,7 @@ public class RulersAndGridGroup extends AbstractGroup {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.preferences.AbstractPreferencePage#initHelp()
 	 */
 	protected void initHelp() {
@@ -419,7 +419,7 @@ public class RulersAndGridGroup extends AbstractGroup {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.preference.StringFieldEditor#doCheckState()
 		 */
 		@Override
@@ -459,7 +459,7 @@ public class RulersAndGridGroup extends AbstractGroup {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.preference.StringFieldEditor#doLoadDefault()
 		 */
 		@Override

@@ -38,7 +38,7 @@ public abstract class AbstractServiceDescriptorsWithIdProviderTest {
 
 	/**
 	 * Load a RegistryDesc from the specified declaration file.
-	 * 
+	 *
 	 * @param extensionFileName
 	 *            The name of the resource containing declarations
 	 * @param registryName
@@ -67,7 +67,7 @@ public abstract class AbstractServiceDescriptorsWithIdProviderTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.ExtensionServiceDescriptorsWithIdProvider#getRegistryDescriptor(java.lang.String)}.
-	 * 
+	 *
 	 * @throws IOException
 	 * @throws ServiceException
 	 * @throws DeclarationException
@@ -92,7 +92,7 @@ public abstract class AbstractServiceDescriptorsWithIdProviderTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.ExtensionServiceDescriptorsWithIdProvider#getServiceSet(java.lang.String)}.
-	 * 
+	 *
 	 * @throws IOException
 	 * @throws ServiceException
 	 * @throws DeclarationException
@@ -117,7 +117,7 @@ public abstract class AbstractServiceDescriptorsWithIdProviderTest {
 
 	/**
 	 * Test correctness of set parsing
-	 * 
+	 *
 	 * @throws IOException
 	 * @throws ServiceException
 	 * @throws DeclarationException
@@ -143,7 +143,7 @@ public abstract class AbstractServiceDescriptorsWithIdProviderTest {
 
 	/**
 	 * Test correctness of service parsing
-	 * 
+	 *
 	 * @throws IOException
 	 * @throws ServiceException
 	 * @throws DeclarationException

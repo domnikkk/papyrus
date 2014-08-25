@@ -34,7 +34,7 @@ public class DirectEditorRegistry {
 	/**
 	 * add a direct editor
 	 * if this direct editor is already used as default in preferences, its priority becomes 0
-	 * 
+	 *
 	 * @param directEditor
 	 *            a direct editor, cannot be null
 	 */
@@ -93,7 +93,7 @@ public class DirectEditorRegistry {
 
 	/**
 	 * used to fill the registry with an array of direct editors
-	 * 
+	 *
 	 * @param directEditors
 	 *            cannot be null
 	 */
@@ -110,7 +110,7 @@ public class DirectEditorRegistry {
 
 	/**
 	 * get the direct editor with the higher priority for a given object to edit.
-	 * 
+	 *
 	 * @param ObjectToEdit
 	 *            the string that represents the element to edit
 	 * @return a direct editor, it can be null

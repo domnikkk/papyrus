@@ -24,12 +24,12 @@ import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
  * <pre>
  *
  * This class implements {@link IElementEditService}.
- * 
+ *
  * @see org.eclipse.papyrus.infra.services.edit.service.IElementEditService
- * 
+ *
  * This class is the service in charge of providing edit command for
  * a specific type of element.
- * 
+ *
  * This class relies for a large part on the GMF ExtensibleType framework,
  * mostly as a wrapper of {@link IElementType} for Papyrus. No added value
  * for Papyrus is expected in using this wrapper, except the fact that it ensures
@@ -50,7 +50,7 @@ public class ElementEditService implements IElementEditService {
 	 * <pre>
 	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param elementType the {@link IElementType} this service will use to provide edit commands
 	 * @param sharedClientContext the shared {@link IClientContext}
 	 *
@@ -68,9 +68,9 @@ public class ElementEditService implements IElementEditService {
 	 * This method creates an edit command in response to an edit request.
 	 * This method directly uses the ElementType framework (through {@link IElementType} api,
 	 * making sure that the Papyrus shared {@link IClientContext} is explicitly set in the request.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.edit.service.IElementEditService#getEditCommand(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest)
-	 * 
+	 *
 	 * @param request the edit request
 	 * @return the edit command corresponding to the edit request
 	 *
@@ -91,9 +91,9 @@ public class ElementEditService implements IElementEditService {
 	 * <pre>
 	 *
 	 * Get the display name of the element type.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.edit.service.IElementEditService#getDisplayName()
-	 * 
+	 *
 	 * @return the display name of the {@link IElementType} used by current service.
 	 *
 	 * </pre>
@@ -122,9 +122,9 @@ public class ElementEditService implements IElementEditService {
 	 * <pre>
 	 *
 	 * Test if current service can provide an edit command in response to the request.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.edit.service.IElementEditService#canEdit(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest)
-	 * 
+	 *
 	 * @param req the edit request to test
 	 * @return true is this service can provide edit command for the request
 	 *

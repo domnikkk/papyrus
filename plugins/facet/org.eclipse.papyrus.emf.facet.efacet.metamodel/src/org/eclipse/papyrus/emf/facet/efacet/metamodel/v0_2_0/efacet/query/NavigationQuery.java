@@ -49,7 +49,7 @@ public interface NavigationQuery extends Query {
 	 * If the meaning of the '<em>Path</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Path</em>' reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryPackage#getNavigationQuery_Path()
 	 * @model required="true"
@@ -65,7 +65,7 @@ public interface NavigationQuery extends Query {
 	 * If the meaning of the '<em>Fail On Error</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Fail On Error</em>' attribute.
 	 * @see #setFailOnError(boolean)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryPackage#getNavigationQuery_FailOnError()
@@ -78,7 +78,7 @@ public interface NavigationQuery extends Query {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NavigationQuery#isFailOnError <em>Fail On Error</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Fail On Error</em>' attribute.
 	 * @see #isFailOnError()

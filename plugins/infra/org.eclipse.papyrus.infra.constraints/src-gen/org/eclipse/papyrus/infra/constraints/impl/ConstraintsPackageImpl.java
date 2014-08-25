@@ -27,14 +27,14 @@ import org.eclipse.papyrus.infra.constraints.environment.impl.EnvironmentPackage
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass displayUnitEClass = null;
@@ -42,7 +42,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass constraintDescriptorEClass = null;
@@ -50,7 +50,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass simpleConstraintEClass = null;
@@ -58,7 +58,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass compositeConstraintEClass = null;
@@ -66,7 +66,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass configPropertyEClass = null;
@@ -74,7 +74,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass valuePropertyEClass = null;
@@ -82,7 +82,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass referencePropertyEClass = null;
@@ -92,7 +92,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.constraints.ConstraintsPackage#eNS_URI
 	 * @see #init()
@@ -105,7 +105,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -115,7 +115,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	 *
 	 * <p>
 	 * This method is used to initialize {@link ConstraintsPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -155,7 +155,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDisplayUnit() {
@@ -165,7 +165,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDisplayUnit_Constraints() {
@@ -175,7 +175,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDisplayUnit_ElementMultiplicity() {
@@ -185,7 +185,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getConstraintDescriptor() {
@@ -195,7 +195,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getConstraintDescriptor_Name() {
@@ -205,7 +205,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConstraintDescriptor_Display() {
@@ -215,7 +215,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getConstraintDescriptor_Overrideable() {
@@ -225,7 +225,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConstraintDescriptor_OverriddenConstraints() {
@@ -235,7 +235,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getSimpleConstraint() {
@@ -245,7 +245,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getSimpleConstraint_ConstraintType() {
@@ -255,7 +255,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getSimpleConstraint_Properties() {
@@ -265,7 +265,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCompositeConstraint() {
@@ -275,7 +275,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCompositeConstraint_Constraints() {
@@ -285,7 +285,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getConfigProperty() {
@@ -295,7 +295,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getConfigProperty_Name() {
@@ -305,7 +305,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getValueProperty() {
@@ -315,7 +315,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getValueProperty_Value() {
@@ -325,7 +325,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getReferenceProperty() {
@@ -335,7 +335,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getReferenceProperty_Value() {
@@ -345,7 +345,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintsFactory getConstraintsFactory() {
@@ -355,7 +355,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -365,7 +365,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -405,7 +405,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -415,7 +415,7 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

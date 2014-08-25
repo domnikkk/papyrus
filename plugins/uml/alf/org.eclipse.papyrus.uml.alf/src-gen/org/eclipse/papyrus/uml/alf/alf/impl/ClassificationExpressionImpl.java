@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.ClassificationExpression;
 import org.eclipse.papyrus.uml.alf.alf.NameExpression;
@@ -116,7 +113,11 @@ public class ClassificationExpressionImpl extends MinimalEObjectImpl.Container i
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_EXPRESSION__EXP, oldExp, newExp);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -131,15 +132,20 @@ public class ClassificationExpressionImpl extends MinimalEObjectImpl.Container i
     if (newExp != exp)
     {
       NotificationChain msgs = null;
-      if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_EXPRESSION__EXP, null, msgs);
-      if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_EXPRESSION__EXP, null, msgs);
+      if (exp != null) {
+		msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_EXPRESSION__EXP, null, msgs);
+	}
+      if (newExp != null) {
+		msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_EXPRESSION__EXP, null, msgs);
+	}
       msgs = basicSetExp(newExp, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_EXPRESSION__EXP, newExp, newExp));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_EXPRESSION__EXP, newExp, newExp));
+	}
   }
 
   /**
@@ -161,8 +167,9 @@ public class ClassificationExpressionImpl extends MinimalEObjectImpl.Container i
   {
     String oldOp = op;
     op = newOp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_EXPRESSION__OP, oldOp, op));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_EXPRESSION__OP, oldOp, op));
+	}
   }
 
   /**
@@ -187,7 +194,11 @@ public class ClassificationExpressionImpl extends MinimalEObjectImpl.Container i
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_EXPRESSION__TYPE_NAME, oldTypeName, newTypeName);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -202,15 +213,20 @@ public class ClassificationExpressionImpl extends MinimalEObjectImpl.Container i
     if (newTypeName != typeName)
     {
       NotificationChain msgs = null;
-      if (typeName != null)
-        msgs = ((InternalEObject)typeName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_EXPRESSION__TYPE_NAME, null, msgs);
-      if (newTypeName != null)
-        msgs = ((InternalEObject)newTypeName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_EXPRESSION__TYPE_NAME, null, msgs);
+      if (typeName != null) {
+		msgs = ((InternalEObject)typeName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_EXPRESSION__TYPE_NAME, null, msgs);
+	}
+      if (newTypeName != null) {
+		msgs = ((InternalEObject)newTypeName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_EXPRESSION__TYPE_NAME, null, msgs);
+	}
       msgs = basicSetTypeName(newTypeName, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_EXPRESSION__TYPE_NAME, newTypeName, newTypeName));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_EXPRESSION__TYPE_NAME, newTypeName, newTypeName));
+	}
   }
 
   /**
@@ -325,7 +341,9 @@ public class ClassificationExpressionImpl extends MinimalEObjectImpl.Container i
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (op: ");

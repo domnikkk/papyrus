@@ -13,11 +13,11 @@
  */
 package org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.wizard.page;
 
-import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.Messages;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.ui.wizards.NewTypeWizardPage;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;

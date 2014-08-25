@@ -33,7 +33,7 @@ public interface StackConfiguration extends ChildConfiguration {
 	 * If the meaning of the '<em>Owned Configurations</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned Configurations</em>' containment reference list.
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getStackConfiguration_OwnedConfigurations()
 	 * @model containment="true" required="true"

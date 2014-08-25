@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AbsoluteTimeEventRule;
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage;
 
@@ -21,7 +20,7 @@ public class AbsoluteTimeEventRuleImpl extends TimeEventRuleImpl implements Abso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AbsoluteTimeEventRuleImpl()
@@ -32,7 +31,7 @@ public class AbsoluteTimeEventRuleImpl extends TimeEventRuleImpl implements Abso
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

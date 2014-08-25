@@ -138,7 +138,7 @@ public class CheckedOperationHistory implements IOperationHistory {
 	/*
 	 * Consult the IOperationApprovers to see if the proposed execution should
 	 * be allowed.
-	 * 
+	 *
 	 * @since 3.2
 	 */
 	protected IStatus getExecuteApproval(IUndoableOperation operation, IAdaptable info) {

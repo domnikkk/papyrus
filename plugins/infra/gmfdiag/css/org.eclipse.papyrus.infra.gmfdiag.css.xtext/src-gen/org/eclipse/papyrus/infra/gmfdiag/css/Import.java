@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.infra.gmfdiag.css;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -42,7 +41,7 @@ public interface Import extends EObject
 	 * If the meaning of the '<em>String</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>String</em>' attribute.
 	 * @see #setString(String)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getImport_String()
@@ -55,7 +54,7 @@ public interface Import extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Import#getString <em>String</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>String</em>' attribute.
 	 * @see #getString()
@@ -70,7 +69,7 @@ public interface Import extends EObject
 	 * If the meaning of the '<em>Uri</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Uri</em>' containment reference.
 	 * @see #setUri(Uri)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getImport_Uri()
@@ -83,7 +82,7 @@ public interface Import extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Import#getUri <em>Uri</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Uri</em>' containment reference.
 	 * @see #getUri()
@@ -99,7 +98,7 @@ public interface Import extends EObject
 	 * If the meaning of the '<em>Media</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Media</em>' attribute list.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getImport_Media()
 	 * @model unique="false"

@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Namespace;
 
 /**
@@ -32,7 +31,7 @@ public interface QualifiedName extends EObject
 	 * If the meaning of the '<em>Path</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Path</em>' reference.
 	 * @see #setPath(Namespace)
 	 * @see org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage#getQualifiedName_Path()
@@ -45,7 +44,7 @@ public interface QualifiedName extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.QualifiedName#getPath <em>Path</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Path</em>' reference.
 	 * @see #getPath()
@@ -60,7 +59,7 @@ public interface QualifiedName extends EObject
 	 * If the meaning of the '<em>Remaining</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Remaining</em>' containment reference.
 	 * @see #setRemaining(QualifiedName)
 	 * @see org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage#getQualifiedName_Remaining()
@@ -73,7 +72,7 @@ public interface QualifiedName extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.QualifiedName#getRemaining <em>Remaining</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Remaining</em>' containment reference.
 	 * @see #getRemaining()

@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ConstructorInjection;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage;
 
@@ -20,7 +19,7 @@ public class ConstructorInjectionImpl extends AbstractMethodInjectionImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConstructorInjectionImpl() {
@@ -30,7 +29,7 @@ public class ConstructorInjectionImpl extends AbstractMethodInjectionImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

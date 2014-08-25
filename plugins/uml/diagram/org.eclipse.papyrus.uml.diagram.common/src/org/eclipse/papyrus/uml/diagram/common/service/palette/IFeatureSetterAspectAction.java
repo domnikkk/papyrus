@@ -47,7 +47,7 @@ public interface IFeatureSetterAspectAction {
 
 		/**
 		 * Return all the impacted Features from a map given by a request
-		 * 
+		 *
 		 * @param map
 		 * @return the features impacted by an action
 		 */
@@ -71,7 +71,7 @@ public interface IFeatureSetterAspectAction {
 
 		/**
 		 * Return all the impacted features in a {@link IEditCommandRequest} containing Pre and Post actions
-		 * 
+		 *
 		 * @param request
 		 * @return
 		 */
@@ -83,7 +83,7 @@ public interface IFeatureSetterAspectAction {
 		/**
 		 * Determine if the features in parameters are managed by Pre/Post
 		 * Action in the request
-		 * 
+		 *
 		 * @param request
 		 * @param features
 		 * @return true if they are ALL managed
@@ -96,7 +96,7 @@ public interface IFeatureSetterAspectAction {
 		/**
 		 * Determine if the features in parameters are managed by Pre/Post
 		 * Action in the request
-		 * 
+		 *
 		 * @param request
 		 * @param features
 		 * @return true if they are ALL managed

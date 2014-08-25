@@ -20,7 +20,7 @@ import org.eclipse.papyrus.infra.constraints.environment.EnvironmentPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentFactory {
@@ -28,7 +28,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EnvironmentFactory init() {
@@ -47,7 +47,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EnvironmentFactoryImpl() {
@@ -57,7 +57,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintEnvironment createConstraintEnvironment() {
@@ -86,7 +86,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintType createConstraintType() {
@@ -97,7 +97,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EnvironmentPackage getEnvironmentPackage() {
@@ -107,7 +107,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

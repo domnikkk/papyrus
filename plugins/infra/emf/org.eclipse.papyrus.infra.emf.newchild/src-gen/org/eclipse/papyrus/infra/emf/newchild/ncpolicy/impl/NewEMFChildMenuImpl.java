@@ -45,7 +45,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	 * The default value of the '{@link #getCreateIn() <em>Create In</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCreateIn()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	 * The cached value of the '{@link #getCreateIn() <em>Create In</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCreateIn()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	 * The default value of the '{@link #getLayout() <em>Layout</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayout()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	 * The cached value of the '{@link #getLayout() <em>Layout</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayout()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGroups()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NewEMFChildMenuImpl() {
@@ -109,7 +109,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CreateIn getCreateIn() {
@@ -130,7 +130,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCreateIn(CreateIn newCreateIn) {
@@ -144,7 +144,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Layout getLayout() {
@@ -154,7 +154,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLayout(Layout newLayout) {
@@ -168,7 +168,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<MenuGroup> getGroups() {
@@ -181,7 +181,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -239,7 +239,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +280,7 @@ public class NewEMFChildMenuImpl extends MenuImpl implements NewEMFChildMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

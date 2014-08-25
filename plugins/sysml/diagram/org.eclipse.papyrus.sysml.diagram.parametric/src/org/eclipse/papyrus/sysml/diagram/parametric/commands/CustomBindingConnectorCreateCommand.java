@@ -55,7 +55,7 @@ public class CustomBindingConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * A BindingConnector could be created in Parametric only if at least one end is a ConstraintParameter.
 	 * Also check Block.isEncapsulated (could not cross a Block which is encapsulted)
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class CustomBindingConnectorCreateCommand extends EditElementCommand {
 
 	/**
 	 * Check that BindingConnector do not cross a "Block.isEncapsulated" Part/Reference/ConstraintProperty
-	 * 
+	 *
 	 * @return true no encapsulation problem, false else
 	 */
 	private boolean checkEncapsulationCrossing() {
@@ -119,7 +119,7 @@ public class CustomBindingConnectorCreateCommand extends EditElementCommand {
 
 	/**
 	 * Create the connector, affect its owner, calculate nestedPath
-	 * 
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return CommandResult contains the created Connector

@@ -39,7 +39,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	 * The default value of the '{@link #getImplementationClassName() <em>Implementation Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImplementationClassName()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	 * The cached value of the '{@link #getImplementationClassName() <em>Implementation Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImplementationClassName()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaQueryImpl() {
@@ -70,7 +70,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getImplementationClassName() {
@@ -91,7 +91,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setImplementationClassName(final String newImplementationClassName) {
@@ -105,7 +105,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

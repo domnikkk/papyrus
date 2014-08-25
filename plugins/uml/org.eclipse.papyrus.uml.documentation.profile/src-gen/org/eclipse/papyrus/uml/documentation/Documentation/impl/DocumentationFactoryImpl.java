@@ -5,18 +5,17 @@ package org.eclipse.papyrus.uml.documentation.Documentation.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.uml.documentation.Documentation.*;
+import org.eclipse.papyrus.uml.documentation.Documentation.Documentation;
+import org.eclipse.papyrus.uml.documentation.Documentation.DocumentationFactory;
+import org.eclipse.papyrus.uml.documentation.Documentation.DocumentationPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DocumentationFactoryImpl extends EFactoryImpl implements DocumentationFactory {
@@ -24,7 +23,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DocumentationFactory init() {
@@ -43,7 +42,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DocumentationFactoryImpl() {
@@ -53,7 +52,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,7 +68,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +80,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +91,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

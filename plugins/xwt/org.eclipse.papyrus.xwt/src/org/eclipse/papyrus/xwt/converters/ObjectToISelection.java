@@ -29,7 +29,7 @@ public class ObjectToISelection implements IConverter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.core.databinding.conversion.IConverter#convert(java.lang.
 	 * Object)
@@ -48,7 +48,7 @@ public class ObjectToISelection implements IConverter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.conversion.IConverter#getFromType()
 	 */
 	public Object getFromType() {
@@ -57,7 +57,7 @@ public class ObjectToISelection implements IConverter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.conversion.IConverter#getToType()
 	 */
 	public Object getToType() {

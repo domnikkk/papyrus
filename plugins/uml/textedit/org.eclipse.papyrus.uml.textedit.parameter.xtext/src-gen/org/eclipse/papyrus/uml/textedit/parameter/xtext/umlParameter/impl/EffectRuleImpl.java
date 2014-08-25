@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.EffectKind;
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.EffectRule;
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.UmlParameterPackage;
@@ -32,7 +29,7 @@ public class EffectRuleImpl extends MinimalEObjectImpl.Container implements Effe
 	 * The default value of the '{@link #getEffectKind() <em>Effect Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEffectKind()
 	 * @generated
 	 * @ordered
@@ -43,7 +40,7 @@ public class EffectRuleImpl extends MinimalEObjectImpl.Container implements Effe
 	 * The cached value of the '{@link #getEffectKind() <em>Effect Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEffectKind()
 	 * @generated
 	 * @ordered
@@ -53,7 +50,7 @@ public class EffectRuleImpl extends MinimalEObjectImpl.Container implements Effe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EffectRuleImpl()
@@ -64,7 +61,7 @@ public class EffectRuleImpl extends MinimalEObjectImpl.Container implements Effe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +73,7 @@ public class EffectRuleImpl extends MinimalEObjectImpl.Container implements Effe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +85,7 @@ public class EffectRuleImpl extends MinimalEObjectImpl.Container implements Effe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +101,7 @@ public class EffectRuleImpl extends MinimalEObjectImpl.Container implements Effe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +118,7 @@ public class EffectRuleImpl extends MinimalEObjectImpl.Container implements Effe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +136,7 @@ public class EffectRuleImpl extends MinimalEObjectImpl.Container implements Effe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +154,7 @@ public class EffectRuleImpl extends MinimalEObjectImpl.Container implements Effe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +171,7 @@ public class EffectRuleImpl extends MinimalEObjectImpl.Container implements Effe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

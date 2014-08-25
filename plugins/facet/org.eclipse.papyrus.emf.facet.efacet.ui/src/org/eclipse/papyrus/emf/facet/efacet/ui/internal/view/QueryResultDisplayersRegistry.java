@@ -17,11 +17,11 @@ import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.emf.facet.efacet.ui.IETypedElementResultDisplayer;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.papyrus.emf.facet.util.core.internal.exported.AbstractRegistry;
-import org.eclipse.osgi.util.NLS;
 
 /**
  * The singleton registry of {@link IETypedElementResultDisplayer}s, which initializes

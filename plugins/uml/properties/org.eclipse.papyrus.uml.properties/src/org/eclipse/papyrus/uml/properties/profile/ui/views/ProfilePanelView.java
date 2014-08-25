@@ -51,7 +51,7 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IWorkbenchPart#createPartControl(org.eclipse.swt.widgets.Composite)
 	 */
 	/**
@@ -79,7 +79,7 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
 	 */
 	/**
@@ -123,7 +123,7 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 	// IPartListener methods implementation
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener#partActivated(org.eclipse.ui.IWorkbenchPart)
 	 */
 	/**
@@ -137,7 +137,7 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener#partDeactivated(org.eclipse.ui.IWorkbenchPart)
 	 */
 	/**
@@ -151,7 +151,7 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener#partBroughtToTop(org.eclipse.ui.IWorkbenchPart)
 	 */
 	/**
@@ -165,7 +165,7 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener#partOpened(org.eclipse.ui.IWorkbenchPart)
 	 */
 	/**
@@ -179,7 +179,7 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener#partClosed(org.eclipse.ui.IWorkbenchPart)
 	 */
 	/**

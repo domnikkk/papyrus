@@ -15,18 +15,18 @@ package org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.*;
+import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.CreationMenu;
+import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelFactory;
+import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelPackage;
+import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Folder;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ElementCreationMenuModelFactoryImpl extends EFactoryImpl implements ElementCreationMenuModelFactory {
@@ -34,7 +34,7 @@ public class ElementCreationMenuModelFactoryImpl extends EFactoryImpl implements
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ElementCreationMenuModelFactory init() {
@@ -53,7 +53,7 @@ public class ElementCreationMenuModelFactoryImpl extends EFactoryImpl implements
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementCreationMenuModelFactoryImpl() {
@@ -63,7 +63,7 @@ public class ElementCreationMenuModelFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class ElementCreationMenuModelFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Folder createFolder() {
@@ -92,7 +92,7 @@ public class ElementCreationMenuModelFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CreationMenu createCreationMenu() {
@@ -103,7 +103,7 @@ public class ElementCreationMenuModelFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementCreationMenuModelPackage getElementCreationMenuModelPackage() {
@@ -113,7 +113,7 @@ public class ElementCreationMenuModelFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

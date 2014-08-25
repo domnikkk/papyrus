@@ -40,14 +40,14 @@ public @interface ServiceFactory {
 
 	/**
 	 * Kind of startup requested for the service.
-	 * 
+	 *
 	 * @return
 	 */
 	StartupKind startupKind() default StartupKind.lazy;
 
 	/**
 	 * Service priority level. Default is 0.
-	 * 
+	 *
 	 * @return
 	 */
 	int priority() default 0;

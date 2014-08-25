@@ -15,7 +15,6 @@ package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.ETypedElement;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
 
 /**
@@ -47,7 +46,7 @@ public interface ETypedElementCase extends EObject {
 	 * If the meaning of the '<em>Case</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Case</em>' reference.
 	 * @see #setCase(ETypedElement)
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage#getETypedElementCase_Case()
@@ -60,7 +59,7 @@ public interface ETypedElementCase extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase#getCase <em>Case</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Case</em>' reference.
 	 * @see #getCase()
@@ -75,7 +74,7 @@ public interface ETypedElementCase extends EObject {
 	 * If the meaning of the '<em>Value</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' containment reference.
 	 * @see #setValue(Query)
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage#getETypedElementCase_Value()
@@ -88,7 +87,7 @@ public interface ETypedElementCase extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase#getValue <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' containment reference.
 	 * @see #getValue()

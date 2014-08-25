@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.AnnotatedStatement;
 import org.eclipse.papyrus.uml.alf.alf.Annotation;
@@ -94,7 +91,11 @@ public class AnnotatedStatementImpl extends StatementImpl implements AnnotatedSt
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.ANNOTATED_STATEMENT__ANNOTATION, oldAnnotation, newAnnotation);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -109,15 +110,20 @@ public class AnnotatedStatementImpl extends StatementImpl implements AnnotatedSt
     if (newAnnotation != annotation)
     {
       NotificationChain msgs = null;
-      if (annotation != null)
-        msgs = ((InternalEObject)annotation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ANNOTATED_STATEMENT__ANNOTATION, null, msgs);
-      if (newAnnotation != null)
-        msgs = ((InternalEObject)newAnnotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ANNOTATED_STATEMENT__ANNOTATION, null, msgs);
+      if (annotation != null) {
+		msgs = ((InternalEObject)annotation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ANNOTATED_STATEMENT__ANNOTATION, null, msgs);
+	}
+      if (newAnnotation != null) {
+		msgs = ((InternalEObject)newAnnotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ANNOTATED_STATEMENT__ANNOTATION, null, msgs);
+	}
       msgs = basicSetAnnotation(newAnnotation, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ANNOTATED_STATEMENT__ANNOTATION, newAnnotation, newAnnotation));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ANNOTATED_STATEMENT__ANNOTATION, newAnnotation, newAnnotation));
+	}
   }
 
   /**
@@ -142,7 +148,11 @@ public class AnnotatedStatementImpl extends StatementImpl implements AnnotatedSt
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.ANNOTATED_STATEMENT__STATEMENT, oldStatement, newStatement);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -157,15 +167,20 @@ public class AnnotatedStatementImpl extends StatementImpl implements AnnotatedSt
     if (newStatement != statement)
     {
       NotificationChain msgs = null;
-      if (statement != null)
-        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ANNOTATED_STATEMENT__STATEMENT, null, msgs);
-      if (newStatement != null)
-        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ANNOTATED_STATEMENT__STATEMENT, null, msgs);
+      if (statement != null) {
+		msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ANNOTATED_STATEMENT__STATEMENT, null, msgs);
+	}
+      if (newStatement != null) {
+		msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ANNOTATED_STATEMENT__STATEMENT, null, msgs);
+	}
       msgs = basicSetStatement(newStatement, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ANNOTATED_STATEMENT__STATEMENT, newStatement, newStatement));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ANNOTATED_STATEMENT__STATEMENT, newStatement, newStatement));
+	}
   }
 
   /**

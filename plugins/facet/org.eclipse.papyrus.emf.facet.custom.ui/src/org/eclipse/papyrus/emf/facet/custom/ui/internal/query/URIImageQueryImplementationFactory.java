@@ -14,13 +14,13 @@
 package org.eclipse.papyrus.emf.facet.custom.ui.internal.query;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.QueryPackage;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.querytype.URIImageQueryEvaluator;
 import org.eclipse.papyrus.emf.facet.efacet.core.IDerivedTypedElementManager;
 import org.eclipse.papyrus.emf.facet.efacet.core.exception.DerivedTypedElementException;
 import org.eclipse.papyrus.emf.facet.efacet.core.query.IQueryImplementation;
 import org.eclipse.papyrus.emf.facet.efacet.core.query.IQueryImplementationFactory;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.QueryPackage;
 import org.osgi.framework.Bundle;
 
 public class URIImageQueryImplementationFactory implements

@@ -31,7 +31,7 @@ public abstract class ConfigPropertyImpl extends EObjectImpl implements ConfigPr
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public abstract class ConfigPropertyImpl extends EObjectImpl implements ConfigPr
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public abstract class ConfigPropertyImpl extends EObjectImpl implements ConfigPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConfigPropertyImpl() {
@@ -62,7 +62,7 @@ public abstract class ConfigPropertyImpl extends EObjectImpl implements ConfigPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +73,7 @@ public abstract class ConfigPropertyImpl extends EObjectImpl implements ConfigPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -83,7 +83,7 @@ public abstract class ConfigPropertyImpl extends EObjectImpl implements ConfigPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -97,7 +97,7 @@ public abstract class ConfigPropertyImpl extends EObjectImpl implements ConfigPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +112,7 @@ public abstract class ConfigPropertyImpl extends EObjectImpl implements ConfigPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public abstract class ConfigPropertyImpl extends EObjectImpl implements ConfigPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public abstract class ConfigPropertyImpl extends EObjectImpl implements ConfigPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +159,7 @@ public abstract class ConfigPropertyImpl extends EObjectImpl implements ConfigPr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

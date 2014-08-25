@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.widget.command;
 
 import org.eclipse.emf.common.command.Command;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
 import org.eclipse.papyrus.emf.facet.custom.sdk.core.ICustomizationCommandFactory;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.widget.property.name.GetCaseQueryNameWidget;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.widget.property.name.GetCaseQueryTypeWidget;
@@ -21,7 +22,6 @@ import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.IQueryConte
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.query.SelectQueryTypeWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.AbstractCommandWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement2;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
 import org.eclipse.swt.widgets.Composite;
 
 /**

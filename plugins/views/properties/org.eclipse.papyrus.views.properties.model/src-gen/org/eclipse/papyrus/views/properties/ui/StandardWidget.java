@@ -32,7 +32,7 @@ public interface StandardWidget extends Widget {
 	 * If the meaning of the '<em>Widget Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Widget Type</em>' reference.
 	 * @see #setWidgetType(StandardWidgetType)
 	 * @see org.eclipse.papyrus.views.properties.ui.UiPackage#getStandardWidget_WidgetType()
@@ -45,7 +45,7 @@ public interface StandardWidget extends Widget {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.ui.StandardWidget#getWidgetType <em>Widget Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Widget Type</em>' reference.
 	 * @see #getWidgetType()

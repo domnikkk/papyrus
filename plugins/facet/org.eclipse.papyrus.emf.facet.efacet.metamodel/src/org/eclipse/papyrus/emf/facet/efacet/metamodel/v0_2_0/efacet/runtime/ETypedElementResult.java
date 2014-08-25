@@ -55,7 +55,7 @@ public interface ETypedElementResult extends EObject {
 	 * <!-- begin-model-doc -->
 	 * The reference "query" references the executed query.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Derived Typed Element</em>' reference.
 	 * @see #setDerivedTypedElement(ETypedElement)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.RuntimePackage#getETypedElementResult_DerivedTypedElement()
@@ -68,7 +68,7 @@ public interface ETypedElementResult extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.ETypedElementResult#getDerivedTypedElement <em>Derived Typed Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Derived Typed Element</em>' reference.
 	 * @see #getDerivedTypedElement()
@@ -84,7 +84,7 @@ public interface ETypedElementResult extends EObject {
 	 * <!-- begin-model-doc -->
 	 * This is the list of the values given as parameters for the query execution.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Parameter Values</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.RuntimePackage#getETypedElementResult_ParameterValues()
 	 * @model containment="true"
@@ -99,7 +99,7 @@ public interface ETypedElementResult extends EObject {
 	 * If the meaning of the '<em>Source</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(EObject)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.RuntimePackage#getETypedElementResult_Source()
@@ -112,7 +112,7 @@ public interface ETypedElementResult extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.ETypedElementResult#getSource <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Source</em>' reference.
 	 * @see #getSource()
@@ -127,7 +127,7 @@ public interface ETypedElementResult extends EObject {
 	 * If the meaning of the '<em>Exception</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Exception</em>' attribute.
 	 * @see #setException(Throwable)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.RuntimePackage#getETypedElementResult_Exception()
@@ -140,7 +140,7 @@ public interface ETypedElementResult extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.ETypedElementResult#getException <em>Exception</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Exception</em>' attribute.
 	 * @see #getException()

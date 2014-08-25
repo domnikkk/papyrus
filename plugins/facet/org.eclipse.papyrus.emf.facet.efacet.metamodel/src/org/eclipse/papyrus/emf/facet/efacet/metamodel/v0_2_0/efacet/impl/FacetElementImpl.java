@@ -46,7 +46,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	 * The cached value of the '{@link #getCategories() <em>Categories</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCategories()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FacetElementImpl() {
@@ -88,7 +88,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +99,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDocumentation() {
@@ -109,7 +109,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDocumentation(String newDocumentation) {
@@ -123,7 +123,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Category> getCategories() {
@@ -136,7 +136,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -174,7 +174,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +248,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

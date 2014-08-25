@@ -53,7 +53,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#addChild(org.soyatec.xaml.IDocumentObject )
 	 */
 	public void addChild(DocumentObject child) {
@@ -71,7 +71,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#getChildren()
 	 */
 	public DocumentObject[] getChildren() {
@@ -80,7 +80,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#getContent()
 	 */
 	public String getContent() {
@@ -89,7 +89,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#getId()
 	 */
 	public String getId() {
@@ -98,7 +98,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#getName()
 	 */
 	public String getName() {
@@ -107,7 +107,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#getNamespace()
 	 */
 	public String getNamespace() {
@@ -116,7 +116,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#hasCildren()
 	 */
 	public boolean hasChildren() {
@@ -125,7 +125,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#include(java.io.InputStream)
 	 */
 	public void include(ElementManager elementManager, InputStream input) throws IOException {
@@ -138,7 +138,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#include(java.lang.String)
 	 */
 	public void include(ElementManager elementManager, String path) throws IOException {
@@ -151,7 +151,7 @@ public class DocumentObject extends Observable implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentObject#setContent(java.lang.String)
 	 */
 	public void setContent(String text) {

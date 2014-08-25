@@ -28,7 +28,7 @@ public interface ChangeEventRule extends EventRule
 	 * If the meaning of the '<em>Exp</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Exp</em>' attribute.
 	 * @see #setExp(String)
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage#getChangeEventRule_Exp()
@@ -41,7 +41,7 @@ public interface ChangeEventRule extends EventRule
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.ChangeEventRule#getExp <em>Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Exp</em>' attribute.
 	 * @see #getExp()

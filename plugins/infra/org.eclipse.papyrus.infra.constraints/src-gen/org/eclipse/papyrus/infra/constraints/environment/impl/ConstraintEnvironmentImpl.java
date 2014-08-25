@@ -37,7 +37,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	 * The cached value of the '{@link #getConstraintTypes() <em>Constraint Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstraintTypes()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConstraintEnvironmentImpl() {
@@ -57,7 +57,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,7 +68,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ConstraintType> getConstraintTypes() {
@@ -81,7 +81,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -129,7 +129,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

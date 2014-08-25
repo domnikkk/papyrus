@@ -16,21 +16,16 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.discovery.Category;
 import org.eclipse.papyrus.infra.discovery.DiscoveryPackage;
 import org.eclipse.papyrus.infra.discovery.Group;
@@ -72,7 +67,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -83,7 +78,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -94,7 +89,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The default value of the '{@link #getProvider() <em>Provider</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProvider()
 	 * @generated
 	 * @ordered
@@ -105,7 +100,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #getProvider() <em>Provider</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProvider()
 	 * @generated
 	 * @ordered
@@ -116,7 +111,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #getSitesURLS() <em>Sites URLS</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSitesURLS()
 	 * @generated
 	 * @ordered
@@ -127,7 +122,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -138,7 +133,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -149,7 +144,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #getOverview() <em>Overview</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOverview()
 	 * @generated
 	 * @ordered
@@ -160,7 +155,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -171,7 +166,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The default value of the '{@link #getLicense() <em>License</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLicense()
 	 * @generated
 	 * @ordered
@@ -182,7 +177,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #getLicense() <em>License</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLicense()
 	 * @generated
 	 * @ordered
@@ -193,7 +188,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isSelected()
 	 * @generated
 	 * @ordered
@@ -204,7 +199,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isSelected()
 	 * @generated
 	 * @ordered
@@ -215,7 +210,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The default value of the '{@link #isAvailable() <em>Available</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isAvailable()
 	 * @generated
 	 * @ordered
@@ -226,7 +221,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #isAvailable() <em>Available</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isAvailable()
 	 * @generated
 	 * @ordered
@@ -237,7 +232,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The default value of the '{@link #isInstalled() <em>Installed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isInstalled()
 	 * @generated
 	 * @ordered
@@ -248,7 +243,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #isInstalled() <em>Installed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isInstalled()
 	 * @generated
 	 * @ordered
@@ -259,7 +254,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGroups()
 	 * @generated
 	 * @ordered
@@ -270,7 +265,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The default value of the '{@link #getImage32() <em>Image32</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImage32()
 	 * @generated
 	 * @ordered
@@ -281,7 +276,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #getImage32() <em>Image32</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImage32()
 	 * @generated
 	 * @ordered
@@ -292,7 +287,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The default value of the '{@link #isIncubation() <em>Incubation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIncubation()
 	 * @generated
 	 * @ordered
@@ -303,7 +298,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #isIncubation() <em>Incubation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIncubation()
 	 * @generated
 	 * @ordered
@@ -314,7 +309,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #getMessages() <em>Messages</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessages()
 	 * @generated
 	 * @ordered
@@ -325,7 +320,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The default value of the '{@link #isVisible() <em>Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isVisible()
 	 * @generated
 	 * @ordered
@@ -336,7 +331,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #isVisible() <em>Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isVisible()
 	 * @generated
 	 * @ordered
@@ -347,7 +342,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	 * The cached value of the '{@link #getHiddingFeatureID() <em>Hidding Feature ID</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHiddingFeatureID()
 	 * @generated
 	 * @ordered
@@ -357,7 +352,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InstallableComponentImpl() {
@@ -367,7 +362,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -378,7 +373,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -388,7 +383,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -402,7 +397,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getProvider() {
@@ -412,7 +407,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setProvider(String newProvider) {
@@ -426,7 +421,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getSitesURLS() {
@@ -439,7 +434,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -449,7 +444,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -463,7 +458,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Overview getOverview() {
@@ -473,7 +468,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOverview(Overview newOverview, NotificationChain msgs) {
@@ -493,7 +488,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOverview(Overview newOverview) {
@@ -518,7 +513,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Category getCategory() {
@@ -531,7 +526,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetCategory(Category newCategory, NotificationChain msgs) {
@@ -542,7 +537,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCategory(Category newCategory) {
@@ -570,7 +565,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getId() {
@@ -583,7 +578,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLicense() {
@@ -593,7 +588,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLicense(String newLicense) {
@@ -607,7 +602,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSelected() {
@@ -617,7 +612,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSelected(boolean newSelected) {
@@ -631,7 +626,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isAvailable() {
@@ -641,7 +636,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAvailable(boolean newAvailable) {
@@ -655,7 +650,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isInstalled() {
@@ -665,7 +660,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setInstalled(boolean newInstalled) {
@@ -679,7 +674,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Group> getGroups() {
@@ -692,7 +687,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getImage32() {
@@ -702,7 +697,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setImage32(String newImage32) {
@@ -716,7 +711,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isIncubation() {
@@ -726,7 +721,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIncubation(boolean newIncubation) {
@@ -740,7 +735,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Message> getMessages() {
@@ -753,7 +748,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isVisible() {
@@ -763,7 +758,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setVisible(boolean newVisible) {
@@ -777,7 +772,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getHiddingFeatureID() {
@@ -790,7 +785,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -808,7 +803,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -827,7 +822,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -842,7 +837,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -889,7 +884,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -959,7 +954,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1023,7 +1018,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1070,7 +1065,7 @@ public class InstallableComponentImpl extends MinimalEObjectImpl implements Inst
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

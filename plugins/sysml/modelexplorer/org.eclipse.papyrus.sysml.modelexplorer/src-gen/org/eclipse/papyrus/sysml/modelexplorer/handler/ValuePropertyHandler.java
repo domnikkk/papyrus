@@ -37,7 +37,7 @@ public class ValuePropertyHandler extends AbstractSysmlModelExplorerCreateComman
 	/**
 	 * <pre>
 	 * @see org.eclipse.papyrus.uml.service.creation.handler.CreateHandler#getElementTypeToCreate()
-	 * 
+	 *
 	 * @return the IElementType this handler is supposed to create
 	 *
 	 * </pre>

@@ -22,7 +22,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
  * Represents a descriptor for properties of type EReference
- * 
+ *
  * @author Laurent Wouters
  */
 public class EReferencePropertyDescriptor extends SurrogateItemPropertyDescriptor {

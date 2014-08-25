@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.OpaqueInjectedValue;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage;
 
@@ -29,7 +26,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -40,7 +37,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -50,7 +47,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OpaqueInjectedValueImpl() {
@@ -60,7 +57,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +68,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +79,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +94,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +109,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +125,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +141,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +156,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

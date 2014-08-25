@@ -44,7 +44,7 @@ public class ObjectFlowReorientCommand extends EditElementCommand {
 	/**
 	 * <pre>
 	 * Constructor.
-	 * 
+	 *
 	 * @param request the re-orient relationship request.
 	 * </pre>
 	 */
@@ -58,7 +58,7 @@ public class ObjectFlowReorientCommand extends EditElementCommand {
 	/**
 	 * <pre>
 	 * @see org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand#canExecute()
-	 * 
+	 *
 	 * @return true if the command is executable.
 	 * </pre>
 	 */

@@ -66,7 +66,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.dataproviders.IObjectDataProvider#getMethodName()
 	 */
 	public String getMethodName() {
@@ -75,7 +75,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.dataproviders.IObjectDataProvider#getMethodParameters
 	 * ()
@@ -86,7 +86,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.dataproviders.IObjectDataProvider#getObjectInstance()
 	 */
@@ -103,7 +103,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.dataproviders.IObjectDataProvider#getObjectType()
 	 */
 	public Class<?> getObjectType() {
@@ -115,7 +115,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.dataproviders.IObjectDataProvider#setMethodName(java
 	 * .lang.String)
@@ -126,7 +126,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.dataproviders.IObjectDataProvider#setMethodParameters
 	 * (java.util.List)
@@ -137,7 +137,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.dataproviders.IObjectDataProvider#setObjectInstance
 	 * (java.lang.Object)
@@ -148,7 +148,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.dataproviders.IObjectDataProvider#setObjectType(java
 	 * .lang.Class)
@@ -191,7 +191,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.dataproviders.IDataProvider#getData(java.lang.String)
 	 */
@@ -204,7 +204,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.dataproviders.IDataProvider#getData(java.lang.String)
 	 */
@@ -243,7 +243,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.dataproviders.IDataProvider#getDataType(java.lang.
 	 * String)

@@ -14,10 +14,21 @@ package org.eclipse.papyrus.infra.extendedtypes.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.infra.extendedtypes.*;
+import org.eclipse.papyrus.infra.extendedtypes.ActionConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.AspectSemanticTypeConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.AspectViewTypeConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.ConfigurationElement;
+import org.eclipse.papyrus.infra.extendedtypes.ElementTypeAdviceConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.ElementTypeConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.ExtendedElementTypeSet;
+import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
+import org.eclipse.papyrus.infra.extendedtypes.IconEntry;
+import org.eclipse.papyrus.infra.extendedtypes.MatcherConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.SemanticActionConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.SemanticTypeConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.ViewActionConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.ViewTypeConfiguration;
 
 /**
  * <!-- begin-user-doc -->

@@ -21,10 +21,10 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.view.INavigationView;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.view.INavigationViewFactory;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.view.INavigationView;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.view.INavigationViewFactory;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
 

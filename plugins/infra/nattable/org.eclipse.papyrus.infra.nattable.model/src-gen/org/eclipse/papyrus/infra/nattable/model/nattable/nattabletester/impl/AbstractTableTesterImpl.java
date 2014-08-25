@@ -15,11 +15,8 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.AbstractTableTester;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.NattabletesterPackage;
 

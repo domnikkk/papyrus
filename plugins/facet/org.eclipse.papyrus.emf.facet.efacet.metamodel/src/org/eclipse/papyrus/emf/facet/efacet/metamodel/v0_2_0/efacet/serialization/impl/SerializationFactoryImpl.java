@@ -35,7 +35,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SerializationFactoryImpl extends EFactoryImpl implements SerializationFactory {
@@ -43,7 +43,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SerializationFactory init() {
@@ -62,7 +62,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SerializationFactoryImpl() {
@@ -72,7 +72,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AbstractReferenceInstance createAbstractReferenceInstance() {
@@ -115,7 +115,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MultiValuedContainmentReferenceInstance createMultiValuedContainmentReferenceInstance() {
@@ -126,7 +126,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MultiValuedReferenceInstance createMultiValuedReferenceInstance() {
@@ -137,7 +137,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SingleValuedAttributeInstance createSingleValuedAttributeInstance() {
@@ -148,7 +148,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtendedEObjectReference createExtendedEObjectReference() {
@@ -159,7 +159,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SingleValuedContainmentReferenceInstance createSingleValuedContainmentReferenceInstance() {
@@ -170,7 +170,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SingleValuedReferenceInstance createSingleValuedReferenceInstance() {
@@ -181,7 +181,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MultiValuedAttributeInstance createMultiValuedAttributeInstance() {
@@ -192,7 +192,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AbstractAttributeInstance createAbstractAttributeInstance() {
@@ -203,7 +203,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SerializationPackage getSerializationPackage() {
@@ -213,7 +213,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

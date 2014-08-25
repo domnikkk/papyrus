@@ -32,7 +32,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	 * The default value of the '{@link #getConstraintClass() <em>Constraint Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstraintClass()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	 * The cached value of the '{@link #getConstraintClass() <em>Constraint Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstraintClass()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConstraintTypeImpl() {
@@ -85,7 +85,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLabel() {
@@ -106,7 +106,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLabel(String newLabel) {
@@ -120,7 +120,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getConstraintClass() {
@@ -130,7 +130,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setConstraintClass(String newConstraintClass) {
@@ -144,7 +144,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +180,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +216,7 @@ public class ConstraintTypeImpl extends EObjectImpl implements ConstraintType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

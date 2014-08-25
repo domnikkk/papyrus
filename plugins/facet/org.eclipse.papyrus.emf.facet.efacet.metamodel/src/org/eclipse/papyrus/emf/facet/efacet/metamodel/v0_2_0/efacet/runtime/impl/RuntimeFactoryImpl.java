@@ -36,7 +36,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.Runt
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
@@ -44,7 +44,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static RuntimeFactory init() {
@@ -63,7 +63,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RuntimeFactoryImpl() {
@@ -73,7 +73,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public <T> ETypedElementPrimitiveTypeResult<T> createETypedElementPrimitiveTypeResult() {
@@ -138,7 +138,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public <T extends EObject> ETypedElementEObjectResult<T> createETypedElementEObjectResult() {
@@ -149,7 +149,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public <T> ETypedElementPrimitiveTypeListResult<T> createETypedElementPrimitiveTypeListResult() {
@@ -160,7 +160,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public <T extends EObject> ETypedElementEObjectListResult<T> createETypedElementEObjectListResult() {
@@ -171,7 +171,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Throwable createJavaExceptionFromString(EDataType eDataType, String initialValue) {
@@ -181,7 +181,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertJavaExceptionToString(EDataType eDataType, Object instanceValue) {
@@ -191,7 +191,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RuntimePackage getRuntimePackage() {
@@ -201,7 +201,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

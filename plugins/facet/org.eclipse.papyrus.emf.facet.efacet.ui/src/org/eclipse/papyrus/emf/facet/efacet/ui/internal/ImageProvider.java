@@ -13,9 +13,9 @@
  ********************************************************************************/
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal;
 
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 

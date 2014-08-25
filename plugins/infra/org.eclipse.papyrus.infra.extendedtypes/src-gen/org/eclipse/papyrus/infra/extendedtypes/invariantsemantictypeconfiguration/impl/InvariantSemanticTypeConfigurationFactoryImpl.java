@@ -15,18 +15,19 @@ package org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfigurati
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.*;
+import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.AndRule;
+import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationFactory;
+import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage;
+import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.OrRule;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InvariantSemanticTypeConfigurationFactoryImpl extends EFactoryImpl implements InvariantSemanticTypeConfigurationFactory {
@@ -34,7 +35,7 @@ public class InvariantSemanticTypeConfigurationFactoryImpl extends EFactoryImpl 
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static InvariantSemanticTypeConfigurationFactory init() {
@@ -53,7 +54,7 @@ public class InvariantSemanticTypeConfigurationFactoryImpl extends EFactoryImpl 
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantSemanticTypeConfigurationFactoryImpl() {
@@ -63,7 +64,7 @@ public class InvariantSemanticTypeConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +84,7 @@ public class InvariantSemanticTypeConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantSemanticTypeConfiguration createInvariantSemanticTypeConfiguration() {
@@ -94,7 +95,7 @@ public class InvariantSemanticTypeConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AndRule createAndRule() {
@@ -105,7 +106,7 @@ public class InvariantSemanticTypeConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OrRule createOrRule() {
@@ -116,7 +117,7 @@ public class InvariantSemanticTypeConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantSemanticTypeConfigurationPackage getInvariantSemanticTypeConfigurationPackage() {
@@ -126,7 +127,7 @@ public class InvariantSemanticTypeConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

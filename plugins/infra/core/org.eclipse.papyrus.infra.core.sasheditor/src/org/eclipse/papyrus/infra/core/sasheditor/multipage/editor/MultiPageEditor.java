@@ -336,7 +336,7 @@ public abstract class MultiPageEditor extends MultiPageEditorPart {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.MultiPageEditorPart#removePage(int)
 	 */
 	@Override

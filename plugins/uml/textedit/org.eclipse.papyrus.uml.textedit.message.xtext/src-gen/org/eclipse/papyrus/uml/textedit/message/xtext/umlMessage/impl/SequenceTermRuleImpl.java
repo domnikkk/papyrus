@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule;
 import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.UmlMessagePackage;
 
@@ -33,7 +30,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getSequencialOrder() <em>Sequencial Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSequencialOrder()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getSequencialOrder() <em>Sequencial Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSequencialOrder()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getSequenceName() <em>Sequence Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSequenceName()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getSequenceName() <em>Sequence Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSequenceName()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getRecurrence() <em>Recurrence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRecurrence()
 	 * @generated
 	 * @ordered
@@ -88,7 +85,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getRecurrence() <em>Recurrence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRecurrence()
 	 * @generated
 	 * @ordered
@@ -98,7 +95,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SequenceTermRuleImpl()
@@ -109,7 +106,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +118,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +130,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +146,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +158,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +174,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +186,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +202,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +223,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +247,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +271,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -295,7 +292,7 @@ public class SequenceTermRuleImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

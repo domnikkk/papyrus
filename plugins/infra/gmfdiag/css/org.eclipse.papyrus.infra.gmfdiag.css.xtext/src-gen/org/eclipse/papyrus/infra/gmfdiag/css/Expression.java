@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.infra.gmfdiag.css;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -41,7 +40,7 @@ public interface Expression extends EObject
 	 * If the meaning of the '<em>Terms</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Terms</em>' containment reference.
 	 * @see #setTerms(Term)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getExpression_Terms()
@@ -54,7 +53,7 @@ public interface Expression extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Expression#getTerms <em>Terms</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Terms</em>' containment reference.
 	 * @see #getTerms()
@@ -70,7 +69,7 @@ public interface Expression extends EObject
 	 * If the meaning of the '<em>Subterms</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Subterms</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getExpression_Subterms()
 	 * @model containment="true"

@@ -105,7 +105,7 @@ public class RenameNamedElementHandler extends AbstractCommandHandler {
 	/**
 	 * Check whether the editing of an element is handled by a direct editor. In this case, we do
 	 * not want to open the rename pop-up.
-	 * 
+	 *
 	 * @param element
 	 *            an element that should be edited.
 	 * @return true, if handled by a direct editor

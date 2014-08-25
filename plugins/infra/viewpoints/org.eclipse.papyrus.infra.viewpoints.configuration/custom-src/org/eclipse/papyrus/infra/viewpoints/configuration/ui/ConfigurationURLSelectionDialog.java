@@ -39,7 +39,7 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * Dialog for the selection of a configuration model through URIs
- * 
+ *
  * @author Laurent Wouters
  */
 public class ConfigurationURLSelectionDialog extends Dialog {
@@ -54,7 +54,7 @@ public class ConfigurationURLSelectionDialog extends Dialog {
 
 	/**
 	 * Represents a provider of URIs
-	 * 
+	 *
 	 * @author Laurent Wouters
 	 */
 	private static class ModelContentProvider implements IStructuredContentProvider {

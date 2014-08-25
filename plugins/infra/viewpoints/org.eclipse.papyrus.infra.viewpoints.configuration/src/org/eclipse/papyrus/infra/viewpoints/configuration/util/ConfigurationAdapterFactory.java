@@ -18,7 +18,21 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.constraints.DisplayUnit;
-import org.eclipse.papyrus.infra.viewpoints.configuration.*;
+import org.eclipse.papyrus.infra.viewpoints.configuration.Category;
+import org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule;
+import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
+import org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate;
+import org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule;
+import org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusSyncTable;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PathElement;
+import org.eclipse.papyrus.infra.viewpoints.configuration.Rule;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint;
@@ -29,7 +43,7 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage
  * @generated
  */
@@ -38,7 +52,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static ConfigurationPackage modelPackage;
@@ -47,7 +61,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConfigurationAdapterFactory() {
@@ -61,7 +75,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -80,7 +94,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConfigurationSwitch<Adapter> modelSwitch =
@@ -190,7 +204,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
@@ -208,7 +222,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration
 	 * @generated
@@ -223,7 +237,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint
 	 * @generated
@@ -238,7 +252,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView
 	 * @generated
@@ -253,7 +267,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram
 	 * @generated
@@ -268,7 +282,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusSyncTable
 	 * @generated
@@ -283,7 +297,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable
 	 * @generated
@@ -298,7 +312,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule
 	 * @generated
@@ -313,7 +327,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule
 	 * @generated
@@ -328,7 +342,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule
 	 * @generated
@@ -343,7 +357,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule
 	 * @generated
@@ -358,7 +372,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.Rule
 	 * @generated
@@ -373,7 +387,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.PathElement
 	 * @generated
@@ -388,7 +402,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.Category
 	 * @generated
@@ -403,7 +417,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate
 	 * @generated
@@ -418,7 +432,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework
 	 * @generated
@@ -433,7 +447,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement
 	 * @generated
@@ -448,7 +462,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint
 	 * @generated
@@ -463,7 +477,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind
 	 * @generated
@@ -478,7 +492,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.constraints.DisplayUnit
 	 * @generated
@@ -492,7 +506,7 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */

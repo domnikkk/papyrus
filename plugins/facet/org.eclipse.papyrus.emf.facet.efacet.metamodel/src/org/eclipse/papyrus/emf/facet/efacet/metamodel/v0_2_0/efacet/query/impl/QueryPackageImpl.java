@@ -48,14 +48,14 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass navigationQueryEClass = null;
@@ -63,7 +63,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass isOneOfQueryEClass = null;
@@ -71,7 +71,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass stringLiteralQueryEClass = null;
@@ -79,7 +79,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass trueLiteralQueryEClass = null;
@@ -87,7 +87,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass falseLiteralQueryEClass = null;
@@ -95,7 +95,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass nullLiteralQueryEClass = null;
@@ -103,7 +103,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass integerLiteralQueryEClass = null;
@@ -111,7 +111,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass floatLiteralQueryEClass = null;
@@ -119,7 +119,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eObjectLiteralQueryEClass = null;
@@ -127,7 +127,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass operationCallQueryEClass = null;
@@ -137,7 +137,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryPackage#eNS_URI
 	 * @see #init()
@@ -150,7 +150,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -160,7 +160,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link QueryPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -213,7 +213,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getNavigationQuery() {
@@ -223,7 +223,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getNavigationQuery_Path() {
@@ -233,7 +233,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNavigationQuery_FailOnError() {
@@ -243,7 +243,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getIsOneOfQuery() {
@@ -253,7 +253,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getIsOneOfQuery_ExpectedEObjects() {
@@ -263,7 +263,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getStringLiteralQuery() {
@@ -273,7 +273,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getStringLiteralQuery_Value() {
@@ -283,7 +283,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getTrueLiteralQuery() {
@@ -293,7 +293,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFalseLiteralQuery() {
@@ -303,7 +303,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getNullLiteralQuery() {
@@ -313,7 +313,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getIntegerLiteralQuery() {
@@ -323,7 +323,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getIntegerLiteralQuery_Value() {
@@ -333,7 +333,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFloatLiteralQuery() {
@@ -343,7 +343,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getFloatLiteralQuery_Value() {
@@ -353,7 +353,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getEObjectLiteralQuery() {
@@ -363,7 +363,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getEObjectLiteralQuery_Element() {
@@ -373,7 +373,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getOperationCallQuery() {
@@ -383,7 +383,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getOperationCallQuery_Operation() {
@@ -393,7 +393,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getOperationCallQuery_Arguments() {
@@ -403,7 +403,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public QueryFactory getQueryFactory() {
@@ -413,7 +413,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -423,7 +423,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -466,7 +466,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -476,7 +476,7 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

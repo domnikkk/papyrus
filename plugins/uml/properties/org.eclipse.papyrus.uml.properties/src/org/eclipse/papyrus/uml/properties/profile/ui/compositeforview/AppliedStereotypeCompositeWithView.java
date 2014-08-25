@@ -139,7 +139,7 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.profile.ui.composites.StereotypeComposite#removeButtonPressed()
 	 */
 	@Override

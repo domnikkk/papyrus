@@ -38,7 +38,7 @@ public class PapyrusModelPasteAction extends PasteAction {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.onefile.action.PasteAction#createCopyFilesAndFolderOperation(org.eclipse.swt.widgets.Shell)
 	 */
 	@Override

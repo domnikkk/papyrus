@@ -15,13 +15,10 @@ package org.eclipse.papyrus.infra.viewpoints.iso42010.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Architecture;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
 
@@ -43,7 +40,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	 * The cached value of the '{@link #getExhibitedIn() <em>Exhibited In</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExhibitedIn()
 	 * @generated
 	 * @ordered
@@ -53,7 +50,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureImpl() {
@@ -63,7 +60,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +71,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.papyrus.infra.viewpoints.iso42010.System getExhibitedIn() {
@@ -93,7 +90,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.papyrus.infra.viewpoints.iso42010.System basicGetExhibitedIn() {
@@ -103,7 +100,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetExhibitedIn(org.eclipse.papyrus.infra.viewpoints.iso42010.System newExhibitedIn, NotificationChain msgs) {
@@ -123,7 +120,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setExhibitedIn(org.eclipse.papyrus.infra.viewpoints.iso42010.System newExhibitedIn) {
@@ -148,7 +145,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +163,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +178,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +196,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +212,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +228,7 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

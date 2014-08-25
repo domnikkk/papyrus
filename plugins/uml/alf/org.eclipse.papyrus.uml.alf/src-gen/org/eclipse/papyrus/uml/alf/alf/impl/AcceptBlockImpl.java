@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AcceptBlock;
 import org.eclipse.papyrus.uml.alf.alf.AcceptClause;
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
@@ -95,7 +92,11 @@ public class AcceptBlockImpl extends MinimalEObjectImpl.Container implements Acc
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_BLOCK__CLAUSE, oldClause, newClause);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -110,15 +111,20 @@ public class AcceptBlockImpl extends MinimalEObjectImpl.Container implements Acc
     if (newClause != clause)
     {
       NotificationChain msgs = null;
-      if (clause != null)
-        msgs = ((InternalEObject)clause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_BLOCK__CLAUSE, null, msgs);
-      if (newClause != null)
-        msgs = ((InternalEObject)newClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_BLOCK__CLAUSE, null, msgs);
+      if (clause != null) {
+		msgs = ((InternalEObject)clause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_BLOCK__CLAUSE, null, msgs);
+	}
+      if (newClause != null) {
+		msgs = ((InternalEObject)newClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_BLOCK__CLAUSE, null, msgs);
+	}
       msgs = basicSetClause(newClause, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_BLOCK__CLAUSE, newClause, newClause));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_BLOCK__CLAUSE, newClause, newClause));
+	}
   }
 
   /**
@@ -143,7 +149,11 @@ public class AcceptBlockImpl extends MinimalEObjectImpl.Container implements Acc
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_BLOCK__BLOCK, oldBlock, newBlock);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -158,15 +168,20 @@ public class AcceptBlockImpl extends MinimalEObjectImpl.Container implements Acc
     if (newBlock != block)
     {
       NotificationChain msgs = null;
-      if (block != null)
-        msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_BLOCK__BLOCK, null, msgs);
-      if (newBlock != null)
-        msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_BLOCK__BLOCK, null, msgs);
+      if (block != null) {
+		msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_BLOCK__BLOCK, null, msgs);
+	}
+      if (newBlock != null) {
+		msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_BLOCK__BLOCK, null, msgs);
+	}
       msgs = basicSetBlock(newBlock, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_BLOCK__BLOCK, newBlock, newBlock));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_BLOCK__BLOCK, newBlock, newBlock));
+	}
   }
 
   /**

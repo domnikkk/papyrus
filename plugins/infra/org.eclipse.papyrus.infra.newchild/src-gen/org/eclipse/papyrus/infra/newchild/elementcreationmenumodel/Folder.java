@@ -39,7 +39,7 @@ public interface Folder extends Menu {
 	 * If the meaning of the '<em>Menu</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Menu</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelPackage#getFolder_Menu()
 	 * @model containment="true"

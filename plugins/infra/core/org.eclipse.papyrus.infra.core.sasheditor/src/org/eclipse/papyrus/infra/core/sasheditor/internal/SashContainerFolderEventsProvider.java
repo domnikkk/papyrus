@@ -64,7 +64,7 @@ public class SashContainerFolderEventsProvider {
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param newEditor
 	 */
 	public void fireFolderCreatedEvent(TabFolderPart folder) {
@@ -76,7 +76,7 @@ public class SashContainerFolderEventsProvider {
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param newEditor
 	 */
 	public void fireFolderDisposedEvent(TabFolderPart folder) {

@@ -33,7 +33,7 @@ public class MenuActionImpl extends MenuItemImpl implements MenuAction {
 	 * The cached value of the '{@link #getElementType() <em>Element Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementType()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class MenuActionImpl extends MenuItemImpl implements MenuAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MenuActionImpl() {
@@ -53,7 +53,7 @@ public class MenuActionImpl extends MenuItemImpl implements MenuAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class MenuActionImpl extends MenuItemImpl implements MenuAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject getElementType() {
@@ -83,7 +83,7 @@ public class MenuActionImpl extends MenuItemImpl implements MenuAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetElementType() {
@@ -93,7 +93,7 @@ public class MenuActionImpl extends MenuItemImpl implements MenuAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElementType(EObject newElementType) {
@@ -107,7 +107,7 @@ public class MenuActionImpl extends MenuItemImpl implements MenuAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class MenuActionImpl extends MenuItemImpl implements MenuAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class MenuActionImpl extends MenuItemImpl implements MenuAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class MenuActionImpl extends MenuItemImpl implements MenuAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

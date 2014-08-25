@@ -100,7 +100,7 @@ public class OclQueryWidget extends AbstractQueryWidget<ETypedElement> implement
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.query.ocl.sdk.ui.internal.widget.query.IOclQueryWidget#setExpression(java.lang.String)
 	 */
 	public void setExpression(final String expression) {

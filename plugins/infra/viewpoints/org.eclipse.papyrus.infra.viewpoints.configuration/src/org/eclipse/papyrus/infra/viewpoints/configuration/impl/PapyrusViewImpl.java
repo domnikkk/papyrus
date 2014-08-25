@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.infra.viewpoints.configuration.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -55,7 +56,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -65,7 +66,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -75,7 +76,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getParent()
 	 * @generated
 	 * @ordered
@@ -85,7 +86,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getProfiles() <em>Profiles</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProfiles()
 	 * @generated
 	 * @ordered
@@ -95,7 +96,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getModelRules() <em>Model Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getModelRules()
 	 * @generated
 	 * @ordered
@@ -105,7 +106,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getOwningRules() <em>Owning Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwningRules()
 	 * @generated
 	 * @ordered
@@ -116,7 +117,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The default value of the '{@link #getImplementationID() <em>Implementation ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImplementationID()
 	 * @generated
 	 * @ordered
@@ -126,7 +127,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getImplementationID() <em>Implementation ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImplementationID()
 	 * @generated
 	 * @ordered
@@ -137,7 +138,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	 * The cached value of the '{@link #getCategories() <em>Categories</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCategories()
 	 * @generated
 	 * @ordered
@@ -147,7 +148,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PapyrusViewImpl() {
@@ -157,7 +158,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +169,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIcon() {
@@ -178,7 +179,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIcon(String newIcon) {
@@ -192,7 +193,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusView getParent() {
@@ -211,7 +212,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusView basicGetParent() {
@@ -221,7 +222,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setParent(PapyrusView newParent) {
@@ -235,7 +236,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<EPackage> getProfiles() {
@@ -248,7 +249,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ModelRule> getModelRules() {
@@ -261,7 +262,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<OwningRule> getOwningRules() {
@@ -274,7 +275,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getImplementationID() {
@@ -284,7 +285,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setImplementationID(String newImplementationID) {
@@ -298,7 +299,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Category> getCategories() {
@@ -311,7 +312,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -328,7 +329,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,7 +359,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -397,7 +398,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -431,7 +432,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -458,7 +459,7 @@ public class PapyrusViewImpl extends ModelKindImpl implements PapyrusView {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

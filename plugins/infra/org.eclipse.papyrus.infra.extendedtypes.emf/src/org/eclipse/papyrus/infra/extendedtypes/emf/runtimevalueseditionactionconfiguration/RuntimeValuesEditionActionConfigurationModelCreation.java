@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration;
 
 import org.eclipse.papyrus.infra.extendedtypes.IActionConfigurationModelCreation;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfiguration;
 
 /**
  * {@link IActionConfigurationModelCreation} for {@link SetValuesActionConfiguration}

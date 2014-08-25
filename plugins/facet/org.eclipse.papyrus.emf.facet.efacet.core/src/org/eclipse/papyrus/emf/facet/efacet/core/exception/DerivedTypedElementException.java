@@ -16,7 +16,7 @@ import org.eclipse.papyrus.emf.facet.efacet.core.internal.exception.DerivedTyped
 /**
  * This exception is raised when something is wrong with a query, and there is not a more specific
  * sub-class to describe the error (e.g. {@link DerivedTypedElementEvaluationException} )
- * 
+ *
  * @since 0.2
  */
 public class DerivedTypedElementException extends Exception {

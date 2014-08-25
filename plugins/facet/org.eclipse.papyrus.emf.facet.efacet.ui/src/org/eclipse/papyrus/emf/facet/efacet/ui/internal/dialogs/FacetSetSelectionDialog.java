@@ -16,6 +16,10 @@ import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.jface.dialogs.IDialogConstants;
+import org.eclipse.jface.dialogs.IDialogSettings;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
@@ -23,10 +27,6 @@ import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.dialog.IFacetSe
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.widget.FacetSetSelectionControl;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallback;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallbackWithPreCommit;
-import org.eclipse.jface.dialogs.IDialogConstants;
-import org.eclipse.jface.dialogs.IDialogSettings;
-import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;

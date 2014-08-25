@@ -14,15 +14,13 @@
 package org.eclipse.papyrus.infra.viewpoints.configuration.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -51,7 +49,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	 * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -62,7 +60,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	 * The cached value of the '{@link #getStereotypes() <em>Stereotypes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypes()
 	 * @generated
 	 * @ordered
@@ -73,7 +71,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	 * The default value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMultiplicity()
 	 * @generated
 	 * @ordered
@@ -84,7 +82,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	 * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMultiplicity()
 	 * @generated
 	 * @ordered
@@ -95,7 +93,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	 * The cached value of the '{@link #getNewModelPath() <em>New Model Path</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNewModelPath()
 	 * @generated
 	 * @ordered
@@ -105,7 +103,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OwningRuleImpl() {
@@ -115,7 +113,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,7 +124,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getElement() {
@@ -145,7 +143,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass basicGetElement() {
@@ -155,7 +153,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElement(EClass newElement) {
@@ -169,7 +167,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<EClass> getStereotypes() {
@@ -182,7 +180,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getMultiplicity() {
@@ -192,7 +190,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMultiplicity(int newMultiplicity) {
@@ -206,7 +204,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ModelAutoCreate> getNewModelPath() {
@@ -219,7 +217,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +232,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +256,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -286,7 +284,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +309,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +330,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

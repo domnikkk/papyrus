@@ -13,17 +13,13 @@
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.FeatureAxis;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.FeatureIdAxis;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.NattableaxisPackage;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration;
 
 /**

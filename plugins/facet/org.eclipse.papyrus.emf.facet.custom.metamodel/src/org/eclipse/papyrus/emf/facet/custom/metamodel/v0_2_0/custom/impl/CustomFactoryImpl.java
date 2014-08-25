@@ -18,13 +18,19 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.*;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomFactory;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementSwitchQuery;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
@@ -32,7 +38,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static CustomFactory init() {
@@ -51,7 +57,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomFactoryImpl() {
@@ -61,7 +67,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +91,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Customization createCustomization() {
@@ -96,7 +102,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClassCustomization createEClassCustomization() {
@@ -107,7 +113,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FacetCustomization createFacetCustomization() {
@@ -118,7 +124,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ETypedElementSwitchQuery createETypedElementSwitchQuery() {
@@ -129,7 +135,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ETypedElementCase createETypedElementCase() {
@@ -140,7 +146,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomPackage getCustomPackage() {
@@ -150,7 +156,7 @@ public class CustomFactoryImpl extends EFactoryImpl implements CustomFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

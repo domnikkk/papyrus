@@ -15,11 +15,8 @@
 package org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.ProcessingInstruction;
 import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage;
 
@@ -41,7 +38,7 @@ public class ProcessingInstructionImpl extends NodeImpl implements ProcessingIns
 	 * The default value of the '{@link #getData() <em>Data</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -52,7 +49,7 @@ public class ProcessingInstructionImpl extends NodeImpl implements ProcessingIns
 	 * The cached value of the '{@link #getData() <em>Data</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -62,7 +59,7 @@ public class ProcessingInstructionImpl extends NodeImpl implements ProcessingIns
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ProcessingInstructionImpl() {
@@ -72,7 +69,7 @@ public class ProcessingInstructionImpl extends NodeImpl implements ProcessingIns
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +80,7 @@ public class ProcessingInstructionImpl extends NodeImpl implements ProcessingIns
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +91,7 @@ public class ProcessingInstructionImpl extends NodeImpl implements ProcessingIns
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +106,7 @@ public class ProcessingInstructionImpl extends NodeImpl implements ProcessingIns
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +121,7 @@ public class ProcessingInstructionImpl extends NodeImpl implements ProcessingIns
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +137,7 @@ public class ProcessingInstructionImpl extends NodeImpl implements ProcessingIns
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +153,7 @@ public class ProcessingInstructionImpl extends NodeImpl implements ProcessingIns
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +168,7 @@ public class ProcessingInstructionImpl extends NodeImpl implements ProcessingIns
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

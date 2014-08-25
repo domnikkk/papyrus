@@ -21,7 +21,6 @@ import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.AppliedStereotypeIn
 import org.eclipse.papyrus.uml.diagram.clazz.edit.policies.InformationFlowItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editparts.UMLConnectionNodeEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLinkLabelDisplayEditPolicy;
 
 /**
  * @generated

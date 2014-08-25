@@ -34,7 +34,7 @@ public interface PaletteConfiguration extends Configuration {
 	 * If the meaning of the '<em>Drawer Configurations</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Drawer Configurations</em>' containment reference list.
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getPaletteConfiguration_DrawerConfigurations()
 	 * @model containment="true" required="true"
@@ -50,7 +50,7 @@ public interface PaletteConfiguration extends Configuration {
 	 * If the meaning of the '<em>Required Profiles</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Required Profiles</em>' attribute list.
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getPaletteConfiguration_RequiredProfiles()
 	 * @model

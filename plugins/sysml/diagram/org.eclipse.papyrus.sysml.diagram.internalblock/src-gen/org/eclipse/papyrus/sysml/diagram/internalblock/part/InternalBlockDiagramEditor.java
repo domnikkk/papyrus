@@ -40,7 +40,6 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.util.LocalSelectionTransfer;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.papyrus.commands.util.OperationHistoryDirtyState;
-import org.eclipse.papyrus.gmf.diagram.common.compatibility.DiagramVersioningUtils;
 import org.eclipse.papyrus.gmf.diagram.common.compatibility.IDiagramVersionUpdater;
 import org.eclipse.papyrus.infra.core.editor.IMultiDiagramEditor;
 import org.eclipse.papyrus.infra.core.services.ServiceException;

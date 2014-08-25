@@ -32,7 +32,7 @@ public class ReferencePropertyImpl extends ConfigPropertyImpl implements Referen
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public class ReferencePropertyImpl extends ConfigPropertyImpl implements Referen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ReferencePropertyImpl() {
@@ -52,7 +52,7 @@ public class ReferencePropertyImpl extends ConfigPropertyImpl implements Referen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,7 +63,7 @@ public class ReferencePropertyImpl extends ConfigPropertyImpl implements Referen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject getValue() {
@@ -82,7 +82,7 @@ public class ReferencePropertyImpl extends ConfigPropertyImpl implements Referen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetValue() {
@@ -92,7 +92,7 @@ public class ReferencePropertyImpl extends ConfigPropertyImpl implements Referen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValue(EObject newValue) {
@@ -106,7 +106,7 @@ public class ReferencePropertyImpl extends ConfigPropertyImpl implements Referen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class ReferencePropertyImpl extends ConfigPropertyImpl implements Referen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class ReferencePropertyImpl extends ConfigPropertyImpl implements Referen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class ReferencePropertyImpl extends ConfigPropertyImpl implements Referen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

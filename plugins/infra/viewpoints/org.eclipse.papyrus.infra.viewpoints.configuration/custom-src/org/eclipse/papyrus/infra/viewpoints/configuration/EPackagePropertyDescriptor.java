@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 /**
  * Represents a descriptor for properties of type EPackage.
  * This class lists the currently loaded ECore metamodels.
- * 
+ *
  * @author Laurent Wouters
  */
 public class EPackagePropertyDescriptor extends SurrogateItemPropertyDescriptor {

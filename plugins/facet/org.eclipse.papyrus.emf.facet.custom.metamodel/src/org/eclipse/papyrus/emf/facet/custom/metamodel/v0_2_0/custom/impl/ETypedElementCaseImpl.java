@@ -20,9 +20,9 @@ import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	 * The cached value of the '{@link #getCase() <em>Case</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCase()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ETypedElementCaseImpl() {
@@ -74,7 +74,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +85,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ETypedElement getCase() {
@@ -104,7 +104,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ETypedElement basicGetCase() {
@@ -114,7 +114,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCase(ETypedElement newCase) {
@@ -128,7 +128,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Query getValue() {
@@ -138,7 +138,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetValue(Query newValue, NotificationChain msgs) {
@@ -158,7 +158,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValue(Query newValue) {
@@ -183,7 +183,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +198,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +256,7 @@ public class ETypedElementCaseImpl extends EObjectImpl implements ETypedElementC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

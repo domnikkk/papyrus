@@ -40,7 +40,7 @@ public interface ArchitectureModel extends ADElement {
 	 * If the meaning of the '<em>Governed By</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Governed By</em>' reference.
 	 * @see #setGovernedBy(ModelKind)
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureModel_GovernedBy()
@@ -54,7 +54,7 @@ public interface ArchitectureModel extends ADElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel#getGovernedBy <em>Governed By</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Governed By</em>' reference.
 	 * @see #getGovernedBy()
@@ -70,7 +70,7 @@ public interface ArchitectureModel extends ADElement {
 	 * If the meaning of the '<em>View</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>View</em>' container reference.
 	 * @see #setView(ArchitectureView)
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureModel_View()
@@ -84,7 +84,7 @@ public interface ArchitectureModel extends ADElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel#getView <em>View</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>View</em>' container reference.
 	 * @see #getView()

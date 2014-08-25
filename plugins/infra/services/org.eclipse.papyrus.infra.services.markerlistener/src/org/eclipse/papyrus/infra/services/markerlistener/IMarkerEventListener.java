@@ -48,7 +48,7 @@ public interface IMarkerEventListener extends IService {
 
 	/**
 	 * Determines if this listener has to be notified during the initial marker checking performed by MarkersMonitorService
-	 * 
+	 *
 	 * @see MarkersMonitorService.checkMarkers()
 	 *
 	 * @return true if this listener has to be notified during the initial marker checking performed by MarkersMonitorService, false otherwise

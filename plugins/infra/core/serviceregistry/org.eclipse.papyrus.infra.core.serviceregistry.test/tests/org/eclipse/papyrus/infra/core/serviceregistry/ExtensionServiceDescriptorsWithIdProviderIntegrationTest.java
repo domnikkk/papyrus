@@ -51,7 +51,7 @@ public class ExtensionServiceDescriptorsWithIdProviderIntegrationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.internal.ServicesRegistryConfigurationReaderFromExtensions#loadServicesRegistryConfiguration(org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry, java.lang.String)}.
-	 * 
+	 *
 	 * @throws IOException
 	 * @throws ServiceException
 	 * @throws DeclarationException
@@ -86,7 +86,7 @@ public class ExtensionServiceDescriptorsWithIdProviderIntegrationTest {
 	/**
 	 * Test a set extending another set.
 	 * * @throws IOException
-	 * 
+	 *
 	 * @throws ServiceException
 	 * @throws DeclarationException
 	 */
@@ -126,7 +126,7 @@ public class ExtensionServiceDescriptorsWithIdProviderIntegrationTest {
 	/**
 	 * Test a set extending another set.
 	 * * @throws IOException
-	 * 
+	 *
 	 * @throws ServiceException
 	 * @throws DeclarationException
 	 */
@@ -154,7 +154,7 @@ public class ExtensionServiceDescriptorsWithIdProviderIntegrationTest {
 	/**
 	 * Test a set extending another set.
 	 * * @throws IOException
-	 * 
+	 *
 	 * @throws ServiceException
 	 * @throws DeclarationException
 	 */
@@ -181,7 +181,7 @@ public class ExtensionServiceDescriptorsWithIdProviderIntegrationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.internal.ServicesRegistryConfigurationReaderFromExtensions#loadServicesRegistryConfiguration(org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry, java.lang.String)}.
-	 * 
+	 *
 	 * @throws IOException
 	 * @throws ServiceException
 	 * @throws DeclarationException

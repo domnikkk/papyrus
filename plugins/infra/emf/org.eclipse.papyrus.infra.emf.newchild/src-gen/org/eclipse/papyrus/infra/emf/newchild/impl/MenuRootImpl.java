@@ -45,7 +45,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstraints()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	 * The default value of the '{@link #getElementMultiplicity() <em>Element Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementMultiplicity()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	 * The cached value of the '{@link #getElementMultiplicity() <em>Element Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementMultiplicity()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGroups()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MenuRootImpl() {
@@ -120,7 +120,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +131,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ConstraintDescriptor> getConstraints() {
@@ -144,7 +144,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getElementMultiplicity() {
@@ -154,7 +154,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElementMultiplicity(int newElementMultiplicity) {
@@ -168,7 +168,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<MenuGroup> getGroups() {
@@ -181,7 +181,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -191,7 +191,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -205,7 +205,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -221,7 +221,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -287,7 +287,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -312,7 +312,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -333,7 +333,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -354,7 +354,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -375,7 +375,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -32,10 +32,10 @@ import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
 import org.eclipse.papyrus.uml.service.types.utils.ElementUtil;
-import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ConnectorEnd;
+import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -45,7 +45,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * This HelperAdvice completes {@link Classifier} edit commands with the deletion of :
  * - any Generalization related to the Classifier (source or target).
  * - any Association related to the Classifier (source or target type).
- * 
+ *
  * This helper also add Association re-factor command when an Association member end is
  * moved.
  *
@@ -56,7 +56,7 @@ public class ClassifierHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * While deleting a Classifier:
 	 * - remove {@link Generalization} in which this Classifier is involved
 	 * - remove {@link Association} in which this Classifier is involved
@@ -96,7 +96,7 @@ public class ClassifierHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * While moving a {@link Property} to a Classifier:
 	 * - re-orient Association possibly related to the moved Property
 	 * - remove deprecated connectorEnd

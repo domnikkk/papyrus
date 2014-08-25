@@ -26,7 +26,6 @@ import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.uml.diagram.component.custom.edit.command.CustomConnectorCreateCommand;
 import org.eclipse.papyrus.uml.diagram.component.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -34,7 +33,7 @@ import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
  * This class provides a custom edit policy used to replace the SEMANTIC_ROLE
  * generated for the Port element (when used in CompositeStructure Diagram)
  * </pre>
- * 
+ *
  * .
  */
 public class CustomPortItemSemanticEditPolicy extends org.eclipse.papyrus.uml.diagram.component.edit.policies.PortItemSemanticEditPolicy {
@@ -66,7 +65,7 @@ public class CustomPortItemSemanticEditPolicy extends org.eclipse.papyrus.uml.di
 	 * <pre>
 	 * Forbid direct destruction of Port in case the graphical parent is not
 	 * the semantic parent.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -87,7 +86,7 @@ public class CustomPortItemSemanticEditPolicy extends org.eclipse.papyrus.uml.di
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Connector connected to a Port
 	 * on its source end.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -103,7 +102,7 @@ public class CustomPortItemSemanticEditPolicy extends org.eclipse.papyrus.uml.di
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Connector connected to a Port
 	 * on its target end.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

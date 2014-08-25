@@ -38,14 +38,14 @@ import org.eclipse.uml2.types.TypesPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass newchildConfigurationEClass = null;
@@ -53,7 +53,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass menuRootEClass = null;
@@ -61,7 +61,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass menuItemEClass = null;
@@ -69,7 +69,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass menuContainerEClass = null;
@@ -77,7 +77,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass menuEClass = null;
@@ -85,7 +85,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass menuActionEClass = null;
@@ -93,7 +93,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass separatorEClass = null;
@@ -101,7 +101,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass menuGroupEClass = null;
@@ -109,7 +109,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass customFillerEClass = null;
@@ -117,7 +117,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum menuPositionEEnum = null;
@@ -127,7 +127,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage#eNS_URI
 	 * @see #init()
@@ -140,7 +140,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -150,7 +150,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	 *
 	 * <p>
 	 * This method is used to initialize {@link NewchildPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -195,7 +195,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getNewchildConfiguration() {
@@ -205,7 +205,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getNewchildConfiguration_Roots() {
@@ -215,7 +215,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNewchildConfiguration_Name() {
@@ -225,7 +225,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getNewchildConfiguration_NewChildPolicies() {
@@ -235,7 +235,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMenuRoot() {
@@ -245,7 +245,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getMenuRoot_Groups() {
@@ -255,7 +255,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMenuRoot_Name() {
@@ -265,7 +265,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMenuItem() {
@@ -275,7 +275,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMenuItem_Id() {
@@ -285,7 +285,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMenuContainer() {
@@ -295,7 +295,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getMenuContainer_Submenus() {
@@ -305,7 +305,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMenu() {
@@ -315,7 +315,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMenu_Name() {
@@ -325,7 +325,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMenu_Icon() {
@@ -335,7 +335,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMenuAction() {
@@ -345,7 +345,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getMenuAction_ElementType() {
@@ -355,7 +355,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getSeparator() {
@@ -365,7 +365,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMenuGroup() {
@@ -375,7 +375,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMenuGroup_Before() {
@@ -385,7 +385,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMenuGroup_After() {
@@ -395,7 +395,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMenuGroup_AbsolutePosition() {
@@ -405,7 +405,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCustomFiller() {
@@ -415,7 +415,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCustomFiller_ClassName() {
@@ -425,7 +425,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getMenuPosition() {
@@ -435,7 +435,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NewchildFactory getNewchildFactory() {
@@ -445,7 +445,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -455,7 +455,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -504,7 +504,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -514,7 +514,7 @@ public class NewchildPackageImpl extends EPackageImpl implements NewchildPackage
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

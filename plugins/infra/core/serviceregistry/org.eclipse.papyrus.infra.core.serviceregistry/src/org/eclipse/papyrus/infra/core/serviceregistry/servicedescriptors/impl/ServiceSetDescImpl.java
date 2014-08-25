@@ -40,7 +40,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	 * The cached value of the '{@link #getServices() <em>Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getServices()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	 * The cached value of the '{@link #getOwnedServices() <em>Owned Services</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwnedServices()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	 * The cached value of the '{@link #getExtends() <em>Extends</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtends()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -116,7 +116,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ServiceSetDescImpl() {
@@ -126,7 +126,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +216,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -252,7 +252,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -263,7 +263,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -279,7 +279,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +294,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +317,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -349,7 +349,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -377,7 +377,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -400,7 +400,7 @@ public class ServiceSetDescImpl extends EObjectImpl implements ServiceSetDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

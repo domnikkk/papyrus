@@ -449,7 +449,7 @@ public class PaletteUtil {
 
 	/**
 	 * returns <code>true</code> if the descriptor have all necessary profiles
-	 * 
+	 *
 	 * @param diagram
 	 *            The diagram being provided palette elements
 	 * @param provider

@@ -34,7 +34,7 @@ public interface MenuContainer extends EObject {
 	 * If the meaning of the '<em>Submenus</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Submenus</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage#getMenuContainer_Submenus()
 	 * @model containment="true"

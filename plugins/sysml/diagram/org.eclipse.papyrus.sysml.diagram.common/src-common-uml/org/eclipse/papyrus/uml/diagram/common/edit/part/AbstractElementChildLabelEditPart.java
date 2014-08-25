@@ -40,7 +40,6 @@ import org.eclipse.gmf.runtime.common.core.util.Log;
 import org.eclipse.gmf.runtime.common.core.util.Trace;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
@@ -709,7 +708,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	/*
 	 * (non-Javadoc)
 	 * Copied from @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getModelSourceConnections()
-	 * 
+	 *
 	 * @see org.eclipse.gef.editparts.AbstractGraphicalEditPart#getModelSourceConnections()
 	 */
 	@Override
@@ -720,7 +719,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	/*
 	 * (non-Javadoc)
 	 * Copied from @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getModelTargetConnections()
-	 * 
+	 *
 	 * @see org.eclipse.gef.editparts.AbstractGraphicalEditPart#getModelTargetConnections()
 	 */
 	@Override
@@ -732,7 +731,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	/*
 	 * (non-Javadoc)
 	 * Copied from @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getSourceConnectionAnchor()
-	 * 
+	 *
 	 * @see org.eclipse.gef.NodeEditPart#getSourceConnectionAnchor(org.eclipse.gef.ConnectionEditPart)
 	 */
 	@Override
@@ -762,7 +761,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	/*
 	 * (non-Javadoc)
 	 * Copied from @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getAnchorableFigure()
-	 * 
+	 *
 	 * @see org.eclipse.gef.NodeEditPart#getSourceConnectionAnchor(org.eclipse.gef.Request)
 	 */
 	protected IAnchorableFigure getAnchorableFigure() {
@@ -777,7 +776,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	/*
 	 * (non-Javadoc)
 	 * Copied from @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getSourceConnectionAnchor()
-	 * 
+	 *
 	 * @see org.eclipse.gef.NodeEditPart#getSourceConnectionAnchor(org.eclipse.gef.Request)
 	 */
 	@Override
@@ -798,7 +797,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	/*
 	 * (non-Javadoc)
 	 * Copied from @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getTargetConnectionAnchor()
-	 * 
+	 *
 	 * @see org.eclipse.gef.NodeEditPart#getTargetConnectionAnchor(org.eclipse.gef.ConnectionEditPart)
 	 */
 	@Override
@@ -833,7 +832,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	/*
 	 * (non-Javadoc)
 	 * Copied from @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#getTargetConnectionAnchor()
-	 * 
+	 *
 	 * @see org.eclipse.gef.NodeEditPart#getTargetConnectionAnchor(org.eclipse.gef.Request)
 	 */
 	@Override
@@ -854,7 +853,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	/*
 	 * (non-Javadoc)
 	 * Copied from @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#mapConnectionAnchorToTerminal()
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.INodeEditPart#mapConnectionAnchorToTerminal(org.eclipse.draw2d.ConnectionAnchor)
 	 */
 	@Override
@@ -865,7 +864,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 	/*
 	 * (non-Javadoc)
 	 * Copied from @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#mapTerminalToConnectionAnchor()
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.INodeEditPart#mapTerminalToConnectionAnchor(java.lang.String)
 	 */
 	@Override
@@ -876,7 +875,7 @@ public class AbstractElementChildLabelEditPart extends GraphicalEditPart impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.INotableEditPart#canAttachNote()
 	 * Copied from @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#canAttachNote()
 	 */

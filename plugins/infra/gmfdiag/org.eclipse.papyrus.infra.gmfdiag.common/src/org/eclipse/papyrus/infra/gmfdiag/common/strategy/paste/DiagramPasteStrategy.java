@@ -28,7 +28,6 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.infra.core.clipboard.IClipboardAdditionalData;
 import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
 import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
-import org.eclipse.papyrus.infra.gmfdiag.common.DiagramsUtil;
 import org.eclipse.papyrus.infra.gmfdiag.common.commands.InsertDiagramCommand;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
 
@@ -56,7 +55,7 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getLabel()
 	 */
 	@Override
@@ -66,7 +65,7 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getID()
 	 */
 	@Override
@@ -76,7 +75,7 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getDescription()
 	 */
 	@Override
@@ -86,7 +85,7 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getSemanticCommand(org.eclipse.emf.edit.domain.EditingDomain,
 	 * org.eclipse.emf.ecore.EObject, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
@@ -136,7 +135,7 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
 	 */
 	@Override
@@ -146,7 +145,7 @@ public class DiagramPasteStrategy extends AbstractPasteStrategy implements IPast
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#prepare(org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override

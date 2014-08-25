@@ -33,7 +33,7 @@ public class ReferenceAttributeImpl extends WidgetAttributeImpl implements Refer
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class ReferenceAttributeImpl extends WidgetAttributeImpl implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ReferenceAttributeImpl() {
@@ -53,7 +53,7 @@ public class ReferenceAttributeImpl extends WidgetAttributeImpl implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class ReferenceAttributeImpl extends WidgetAttributeImpl implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class ReferenceAttributeImpl extends WidgetAttributeImpl implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetValue(UIComponent newValue, NotificationChain msgs) {
@@ -95,7 +95,7 @@ public class ReferenceAttributeImpl extends WidgetAttributeImpl implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class ReferenceAttributeImpl extends WidgetAttributeImpl implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class ReferenceAttributeImpl extends WidgetAttributeImpl implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class ReferenceAttributeImpl extends WidgetAttributeImpl implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class ReferenceAttributeImpl extends WidgetAttributeImpl implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class ReferenceAttributeImpl extends WidgetAttributeImpl implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

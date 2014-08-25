@@ -25,14 +25,14 @@ public interface IElementTypesBasedTool {
 
 	/**
 	 * Returns the list of element types created by this tool
-	 * 
+	 *
 	 * @return the list of element types created by this tool
 	 */
 	public List<IElementType> getElementTypes();
 
 	/**
 	 * Returns the list of Element descriptors created by this tool
-	 * 
+	 *
 	 * @return the list of Element descriptors created by this tool
 	 */
 	public List<ElementDescriptor> getElementDescriptors();

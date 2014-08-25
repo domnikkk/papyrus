@@ -4,8 +4,8 @@
 package org.eclipse.papyrus.uml.alf;
 
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.xtext.ISetup;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.ISetup;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -23,11 +23,11 @@ public class AlfStandaloneSetupGenerated implements ISetup {
 		register(injector);
 		return injector;
 	}
-	
+
 	public Injector createInjector() {
 		return Guice.createInjector(new org.eclipse.papyrus.uml.alf.AlfRuntimeModule());
 	}
-	
+
 	public void register(Injector injector) {
 	if (!EPackage.Registry.INSTANCE.containsKey("http://www.eclipse.org/papyrus/alf/Alf")) {
 		EPackage.Registry.INSTANCE.put("http://www.eclipse.org/papyrus/alf/Alf", org.eclipse.papyrus.uml.alf.alf.AlfPackage.eINSTANCE);
@@ -37,7 +37,7 @@ public class AlfStandaloneSetupGenerated implements ISetup {
 		org.eclipse.xtext.resource.IResourceServiceProvider serviceProvider = injector.getInstance(org.eclipse.xtext.resource.IResourceServiceProvider.class);
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("alf", resourceFactory);
 		org.eclipse.xtext.resource.IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("alf", serviceProvider);
-		
+
 
 
 

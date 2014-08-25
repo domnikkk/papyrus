@@ -4,17 +4,13 @@ package org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.QualifiedName;
 import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.TypeRule;
 import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage;
-
 import org.eclipse.uml2.uml.Type;
 
 /**
@@ -37,7 +33,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	 * The cached value of the '{@link #getPath() <em>Path</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPath()
 	 * @generated
 	 * @ordered
@@ -48,7 +44,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -58,7 +54,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TypeRuleImpl()
@@ -69,7 +65,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +77,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +89,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPath(QualifiedName newPath, NotificationChain msgs)
@@ -115,7 +111,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +139,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +162,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Type basicGetType()
@@ -177,7 +173,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +189,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +206,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +228,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +249,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +270,7 @@ public class TypeRuleImpl extends MinimalEObjectImpl.Container implements TypeRu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -14,14 +14,14 @@ package org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.window.Window;
+import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.composites.SelectETypeComposite.ETypeSelectionOptions;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.ISelectETypeWizard;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.SelectEClassifierWizardPage;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.SelectEPackageWizardPage;
-import org.eclipse.jface.window.Window;
-import org.eclipse.jface.wizard.Wizard;
-import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.PlatformUI;
 
 public class SelectETypeWizardImpl extends Wizard implements ISelectETypeWizard {

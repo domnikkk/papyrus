@@ -73,7 +73,7 @@ public abstract class CachedResourcesDiagramEditor extends DiagramDocumentEditor
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.
 	 * DiagramDocumentEditor#doSetInput (org.eclipse.ui.IEditorInput, boolean)
 	 */
@@ -155,7 +155,7 @@ public abstract class CachedResourcesDiagramEditor extends DiagramDocumentEditor
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.
 	 * DiagramDocumentEditor#close(boolean )
 	 */

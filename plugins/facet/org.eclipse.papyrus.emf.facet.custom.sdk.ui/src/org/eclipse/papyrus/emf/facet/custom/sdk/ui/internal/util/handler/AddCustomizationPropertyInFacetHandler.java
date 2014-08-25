@@ -15,9 +15,9 @@ package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.handler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.dialog.ICustomizationDialogFactory;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.handler.AbstractSelectionExpectedTypeHandler;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization;
 import org.eclipse.swt.widgets.Display;
 
 /**

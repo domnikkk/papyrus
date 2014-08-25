@@ -42,7 +42,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getParameter()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ParameterValueImpl() {
@@ -84,7 +84,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EParameter getParameter() {
@@ -114,7 +114,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EParameter basicGetParameter() {
@@ -124,7 +124,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setParameter(EParameter newParameter) {
@@ -138,7 +138,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Object getValue() {
@@ -148,7 +148,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValue(Object newValue) {
@@ -162,7 +162,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +201,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

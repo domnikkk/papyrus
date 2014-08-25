@@ -64,7 +64,7 @@ abstract public class ModelCopyWizard extends Wizard implements INewWizard {
 	/**
 	 * Constructor taking modelName as parameter. Default location in
 	 * models/examples is used
-	 * 
+	 *
 	 * @param modelName
 	 *            the name of the example (without extension)
 	 */
@@ -75,7 +75,7 @@ abstract public class ModelCopyWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Constructor taking modelName (without extension) and location as parameters
-	 * 
+	 *
 	 * @param modelName
 	 *            the name of the example (without extension)
 	 * @param modelLocation

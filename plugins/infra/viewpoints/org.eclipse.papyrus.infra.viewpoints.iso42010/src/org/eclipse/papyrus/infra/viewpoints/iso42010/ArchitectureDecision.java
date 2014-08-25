@@ -46,7 +46,7 @@ public interface ArchitectureDecision extends ADElement {
 	 * If the meaning of the '<em>Justified By</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Justified By</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDecision_JustifiedBy()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureRationale#getJustifies
@@ -64,7 +64,7 @@ public interface ArchitectureDecision extends ADElement {
 	 * If the meaning of the '<em>Depends Upon</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Depends Upon</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDecision_DependsUpon()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getDependents
@@ -82,7 +82,7 @@ public interface ArchitectureDecision extends ADElement {
 	 * If the meaning of the '<em>Dependents</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Dependents</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDecision_Dependents()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getDependsUpon
@@ -100,7 +100,7 @@ public interface ArchitectureDecision extends ADElement {
 	 * If the meaning of the '<em>Raises</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Raises</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDecision_Raises()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getRaisedBy
@@ -118,7 +118,7 @@ public interface ArchitectureDecision extends ADElement {
 	 * If the meaning of the '<em>Pertains To</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Pertains To</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDecision_PertainsTo()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getDecisions
@@ -136,7 +136,7 @@ public interface ArchitectureDecision extends ADElement {
 	 * If the meaning of the '<em>Affects</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Affects</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDecision_Affects()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement#getAffectedBy

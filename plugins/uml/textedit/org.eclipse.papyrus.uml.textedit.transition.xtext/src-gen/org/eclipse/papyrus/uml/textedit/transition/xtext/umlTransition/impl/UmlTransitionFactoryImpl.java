@@ -6,18 +6,27 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.*;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AbsoluteTimeEventRule;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AnyReceiveEventRule;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.BehaviorKind;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.CallOrSignalEventRule;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.ChangeEventRule;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.EffectRule;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.EventRule;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.GuardRule;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.RelativeTimeEventRule;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TimeEventRule;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TransitionRule;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionFactory;
+import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransitionFactory
@@ -26,7 +35,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static UmlTransitionFactory init()
@@ -49,7 +58,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UmlTransitionFactoryImpl()
@@ -60,7 +69,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +105,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +123,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +141,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +154,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +167,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +180,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +193,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +206,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +219,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +232,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +245,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +258,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +271,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BehaviorKind createBehaviorKindFromString(EDataType eDataType, String initialValue)
@@ -277,7 +286,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertBehaviorKindToString(EDataType eDataType, Object instanceValue)
@@ -288,7 +297,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +309,7 @@ public class UmlTransitionFactoryImpl extends EFactoryImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

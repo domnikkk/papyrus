@@ -61,7 +61,7 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.onefile.action.CopyFilesAndFoldersOperation#performCopyWithAutoRename(org.eclipse.core.resources.IResource[],
 	 * org.eclipse.core.runtime.IPath, org.eclipse.core.runtime.IProgressMonitor)
 	 */
@@ -109,7 +109,7 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.onefile.action.CopyFilesAndFoldersOperation#performCopy(org.eclipse.core.resources.IResource[],
 	 * org.eclipse.core.runtime.IPath, org.eclipse.core.runtime.IProgressMonitor)
 	 */
@@ -129,7 +129,7 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.onefile.action.CopyFilesAndFoldersOperation#copyResources(org.eclipse.core.resources.IResource[],
 	 * org.eclipse.core.resources.IContainer)
 	 */
@@ -153,7 +153,7 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 
 	/**
 	 * Init a modelSet with registred model from resources
-	 * 
+	 *
 	 * @param resources
 	 * @return
 	 */
@@ -172,7 +172,7 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 
 	/**
 	 * Check if the iResource is known by the ModelSet
-	 * 
+	 *
 	 * @param modelSet
 	 * @param iResource
 	 * @return
@@ -189,7 +189,7 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 	 * - else search the resource in the source location of the copy
 	 *
 	 * Restore links to maintain coherence in the 3 files: uml-notation-di
-	 * 
+	 *
 	 * @param modelSet
 	 * @param constructInternalMapping
 	 * @param copyResources
@@ -215,7 +215,7 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 
 	/**
 	 * Construct an URI mapping from source to target
-	 * 
+	 *
 	 * @param copyResources
 	 * @return
 	 */

@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SerializationFactory
  * @model kind="package"
  * @generated
@@ -41,7 +41,7 @@ public interface SerializationPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "serialization"; //$NON-NLS-1$
@@ -50,7 +50,7 @@ public interface SerializationPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/emf/facet/efacet/0.2.incubation/efacet/serialization"; //$NON-NLS-1$
@@ -59,7 +59,7 @@ public interface SerializationPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "serialization"; //$NON-NLS-1$
@@ -68,7 +68,7 @@ public interface SerializationPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	SerializationPackage eINSTANCE = org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl.init();
@@ -77,7 +77,7 @@ public interface SerializationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.AbstractReferenceInstanceImpl <em>Abstract Reference Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.AbstractReferenceInstanceImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getAbstractReferenceInstance()
 	 * @generated
@@ -88,7 +88,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>EReference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +98,7 @@ public interface SerializationPackage extends EPackage {
 	 * The number of structural features of the '<em>Abstract Reference Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +108,7 @@ public interface SerializationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedContainmentReferenceInstanceImpl <em>Multi Valued Containment Reference Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedContainmentReferenceInstanceImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getMultiValuedContainmentReferenceInstance()
 	 * @generated
@@ -119,7 +119,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>EReference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -129,7 +129,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -139,7 +139,7 @@ public interface SerializationPackage extends EPackage {
 	 * The number of structural features of the '<em>Multi Valued Containment Reference Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -149,7 +149,7 @@ public interface SerializationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedReferenceInstanceImpl <em>Multi Valued Reference Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedReferenceInstanceImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getMultiValuedReferenceInstance()
 	 * @generated
@@ -160,7 +160,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>EReference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -170,7 +170,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>Referenced Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -180,7 +180,7 @@ public interface SerializationPackage extends EPackage {
 	 * The number of structural features of the '<em>Multi Valued Reference Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -190,7 +190,7 @@ public interface SerializationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.AbstractAttributeInstanceImpl <em>Abstract Attribute Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.AbstractAttributeInstanceImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getAbstractAttributeInstance()
 	 * @generated
@@ -201,7 +201,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>EAttribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -211,7 +211,7 @@ public interface SerializationPackage extends EPackage {
 	 * The number of structural features of the '<em>Abstract Attribute Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -221,7 +221,7 @@ public interface SerializationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedAttributeInstanceImpl <em>Single Valued Attribute Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedAttributeInstanceImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getSingleValuedAttributeInstance()
 	 * @generated
@@ -232,7 +232,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>EAttribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -242,7 +242,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -252,7 +252,7 @@ public interface SerializationPackage extends EPackage {
 	 * The number of structural features of the '<em>Single Valued Attribute Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -262,7 +262,7 @@ public interface SerializationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.ExtendedEObjectReferenceImpl <em>Extended EObject Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.ExtendedEObjectReferenceImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getExtendedEObjectReference()
 	 * @generated
@@ -273,7 +273,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>Extended EObject</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -283,7 +283,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>Attribute Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -293,7 +293,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>Reference Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -303,7 +303,7 @@ public interface SerializationPackage extends EPackage {
 	 * The number of structural features of the '<em>Extended EObject Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -313,7 +313,7 @@ public interface SerializationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedContainmentReferenceInstanceImpl <em>Single Valued Containment Reference Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedContainmentReferenceInstanceImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getSingleValuedContainmentReferenceInstance()
 	 * @generated
@@ -324,7 +324,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>EReference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -334,7 +334,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>Owned Element</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -344,7 +344,7 @@ public interface SerializationPackage extends EPackage {
 	 * The number of structural features of the '<em>Single Valued Containment Reference Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -354,7 +354,7 @@ public interface SerializationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedReferenceInstanceImpl <em>Single Valued Reference Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedReferenceInstanceImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getSingleValuedReferenceInstance()
 	 * @generated
@@ -365,7 +365,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>EReference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -375,7 +375,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>Referenced Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -385,7 +385,7 @@ public interface SerializationPackage extends EPackage {
 	 * The number of structural features of the '<em>Single Valued Reference Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -395,7 +395,7 @@ public interface SerializationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedAttributeInstanceImpl <em>Multi Valued Attribute Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedAttributeInstanceImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getMultiValuedAttributeInstance()
 	 * @generated
@@ -406,7 +406,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>EAttribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -416,7 +416,7 @@ public interface SerializationPackage extends EPackage {
 	 * The feature id for the '<em><b>Values</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -426,7 +426,7 @@ public interface SerializationPackage extends EPackage {
 	 * The number of structural features of the '<em>Multi Valued Attribute Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -437,7 +437,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractReferenceInstance <em>Abstract Reference Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Abstract Reference Instance</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractReferenceInstance
 	 * @generated
@@ -448,7 +448,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractReferenceInstance#getEReference <em>EReference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>EReference</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractReferenceInstance#getEReference()
 	 * @see #getAbstractReferenceInstance()
@@ -460,7 +460,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedContainmentReferenceInstance <em>Multi Valued Containment Reference Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Multi Valued Containment Reference Instance</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedContainmentReferenceInstance
 	 * @generated
@@ -471,7 +471,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedContainmentReferenceInstance#getOwnedElements <em>Owned Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Owned Elements</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedContainmentReferenceInstance#getOwnedElements()
 	 * @see #getMultiValuedContainmentReferenceInstance()
@@ -483,7 +483,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedReferenceInstance <em>Multi Valued Reference Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Multi Valued Reference Instance</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedReferenceInstance
 	 * @generated
@@ -494,7 +494,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedReferenceInstance#getReferencedElements <em>Referenced Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Referenced Elements</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedReferenceInstance#getReferencedElements()
 	 * @see #getMultiValuedReferenceInstance()
@@ -506,7 +506,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedAttributeInstance <em>Single Valued Attribute Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Single Valued Attribute Instance</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedAttributeInstance
 	 * @generated
@@ -517,7 +517,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedAttributeInstance#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedAttributeInstance#getValue()
 	 * @see #getSingleValuedAttributeInstance()
@@ -529,7 +529,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.ExtendedEObjectReference <em>Extended EObject Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Extended EObject Reference</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.ExtendedEObjectReference
 	 * @generated
@@ -540,7 +540,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.ExtendedEObjectReference#getExtendedEObject <em>Extended EObject</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Extended EObject</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.ExtendedEObjectReference#getExtendedEObject()
 	 * @see #getExtendedEObjectReference()
@@ -552,7 +552,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.ExtendedEObjectReference#getAttributeInstances <em>Attribute Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Attribute Instances</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.ExtendedEObjectReference#getAttributeInstances()
 	 * @see #getExtendedEObjectReference()
@@ -564,7 +564,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.ExtendedEObjectReference#getReferenceInstances <em>Reference Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Reference Instances</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.ExtendedEObjectReference#getReferenceInstances()
 	 * @see #getExtendedEObjectReference()
@@ -576,7 +576,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedContainmentReferenceInstance <em>Single Valued Containment Reference Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Single Valued Containment Reference Instance</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedContainmentReferenceInstance
 	 * @generated
@@ -587,7 +587,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedContainmentReferenceInstance#getOwnedElement <em>Owned Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Owned Element</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedContainmentReferenceInstance#getOwnedElement()
 	 * @see #getSingleValuedContainmentReferenceInstance()
@@ -599,7 +599,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedReferenceInstance <em>Single Valued Reference Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Single Valued Reference Instance</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedReferenceInstance
 	 * @generated
@@ -610,7 +610,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedReferenceInstance#getReferencedElement <em>Referenced Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Referenced Element</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedReferenceInstance#getReferencedElement()
 	 * @see #getSingleValuedReferenceInstance()
@@ -622,7 +622,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedAttributeInstance <em>Multi Valued Attribute Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Multi Valued Attribute Instance</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedAttributeInstance
 	 * @generated
@@ -633,7 +633,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedAttributeInstance#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Values</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedAttributeInstance#getValues()
 	 * @see #getMultiValuedAttributeInstance()
@@ -645,7 +645,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractAttributeInstance <em>Abstract Attribute Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Abstract Attribute Instance</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractAttributeInstance
 	 * @generated
@@ -656,7 +656,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractAttributeInstance#getEAttribute <em>EAttribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>EAttribute</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractAttributeInstance#getEAttribute()
 	 * @see #getAbstractAttributeInstance()
@@ -668,7 +668,7 @@ public interface SerializationPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -684,7 +684,7 @@ public interface SerializationPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -692,7 +692,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.AbstractReferenceInstanceImpl <em>Abstract Reference Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.AbstractReferenceInstanceImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getAbstractReferenceInstance()
 		 * @generated
@@ -703,7 +703,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>EReference</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ABSTRACT_REFERENCE_INSTANCE__EREFERENCE = eINSTANCE.getAbstractReferenceInstance_EReference();
@@ -712,7 +712,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedContainmentReferenceInstanceImpl <em>Multi Valued Containment Reference Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedContainmentReferenceInstanceImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getMultiValuedContainmentReferenceInstance()
 		 * @generated
@@ -723,7 +723,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owned Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MULTI_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENTS = eINSTANCE.getMultiValuedContainmentReferenceInstance_OwnedElements();
@@ -732,7 +732,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedReferenceInstanceImpl <em>Multi Valued Reference Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedReferenceInstanceImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getMultiValuedReferenceInstance()
 		 * @generated
@@ -743,7 +743,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Referenced Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MULTI_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENTS = eINSTANCE.getMultiValuedReferenceInstance_ReferencedElements();
@@ -752,7 +752,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedAttributeInstanceImpl <em>Single Valued Attribute Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedAttributeInstanceImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getSingleValuedAttributeInstance()
 		 * @generated
@@ -763,7 +763,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SINGLE_VALUED_ATTRIBUTE_INSTANCE__VALUE = eINSTANCE.getSingleValuedAttributeInstance_Value();
@@ -772,7 +772,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.ExtendedEObjectReferenceImpl <em>Extended EObject Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.ExtendedEObjectReferenceImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getExtendedEObjectReference()
 		 * @generated
@@ -783,7 +783,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Extended EObject</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EXTENDED_EOBJECT_REFERENCE__EXTENDED_EOBJECT = eINSTANCE.getExtendedEObjectReference_ExtendedEObject();
@@ -792,7 +792,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Attribute Instances</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EXTENDED_EOBJECT_REFERENCE__ATTRIBUTE_INSTANCES = eINSTANCE.getExtendedEObjectReference_AttributeInstances();
@@ -801,7 +801,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Reference Instances</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EXTENDED_EOBJECT_REFERENCE__REFERENCE_INSTANCES = eINSTANCE.getExtendedEObjectReference_ReferenceInstances();
@@ -810,7 +810,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedContainmentReferenceInstanceImpl <em>Single Valued Containment Reference Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedContainmentReferenceInstanceImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getSingleValuedContainmentReferenceInstance()
 		 * @generated
@@ -821,7 +821,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owned Element</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SINGLE_VALUED_CONTAINMENT_REFERENCE_INSTANCE__OWNED_ELEMENT = eINSTANCE.getSingleValuedContainmentReferenceInstance_OwnedElement();
@@ -830,7 +830,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedReferenceInstanceImpl <em>Single Valued Reference Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SingleValuedReferenceInstanceImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getSingleValuedReferenceInstance()
 		 * @generated
@@ -841,7 +841,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Referenced Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SINGLE_VALUED_REFERENCE_INSTANCE__REFERENCED_ELEMENT = eINSTANCE.getSingleValuedReferenceInstance_ReferencedElement();
@@ -850,7 +850,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedAttributeInstanceImpl <em>Multi Valued Attribute Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.MultiValuedAttributeInstanceImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getMultiValuedAttributeInstance()
 		 * @generated
@@ -861,7 +861,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MULTI_VALUED_ATTRIBUTE_INSTANCE__VALUES = eINSTANCE.getMultiValuedAttributeInstance_Values();
@@ -870,7 +870,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.AbstractAttributeInstanceImpl <em>Abstract Attribute Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.AbstractAttributeInstanceImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.SerializationPackageImpl#getAbstractAttributeInstance()
 		 * @generated
@@ -881,7 +881,7 @@ public interface SerializationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>EAttribute</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ABSTRACT_ATTRIBUTE_INSTANCE__EATTRIBUTE = eINSTANCE.getAbstractAttributeInstance_EAttribute();

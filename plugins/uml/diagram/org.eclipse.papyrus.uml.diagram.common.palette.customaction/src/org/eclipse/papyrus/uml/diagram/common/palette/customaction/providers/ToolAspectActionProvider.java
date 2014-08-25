@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
 
 /**
  * Provider for custom creation
- * 
+ *
  * @author tfaure
  *
  */
@@ -47,7 +47,7 @@ public class ToolAspectActionProvider extends AbstractAspectActionProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.service.palette.IAspectActionProvider#isEnable(org.eclipse.papyrus.uml.diagram.common.service.palette.IPaletteEntryProxy)
 	 */
 	public boolean isEnable(final IPaletteEntryProxy entryProxy) {

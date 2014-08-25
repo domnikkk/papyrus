@@ -37,7 +37,7 @@ public class ContextElementAdapter extends AdapterImpl {
 		/**
 		 * Initialize the resource according to the context object. This function needs to be
 		 * called after resource creation and addition to the resource set
-		 * 
+		 *
 		 * @param resource
 		 *            the xtext resource for the editor.
 		 */

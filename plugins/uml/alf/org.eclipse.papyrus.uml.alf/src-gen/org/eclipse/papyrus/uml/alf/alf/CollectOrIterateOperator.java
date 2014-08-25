@@ -219,5 +219,5 @@ public enum CollectOrIterateOperator implements Enumerator
   {
     return literal;
   }
-  
+
 } //CollectOrIterateOperator

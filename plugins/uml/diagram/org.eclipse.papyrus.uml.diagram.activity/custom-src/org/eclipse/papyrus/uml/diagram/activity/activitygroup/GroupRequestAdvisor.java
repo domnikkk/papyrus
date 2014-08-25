@@ -151,7 +151,7 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.ui.toolbox.notification.NotificationRunnable#run(org.eclipse.papyrus.ui.toolbox.notification.builders.IContext)
 		 */
 		@Override
@@ -210,7 +210,7 @@ public class GroupRequestAdvisor implements IGroupRequestAdvisor {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.ui.toolbox.notification.NotificationRunnable#getLabel()
 		 */
 		@Override

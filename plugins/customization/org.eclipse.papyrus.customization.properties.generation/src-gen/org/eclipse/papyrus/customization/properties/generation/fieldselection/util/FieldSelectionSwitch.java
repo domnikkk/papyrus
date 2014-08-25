@@ -23,7 +23,7 @@ import org.eclipse.papyrus.customization.properties.generation.fieldselection.Pr
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelectionPackage
  * @generated
  */
@@ -34,7 +34,7 @@ public class FieldSelectionSwitch<T> extends
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static FieldSelectionPackage modelPackage;
@@ -43,7 +43,7 @@ public class FieldSelectionSwitch<T> extends
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FieldSelectionSwitch() {
@@ -56,7 +56,7 @@ public class FieldSelectionSwitch<T> extends
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -70,7 +70,7 @@ public class FieldSelectionSwitch<T> extends
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -112,7 +112,7 @@ public class FieldSelectionSwitch<T> extends
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Field Selection</em>'.
@@ -129,7 +129,7 @@ public class FieldSelectionSwitch<T> extends
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Property Definition</em>'.
@@ -146,7 +146,7 @@ public class FieldSelectionSwitch<T> extends
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Context Element</em>'.
@@ -163,7 +163,7 @@ public class FieldSelectionSwitch<T> extends
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

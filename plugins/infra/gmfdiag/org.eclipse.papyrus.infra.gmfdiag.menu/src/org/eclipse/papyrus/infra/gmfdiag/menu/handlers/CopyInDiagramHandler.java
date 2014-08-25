@@ -52,7 +52,7 @@ public class CopyInDiagramHandler extends AbstractGraphicalCommandHandler {
 
 	/**
 	 * Construct copy command from the selection
-	 * 
+	 *
 	 * @param editingDomain
 	 * @param selectedElements
 	 * @return
@@ -107,7 +107,7 @@ public class CopyInDiagramHandler extends AbstractGraphicalCommandHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.menu.handlers.AbstractGraphicalCommandHandler#setEnabled(java.lang.Object)
 	 */
 	@Override

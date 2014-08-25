@@ -220,7 +220,7 @@ public class PropertyXtextDirectEditorConfiguration extends DefaultXtextDirectEd
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.infra.gmfdiag.xtext.glue.PopupEditorConfiguration
 	 * #getTextToEdit(java.lang.Object)

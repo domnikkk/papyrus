@@ -40,7 +40,7 @@ public interface JavaQuery extends Query {
 	 * If the meaning of the '<em>Implementation Class Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Implementation Class Name</em>' attribute.
 	 * @see #setImplementationClassName(String)
 	 * @see org.eclipse.papyrus.emf.facet.query.java.javaquery.JavaqueryPackage#getJavaQuery_ImplementationClassName()
@@ -53,7 +53,7 @@ public interface JavaQuery extends Query {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.query.java.javaquery.JavaQuery#getImplementationClassName <em>Implementation Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Implementation Class Name</em>' attribute.
 	 * @see #getImplementationClassName()

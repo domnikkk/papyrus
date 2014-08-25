@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.DynamicValue;
 import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationPackage;
 
@@ -20,7 +19,7 @@ public abstract class DynamicValueImpl extends FeatureValueImpl implements Dynam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DynamicValueImpl() {
@@ -30,7 +29,7 @@ public abstract class DynamicValueImpl extends FeatureValueImpl implements Dynam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

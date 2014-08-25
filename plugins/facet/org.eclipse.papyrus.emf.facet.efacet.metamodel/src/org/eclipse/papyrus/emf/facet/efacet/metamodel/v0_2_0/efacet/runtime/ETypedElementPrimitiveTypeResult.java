@@ -48,7 +48,7 @@ public interface ETypedElementPrimitiveTypeResult<T> extends ETypedElementResult
 	 * If the meaning of the '<em>Result</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Result</em>' attribute.
 	 * @see #setResult(Object)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.RuntimePackage#getETypedElementPrimitiveTypeResult_Result()
@@ -61,7 +61,7 @@ public interface ETypedElementPrimitiveTypeResult<T> extends ETypedElementResult
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.ETypedElementPrimitiveTypeResult#getResult <em>Result</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Result</em>' attribute.
 	 * @see #getResult()

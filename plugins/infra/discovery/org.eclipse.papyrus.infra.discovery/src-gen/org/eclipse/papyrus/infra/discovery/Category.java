@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.infra.discovery;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -45,7 +44,7 @@ public interface Category extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getCategory_Name()
@@ -58,7 +57,7 @@ public interface Category extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.Category#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -73,7 +72,7 @@ public interface Category extends EObject {
 	 * If the meaning of the '<em>Description</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getCategory_Description()
@@ -86,7 +85,7 @@ public interface Category extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.Category#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
@@ -103,7 +102,7 @@ public interface Category extends EObject {
 	 * If the meaning of the '<em>Components</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Components</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getCategory_Components()
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getCategory
@@ -120,7 +119,7 @@ public interface Category extends EObject {
 	 * If the meaning of the '<em>Relevance</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Relevance</em>' attribute.
 	 * @see #setRelevance(Integer)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getCategory_Relevance()
@@ -133,7 +132,7 @@ public interface Category extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.Category#getRelevance <em>Relevance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Relevance</em>' attribute.
 	 * @see #getRelevance()
@@ -148,7 +147,7 @@ public interface Category extends EObject {
 	 * If the meaning of the '<em>Overview</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Overview</em>' containment reference.
 	 * @see #setOverview(Overview)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getCategory_Overview()
@@ -161,7 +160,7 @@ public interface Category extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.Category#getOverview <em>Overview</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Overview</em>' containment reference.
 	 * @see #getOverview()
@@ -176,7 +175,7 @@ public interface Category extends EObject {
 	 * If the meaning of the '<em>Image48</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Image48</em>' attribute.
 	 * @see #setImage48(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getCategory_Image48()
@@ -189,7 +188,7 @@ public interface Category extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.Category#getImage48 <em>Image48</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Image48</em>' attribute.
 	 * @see #getImage48()

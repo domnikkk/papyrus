@@ -23,7 +23,7 @@ public abstract class ChildConfigurationImpl extends ConfigurationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ChildConfigurationImpl() {
@@ -33,7 +33,7 @@ public abstract class ChildConfigurationImpl extends ConfigurationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

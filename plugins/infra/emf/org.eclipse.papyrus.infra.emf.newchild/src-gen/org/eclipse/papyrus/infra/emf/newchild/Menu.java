@@ -32,7 +32,7 @@ public interface Menu extends MenuContainer, MenuItem {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage#getMenu_Name()
@@ -45,7 +45,7 @@ public interface Menu extends MenuContainer, MenuItem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.Menu#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -60,7 +60,7 @@ public interface Menu extends MenuContainer, MenuItem {
 	 * If the meaning of the '<em>Icon</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Icon</em>' attribute.
 	 * @see #setIcon(String)
 	 * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage#getMenu_Icon()
@@ -73,7 +73,7 @@ public interface Menu extends MenuContainer, MenuItem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.Menu#getIcon <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Icon</em>' attribute.
 	 * @see #getIcon()

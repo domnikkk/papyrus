@@ -50,7 +50,7 @@ public abstract class AbstractCommandWidget extends AbstractWidget implements IC
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.ICommandWidget#getCommand()
 	 */
 	public abstract Object getCommand();

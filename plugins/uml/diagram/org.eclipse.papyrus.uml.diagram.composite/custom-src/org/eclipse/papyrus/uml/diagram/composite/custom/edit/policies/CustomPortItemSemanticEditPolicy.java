@@ -28,7 +28,6 @@ import org.eclipse.papyrus.uml.diagram.composite.custom.edit.command.CustomConne
 import org.eclipse.papyrus.uml.diagram.composite.custom.edit.command.CustomRoleBindingCreateCommand;
 import org.eclipse.papyrus.uml.diagram.composite.edit.parts.ConnectorEditPart;
 import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
 
 /**
  * <pre>
@@ -65,7 +64,7 @@ public class CustomPortItemSemanticEditPolicy extends org.eclipse.papyrus.uml.di
 	 * <pre>
 	 * Forbid direct destruction of Port in case the graphical parent is not
 	 * the semantic parent.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -86,7 +85,7 @@ public class CustomPortItemSemanticEditPolicy extends org.eclipse.papyrus.uml.di
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Connector connected to a Port
 	 * on its source end.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -105,7 +104,7 @@ public class CustomPortItemSemanticEditPolicy extends org.eclipse.papyrus.uml.di
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Connector connected to a Port
 	 * on its target end.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

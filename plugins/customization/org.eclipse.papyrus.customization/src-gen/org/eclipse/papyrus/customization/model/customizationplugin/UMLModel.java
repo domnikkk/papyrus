@@ -39,7 +39,7 @@ public interface UMLModel extends FileBasedCustomizableElement {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage#getUMLModel_Name()
@@ -52,7 +52,7 @@ public interface UMLModel extends FileBasedCustomizableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.model.customizationplugin.UMLModel#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -67,7 +67,7 @@ public interface UMLModel extends FileBasedCustomizableElement {
 	 * If the meaning of the '<em>Iconpath</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Iconpath</em>' attribute.
 	 * @see #setIconpath(String)
 	 * @see org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage#getUMLModel_Iconpath()
@@ -80,7 +80,7 @@ public interface UMLModel extends FileBasedCustomizableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.model.customizationplugin.UMLModel#getIconpath <em>Iconpath</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Iconpath</em>' attribute.
 	 * @see #getIconpath()
@@ -95,7 +95,7 @@ public interface UMLModel extends FileBasedCustomizableElement {
 	 * If the meaning of the '<em>Description</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage#getUMLModel_Description()
@@ -108,7 +108,7 @@ public interface UMLModel extends FileBasedCustomizableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.model.customizationplugin.UMLModel#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
@@ -123,7 +123,7 @@ public interface UMLModel extends FileBasedCustomizableElement {
 	 * If the meaning of the '<em>Provider</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Provider</em>' attribute.
 	 * @see #setProvider(String)
 	 * @see org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage#getUMLModel_Provider()
@@ -136,7 +136,7 @@ public interface UMLModel extends FileBasedCustomizableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.model.customizationplugin.UMLModel#getProvider <em>Provider</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Provider</em>' attribute.
 	 * @see #getProvider()

@@ -13,13 +13,9 @@
 package org.eclipse.papyrus.infra.nattable.model.nattable;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.LocalTableHeaderAxisConfiguration;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.AbstractAxisProvider;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Cell;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableConfiguration;
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement;
@@ -101,7 +97,7 @@ public interface Table extends TableNamedElement {
 	 * If the meaning of the '<em>Owner</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owner</em>' reference.
 	 * @see #setOwner(EObject)
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.NattablePackage#getTable_Owner()
@@ -114,7 +110,7 @@ public interface Table extends TableNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getOwner <em>Owner</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Owner</em>' reference.
 	 * @see #getOwner()
@@ -129,7 +125,7 @@ public interface Table extends TableNamedElement {
 	 * If the meaning of the '<em>Prototype</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Prototype</em>' reference.
 	 * @see #setPrototype(EObject)
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.NattablePackage#getTable_Prototype()
@@ -142,7 +138,7 @@ public interface Table extends TableNamedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.nattable.model.nattable.Table#getPrototype <em>Prototype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Prototype</em>' reference.
 	 * @see #getPrototype()

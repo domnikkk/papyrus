@@ -42,7 +42,7 @@ public class AbstractChooseElement extends Dialog {
 
 	/**
 	 * Create the dialog.
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -53,7 +53,7 @@ public class AbstractChooseElement extends Dialog {
 
 	/**
 	 * Open the dialog.
-	 * 
+	 *
 	 * @return the result
 	 */
 	public Object open() {

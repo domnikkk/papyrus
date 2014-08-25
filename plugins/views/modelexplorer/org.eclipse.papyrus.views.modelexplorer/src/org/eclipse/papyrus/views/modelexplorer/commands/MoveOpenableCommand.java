@@ -27,7 +27,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 
 /**
  * Command to move a diagram from a resource to another
- * 
+ *
  * @author arthur daussy
  *
  */

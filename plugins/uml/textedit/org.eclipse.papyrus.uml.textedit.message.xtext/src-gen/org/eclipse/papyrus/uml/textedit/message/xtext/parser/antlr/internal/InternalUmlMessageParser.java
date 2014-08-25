@@ -1,11 +1,15 @@
 package org.eclipse.papyrus.uml.textedit.message.xtext.parser.antlr.internal;
 
+import org.antlr.runtime.BitSet;
+import org.antlr.runtime.NoViableAltException;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.RecognizerSharedState;
+import org.antlr.runtime.Token;
+import org.antlr.runtime.TokenStream;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.uml.textedit.message.xtext.services.UmlMessageGrammarAccess;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
-import org.eclipse.papyrus.uml.textedit.message.xtext.services.UmlMessageGrammarAccess;
-
-import org.antlr.runtime.*;
 
 @SuppressWarnings("all")
 public class InternalUmlMessageParser extends AbstractInternalAntlrParser {

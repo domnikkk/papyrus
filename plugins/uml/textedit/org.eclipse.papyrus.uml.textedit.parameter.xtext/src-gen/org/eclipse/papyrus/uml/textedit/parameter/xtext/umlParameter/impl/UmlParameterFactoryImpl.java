@@ -6,18 +6,22 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.*;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.EffectKind;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.EffectRule;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierKind;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierSpecification;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifiersRule;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ParameterRule;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.UmlParameterFactory;
+import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.UmlParameterPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParameterFactory
@@ -26,7 +30,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static UmlParameterFactory init()
@@ -49,7 +53,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UmlParameterFactoryImpl()
@@ -60,7 +64,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +88,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +108,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +128,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +141,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +154,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +167,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +180,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModifierKind createModifierKindFromString(EDataType eDataType, String initialValue)
@@ -191,7 +195,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertModifierKindToString(EDataType eDataType, Object instanceValue)
@@ -202,7 +206,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EffectKind createEffectKindFromString(EDataType eDataType, String initialValue)
@@ -217,7 +221,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertEffectKindToString(EDataType eDataType, Object instanceValue)
@@ -228,7 +232,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +244,7 @@ public class UmlParameterFactoryImpl extends EFactoryImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

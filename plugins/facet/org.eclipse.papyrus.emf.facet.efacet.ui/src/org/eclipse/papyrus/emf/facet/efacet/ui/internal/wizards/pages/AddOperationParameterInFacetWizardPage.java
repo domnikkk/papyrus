@@ -12,10 +12,10 @@
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages;
 
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.papyrus.emf.facet.efacet.FacetOperation;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.emf.facet.efacet.FacetOperation;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;

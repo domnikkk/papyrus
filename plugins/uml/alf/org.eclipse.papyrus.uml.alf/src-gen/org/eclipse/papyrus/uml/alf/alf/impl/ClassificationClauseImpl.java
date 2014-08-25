@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.ClassificationClause;
 import org.eclipse.papyrus.uml.alf.alf.ClassificationFromClause;
@@ -107,7 +104,11 @@ public class ClassificationClauseImpl extends MinimalEObjectImpl.Container imple
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_FROM_CLAUSE, oldClassifyFromClause, newClassifyFromClause);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -122,15 +123,20 @@ public class ClassificationClauseImpl extends MinimalEObjectImpl.Container imple
     if (newClassifyFromClause != classifyFromClause)
     {
       NotificationChain msgs = null;
-      if (classifyFromClause != null)
-        msgs = ((InternalEObject)classifyFromClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_FROM_CLAUSE, null, msgs);
-      if (newClassifyFromClause != null)
-        msgs = ((InternalEObject)newClassifyFromClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_FROM_CLAUSE, null, msgs);
+      if (classifyFromClause != null) {
+		msgs = ((InternalEObject)classifyFromClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_FROM_CLAUSE, null, msgs);
+	}
+      if (newClassifyFromClause != null) {
+		msgs = ((InternalEObject)newClassifyFromClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_FROM_CLAUSE, null, msgs);
+	}
       msgs = basicSetClassifyFromClause(newClassifyFromClause, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_FROM_CLAUSE, newClassifyFromClause, newClassifyFromClause));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_FROM_CLAUSE, newClassifyFromClause, newClassifyFromClause));
+	}
   }
 
   /**
@@ -155,7 +161,11 @@ public class ClassificationClauseImpl extends MinimalEObjectImpl.Container imple
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_TO_CLAUSE, oldClassifyToClause, newClassifyToClause);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -170,15 +180,20 @@ public class ClassificationClauseImpl extends MinimalEObjectImpl.Container imple
     if (newClassifyToClause != classifyToClause)
     {
       NotificationChain msgs = null;
-      if (classifyToClause != null)
-        msgs = ((InternalEObject)classifyToClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_TO_CLAUSE, null, msgs);
-      if (newClassifyToClause != null)
-        msgs = ((InternalEObject)newClassifyToClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_TO_CLAUSE, null, msgs);
+      if (classifyToClause != null) {
+		msgs = ((InternalEObject)classifyToClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_TO_CLAUSE, null, msgs);
+	}
+      if (newClassifyToClause != null) {
+		msgs = ((InternalEObject)newClassifyToClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_TO_CLAUSE, null, msgs);
+	}
       msgs = basicSetClassifyToClause(newClassifyToClause, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_TO_CLAUSE, newClassifyToClause, newClassifyToClause));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_CLAUSE__CLASSIFY_TO_CLAUSE, newClassifyToClause, newClassifyToClause));
+	}
   }
 
   /**
@@ -203,7 +218,11 @@ public class ClassificationClauseImpl extends MinimalEObjectImpl.Container imple
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_CLAUSE__RECLASSY_ALL_CLAUSE, oldReclassyAllClause, newReclassyAllClause);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -218,15 +237,20 @@ public class ClassificationClauseImpl extends MinimalEObjectImpl.Container imple
     if (newReclassyAllClause != reclassyAllClause)
     {
       NotificationChain msgs = null;
-      if (reclassyAllClause != null)
-        msgs = ((InternalEObject)reclassyAllClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_CLAUSE__RECLASSY_ALL_CLAUSE, null, msgs);
-      if (newReclassyAllClause != null)
-        msgs = ((InternalEObject)newReclassyAllClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_CLAUSE__RECLASSY_ALL_CLAUSE, null, msgs);
+      if (reclassyAllClause != null) {
+		msgs = ((InternalEObject)reclassyAllClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_CLAUSE__RECLASSY_ALL_CLAUSE, null, msgs);
+	}
+      if (newReclassyAllClause != null) {
+		msgs = ((InternalEObject)newReclassyAllClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFICATION_CLAUSE__RECLASSY_ALL_CLAUSE, null, msgs);
+	}
       msgs = basicSetReclassyAllClause(newReclassyAllClause, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_CLAUSE__RECLASSY_ALL_CLAUSE, newReclassyAllClause, newReclassyAllClause));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFICATION_CLAUSE__RECLASSY_ALL_CLAUSE, newReclassyAllClause, newReclassyAllClause));
+	}
   }
 
   /**

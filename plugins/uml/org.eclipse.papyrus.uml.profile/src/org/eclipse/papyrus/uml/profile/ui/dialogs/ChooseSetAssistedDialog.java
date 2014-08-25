@@ -57,6 +57,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 
 
@@ -256,7 +257,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.ui.dialogs.ChooseSetDialog#createButtonsForButtonBar(org.eclipse.swt.widgets.Composite)
 	 */
 	/**
@@ -274,7 +275,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#createDialogArea(org.eclipse.swt.widgets.Composite)
 	 */
 	/**
@@ -488,7 +489,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.ui.dialogs.IChooseDialog#getValue()
 	 */
 	/**
@@ -941,7 +942,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.swt.events.KeyListener#keyPressed(org.eclipse.swt.events.KeyEvent)
 		 */
 		/**
@@ -962,7 +963,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.swt.events.KeyListener#keyReleased(org.eclipse.swt.events.KeyEvent)
 		 */
 		/**
@@ -1124,7 +1125,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 		 */
 		/**
@@ -1148,7 +1149,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
 		 */
 		/**
@@ -1173,7 +1174,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.IListViewer#addElement(java.lang.Object)
 		 */
 		/**
@@ -1188,7 +1189,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.IListViewer#removeElement(java.lang.Object)
 		 */
 		/**
@@ -1203,7 +1204,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.IListViewer#updateElement(java.lang.Object)
 		 */
 		/**
@@ -1225,7 +1226,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 		 */
 		/**
@@ -1249,7 +1250,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
 		 */
 		/**
@@ -1274,7 +1275,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.IListViewer#addElement(java.lang.Object)
 		 */
 		/**
@@ -1289,7 +1290,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.IListViewer#removeElement(java.lang.Object)
 		 */
 		/**
@@ -1304,7 +1305,7 @@ public class ChooseSetAssistedDialog extends Dialog implements IChooseDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see com.cea.papyrus.ui.dialogs.IListViewer#updateElement(java.lang.Object)
 		 */
 		/**

@@ -20,14 +20,14 @@ import org.eclipse.papyrus.emf.facet.util.emf.core.serialization.model.serializa
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SerializationPackageImpl extends EPackageImpl implements SerializationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType extensibleSerializableJavaObjectEDataType = null;
@@ -37,7 +37,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.core.serialization.model.serialization.SerializationPackage#eNS_URI
 	 * @see #init()
@@ -50,7 +50,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -61,7 +61,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	 * <p>
 	 * This method is used to initialize {@link SerializationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -96,7 +96,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EDataType getExtensibleSerializableJavaObject() {
@@ -106,7 +106,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SerializationFactory getSerializationFactory() {
@@ -116,7 +116,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -126,7 +126,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -142,7 +142,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -152,7 +152,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

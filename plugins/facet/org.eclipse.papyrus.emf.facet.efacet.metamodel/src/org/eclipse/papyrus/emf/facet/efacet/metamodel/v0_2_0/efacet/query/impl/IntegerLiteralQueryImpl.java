@@ -23,13 +23,9 @@
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.impl.QueryImpl;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IntegerLiteralQuery;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryPackage;
 
@@ -51,7 +47,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -62,7 +58,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -72,7 +68,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IntegerLiteralQueryImpl() {
@@ -82,7 +78,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +89,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getValue() {
@@ -103,7 +99,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValue(int newValue) {
@@ -117,7 +113,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +128,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +144,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +160,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +175,7 @@ public class IntegerLiteralQueryImpl extends QueryImpl implements IntegerLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

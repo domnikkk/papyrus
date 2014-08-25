@@ -14,7 +14,8 @@
 
 package org.eclipse.papyrus.infra.core.serviceregistry;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 
@@ -47,7 +48,7 @@ public class ServiceRegistryFactoryTest {
 	/**
 	 * Integration test.
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.ServiceRegistryFactory#getServicesRegistry(java.lang.String)}.
-	 * 
+	 *
 	 * @throws DeclarationException
 	 * @throws IOException
 	 * @throws ServiceMultiException

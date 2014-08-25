@@ -39,7 +39,7 @@ public class GenNodeConstraintImpl extends CommentedElementImpl implements GenNo
 	 * The cached value of the '{@link #getGenNode() <em>Gen Node</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenNode()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class GenNodeConstraintImpl extends CommentedElementImpl implements GenNo
 	 * The cached value of the '{@link #getGenConstraint() <em>Gen Constraint</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenConstraint()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class GenNodeConstraintImpl extends CommentedElementImpl implements GenNo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GenNodeConstraintImpl() {
@@ -70,7 +70,7 @@ public class GenNodeConstraintImpl extends CommentedElementImpl implements GenNo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class GenNodeConstraintImpl extends CommentedElementImpl implements GenNo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class GenNodeConstraintImpl extends CommentedElementImpl implements GenNo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class GenNodeConstraintImpl extends CommentedElementImpl implements GenNo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GenConstraint basicGetGenConstraint() {
@@ -125,7 +125,7 @@ public class GenNodeConstraintImpl extends CommentedElementImpl implements GenNo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class GenNodeConstraintImpl extends CommentedElementImpl implements GenNo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class GenNodeConstraintImpl extends CommentedElementImpl implements GenNo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -181,7 +181,7 @@ public class GenNodeConstraintImpl extends CommentedElementImpl implements GenNo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class GenNodeConstraintImpl extends CommentedElementImpl implements GenNo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

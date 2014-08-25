@@ -45,7 +45,7 @@ public class GMFToEMFCommand implements Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#canExecute()
 	 */
 	@Override
@@ -55,7 +55,7 @@ public class GMFToEMFCommand implements Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#canUndo()
 	 */
 	@Override
@@ -65,7 +65,7 @@ public class GMFToEMFCommand implements Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.emf.common.command.Command#chain(org.eclipse.emf.common.command
 	 * .Command)
@@ -77,7 +77,7 @@ public class GMFToEMFCommand implements Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#dispose()
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class GMFToEMFCommand implements Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#execute()
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class GMFToEMFCommand implements Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#getAffectedObjects()
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class GMFToEMFCommand implements Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#getDescription()
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class GMFToEMFCommand implements Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#getLabel()
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class GMFToEMFCommand implements Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#getResult()
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class GMFToEMFCommand implements Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#redo()
 	 */
 	@Override
@@ -180,7 +180,7 @@ public class GMFToEMFCommand implements Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#undo()
 	 */
 	@Override

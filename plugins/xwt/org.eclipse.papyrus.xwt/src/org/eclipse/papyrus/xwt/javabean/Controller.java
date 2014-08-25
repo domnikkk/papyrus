@@ -75,7 +75,7 @@ public class Controller implements Listener, IEventController {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.javabean.IEventHandler#hasEvent(java.lang.Object,
 	 * org.eclipse.papyrus.xwt.metadata.IEvent)
 	 */
@@ -93,7 +93,7 @@ public class Controller implements Listener, IEventController {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.javabean.IEventHandler#addEvent(int,
 	 * java.lang.String, org.eclipse.papyrus.xwt.metadata.IEvent,
 	 * org.eclipse.swt.widgets.Widget, java.lang.Object, java.lang.Object,
@@ -187,7 +187,7 @@ public class Controller implements Listener, IEventController {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.javabean.IEventHandler#setEvent(org.eclipse.papyrus.xwt
 	 * .metadata.IEvent, org.eclipse.swt.widgets.Widget, java.lang.Object,
@@ -334,7 +334,7 @@ public class Controller implements Listener, IEventController {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.javabean.IEventHandler#handleEvent(org.eclipse.swt
 	 * .widgets.Event)

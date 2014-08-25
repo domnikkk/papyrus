@@ -21,10 +21,10 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.InvalidRegistryObjectException;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.IQueryDialogFactoryStrategy;
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
-import org.eclipse.osgi.util.NLS;
 
 /**
  * Implementation of the {@link IQueryWidgetCompositeFactoryFactory}.

@@ -13,9 +13,9 @@
 package org.eclipse.papyrus.emf.facet.custom.core.internal;
 
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManagerFactory;
+import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
 
 public class CustomizationManagerFactory implements
 		ICustomizationManagerFactory {

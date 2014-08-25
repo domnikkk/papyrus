@@ -93,7 +93,7 @@ public class SplitEllipseLayout extends GravityConstrainedFlowLayout {
 		 * Calculate sum of preferred heights of all children(totalHeight).
 		 * Calculate sum of minimum heights of all children(minHeight). Cache
 		 * Preferred Sizes and Minimum Sizes of all children.
-		 * 
+		 *
 		 * totalHeight is the sum of the preferred heights of all children
 		 * totalMinHeight is the sum of the minimum heights of all children
 		 * prefMinSumHeight is the sum of the difference between all children's
@@ -136,7 +136,7 @@ public class SplitEllipseLayout extends GravityConstrainedFlowLayout {
 		 * The total amount that the children must be shrunk is the sum of the
 		 * preferred Heights of the children minus Max(the available area and
 		 * the sum of the minimum heights of the children).
-		 * 
+		 *
 		 * amntShrinkHeight is the combined amount that the children must shrink
 		 * amntShrinkCurrentHeight is the amount each child will shrink
 		 * respectively

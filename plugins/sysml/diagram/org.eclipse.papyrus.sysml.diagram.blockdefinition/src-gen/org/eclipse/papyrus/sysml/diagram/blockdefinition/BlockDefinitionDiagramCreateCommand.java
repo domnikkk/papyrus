@@ -19,7 +19,7 @@ import org.eclipse.papyrus.sysml.diagram.blockdefinition.provider.ElementTypes;
 
 /**
  * Represents the creation command for a SysML block definition diagram
- * 
+ *
  * @author Laurent Wouters
  */
 public class BlockDefinitionDiagramCreateCommand extends AbstractPapyrusGmfCreateDiagramCommandHandler {

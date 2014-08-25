@@ -122,7 +122,7 @@ public class StateDefinitionEditPart extends NodeEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.timing.custom.figures.StateDefinitionFigure
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class StateDefinitionEditPart extends NodeEditPart {
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
 	 *            instance of generated figure class
 	 * @generated

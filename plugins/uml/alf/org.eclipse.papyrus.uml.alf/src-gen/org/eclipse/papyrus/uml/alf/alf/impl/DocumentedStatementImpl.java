@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.DocumentedStatement;
 import org.eclipse.papyrus.uml.alf.alf.Statement;
@@ -101,8 +98,9 @@ public class DocumentedStatementImpl extends MinimalEObjectImpl.Container implem
   {
     String oldComment = comment;
     comment = newComment;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.DOCUMENTED_STATEMENT__COMMENT, oldComment, comment));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.DOCUMENTED_STATEMENT__COMMENT, oldComment, comment));
+	}
   }
 
   /**
@@ -127,7 +125,11 @@ public class DocumentedStatementImpl extends MinimalEObjectImpl.Container implem
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.DOCUMENTED_STATEMENT__STATEMENT, oldStatement, newStatement);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -142,15 +144,20 @@ public class DocumentedStatementImpl extends MinimalEObjectImpl.Container implem
     if (newStatement != statement)
     {
       NotificationChain msgs = null;
-      if (statement != null)
-        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.DOCUMENTED_STATEMENT__STATEMENT, null, msgs);
-      if (newStatement != null)
-        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.DOCUMENTED_STATEMENT__STATEMENT, null, msgs);
+      if (statement != null) {
+		msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.DOCUMENTED_STATEMENT__STATEMENT, null, msgs);
+	}
+      if (newStatement != null) {
+		msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.DOCUMENTED_STATEMENT__STATEMENT, null, msgs);
+	}
       msgs = basicSetStatement(newStatement, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.DOCUMENTED_STATEMENT__STATEMENT, newStatement, newStatement));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.DOCUMENTED_STATEMENT__STATEMENT, newStatement, newStatement));
+	}
   }
 
   /**
@@ -253,7 +260,9 @@ public class DocumentedStatementImpl extends MinimalEObjectImpl.Container implem
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (comment: ");

@@ -41,7 +41,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	 * The cached value of the '{@link #getEReference() <em>EReference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEReference()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AbstractReferenceInstanceImpl() {
@@ -61,7 +61,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getEReference() {
@@ -91,7 +91,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference basicGetEReference() {
@@ -101,7 +101,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setEReference(EReference newEReference) {
@@ -115,7 +115,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -18,10 +18,10 @@ package org.eclipse.papyrus.emf.facet.util.emf.core;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.papyrus.emf.facet.util.emf.core.exception.InvalidFacetSetException;
-import org.eclipse.papyrus.emf.facet.util.emf.core.internal.catalog.CatalogSetManager;
 import org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog;
 import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
+import org.eclipse.papyrus.emf.facet.util.emf.core.exception.InvalidFacetSetException;
+import org.eclipse.papyrus.emf.facet.util.emf.core.internal.catalog.CatalogSetManager;
 import org.osgi.framework.Bundle;
 
 /**

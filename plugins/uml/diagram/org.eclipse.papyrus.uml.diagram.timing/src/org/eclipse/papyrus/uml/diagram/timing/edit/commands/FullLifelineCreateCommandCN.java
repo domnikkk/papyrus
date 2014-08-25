@@ -50,7 +50,7 @@ public class FullLifelineCreateCommandCN extends EditElementCommand {
 
 	/**
 	 * FIXME: replace with setElementToEdit()
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

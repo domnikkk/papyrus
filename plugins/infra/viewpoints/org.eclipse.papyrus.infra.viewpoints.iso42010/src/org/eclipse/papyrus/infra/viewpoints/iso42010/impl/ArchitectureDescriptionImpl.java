@@ -17,18 +17,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Architecture;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription;
@@ -68,7 +63,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getStakeholders() <em>Stakeholders</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStakeholders()
 	 * @generated
 	 * @ordered
@@ -79,7 +74,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getConcerns() <em>Concerns</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConcerns()
 	 * @generated
 	 * @ordered
@@ -90,7 +85,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getViewpoints() <em>Viewpoints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getViewpoints()
 	 * @generated
 	 * @ordered
@@ -101,7 +96,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getViews() <em>Views</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getViews()
 	 * @generated
 	 * @ordered
@@ -112,7 +107,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getSystem() <em>System</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSystem()
 	 * @generated
 	 * @ordered
@@ -123,7 +118,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getExpresses() <em>Expresses</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExpresses()
 	 * @generated
 	 * @ordered
@@ -134,7 +129,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getRationales() <em>Rationales</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRationales()
 	 * @generated
 	 * @ordered
@@ -145,7 +140,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getCorrespondences() <em>Correspondences</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCorrespondences()
 	 * @generated
 	 * @ordered
@@ -156,7 +151,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRules()
 	 * @generated
 	 * @ordered
@@ -167,7 +162,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getDecisions() <em>Decisions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDecisions()
 	 * @generated
 	 * @ordered
@@ -177,7 +172,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureDescriptionImpl() {
@@ -187,7 +182,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +193,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Stakeholder> getStakeholders() {
@@ -211,7 +206,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Concern> getConcerns() {
@@ -224,7 +219,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureViewpoint> getViewpoints() {
@@ -237,7 +232,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureView> getViews() {
@@ -250,7 +245,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.papyrus.infra.viewpoints.iso42010.System getSystem() {
@@ -260,7 +255,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSystem(org.eclipse.papyrus.infra.viewpoints.iso42010.System newSystem, NotificationChain msgs) {
@@ -280,7 +275,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSystem(org.eclipse.papyrus.infra.viewpoints.iso42010.System newSystem) {
@@ -305,7 +300,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Architecture getExpresses() {
@@ -315,7 +310,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetExpresses(Architecture newExpresses, NotificationChain msgs) {
@@ -335,7 +330,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setExpresses(Architecture newExpresses) {
@@ -360,7 +355,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureRationale> getRationales() {
@@ -373,7 +368,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Correspondence> getCorrespondences() {
@@ -386,7 +381,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<CorrespondenceRule> getRules() {
@@ -399,7 +394,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureDecision> getDecisions() {
@@ -412,7 +407,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -445,7 +440,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -478,7 +473,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -530,7 +525,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -573,7 +568,7 @@ public class ArchitectureDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

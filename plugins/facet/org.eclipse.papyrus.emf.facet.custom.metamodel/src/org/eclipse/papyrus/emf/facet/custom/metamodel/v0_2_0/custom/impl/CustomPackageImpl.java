@@ -18,8 +18,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetPackage;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.ExtensiblePackage;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomFactory;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
@@ -27,19 +25,21 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustom
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementSwitchQuery;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetPackage;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.ExtensiblePackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass customizationEClass = null;
@@ -47,7 +47,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eClassCustomizationEClass = null;
@@ -55,7 +55,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass facetCustomizationEClass = null;
@@ -63,7 +63,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eTypedElementSwitchQueryEClass = null;
@@ -71,7 +71,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eTypedElementCaseEClass = null;
@@ -81,7 +81,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage#eNS_URI
 	 * @see #init()
@@ -94,7 +94,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -104,7 +104,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link CustomPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -141,7 +141,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCustomization() {
@@ -151,7 +151,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCustomization_MustBeLoadedByDefault() {
@@ -161,7 +161,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCustomization_Rank() {
@@ -171,7 +171,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getEClassCustomization() {
@@ -181,7 +181,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFacetCustomization() {
@@ -191,7 +191,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFacetCustomization_CustomizedFacet() {
@@ -201,7 +201,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getETypedElementSwitchQuery() {
@@ -211,7 +211,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getETypedElementSwitchQuery_Cases() {
@@ -221,7 +221,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getETypedElementCase() {
@@ -231,7 +231,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getETypedElementCase_Case() {
@@ -241,7 +241,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getETypedElementCase_Value() {
@@ -251,7 +251,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomFactory getCustomFactory() {
@@ -261,7 +261,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -271,7 +271,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -301,7 +301,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -311,7 +311,7 @@ public class CustomPackageImpl extends EPackageImpl implements CustomPackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

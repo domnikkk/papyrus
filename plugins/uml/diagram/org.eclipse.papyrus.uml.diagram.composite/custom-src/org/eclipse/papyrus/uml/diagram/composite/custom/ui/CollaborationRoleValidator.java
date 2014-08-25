@@ -29,7 +29,7 @@ public class CollaborationRoleValidator implements ISelectionStatusValidator {
 	/**
 	 * <pre>
 	 * The selection has to be a {@link ConnectableElement} for validation.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

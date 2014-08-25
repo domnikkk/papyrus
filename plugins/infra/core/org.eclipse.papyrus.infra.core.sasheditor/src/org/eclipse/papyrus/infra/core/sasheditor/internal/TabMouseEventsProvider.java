@@ -59,7 +59,7 @@ public class TabMouseEventsProvider {
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param newEditor
 	 */
 	public void fireMouseDoubleClickEvent(PagePart page, TabFolderPart folder, MouseEvent event) {
@@ -71,7 +71,7 @@ public class TabMouseEventsProvider {
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param newEditor
 	 */
 	public void fireMouseDownEvent(PagePart page, TabFolderPart folder, MouseEvent event) {
@@ -83,7 +83,7 @@ public class TabMouseEventsProvider {
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param newEditor
 	 */
 	public void fireMouseUpEvent(PagePart page, TabFolderPart folder, MouseEvent event) {

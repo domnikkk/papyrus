@@ -48,14 +48,14 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eTypedElementPrimitiveTypeResultEClass = null;
@@ -63,7 +63,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eTypedElementEObjectResultEClass = null;
@@ -71,7 +71,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eTypedElementPrimitiveTypeListResultEClass = null;
@@ -79,7 +79,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eTypedElementEObjectListResultEClass = null;
@@ -87,7 +87,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eTypedElementResultEClass = null;
@@ -95,7 +95,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType javaExceptionEDataType = null;
@@ -105,7 +105,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.RuntimePackage#eNS_URI
 	 * @see #init()
@@ -118,7 +118,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -128,7 +128,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link RuntimePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -181,7 +181,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getETypedElementPrimitiveTypeResult() {
@@ -191,7 +191,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getETypedElementPrimitiveTypeResult_Result() {
@@ -201,7 +201,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getETypedElementEObjectResult() {
@@ -211,7 +211,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getETypedElementEObjectResult_Result() {
@@ -221,7 +221,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getETypedElementPrimitiveTypeListResult() {
@@ -231,7 +231,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getETypedElementPrimitiveTypeListResult_ResultList() {
@@ -241,7 +241,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getETypedElementEObjectListResult() {
@@ -251,7 +251,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getETypedElementEObjectListResult_ResultList() {
@@ -261,7 +261,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getETypedElementResult() {
@@ -271,7 +271,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getETypedElementResult_DerivedTypedElement() {
@@ -281,7 +281,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getETypedElementResult_ParameterValues() {
@@ -291,7 +291,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getETypedElementResult_Source() {
@@ -301,7 +301,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getETypedElementResult_Exception() {
@@ -311,7 +311,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EDataType getJavaException() {
@@ -321,7 +321,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RuntimeFactory getRuntimeFactory() {
@@ -331,7 +331,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -341,7 +341,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -376,7 +376,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -386,7 +386,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

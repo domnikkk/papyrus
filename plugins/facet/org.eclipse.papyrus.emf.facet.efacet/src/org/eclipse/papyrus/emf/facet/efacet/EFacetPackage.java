@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EcorePackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.emf.facet.efacet.EFacetFactory
  * @model kind="package"
  * @generated
@@ -44,7 +44,7 @@ public interface EFacetPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -55,7 +55,7 @@ public interface EFacetPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -66,7 +66,7 @@ public interface EFacetPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -77,7 +77,7 @@ public interface EFacetPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -88,7 +88,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetAttributeImpl <em>Facet Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.FacetAttributeImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getFacetAttribute()
 	 * @generated
@@ -101,7 +101,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -113,7 +113,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -125,7 +125,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -137,7 +137,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -149,7 +149,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -161,7 +161,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -173,7 +173,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Many</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -185,7 +185,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -197,7 +197,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EType</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -209,7 +209,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EGeneric Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -221,7 +221,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Changeable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -233,7 +233,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Volatile</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -245,7 +245,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Transient</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -257,7 +257,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Value Literal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -269,7 +269,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -281,7 +281,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Unsettable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -293,7 +293,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Derived</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -305,7 +305,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EContaining Class</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -317,7 +317,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -329,7 +329,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAttribute Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -341,7 +341,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -353,7 +353,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Facet</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -365,7 +365,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Override</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -377,7 +377,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Query</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -389,7 +389,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Facet Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -401,7 +401,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetReferenceImpl <em>Facet Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.FacetReferenceImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getFacetReference()
 	 * @generated
@@ -414,7 +414,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -426,7 +426,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -438,7 +438,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -450,7 +450,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -462,7 +462,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -474,7 +474,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -486,7 +486,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Many</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -498,7 +498,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -510,7 +510,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EType</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -522,7 +522,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EGeneric Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -534,7 +534,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Changeable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -546,7 +546,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Volatile</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -558,7 +558,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Transient</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -570,7 +570,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Value Literal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -582,7 +582,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -594,7 +594,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Unsettable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -606,7 +606,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Derived</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -618,7 +618,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EContaining Class</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -630,7 +630,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Containment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -642,7 +642,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Container</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -654,7 +654,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Resolve Proxies</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -666,7 +666,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EOpposite</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -678,7 +678,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EReference Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -690,7 +690,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EKeys</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -702,7 +702,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -714,7 +714,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Facet</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -726,7 +726,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Override</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -738,7 +738,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Query</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -750,7 +750,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Facet Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -762,7 +762,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetOperationImpl <em>Facet Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.FacetOperationImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getFacetOperation()
 	 * @generated
@@ -775,7 +775,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -787,7 +787,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -799,7 +799,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -811,7 +811,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -823,7 +823,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -835,7 +835,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -847,7 +847,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Many</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -859,7 +859,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -871,7 +871,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EType</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -883,7 +883,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EGeneric Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -895,7 +895,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EContaining Class</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -907,7 +907,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EType Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -919,7 +919,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EParameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -931,7 +931,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EExceptions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -943,7 +943,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EGeneric Exceptions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -955,7 +955,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -967,7 +967,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Facet</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -979,7 +979,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Override</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -991,7 +991,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Query</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1003,7 +1003,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Facet Operation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1015,7 +1015,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetSetImpl <em>Facet Set</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.FacetSetImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getFacetSet()
 	 * @generated
@@ -1028,7 +1028,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1040,7 +1040,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1052,7 +1052,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Ns URI</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1064,7 +1064,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Ns Prefix</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1076,7 +1076,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EFactory Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1088,7 +1088,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EClassifiers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1100,7 +1100,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>ESubpackages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1112,7 +1112,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>ESuper Package</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1124,7 +1124,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Facets</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1136,7 +1136,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1148,7 +1148,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Extended EPackage</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1160,7 +1160,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Facet Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1172,7 +1172,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetImpl <em>Facet</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.FacetImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getFacet()
 	 * @generated
@@ -1185,7 +1185,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1197,7 +1197,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1209,7 +1209,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Instance Class Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1221,7 +1221,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Instance Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1233,7 +1233,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1245,7 +1245,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Instance Type Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1257,7 +1257,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EPackage</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1269,7 +1269,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EType Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1281,7 +1281,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Facet Set</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1293,7 +1293,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Conformance Query</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1305,7 +1305,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Extended Metaclass</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1317,7 +1317,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Facet Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1329,7 +1329,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Facet</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1341,7 +1341,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryImpl <em>Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.QueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getQuery()
 	 * @generated
@@ -1354,7 +1354,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1366,7 +1366,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1378,7 +1378,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1390,7 +1390,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1402,7 +1402,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1414,7 +1414,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1426,7 +1426,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Many</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1438,7 +1438,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1450,7 +1450,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EType</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1462,7 +1462,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EGeneric Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1474,7 +1474,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Scope</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1486,7 +1486,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Has Side Effect</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1498,7 +1498,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1510,7 +1510,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1522,7 +1522,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1534,7 +1534,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl <em>Query Result</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getQueryResult()
 	 * @generated
@@ -1547,7 +1547,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Query</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1559,7 +1559,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Scope</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1571,7 +1571,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Parameter Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1583,7 +1583,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1595,7 +1595,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Exception</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1607,7 +1607,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1619,7 +1619,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Query Result</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1631,7 +1631,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.CategoryImpl <em>Category</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.CategoryImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getCategory()
 	 * @generated
@@ -1644,7 +1644,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Category</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1656,7 +1656,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetElementImpl <em>Facet Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.FacetElementImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getFacetElement()
 	 * @generated
@@ -1669,7 +1669,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1681,7 +1681,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1693,7 +1693,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1705,7 +1705,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1717,7 +1717,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1729,7 +1729,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1741,7 +1741,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Many</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1753,7 +1753,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1765,7 +1765,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EType</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1777,7 +1777,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EGeneric Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1789,7 +1789,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1801,7 +1801,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Facet</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1813,7 +1813,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Override</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1825,7 +1825,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Facet Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1837,7 +1837,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryFacetElementImpl <em>Query Facet Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.QueryFacetElementImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getQueryFacetElement()
 	 * @generated
@@ -1850,7 +1850,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1862,7 +1862,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1874,7 +1874,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1886,7 +1886,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1898,7 +1898,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1910,7 +1910,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1922,7 +1922,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Many</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1934,7 +1934,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1946,7 +1946,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EType</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1958,7 +1958,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EGeneric Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1970,7 +1970,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1982,7 +1982,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Facet</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -1994,7 +1994,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Override</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2006,7 +2006,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Query</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2018,7 +2018,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Query Facet Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2030,7 +2030,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.OppositeReferenceImpl <em>Opposite Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.OppositeReferenceImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getOppositeReference()
 	 * @generated
@@ -2043,7 +2043,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2055,7 +2055,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2067,7 +2067,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2079,7 +2079,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2091,7 +2091,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2103,7 +2103,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2115,7 +2115,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Many</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2127,7 +2127,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2139,7 +2139,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EType</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2151,7 +2151,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EGeneric Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2163,7 +2163,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2175,7 +2175,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Facet</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2187,7 +2187,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Override</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2199,7 +2199,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>FOpposite</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2211,7 +2211,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Opposite Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2223,7 +2223,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.QuerySetImpl <em>Query Set</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.QuerySetImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getQuerySet()
 	 * @generated
@@ -2236,7 +2236,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2248,7 +2248,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2260,7 +2260,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Query Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2272,7 +2272,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.LiteralImpl <em>Literal</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.LiteralImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getLiteral()
 	 * @generated
@@ -2285,7 +2285,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2297,7 +2297,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2309,7 +2309,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2321,7 +2321,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2333,7 +2333,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2345,7 +2345,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2357,7 +2357,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Many</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2369,7 +2369,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2381,7 +2381,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EType</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2393,7 +2393,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EGeneric Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2405,7 +2405,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Scope</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2417,7 +2417,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Has Side Effect</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2429,7 +2429,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2441,7 +2441,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2453,7 +2453,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2465,7 +2465,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2477,7 +2477,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.TypedElementRefImpl <em>Typed Element Ref</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.TypedElementRefImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getTypedElementRef()
 	 * @generated
@@ -2490,7 +2490,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2502,7 +2502,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2514,7 +2514,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2526,7 +2526,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2538,7 +2538,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2550,7 +2550,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2562,7 +2562,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Many</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2574,7 +2574,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2586,7 +2586,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EType</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2598,7 +2598,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EGeneric Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2610,7 +2610,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Scope</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2622,7 +2622,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Has Side Effect</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2634,7 +2634,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2646,7 +2646,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2658,7 +2658,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Typed Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2670,7 +2670,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Typed Element Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2682,7 +2682,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.ParameterImpl <em>Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.ParameterImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getParameter()
 	 * @generated
@@ -2695,7 +2695,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2707,7 +2707,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2719,7 +2719,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2731,7 +2731,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2743,7 +2743,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2755,7 +2755,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2767,7 +2767,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Many</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2779,7 +2779,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2791,7 +2791,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EType</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2803,7 +2803,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>EGeneric Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2815,7 +2815,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2827,7 +2827,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.ParameterValueImpl <em>Parameter Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.ParameterValueImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getParameterValue()
 	 * @generated
@@ -2840,7 +2840,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2852,7 +2852,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2864,7 +2864,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Parameter Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2876,7 +2876,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryContextImpl <em>Query Context</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.QueryContextImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getQueryContext()
 	 * @generated
@@ -2889,7 +2889,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Selected Model Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2901,7 +2901,7 @@ public interface EFacetPackage extends EPackage {
 	 * The feature id for the '<em><b>Selected Models</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2913,7 +2913,7 @@ public interface EFacetPackage extends EPackage {
 	 * The number of structural features of the '<em>Query Context</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 * @ordered
@@ -2925,7 +2925,7 @@ public interface EFacetPackage extends EPackage {
 	 * The meta object id for the '<em>Java Exception</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see java.lang.Exception
 	 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getJavaException()
 	 * @generated
@@ -2939,7 +2939,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.FacetAttribute <em>Facet Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Facet Attribute</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.FacetAttribute
 	 * @generated
@@ -2952,7 +2952,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.FacetReference <em>Facet Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Facet Reference</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.FacetReference
 	 * @generated
@@ -2965,7 +2965,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.FacetOperation <em>Facet Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Facet Operation</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.FacetOperation
 	 * @generated
@@ -2978,7 +2978,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.FacetSet <em>Facet Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Facet Set</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.FacetSet
 	 * @generated
@@ -2991,7 +2991,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.emf.facet.efacet.FacetSet#getFacets <em>Facets</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Facets</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.FacetSet#getFacets()
 	 * @see #getFacetSet()
@@ -3005,7 +3005,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.emf.facet.efacet.FacetSet#getCategories <em>Categories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Categories</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.FacetSet#getCategories()
 	 * @see #getFacetSet()
@@ -3019,7 +3019,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.FacetSet#getExtendedEPackage <em>Extended EPackage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Extended EPackage</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.FacetSet#getExtendedEPackage()
 	 * @see #getFacetSet()
@@ -3033,7 +3033,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.Facet <em>Facet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Facet</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Facet
 	 * @generated
@@ -3046,7 +3046,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.emf.facet.efacet.Facet#getFacetSet <em>Facet Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Facet Set</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Facet#getFacetSet()
 	 * @see #getFacet()
@@ -3060,7 +3060,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.emf.facet.efacet.Facet#getConformanceQuery <em>Conformance Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Conformance Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Facet#getConformanceQuery()
 	 * @see #getFacet()
@@ -3074,7 +3074,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.Facet#getExtendedMetaclass <em>Extended Metaclass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Extended Metaclass</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Facet#getExtendedMetaclass()
 	 * @see #getFacet()
@@ -3088,7 +3088,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.emf.facet.efacet.Facet#getFacetElements <em>Facet Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Facet Elements</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Facet#getFacetElements()
 	 * @see #getFacet()
@@ -3102,7 +3102,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.Query <em>Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Query
 	 * @generated
@@ -3115,7 +3115,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.Query#getScope <em>Scope</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Scope</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Query#getScope()
 	 * @see #getQuery()
@@ -3129,7 +3129,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.efacet.Query#isHasSideEffect <em>Has Side Effect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Has Side Effect</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Query#isHasSideEffect()
 	 * @see #getQuery()
@@ -3143,7 +3143,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.efacet.Query#isCanBeCached <em>Can Be Cached</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Can Be Cached</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Query#isCanBeCached()
 	 * @see #getQuery()
@@ -3157,7 +3157,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.emf.facet.efacet.Query#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Query#getParameters()
 	 * @see #getQuery()
@@ -3171,7 +3171,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.QueryResult <em>Query Result</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Query Result</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QueryResult
 	 * @generated
@@ -3184,7 +3184,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.QueryResult#getQuery <em>Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QueryResult#getQuery()
 	 * @see #getQueryResult()
@@ -3198,7 +3198,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.QueryResult#getScope <em>Scope</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Scope</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QueryResult#getScope()
 	 * @see #getQueryResult()
@@ -3212,7 +3212,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.emf.facet.efacet.QueryResult#getParameterValues <em>Parameter Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Parameter Values</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QueryResult#getParameterValues()
 	 * @see #getQueryResult()
@@ -3226,7 +3226,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.efacet.QueryResult#getResult <em>Result</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Result</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QueryResult#getResult()
 	 * @see #getQueryResult()
@@ -3240,7 +3240,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.efacet.QueryResult#getException <em>Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Exception</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QueryResult#getException()
 	 * @see #getQueryResult()
@@ -3254,7 +3254,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.QueryResult#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Source</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QueryResult#getSource()
 	 * @see #getQueryResult()
@@ -3268,7 +3268,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.Category <em>Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Category</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Category
 	 * @generated
@@ -3281,7 +3281,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.FacetElement <em>Facet Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Facet Element</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.FacetElement
 	 * @generated
@@ -3294,7 +3294,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.emf.facet.efacet.FacetElement#getCategories <em>Categories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Categories</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.FacetElement#getCategories()
 	 * @see #getFacetElement()
@@ -3308,7 +3308,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.emf.facet.efacet.FacetElement#getFacet <em>Facet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Facet</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.FacetElement#getFacet()
 	 * @see #getFacetElement()
@@ -3322,7 +3322,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.FacetElement#getOverride <em>Override</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Override</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.FacetElement#getOverride()
 	 * @see #getFacetElement()
@@ -3336,7 +3336,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.QueryFacetElement <em>Query Facet Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Query Facet Element</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QueryFacetElement
 	 * @generated
@@ -3349,7 +3349,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.emf.facet.efacet.QueryFacetElement#getQuery <em>Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QueryFacetElement#getQuery()
 	 * @see #getQueryFacetElement()
@@ -3363,7 +3363,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.OppositeReference <em>Opposite Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Opposite Reference</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.OppositeReference
 	 * @generated
@@ -3376,7 +3376,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.OppositeReference#getFOpposite <em>FOpposite</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>FOpposite</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.OppositeReference#getFOpposite()
 	 * @see #getOppositeReference()
@@ -3390,7 +3390,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.QuerySet <em>Query Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Query Set</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QuerySet
 	 * @generated
@@ -3403,7 +3403,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.emf.facet.efacet.QuerySet#getQueries <em>Queries</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Queries</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QuerySet#getQueries()
 	 * @see #getQuerySet()
@@ -3417,7 +3417,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.efacet.QuerySet#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QuerySet#getName()
 	 * @see #getQuerySet()
@@ -3431,7 +3431,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.Literal <em>Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Literal</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Literal
 	 * @generated
@@ -3444,7 +3444,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.efacet.Literal#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Literal#getValue()
 	 * @see #getLiteral()
@@ -3458,7 +3458,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.TypedElementRef <em>Typed Element Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Typed Element Ref</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.TypedElementRef
 	 * @generated
@@ -3471,7 +3471,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.TypedElementRef#getTypedElement <em>Typed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Typed Element</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.TypedElementRef#getTypedElement()
 	 * @see #getTypedElementRef()
@@ -3485,7 +3485,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.Parameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Parameter</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Parameter
 	 * @generated
@@ -3498,7 +3498,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.ParameterValue <em>Parameter Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Parameter Value</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.ParameterValue
 	 * @generated
@@ -3511,7 +3511,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.ParameterValue#getParameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Parameter</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.ParameterValue#getParameter()
 	 * @see #getParameterValue()
@@ -3525,7 +3525,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.emf.facet.efacet.ParameterValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.ParameterValue#getValue()
 	 * @see #getParameterValue()
@@ -3539,7 +3539,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.QueryContext <em>Query Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Query Context</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QueryContext
 	 * @generated
@@ -3552,7 +3552,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.emf.facet.efacet.QueryContext#getSelectedModelElements <em>Selected Model Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Selected Model Elements</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QueryContext#getSelectedModelElements()
 	 * @see #getQueryContext()
@@ -3566,7 +3566,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.emf.facet.efacet.QueryContext#getSelectedModels <em>Selected Models</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Selected Models</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.QueryContext#getSelectedModels()
 	 * @see #getQueryContext()
@@ -3580,7 +3580,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.Exception <em>Java Exception</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Java Exception</em>'.
 	 * @see java.lang.Exception
 	 * @model instanceClass="java.lang.Exception"
@@ -3594,7 +3594,7 @@ public interface EFacetPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -3612,7 +3612,7 @@ public interface EFacetPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -3622,7 +3622,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetAttributeImpl <em>Facet Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.FacetAttributeImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getFacetAttribute()
 		 * @generated
@@ -3635,7 +3635,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetReferenceImpl <em>Facet Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.FacetReferenceImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getFacetReference()
 		 * @generated
@@ -3648,7 +3648,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetOperationImpl <em>Facet Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.FacetOperationImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getFacetOperation()
 		 * @generated
@@ -3661,7 +3661,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetSetImpl <em>Facet Set</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.FacetSetImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getFacetSet()
 		 * @generated
@@ -3674,7 +3674,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Facets</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3685,7 +3685,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Categories</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3696,7 +3696,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Extended EPackage</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3707,7 +3707,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetImpl <em>Facet</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.FacetImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getFacet()
 		 * @generated
@@ -3720,7 +3720,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Facet Set</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3731,7 +3731,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Conformance Query</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3742,7 +3742,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Extended Metaclass</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3753,7 +3753,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Facet Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3764,7 +3764,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryImpl <em>Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.QueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getQuery()
 		 * @generated
@@ -3777,7 +3777,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Scope</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3788,7 +3788,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Has Side Effect</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3799,7 +3799,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Be Cached</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3810,7 +3810,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3821,7 +3821,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl <em>Query Result</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getQueryResult()
 		 * @generated
@@ -3834,7 +3834,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Query</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3845,7 +3845,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Scope</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3856,7 +3856,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parameter Values</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3867,7 +3867,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Result</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3878,7 +3878,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Exception</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3889,7 +3889,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3900,7 +3900,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.CategoryImpl <em>Category</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.CategoryImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getCategory()
 		 * @generated
@@ -3913,7 +3913,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetElementImpl <em>Facet Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.FacetElementImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getFacetElement()
 		 * @generated
@@ -3926,7 +3926,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Categories</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3937,7 +3937,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Facet</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3948,7 +3948,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Override</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3959,7 +3959,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryFacetElementImpl <em>Query Facet Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.QueryFacetElementImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getQueryFacetElement()
 		 * @generated
@@ -3972,7 +3972,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Query</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -3983,7 +3983,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.OppositeReferenceImpl <em>Opposite Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.OppositeReferenceImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getOppositeReference()
 		 * @generated
@@ -3996,7 +3996,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>FOpposite</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -4007,7 +4007,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.QuerySetImpl <em>Query Set</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.QuerySetImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getQuerySet()
 		 * @generated
@@ -4020,7 +4020,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Queries</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -4031,7 +4031,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -4042,7 +4042,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.LiteralImpl <em>Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.LiteralImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getLiteral()
 		 * @generated
@@ -4055,7 +4055,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -4066,7 +4066,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.TypedElementRefImpl <em>Typed Element Ref</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.TypedElementRefImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getTypedElementRef()
 		 * @generated
@@ -4079,7 +4079,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Typed Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -4090,7 +4090,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.ParameterImpl <em>Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.ParameterImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getParameter()
 		 * @generated
@@ -4103,7 +4103,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.ParameterValueImpl <em>Parameter Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.ParameterValueImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getParameterValue()
 		 * @generated
@@ -4116,7 +4116,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -4127,7 +4127,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -4138,7 +4138,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryContextImpl <em>Query Context</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.QueryContextImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getQueryContext()
 		 * @generated
@@ -4151,7 +4151,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Selected Model Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -4162,7 +4162,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Selected Models</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 		 */
@@ -4173,7 +4173,7 @@ public interface EFacetPackage extends EPackage {
 		 * The meta object literal for the '<em>Java Exception</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see java.lang.Exception
 		 * @see org.eclipse.papyrus.emf.facet.efacet.impl.EFacetPackageImpl#getJavaException()
 		 * @generated

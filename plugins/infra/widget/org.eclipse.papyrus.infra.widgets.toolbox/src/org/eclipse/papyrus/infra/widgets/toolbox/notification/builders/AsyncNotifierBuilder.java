@@ -33,7 +33,7 @@ public class AsyncNotifierBuilder implements IBuilder {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.toolbox.notification.IBuilder#build(org.eclipse.papyrus.infra.widgets.toolbox.notification.PropertyWrapper,
 	 * org.eclipse.ui.forms.widgets.FormToolkit)
 	 */
@@ -89,7 +89,7 @@ public class AsyncNotifierBuilder implements IBuilder {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.toolbox.notification.IBuilder#accept(java.lang.String, java.lang.Object)
 	 */
 	public boolean accept(String parameterName, Object value) {

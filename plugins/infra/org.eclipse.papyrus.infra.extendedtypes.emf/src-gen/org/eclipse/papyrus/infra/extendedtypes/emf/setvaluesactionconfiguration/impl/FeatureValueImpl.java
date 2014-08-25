@@ -3,9 +3,7 @@
 package org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureValue;
 import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationPackage;
 
@@ -22,7 +20,7 @@ public abstract class FeatureValueImpl extends EObjectImpl implements FeatureVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FeatureValueImpl() {
@@ -32,7 +30,7 @@ public abstract class FeatureValueImpl extends EObjectImpl implements FeatureVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

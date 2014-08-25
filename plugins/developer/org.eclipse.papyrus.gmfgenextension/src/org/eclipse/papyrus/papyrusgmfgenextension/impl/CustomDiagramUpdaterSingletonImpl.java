@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.papyrusgmfgenextension.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.papyrusgmfgenextension.CustomDiagramUpdaterSingleton;
 import org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage;
 
@@ -29,7 +26,7 @@ public class CustomDiagramUpdaterSingletonImpl extends CommentedElementImpl impl
 	 * The default value of the '{@link #getSingletonPath() <em>Singleton Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSingletonPath()
 	 * @generated
 	 * @ordered
@@ -40,7 +37,7 @@ public class CustomDiagramUpdaterSingletonImpl extends CommentedElementImpl impl
 	 * The cached value of the '{@link #getSingletonPath() <em>Singleton Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSingletonPath()
 	 * @generated
 	 * @ordered
@@ -50,7 +47,7 @@ public class CustomDiagramUpdaterSingletonImpl extends CommentedElementImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CustomDiagramUpdaterSingletonImpl() {
@@ -60,7 +57,7 @@ public class CustomDiagramUpdaterSingletonImpl extends CommentedElementImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +68,7 @@ public class CustomDiagramUpdaterSingletonImpl extends CommentedElementImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +79,7 @@ public class CustomDiagramUpdaterSingletonImpl extends CommentedElementImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +94,7 @@ public class CustomDiagramUpdaterSingletonImpl extends CommentedElementImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +109,7 @@ public class CustomDiagramUpdaterSingletonImpl extends CommentedElementImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +125,7 @@ public class CustomDiagramUpdaterSingletonImpl extends CommentedElementImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +141,7 @@ public class CustomDiagramUpdaterSingletonImpl extends CommentedElementImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +156,7 @@ public class CustomDiagramUpdaterSingletonImpl extends CommentedElementImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

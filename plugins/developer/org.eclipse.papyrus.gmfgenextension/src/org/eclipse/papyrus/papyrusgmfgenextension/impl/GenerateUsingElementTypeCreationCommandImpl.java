@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.papyrusgmfgenextension.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.papyrusgmfgenextension.GenerateUsingElementTypeCreationCommand;
 import org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage;
 
@@ -20,7 +19,7 @@ public class GenerateUsingElementTypeCreationCommandImpl extends CommentedElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GenerateUsingElementTypeCreationCommandImpl() {
@@ -30,7 +29,7 @@ public class GenerateUsingElementTypeCreationCommandImpl extends CommentedElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -40,7 +40,7 @@ public class EditorRulersAndGridGroup extends RulersAndGridGroup {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.AbstractGroup#getPreferenceConstant(int)
 	 */
 	@Override

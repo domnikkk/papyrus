@@ -28,7 +28,7 @@ public interface CustomDiagramUpdaterSingleton extends CommentedElement {
 	 * If the meaning of the '<em>Singleton Path</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Singleton Path</em>' attribute.
 	 * @see #setSingletonPath(String)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getCustomDiagramUpdaterSingleton_SingletonPath()
@@ -41,7 +41,7 @@ public interface CustomDiagramUpdaterSingleton extends CommentedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.CustomDiagramUpdaterSingleton#getSingletonPath <em>Singleton Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Singleton Path</em>' attribute.
 	 * @see #getSingletonPath()

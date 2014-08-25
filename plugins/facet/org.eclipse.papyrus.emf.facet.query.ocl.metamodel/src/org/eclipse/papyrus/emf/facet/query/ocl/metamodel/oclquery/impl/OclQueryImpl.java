@@ -14,15 +14,11 @@
 package org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.impl.QueryImpl;
-
 import org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQuery;
 import org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQueryPackage;
 
@@ -45,7 +41,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -56,7 +52,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	 * The default value of the '{@link #getOclExpression() <em>Ocl Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOclExpression()
 	 * @generated
 	 * @ordered
@@ -67,7 +63,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	 * The cached value of the '{@link #getOclExpression() <em>Ocl Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOclExpression()
 	 * @generated
 	 * @ordered
@@ -77,7 +73,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OclQueryImpl() {
@@ -87,7 +83,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +94,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +114,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClassifier basicGetContext() {
@@ -128,7 +124,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +139,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +150,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +165,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +185,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +204,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +223,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +240,7 @@ public class OclQueryImpl extends QueryImpl implements OclQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

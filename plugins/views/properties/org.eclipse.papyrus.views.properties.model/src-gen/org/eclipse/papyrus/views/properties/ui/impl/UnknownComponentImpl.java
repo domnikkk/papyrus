@@ -30,7 +30,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	 * The default value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeName()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	 * The cached value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeName()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UnknownComponentImpl() {
@@ -61,7 +61,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Effect Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.UmlParameterPackage#getEffectKind()
  * @model
  * @generated
@@ -24,7 +24,7 @@ public enum EffectKind implements Enumerator
 	 * The '<em><b>CREATE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CREATE_VALUE
 	 * @generated
 	 * @ordered
@@ -35,7 +35,7 @@ public enum EffectKind implements Enumerator
 	 * The '<em><b>READ</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #READ_VALUE
 	 * @generated
 	 * @ordered
@@ -46,7 +46,7 @@ public enum EffectKind implements Enumerator
 	 * The '<em><b>UPDATE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UPDATE_VALUE
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public enum EffectKind implements Enumerator
 	 * The '<em><b>DELETE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #DELETE_VALUE
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public enum EffectKind implements Enumerator
 	 * If the meaning of '<em><b>CREATE</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CREATE
 	 * @model literal="create"
 	 * @generated
@@ -86,7 +86,7 @@ public enum EffectKind implements Enumerator
 	 * If the meaning of '<em><b>READ</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #READ
 	 * @model literal="read"
 	 * @generated
@@ -101,7 +101,7 @@ public enum EffectKind implements Enumerator
 	 * If the meaning of '<em><b>UPDATE</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UPDATE
 	 * @model literal="update"
 	 * @generated
@@ -116,7 +116,7 @@ public enum EffectKind implements Enumerator
 	 * If the meaning of '<em><b>DELETE</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #DELETE
 	 * @model literal="delete"
 	 * @generated
@@ -128,7 +128,7 @@ public enum EffectKind implements Enumerator
 	 * An array of all the '<em><b>Effect Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final EffectKind[] VALUES_ARRAY =
@@ -144,7 +144,7 @@ public enum EffectKind implements Enumerator
 	 * A public read-only list of all the '<em><b>Effect Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<EffectKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -153,7 +153,7 @@ public enum EffectKind implements Enumerator
 	 * Returns the '<em><b>Effect Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EffectKind get(String literal)
@@ -173,7 +173,7 @@ public enum EffectKind implements Enumerator
 	 * Returns the '<em><b>Effect Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EffectKind getByName(String name)
@@ -193,7 +193,7 @@ public enum EffectKind implements Enumerator
 	 * Returns the '<em><b>Effect Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EffectKind get(int value)
@@ -215,7 +215,7 @@ public enum EffectKind implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -223,7 +223,7 @@ public enum EffectKind implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -231,7 +231,7 @@ public enum EffectKind implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -240,7 +240,7 @@ public enum EffectKind implements Enumerator
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EffectKind(int value, String name, String literal)
@@ -253,7 +253,7 @@ public enum EffectKind implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public enum EffectKind implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +277,7 @@ public enum EffectKind implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +290,7 @@ public enum EffectKind implements Enumerator
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

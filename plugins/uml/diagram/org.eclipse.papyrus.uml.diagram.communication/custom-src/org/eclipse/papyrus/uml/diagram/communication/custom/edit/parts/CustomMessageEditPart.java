@@ -49,7 +49,7 @@ public class CustomMessageEditPart extends MessageEditPart {
 	 * listchildren = this.getChildren();
 	 * size = listchildren.size();
 	 * System.out.printf("Size of ListChildren %d\n", size);
-	 * 
+	 *
 	 * }
 	 * }
 	 */

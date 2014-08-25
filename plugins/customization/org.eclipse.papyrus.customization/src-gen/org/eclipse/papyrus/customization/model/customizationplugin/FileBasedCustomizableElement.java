@@ -36,7 +36,7 @@ public interface FileBasedCustomizableElement extends CustomizableElement {
 	 * If the meaning of the '<em>File</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>File</em>' attribute.
 	 * @see #setFile(String)
 	 * @see org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage#getFileBasedCustomizableElement_File()
@@ -49,7 +49,7 @@ public interface FileBasedCustomizableElement extends CustomizableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.model.customizationplugin.FileBasedCustomizableElement#getFile <em>File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>File</em>' attribute.
 	 * @see #getFile()

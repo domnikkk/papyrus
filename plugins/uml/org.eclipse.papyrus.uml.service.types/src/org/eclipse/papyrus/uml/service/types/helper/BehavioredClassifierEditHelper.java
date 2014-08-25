@@ -14,13 +14,14 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.service.types.helper;
 
+import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <pre>
  *
  * Edit helper class for {@link BehavioredClassifier}
- * 
+ *
  * Expected behavior:
  * - Add new nested behavior as "ownedBehavior"
  *

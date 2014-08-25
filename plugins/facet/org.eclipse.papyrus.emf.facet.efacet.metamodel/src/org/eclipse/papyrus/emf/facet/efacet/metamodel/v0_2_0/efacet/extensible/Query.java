@@ -46,7 +46,7 @@ public interface Query extends EObject {
 	 * If the meaning of the '<em>Can Have Side Effects</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Can Have Side Effects</em>' attribute.
 	 * @see #setCanHaveSideEffects(boolean)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.ExtensiblePackage#getQuery_CanHaveSideEffects()
@@ -59,7 +59,7 @@ public interface Query extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query#isCanHaveSideEffects <em>Can Have Side Effects</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Can Have Side Effects</em>' attribute.
 	 * @see #isCanHaveSideEffects()
@@ -74,7 +74,7 @@ public interface Query extends EObject {
 	 * If the meaning of the '<em>Can Be Cached</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Can Be Cached</em>' attribute.
 	 * @see #setCanBeCached(boolean)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.ExtensiblePackage#getQuery_CanBeCached()
@@ -87,7 +87,7 @@ public interface Query extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query#isCanBeCached <em>Can Be Cached</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Can Be Cached</em>' attribute.
 	 * @see #isCanBeCached()

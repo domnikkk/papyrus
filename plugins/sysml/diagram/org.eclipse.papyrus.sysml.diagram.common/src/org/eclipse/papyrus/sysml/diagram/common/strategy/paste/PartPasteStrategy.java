@@ -64,7 +64,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getLabel()
 	 */
 	@Override
@@ -74,7 +74,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getID()
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getDescription()
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getImage()
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getPriority()
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getSemanticCommand(org.eclipse.emf.edit.domain.EditingDomain,
 	 * org.eclipse.emf.ecore.EObject, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
@@ -209,7 +209,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getGraphicalCommand(org.eclipse.emf.edit.domain.EditingDomain,
 	 * org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
@@ -229,7 +229,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
 	 */
 	@Override
@@ -240,7 +240,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#prepare(org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/**
 	 * Duplicate the association
-	 * 
+	 *
 	 * @param association
 	 * @return
 	 */
@@ -287,7 +287,7 @@ public class PartPasteStrategy implements IPasteStrategy {
 
 	/**
 	 * Init the association in the new context
-	 * 
+	 *
 	 * @param classifier
 	 * @param property
 	 * @param association

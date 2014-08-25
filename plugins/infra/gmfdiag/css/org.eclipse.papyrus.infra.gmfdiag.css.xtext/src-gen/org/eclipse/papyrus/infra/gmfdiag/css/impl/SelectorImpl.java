@@ -12,9 +12,7 @@
 package org.eclipse.papyrus.infra.gmfdiag.css.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.Selector;
 
@@ -32,7 +30,7 @@ public class SelectorImpl extends MinimalEObjectImpl.Container implements Select
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SelectorImpl()
@@ -43,7 +41,7 @@ public class SelectorImpl extends MinimalEObjectImpl.Container implements Select
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

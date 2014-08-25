@@ -120,7 +120,7 @@ public class EditFacetWidget
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.widget.edition.IFacetWidget#setSubTypingFacetSelection(boolean)
 	 */
 	public void setSubTypingFacetSelection(final boolean enable) {
@@ -133,7 +133,7 @@ public class EditFacetWidget
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.widget.edition.IFacetWidget#pressSubTypingButton()
 	 */
 	public IDialog<IGetOrCreateFilteredElementCommmandWidget<ETypedElement, Object>> pressSubTypingButton() {

@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -32,7 +31,7 @@ public interface IdDescriptors extends EObject {
 	 * If the meaning of the '<em>Registries</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Registries</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getIdDescriptors_Registries()
 	 * @model containment="true" ordered="false"
@@ -48,7 +47,7 @@ public interface IdDescriptors extends EObject {
 	 * If the meaning of the '<em>Service Sets</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Service Sets</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getIdDescriptors_ServiceSets()
 	 * @model containment="true" ordered="false"

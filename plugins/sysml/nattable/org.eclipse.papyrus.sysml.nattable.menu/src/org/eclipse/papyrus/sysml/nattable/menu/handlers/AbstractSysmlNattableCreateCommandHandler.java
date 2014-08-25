@@ -31,7 +31,7 @@ public abstract class AbstractSysmlNattableCreateCommandHandler extends Abstract
 	 * Build the create command for an element creation in the selected container.
 	 * The create command is given by the {@link IElementEditService} of selected
 	 * element.
-	 * 
+	 *
 	 * @return the composite creation command for current selection
 	 *
 	 * </pre>

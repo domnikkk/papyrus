@@ -38,7 +38,7 @@ public interface PapyrusTable extends PapyrusView {
 	 * If the meaning of the '<em>Configuration</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Configuration</em>' attribute.
 	 * @see #setConfiguration(String)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusTable_Configuration()
@@ -51,7 +51,7 @@ public interface PapyrusTable extends PapyrusView {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable#getConfiguration <em>Configuration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Configuration</em>' attribute.
 	 * @see #getConfiguration()

@@ -40,7 +40,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	 * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValues()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MultiValuedAttributeInstanceImpl() {
@@ -60,7 +60,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +71,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Object> getValues() {
@@ -84,7 +84,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +99,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -117,7 +117,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class MultiValuedAttributeInstanceImpl extends AbstractAttributeInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

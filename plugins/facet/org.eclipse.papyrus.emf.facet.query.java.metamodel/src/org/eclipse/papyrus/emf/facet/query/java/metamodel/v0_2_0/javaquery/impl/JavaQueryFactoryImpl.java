@@ -16,18 +16,17 @@ package org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.impl
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.*;
+import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQuery;
+import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQueryFactory;
+import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQueryPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class JavaQueryFactoryImpl extends EFactoryImpl implements JavaQueryFactory {
@@ -35,7 +34,7 @@ public class JavaQueryFactoryImpl extends EFactoryImpl implements JavaQueryFacto
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static JavaQueryFactory init() {
@@ -54,7 +53,7 @@ public class JavaQueryFactoryImpl extends EFactoryImpl implements JavaQueryFacto
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaQueryFactoryImpl() {
@@ -64,7 +63,7 @@ public class JavaQueryFactoryImpl extends EFactoryImpl implements JavaQueryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +79,7 @@ public class JavaQueryFactoryImpl extends EFactoryImpl implements JavaQueryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaQuery createJavaQuery() {
@@ -91,7 +90,7 @@ public class JavaQueryFactoryImpl extends EFactoryImpl implements JavaQueryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaQueryPackage getJavaQueryPackage() {
@@ -101,7 +100,7 @@ public class JavaQueryFactoryImpl extends EFactoryImpl implements JavaQueryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

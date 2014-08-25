@@ -21,7 +21,7 @@ import org.eclipse.papyrus.uml.diagram.common.dragtracker.NoScrollResizeTracker;
 
 /**
  * this editppolicy is used to constraint the move of one figure into its container without scroll bars
- * 
+ *
  * this class was used to remove scrollbar
  * Now it is not used (but can be when this functionality will be operational)
  *

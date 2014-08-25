@@ -14,12 +14,12 @@ package org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.papyrus.emf.facet.efacet.FacetOperation;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetAction;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.AbstractFacetWizardPage;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.AddOperationParameterInFacetWizardPage;
-import org.eclipse.jface.viewers.ISelection;
 
 @Deprecated
 // TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601

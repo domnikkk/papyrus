@@ -6,19 +6,14 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AbstractServiceDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceSetDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage;
@@ -47,7 +42,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -58,7 +53,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -69,7 +64,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	 * The cached value of the '{@link #getDependsOn() <em>Depends On</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDependsOn()
 	 * @generated
 	 * @ordered
@@ -80,7 +75,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -91,7 +86,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -102,7 +97,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -113,7 +108,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -124,7 +119,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	 * The default value of the '{@link #getBundleID() <em>Bundle ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBundleID()
 	 * @generated
 	 * @ordered
@@ -135,7 +130,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	 * The cached value of the '{@link #getBundleID() <em>Bundle ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBundleID()
 	 * @generated
 	 * @ordered
@@ -146,7 +141,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	 * The cached value of the '{@link #getDependsOnIds() <em>Depends On Ids</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDependsOnIds()
 	 * @generated
 	 * @ordered
@@ -156,7 +151,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AbstractServiceDescImpl() {
@@ -166,7 +161,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +172,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +183,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +198,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +212,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +223,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +238,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -254,7 +249,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +264,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +275,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -295,7 +290,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +304,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetParent(ServiceSetDesc newParent, NotificationChain msgs) {
@@ -320,7 +315,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +344,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -363,7 +358,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -381,7 +376,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -396,7 +391,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -411,7 +406,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -438,7 +433,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -475,7 +470,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -509,7 +504,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -536,7 +531,7 @@ public abstract class AbstractServiceDescImpl extends EObjectImpl implements Abs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

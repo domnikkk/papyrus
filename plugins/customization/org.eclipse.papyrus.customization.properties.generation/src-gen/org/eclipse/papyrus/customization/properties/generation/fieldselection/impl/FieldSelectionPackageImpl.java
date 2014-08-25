@@ -24,7 +24,7 @@ import org.eclipse.papyrus.customization.properties.generation.wizard.widget.Ter
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSelectionPackage {
@@ -32,7 +32,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass fieldSelectionEClass = null;
@@ -40,7 +40,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass propertyDefinitionEClass = null;
@@ -48,7 +48,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass contextElementEClass = null;
@@ -56,7 +56,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType valueEDataType = null;
@@ -66,7 +66,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelectionPackage#eNS_URI
 	 * @see #init()
@@ -79,7 +79,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -90,7 +90,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	 * <p>
 	 * This method is used to initialize {@link FieldSelectionPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -124,7 +124,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFieldSelection() {
@@ -134,7 +134,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFieldSelection_Fields() {
@@ -144,7 +144,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFieldSelection_ContextElements() {
@@ -154,7 +154,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPropertyDefinition() {
@@ -164,7 +164,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPropertyDefinition_Name() {
@@ -174,7 +174,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPropertyDefinition_ValueSingle() {
@@ -184,7 +184,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPropertyDefinition_ValueMultiple() {
@@ -194,7 +194,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getContextElement() {
@@ -204,7 +204,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getContextElement_Elements() {
@@ -214,7 +214,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getContextElement_Properties() {
@@ -224,7 +224,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getContextElement_Name() {
@@ -234,7 +234,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EDataType getValue() {
@@ -244,7 +244,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FieldSelectionFactory getFieldSelectionFactory() {
@@ -254,7 +254,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -264,7 +264,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -295,7 +295,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -305,7 +305,7 @@ public class FieldSelectionPackageImpl extends EPackageImpl implements FieldSele
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

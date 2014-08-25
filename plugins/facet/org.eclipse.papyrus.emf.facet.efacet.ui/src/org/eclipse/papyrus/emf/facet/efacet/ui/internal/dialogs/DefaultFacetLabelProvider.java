@@ -12,10 +12,10 @@
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.dialogs;
 
 import org.eclipse.emf.ecore.ENamedElement;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.utils.ImageUtils;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
 
 public class DefaultFacetLabelProvider extends LabelProvider {

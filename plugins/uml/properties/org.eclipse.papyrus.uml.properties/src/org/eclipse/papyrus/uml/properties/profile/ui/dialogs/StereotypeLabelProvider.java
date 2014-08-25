@@ -28,7 +28,7 @@ public class StereotypeLabelProvider extends LabelProvider implements ITableLabe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.LabelProvider#getImage(java.lang.Object)
 	 */
 	@Override
@@ -38,7 +38,7 @@ public class StereotypeLabelProvider extends LabelProvider implements ITableLabe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.LabelProvider#getText(java.lang.Object)
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class StereotypeLabelProvider extends LabelProvider implements ITableLabe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnImage(java.lang.Object, int)
 	 */
 	public Image getColumnImage(Object element, int columnIndex) {
@@ -64,7 +64,7 @@ public class StereotypeLabelProvider extends LabelProvider implements ITableLabe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnText(java.lang.Object, int)
 	 */
 	public String getColumnText(Object element, int columnIndex) {

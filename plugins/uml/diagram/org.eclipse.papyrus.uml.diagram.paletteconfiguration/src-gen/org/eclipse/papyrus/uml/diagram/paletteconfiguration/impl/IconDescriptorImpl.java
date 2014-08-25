@@ -32,7 +32,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	 * The default value of the '{@link #getPluginID() <em>Plugin ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPluginID()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	 * The cached value of the '{@link #getPluginID() <em>Plugin ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPluginID()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	 * The default value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIconPath()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	 * The cached value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIconPath()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IconDescriptorImpl() {
@@ -85,7 +85,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getPluginID() {
@@ -106,7 +106,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPluginID(String newPluginID) {
@@ -120,7 +120,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIconPath() {
@@ -130,7 +130,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIconPath(String newIconPath) {
@@ -144,7 +144,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +180,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +216,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

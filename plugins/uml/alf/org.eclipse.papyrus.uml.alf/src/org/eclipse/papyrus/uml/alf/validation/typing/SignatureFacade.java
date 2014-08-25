@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,24 +39,24 @@ public class SignatureFacade {
 	//private TypeExpression returnType = TypeExpressionFactory.eInstance.createTypeExpression(TypeUtils._undefined, 0, 0, false, false) ;
 	private TypeExpression returnType = null ;
 	private EObject actualSignatureObject = null ;
-	
+
 	public EObject getActualSignatureObject() {
 		return actualSignatureObject;
 	}
 
 	public SignatureFacade() {
-		
+
 	}
-	
+
 	public SignatureFacade(EObject o) {
 		if (o instanceof Operation) {
 			Operation operation = (Operation)o ;
 			this.actualSignatureObject = operation ;
 			this.name = operation.getName() ;
 			for (Parameter p : operation.getOwnedParameters()) {
-				if (p.getDirection() == ParameterDirectionKind.RETURN_LITERAL)
+				if (p.getDirection() == ParameterDirectionKind.RETURN_LITERAL) {
 					returnType = TypeExpressionFactory.eInstance.createTypeExpression(p) ;
-				else {
+				} else {
 					TypeExpression typeOfP = TypeExpressionFactory.eInstance.createTypeExpression(p) ;
 					parameters.add(typeOfP) ;
 					parametersMap.put(p.getName(), typeOfP) ;
@@ -68,9 +68,9 @@ public class SignatureFacade {
 			this.actualSignatureObject = behavior ;
 			this.name = behavior.getName() ;
 			for (Parameter p : behavior.getOwnedParameters()) {
-				if (p.getDirection() == ParameterDirectionKind.RETURN_LITERAL)
+				if (p.getDirection() == ParameterDirectionKind.RETURN_LITERAL) {
 					returnType = TypeExpressionFactory.eInstance.createTypeExpression(p) ;
-				else {
+				} else {
 					TypeExpression typeOfP = TypeExpressionFactory.eInstance.createTypeExpression(p) ;
 					parameters.add(typeOfP) ;
 					parametersMap.put(p.getName(), typeOfP) ;
@@ -82,14 +82,15 @@ public class SignatureFacade {
 			if (eImport.getImportedElement() instanceof Behavior) {
 				Behavior b = (Behavior)eImport.getImportedElement() ;
 				this.actualSignatureObject = b ;
-				if (eImport.getAlias() != null)
+				if (eImport.getAlias() != null) {
 					this.name = eImport.getAlias() ;
-				else
+				} else {
 					this.name = b.getName() ;
+				}
 				for (Parameter p : b.getOwnedParameters()) {
-					if (p.getDirection() == ParameterDirectionKind.RETURN_LITERAL)
+					if (p.getDirection() == ParameterDirectionKind.RETURN_LITERAL) {
 						returnType = TypeExpressionFactory.eInstance.createTypeExpression(p) ;
-					else {
+					} else {
 						TypeExpression typeOfP = TypeExpressionFactory.eInstance.createTypeExpression(p) ;
 						parameters.add(typeOfP) ;
 						parametersMap.put(p.getName(), typeOfP) ;
@@ -110,31 +111,31 @@ public class SignatureFacade {
 			}
 		}
 	}
-	
+
 	public String getName() {
 		return name ;
 	}
-	
+
 	public void setName(String name) {
 		this.name = "" + name ;
 	}
-	
+
 	public List<TypeExpression> getParameters() {
 		return parameters ;
 	}
-	
+
 	public boolean hasReturnType() {
 		return returnType != null ;
 	}
-	
+
 	public TypeExpression getReturnType() {
 		return returnType ;
 	}
-	
+
 	public void setReturnType(TypeExpression returnType) {
 		this.returnType = returnType ;
 	}
-	
+
 	public String isCompatibleWithMe(List<TypeExpression> arguments, boolean getErrorMessage) {
 		int compatibilityLevel = this.isCompatibleWithMe(arguments) ;
 		String errorMessage = "" ;
@@ -143,7 +144,11 @@ public class SignatureFacade {
 			String argumentsString = "(" ;
 			boolean first = true ;
 			for (TypeExpression type : arguments) {
-				if (!first) argumentsString += ", " ; else first = false ;
+				if (!first) {
+					argumentsString += ", " ;
+				} else {
+					first = false ;
+				}
 				argumentsString += type.getLabel() ;
 			}
 			argumentsString += ")" ;
@@ -151,46 +156,54 @@ public class SignatureFacade {
 		}
 		return errorMessage ;
 	}
-	
+
 	public String getLabel() {
 		String label = name + "(" ;
 		boolean first = true ;
 		for (TypeExpression type : parameters) {
-			if (!first) label += ", " ; else first = false ;
+			if (!first) {
+				label += ", " ;
+			} else {
+				first = false ;
+			}
 			label += type.getLabel() ;
 		}
 		label += ")" ;
 		return label ;
 	}
-	
+
 	public int isCompatibleWithMe(List<TypeExpression> arguments) {
-		if (arguments.size() != parameters.size())
+		if (arguments.size() != parameters.size()) {
 			return 0 ;
-		else if (arguments.size() == 0 )
+		} else if (arguments.size() == 0 ) {
 			return 3 ;
+		}
 		int compatibilityLevel = 0 ;
 		boolean first = true ;
 		for (int i = 0 ; i < parameters.size() ; i++) {
 			int currentCompatibilityLevel = parameters.get(i).isCompatibleWithMe(arguments.get(i)) ;
 			if (first && currentCompatibilityLevel < 3)
+			 {
 				return 0 ; //TODO: temporary solution. this is to give a higher value to the first argument if it perfectly matches. Should probably consider the context... Check the spec...
-			if (currentCompatibilityLevel == 0)
+			}
+			if (currentCompatibilityLevel == 0) {
 				return 0 ;
-			else {
+			} else {
 				compatibilityLevel += currentCompatibilityLevel ;
 			}
 			first = false ;
 		}
 		return compatibilityLevel ;
 	}
-	
+
 	public String isCompatibleWithMe(Map<String,TypeExpression> arguments) {
-		if (arguments.keySet().size() == 0 )
+		if (arguments.keySet().size() == 0 ) {
 			return "" ;
+		}
 		String compatibility = "" ;
 		for (String parameterName : arguments.keySet()) {
 			if (parametersMap.get(parameterName) == null) {
-				compatibility += "Parameter " + parameterName + " is undefined\n"; 
+				compatibility += "Parameter " + parameterName + " is undefined\n";
 			}
 			else {
 				int compatibilityLevel = parametersMap.get(parameterName).isCompatibleWithMe(arguments.get(parameterName)) ;
@@ -201,7 +214,7 @@ public class SignatureFacade {
 		}
 		return compatibility ;
 	}
-	
+
 	public static List<SignatureFacade> findNearestSignature(List<TypeExpression> arguments, List<SignatureFacade> candidates) {
 		List<SignatureFacade> matchingSignatures = new ArrayList<SignatureFacade>() ;
 		int bestScore = 0 ;
@@ -209,8 +222,9 @@ public class SignatureFacade {
 			int currentScore = cddMatchingSignature.isCompatibleWithMe(arguments) ;
 			if (currentScore != 0) {
 				if (currentScore >= bestScore) {
-					if (currentScore > bestScore)
+					if (currentScore > bestScore) {
 						matchingSignatures.clear() ;
+					}
 					matchingSignatures.add(cddMatchingSignature) ;
 					bestScore = currentScore ;
 				}
@@ -218,7 +232,7 @@ public class SignatureFacade {
 		}
 		return matchingSignatures ;
 	}
-	
+
 	public static List<SignatureFacade> findNearestConstructorSignature(Map<String, TypeExpression> arguments, List<SignatureFacade> candidates) {
 		List<SignatureFacade> matchingSignatures = new ArrayList<SignatureFacade>() ;
 		for (SignatureFacade cddMatchingSignature : candidates) {
@@ -229,7 +243,7 @@ public class SignatureFacade {
 		}
 		return matchingSignatures ;
 	}
-	
+
 	public List<SignatureFacade> isNotDistinguishableFrom(List<SignatureFacade> candidates) {
 		List<SignatureFacade> matchingSignatures = new ArrayList<SignatureFacade>() ;
 		for (SignatureFacade cddMatchingSignature : candidates) {
@@ -238,8 +252,9 @@ public class SignatureFacade {
 					boolean parameterThatDoesNotMatchFound = false ;
 					for (int i = 0 ; i < this.parameters.size() && !parameterThatDoesNotMatchFound ; ) {
 						int compatibilityLevel = this.parameters.get(i).isCompatibleWithMe(cddMatchingSignature.getParameters().get(i)) ;
-						if (compatibilityLevel != 3)
+						if (compatibilityLevel != 3) {
 							parameterThatDoesNotMatchFound = true ;
+						}
 						i++ ;
 					}
 					if (!parameterThatDoesNotMatchFound) {
@@ -250,46 +265,50 @@ public class SignatureFacade {
 		}
 		return matchingSignatures ;
 	}
-	
+
 	public boolean equals(Operation o) {
 		return this.actualSignatureObject == o ;
 	}
-	
+
 	public boolean equals(Behavior b) {
 		return this.actualSignatureObject == b ;
 	}
-	
+
 	public boolean isAConstructor() {
 		Element signature = null ;
-		if (actualSignatureObject instanceof Operation || actualSignatureObject instanceof Behavior)
+		if (actualSignatureObject instanceof Operation || actualSignatureObject instanceof Behavior) {
 			signature = (Element)actualSignatureObject ;
-		else if (actualSignatureObject instanceof ElementImport)
-			signature = (Element)((ElementImport)actualSignatureObject).getImportedElement() ;
-		if (signature == null)
+		} else if (actualSignatureObject instanceof ElementImport) {
+			signature = ((ElementImport)actualSignatureObject).getImportedElement() ;
+		}
+		if (signature == null) {
 			return false ;
-		return signature.getAppliedStereotype("Standard::Create") != null ; 
+		}
+		return signature.getAppliedStereotype("Standard::Create") != null ;
 	}
-	
+
 	public boolean isADestructor() {
 		Element signature = null ;
-		if (actualSignatureObject instanceof Operation || actualSignatureObject instanceof Behavior)
+		if (actualSignatureObject instanceof Operation || actualSignatureObject instanceof Behavior) {
 			signature = (Element)actualSignatureObject ;
-		else if (actualSignatureObject instanceof ElementImport)
-			signature = (Element)((ElementImport)actualSignatureObject).getImportedElement() ;
-		if (signature == null)
+		} else if (actualSignatureObject instanceof ElementImport) {
+			signature = ((ElementImport)actualSignatureObject).getImportedElement() ;
+		}
+		if (signature == null) {
 			return false ;
+		}
 		return signature.getAppliedStereotype("Standard::Destroy") != null ;
 	}
-	
+
 	public Map<String, TypeExpression> getParametersMap() {
 		return this.parametersMap ;
 	}
-	
+
 	public boolean isATemplate() {
 		if (this.actualSignatureObject instanceof TemplateableElement) {
 			return ((TemplateableElement)this.actualSignatureObject).isTemplate() ;
 		}
 		return false ;
 	}
-	
+
 }

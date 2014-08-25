@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.Block;
 import org.eclipse.papyrus.uml.alf.alf.StatementSequence;
@@ -83,7 +80,11 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.BLOCK__SEQUENCE, oldSequence, newSequence);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -98,15 +99,20 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block
     if (newSequence != sequence)
     {
       NotificationChain msgs = null;
-      if (sequence != null)
-        msgs = ((InternalEObject)sequence).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.BLOCK__SEQUENCE, null, msgs);
-      if (newSequence != null)
-        msgs = ((InternalEObject)newSequence).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.BLOCK__SEQUENCE, null, msgs);
+      if (sequence != null) {
+		msgs = ((InternalEObject)sequence).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.BLOCK__SEQUENCE, null, msgs);
+	}
+      if (newSequence != null) {
+		msgs = ((InternalEObject)newSequence).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.BLOCK__SEQUENCE, null, msgs);
+	}
       msgs = basicSetSequence(newSequence, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.BLOCK__SEQUENCE, newSequence, newSequence));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.BLOCK__SEQUENCE, newSequence, newSequence));
+	}
   }
 
   /**

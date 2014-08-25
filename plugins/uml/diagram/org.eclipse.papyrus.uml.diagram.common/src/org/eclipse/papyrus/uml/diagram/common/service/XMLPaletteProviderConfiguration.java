@@ -97,7 +97,7 @@ public class XMLPaletteProviderConfiguration extends AbstractProviderConfigurati
 
 	/**
 	 * Get the target Editor
-	 * 
+	 *
 	 * @return
 	 */
 	public EditorDescriptor getEditor() {
@@ -169,7 +169,7 @@ public class XMLPaletteProviderConfiguration extends AbstractProviderConfigurati
 
 		/**
 		 * Get the id of the target editor
-		 * 
+		 *
 		 * @return
 		 */
 		public String getTargetId() {

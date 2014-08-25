@@ -31,7 +31,7 @@ public interface EAttributeTreeElement extends EStructuralFeatureTreeElement {
 	/**
 	 * Returns the value of the '<em><b>EAttribute</b></em>' reference.
 	 * The EAttribute represented by this tree element
-	 * 
+	 *
 	 * @return the value of the '<em>EAttribute</em>' reference.
 	 * @see #setEAttribute(EAttribute)
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeproxyPackage#getEAttributeTreeElement_EAttribute()
@@ -40,7 +40,7 @@ public interface EAttributeTreeElement extends EStructuralFeatureTreeElement {
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EAttributeTreeElement#getEAttribute <em>EAttribute</em>}' reference.
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>EAttribute</em>' reference.
 	 * @see #getEAttribute()

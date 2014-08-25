@@ -14,15 +14,11 @@ package org.eclipse.papyrus.infra.gmfdiag.css.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.Declaration;
 import org.eclipse.papyrus.infra.gmfdiag.css.Ruleset;
@@ -48,7 +44,7 @@ public class RulesetImpl extends ContentImpl implements Ruleset
 	 * The cached value of the '{@link #getSelectors() <em>Selectors</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSelectors()
 	 * @generated
 	 * @ordered
@@ -59,7 +55,7 @@ public class RulesetImpl extends ContentImpl implements Ruleset
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProperties()
 	 * @generated
 	 * @ordered
@@ -69,7 +65,7 @@ public class RulesetImpl extends ContentImpl implements Ruleset
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RulesetImpl()
@@ -80,7 +76,7 @@ public class RulesetImpl extends ContentImpl implements Ruleset
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +88,7 @@ public class RulesetImpl extends ContentImpl implements Ruleset
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +104,7 @@ public class RulesetImpl extends ContentImpl implements Ruleset
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +120,7 @@ public class RulesetImpl extends ContentImpl implements Ruleset
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +139,7 @@ public class RulesetImpl extends ContentImpl implements Ruleset
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +158,7 @@ public class RulesetImpl extends ContentImpl implements Ruleset
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -186,7 +182,7 @@ public class RulesetImpl extends ContentImpl implements Ruleset
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +203,7 @@ public class RulesetImpl extends ContentImpl implements Ruleset
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

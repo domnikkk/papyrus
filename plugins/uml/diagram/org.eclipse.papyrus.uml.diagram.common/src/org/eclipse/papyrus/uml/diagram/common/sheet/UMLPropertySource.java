@@ -25,7 +25,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.provider.PropertyDescriptor;
 import org.eclipse.emf.edit.ui.provider.PropertySource;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.window.Window;
@@ -51,7 +50,7 @@ public class UMLPropertySource extends PropertySource {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.emf.edit.ui.provider.PropertySource#createPropertyDescriptor
 	 * (org.eclipse.emf.edit.provider.IItemPropertyDescriptor)
@@ -151,7 +150,7 @@ public class UMLPropertySource extends PropertySource {
 
 	/**
 	 * Check whether a child belongs to the given parent, i.e. is owned by it.
-	 * 
+	 *
 	 * @param parent
 	 *            a parent
 	 * @param child

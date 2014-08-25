@@ -101,7 +101,7 @@ public abstract class AbstractGetOrCreateFilteredElementCommandWidget<T extends 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.IGetOrCreateFilteredElementCommmandWidget#getElementSelected()
 	 */
 	public T getElementSelected() {
@@ -117,7 +117,7 @@ public abstract class AbstractGetOrCreateFilteredElementCommandWidget<T extends 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.IGetOrCreateFilteredElementCommmandWidget#selectElement(T)
 	 */
 	public void selectElement(final T element) {
@@ -139,7 +139,7 @@ public abstract class AbstractGetOrCreateFilteredElementCommandWidget<T extends 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.IGetOrCreateFilteredElementCommmandWidget#pressNewButton()
 	 */
 	public IDialog<W> pressNewButton() {

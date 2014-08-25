@@ -43,7 +43,7 @@ import org.eclipse.papyrus.infra.services.edit.service.IElementEditServiceProvid
  * This class is a singleton that may be access directly or via Papyrus service registry.
  * Note that this provider does not necessary need Papyrus to be the active editor to be available
  * (it relies on {@link ElementTypeRegistry} which is independant from Papyrus.
- * 
+ *
  * It is registered as Papyrus service with the {@link ElementEditServiceProviderFactory}.
  *
  * </pre>
@@ -74,16 +74,16 @@ public class ElementEditServiceProvider implements IElementEditServiceProvider {
 	 * <pre>
 	 *
 	 * This method try to retrieve the correct edit service for an object.
-	 * 
+	 *
 	 * It relies on GMF {@link ElementTypeRegistry} which provides the {@link IElementType} registered
 	 * in the Extensible type framework for the object passed in parameter. The found element type is returned
 	 * wrapped as an {@link IElementEditService}.
-	 * 
+	 *
 	 * The {@link IElementType} are registered in separate plug-ins (e.g. oep.uml.service.types for all types
 	 * related to UML metaclasses).
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.edit.service.IElementEditServiceProvider#getEditService(java.lang.Object)
-	 * 
+	 *
 	 * @param objectToEdit the object for which this method tries to retrieve an edit service
 	 * @return the {@link IElementEditService} for the passed object
 	 * @throws ServiceException
@@ -132,9 +132,9 @@ public class ElementEditServiceProvider implements IElementEditServiceProvider {
 	 *
 	 * This method returns the registered {@link IElementType} (wrapped as {@link IElementEditService}) that may be contained by
 	 * the eContainer parameter for the specific reference parameter.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.edit.service.IElementEditServiceProvider#getContainedTypeEditServices(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EReference)
-	 * 
+	 *
 	 * @param eContainer
 	 * @param reference
 	 * @return the list of possibly contained {@link IElementEditService}

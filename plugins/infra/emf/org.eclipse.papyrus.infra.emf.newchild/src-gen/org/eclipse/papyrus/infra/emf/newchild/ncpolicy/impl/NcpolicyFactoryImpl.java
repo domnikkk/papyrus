@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.emf.newchild.ncpolicy.ReplacePolicy;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory {
@@ -34,7 +34,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NcpolicyFactory init() {
@@ -53,7 +53,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NcpolicyFactoryImpl() {
@@ -63,7 +63,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,7 +87,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NewEMFChildMenu createNewEMFChildMenu() {
@@ -134,7 +134,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NewChildPolicySet createNewChildPolicySet() {
@@ -145,7 +145,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FilterPolicy createFilterPolicy() {
@@ -156,7 +156,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ReplacePolicy createReplacePolicy() {
@@ -167,7 +167,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomPolicy createCustomPolicy() {
@@ -178,7 +178,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CreateIn createCreateInFromString(EDataType eDataType, String initialValue) {
@@ -192,7 +192,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertCreateInToString(EDataType eDataType, Object instanceValue) {
@@ -202,7 +202,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Layout createLayoutFromString(EDataType eDataType, String initialValue) {
@@ -216,7 +216,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertLayoutToString(EDataType eDataType, Object instanceValue) {
@@ -226,7 +226,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NcpolicyPackage getNcpolicyPackage() {
@@ -236,7 +236,7 @@ public class NcpolicyFactoryImpl extends EFactoryImpl implements NcpolicyFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

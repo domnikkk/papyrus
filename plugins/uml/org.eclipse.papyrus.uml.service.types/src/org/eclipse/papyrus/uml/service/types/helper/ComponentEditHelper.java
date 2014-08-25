@@ -76,7 +76,7 @@ public class ComponentEditHelper extends ElementEditHelper {
 
 	/**
 	 * test if it is possible to create a component into a given container and with the given containment feature
-	 * 
+	 *
 	 * @param owner
 	 *            the owner of the component, can be null
 	 * @param eref

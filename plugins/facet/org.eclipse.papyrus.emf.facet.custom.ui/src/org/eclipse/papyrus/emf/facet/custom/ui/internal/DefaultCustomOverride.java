@@ -12,11 +12,11 @@
 package org.eclipse.papyrus.emf.facet.custom.ui.internal;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
+import org.eclipse.papyrus.emf.facet.custom.core.exception.CustomizationException;
 import org.eclipse.papyrus.emf.facet.custom.ui.ICustomOverride;
 import org.eclipse.papyrus.emf.facet.custom.ui.IFontPropertiesHandler;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
-import org.eclipse.papyrus.emf.facet.custom.core.exception.CustomizationException;
 import org.eclipse.swt.graphics.FontData;
 
 public class DefaultCustomOverride implements ICustomOverride {

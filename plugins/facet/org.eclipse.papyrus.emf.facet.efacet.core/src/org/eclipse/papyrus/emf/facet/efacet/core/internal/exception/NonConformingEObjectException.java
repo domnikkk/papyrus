@@ -13,7 +13,7 @@ package org.eclipse.papyrus.emf.facet.efacet.core.internal.exception;
 /**
  * This exception is raised when an object cannot be extended by a facet because it is filtered by the conformance query
  * of this facet.
- * 
+ *
  * @since 0.2
  */
 public class NonConformingEObjectException extends Exception {

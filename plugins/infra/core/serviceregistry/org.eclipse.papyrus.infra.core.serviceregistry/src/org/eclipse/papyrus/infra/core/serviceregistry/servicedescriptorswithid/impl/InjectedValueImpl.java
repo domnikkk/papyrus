@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedValue;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage;
 
@@ -30,7 +27,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -41,7 +38,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -51,7 +48,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InjectedValueImpl() {
@@ -61,7 +58,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +69,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +80,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +95,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +110,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +126,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +142,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +157,7 @@ public abstract class InjectedValueImpl extends EObjectImpl implements InjectedV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

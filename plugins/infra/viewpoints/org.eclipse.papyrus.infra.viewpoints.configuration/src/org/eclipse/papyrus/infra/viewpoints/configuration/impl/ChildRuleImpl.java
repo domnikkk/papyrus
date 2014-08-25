@@ -17,18 +17,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule;
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PathElement;
@@ -54,7 +49,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	 * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -65,7 +60,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	 * The cached value of the '{@link #getStereotypes() <em>Stereotypes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypes()
 	 * @generated
 	 * @ordered
@@ -76,7 +71,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	 * The cached value of the '{@link #getOrigin() <em>Origin</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOrigin()
 	 * @generated
 	 * @ordered
@@ -87,7 +82,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	 * The cached value of the '{@link #getInsertionPath() <em>Insertion Path</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInsertionPath()
 	 * @generated
 	 * @ordered
@@ -97,7 +92,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ChildRuleImpl() {
@@ -107,7 +102,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +113,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getElement() {
@@ -137,7 +132,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass basicGetElement() {
@@ -147,7 +142,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElement(EClass newElement) {
@@ -161,7 +156,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<EClass> getStereotypes() {
@@ -174,7 +169,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getOrigin() {
@@ -193,7 +188,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass basicGetOrigin() {
@@ -203,7 +198,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOrigin(EClass newOrigin) {
@@ -217,7 +212,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<PathElement> getInsertionPath() {
@@ -230,7 +225,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +240,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +267,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -300,7 +295,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +320,7 @@ public class ChildRuleImpl extends RuleImpl implements ChildRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -12,9 +12,7 @@
 package org.eclipse.papyrus.infra.gmfdiag.css.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.Content;
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 
@@ -32,7 +30,7 @@ public class ContentImpl extends MinimalEObjectImpl.Container implements Content
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ContentImpl()
@@ -43,7 +41,7 @@ public class ContentImpl extends MinimalEObjectImpl.Container implements Content
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

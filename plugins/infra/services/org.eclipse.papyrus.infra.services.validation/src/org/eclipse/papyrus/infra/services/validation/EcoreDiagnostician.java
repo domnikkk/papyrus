@@ -34,7 +34,7 @@ public class EcoreDiagnostician extends Diagnostician implements IPapyrusDiagnos
 
 	/**
 	 * Create diagnostician with custom validator (that must subclass ECore validator)
-	 * 
+	 *
 	 * @param validatorAdapter
 	 *            custom validator adapter
 	 */

@@ -33,7 +33,7 @@ public interface CompositeConstraint extends ConstraintDescriptor {
 	 * If the meaning of the '<em>Constraints</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Constraints</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.constraints.ConstraintsPackage#getCompositeConstraint_Constraints()
 	 * @model containment="true"

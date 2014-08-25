@@ -35,7 +35,7 @@ public class XMLPaletteDefinitionProfileInspector implements XMLPaletteDefinitio
 
 	/**
 	 * Gets the profiles required for the palette
-	 * 
+	 *
 	 * @return A collection of the required profiles
 	 */
 	public Collection<String> getRequiredProfiles() {

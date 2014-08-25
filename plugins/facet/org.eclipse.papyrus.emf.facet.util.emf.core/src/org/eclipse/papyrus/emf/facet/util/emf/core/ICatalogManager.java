@@ -13,8 +13,8 @@
 package org.eclipse.papyrus.emf.facet.util.emf.core;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.emf.facet.util.emf.core.internal.catalog.CatalogSetManager;
 import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
+import org.eclipse.papyrus.emf.facet.util.emf.core.internal.catalog.CatalogSetManager;
 
 /**
  * Manager for catalogs containing registered elements defined in models.

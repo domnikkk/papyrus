@@ -1,6 +1,6 @@
 package org.eclipse.papyrus.infra.core.serviceregistry;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import java.io.IOException;
 
@@ -16,7 +16,7 @@ public class ServiceDescriptorsWithIdProviderCollectionTest extends AbstractServ
 
 	/**
 	 * Load a RegistryDesc from the specified declaration file.
-	 * 
+	 *
 	 * @param extensionFileName
 	 *            The name of the resource containing declarations
 	 * @param registryName

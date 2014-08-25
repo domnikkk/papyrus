@@ -30,7 +30,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	 * The default value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassName()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	 * The cached value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassName()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CustomFillerImpl() {
@@ -61,7 +61,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getClassName() {
@@ -82,7 +82,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setClassName(String newClassName) {
@@ -96,7 +96,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class CustomFillerImpl extends MenuItemImpl implements CustomFiller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

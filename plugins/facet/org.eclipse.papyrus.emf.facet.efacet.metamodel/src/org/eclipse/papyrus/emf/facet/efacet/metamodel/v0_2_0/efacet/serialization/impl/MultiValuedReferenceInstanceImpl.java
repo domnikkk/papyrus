@@ -41,7 +41,7 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	 * The cached value of the '{@link #getReferencedElements() <em>Referenced Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReferencedElements()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MultiValuedReferenceInstanceImpl() {
@@ -61,7 +61,7 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<EObject> getReferencedElements() {
@@ -85,7 +85,7 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -118,7 +118,7 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class MultiValuedReferenceInstanceImpl extends AbstractReferenceInstanceI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

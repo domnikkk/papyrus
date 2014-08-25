@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
+import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -34,10 +35,10 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <pre>
  * This is a read only ISemanticParser used to show the name of the binded role
  * in a RoleBinding dependency.
- * 
+ *
  * Several method do not need implementation due to the read only status of the
  * label where the role name is shown.
- * 
+ *
  * It is assumed here that the parsed element is a {@link Dependency} acting as
  * a RoleBinding.
  * </pre>
@@ -62,7 +63,7 @@ public class RoleBindingRoleNameParser implements ISemanticParser {
 	/**
 	 * <pre>
 	 * Retrieves the {@link ConnectableElement} that acts as the binded role.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -111,7 +112,7 @@ public class RoleBindingRoleNameParser implements ISemanticParser {
 	/**
 	 * <pre>
 	 * Provides the name of the binded role.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

@@ -16,18 +16,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.discovery.Category;
 import org.eclipse.papyrus.infra.discovery.DiscoveryPackage;
 import org.eclipse.papyrus.infra.discovery.InstallableComponent;
@@ -56,7 +51,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -67,7 +62,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -78,7 +73,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -89,7 +84,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -100,7 +95,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	 * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getComponents()
 	 * @generated
 	 * @ordered
@@ -111,7 +106,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	 * The default value of the '{@link #getRelevance() <em>Relevance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRelevance()
 	 * @generated
 	 * @ordered
@@ -122,7 +117,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	 * The cached value of the '{@link #getRelevance() <em>Relevance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRelevance()
 	 * @generated
 	 * @ordered
@@ -133,7 +128,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	 * The cached value of the '{@link #getOverview() <em>Overview</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOverview()
 	 * @generated
 	 * @ordered
@@ -144,7 +139,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	 * The default value of the '{@link #getImage48() <em>Image48</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImage48()
 	 * @generated
 	 * @ordered
@@ -155,7 +150,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	 * The cached value of the '{@link #getImage48() <em>Image48</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImage48()
 	 * @generated
 	 * @ordered
@@ -165,7 +160,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CategoryImpl() {
@@ -175,7 +170,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +181,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -196,7 +191,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -210,7 +205,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -220,7 +215,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -234,7 +229,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<InstallableComponent> getComponents() {
@@ -247,7 +242,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Integer getRelevance() {
@@ -257,7 +252,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRelevance(Integer newRelevance) {
@@ -271,7 +266,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Overview getOverview() {
@@ -281,7 +276,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOverview(Overview newOverview, NotificationChain msgs) {
@@ -301,7 +296,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOverview(Overview newOverview) {
@@ -326,7 +321,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getImage48() {
@@ -336,7 +331,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setImage48(String newImage48) {
@@ -350,7 +345,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -366,7 +361,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -383,7 +378,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -408,7 +403,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -441,7 +436,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -472,7 +467,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -497,7 +492,7 @@ public class CategoryImpl extends MinimalEObjectImpl implements Category {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

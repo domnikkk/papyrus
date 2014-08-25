@@ -94,7 +94,7 @@ public class DocumentRoot {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentRoot#getFormat()
 	 */
 	public int getFormat() {
@@ -103,7 +103,7 @@ public class DocumentRoot {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentRoot#getType()
 	 */
 	public int getType() {
@@ -112,7 +112,7 @@ public class DocumentRoot {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentRoot#getPath()
 	 */
 	public URL getPath() {
@@ -121,7 +121,7 @@ public class DocumentRoot {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentRoot#getFile()
 	 */
 	public String getFile() {
@@ -130,7 +130,7 @@ public class DocumentRoot {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentRoot#openStream()
 	 */
 	public InputStream openStream() throws IOException {
@@ -147,7 +147,7 @@ public class DocumentRoot {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IDocumentRoot#openStream(java.lang.String)
 	 */
 	public InputStream openStream(String path) throws IOException {

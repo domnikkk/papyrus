@@ -35,7 +35,7 @@ public interface Namespace extends EObject {
 	 * If the meaning of the '<em>Prefix</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Prefix</em>' attribute.
 	 * @see #setPrefix(String)
 	 * @see org.eclipse.papyrus.views.properties.environment.EnvironmentPackage#getNamespace_Prefix()
@@ -48,7 +48,7 @@ public interface Namespace extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.environment.Namespace#getPrefix <em>Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Prefix</em>' attribute.
 	 * @see #getPrefix()
@@ -63,7 +63,7 @@ public interface Namespace extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.views.properties.environment.EnvironmentPackage#getNamespace_Name()
@@ -76,7 +76,7 @@ public interface Namespace extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.environment.Namespace#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -91,7 +91,7 @@ public interface Namespace extends EObject {
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.eclipse.papyrus.views.properties.environment.EnvironmentPackage#getNamespace_Value()
@@ -104,7 +104,7 @@ public interface Namespace extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.environment.Namespace#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()

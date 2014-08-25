@@ -13,6 +13,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.utils;
 
+import org.eclipse.uml2.uml.OpaqueExpression;
+
 
 /**
  * Util class for {@link OpaqueExpression}

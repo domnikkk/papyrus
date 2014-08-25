@@ -47,7 +47,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	 * The cached value of the '{@link #getInstalledEntries() <em>Installed Entries</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInstalledEntries()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FacetSetCatalogImpl() {
@@ -89,7 +89,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<EObject> getInstalledEntries() {
@@ -113,7 +113,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -123,7 +123,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(final String newName) {
@@ -137,7 +137,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -175,7 +175,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class FacetSetCatalogImpl extends EObjectImpl implements FacetSetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

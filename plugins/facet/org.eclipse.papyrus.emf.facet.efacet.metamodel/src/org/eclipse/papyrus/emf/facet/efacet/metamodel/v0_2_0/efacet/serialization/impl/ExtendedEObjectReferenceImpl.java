@@ -51,7 +51,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	 * The cached value of the '{@link #getExtendedEObject() <em>Extended EObject</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtendedEObject()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	 * The cached value of the '{@link #getAttributeInstances() <em>Attribute Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAttributeInstances()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	 * The cached value of the '{@link #getReferenceInstances() <em>Reference Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReferenceInstances()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExtendedEObjectReferenceImpl() {
@@ -93,7 +93,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject getExtendedEObject() {
@@ -123,7 +123,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetExtendedEObject() {
@@ -133,7 +133,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setExtendedEObject(EObject newExtendedEObject) {
@@ -147,7 +147,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<AbstractAttributeInstance> getAttributeInstances() {
@@ -160,7 +160,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<AbstractReferenceInstance> getReferenceInstances() {
@@ -173,7 +173,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -237,7 +237,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class ExtendedEObjectReferenceImpl extends EObjectImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

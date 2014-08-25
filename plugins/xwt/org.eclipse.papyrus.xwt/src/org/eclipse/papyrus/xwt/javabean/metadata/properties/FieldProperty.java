@@ -33,7 +33,7 @@ public class FieldProperty extends AbstractProperty {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.metadata.IProperty#getValue(java.lang.Object)
 	 */
 	public Object getValue(Object target) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
@@ -42,7 +42,7 @@ public class FieldProperty extends AbstractProperty {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.metadata.IProperty#setValue(java.lang.Object, java.lang.Object)
 	 */
 	public void setValue(Object target, Object value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {

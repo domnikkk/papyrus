@@ -16,6 +16,7 @@ import org.eclipse.core.databinding.observable.IObservable;
 import org.eclipse.core.databinding.validation.IValidator;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.papyrus.infra.widgets.creation.ReferenceValueFactory;
+import org.eclipse.papyrus.infra.widgets.providers.EmptyContentProvider;
 import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 
 /**
@@ -161,7 +162,7 @@ public interface ModelElement {
 
 	/**
 	 * return the Validator of a given String propertyPath
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return
 	 */

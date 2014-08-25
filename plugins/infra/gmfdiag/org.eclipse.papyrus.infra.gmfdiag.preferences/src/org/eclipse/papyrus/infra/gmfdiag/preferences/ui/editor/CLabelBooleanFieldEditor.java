@@ -177,7 +177,7 @@ public class CLabelBooleanFieldEditor extends BooleanFieldEditor {
 	}
 
 	/*
-	 * 
+	 *
 	 * The following methods are duplicated from BooleanFieldEditor, because, we need the style value before the end of the constructor execution!
 	 */
 

@@ -1,12 +1,13 @@
 package org.eclipse.papyrus.uml.textedit.message.xtext.serializer;
 
-import com.google.inject.Inject;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.uml.textedit.message.xtext.services.UmlMessageGrammarAccess;
 import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.MessageRule;
 import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule;
 import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.UmlMessagePackage;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class UmlMessageSemanticSequencer extends AbstractDelegatingSemanticSequencer {

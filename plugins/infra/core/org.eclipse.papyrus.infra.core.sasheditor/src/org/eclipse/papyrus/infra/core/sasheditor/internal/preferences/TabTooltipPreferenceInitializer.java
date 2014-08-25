@@ -28,7 +28,7 @@ public class TabTooltipPreferenceInitializer extends AbstractPreferenceInitializ
 
 	/**
 	 * Subclasses may implements this method in order to provide the requested preferenceStore.
-	 * 
+	 *
 	 * @return
 	 */
 	protected IPreferenceStore createPreferenceStore() {

@@ -14,15 +14,13 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.NattableproblemPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.Problem;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem;
 
 /**
  * <!-- begin-user-doc -->

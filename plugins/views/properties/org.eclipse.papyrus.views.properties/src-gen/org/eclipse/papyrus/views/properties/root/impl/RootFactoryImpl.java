@@ -19,7 +19,7 @@ import org.eclipse.papyrus.views.properties.root.RootPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RootFactoryImpl extends EFactoryImpl implements RootFactory {
@@ -28,7 +28,7 @@ public class RootFactoryImpl extends EFactoryImpl implements RootFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static RootFactory init() {
@@ -47,7 +47,7 @@ public class RootFactoryImpl extends EFactoryImpl implements RootFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RootFactoryImpl() {
@@ -57,7 +57,7 @@ public class RootFactoryImpl extends EFactoryImpl implements RootFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +73,7 @@ public class RootFactoryImpl extends EFactoryImpl implements RootFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PropertiesRoot createPropertiesRoot() {
@@ -84,7 +84,7 @@ public class RootFactoryImpl extends EFactoryImpl implements RootFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RootPackage getRootPackage() {
@@ -94,7 +94,7 @@ public class RootFactoryImpl extends EFactoryImpl implements RootFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

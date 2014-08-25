@@ -22,7 +22,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * A LabelProvider for a single Profile Definition (EPackage)
- * 
+ *
  * @author Camille Letavernier
  *
  */

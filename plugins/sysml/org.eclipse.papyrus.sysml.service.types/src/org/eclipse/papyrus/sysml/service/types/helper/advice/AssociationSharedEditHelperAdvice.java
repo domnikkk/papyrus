@@ -23,10 +23,10 @@ public class AssociationSharedEditHelperAdvice extends AssociationNoneEditHelper
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * The currently created {@link Association} is Shared (manage by super class):
 	 * 		it source {@link Property} aggregation is set to Shared kind.
-	 * 
+	 *
 	 * The currently created {@link Association} is bidirectional (navigable in both directions):
 	 * 		it source and target {@link Property} are owned by the {@link Classifier} (target and source end types),
 	 * 		this is handled by the super class.

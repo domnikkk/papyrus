@@ -43,7 +43,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	 * The cached value of the '{@link #getResult() <em>Result</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResult()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ETypedElementPrimitiveTypeResultImpl() {
@@ -63,7 +63,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +74,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public T getResult() {
@@ -84,7 +84,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setResult(T newResult) {
@@ -98,7 +98,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -130,7 +130,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class ETypedElementPrimitiveTypeResultImpl<T> extends ETypedElementResult
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

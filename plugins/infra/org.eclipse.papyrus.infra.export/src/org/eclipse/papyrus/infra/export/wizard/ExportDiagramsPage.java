@@ -13,9 +13,9 @@ package org.eclipse.papyrus.infra.export.wizard;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.papyrus.infra.export.actions.ExportComposite;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.papyrus.infra.export.actions.ExportComposite;
 
 /**
  * wizard page to export all diagram from a Papyrus model

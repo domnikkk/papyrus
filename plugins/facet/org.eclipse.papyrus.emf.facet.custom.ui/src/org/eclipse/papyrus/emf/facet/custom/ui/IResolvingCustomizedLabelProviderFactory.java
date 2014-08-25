@@ -10,8 +10,8 @@
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.custom.ui;
 
-import org.eclipse.papyrus.emf.facet.custom.ui.internal.ResolvingCustomizedLabelProviderFactory;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
+import org.eclipse.papyrus.emf.facet.custom.ui.internal.ResolvingCustomizedLabelProviderFactory;
 
 /**
  * A factory to create instances of {@link ICustomizedLabelProvider} that work on proxy UI elements, by customizing the

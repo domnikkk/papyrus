@@ -12,13 +12,13 @@ package org.eclipse.papyrus.emf.facet.efacet.ui.internal.dialogs;
 
 import java.util.List;
 
+import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.dialog.IFacetSetSelectionDialog;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.dialog.IFacetSetSelectionDialogInternal;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.AbstractExceptionFreeRunnable;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.AbstractVoidExceptionFreeRunnable;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.SynchronizedComposite;
-import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.widgets.Shell;
 
 /** A synchronization facade for {@link IFacetSetSelectionDialog}. */

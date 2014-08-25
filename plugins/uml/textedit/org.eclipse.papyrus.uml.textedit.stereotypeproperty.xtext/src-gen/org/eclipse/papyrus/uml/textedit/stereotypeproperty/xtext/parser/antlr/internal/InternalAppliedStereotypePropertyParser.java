@@ -1,11 +1,18 @@
 package org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.parser.antlr.internal;
 
-import org.eclipse.emf.ecore.EObject;
+import org.antlr.runtime.BaseRecognizer;
+import org.antlr.runtime.BitSet;
+import org.antlr.runtime.DFA;
+import org.antlr.runtime.EarlyExitException;
+import org.antlr.runtime.NoViableAltException;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.RecognizerSharedState;
+import org.antlr.runtime.Token;
+import org.antlr.runtime.TokenStream;
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.services.AppliedStereotypePropertyGrammarAccess;
-
-import org.antlr.runtime.*;
+import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 
 @SuppressWarnings("all")
 public class InternalAppliedStereotypePropertyParser extends AbstractInternalAntlrParser {

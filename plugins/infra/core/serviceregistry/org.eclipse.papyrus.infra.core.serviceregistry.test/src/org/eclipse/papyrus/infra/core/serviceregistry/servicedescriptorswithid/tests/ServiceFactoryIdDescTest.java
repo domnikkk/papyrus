@@ -11,7 +11,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Service Factory Id Desc</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ServiceFactoryIdDescTest extends ServiceIdDescTest {
@@ -19,7 +19,7 @@ public class ServiceFactoryIdDescTest extends ServiceIdDescTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class ServiceFactoryIdDescTest extends ServiceIdDescTest {
 	 * Constructs a new Service Factory Id Desc test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ServiceFactoryIdDescTest(String name) {
@@ -41,7 +41,7 @@ public class ServiceFactoryIdDescTest extends ServiceIdDescTest {
 	 * Returns the fixture for this Service Factory Id Desc test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class ServiceFactoryIdDescTest extends ServiceIdDescTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public class ServiceFactoryIdDescTest extends ServiceIdDescTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

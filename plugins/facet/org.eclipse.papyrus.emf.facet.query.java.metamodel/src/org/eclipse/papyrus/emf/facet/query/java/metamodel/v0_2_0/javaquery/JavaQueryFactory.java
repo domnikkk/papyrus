@@ -31,7 +31,7 @@ public interface JavaQueryFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	JavaQueryFactory eINSTANCE = org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.impl.JavaQueryFactoryImpl.init();
@@ -40,7 +40,7 @@ public interface JavaQueryFactory extends EFactory {
 	 * Returns a new object of class '<em>Java Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Java Query</em>'.
 	 * @generated
 	 */
@@ -50,7 +50,7 @@ public interface JavaQueryFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

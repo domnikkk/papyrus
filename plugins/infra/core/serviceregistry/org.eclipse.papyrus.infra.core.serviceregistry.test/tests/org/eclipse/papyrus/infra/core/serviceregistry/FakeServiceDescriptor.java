@@ -34,7 +34,7 @@ public class FakeServiceDescriptor extends ServiceDescriptor {
 
 	/**
 	 * Get the type of the created service.
-	 * 
+	 *
 	 * @return
 	 */
 	static public Class<?> getServiceType() {

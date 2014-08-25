@@ -38,7 +38,7 @@ public interface Attribute extends SelectorCondition
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getAttribute_Name()
@@ -51,7 +51,7 @@ public interface Attribute extends SelectorCondition
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Attribute#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -66,7 +66,7 @@ public interface Attribute extends SelectorCondition
 	 * If the meaning of the '<em>Value</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' containment reference.
 	 * @see #setValue(AttributeValue)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getAttribute_Value()
@@ -79,7 +79,7 @@ public interface Attribute extends SelectorCondition
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Attribute#getValue <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' containment reference.
 	 * @see #getValue()

@@ -36,7 +36,7 @@ public interface PageList extends EObject {
 	 * If the meaning of the '<em>Available Page</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Available Page</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.DiPackage#getPageList_AvailablePage()
 	 * @model containment="true" ordered="false"
@@ -47,7 +47,7 @@ public interface PageList extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model pageIdentifierDataType="org.eclipse.papyrus.infra.core.sashwindows.di.JavaObject" pageIdentifierRequired="true" pageIdentifierOrdered="false"
 	 * @generated
 	 */
@@ -56,7 +56,7 @@ public interface PageList extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model pageIdentifierDataType="org.eclipse.papyrus.infra.core.sashwindows.di.JavaObject" pageIdentifierRequired="true" pageIdentifierOrdered="false"
 	 * @generated
 	 */

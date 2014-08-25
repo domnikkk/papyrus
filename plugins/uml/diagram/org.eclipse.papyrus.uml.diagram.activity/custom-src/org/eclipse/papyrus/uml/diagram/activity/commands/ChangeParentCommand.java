@@ -122,7 +122,7 @@ public class ChangeParentCommand extends AbstractTransactionalCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.core.command.ICommand#getLabel()
 	 */
 	@Override

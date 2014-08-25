@@ -16,15 +16,11 @@ package org.eclipse.papyrus.infra.viewpoints.iso42010.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureRationale;
@@ -54,7 +50,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	 * The cached value of the '{@link #getJustifiedBy() <em>Justified By</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getJustifiedBy()
 	 * @generated
 	 * @ordered
@@ -65,7 +61,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	 * The cached value of the '{@link #getDependsUpon() <em>Depends Upon</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDependsUpon()
 	 * @generated
 	 * @ordered
@@ -76,7 +72,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	 * The cached value of the '{@link #getDependents() <em>Dependents</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDependents()
 	 * @generated
 	 * @ordered
@@ -87,7 +83,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	 * The cached value of the '{@link #getRaises() <em>Raises</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRaises()
 	 * @generated
 	 * @ordered
@@ -98,7 +94,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	 * The cached value of the '{@link #getPertainsTo() <em>Pertains To</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPertainsTo()
 	 * @generated
 	 * @ordered
@@ -109,7 +105,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	 * The cached value of the '{@link #getAffects() <em>Affects</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAffects()
 	 * @generated
 	 * @ordered
@@ -119,7 +115,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureDecisionImpl() {
@@ -129,7 +125,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +136,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureRationale> getJustifiedBy() {
@@ -153,7 +149,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureDecision> getDependsUpon() {
@@ -166,7 +162,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureDecision> getDependents() {
@@ -179,7 +175,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Concern> getRaises() {
@@ -192,7 +188,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Concern> getPertainsTo() {
@@ -205,7 +201,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ADElement> getAffects() {
@@ -218,7 +214,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -244,7 +240,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +265,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +290,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -332,7 +328,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -363,7 +359,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

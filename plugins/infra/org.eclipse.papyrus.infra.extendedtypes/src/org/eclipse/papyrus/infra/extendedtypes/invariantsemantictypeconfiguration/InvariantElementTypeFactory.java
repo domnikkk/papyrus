@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration;
 
 import java.util.Arrays;
+
 import org.eclipse.gmf.runtime.emf.type.core.IContainerDescriptor;
 import org.eclipse.gmf.runtime.emf.type.core.IElementMatcher;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.IEditHelperAdvice;

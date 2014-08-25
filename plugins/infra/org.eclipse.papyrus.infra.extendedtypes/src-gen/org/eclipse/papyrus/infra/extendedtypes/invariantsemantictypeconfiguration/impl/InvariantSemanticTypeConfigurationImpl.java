@@ -14,14 +14,10 @@ package org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfigurati
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.impl.SemanticTypeConfigurationImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantRuleConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage;
@@ -44,7 +40,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	 * The cached value of the '{@link #getInvariantRuleConfiguration() <em>Invariant Rule Configuration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInvariantRuleConfiguration()
 	 * @generated
 	 * @ordered
@@ -54,7 +50,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InvariantSemanticTypeConfigurationImpl() {
@@ -64,7 +60,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +71,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantRuleConfiguration getInvariantRuleConfiguration() {
@@ -85,7 +81,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetInvariantRuleConfiguration(InvariantRuleConfiguration newInvariantRuleConfiguration, NotificationChain msgs) {
@@ -106,7 +102,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setInvariantRuleConfiguration(InvariantRuleConfiguration newInvariantRuleConfiguration) {
@@ -131,7 +127,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +142,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +157,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +173,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +189,7 @@ public class InvariantSemanticTypeConfigurationImpl extends SemanticTypeConfigur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

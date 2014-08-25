@@ -35,7 +35,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <pre>
  *
  * Edit helper class for {@link Port}
- * 
+ *
  * Expected behavior:
  * - Initialize {@link AggregationKind} on {@link Port} creation.
  * - Forbid aggregation modification during the element life cycle.

@@ -220,7 +220,7 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 	/**
 	 * <pre>
 	 * This figure manages the border representation with custom dashes.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -236,7 +236,7 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 	/**
 	 * <pre>
 	 * This method propagates the new line style to the border
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#setLineStyle(int)
 	 * </pre>
 	 *
@@ -255,7 +255,7 @@ public class PapyrusNodeFigure extends NodeFigure implements IPapyrusNodeFigure 
 	/**
 	 * <pre>
 	 * This method propagates the new line width to the border
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#setLineWidth(int)
 	 * </pre>
 	 *

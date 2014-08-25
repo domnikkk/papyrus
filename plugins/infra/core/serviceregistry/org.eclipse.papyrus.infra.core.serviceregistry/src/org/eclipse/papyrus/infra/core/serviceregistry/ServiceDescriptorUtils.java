@@ -33,7 +33,7 @@ public class ServiceDescriptorUtils {
 
 	/**
 	 * Create a {@link ServiceDescriptor} from a {@link AbstractServiceIdDesc}.
-	 * 
+	 *
 	 * @param idDesc
 	 * @return
 	 */
@@ -53,7 +53,7 @@ public class ServiceDescriptorUtils {
 
 	/**
 	 * Create a {@link ServiceDescriptor} from a {@link AbstractServiceIdDesc}.
-	 * 
+	 *
 	 * @param serviceDesc
 	 * @return
 	 */
@@ -71,7 +71,7 @@ public class ServiceDescriptorUtils {
 
 	/**
 	 * Create a {@link ServiceDescriptor} from a {@link AbstractServiceIdDesc}.
-	 * 
+	 *
 	 * @param serviceIdDesc
 	 * @return
 	 */
@@ -99,7 +99,7 @@ public class ServiceDescriptorUtils {
 
 	/**
 	 * Create a {@link ServiceDescriptor} from a {@link AbstractServiceIdDesc}.
-	 * 
+	 *
 	 * @param serviceDesc
 	 * @return
 	 */
@@ -110,7 +110,7 @@ public class ServiceDescriptorUtils {
 
 	/**
 	 * Create a {@link ServiceDescriptor} from a {@link AbstractServiceIdDesc}.
-	 * 
+	 *
 	 * @param serviceIdDesc
 	 * @return
 	 */
@@ -138,7 +138,7 @@ public class ServiceDescriptorUtils {
 
 	/**
 	 * Create a {@link ServiceDescriptor} from a {@link AbstractServiceIdDesc}.
-	 * 
+	 *
 	 * @param serviceDesc
 	 * @return
 	 */

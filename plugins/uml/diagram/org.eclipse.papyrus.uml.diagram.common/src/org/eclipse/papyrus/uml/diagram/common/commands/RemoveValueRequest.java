@@ -107,7 +107,7 @@ public class RemoveValueRequest extends AbstractEditCommandRequest {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.emf.type.core.edithelper.IEditCommandRequest#
 	 * getElementsToEdit()
@@ -123,7 +123,7 @@ public class RemoveValueRequest extends AbstractEditCommandRequest {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.emf.type.core.edithelper.IEditCommandRequest#
 	 * getEditHelperContext()

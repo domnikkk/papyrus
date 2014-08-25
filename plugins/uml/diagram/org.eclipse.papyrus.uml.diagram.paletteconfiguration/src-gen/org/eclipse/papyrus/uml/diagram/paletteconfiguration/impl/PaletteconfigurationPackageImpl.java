@@ -31,14 +31,14 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PaletteconfigurationPackageImpl extends EPackageImpl implements PaletteconfigurationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass paletteConfigurationEClass = null;
@@ -46,7 +46,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass toolConfigurationEClass = null;
@@ -54,7 +54,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass stackConfigurationEClass = null;
@@ -62,7 +62,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass childConfigurationEClass = null;
@@ -70,7 +70,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass drawerConfigurationEClass = null;
@@ -78,7 +78,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass configurationEClass = null;
@@ -86,7 +86,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass iconDescriptorEClass = null;
@@ -94,7 +94,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass elementDescriptorEClass = null;
@@ -102,7 +102,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass separatorConfigurationEClass = null;
@@ -110,7 +110,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass leafConfigurationEClass = null;
@@ -118,7 +118,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum toolKindEEnum = null;
@@ -128,7 +128,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#eNS_URI
 	 * @see #init()
@@ -141,7 +141,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -152,7 +152,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	 * <p>
 	 * This method is used to initialize {@link PaletteconfigurationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -190,7 +190,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPaletteConfiguration() {
@@ -200,7 +200,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPaletteConfiguration_DrawerConfigurations() {
@@ -210,7 +210,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPaletteConfiguration_RequiredProfiles() {
@@ -220,7 +220,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getToolConfiguration() {
@@ -230,7 +230,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getToolConfiguration_Kind() {
@@ -240,7 +240,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getToolConfiguration_ElementDescriptors() {
@@ -250,7 +250,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getStackConfiguration() {
@@ -260,7 +260,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getStackConfiguration_OwnedConfigurations() {
@@ -270,7 +270,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getChildConfiguration() {
@@ -280,7 +280,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDrawerConfiguration() {
@@ -290,7 +290,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDrawerConfiguration_OwnedConfigurations() {
@@ -300,7 +300,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getConfiguration() {
@@ -310,7 +310,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getConfiguration_Id() {
@@ -320,7 +320,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getConfiguration_Label() {
@@ -330,7 +330,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getConfiguration_Description() {
@@ -340,7 +340,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConfiguration_Icon() {
@@ -350,7 +350,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getIconDescriptor() {
@@ -360,7 +360,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getIconDescriptor_PluginID() {
@@ -370,7 +370,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getIconDescriptor_IconPath() {
@@ -380,7 +380,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getElementDescriptor() {
@@ -390,7 +390,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getElementDescriptor_ElementTypeId() {
@@ -400,7 +400,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getElementDescriptor_GraphicalHints() {
@@ -410,7 +410,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getSeparatorConfiguration() {
@@ -420,7 +420,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getLeafConfiguration() {
@@ -430,7 +430,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getToolKind() {
@@ -440,7 +440,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PaletteconfigurationFactory getPaletteconfigurationFactory() {
@@ -450,7 +450,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -460,7 +460,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -511,7 +511,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -521,7 +521,7 @@ public class PaletteconfigurationPackageImpl extends EPackageImpl implements Pal
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

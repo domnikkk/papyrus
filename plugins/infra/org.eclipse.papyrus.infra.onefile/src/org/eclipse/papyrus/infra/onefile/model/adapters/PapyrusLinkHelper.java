@@ -36,7 +36,7 @@ public class PapyrusLinkHelper implements ILinkHelper {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.navigator.ILinkHelper#findSelection(org.eclipse.ui.
 	 * IEditorInput)
 	 */
@@ -58,7 +58,7 @@ public class PapyrusLinkHelper implements ILinkHelper {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.navigator.ILinkHelper#activateEditor(org.eclipse.ui.
 	 * IWorkbenchPage, org.eclipse.jface.viewers.IStructuredSelection)
 	 */

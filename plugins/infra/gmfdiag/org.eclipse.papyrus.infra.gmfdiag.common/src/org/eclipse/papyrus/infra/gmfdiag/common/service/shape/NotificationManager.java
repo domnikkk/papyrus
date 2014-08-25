@@ -45,7 +45,7 @@ public class NotificationManager {
 
 	/**
 	 * Returns the view that listens for modifications
-	 * 
+	 *
 	 * @return the view that listens for modifications
 	 */
 	public EObject getView() {
@@ -54,7 +54,7 @@ public class NotificationManager {
 
 	/**
 	 * Returns the list of provider notification manager
-	 * 
+	 *
 	 * @return the providerNotificationManager
 	 */
 	public List<ProviderNotificationManager> getProviderNotificationManagers() {

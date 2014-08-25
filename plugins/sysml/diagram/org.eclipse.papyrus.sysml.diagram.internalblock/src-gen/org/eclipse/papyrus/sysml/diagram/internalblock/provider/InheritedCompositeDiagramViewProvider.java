@@ -29,11 +29,11 @@ import org.eclipse.papyrus.gmf.diagram.common.provider.IGraphicalTypeRegistry;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.extendedtypes.types.IExtendedHintedElementType;
 import org.eclipse.papyrus.infra.gmfdiag.common.commands.SemanticAdapter;
+//bugs.eclipse.org/bugs/show_bug.cgi?id=432824
+import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLGraphicalTypes;
 import org.eclipse.papyrus.sysml.diagram.internalblock.Activator;
 import org.eclipse.papyrus.uml.diagram.composite.providers.UMLViewProvider;
 import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
-//bugs.eclipse.org/bugs/show_bug.cgi?id=432824
-import org.eclipse.papyrus.sysml.diagram.common.utils.SysMLGraphicalTypes;
 
 public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 

@@ -1,10 +1,13 @@
 package org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.ui.contentassist.antlr.internal;
 
-import org.eclipse.xtext.*;
-import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
+import org.antlr.runtime.BitSet;
+import org.antlr.runtime.NoViableAltException;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.RecognizerSharedState;
+import org.antlr.runtime.TokenStream;
 import org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.services.UMLConnectionPointReferenceGrammarAccess;
-
-import org.antlr.runtime.*;
+import org.eclipse.xtext.Grammar;
+import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 
 @SuppressWarnings("all")
 public class InternalUMLConnectionPointReferenceParser extends AbstractInternalContentAssistParser {

@@ -214,17 +214,17 @@ public abstract class OldCommonDiagramDragDropEditPolicy extends DiagramDragDrop
 		/*
 		 * when it's the first action after the opening of Papyrus, the
 		 * viewService is not loaded! see bug 302555
-		 * 
+		 *
 		 * Duration test for 100000 creations of DropCommand : Here 2 solutions
 		 * : - call ViewServiceUtil.forceLoad(); for each drop -> ~2500ms
-		 * 
+		 *
 		 * - test if the command cc can be executed at the end of the method,
 		 * and if not : - call ViewServiceUtil.forceLoad(); - and return
 		 * getDropObjectsCommand(getDropObjectsCommand) -> ~4700ms
-		 * 
+		 *
 		 * - for information : without call ViewServiceUtil.forceLoad(); ->
 		 * ~1600ms
-		 * 
+		 *
 		 * It's better don't test if the command is executable!
 		 */
 		ViewServiceUtil.forceLoad();

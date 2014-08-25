@@ -35,7 +35,7 @@ public class LollipopInterfaceFigure extends PapyrusNodeFigure implements IPapyr
 
 	/**
 	 * display the Interface as Required
-	 * 
+	 *
 	 * @param required
 	 *            true if required
 	 */
@@ -60,7 +60,7 @@ public class LollipopInterfaceFigure extends PapyrusNodeFigure implements IPapyr
 
 	/**
 	 * display it as provided
-	 * 
+	 *
 	 * @param provided
 	 *            true if the display has to be provided
 	 */
@@ -105,7 +105,7 @@ public class LollipopInterfaceFigure extends PapyrusNodeFigure implements IPapyr
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.diagram.composite.figure.ProvidedInterfaceFigure#paintFigure(org.eclipse.
 	 * draw2d.Graphics)

@@ -17,7 +17,6 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.editpolicies.AbstractEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 
 /**
  * This edit policy disables the graphical deletion of a diagram element.

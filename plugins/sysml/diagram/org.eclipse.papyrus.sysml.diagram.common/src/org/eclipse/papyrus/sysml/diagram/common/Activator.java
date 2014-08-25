@@ -72,7 +72,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
 	 */
 	@Override
@@ -89,7 +89,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
 	 */
 	@Override
@@ -188,9 +188,9 @@ public class Activator extends AbstractUIPlugin {
 	 * <pre>
 	 * Provide a FlowPort image for border edit part that take the border item position
 	 * into account.
-	 * 
+	 *
 	 * The image is not rotated, but predefined.
-	 * 
+	 *
 	 * The side of the image (relatively to the parent figure) can be:
 	 *         <ul>
 	 *         <li>{@linkplain PositionConstants#NORTH}</li>

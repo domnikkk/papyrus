@@ -50,7 +50,7 @@ public class InteractionCreateCommandTN extends EditElementCommand {
 
 	/**
 	 * FIXME: replace with setElementToEdit()
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -31,13 +31,12 @@ import org.eclipse.papyrus.uml.diagram.composite.custom.edit.command.CustomPortC
 import org.eclipse.papyrus.uml.diagram.composite.custom.edit.command.CustomRoleBindingCreateCommand;
 import org.eclipse.papyrus.uml.diagram.composite.edit.parts.ConnectorEditPart;
 import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
 
 /**
  * <pre>
  * This class provides a custom edit policy used to replace the SEMANTIC_ROLE
  * generated for the Property element (when used as Composite Part)
- * 
+ *
  * TODO : This should probably also manage Port clean removal (semantic deletion causes issues)
  * </pre>
  */
@@ -47,7 +46,7 @@ public class CustomPropertyPartItemSemanticEditPolicyCN extends org.eclipse.papy
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Port on a Property.
 	 * The Property has to be typed by a StructuredClassifier.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -63,7 +62,7 @@ public class CustomPropertyPartItemSemanticEditPolicyCN extends org.eclipse.papy
 	 * <pre>
 	 * Forbid direct destruction of Property in case the graphical parent is not
 	 * the semantic parent.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -84,7 +83,7 @@ public class CustomPropertyPartItemSemanticEditPolicyCN extends org.eclipse.papy
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Connector connected to a Property
 	 * on its source end.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -103,7 +102,7 @@ public class CustomPropertyPartItemSemanticEditPolicyCN extends org.eclipse.papy
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Connector connected to a Property
 	 * on its target end.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

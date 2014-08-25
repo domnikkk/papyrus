@@ -48,7 +48,7 @@ public interface FacetSetCatalog extends Catalog {
 	 * <!-- begin-model-doc -->
 	 * "installedFacetSets" derived link aims at providing a direct access to FacetSet objects in the catalog.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Installed Facet Sets</em>' reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.EfacetcatalogPackage#getFacetSetCatalog_InstalledFacetSets()
 	 * @model transient="true" volatile="true" derived="true"

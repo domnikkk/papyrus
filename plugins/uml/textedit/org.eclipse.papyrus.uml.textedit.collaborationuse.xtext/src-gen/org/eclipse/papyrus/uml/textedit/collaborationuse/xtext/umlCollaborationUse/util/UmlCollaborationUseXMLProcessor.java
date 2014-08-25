@@ -5,18 +5,15 @@ package org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaboration
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
-
 import org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.UmlCollaborationUsePackage;
 
 /**
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UmlCollaborationUseXMLProcessor extends XMLProcessor
@@ -26,7 +23,7 @@ public class UmlCollaborationUseXMLProcessor extends XMLProcessor
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UmlCollaborationUseXMLProcessor()
@@ -39,7 +36,7 @@ public class UmlCollaborationUseXMLProcessor extends XMLProcessor
 	 * Register for "*" and "xml" file extensions the UmlCollaborationUseResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

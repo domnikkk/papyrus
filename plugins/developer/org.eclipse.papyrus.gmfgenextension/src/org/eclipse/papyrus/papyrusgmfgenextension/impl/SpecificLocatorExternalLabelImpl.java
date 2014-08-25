@@ -34,7 +34,7 @@ public class SpecificLocatorExternalLabelImpl extends ExternalHookImpl implement
 	 * The cached value of the '{@link #getGenExternalNodeLabel() <em>Gen External Node Label</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenExternalNodeLabel()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class SpecificLocatorExternalLabelImpl extends ExternalHookImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SpecificLocatorExternalLabelImpl() {
@@ -54,7 +54,7 @@ public class SpecificLocatorExternalLabelImpl extends ExternalHookImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -65,7 +65,7 @@ public class SpecificLocatorExternalLabelImpl extends ExternalHookImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class SpecificLocatorExternalLabelImpl extends ExternalHookImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class SpecificLocatorExternalLabelImpl extends ExternalHookImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -112,7 +112,7 @@ public class SpecificLocatorExternalLabelImpl extends ExternalHookImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class SpecificLocatorExternalLabelImpl extends ExternalHookImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

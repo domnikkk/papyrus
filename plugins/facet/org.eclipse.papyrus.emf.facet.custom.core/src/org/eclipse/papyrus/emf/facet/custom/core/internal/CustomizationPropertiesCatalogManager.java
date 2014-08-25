@@ -19,14 +19,14 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
-import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogManager;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationPropertiesCatalogManager;
 import org.eclipse.papyrus.emf.facet.custom.core.internal.exception.CustomizationCatalogRuntimeException;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.customizationcatalog.CustomizationPropertiesCatalog;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.customizationcatalog.CustomizationcatalogFactory;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
+import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogManager;
 
 /**
  * Customization catalog implementation using the catalog manager features

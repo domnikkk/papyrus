@@ -15,12 +15,11 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.util;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.NattableproblemPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.Problem;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem;
 
 /**
  * <!-- begin-user-doc -->

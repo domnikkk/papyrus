@@ -26,7 +26,7 @@ public interface IGraphicalContentProvider extends IContentProvider {
 	/**
 	 * Create graphical elements, which will appear before the widget
 	 * used to display the provided elements
-	 * 
+	 *
 	 * @param parent
 	 */
 	public abstract void createBefore(Composite parent);
@@ -34,7 +34,7 @@ public interface IGraphicalContentProvider extends IContentProvider {
 	/**
 	 * Create graphical elements, which will appear after the widget
 	 * used to display the provided elements
-	 * 
+	 *
 	 * @param parent
 	 */
 	public abstract void createAfter(Composite parent);

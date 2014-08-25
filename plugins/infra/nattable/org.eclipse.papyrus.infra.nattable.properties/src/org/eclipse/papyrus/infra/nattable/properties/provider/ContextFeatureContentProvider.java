@@ -24,7 +24,7 @@ import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 
 /**
  * Represents a simple ECore model content provider for the selection of a table's root model element
- * 
+ *
  * @author Laurent Wouters
  */
 public class ContextFeatureContentProvider extends ECoreModelContentProvider implements IStaticContentProvider, IHierarchicContentProvider {
@@ -35,7 +35,7 @@ public class ContextFeatureContentProvider extends ECoreModelContentProvider imp
 
 	/**
 	 * Initializes the provider with the given root
-	 * 
+	 *
 	 * @param diagram
 	 *            The diagram for which a root model element is to be provided
 	 * @param root
@@ -48,7 +48,7 @@ public class ContextFeatureContentProvider extends ECoreModelContentProvider imp
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider#getElements()
 	 */
 	@Override
@@ -58,7 +58,7 @@ public class ContextFeatureContentProvider extends ECoreModelContentProvider imp
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IHierarchicContentProvider#isValidValue(java.lang.Object)
 	 */
 	@Override

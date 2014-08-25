@@ -211,7 +211,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getLogger()
 	 */
 	public ILogger getLogger() {
@@ -220,7 +220,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#setLogger(org.eclipse.papyrus.xwt.ILogger)
 	 */
 	public void setLogger(ILogger log) {
@@ -394,7 +394,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getNamespace(java.lang.Class)
 	 */
 	public String getNamespace(Class<?> javaclass) {
@@ -410,7 +410,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getElementName(java.lang.Object)
 	 */
 	public String getElementName(Object object) {
@@ -419,7 +419,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#findElementByName(org.eclipse.swt.widgets
 	 * .Widget, java.lang.String)
@@ -430,7 +430,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#getDataBindingContext(java.lang.Object,
 	 * java.lang.String)
@@ -460,7 +460,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#getDataContext(org.eclipse.swt.widgets.
 	 * Widget)
@@ -471,7 +471,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#getDataContext(org.eclipse.swt.widgets.
 	 * Widget)
@@ -482,7 +482,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#setDataBindingContext(java.lang.Object,
 	 * java.lang.Object)
@@ -493,7 +493,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#setDataContext(org.eclipse.swt.widgets.
 	 * Widget, java.lang.Object)
@@ -514,7 +514,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#findCompositeParent(org.eclipse.swt.widgets
 	 * .Widget)
@@ -525,7 +525,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getMetaclass(java.lang.Object)
 	 */
 	public IMetaclass getMetaclass(Object object) {
@@ -552,7 +552,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#load(java.net.URL)
 	 */
 	public Object load(URL file) throws Exception {
@@ -561,7 +561,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#load(java.net.URL, java.lang.Object)
 	 */
 	public Object load(URL file, Object dataContext) throws Exception {
@@ -574,7 +574,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#load(org.eclipse.swt.widgets.Composite,
 	 * java.net.URL)
@@ -593,7 +593,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#load(org.eclipse.swt.widgets.Composite,
 	 * java.net.URL, java.lang.Object)
@@ -622,7 +622,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#load(org.eclipse.swt.widgets.Composite,
 	 * java.lang.Class, java.lang.Object)
@@ -683,7 +683,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#loadWithOptions(java.lang.Class,
 	 * java.util.Map)
 	 */
@@ -700,7 +700,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#open(java.lang.Class)
 	 */
 	public void open(Class<?> type) throws Exception {
@@ -709,7 +709,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#open(java.net.URL)
 	 */
 	public void open(URL url) throws Exception {
@@ -722,7 +722,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#load(org.eclipse.swt.widgets.Composite,
 	 * java.io.InputStream, java.net.URL, java.lang.Object)
@@ -752,7 +752,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#open(java.net.URL, java.lang.Object)
 	 */
 	public void open(URL url, Object dataContext) throws Exception {
@@ -769,7 +769,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#open(java.lang.Class,
 	 * java.lang.Object)
 	 */
@@ -779,7 +779,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#open(java.net.URL, java.util.Map)
 	 */
 	public void open(final URL url, final Map<String, Object> options) throws Exception {
@@ -976,7 +976,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#convertFrom(org.eclipse.papyrus.xwt.metadata
 	 * .IMetaclass, java.lang.String)
@@ -988,7 +988,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#convertFrom(java.lang.Class,
 	 * java.lang.String)
 	 */
@@ -1008,7 +1008,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#loadWithOptions(java.net.URL,
 	 * java.util.Map)
 	 */
@@ -1034,7 +1034,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#load(java.io.InputStream,
 	 * java.net.URL)
 	 */
@@ -1048,7 +1048,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#loadWithOptions(java.io.InputStream,
 	 * java.net.URL, java.util.Map)
 	 */
@@ -1062,7 +1062,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getAllMetaclasses()
 	 */
 	public IMetaclass[] getAllMetaclasses() {
@@ -1077,7 +1077,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getMetaclass(java.lang.String,
 	 * java.lang.String)
 	 */
@@ -1094,7 +1094,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#registerMetaclass(java.lang.Class)
 	 */
 	public IMetaclass registerMetaclass(Class<?> type) {
@@ -1103,7 +1103,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#registerMetaclass(java.lang.Class)
 	 */
 	public void registerMetaclass(IMetaclass type) {
@@ -1112,7 +1112,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#registerMetaclassFactory(org.eclipse.e4
 	 * .xwt.IMetaclassFactory)
@@ -1123,7 +1123,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#findConvertor(java.lang.Class,
 	 * java.lang.Class)
 	 */
@@ -1142,7 +1142,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#registerConvertor(org.eclipse.core.databinding
 	 * .conversion.IConverter)
@@ -1169,7 +1169,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#addTracking(org.eclipse.papyrus.xwt.Tracking)
 	 */
@@ -1179,7 +1179,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#isTracking(org.eclipse.papyrus.xwt.Tracking)
 	 */
@@ -1189,7 +1189,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getTrackings()
 	 */
 	public Set<Tracking> getTrackings() {
@@ -1198,7 +1198,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeTracking(org.eclipse.papyrus.xwt.Tracking)
 	 */
@@ -1208,7 +1208,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#registerCommand(java.lang.String,
 	 * org.eclipse.papyrus.xwt.input.ICommand)
 	 */
@@ -1218,7 +1218,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getCommand(java.lang.String)
 	 */
 	public ICommand getCommand(String name) {
@@ -1234,7 +1234,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getCommands()
 	 */
 	public Map<String, ICommand> getCommands() {
@@ -1251,7 +1251,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#unregisterCommand(java.lang.String)
 	 */
 	public void unregisterCommand(String name) {
@@ -1271,7 +1271,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#addDefaultStyle(org.eclipse.papyrus.xwt.IStyle)
 	 */
@@ -1281,7 +1281,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeDefaultStyle(org.eclipse.papyrus.xwt.IStyle
 	 * )
@@ -1292,7 +1292,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getDefaultStyles()
 	 */
 	public Collection<IStyle> getDefaultStyles() {
@@ -1301,7 +1301,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#addDataProviderFactory(org.eclipse.papyrus.xwt
 	 * .IDataProviderFactory)
@@ -1313,7 +1313,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeDataProviderFactory(org.eclipse.e4
 	 * .xwt.IDataProviderFactory)
@@ -1324,7 +1324,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeDataProviderFactory(org.eclipse.e4
 	 * .xwt.IDataProviderFactory)
@@ -1335,7 +1335,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getDataProviderFactories()
 	 */
 	public Collection<IDataProviderFactory> getDataProviderFactories() {
@@ -1352,7 +1352,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#findDataProvider(java.lang.Object)
 	 */
 	public IDataProvider findDataProvider(Object dataContext) {
@@ -1717,7 +1717,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#findLoadingContext(java.lang.Object)
 	 */
 	public ILoadingContext findLoadingContext(Object container) {
@@ -1733,7 +1733,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#getLoadingContext(org.eclipse.swt.widgets
 	 * .Composite)
@@ -1744,7 +1744,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getLoadingContext()
 	 */
 	public ILoadingContext getLoadingContext() {
@@ -1753,7 +1753,7 @@ public class XWTLoader implements IXWTLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.e4.xwt.IXWTLoader#setLoadingContext(org.eclipse.papyrus.xwt.
 	 * ILoadingContext)
 	 */

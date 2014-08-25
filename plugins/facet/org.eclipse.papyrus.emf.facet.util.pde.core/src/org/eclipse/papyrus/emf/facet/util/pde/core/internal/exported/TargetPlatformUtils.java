@@ -51,7 +51,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Creates and loads a target platform with all needed bundles.
-	 * 
+	 *
 	 * @throws PdeCoreUtilsException
 	 * @throws IOException
 	 */
@@ -131,7 +131,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Parses osgi.bundles property value to load all required bundles directories.
-	 * 
+	 *
 	 * @return List<String> array
 	 * @throws PdeCoreUtilsException
 	 * @throws IOException
@@ -156,7 +156,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Returns list of trimmed paths;
-	 * 
+	 *
 	 * @param paths
 	 *            String[]
 	 * @param prefix
@@ -179,7 +179,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Reflexive call of DirectoryBundleContainer constructor.
-	 * 
+	 *
 	 * @param containerPath
 	 *            String
 	 * @return Object
@@ -205,7 +205,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Copies all needed jar files in a directory and returns set of containers.
-	 * 
+	 *
 	 * @param bundlesStr
 	 *            List<String>
 	 * @param copyDirectory
@@ -247,7 +247,7 @@ public final class TargetPlatformUtils {
 	/**
 	 * Copies jarFile to the specified directory or creates a container
 	 * if bundleFile is a directory.
-	 * 
+	 *
 	 * @param bundleFile
 	 *            File
 	 * @param bundleContainers
@@ -274,7 +274,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Return first jar file that match with the bundle directory.
-	 * 
+	 *
 	 * @param bundleFile
 	 *            File
 	 * @return JarFile
@@ -295,7 +295,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Search jar file in directory and sub-directories.
-	 * 
+	 *
 	 * @param directory
 	 *            File
 	 * @param fileName
@@ -330,7 +330,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Search jar file and sub-directories.
-	 * 
+	 *
 	 * @param fileName
 	 *            String
 	 * @param toVisit
@@ -351,7 +351,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Copies a jarFile into specified directory.
-	 * 
+	 *
 	 * @param jarFile
 	 *            JarFile
 	 * @param copyTo
@@ -405,7 +405,7 @@ public final class TargetPlatformUtils {
 	/**
 	 * Calls a method reflexively on an object or a class (static call) with
 	 * specified arguments.
-	 * 
+	 *
 	 * @param staticCall
 	 *            boolean
 	 * @param callOn
@@ -450,7 +450,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Transforms Object arrays to specific arrays.
-	 * 
+	 *
 	 * @param arguments
 	 *            Object[]
 	 * @return Object[]
@@ -483,7 +483,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Returns true if the parameter represents an array.
-	 * 
+	 *
 	 * @param obj
 	 *            Object
 	 * @return boolean
@@ -494,7 +494,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Returns array of Class that represents types of each arguments.
-	 * 
+	 *
 	 * @param args
 	 *            Object[]
 	 * @return Class<?>[]
@@ -521,7 +521,7 @@ public final class TargetPlatformUtils {
 	/**
 	 * Returns a Method object that correspond to the specified name
 	 * and parameters.
-	 * 
+	 *
 	 * @param clazz
 	 *            Class<?>
 	 * @param methodName
@@ -550,7 +550,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Checks if all parameters are the same in both arrays.
-	 * 
+	 *
 	 * @param refParams
 	 * @param parameterToTest
 	 * @return boolean
@@ -590,7 +590,7 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Returns true if className is a SubType of refClassName.
-	 * 
+	 *
 	 * @param refClassName
 	 *            String
 	 * @param className

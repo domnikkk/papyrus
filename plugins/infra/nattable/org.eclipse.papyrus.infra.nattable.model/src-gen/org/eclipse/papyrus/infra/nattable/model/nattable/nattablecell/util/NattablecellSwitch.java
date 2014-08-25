@@ -15,10 +15,12 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.util;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.Cell;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.EObjectAxisWrapper;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.ICellAxisWrapper;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.IdAxisWrapper;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattablecell.NattablecellPackage;
 
 /**
  * <!-- begin-user-doc -->

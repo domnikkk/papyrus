@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.infra.gmfdiag.css;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -42,7 +41,7 @@ public interface Stylesheet extends EObject
 	 * If the meaning of the '<em>Charset</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Charset</em>' attribute.
 	 * @see #setCharset(String)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getStylesheet_Charset()
@@ -55,7 +54,7 @@ public interface Stylesheet extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Stylesheet#getCharset <em>Charset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Charset</em>' attribute.
 	 * @see #getCharset()
@@ -71,7 +70,7 @@ public interface Stylesheet extends EObject
 	 * If the meaning of the '<em>Imports</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Imports</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getStylesheet_Imports()
 	 * @model containment="true"
@@ -87,7 +86,7 @@ public interface Stylesheet extends EObject
 	 * If the meaning of the '<em>Contents</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Contents</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getStylesheet_Contents()
 	 * @model containment="true"

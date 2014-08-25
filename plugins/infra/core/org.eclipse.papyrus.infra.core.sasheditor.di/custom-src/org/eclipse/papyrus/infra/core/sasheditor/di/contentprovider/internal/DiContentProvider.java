@@ -102,7 +102,7 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 	 * specified TabFolder.
 	 *
 	 * Not use by SashContainer. Used by the tests.
-	 * 
+	 *
 	 * @param pageIdentifier
 	 */
 	public void addPage(ITabFolderModel tabFolderModel, Object pageIdentifier) {
@@ -116,7 +116,7 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 	 * specified TabFolder.
 	 *
 	 * Not use by SashContainer. Used by the tests.
-	 * 
+	 *
 	 * @param pageIdentifier
 	 */
 	public void addPage(ITabFolderModel tabFolderModel, int index, Object pageIdentifier) {

@@ -14,9 +14,9 @@
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class EClassCustomizationImpl extends FacetImpl implements EClassCustomiz
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EClassCustomizationImpl() {
@@ -41,7 +41,7 @@ public class EClassCustomizationImpl extends FacetImpl implements EClassCustomiz
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

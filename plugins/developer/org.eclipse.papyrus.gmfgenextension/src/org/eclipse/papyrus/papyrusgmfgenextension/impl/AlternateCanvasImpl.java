@@ -45,7 +45,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	 * The cached value of the '{@link #getDomainDiagramElement() <em>Domain Diagram Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDomainDiagramElement()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	 * The cached value of the '{@link #getAlternateTopLevelNodes() <em>Alternate Top Level Nodes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAlternateTopLevelNodes()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	 * The cached value of the '{@link #getAlternateLinkNodes() <em>Alternate Link Nodes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAlternateLinkNodes()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	 * The cached value of the '{@link #getDiagram() <em>Diagram</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDiagram()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AlternateCanvasImpl() {
@@ -98,7 +98,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +129,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GenClass basicGetDomainDiagramElement() {
@@ -139,7 +139,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GenDiagram basicGetDiagram() {
@@ -212,7 +212,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +227,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -299,7 +299,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +324,7 @@ public class AlternateCanvasImpl extends CommentedElementImpl implements Alterna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

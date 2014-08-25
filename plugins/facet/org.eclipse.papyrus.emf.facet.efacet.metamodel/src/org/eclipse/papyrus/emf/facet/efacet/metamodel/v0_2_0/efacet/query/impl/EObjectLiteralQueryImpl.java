@@ -23,15 +23,11 @@
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.impl.QueryImpl;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.EObjectLiteralQuery;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryPackage;
 
@@ -53,7 +49,7 @@ public class EObjectLiteralQueryImpl extends QueryImpl implements EObjectLiteral
 	 * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -63,7 +59,7 @@ public class EObjectLiteralQueryImpl extends QueryImpl implements EObjectLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EObjectLiteralQueryImpl() {
@@ -73,7 +69,7 @@ public class EObjectLiteralQueryImpl extends QueryImpl implements EObjectLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +80,7 @@ public class EObjectLiteralQueryImpl extends QueryImpl implements EObjectLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject getElement() {
@@ -103,7 +99,7 @@ public class EObjectLiteralQueryImpl extends QueryImpl implements EObjectLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetElement() {
@@ -113,7 +109,7 @@ public class EObjectLiteralQueryImpl extends QueryImpl implements EObjectLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElement(EObject newElement) {
@@ -127,7 +123,7 @@ public class EObjectLiteralQueryImpl extends QueryImpl implements EObjectLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +141,7 @@ public class EObjectLiteralQueryImpl extends QueryImpl implements EObjectLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +157,7 @@ public class EObjectLiteralQueryImpl extends QueryImpl implements EObjectLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +173,7 @@ public class EObjectLiteralQueryImpl extends QueryImpl implements EObjectLiteral
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

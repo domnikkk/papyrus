@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.infra.viewpoints.iso42010;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -45,7 +44,7 @@ public interface ArchitectureFramework extends EObject {
 	 * If the meaning of the '<em>Stakeholders</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stakeholders</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureFramework_Stakeholders()
 	 * @model containment="true" required="true"
@@ -61,7 +60,7 @@ public interface ArchitectureFramework extends EObject {
 	 * If the meaning of the '<em>Viewpoints</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Viewpoints</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureFramework_Viewpoints()
 	 * @model containment="true" required="true"
@@ -77,7 +76,7 @@ public interface ArchitectureFramework extends EObject {
 	 * If the meaning of the '<em>Rules</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Rules</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureFramework_Rules()
 	 * @model containment="true"
@@ -93,7 +92,7 @@ public interface ArchitectureFramework extends EObject {
 	 * If the meaning of the '<em>Concerns</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Concerns</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureFramework_Concerns()
 	 * @model containment="true" required="true"

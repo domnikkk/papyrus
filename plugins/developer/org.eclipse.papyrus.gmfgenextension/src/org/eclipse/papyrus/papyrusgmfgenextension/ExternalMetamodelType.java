@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.papyrusgmfgenextension;
 
 import org.eclipse.gmf.codegen.gmfgen.MetamodelType;
-
 import org.eclipse.papyrus.domaincontextcodegen.ElementType;
 
 /**
@@ -30,7 +29,7 @@ public interface ExternalMetamodelType extends MetamodelType {
 	 * If the meaning of the '<em>Element Type Ref</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Type Ref</em>' reference.
 	 * @see #setElementTypeRef(ElementType)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getExternalMetamodelType_ElementTypeRef()
@@ -43,7 +42,7 @@ public interface ExternalMetamodelType extends MetamodelType {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.ExternalMetamodelType#getElementTypeRef <em>Element Type Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Element Type Ref</em>' reference.
 	 * @see #getElementTypeRef()

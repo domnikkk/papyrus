@@ -39,7 +39,7 @@ public interface FileDependency extends Dependency {
 	 * If the meaning of the '<em>File</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>File</em>' attribute.
 	 * @see #setFile(String)
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage#getFileDependency_File()
@@ -52,7 +52,7 @@ public interface FileDependency extends Dependency {
 	 * Sets the value of the '{@link org.eclipse.papyrus.documentation.plugin.documentation.FileDependency#getFile <em>File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>File</em>' attribute.
 	 * @see #getFile()

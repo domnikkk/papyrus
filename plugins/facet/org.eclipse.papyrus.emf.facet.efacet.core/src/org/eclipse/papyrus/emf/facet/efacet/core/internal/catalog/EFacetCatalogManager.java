@@ -20,8 +20,8 @@ import org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.EfacetcatalogF
 import org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.FacetSetCatalog;
 import org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.QuerySetCatalog;
 import org.eclipse.papyrus.emf.facet.efacet.core.internal.Messages;
-import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogManager;
 import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
+import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogManager;
 
 /** @deprecated replaced by {@link EFacetCatalogManager2} for the new eFacet2 metamodel */
 @Deprecated

@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.services.controlmode.commands.RemoveControlReso
  * Abstract implementation for {@link IControlCommandParticipant} and {@link IUncontrolCommandParticipant} for satellite resources such as notation,
  * di.
  * NOTE : This abstract is not used for now
- * 
+ *
  * @author adaussy
  *
  */

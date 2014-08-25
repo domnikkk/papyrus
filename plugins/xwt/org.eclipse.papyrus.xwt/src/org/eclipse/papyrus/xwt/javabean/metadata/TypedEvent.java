@@ -31,7 +31,7 @@ public class TypedEvent implements IEvent {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.core.metadata.IBehavior#getName()
 	 */
 	public String getName() {

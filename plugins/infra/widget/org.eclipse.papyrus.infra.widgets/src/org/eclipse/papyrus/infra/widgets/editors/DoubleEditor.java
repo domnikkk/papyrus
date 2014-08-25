@@ -14,11 +14,8 @@ package org.eclipse.papyrus.infra.widgets.editors;
 
 
 import org.eclipse.core.databinding.conversion.IConverter;
-
 import org.eclipse.papyrus.infra.widgets.Activator;
-
 import org.eclipse.papyrus.infra.widgets.validator.RealValidator;
-
 import org.eclipse.swt.widgets.Composite;
 
 

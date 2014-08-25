@@ -40,7 +40,7 @@ public class PackageDiagramEditorFactory extends GmfEditorFactory {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.GmfEditorFactory#createIPageModel(java.lang.Object)
 	 */
 	@Override

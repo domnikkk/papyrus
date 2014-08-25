@@ -34,7 +34,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.E
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryFactory
  * @model kind="package"
  * @generated
@@ -46,7 +46,7 @@ public interface QueryPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "query"; //$NON-NLS-1$
@@ -55,7 +55,7 @@ public interface QueryPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/emf/facet/efacet/0.2.incubation/efacet/query"; //$NON-NLS-1$
@@ -64,7 +64,7 @@ public interface QueryPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "query"; //$NON-NLS-1$
@@ -73,7 +73,7 @@ public interface QueryPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	QueryPackage eINSTANCE = org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl.init();
@@ -82,7 +82,7 @@ public interface QueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.NavigationQueryImpl <em>Navigation Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.NavigationQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getNavigationQuery()
 	 * @generated
@@ -93,7 +93,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Have Side Effects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -103,7 +103,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -113,7 +113,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Path</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -123,7 +123,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Fail On Error</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -133,7 +133,7 @@ public interface QueryPackage extends EPackage {
 	 * The number of structural features of the '<em>Navigation Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -144,7 +144,7 @@ public interface QueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.IsOneOfQueryImpl <em>Is One Of Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.IsOneOfQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getIsOneOfQuery()
 	 * @generated
@@ -155,7 +155,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Have Side Effects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -165,7 +165,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -175,7 +175,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Expected EObjects</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -185,7 +185,7 @@ public interface QueryPackage extends EPackage {
 	 * The number of structural features of the '<em>Is One Of Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -196,7 +196,7 @@ public interface QueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.StringLiteralQueryImpl <em>String Literal Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.StringLiteralQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getStringLiteralQuery()
 	 * @generated
@@ -207,7 +207,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Have Side Effects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -217,7 +217,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -227,7 +227,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -237,7 +237,7 @@ public interface QueryPackage extends EPackage {
 	 * The number of structural features of the '<em>String Literal Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -248,7 +248,7 @@ public interface QueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.TrueLiteralQueryImpl <em>True Literal Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.TrueLiteralQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getTrueLiteralQuery()
 	 * @generated
@@ -259,7 +259,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Have Side Effects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -269,7 +269,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -279,7 +279,7 @@ public interface QueryPackage extends EPackage {
 	 * The number of structural features of the '<em>True Literal Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -289,7 +289,7 @@ public interface QueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.FalseLiteralQueryImpl <em>False Literal Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.FalseLiteralQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getFalseLiteralQuery()
 	 * @generated
@@ -300,7 +300,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Have Side Effects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -310,7 +310,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -320,7 +320,7 @@ public interface QueryPackage extends EPackage {
 	 * The number of structural features of the '<em>False Literal Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -331,7 +331,7 @@ public interface QueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.NullLiteralQueryImpl <em>Null Literal Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.NullLiteralQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getNullLiteralQuery()
 	 * @generated
@@ -342,7 +342,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Have Side Effects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -352,7 +352,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -362,7 +362,7 @@ public interface QueryPackage extends EPackage {
 	 * The number of structural features of the '<em>Null Literal Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -373,7 +373,7 @@ public interface QueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.IntegerLiteralQueryImpl <em>Integer Literal Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.IntegerLiteralQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getIntegerLiteralQuery()
 	 * @generated
@@ -385,7 +385,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Have Side Effects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -396,7 +396,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -407,7 +407,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -418,7 +418,7 @@ public interface QueryPackage extends EPackage {
 	 * The number of structural features of the '<em>Integer Literal Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -429,7 +429,7 @@ public interface QueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.FloatLiteralQueryImpl <em>Float Literal Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.FloatLiteralQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getFloatLiteralQuery()
 	 * @generated
@@ -441,7 +441,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Have Side Effects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -452,7 +452,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -463,7 +463,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -474,7 +474,7 @@ public interface QueryPackage extends EPackage {
 	 * The number of structural features of the '<em>Float Literal Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -485,7 +485,7 @@ public interface QueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.EObjectLiteralQueryImpl <em>EObject Literal Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.EObjectLiteralQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getEObjectLiteralQuery()
 	 * @generated
@@ -497,7 +497,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Have Side Effects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -508,7 +508,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -519,7 +519,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -530,7 +530,7 @@ public interface QueryPackage extends EPackage {
 	 * The number of structural features of the '<em>EObject Literal Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -541,7 +541,7 @@ public interface QueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.OperationCallQueryImpl <em>Operation Call Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.OperationCallQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getOperationCallQuery()
 	 * @generated
@@ -553,7 +553,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Have Side Effects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -564,7 +564,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -575,7 +575,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Operation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -586,7 +586,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -597,7 +597,7 @@ public interface QueryPackage extends EPackage {
 	 * The number of structural features of the '<em>Operation Call Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 * @since 0.2
@@ -609,7 +609,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NavigationQuery <em>Navigation Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Navigation Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NavigationQuery
 	 * @generated
@@ -620,7 +620,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NavigationQuery#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NavigationQuery#getPath()
 	 * @see #getNavigationQuery()
@@ -632,7 +632,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NavigationQuery#isFailOnError <em>Fail On Error</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Fail On Error</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NavigationQuery#isFailOnError()
 	 * @see #getNavigationQuery()
@@ -644,7 +644,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IsOneOfQuery <em>Is One Of Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Is One Of Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IsOneOfQuery
 	 * @generated
@@ -655,7 +655,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IsOneOfQuery#getExpectedEObjects <em>Expected EObjects</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Expected EObjects</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IsOneOfQuery#getExpectedEObjects()
 	 * @see #getIsOneOfQuery()
@@ -667,7 +667,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.StringLiteralQuery <em>String Literal Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>String Literal Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.StringLiteralQuery
 	 * @generated
@@ -678,7 +678,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.StringLiteralQuery#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.StringLiteralQuery#getValue()
 	 * @see #getStringLiteralQuery()
@@ -690,7 +690,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.TrueLiteralQuery <em>True Literal Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>True Literal Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.TrueLiteralQuery
 	 * @generated
@@ -701,7 +701,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FalseLiteralQuery <em>False Literal Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>False Literal Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FalseLiteralQuery
 	 * @generated
@@ -712,7 +712,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NullLiteralQuery <em>Null Literal Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Null Literal Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NullLiteralQuery
 	 * @generated
@@ -723,7 +723,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IntegerLiteralQuery <em>Integer Literal Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Integer Literal Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IntegerLiteralQuery
 	 * @generated
@@ -735,7 +735,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IntegerLiteralQuery#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IntegerLiteralQuery#getValue()
 	 * @see #getIntegerLiteralQuery()
@@ -748,7 +748,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FloatLiteralQuery <em>Float Literal Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Float Literal Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FloatLiteralQuery
 	 * @generated
@@ -760,7 +760,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FloatLiteralQuery#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FloatLiteralQuery#getValue()
 	 * @see #getFloatLiteralQuery()
@@ -773,7 +773,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.EObjectLiteralQuery <em>EObject Literal Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>EObject Literal Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.EObjectLiteralQuery
 	 * @generated
@@ -785,7 +785,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.EObjectLiteralQuery#getElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Element</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.EObjectLiteralQuery#getElement()
 	 * @see #getEObjectLiteralQuery()
@@ -798,7 +798,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.OperationCallQuery <em>Operation Call Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Operation Call Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.OperationCallQuery
 	 * @generated
@@ -810,7 +810,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.OperationCallQuery#getOperation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Operation</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.OperationCallQuery#getOperation()
 	 * @see #getOperationCallQuery()
@@ -823,7 +823,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.OperationCallQuery#getArguments <em>Arguments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Arguments</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.OperationCallQuery#getArguments()
 	 * @see #getOperationCallQuery()
@@ -836,7 +836,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -852,7 +852,7 @@ public interface QueryPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -860,7 +860,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.NavigationQueryImpl <em>Navigation Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.NavigationQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getNavigationQuery()
 		 * @generated
@@ -871,7 +871,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Path</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NAVIGATION_QUERY__PATH = eINSTANCE.getNavigationQuery_Path();
@@ -880,7 +880,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Fail On Error</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute NAVIGATION_QUERY__FAIL_ON_ERROR = eINSTANCE.getNavigationQuery_FailOnError();
@@ -889,7 +889,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.IsOneOfQueryImpl <em>Is One Of Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.IsOneOfQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getIsOneOfQuery()
 		 * @generated
@@ -900,7 +900,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Expected EObjects</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference IS_ONE_OF_QUERY__EXPECTED_EOBJECTS = eINSTANCE.getIsOneOfQuery_ExpectedEObjects();
@@ -909,7 +909,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.StringLiteralQueryImpl <em>String Literal Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.StringLiteralQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getStringLiteralQuery()
 		 * @generated
@@ -920,7 +920,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STRING_LITERAL_QUERY__VALUE = eINSTANCE.getStringLiteralQuery_Value();
@@ -929,7 +929,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.TrueLiteralQueryImpl <em>True Literal Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.TrueLiteralQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getTrueLiteralQuery()
 		 * @generated
@@ -940,7 +940,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.FalseLiteralQueryImpl <em>False Literal Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.FalseLiteralQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getFalseLiteralQuery()
 		 * @generated
@@ -951,7 +951,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.NullLiteralQueryImpl <em>Null Literal Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.NullLiteralQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getNullLiteralQuery()
 		 * @generated
@@ -962,7 +962,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.IntegerLiteralQueryImpl <em>Integer Literal Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.IntegerLiteralQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getIntegerLiteralQuery()
 		 * @generated
@@ -974,7 +974,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @since 0.2
 		 */
@@ -984,7 +984,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.FloatLiteralQueryImpl <em>Float Literal Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.FloatLiteralQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getFloatLiteralQuery()
 		 * @generated
@@ -996,7 +996,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @since 0.2
 		 */
@@ -1006,7 +1006,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.EObjectLiteralQueryImpl <em>EObject Literal Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.EObjectLiteralQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getEObjectLiteralQuery()
 		 * @generated
@@ -1018,7 +1018,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @since 0.2
 		 */
@@ -1028,7 +1028,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.OperationCallQueryImpl <em>Operation Call Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.OperationCallQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryPackageImpl#getOperationCallQuery()
 		 * @generated
@@ -1040,7 +1040,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Operation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @since 0.2
 		 */
@@ -1050,7 +1050,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 * @since 0.2
 		 */

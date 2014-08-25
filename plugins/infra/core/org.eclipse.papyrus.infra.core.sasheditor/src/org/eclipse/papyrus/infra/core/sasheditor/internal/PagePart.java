@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IPage;
+import org.eclipse.papyrus.infra.core.sasheditor.internal.AbstractPart.GarbageState;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Composite;
@@ -57,7 +58,7 @@ public abstract class PagePart extends AbstractPart implements IPage {
 	/**
 	 * Get the {@link TabItemPart} that is associated to this Page. <br>
 	 * The {@link TabItemPart} represents the tab in the folder.
-	 * 
+	 *
 	 * @return
 	 */
 	protected TabItemPart getAssociatedTabItemPart() {
@@ -151,7 +152,7 @@ public abstract class PagePart extends AbstractPart implements IPage {
 
 	/**
 	 * Return the {@link Widget} of the tab associated to this page.
-	 * 
+	 *
 	 * @return The {@link Widget} of the tab.
 	 */
 	public Widget getTabWidget() {

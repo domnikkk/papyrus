@@ -107,7 +107,7 @@ public abstract class AppearanceDecoratedTreeComposite extends Composite impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.ui.composites.ISectionComposite#createContent(org.eclipse.swt.widgets.Composite,
 	 * org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory)
 	 */
@@ -126,7 +126,7 @@ public abstract class AppearanceDecoratedTreeComposite extends Composite impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.ui.composites.ISectionComposite#refresh()
 	 */
 	/**

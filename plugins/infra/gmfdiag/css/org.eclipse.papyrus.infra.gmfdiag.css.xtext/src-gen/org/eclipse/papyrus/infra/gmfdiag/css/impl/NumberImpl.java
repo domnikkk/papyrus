@@ -13,12 +13,9 @@ package org.eclipse.papyrus.infra.gmfdiag.css.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.UnaryOperator;
 
@@ -42,7 +39,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	 * The cached value of the '{@link #getOp() <em>Op</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOp()
 	 * @generated
 	 * @ordered
@@ -53,7 +50,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -64,7 +61,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -74,7 +71,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NumberImpl()
@@ -85,7 +82,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +94,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +106,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOp(UnaryOperator newOp, NotificationChain msgs)
@@ -131,7 +128,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +156,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +168,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +184,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +201,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +220,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +241,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +262,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +281,7 @@ public class NumberImpl extends TermImpl implements org.eclipse.papyrus.infra.gm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

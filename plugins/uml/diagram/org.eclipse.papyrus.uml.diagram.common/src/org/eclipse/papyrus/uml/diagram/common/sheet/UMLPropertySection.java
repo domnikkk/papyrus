@@ -40,7 +40,7 @@ public class UMLPropertySection extends AdvancedPropertySection implements IProp
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.ui.views.properties.IPropertySourceProvider#getPropertySource
 	 * (java.lang.Object)
@@ -65,7 +65,7 @@ public class UMLPropertySection extends AdvancedPropertySection implements IProp
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.diagram.ui.properties.sections.
 	 * AdvancedPropertySection# getPropertySourceProvider()
 	 */
@@ -109,7 +109,7 @@ public class UMLPropertySection extends AdvancedPropertySection implements IProp
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.
 	 * AdvancedPropertySection#setInput(org .eclipse.ui.IWorkbenchPart,
 	 * org.eclipse.jface.viewers.ISelection)

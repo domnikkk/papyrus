@@ -14,10 +14,14 @@ package org.eclipse.papyrus.infra.discovery.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.infra.discovery.*;
+import org.eclipse.papyrus.infra.discovery.Category;
+import org.eclipse.papyrus.infra.discovery.DiscoveryDefinition;
+import org.eclipse.papyrus.infra.discovery.DiscoveryPackage;
+import org.eclipse.papyrus.infra.discovery.Group;
+import org.eclipse.papyrus.infra.discovery.InstallableComponent;
+import org.eclipse.papyrus.infra.discovery.Message;
+import org.eclipse.papyrus.infra.discovery.Overview;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +32,7 @@ import org.eclipse.papyrus.infra.discovery.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage
  * @generated
  */
@@ -37,7 +41,7 @@ public class DiscoverySwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static DiscoveryPackage modelPackage;
@@ -46,7 +50,7 @@ public class DiscoverySwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiscoverySwitch() {
@@ -59,7 +63,7 @@ public class DiscoverySwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -73,7 +77,7 @@ public class DiscoverySwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -139,7 +143,7 @@ public class DiscoverySwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Installable Component</em>'.
@@ -156,7 +160,7 @@ public class DiscoverySwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Overview</em>'.
@@ -173,7 +177,7 @@ public class DiscoverySwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Category</em>'.
@@ -190,7 +194,7 @@ public class DiscoverySwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Definition</em>'.
@@ -207,7 +211,7 @@ public class DiscoverySwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Group</em>'.
@@ -224,7 +228,7 @@ public class DiscoverySwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Message</em>'.
@@ -241,7 +245,7 @@ public class DiscoverySwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

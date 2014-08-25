@@ -18,13 +18,15 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.services.edit.internal.ElementEditServiceProvider;
 
 /**
  * <pre>
  *
  * This interface shows a public API for accessing edit service related to model elements.
- * 
+ *
  * Class implementing this interface:
  * @see ElementEditServiceProvider
  *
@@ -36,7 +38,7 @@ public interface IElementEditServiceProvider {
 	 * <pre>
 	 *
 	 * Get the registered edit service for the object in parameter
-	 * 
+	 *
 	 * @param objectToEdit the object to edit (an EObject, EClass or {@link IElementType})
 	 * @return the edit service
 	 * @throws ServiceException
@@ -49,7 +51,7 @@ public interface IElementEditServiceProvider {
 	 *
 	 * Get the edit services for any element registered that are possibly contained by the owner under
 	 * the desired containment reference.
-	 * 
+	 *
 	 * @param owner the owner or the element to edit
 	 * @param containmentReference the containment reference
 	 * @return a list of edit services

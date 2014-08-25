@@ -143,7 +143,7 @@ public class TabFolderPart extends AbstractTabFolderPart implements IFolder {
 
 		/**
 		 * A double click is detected.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.internal.PTabFolder.IPTabFolderListener#mouseDoubleClickEvent(int, org.eclipse.swt.events.MouseEvent)
 		 *
 		 * @param itemIndex
@@ -158,7 +158,7 @@ public class TabFolderPart extends AbstractTabFolderPart implements IFolder {
 
 		/**
 		 * A double click is detected.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.internal.PTabFolder.IPTabFolderListener#mouseDoubleClickEvent(int, org.eclipse.swt.events.MouseEvent)
 		 *
 		 * @param itemIndex
@@ -173,7 +173,7 @@ public class TabFolderPart extends AbstractTabFolderPart implements IFolder {
 
 		/**
 		 * A double click is detected.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.internal.PTabFolder.IPTabFolderListener#mouseDoubleClickEvent(int, org.eclipse.swt.events.MouseEvent)
 		 *
 		 * @param itemIndex

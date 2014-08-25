@@ -32,7 +32,7 @@ public class CopyHandler extends AbstractCommandHandler {
 
 	/**
 	 * Check if the selection allow copy
-	 * 
+	 *
 	 * @param selectedElements
 	 * @return
 	 */
@@ -42,7 +42,7 @@ public class CopyHandler extends AbstractCommandHandler {
 
 	/**
 	 * Construct copy command from the selection
-	 * 
+	 *
 	 * @param editingDomain
 	 * @param selectedElements
 	 * @return
@@ -71,7 +71,7 @@ public class CopyHandler extends AbstractCommandHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#computeEnabled()
 	 */
 	@Override
@@ -82,7 +82,7 @@ public class CopyHandler extends AbstractCommandHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#setEnabled(java.lang.Object)
 	 */
 	@Override

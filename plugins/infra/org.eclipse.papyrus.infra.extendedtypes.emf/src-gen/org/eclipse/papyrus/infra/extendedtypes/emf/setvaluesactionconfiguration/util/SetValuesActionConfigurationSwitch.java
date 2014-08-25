@@ -4,14 +4,18 @@ package org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.eclipse.papyrus.infra.extendedtypes.ActionConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.ConfigurationElement;
 import org.eclipse.papyrus.infra.extendedtypes.SemanticActionConfiguration;
-
-import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.*;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ConstantValue;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.DynamicValue;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureToSet;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureValue;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ListValue;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.QueryExecutionValue;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +26,7 @@ import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationPackage
  * @generated
  */
@@ -31,7 +35,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static SetValuesActionConfigurationPackage modelPackage;
@@ -40,7 +44,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SetValuesActionConfigurationSwitch() {
@@ -53,7 +57,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -67,7 +71,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -165,7 +169,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Set Values Action Configuration</em>'.
@@ -182,7 +186,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Feature To Set</em>'.
@@ -199,7 +203,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Feature Value</em>'.
@@ -216,7 +220,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Dynamic Value</em>'.
@@ -233,7 +237,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Constant Value</em>'.
@@ -250,7 +254,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>List Value</em>'.
@@ -267,7 +271,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Query Execution Value</em>'.
@@ -284,7 +288,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Configuration Element</em>'.
@@ -301,7 +305,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Action Configuration</em>'.
@@ -318,7 +322,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Semantic Action Configuration</em>'.
@@ -335,7 +339,7 @@ public class SetValuesActionConfigurationSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.DefaultSemanticEditPolicy;
@@ -65,7 +64,7 @@ public class CustomBindingConnectorReorientCommand extends ConnectorReorientComm
 	/**
 	 * A BindingConnector could be reoriented in Parametric only if at least one end is a ConstraintParameter.
 	 * Also check Block.isEncapsulated (could not cross a Block which is encapsulted)
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -94,7 +93,7 @@ public class CustomBindingConnectorReorientCommand extends ConnectorReorientComm
 
 	/**
 	 * Check that BindingConnector do not cross a "Block.isEncapsulated" Part/Reference/ConstraintProperty
-	 * 
+	 *
 	 * @return true no encapsulation problem, false else
 	 */
 	private boolean checkEncapsulationCrossing() {

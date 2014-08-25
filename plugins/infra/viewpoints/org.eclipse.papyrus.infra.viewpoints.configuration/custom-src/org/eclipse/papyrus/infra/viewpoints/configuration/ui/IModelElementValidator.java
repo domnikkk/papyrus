@@ -17,13 +17,13 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * Represents the validation for the selection of an object
- * 
+ *
  * @author Laurent Wouters
  */
 public interface IModelElementValidator {
 	/**
 	 * Determines whether the given object pass the represented validation
-	 * 
+	 *
 	 * @param element
 	 *            The element to evaluate
 	 * @return <code>null</code> if the object passes the validation, or the notification to be displayed

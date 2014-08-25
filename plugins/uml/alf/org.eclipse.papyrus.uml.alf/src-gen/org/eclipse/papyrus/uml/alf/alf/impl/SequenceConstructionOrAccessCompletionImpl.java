@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AccessCompletion;
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.PartialSequenceConstructionCompletion;
@@ -125,8 +122,9 @@ public class SequenceConstructionOrAccessCompletionImpl extends MinimalEObjectIm
   {
     boolean oldMultiplicityIndicator = multiplicityIndicator;
     multiplicityIndicator = newMultiplicityIndicator;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__MULTIPLICITY_INDICATOR, oldMultiplicityIndicator, multiplicityIndicator));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__MULTIPLICITY_INDICATOR, oldMultiplicityIndicator, multiplicityIndicator));
+	}
   }
 
   /**
@@ -151,7 +149,11 @@ public class SequenceConstructionOrAccessCompletionImpl extends MinimalEObjectIm
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__ACCESS_COMPLETION, oldAccessCompletion, newAccessCompletion);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -166,15 +168,20 @@ public class SequenceConstructionOrAccessCompletionImpl extends MinimalEObjectIm
     if (newAccessCompletion != accessCompletion)
     {
       NotificationChain msgs = null;
-      if (accessCompletion != null)
-        msgs = ((InternalEObject)accessCompletion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__ACCESS_COMPLETION, null, msgs);
-      if (newAccessCompletion != null)
-        msgs = ((InternalEObject)newAccessCompletion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__ACCESS_COMPLETION, null, msgs);
+      if (accessCompletion != null) {
+		msgs = ((InternalEObject)accessCompletion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__ACCESS_COMPLETION, null, msgs);
+	}
+      if (newAccessCompletion != null) {
+		msgs = ((InternalEObject)newAccessCompletion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__ACCESS_COMPLETION, null, msgs);
+	}
       msgs = basicSetAccessCompletion(newAccessCompletion, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__ACCESS_COMPLETION, newAccessCompletion, newAccessCompletion));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__ACCESS_COMPLETION, newAccessCompletion, newAccessCompletion));
+	}
   }
 
   /**
@@ -199,7 +206,11 @@ public class SequenceConstructionOrAccessCompletionImpl extends MinimalEObjectIm
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__SEQUENCE_COMPLETION, oldSequenceCompletion, newSequenceCompletion);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -214,15 +225,20 @@ public class SequenceConstructionOrAccessCompletionImpl extends MinimalEObjectIm
     if (newSequenceCompletion != sequenceCompletion)
     {
       NotificationChain msgs = null;
-      if (sequenceCompletion != null)
-        msgs = ((InternalEObject)sequenceCompletion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__SEQUENCE_COMPLETION, null, msgs);
-      if (newSequenceCompletion != null)
-        msgs = ((InternalEObject)newSequenceCompletion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__SEQUENCE_COMPLETION, null, msgs);
+      if (sequenceCompletion != null) {
+		msgs = ((InternalEObject)sequenceCompletion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__SEQUENCE_COMPLETION, null, msgs);
+	}
+      if (newSequenceCompletion != null) {
+		msgs = ((InternalEObject)newSequenceCompletion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__SEQUENCE_COMPLETION, null, msgs);
+	}
       msgs = basicSetSequenceCompletion(newSequenceCompletion, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__SEQUENCE_COMPLETION, newSequenceCompletion, newSequenceCompletion));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__SEQUENCE_COMPLETION, newSequenceCompletion, newSequenceCompletion));
+	}
   }
 
   /**
@@ -247,7 +263,11 @@ public class SequenceConstructionOrAccessCompletionImpl extends MinimalEObjectIm
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__EXPRESSION, oldExpression, newExpression);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -262,15 +282,20 @@ public class SequenceConstructionOrAccessCompletionImpl extends MinimalEObjectIm
     if (newExpression != expression)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__EXPRESSION, null, msgs);
+      if (expression != null) {
+		msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__EXPRESSION, null, msgs);
+	}
+      if (newExpression != null) {
+		msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__EXPRESSION, null, msgs);
+	}
       msgs = basicSetExpression(newExpression, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__EXPRESSION, newExpression, newExpression));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION__EXPRESSION, newExpression, newExpression));
+	}
   }
 
   /**
@@ -397,7 +422,9 @@ public class SequenceConstructionOrAccessCompletionImpl extends MinimalEObjectIm
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (multiplicityIndicator: ");

@@ -30,6 +30,7 @@ import org.eclipse.papyrus.xwt.callback.IBeforeParsingCallback;
 import org.eclipse.papyrus.xwt.callback.ICreatedCallback;
 import org.eclipse.papyrus.xwt.callback.ILoadedCallback;
 import org.eclipse.papyrus.xwt.core.TriggerBase;
+import org.eclipse.papyrus.xwt.databinding.BindingContext;
 import org.eclipse.papyrus.xwt.databinding.IBindingContext;
 import org.eclipse.papyrus.xwt.input.ICommand;
 import org.eclipse.papyrus.xwt.internal.core.UpdateSourceTrigger;
@@ -134,21 +135,21 @@ public interface IXWTLoader {
 	 *
 	 * <pre>
 	 * private Object xmlCache; // the XML cache
-	 * 
+	 *
 	 * // other fields ...
-	 * 
+	 *
 	 * void whatever() {
 	 * 	Map&lt;String, Object&gt; options = new HashMap&lt;String, Object&gt;();
 	 * 	options.put(IXWTLoader.XML_CACHE_PROPERTY, (xmlCache != null) ? xmlCache : Boolean.TRUE);
 	 * 	// ... set other options as needed ...
-	 * 
+	 *
 	 * 	URL url = getResourceURL(); // however this is obtained
-	 * 
+	 *
 	 * 	Object ui = XWT.loadWithOptions(url, options);
-	 * 
+	 *
 	 * 	// Get the cache to reuse next time
 	 * 	xmlCache = options.get(IXWTLoader.XML_CACHE_PROPERTY);
-	 * 
+	 *
 	 * 	doSomethingWithTheUI(ui);
 	 * }
 	 * </pre>

@@ -16,13 +16,9 @@ package org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.impl
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetPackage;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.ExtensiblePackage;
-
 import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQuery;
 import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQueryFactory;
 import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQueryPackage;
@@ -31,14 +27,14 @@ import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQ
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class JavaQueryPackageImpl extends EPackageImpl implements JavaQueryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass javaQueryEClass = null;
@@ -48,7 +44,7 @@ public class JavaQueryPackageImpl extends EPackageImpl implements JavaQueryPacka
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQueryPackage#eNS_URI
 	 * @see #init()
@@ -61,7 +57,7 @@ public class JavaQueryPackageImpl extends EPackageImpl implements JavaQueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -71,7 +67,7 @@ public class JavaQueryPackageImpl extends EPackageImpl implements JavaQueryPacka
 	 *
 	 * <p>
 	 * This method is used to initialize {@link JavaQueryPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -108,7 +104,7 @@ public class JavaQueryPackageImpl extends EPackageImpl implements JavaQueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getJavaQuery() {
@@ -118,7 +114,7 @@ public class JavaQueryPackageImpl extends EPackageImpl implements JavaQueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJavaQuery_ImplementationClassName() {
@@ -128,7 +124,7 @@ public class JavaQueryPackageImpl extends EPackageImpl implements JavaQueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaQueryFactory getJavaQueryFactory() {
@@ -138,7 +134,7 @@ public class JavaQueryPackageImpl extends EPackageImpl implements JavaQueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -148,7 +144,7 @@ public class JavaQueryPackageImpl extends EPackageImpl implements JavaQueryPacka
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -165,7 +161,7 @@ public class JavaQueryPackageImpl extends EPackageImpl implements JavaQueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -175,7 +171,7 @@ public class JavaQueryPackageImpl extends EPackageImpl implements JavaQueryPacka
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

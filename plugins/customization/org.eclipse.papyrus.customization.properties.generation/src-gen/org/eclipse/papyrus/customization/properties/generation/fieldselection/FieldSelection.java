@@ -36,7 +36,7 @@ public interface FieldSelection extends EObject {
 	 * If the meaning of the '<em>Fields</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Fields</em>' containment reference list.
 	 * @see org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelectionPackage#getFieldSelection_Fields()
 	 * @model containment="true"
@@ -52,7 +52,7 @@ public interface FieldSelection extends EObject {
 	 * If the meaning of the '<em>Context Elements</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Context Elements</em>' containment reference list.
 	 * @see org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelectionPackage#getFieldSelection_ContextElements()
 	 * @model containment="true"

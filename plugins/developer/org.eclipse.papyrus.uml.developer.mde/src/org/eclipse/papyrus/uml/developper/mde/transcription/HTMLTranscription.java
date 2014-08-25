@@ -22,7 +22,7 @@ import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * this class is a specialization to generate html files.
- * 
+ *
  * @author PT202707
  *
  */

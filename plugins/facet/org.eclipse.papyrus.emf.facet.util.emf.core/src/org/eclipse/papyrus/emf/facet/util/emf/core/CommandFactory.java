@@ -27,7 +27,7 @@ public final class CommandFactory {
 
 	/**
 	 * This method creates a command to set a collection of element to a resource
-	 * 
+	 *
 	 * @param resource
 	 *            the resource to set
 	 * @param content
@@ -42,7 +42,7 @@ public final class CommandFactory {
 
 	/**
 	 * This method creates a command to set an EObject to a resource
-	 * 
+	 *
 	 * @param resource
 	 *            the resource to set
 	 * @param eObject

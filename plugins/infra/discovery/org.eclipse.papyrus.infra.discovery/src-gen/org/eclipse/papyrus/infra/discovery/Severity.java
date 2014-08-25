@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Severity</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getSeverity()
  * @model
  * @generated
@@ -33,7 +33,7 @@ public enum Severity implements Enumerator {
 	 * The '<em><b>Info</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INFO_VALUE
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public enum Severity implements Enumerator {
 	 * The '<em><b>Warning</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #WARNING_VALUE
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public enum Severity implements Enumerator {
 	 * If the meaning of '<em><b>Info</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INFO
 	 * @model name="info"
 	 * @generated
@@ -73,7 +73,7 @@ public enum Severity implements Enumerator {
 	 * If the meaning of '<em><b>Warning</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #WARNING
 	 * @model name="warning"
 	 * @generated
@@ -85,7 +85,7 @@ public enum Severity implements Enumerator {
 	 * An array of all the '<em><b>Severity</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final Severity[] VALUES_ARRAY =
@@ -98,7 +98,7 @@ public enum Severity implements Enumerator {
 	 * A public read-only list of all the '<em><b>Severity</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<Severity> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -107,7 +107,7 @@ public enum Severity implements Enumerator {
 	 * Returns the '<em><b>Severity</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static Severity get(String literal) {
@@ -124,7 +124,7 @@ public enum Severity implements Enumerator {
 	 * Returns the '<em><b>Severity</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static Severity getByName(String name) {
@@ -141,7 +141,7 @@ public enum Severity implements Enumerator {
 	 * Returns the '<em><b>Severity</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static Severity get(int value) {
@@ -157,7 +157,7 @@ public enum Severity implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -165,7 +165,7 @@ public enum Severity implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -173,7 +173,7 @@ public enum Severity implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -182,7 +182,7 @@ public enum Severity implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private Severity(int value, String name, String literal) {
@@ -194,7 +194,7 @@ public enum Severity implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getValue() {
@@ -204,7 +204,7 @@ public enum Severity implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -214,7 +214,7 @@ public enum Severity implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLiteral() {
@@ -225,7 +225,7 @@ public enum Severity implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

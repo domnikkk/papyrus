@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.Profile;
 
 /**
  * Implementation of the IProfileHelper interface for UML profiles
- * 
+ *
  * @author Laurent Wouters
  */
 public class UMLProfileHelper implements IProfileHelper {

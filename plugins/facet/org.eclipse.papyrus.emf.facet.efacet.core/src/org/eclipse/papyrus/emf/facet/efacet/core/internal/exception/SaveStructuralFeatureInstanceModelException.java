@@ -15,7 +15,7 @@ import org.eclipse.papyrus.emf.facet.efacet.core.exception.FacetManagerException
 
 /**
  * This exception is raised when an IOException is caught when trying to save a structural feature instance model
- * 
+ *
  * @since 0.2
  */
 public class SaveStructuralFeatureInstanceModelException extends

@@ -34,7 +34,7 @@ import org.eclipse.papyrus.uml.diagram.common.util.CrossReferencerUtil;
  * <pre>
  * Edit helper advice that delete views from diagram when an element is
  * moved in a new container (in the model explorer).
- * 
+ *
  * Block is an exception as the IBD is attached to the Block itself, removing it
  * would result in an unusable IBD.
  * </pre>

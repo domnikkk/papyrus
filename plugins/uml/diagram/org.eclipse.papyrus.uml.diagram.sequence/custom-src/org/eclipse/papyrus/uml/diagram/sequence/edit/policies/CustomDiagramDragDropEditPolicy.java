@@ -395,18 +395,18 @@ public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPo
 
 	/*
 	 * To extend the method in superclass with an option Dimension size,
-	 * 
-	 * 
+	 *
+	 *
 	 * @param hostEP
-	 * 
+	 *
 	 * @param nodeVISUALID
-	 * 
+	 *
 	 * @param absoluteLocation
-	 * 
+	 *
 	 * @param size
-	 * 
+	 *
 	 * @param droppedObject
-	 * 
+	 *
 	 * @return
 	 */
 	protected ICommand dropCombinedFragment(EditPart hostEP, int nodeVISUALID, Point absoluteLocation, Dimension size, EObject droppedObject) {

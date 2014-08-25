@@ -36,7 +36,7 @@ public class NullLiteralQueryImpl extends QueryImpl implements NullLiteralQuery 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NullLiteralQueryImpl() {
@@ -46,7 +46,7 @@ public class NullLiteralQueryImpl extends QueryImpl implements NullLiteralQuery 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

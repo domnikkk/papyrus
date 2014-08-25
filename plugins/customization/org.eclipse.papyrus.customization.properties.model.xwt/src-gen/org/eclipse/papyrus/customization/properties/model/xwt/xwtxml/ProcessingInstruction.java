@@ -39,7 +39,7 @@ public interface ProcessingInstruction extends Node {
 	 * If the meaning of the '<em>Data</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Data</em>' attribute.
 	 * @see #setData(String)
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage#getProcessingInstruction_Data()
@@ -52,7 +52,7 @@ public interface ProcessingInstruction extends Node {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.ProcessingInstruction#getData <em>Data</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Data</em>' attribute.
 	 * @see #getData()

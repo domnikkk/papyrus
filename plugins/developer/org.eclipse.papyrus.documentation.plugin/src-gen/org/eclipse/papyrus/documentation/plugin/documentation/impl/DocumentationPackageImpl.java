@@ -11,9 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.documentation.plugin.documentation.Comment;
 import org.eclipse.papyrus.documentation.plugin.documentation.Dependency;
 import org.eclipse.papyrus.documentation.plugin.documentation.Documentation;
@@ -26,14 +24,14 @@ import org.eclipse.papyrus.documentation.plugin.documentation.Person;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DocumentationPackageImpl extends EPackageImpl implements DocumentationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass documentationEClass = null;
@@ -41,7 +39,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass dependencyEClass = null;
@@ -49,7 +47,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass fileDependencyEClass = null;
@@ -57,7 +55,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass personEClass = null;
@@ -65,7 +63,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass commentEClass = null;
@@ -75,7 +73,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage#eNS_URI
 	 * @see #init()
@@ -88,7 +86,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -99,7 +97,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	 * <p>
 	 * This method is used to initialize {@link DocumentationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -136,7 +134,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDocumentation() {
@@ -146,7 +144,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDocumentation_Description() {
@@ -156,7 +154,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDocumentation_ImplicitDependencies() {
@@ -166,7 +164,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDocumentation_Referent() {
@@ -176,7 +174,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDocumentation_AdditionalComments() {
@@ -186,7 +184,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDependency() {
@@ -196,7 +194,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDependency_Plugin() {
@@ -206,7 +204,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDependency_Comment() {
@@ -216,7 +214,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFileDependency() {
@@ -226,7 +224,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getFileDependency_File() {
@@ -236,7 +234,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPerson() {
@@ -246,7 +244,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPerson_FirstName() {
@@ -256,7 +254,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPerson_LastName() {
@@ -266,7 +264,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPerson_EMail() {
@@ -276,7 +274,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPerson_CurrentCompany() {
@@ -286,7 +284,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getComment() {
@@ -296,7 +294,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getComment_Title() {
@@ -306,7 +304,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getComment_Contents() {
@@ -316,7 +314,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DocumentationFactory getDocumentationFactory() {
@@ -326,7 +324,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -336,7 +334,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -373,7 +371,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -383,7 +381,7 @@ public class DocumentationPackageImpl extends EPackageImpl implements Documentat
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

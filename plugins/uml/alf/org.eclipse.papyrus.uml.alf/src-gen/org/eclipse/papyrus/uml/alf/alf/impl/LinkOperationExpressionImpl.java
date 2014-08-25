@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.LinkOperationExpression;
 import org.eclipse.papyrus.uml.alf.alf.LinkOperationKind;
@@ -101,8 +98,9 @@ public class LinkOperationExpressionImpl extends SuffixExpressionImpl implements
   {
     LinkOperationKind oldKind = kind;
     kind = newKind == null ? KIND_EDEFAULT : newKind;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.LINK_OPERATION_EXPRESSION__KIND, oldKind, kind));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.LINK_OPERATION_EXPRESSION__KIND, oldKind, kind));
+	}
   }
 
   /**
@@ -127,7 +125,11 @@ public class LinkOperationExpressionImpl extends SuffixExpressionImpl implements
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.LINK_OPERATION_EXPRESSION__TUPLE, oldTuple, newTuple);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -142,15 +144,20 @@ public class LinkOperationExpressionImpl extends SuffixExpressionImpl implements
     if (newTuple != tuple)
     {
       NotificationChain msgs = null;
-      if (tuple != null)
-        msgs = ((InternalEObject)tuple).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.LINK_OPERATION_EXPRESSION__TUPLE, null, msgs);
-      if (newTuple != null)
-        msgs = ((InternalEObject)newTuple).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.LINK_OPERATION_EXPRESSION__TUPLE, null, msgs);
+      if (tuple != null) {
+		msgs = ((InternalEObject)tuple).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.LINK_OPERATION_EXPRESSION__TUPLE, null, msgs);
+	}
+      if (newTuple != null) {
+		msgs = ((InternalEObject)newTuple).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.LINK_OPERATION_EXPRESSION__TUPLE, null, msgs);
+	}
       msgs = basicSetTuple(newTuple, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.LINK_OPERATION_EXPRESSION__TUPLE, newTuple, newTuple));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.LINK_OPERATION_EXPRESSION__TUPLE, newTuple, newTuple));
+	}
   }
 
   /**
@@ -253,7 +260,9 @@ public class LinkOperationExpressionImpl extends SuffixExpressionImpl implements
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (kind: ");

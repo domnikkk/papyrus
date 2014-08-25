@@ -124,7 +124,7 @@ public class AssociationNoneEditHelperAdvice extends AssociationEditHelperAdvice
 
 	/**
 	 * This method has to be specialized by subclasses (AggregationKind)
-	 * 
+	 *
 	 * @param sourceProperty
 	 *            The property to configure
 	 */
@@ -134,7 +134,7 @@ public class AssociationNoneEditHelperAdvice extends AssociationEditHelperAdvice
 
 	/**
 	 * This method has to be specialized by subclasses (AggregationKind)
-	 * 
+	 *
 	 * @param sourceProperty
 	 *            The property to configure
 	 */
@@ -187,7 +187,7 @@ public class AssociationNoneEditHelperAdvice extends AssociationEditHelperAdvice
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Complete the {@link Association} creation by setting its ends.
 	 *
 	 * </pre>

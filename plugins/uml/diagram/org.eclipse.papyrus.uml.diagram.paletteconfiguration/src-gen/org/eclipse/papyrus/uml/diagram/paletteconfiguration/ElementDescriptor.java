@@ -34,7 +34,7 @@ public interface ElementDescriptor extends EObject {
 	 * If the meaning of the '<em>Element Type Id</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Type Id</em>' attribute.
 	 * @see #setElementTypeId(String)
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getElementDescriptor_ElementTypeId()
@@ -47,7 +47,7 @@ public interface ElementDescriptor extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.ElementDescriptor#getElementTypeId <em>Element Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Element Type Id</em>' attribute.
 	 * @see #getElementTypeId()
@@ -63,7 +63,7 @@ public interface ElementDescriptor extends EObject {
 	 * If the meaning of the '<em>Graphical Hints</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Graphical Hints</em>' attribute list.
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getElementDescriptor_GraphicalHints()
 	 * @model

@@ -23,7 +23,7 @@ public abstract class RowIterator implements Iterator<CellIterator> {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.util.Iterator#remove()
 	 */
 	@Override

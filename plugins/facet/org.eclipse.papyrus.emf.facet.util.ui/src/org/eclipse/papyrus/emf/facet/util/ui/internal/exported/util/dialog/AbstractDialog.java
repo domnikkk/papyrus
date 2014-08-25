@@ -13,10 +13,10 @@
 package org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.dialog;
 
 import org.eclipse.core.commands.Command;
+import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.ICommandWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.WidgetProperties;
-import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;

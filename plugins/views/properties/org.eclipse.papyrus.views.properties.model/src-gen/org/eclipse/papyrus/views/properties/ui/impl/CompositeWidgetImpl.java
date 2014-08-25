@@ -42,7 +42,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	 * The cached value of the '{@link #getLayout() <em>Layout</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayout()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	 * The cached value of the '{@link #getWidgets() <em>Widgets</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidgets()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	 * The cached value of the '{@link #getWidgetType() <em>Widget Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidgetType()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CompositeWidgetImpl() {
@@ -84,7 +84,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLayout(Layout newLayout, NotificationChain msgs) {
@@ -126,7 +126,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +186,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CompositeWidgetType basicGetWidgetType() {
@@ -196,7 +196,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -274,7 +274,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class CompositeWidgetImpl extends WidgetImpl implements CompositeWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -7,12 +7,9 @@
 package org.eclipse.papyrus.documentation.plugin.documentation.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.documentation.plugin.documentation.Dependency;
 import org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage;
 
@@ -35,7 +32,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	 * The default value of the '{@link #getPlugin() <em>Plugin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPlugin()
 	 * @generated
 	 * @ordered
@@ -46,7 +43,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	 * The cached value of the '{@link #getPlugin() <em>Plugin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPlugin()
 	 * @generated
 	 * @ordered
@@ -57,7 +54,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -68,7 +65,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getComment()
 	 * @generated
 	 * @ordered
@@ -78,7 +75,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DependencyImpl() {
@@ -88,7 +85,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +96,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getPlugin() {
@@ -109,7 +106,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPlugin(String newPlugin) {
@@ -123,7 +120,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getComment() {
@@ -133,7 +130,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setComment(String newComment) {
@@ -147,7 +144,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +161,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +180,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +199,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +216,7 @@ public class DependencyImpl extends EModelElementImpl implements Dependency {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

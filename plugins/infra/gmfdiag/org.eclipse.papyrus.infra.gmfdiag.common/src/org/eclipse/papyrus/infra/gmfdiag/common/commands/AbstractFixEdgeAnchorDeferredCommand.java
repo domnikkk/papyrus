@@ -17,6 +17,7 @@ package org.eclipse.papyrus.infra.gmfdiag.common.commands;
 
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.draw2d.IFigure;

@@ -13,9 +13,6 @@
  */
 package org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.wizard.page;
 
-import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.Activator;
-import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.Messages;
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.search.SearchEngine;
@@ -24,6 +21,9 @@ import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.Activator;
+import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.Messages;
+import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;

@@ -12,12 +12,9 @@
 package org.eclipse.papyrus.infra.gmfdiag.css.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.Combinator;
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.KIND;
@@ -41,7 +38,7 @@ public class CombinatorImpl extends MinimalEObjectImpl.Container implements Comb
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -52,7 +49,7 @@ public class CombinatorImpl extends MinimalEObjectImpl.Container implements Comb
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -62,7 +59,7 @@ public class CombinatorImpl extends MinimalEObjectImpl.Container implements Comb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CombinatorImpl()
@@ -73,7 +70,7 @@ public class CombinatorImpl extends MinimalEObjectImpl.Container implements Comb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +82,7 @@ public class CombinatorImpl extends MinimalEObjectImpl.Container implements Comb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +94,7 @@ public class CombinatorImpl extends MinimalEObjectImpl.Container implements Comb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +110,7 @@ public class CombinatorImpl extends MinimalEObjectImpl.Container implements Comb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +127,7 @@ public class CombinatorImpl extends MinimalEObjectImpl.Container implements Comb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +145,7 @@ public class CombinatorImpl extends MinimalEObjectImpl.Container implements Comb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +163,7 @@ public class CombinatorImpl extends MinimalEObjectImpl.Container implements Comb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +180,7 @@ public class CombinatorImpl extends MinimalEObjectImpl.Container implements Comb
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

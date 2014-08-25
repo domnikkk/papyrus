@@ -19,7 +19,7 @@ public class TestTrace {
 
 	/**
 	 * Record a new trace.
-	 * 
+	 *
 	 * @param trace
 	 */
 	public void addTrace(String trace) {
@@ -28,7 +28,7 @@ public class TestTrace {
 
 	/**
 	 * Record a new trace.
-	 * 
+	 *
 	 * @param trace
 	 */
 	public void addTrace(String name, String trace) {
@@ -37,7 +37,7 @@ public class TestTrace {
 
 	/**
 	 * Record a new trace.
-	 * 
+	 *
 	 * @param trace
 	 */
 	public void addTrace(String name, String trace, Object value) {
@@ -46,7 +46,7 @@ public class TestTrace {
 
 	/**
 	 * Return the name and the trace in one concatenated string ("name,trace").
-	 * 
+	 *
 	 * @param i
 	 *            Index of the requested trace
 	 * @return
@@ -57,7 +57,7 @@ public class TestTrace {
 
 	/**
 	 * Get the value
-	 * 
+	 *
 	 * @param i
 	 * @return
 	 */
@@ -67,7 +67,7 @@ public class TestTrace {
 
 	/**
 	 * Return true if the trace contains the specified events.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean contains(String name, String trace) {

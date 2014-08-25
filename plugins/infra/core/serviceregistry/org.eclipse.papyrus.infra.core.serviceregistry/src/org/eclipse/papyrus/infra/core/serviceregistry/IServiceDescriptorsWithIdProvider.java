@@ -33,7 +33,7 @@ public interface IServiceDescriptorsWithIdProvider {
 	 * Get the requested descriptor.
 	 * If the registry is found more than one, throw an exception.
 	 * If the registry is not found, return null.
-	 * 
+	 *
 	 * @param registryName
 	 * @return The {@link RegistryIdDesc} or null if not found.
 	 *
@@ -53,7 +53,7 @@ public interface IServiceDescriptorsWithIdProvider {
 
 	/**
 	 * Get a complete ServiceSet from its name.
-	 * 
+	 *
 	 * @param serviceSetName
 	 * @return
 	 * @throws DeclarationException

@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.URI;
 public class CustomElementCreationMenuModelResource extends ElementCreationMenuModelResourceImpl {
 	/**
 	 * Creates an instance of the resource.
-	 * 
+	 *
 	 * @param uri
 	 *            the URI of the new resource.
 	 */

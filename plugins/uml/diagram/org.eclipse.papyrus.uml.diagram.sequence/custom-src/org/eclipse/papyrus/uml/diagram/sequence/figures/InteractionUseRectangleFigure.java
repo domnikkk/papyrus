@@ -30,7 +30,7 @@ public class InteractionUseRectangleFigure extends StereotypeInteractionFigure {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.uml.diagram.sequence.figures.InteractionRectangleFigure#createContentPane()
 	 */

@@ -41,7 +41,7 @@ public interface Dependency extends EModelElement {
 	 * If the meaning of the '<em>Plugin</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Plugin</em>' attribute.
 	 * @see #setPlugin(String)
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage#getDependency_Plugin()
@@ -54,7 +54,7 @@ public interface Dependency extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.documentation.plugin.documentation.Dependency#getPlugin <em>Plugin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Plugin</em>' attribute.
 	 * @see #getPlugin()
@@ -69,7 +69,7 @@ public interface Dependency extends EModelElement {
 	 * If the meaning of the '<em>Comment</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Comment</em>' attribute.
 	 * @see #setComment(String)
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage#getDependency_Comment()
@@ -82,7 +82,7 @@ public interface Dependency extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.documentation.plugin.documentation.Dependency#getComment <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Comment</em>' attribute.
 	 * @see #getComment()

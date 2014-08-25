@@ -20,7 +20,7 @@ public class ElementTypeSetUtils {
 
 	/**
 	 * Loads
-	 * 
+	 *
 	 * @param extendedElementTypeSet
 	 */
 	public static void load(ExtendedElementTypeSet extendedElementTypeSet) {

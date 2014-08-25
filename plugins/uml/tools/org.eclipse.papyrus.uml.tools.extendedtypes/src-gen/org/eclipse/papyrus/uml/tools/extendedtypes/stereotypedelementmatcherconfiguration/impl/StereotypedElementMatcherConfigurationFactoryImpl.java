@@ -25,7 +25,7 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.stereotypedelementmatcherconf
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryImpl implements StereotypedElementMatcherConfigurationFactory {
@@ -33,7 +33,7 @@ public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryI
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static StereotypedElementMatcherConfigurationFactory init() {
@@ -52,7 +52,7 @@ public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryI
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StereotypedElementMatcherConfigurationFactoryImpl() {
@@ -62,7 +62,7 @@ public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StereotypedElementMatcherConfiguration createStereotypedElementMatcherConfiguration() {
@@ -89,7 +89,7 @@ public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StereotypedElementMatcherConfigurationPackage getStereotypedElementMatcherConfigurationPackage() {
@@ -99,7 +99,7 @@ public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

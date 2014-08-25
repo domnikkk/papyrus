@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * Encapsulation of the Undo and Redo stack(s)
- * 
+ *
  * @author Petr Bodnar
  */
 public class UndoRedoStack<T> {

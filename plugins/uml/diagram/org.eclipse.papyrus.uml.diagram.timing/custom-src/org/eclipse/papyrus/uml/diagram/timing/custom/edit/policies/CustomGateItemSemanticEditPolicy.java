@@ -18,6 +18,7 @@ import org.eclipse.papyrus.uml.diagram.timing.custom.edit.commands.CustomMessage
 import org.eclipse.papyrus.uml.diagram.timing.custom.edit.commands.CustomMessageReorientCommand;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.MessageUtils;
 import org.eclipse.papyrus.uml.diagram.timing.edit.policies.GateItemSemanticEditPolicy;
+import org.eclipse.uml2.uml.Gate;
 
 /** Semantic edit policy for {@link Gate}s */
 public class CustomGateItemSemanticEditPolicy extends GateItemSemanticEditPolicy {

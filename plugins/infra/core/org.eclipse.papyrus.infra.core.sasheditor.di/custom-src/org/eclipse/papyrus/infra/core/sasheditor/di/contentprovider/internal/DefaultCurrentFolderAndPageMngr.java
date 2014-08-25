@@ -46,7 +46,7 @@ public class DefaultCurrentFolderAndPageMngr implements ICurrentFolderAndPageMng
 
 	/**
 	 * Do nothing
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.internal.ICurrentFolderAndPageMngr#setActivePage(java.lang.Object)
 	 *
 	 * @param pageIdentifier

@@ -60,7 +60,7 @@ public class CreateElementAndInitializeFeatureCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#canExecute()
 	 */
 	@Override
@@ -70,7 +70,7 @@ public class CreateElementAndInitializeFeatureCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#canUndo()
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class CreateElementAndInitializeFeatureCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gef.commands.Command#chain(org.eclipse.gef.commands.Command)
 	 */
@@ -92,7 +92,7 @@ public class CreateElementAndInitializeFeatureCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#dispose()
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class CreateElementAndInitializeFeatureCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#execute()
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class CreateElementAndInitializeFeatureCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#getDebugLabel()
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class CreateElementAndInitializeFeatureCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#getLabel()
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class CreateElementAndInitializeFeatureCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#redo()
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class CreateElementAndInitializeFeatureCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#setDebugLabel(java.lang.String)
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class CreateElementAndInitializeFeatureCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#setLabel(java.lang.String)
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class CreateElementAndInitializeFeatureCommand extends Command {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#undo()
 	 */
 	@Override

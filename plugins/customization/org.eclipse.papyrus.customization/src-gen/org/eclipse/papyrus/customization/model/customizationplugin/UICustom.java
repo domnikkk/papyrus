@@ -37,7 +37,7 @@ public interface UICustom extends FileBasedCustomizableElement {
 	 * If the meaning of the '<em>Load By Default</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Load By Default</em>' attribute.
 	 * @see #setLoadByDefault(boolean)
 	 * @see org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage#getUICustom_LoadByDefault()
@@ -50,7 +50,7 @@ public interface UICustom extends FileBasedCustomizableElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.model.customizationplugin.UICustom#isLoadByDefault <em>Load By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Load By Default</em>' attribute.
 	 * @see #isLoadByDefault()

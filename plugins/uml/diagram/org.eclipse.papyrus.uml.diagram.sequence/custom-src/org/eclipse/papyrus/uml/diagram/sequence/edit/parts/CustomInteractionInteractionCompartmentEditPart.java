@@ -61,7 +61,7 @@ public class CustomInteractionInteractionCompartmentEditPart extends Interaction
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#
 	 * showTargetFeedback(org.eclipse.gef.Request)
 	 */
@@ -85,7 +85,7 @@ public class CustomInteractionInteractionCompartmentEditPart extends Interaction
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#
 	 * eraseTargetFeedback(org.eclipse.gef.Request)
 	 */

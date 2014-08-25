@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.emf.facet.efacet;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -48,7 +47,7 @@ public interface FacetSet extends EPackage {
 	 * If the meaning of the '<em>Facets</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Facets</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getFacetSet_Facets()
 	 * @see org.eclipse.papyrus.emf.facet.efacet.Facet#getFacetSet
@@ -67,7 +66,7 @@ public interface FacetSet extends EPackage {
 	 * If the meaning of the '<em>Categories</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Categories</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getFacetSet_Categories()
 	 * @model containment="true"
@@ -84,7 +83,7 @@ public interface FacetSet extends EPackage {
 	 * If the meaning of the '<em>Extended EPackage</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Extended EPackage</em>' reference.
 	 * @see #setExtendedEPackage(EPackage)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getFacetSet_ExtendedEPackage()
@@ -99,7 +98,7 @@ public interface FacetSet extends EPackage {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.FacetSet#getExtendedEPackage <em>Extended EPackage</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Extended EPackage</em>' reference.
 	 * @see #getExtendedEPackage()

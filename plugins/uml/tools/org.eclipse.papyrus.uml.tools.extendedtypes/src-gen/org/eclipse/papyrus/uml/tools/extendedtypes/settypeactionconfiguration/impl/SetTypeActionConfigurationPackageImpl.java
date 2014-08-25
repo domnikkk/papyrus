@@ -16,11 +16,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
-
 import org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.SetTypeActionConfiguration;
 import org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.SetTypeActionConfigurationFactory;
 import org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.SetTypeActionConfigurationPackage;
@@ -29,14 +26,14 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.Se
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SetTypeActionConfigurationPackageImpl extends EPackageImpl implements SetTypeActionConfigurationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass setTypeActionConfigurationEClass = null;
@@ -46,7 +43,7 @@ public class SetTypeActionConfigurationPackageImpl extends EPackageImpl implemen
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.SetTypeActionConfigurationPackage#eNS_URI
 	 * @see #init()
@@ -59,7 +56,7 @@ public class SetTypeActionConfigurationPackageImpl extends EPackageImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -70,7 +67,7 @@ public class SetTypeActionConfigurationPackageImpl extends EPackageImpl implemen
 	 * <p>
 	 * This method is used to initialize {@link SetTypeActionConfigurationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -108,7 +105,7 @@ public class SetTypeActionConfigurationPackageImpl extends EPackageImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getSetTypeActionConfiguration() {
@@ -118,7 +115,7 @@ public class SetTypeActionConfigurationPackageImpl extends EPackageImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getSetTypeActionConfiguration_ValidTypes() {
@@ -128,7 +125,7 @@ public class SetTypeActionConfigurationPackageImpl extends EPackageImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getSetTypeActionConfiguration_CreationTypes() {
@@ -138,7 +135,7 @@ public class SetTypeActionConfigurationPackageImpl extends EPackageImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SetTypeActionConfigurationFactory getSetTypeActionConfigurationFactory() {
@@ -148,7 +145,7 @@ public class SetTypeActionConfigurationPackageImpl extends EPackageImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -158,7 +155,7 @@ public class SetTypeActionConfigurationPackageImpl extends EPackageImpl implemen
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -176,7 +173,7 @@ public class SetTypeActionConfigurationPackageImpl extends EPackageImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -186,7 +183,7 @@ public class SetTypeActionConfigurationPackageImpl extends EPackageImpl implemen
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

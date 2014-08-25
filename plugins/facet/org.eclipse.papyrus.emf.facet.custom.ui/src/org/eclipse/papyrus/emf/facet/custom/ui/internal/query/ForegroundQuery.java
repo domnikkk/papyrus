@@ -13,12 +13,12 @@
 package org.eclipse.papyrus.emf.facet.custom.ui.internal.query;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IColor;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.custompt.Color;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
 import org.eclipse.papyrus.emf.facet.efacet.core.exception.DerivedTypedElementException;
 import org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2;
 import org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IColor;
 
 public class ForegroundQuery implements IJavaQuery2<EObject, IColor> {
 

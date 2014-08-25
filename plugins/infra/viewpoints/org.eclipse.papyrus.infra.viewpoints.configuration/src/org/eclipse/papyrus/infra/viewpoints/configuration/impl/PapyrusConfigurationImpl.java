@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.infra.viewpoints.configuration.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -49,7 +50,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	 * The cached value of the '{@link #getDefaultStakeholder() <em>Default Stakeholder</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefaultStakeholder()
 	 * @generated
 	 * @ordered
@@ -60,7 +61,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	 * The cached value of the '{@link #getMetamodel() <em>Metamodel</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMetamodel()
 	 * @generated
 	 * @ordered
@@ -71,7 +72,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	 * The cached value of the '{@link #getCategories() <em>Categories</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCategories()
 	 * @generated
 	 * @ordered
@@ -81,7 +82,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PapyrusConfigurationImpl() {
@@ -91,7 +92,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +103,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Stakeholder getDefaultStakeholder() {
@@ -121,7 +122,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Stakeholder basicGetDefaultStakeholder() {
@@ -131,7 +132,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDefaultStakeholder(Stakeholder newDefaultStakeholder) {
@@ -145,7 +146,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EPackage getMetamodel() {
@@ -164,7 +165,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EPackage basicGetMetamodel() {
@@ -174,7 +175,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMetamodel(EPackage newMetamodel) {
@@ -188,7 +189,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Category> getCategories() {
@@ -201,7 +202,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +217,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +242,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -265,7 +266,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +288,7 @@ public class PapyrusConfigurationImpl extends ArchitectureFrameworkImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

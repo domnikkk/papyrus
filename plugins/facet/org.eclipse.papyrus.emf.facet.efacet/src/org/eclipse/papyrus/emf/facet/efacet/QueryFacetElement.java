@@ -45,7 +45,7 @@ public interface QueryFacetElement extends FacetElement {
 	 * If the meaning of the '<em>Query</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Query</em>' containment reference.
 	 * @see #setQuery(Query)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQueryFacetElement_Query()
@@ -60,7 +60,7 @@ public interface QueryFacetElement extends FacetElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.QueryFacetElement#getQuery <em>Query</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Query</em>' containment reference.
 	 * @see #getQuery()

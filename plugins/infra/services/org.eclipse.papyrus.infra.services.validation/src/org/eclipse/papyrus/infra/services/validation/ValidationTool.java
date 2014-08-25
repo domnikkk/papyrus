@@ -137,7 +137,7 @@ public class ValidationTool {
 
 	/**
 	 * Delete all markers that refer to eObjects owned by the parentEObj (passed in the constructor)
-	 * 
+	 *
 	 * @param monitor
 	 *            A progress monitor
 	 */

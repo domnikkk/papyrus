@@ -29,7 +29,7 @@ import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguratio
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.InvariantStereotypeConfigurationFactory
  * @model kind="package"
  * @generated
@@ -40,7 +40,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "invariantstereotypeconfiguration";
@@ -49,7 +49,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/infra/extendedtypes/semantictype/invariant/stereotype/1.0";
@@ -58,7 +58,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "invariantstereotypeconfiguration";
@@ -67,7 +67,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	InvariantStereotypeConfigurationPackage eINSTANCE = org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.impl.InvariantStereotypeConfigurationPackageImpl.init();
@@ -76,7 +76,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.impl.InvariantStereotypeConfigurationImpl <em>Invariant Stereotype Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.impl.InvariantStereotypeConfigurationImpl
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.impl.InvariantStereotypeConfigurationPackageImpl#getInvariantStereotypeConfiguration()
 	 * @generated
@@ -87,7 +87,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Stereotype Qualified Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Required Profile</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Invariant Stereotype Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +117,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Invariant Stereotype Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +127,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.InvariantStereotypeConfiguration <em>Invariant Stereotype Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Invariant Stereotype Configuration</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.InvariantStereotypeConfiguration
 	 * @generated
@@ -138,7 +138,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.InvariantStereotypeConfiguration#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Stereotype Qualified Name</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.InvariantStereotypeConfiguration#getStereotypeQualifiedName()
 	 * @see #getInvariantStereotypeConfiguration()
@@ -150,7 +150,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.InvariantStereotypeConfiguration#getRequiredProfile <em>Required Profile</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Required Profile</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.InvariantStereotypeConfiguration#getRequiredProfile()
 	 * @see #getInvariantStereotypeConfiguration()
@@ -162,7 +162,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -179,7 +179,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -188,7 +188,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.impl.InvariantStereotypeConfigurationImpl <em>Invariant Stereotype Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.impl.InvariantStereotypeConfigurationImpl
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.impl.InvariantStereotypeConfigurationPackageImpl#getInvariantStereotypeConfiguration()
 		 * @generated
@@ -199,7 +199,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stereotype Qualified Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INVARIANT_STEREOTYPE_CONFIGURATION__STEREOTYPE_QUALIFIED_NAME = eINSTANCE.getInvariantStereotypeConfiguration_StereotypeQualifiedName();
@@ -208,7 +208,7 @@ public interface InvariantStereotypeConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Required Profile</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INVARIANT_STEREOTYPE_CONFIGURATION__REQUIRED_PROFILE = eINSTANCE.getInvariantStereotypeConfiguration_RequiredProfile();

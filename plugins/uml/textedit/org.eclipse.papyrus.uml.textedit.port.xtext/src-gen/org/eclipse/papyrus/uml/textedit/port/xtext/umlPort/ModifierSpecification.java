@@ -32,7 +32,7 @@ public interface ModifierSpecification extends EObject
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierKind
 	 * @see #setValue(ModifierKind)
@@ -46,7 +46,7 @@ public interface ModifierSpecification extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierKind
@@ -62,7 +62,7 @@ public interface ModifierSpecification extends EObject
 	 * If the meaning of the '<em>Redefines</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Redefines</em>' containment reference.
 	 * @see #setRedefines(RedefinesRule)
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getModifierSpecification_Redefines()
@@ -75,7 +75,7 @@ public interface ModifierSpecification extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification#getRedefines <em>Redefines</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Redefines</em>' containment reference.
 	 * @see #getRedefines()
@@ -90,7 +90,7 @@ public interface ModifierSpecification extends EObject
 	 * If the meaning of the '<em>Subsets</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Subsets</em>' containment reference.
 	 * @see #setSubsets(SubsetsRule)
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getModifierSpecification_Subsets()
@@ -103,7 +103,7 @@ public interface ModifierSpecification extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification#getSubsets <em>Subsets</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Subsets</em>' containment reference.
 	 * @see #getSubsets()

@@ -35,7 +35,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -46,7 +46,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	 * The default value of the '{@link #getWidgetClass() <em>Widget Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidgetClass()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	 * The cached value of the '{@link #getWidgetClass() <em>Widget Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidgetClass()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	 * The cached value of the '{@link #getNamespace() <em>Namespace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNamespace()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected WidgetTypeImpl() {
@@ -99,7 +99,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +110,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Namespace basicGetNamespace() {
@@ -192,7 +192,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +229,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +251,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -292,7 +292,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

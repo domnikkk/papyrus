@@ -15,6 +15,7 @@ package org.eclipse.papyrus.sysml.allocations.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;

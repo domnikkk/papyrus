@@ -616,7 +616,7 @@ public class NatTableModelElement extends EMFModelElement {
 
 	/**
 	 * Gets the root EObject from the given one
-	 * 
+	 *
 	 * @param obj
 	 *            An object
 	 * @return The root object which is an ancestor of the given one

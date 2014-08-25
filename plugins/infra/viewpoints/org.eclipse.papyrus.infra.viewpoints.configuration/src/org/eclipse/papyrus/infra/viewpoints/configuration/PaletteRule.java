@@ -38,7 +38,7 @@ public interface PaletteRule extends Rule {
 	 * If the meaning of the '<em>Element</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element</em>' attribute.
 	 * @see #setElement(String)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPaletteRule_Element()
@@ -51,7 +51,7 @@ public interface PaletteRule extends Rule {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule#getElement <em>Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Element</em>' attribute.
 	 * @see #getElement()

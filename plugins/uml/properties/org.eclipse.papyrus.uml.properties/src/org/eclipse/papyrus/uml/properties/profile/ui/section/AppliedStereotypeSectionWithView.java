@@ -139,7 +139,7 @@ public class AppliedStereotypeSectionWithView extends AbstractPropertySection {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.core.ui.properties.tabbed.PropertyViewSection#dispose()
 	 */
 	/**

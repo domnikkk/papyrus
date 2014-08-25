@@ -41,7 +41,7 @@ import org.w3c.dom.NodeList;
 
 /**
  * Represents a palette provider which filters it content based on the use cases
- * 
+ *
  * @author Laurent Wouters
  */
 public class FilteringPaletteProvider implements IPaletteProvider {
@@ -186,7 +186,7 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 
 	/**
 	 * Initializes the provider
-	 * 
+	 *
 	 * @param proxied
 	 *            The original provider
 	 * @param exceptions
@@ -199,7 +199,7 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 
 	/**
 	 * Determines whether a palette element with the given entry ID should be exposed to the user
-	 * 
+	 *
 	 * @param editor
 	 *            a diagram editor to which a palette is being contributed
 	 * @param entryID
@@ -247,7 +247,7 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.services.palette.IPaletteProvider#contributeToPalette(org.eclipse.ui.IEditorPart, java.lang.Object, org.eclipse.gef.palette.PaletteRoot, java.util.Map)
 	 */
 	@Override
@@ -296,7 +296,7 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.services.palette.IPaletteProvider#setContributions(org.eclipse.core.runtime.IConfigurationElement)
 	 */
 	@Override
@@ -306,7 +306,7 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#provides(org.eclipse.gmf.runtime.common.core.service.IOperation)
 	 */
 	@Override
@@ -316,7 +316,7 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#addProviderChangeListener(org.eclipse.gmf.runtime.common.core.service.IProviderChangeListener)
 	 */
 	@Override
@@ -326,7 +326,7 @@ public class FilteringPaletteProvider implements IPaletteProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#removeProviderChangeListener(org.eclipse.gmf.runtime.common.core.service.IProviderChangeListener)
 	 */
 	@Override

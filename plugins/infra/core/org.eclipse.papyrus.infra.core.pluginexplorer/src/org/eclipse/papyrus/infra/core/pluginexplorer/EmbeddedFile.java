@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * Represents a file embedded in a Jar container that is a plugin loaded by Eclipse
- * 
+ *
  * @author Laurent Wouters
  */
 public class EmbeddedFile implements PluginEntry {
@@ -43,7 +43,7 @@ public class EmbeddedFile implements PluginEntry {
 
 	/**
 	 * Gets the Jar entry as a String corresponding to this file
-	 * 
+	 *
 	 * @return The Jar entry for this file as a String
 	 */
 	public String getEntry() {
@@ -53,7 +53,7 @@ public class EmbeddedFile implements PluginEntry {
 
 	/**
 	 * Creates the representation of a Jar entry as a plugin entry
-	 * 
+	 *
 	 * @param plugin
 	 *            The parent plugin
 	 * @param entryName
@@ -71,7 +71,7 @@ public class EmbeddedFile implements PluginEntry {
 
 	/**
 	 * Creates the representation of a Jar entry as a plugin entry
-	 * 
+	 *
 	 * @param plugin
 	 *            The parent plugin
 	 * @param entryName
@@ -91,7 +91,7 @@ public class EmbeddedFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getPlugin()
 	 */
 	public Plugin getPlugin() {
@@ -100,7 +100,7 @@ public class EmbeddedFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getName()
 	 */
 	public String getName() {
@@ -109,7 +109,7 @@ public class EmbeddedFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getLogicalPath()
 	 */
 	public String getLogicalPath() {
@@ -118,7 +118,7 @@ public class EmbeddedFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getPhysicalPath()
 	 */
 	public String getPhysicalPath() {
@@ -127,7 +127,7 @@ public class EmbeddedFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#hasChildren()
 	 */
 	public boolean hasChildren() {
@@ -136,7 +136,7 @@ public class EmbeddedFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#children()
 	 */
 	public List<PluginEntry> children() {
@@ -145,7 +145,7 @@ public class EmbeddedFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getChild(java.lang.String)
 	 */
 	public PluginEntry getChild(String name) {
@@ -159,7 +159,7 @@ public class EmbeddedFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getInputStream()
 	 */
 	public InputStream getInputStream() {

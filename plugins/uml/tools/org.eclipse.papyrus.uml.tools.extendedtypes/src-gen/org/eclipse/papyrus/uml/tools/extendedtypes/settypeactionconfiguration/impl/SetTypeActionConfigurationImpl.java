@@ -15,13 +15,9 @@ package org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.i
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.papyrus.infra.extendedtypes.impl.SemanticActionConfigurationImpl;
-
 import org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.SetTypeActionConfiguration;
 import org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.SetTypeActionConfigurationPackage;
 
@@ -44,7 +40,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	 * The cached value of the '{@link #getValidTypes() <em>Valid Types</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValidTypes()
 	 * @generated
 	 * @ordered
@@ -55,7 +51,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	 * The cached value of the '{@link #getCreationTypes() <em>Creation Types</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCreationTypes()
 	 * @generated
 	 * @ordered
@@ -65,7 +61,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SetTypeActionConfigurationImpl() {
@@ -75,7 +71,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +82,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getValidTypes() {
@@ -99,7 +95,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getCreationTypes() {
@@ -112,7 +108,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +125,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -151,7 +147,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +166,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +183,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

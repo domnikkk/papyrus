@@ -14,6 +14,7 @@ package org.eclipse.papyrus.emf.facet.efacet.ui.internal;
 
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetAttribute;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
@@ -22,7 +23,6 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.ICreateFacetInFacetSetWizard2;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.ICreateFacetSetWizard;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.IFacetChildrenWizard2;
-import org.eclipse.jface.viewers.ISelection;
 
 /**
  * This interface provides methods used to create wizards that create {@link Facet}s and Facet elements.

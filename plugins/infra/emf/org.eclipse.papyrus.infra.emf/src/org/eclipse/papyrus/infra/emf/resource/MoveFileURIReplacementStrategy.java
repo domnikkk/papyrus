@@ -76,7 +76,7 @@ public class MoveFileURIReplacementStrategy implements IURIReplacementStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.resource.IURIReplacementStrategy#getReplacementCandidate(org.eclipse.emf.common.util.URI)
 	 */
 	public URI getReplacementCandidate(URI resourceURI) {

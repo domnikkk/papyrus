@@ -13,6 +13,7 @@ package org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.wizard.page;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.util.wizard.page.SelectEPackageWizardPage;
 
 /**
  * Interface for {@link SelectEPackageWizardPage}.

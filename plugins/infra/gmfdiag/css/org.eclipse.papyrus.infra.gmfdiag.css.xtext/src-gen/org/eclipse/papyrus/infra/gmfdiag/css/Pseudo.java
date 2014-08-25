@@ -38,7 +38,7 @@ public interface Pseudo extends SelectorCondition
 	 * If the meaning of the '<em>Pseudo</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Pseudo</em>' attribute.
 	 * @see #setPseudo(String)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getPseudo_Pseudo()
@@ -51,7 +51,7 @@ public interface Pseudo extends SelectorCondition
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Pseudo#getPseudo <em>Pseudo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Pseudo</em>' attribute.
 	 * @see #getPseudo()
@@ -66,7 +66,7 @@ public interface Pseudo extends SelectorCondition
 	 * If the meaning of the '<em>Args</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Args</em>' attribute.
 	 * @see #setArgs(String)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getPseudo_Args()
@@ -79,7 +79,7 @@ public interface Pseudo extends SelectorCondition
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Pseudo#getArgs <em>Args</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Args</em>' attribute.
 	 * @see #getArgs()

@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.views.properties.root.RootFactory
  * @model kind="package"
  * @generated
@@ -32,7 +32,7 @@ public interface RootPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "root"; //$NON-NLS-1$
@@ -41,7 +41,7 @@ public interface RootPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/properties/root"; //$NON-NLS-1$
@@ -50,7 +50,7 @@ public interface RootPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "root"; //$NON-NLS-1$
@@ -59,7 +59,7 @@ public interface RootPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	RootPackage eINSTANCE = org.eclipse.papyrus.views.properties.root.impl.RootPackageImpl.init();
@@ -68,7 +68,7 @@ public interface RootPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.views.properties.root.impl.PropertiesRootImpl <em>Properties Root</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.properties.root.impl.PropertiesRootImpl
 	 * @see org.eclipse.papyrus.views.properties.root.impl.RootPackageImpl#getPropertiesRoot()
 	 * @generated
@@ -79,7 +79,7 @@ public interface RootPackage extends EPackage {
 	 * The feature id for the '<em><b>Environments</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -89,7 +89,7 @@ public interface RootPackage extends EPackage {
 	 * The feature id for the '<em><b>Contexts</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -99,7 +99,7 @@ public interface RootPackage extends EPackage {
 	 * The number of structural features of the '<em>Properties Root</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -110,7 +110,7 @@ public interface RootPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.views.properties.root.PropertiesRoot <em>Properties Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Properties Root</em>'.
 	 * @see org.eclipse.papyrus.views.properties.root.PropertiesRoot
 	 * @generated
@@ -121,7 +121,7 @@ public interface RootPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.views.properties.root.PropertiesRoot#getEnvironments <em>Environments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Environments</em>'.
 	 * @see org.eclipse.papyrus.views.properties.root.PropertiesRoot#getEnvironments()
 	 * @see #getPropertiesRoot()
@@ -133,7 +133,7 @@ public interface RootPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.views.properties.root.PropertiesRoot#getContexts <em>Contexts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Contexts</em>'.
 	 * @see org.eclipse.papyrus.views.properties.root.PropertiesRoot#getContexts()
 	 * @see #getPropertiesRoot()
@@ -145,7 +145,7 @@ public interface RootPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -161,7 +161,7 @@ public interface RootPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -170,7 +170,7 @@ public interface RootPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.root.impl.PropertiesRootImpl <em>Properties Root</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.views.properties.root.impl.PropertiesRootImpl
 		 * @see org.eclipse.papyrus.views.properties.root.impl.RootPackageImpl#getPropertiesRoot()
 		 * @generated
@@ -181,7 +181,7 @@ public interface RootPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Environments</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTIES_ROOT__ENVIRONMENTS = eINSTANCE.getPropertiesRoot_Environments();
@@ -190,7 +190,7 @@ public interface RootPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Contexts</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTIES_ROOT__CONTEXTS = eINSTANCE.getPropertiesRoot_Contexts();

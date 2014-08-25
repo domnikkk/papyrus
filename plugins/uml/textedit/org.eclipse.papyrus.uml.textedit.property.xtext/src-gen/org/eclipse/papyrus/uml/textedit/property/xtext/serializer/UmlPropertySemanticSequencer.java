@@ -1,6 +1,5 @@
 package org.eclipse.papyrus.uml.textedit.property.xtext.serializer;
 
-import com.google.inject.Inject;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.uml.textedit.property.xtext.services.UmlPropertyGrammarAccess;
 import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification;
@@ -18,6 +17,8 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class UmlPropertySemanticSequencer extends AbstractDelegatingSemanticSequencer {

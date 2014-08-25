@@ -15,11 +15,11 @@
 package org.eclipse.papyrus.emf.facet.custom.ui.internal.query;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custompt.Alignment;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
 import org.eclipse.papyrus.emf.facet.efacet.core.exception.DerivedTypedElementException;
 import org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2;
 import org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custompt.Alignment;
 
 /**
  *

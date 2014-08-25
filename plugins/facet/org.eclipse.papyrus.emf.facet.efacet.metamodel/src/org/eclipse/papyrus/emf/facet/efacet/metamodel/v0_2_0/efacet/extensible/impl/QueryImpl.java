@@ -43,7 +43,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	 * The default value of the '{@link #isCanHaveSideEffects() <em>Can Have Side Effects</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isCanHaveSideEffects()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	 * The cached value of the '{@link #isCanHaveSideEffects() <em>Can Have Side Effects</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isCanHaveSideEffects()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	 * The default value of the '{@link #isCanBeCached() <em>Can Be Cached</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isCanBeCached()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	 * The cached value of the '{@link #isCanBeCached() <em>Can Be Cached</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isCanBeCached()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected QueryImpl() {
@@ -96,7 +96,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public DerivedTypedElement basicGetOwningDerivedTypedElement() {
@@ -121,7 +121,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isCanHaveSideEffects() {
@@ -131,7 +131,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCanHaveSideEffects(boolean newCanHaveSideEffects) {
@@ -145,7 +145,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isCanBeCached() {
@@ -155,7 +155,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCanBeCached(boolean newCanBeCached) {
@@ -169,7 +169,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +186,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +205,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +224,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +241,7 @@ public abstract class QueryImpl extends EObjectImpl implements Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

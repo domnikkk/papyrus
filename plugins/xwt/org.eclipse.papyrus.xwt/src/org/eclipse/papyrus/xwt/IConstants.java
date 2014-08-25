@@ -88,7 +88,7 @@ public interface IConstants {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see java.util.Enumeration#hasMoreElements()
 		 */
 		public boolean hasMoreElements() {
@@ -97,7 +97,7 @@ public interface IConstants {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see java.util.Enumeration#nextElement()
 		 */
 		public URL nextElement() {
@@ -111,7 +111,7 @@ public interface IConstants {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see java.util.ListResourceBundle#getContents()
 		 */
 		@Override

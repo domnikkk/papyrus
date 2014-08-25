@@ -59,7 +59,7 @@ public class ServicesRegistryFactoryFromExtensions {
 	 *            The registry to update.
 	 * @param registryName
 	 *            The name of the configuration to use to update the registry.
-	 * 
+	 *
 	 * @return
 	 */
 	public ServicesRegistry updateServicesRegistry(ServicesRegistry registry, String registryName) throws ServiceException {

@@ -26,7 +26,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.SlidableAnchor;
 /**
  * this code comes from eclipse.
  * I have change the figure IOvalAnchorableFigure by Ifigure for the constructor
- * 
+ *
  * @author oboyko
  *
  *         Window - Preferences - Java - Code Style - Code Templates
@@ -65,7 +65,7 @@ public class SlidableEllipseAnchor extends SlidableAnchor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.SlidableAnchor#getIntersectionPoints(org.eclipse.draw2d.geometry.Point, org.eclipse.draw2d.geometry.Point)
 	 */
 	@Override

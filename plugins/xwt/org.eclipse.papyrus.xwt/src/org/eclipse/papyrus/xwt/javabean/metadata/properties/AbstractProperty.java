@@ -72,7 +72,7 @@ public abstract class AbstractProperty extends Behavior implements IProperty {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.metadata.IProperty#setType(java.lang.Class)
 	 */
 	public void setType(Class<?> type) {
@@ -98,7 +98,7 @@ public abstract class AbstractProperty extends Behavior implements IProperty {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.metadata.IProperty#getType()
 	 */
 	public Class<?> getType() {

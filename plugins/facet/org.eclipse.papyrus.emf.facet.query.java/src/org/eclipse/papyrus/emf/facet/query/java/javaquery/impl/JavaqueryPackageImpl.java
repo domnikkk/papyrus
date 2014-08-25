@@ -34,7 +34,7 @@ public class JavaqueryPackageImpl extends EPackageImpl implements JavaqueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass javaQueryEClass = null;
@@ -44,7 +44,7 @@ public class JavaqueryPackageImpl extends EPackageImpl implements JavaqueryPacka
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.query.java.javaquery.JavaqueryPackage#eNS_URI
 	 * @see #init()
@@ -57,7 +57,7 @@ public class JavaqueryPackageImpl extends EPackageImpl implements JavaqueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -67,7 +67,7 @@ public class JavaqueryPackageImpl extends EPackageImpl implements JavaqueryPacka
 	 *
 	 * <p>
 	 * This method is used to initialize {@link JavaqueryPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -104,7 +104,7 @@ public class JavaqueryPackageImpl extends EPackageImpl implements JavaqueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getJavaQuery() {
@@ -114,7 +114,7 @@ public class JavaqueryPackageImpl extends EPackageImpl implements JavaqueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getJavaQuery_ImplementationClassName() {
@@ -124,7 +124,7 @@ public class JavaqueryPackageImpl extends EPackageImpl implements JavaqueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaqueryFactory getJavaqueryFactory() {
@@ -134,7 +134,7 @@ public class JavaqueryPackageImpl extends EPackageImpl implements JavaqueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -144,7 +144,7 @@ public class JavaqueryPackageImpl extends EPackageImpl implements JavaqueryPacka
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -161,7 +161,7 @@ public class JavaqueryPackageImpl extends EPackageImpl implements JavaqueryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -171,7 +171,7 @@ public class JavaqueryPackageImpl extends EPackageImpl implements JavaqueryPacka
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

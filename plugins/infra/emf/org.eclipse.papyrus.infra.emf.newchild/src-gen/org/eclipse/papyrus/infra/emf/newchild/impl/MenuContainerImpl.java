@@ -37,7 +37,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	 * The cached value of the '{@link #getSubmenus() <em>Submenus</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSubmenus()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MenuContainerImpl() {
@@ -57,7 +57,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,7 +68,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<MenuItem> getSubmenus() {
@@ -81,7 +81,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -129,7 +129,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public abstract class MenuContainerImpl extends EObjectImpl implements MenuConta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

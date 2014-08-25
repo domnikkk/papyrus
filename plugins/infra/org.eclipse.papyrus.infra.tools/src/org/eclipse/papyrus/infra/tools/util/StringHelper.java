@@ -106,7 +106,7 @@ public class StringHelper {
 
 
 	/*
-	 * 
+	 *
 	 * The following methods have been copied from UML2Util (org.eclipse.uml2.common.util/UML2Util)
 	 */
 

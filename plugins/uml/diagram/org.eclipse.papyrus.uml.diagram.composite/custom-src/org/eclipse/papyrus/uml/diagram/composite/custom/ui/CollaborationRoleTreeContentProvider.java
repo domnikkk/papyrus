@@ -15,6 +15,7 @@ package org.eclipse.papyrus.uml.diagram.composite.custom.ui;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.uml2.uml.Collaboration;
 import org.eclipse.uml2.uml.CollaborationUse;
 
 /**
@@ -58,7 +59,7 @@ public class CollaborationRoleTreeContentProvider implements ITreeContentProvide
 	 * <pre>
 	 * This method returns the role referenced by the {@link Collaboration} that is
 	 * the type of the {@link CollaborationUse}.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

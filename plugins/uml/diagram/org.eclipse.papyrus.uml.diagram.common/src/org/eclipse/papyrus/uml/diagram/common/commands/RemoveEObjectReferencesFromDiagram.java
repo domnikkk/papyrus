@@ -56,7 +56,7 @@ public class RemoveEObjectReferencesFromDiagram extends AbstractTransactionalCom
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.operations.AbstractOperation#canExecute()
 	 */
 	@Override
@@ -66,7 +66,7 @@ public class RemoveEObjectReferencesFromDiagram extends AbstractTransactionalCom
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.emf.commands.core.command.
 	 * AbstractTransactionalCommand#
 	 * doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,

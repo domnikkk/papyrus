@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.infra.extendedtypes.SemanticActionConfiguration;
 
 /**
@@ -31,7 +30,7 @@ public interface SetValuesActionConfiguration extends SemanticActionConfiguratio
 	 * If the meaning of the '<em>Features To Set</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Features To Set</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationPackage#getSetValuesActionConfiguration_FeaturesToSet()
 	 * @model containment="true"

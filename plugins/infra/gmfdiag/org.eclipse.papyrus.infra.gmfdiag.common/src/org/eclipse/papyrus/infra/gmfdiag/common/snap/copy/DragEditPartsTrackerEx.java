@@ -22,7 +22,6 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
-import org.eclipse.gef.SharedCursors;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
@@ -77,7 +76,7 @@ public class DragEditPartsTrackerEx extends CustomDragEditPartsTracker {
 
 	/**
 	 * Collects the move/drag commands from the operation set
-	 * 
+	 *
 	 * @param isMove
 	 * @param command
 	 */
@@ -129,7 +128,7 @@ public class DragEditPartsTrackerEx extends CustomDragEditPartsTracker {
 
 	/**
 	 * If the source is not in the operation set, it is not a move
-	 * 
+	 *
 	 * @see org.eclipse.gef.tool s.DragEditPartsTracker#isMove()
 	 */
 	@Override
@@ -154,7 +153,7 @@ public class DragEditPartsTrackerEx extends CustomDragEditPartsTracker {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#executeCurrentCommand()
 	 */
 	@Override

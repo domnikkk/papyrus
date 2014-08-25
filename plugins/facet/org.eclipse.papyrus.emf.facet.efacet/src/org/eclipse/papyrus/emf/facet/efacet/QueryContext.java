@@ -14,9 +14,7 @@
 package org.eclipse.papyrus.emf.facet.efacet;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
@@ -52,7 +50,7 @@ public interface QueryContext extends EObject {
 	 * If the meaning of the '<em>Selected Model Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Selected Model Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQueryContext_SelectedModelElements()
 	 * @model
@@ -70,7 +68,7 @@ public interface QueryContext extends EObject {
 	 * If the meaning of the '<em>Selected Models</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Selected Models</em>' attribute list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQueryContext_SelectedModels()
 	 * @model transient="true"

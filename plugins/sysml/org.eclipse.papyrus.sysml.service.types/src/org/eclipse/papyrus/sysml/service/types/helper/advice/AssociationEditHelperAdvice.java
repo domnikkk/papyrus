@@ -59,7 +59,7 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * avoid creation of association on another association
 	 *
 	 * </pre>
@@ -84,7 +84,7 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Add a command to destroy {@link Association} when only 1 end remains.
 	 *
 	 * </pre>
@@ -117,7 +117,7 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Add SysML Nature on the {@link Association}.
 	 *
 	 * </pre>
@@ -143,7 +143,7 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Add a command to destroy {@link Association} ends referenced by the {@link Association}
 	 * to delete.
 	 *
@@ -173,7 +173,7 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Add a command to related association end during re-orient.
 	 *
 	 * </pre>

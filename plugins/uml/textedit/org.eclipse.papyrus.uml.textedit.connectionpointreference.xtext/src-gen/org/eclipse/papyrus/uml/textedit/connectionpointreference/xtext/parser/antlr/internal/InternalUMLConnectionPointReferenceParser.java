@@ -1,10 +1,13 @@
 package org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.parser.antlr.internal;
 
+import org.antlr.runtime.BitSet;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.RecognizerSharedState;
+import org.antlr.runtime.Token;
+import org.antlr.runtime.TokenStream;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.services.UMLConnectionPointReferenceGrammarAccess;
-
-import org.antlr.runtime.*;
+import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 
 @SuppressWarnings("all")
 public class InternalUMLConnectionPointReferenceParser extends AbstractInternalAntlrParser {

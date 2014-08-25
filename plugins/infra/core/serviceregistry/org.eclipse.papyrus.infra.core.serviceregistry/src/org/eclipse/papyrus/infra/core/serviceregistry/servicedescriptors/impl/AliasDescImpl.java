@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AliasDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage;
@@ -32,7 +29,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	 * The cached value of the '{@link #getAliasedService() <em>Aliased Service</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAliasedService()
 	 * @generated
 	 * @ordered
@@ -43,7 +40,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	 * The default value of the '{@link #getAliasedServiceId() <em>Aliased Service Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAliasedServiceId()
 	 * @generated
 	 * @ordered
@@ -53,7 +50,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	 * The cached value of the '{@link #getAliasedServiceId() <em>Aliased Service Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAliasedServiceId()
 	 * @generated
 	 * @ordered
@@ -63,7 +60,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AliasDescImpl() {
@@ -73,7 +70,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +81,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +101,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ServiceDesc basicGetAliasedService() {
@@ -114,7 +111,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +126,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +137,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +152,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +172,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +191,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +210,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +227,7 @@ public class AliasDescImpl extends AbstractServiceDescImpl implements AliasDesc 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

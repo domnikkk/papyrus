@@ -7,13 +7,10 @@
 package org.eclipse.papyrus.uml.properties.languagepreferences.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.uml.properties.languagepreferences.Editor;
 import org.eclipse.papyrus.uml.properties.languagepreferences.Language;
 import org.eclipse.papyrus.uml.properties.languagepreferences.languagepreferencesPackage;
@@ -37,7 +34,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -48,7 +45,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -59,7 +56,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	 * The cached value of the '{@link #getPreferedEditor() <em>Prefered Editor</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPreferedEditor()
 	 * @generated
 	 * @ordered
@@ -69,7 +66,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LanguageImpl() {
@@ -79,7 +76,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +87,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -100,7 +97,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -114,7 +111,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Editor getPreferedEditor() {
@@ -133,7 +130,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Editor basicGetPreferedEditor() {
@@ -143,7 +140,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPreferedEditor(Editor newPreferedEditor) {
@@ -157,7 +154,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +174,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +193,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +212,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +229,7 @@ public class LanguageImpl extends EObjectImpl implements Language {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

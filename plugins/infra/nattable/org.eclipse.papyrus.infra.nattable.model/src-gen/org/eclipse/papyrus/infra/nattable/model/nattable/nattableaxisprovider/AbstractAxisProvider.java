@@ -13,11 +13,8 @@
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EModelElement;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.IAxis;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration.TableNamedElement;
 
 /**

@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.uml.diagram.common.edit.part;
 
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.uml.Slot;
 
 /**
  * Edit part for {@link Slot} used as Child label node.

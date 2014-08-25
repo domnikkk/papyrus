@@ -29,7 +29,7 @@ public interface INavigationViewFactory {
 
 	/**
 	 * This method is the only way to open and access the navigation view.
-	 * 
+	 *
 	 * @param editingDomain
 	 *
 	 * @return an instance of {@link INavigationView}

@@ -24,7 +24,7 @@ public class IStatusToString implements IConverter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.core.databinding.conversion.IConverter#convert(java.lang.
 	 * Object)

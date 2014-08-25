@@ -160,7 +160,7 @@ public class CustomAlignAction {
 					if (ept.getEditPart() != refEP && (!ept.existsUnselectedChild())) {
 						/*
 						 * calculus of the shift
-						 * 
+						 *
 						 * the shift is the first selected element when the reference is not a child of the editpart
 						 * the shift is the number of levels between the current editpart and the reference if this reference is a child
 						 */

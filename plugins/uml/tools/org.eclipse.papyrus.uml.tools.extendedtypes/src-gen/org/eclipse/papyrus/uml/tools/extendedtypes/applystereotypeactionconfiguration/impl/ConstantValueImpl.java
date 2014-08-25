@@ -14,15 +14,11 @@ package org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfigu
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ConstantValue;
-
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
@@ -43,7 +39,7 @@ public class ConstantValueImpl extends FeatureValueImpl implements ConstantValue
 	 * The cached value of the '{@link #getValueInstance() <em>Value Instance</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValueInstance()
 	 * @generated
 	 * @ordered
@@ -53,7 +49,7 @@ public class ConstantValueImpl extends FeatureValueImpl implements ConstantValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConstantValueImpl() {
@@ -63,7 +59,7 @@ public class ConstantValueImpl extends FeatureValueImpl implements ConstantValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +70,7 @@ public class ConstantValueImpl extends FeatureValueImpl implements ConstantValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueSpecification getValueInstance() {
@@ -84,7 +80,7 @@ public class ConstantValueImpl extends FeatureValueImpl implements ConstantValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetValueInstance(ValueSpecification newValueInstance, NotificationChain msgs) {
@@ -104,7 +100,7 @@ public class ConstantValueImpl extends FeatureValueImpl implements ConstantValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValueInstance(ValueSpecification newValueInstance) {
@@ -129,7 +125,7 @@ public class ConstantValueImpl extends FeatureValueImpl implements ConstantValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +140,7 @@ public class ConstantValueImpl extends FeatureValueImpl implements ConstantValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +155,7 @@ public class ConstantValueImpl extends FeatureValueImpl implements ConstantValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +171,7 @@ public class ConstantValueImpl extends FeatureValueImpl implements ConstantValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +187,7 @@ public class ConstantValueImpl extends FeatureValueImpl implements ConstantValue
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

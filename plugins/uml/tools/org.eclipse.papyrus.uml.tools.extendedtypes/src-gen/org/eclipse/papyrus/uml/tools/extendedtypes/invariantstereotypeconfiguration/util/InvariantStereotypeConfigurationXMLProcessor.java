@@ -23,7 +23,7 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfigurat
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InvariantStereotypeConfigurationXMLProcessor extends XMLProcessor {
@@ -32,7 +32,7 @@ public class InvariantStereotypeConfigurationXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantStereotypeConfigurationXMLProcessor() {
@@ -44,7 +44,7 @@ public class InvariantStereotypeConfigurationXMLProcessor extends XMLProcessor {
 	 * Register for "*" and "xml" file extensions the InvariantStereotypeConfigurationResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

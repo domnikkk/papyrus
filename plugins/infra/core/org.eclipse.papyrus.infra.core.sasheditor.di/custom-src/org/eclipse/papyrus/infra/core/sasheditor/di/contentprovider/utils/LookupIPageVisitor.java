@@ -28,7 +28,7 @@ import org.eclipse.papyrus.infra.core.sashwindows.di.PageRef;
  * The visitor walk all IPage of the container, and compare the "rawmodel" of the IPage with the identifier.
  * Take into account the fact the the identifier can be a 'Diagram', and that the Diagram type is available in
  * a {@link PageRef#getPageIdentifier()}
- * 
+ *
  * @author cedric dumoulin
  *
  */

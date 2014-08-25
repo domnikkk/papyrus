@@ -11,8 +11,8 @@
  */
 package org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.wizard.page;
 
-import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.wizard.page.FacetSetPropertyWizardPage;
 import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.wizard.page.FacetSetPropertyWizardPage;
 
 /**
  * @see FacetSetPropertyWizardPage

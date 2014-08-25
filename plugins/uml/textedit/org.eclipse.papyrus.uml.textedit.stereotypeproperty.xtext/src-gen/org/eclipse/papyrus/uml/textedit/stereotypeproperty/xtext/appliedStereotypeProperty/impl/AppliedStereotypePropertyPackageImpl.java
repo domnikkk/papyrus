@@ -5,11 +5,8 @@ package org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.appliedStereot
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
-
 import org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.appliedStereotypeProperty.AppliedStereotypePropertyFactory;
 import org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.appliedStereotypeProperty.AppliedStereotypePropertyPackage;
 import org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.appliedStereotypeProperty.AppliedStereotypePropertyRule;
@@ -19,7 +16,7 @@ import org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.appliedStereoty
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implements AppliedStereotypePropertyPackage
@@ -27,7 +24,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass appliedStereotypePropertyRuleEClass = null;
@@ -35,7 +32,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass expressionValueRuleEClass = null;
@@ -45,7 +42,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.appliedStereotypeProperty.AppliedStereotypePropertyPackage#eNS_URI
 	 * @see #init()
@@ -59,7 +56,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -70,7 +67,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	 * <p>
 	 * This method is used to initialize {@link AppliedStereotypePropertyPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -109,7 +106,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +118,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +130,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +142,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +154,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +166,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -179,7 +176,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents()
@@ -200,7 +197,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -210,7 +207,7 @@ public class AppliedStereotypePropertyPackageImpl extends EPackageImpl implement
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents()

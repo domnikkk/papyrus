@@ -44,7 +44,7 @@ public class ConnectorHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Forbid move command of a {@link ConnectorEnd} to a {@link Connector}.
 	 * </pre>
 	 */

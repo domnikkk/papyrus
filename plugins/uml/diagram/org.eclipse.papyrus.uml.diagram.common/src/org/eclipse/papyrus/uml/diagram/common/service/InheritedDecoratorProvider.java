@@ -49,7 +49,7 @@ public class InheritedDecoratorProvider extends AbstractProvider implements IDec
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.common.core.internal.service.IProvider#provides
 	 * (org.eclipse.gmf.runtime.common.core.service.IOperation)

@@ -60,7 +60,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getExtendedMetaclass() <em>Extended Metaclass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtendedMetaclass()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getFacetElements() <em>Facet Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFacetElements()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getFacetOperations() <em>Facet Operations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFacetOperations()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getConformanceTypedElement() <em>Conformance Typed Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConformanceTypedElement()
 	 * @generated
 	 * @ordered
@@ -126,7 +126,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getExtendedFacets() <em>Extended Facets</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtendedFacets()
 	 * @generated
 	 * @ordered
@@ -136,7 +136,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FacetImpl() {
@@ -146,7 +146,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDocumentation() {
@@ -167,7 +167,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDocumentation(String newDocumentation) {
@@ -181,7 +181,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public FacetSet basicGetFacetSet() {
@@ -195,7 +195,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public void setFacetSet(final FacetSet newFacetSet) {
@@ -205,7 +205,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getExtendedMetaclass() {
@@ -224,7 +224,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EClass basicGetExtendedMetaclass() {
@@ -243,7 +243,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setExtendedMetaclass(EClass newExtendedMetaclass) {
@@ -257,7 +257,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<EStructuralFeature> getFacetElements() {
@@ -270,7 +270,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<FacetOperation> getFacetOperations() {
@@ -283,7 +283,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ETypedElement getConformanceTypedElement() {
@@ -302,7 +302,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ETypedElement basicGetConformanceTypedElement() {
@@ -312,7 +312,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setConformanceTypedElement(ETypedElement newConformanceTypedElement) {
@@ -326,7 +326,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Facet> getExtendedFacets() {
@@ -339,7 +339,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +356,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -387,7 +387,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -422,7 +422,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -453,7 +453,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -478,7 +478,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -497,7 +497,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -516,7 +516,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -33,7 +33,7 @@ public interface DrawerConfiguration extends Configuration {
 	 * If the meaning of the '<em>Owned Configurations</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned Configurations</em>' containment reference list.
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getDrawerConfiguration_OwnedConfigurations()
 	 * @model containment="true" required="true"

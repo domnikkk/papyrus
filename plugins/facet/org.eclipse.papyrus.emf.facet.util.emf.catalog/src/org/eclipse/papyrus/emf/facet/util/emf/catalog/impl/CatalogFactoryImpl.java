@@ -18,13 +18,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.emf.facet.util.emf.catalog.*;
+import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogFactory;
+import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogPackage;
+import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CatalogFactoryImpl extends EFactoryImpl implements CatalogFactory {
@@ -32,7 +34,7 @@ public class CatalogFactoryImpl extends EFactoryImpl implements CatalogFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static CatalogFactory init() {
@@ -51,7 +53,7 @@ public class CatalogFactoryImpl extends EFactoryImpl implements CatalogFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CatalogFactoryImpl() {
@@ -61,7 +63,7 @@ public class CatalogFactoryImpl extends EFactoryImpl implements CatalogFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +79,7 @@ public class CatalogFactoryImpl extends EFactoryImpl implements CatalogFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CatalogSet createCatalogSet() {
@@ -88,7 +90,7 @@ public class CatalogFactoryImpl extends EFactoryImpl implements CatalogFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CatalogPackage getCatalogPackage() {
@@ -98,7 +100,7 @@ public class CatalogFactoryImpl extends EFactoryImpl implements CatalogFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

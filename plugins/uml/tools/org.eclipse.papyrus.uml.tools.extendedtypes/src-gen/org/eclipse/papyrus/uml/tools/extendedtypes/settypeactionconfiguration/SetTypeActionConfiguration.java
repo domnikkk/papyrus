@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.infra.extendedtypes.SemanticActionConfiguration;
 
 /**
@@ -42,7 +41,7 @@ public interface SetTypeActionConfiguration extends SemanticActionConfiguration 
 	 * If the meaning of the '<em>Valid Types</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Valid Types</em>' attribute list.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.SetTypeActionConfigurationPackage#getSetTypeActionConfiguration_ValidTypes()
 	 * @model
@@ -58,7 +57,7 @@ public interface SetTypeActionConfiguration extends SemanticActionConfiguration 
 	 * If the meaning of the '<em>Creation Types</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Creation Types</em>' attribute list.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.SetTypeActionConfigurationPackage#getSetTypeActionConfiguration_CreationTypes()
 	 * @model

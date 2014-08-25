@@ -9,18 +9,12 @@ package org.eclipse.papyrus.papyrusgmfgenextension.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.gmf.codegen.gmfgen.GenExternalNodeLabel;
 import org.eclipse.gmf.codegen.gmfgen.GenLinkLabel;
-
 import org.eclipse.papyrus.papyrusgmfgenextension.LabelVisibilityPreference;
 import org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage;
 
@@ -46,7 +40,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	 * The default value of the '{@link #getRole() <em>Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRole()
 	 * @generated
 	 * @ordered
@@ -57,7 +51,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	 * The cached value of the '{@link #getRole() <em>Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRole()
 	 * @generated
 	 * @ordered
@@ -68,7 +62,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	 * The default value of the '{@link #getIconPathRole() <em>Icon Path Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIconPathRole()
 	 * @generated
 	 * @ordered
@@ -79,7 +73,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	 * The cached value of the '{@link #getIconPathRole() <em>Icon Path Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIconPathRole()
 	 * @generated
 	 * @ordered
@@ -90,7 +84,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	 * The cached value of the '{@link #getLinkLabels() <em>Link Labels</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLinkLabels()
 	 * @generated
 	 * @ordered
@@ -101,7 +95,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	 * The cached value of the '{@link #getExternalNodeLabels() <em>External Node Labels</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExternalNodeLabels()
 	 * @generated
 	 * @ordered
@@ -112,7 +106,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	 * The default value of the '{@link #isVisibleByDefault() <em>Visible By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isVisibleByDefault()
 	 * @generated
 	 * @ordered
@@ -123,7 +117,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	 * The cached value of the '{@link #isVisibleByDefault() <em>Visible By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isVisibleByDefault()
 	 * @generated
 	 * @ordered
@@ -133,7 +127,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LabelVisibilityPreferenceImpl() {
@@ -143,7 +137,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +148,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +159,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +174,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +185,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +200,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +214,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +228,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +239,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +254,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +277,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -314,7 +308,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -342,7 +336,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -365,7 +359,7 @@ public class LabelVisibilityPreferenceImpl extends CommentedElementImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

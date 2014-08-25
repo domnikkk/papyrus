@@ -3,7 +3,6 @@
  */
 package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
-import org.eclipse.papyrus.infra.core.sasheditor.editor.IEditorPage;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IPageVisitor;
 
 

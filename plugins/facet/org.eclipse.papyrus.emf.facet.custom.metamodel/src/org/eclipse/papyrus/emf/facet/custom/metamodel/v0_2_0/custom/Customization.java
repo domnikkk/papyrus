@@ -45,7 +45,7 @@ public interface Customization extends FacetSet {
 	 * <!-- begin-model-doc -->
 	 * When Customization::mustBeloadedByDefault is true, the customization will be automatically loaded in the customizable model browsers.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Must Be Loaded By Default</em>' attribute.
 	 * @see #setMustBeLoadedByDefault(boolean)
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage#getCustomization_MustBeLoadedByDefault()
@@ -58,7 +58,7 @@ public interface Customization extends FacetSet {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization#isMustBeLoadedByDefault <em>Must Be Loaded By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Must Be Loaded By Default</em>' attribute.
 	 * @see #isMustBeLoadedByDefault()
@@ -74,7 +74,7 @@ public interface Customization extends FacetSet {
 	 * If the meaning of the '<em>Rank</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Rank</em>' attribute.
 	 * @see #setRank(int)
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage#getCustomization_Rank()
@@ -87,7 +87,7 @@ public interface Customization extends FacetSet {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization#getRank <em>Rank</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Rank</em>' attribute.
 	 * @see #getRank()

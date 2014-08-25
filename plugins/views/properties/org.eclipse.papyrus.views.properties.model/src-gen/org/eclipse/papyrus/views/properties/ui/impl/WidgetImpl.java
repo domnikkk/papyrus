@@ -23,7 +23,7 @@ public abstract class WidgetImpl extends UIComponentImpl implements Widget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected WidgetImpl() {
@@ -33,7 +33,7 @@ public abstract class WidgetImpl extends UIComponentImpl implements Widget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -27,7 +27,7 @@ public abstract class Behavior implements IBehavior {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.xaswt.core.metadata.IBehavior#getName()
 	 */
 	public final String getName() {

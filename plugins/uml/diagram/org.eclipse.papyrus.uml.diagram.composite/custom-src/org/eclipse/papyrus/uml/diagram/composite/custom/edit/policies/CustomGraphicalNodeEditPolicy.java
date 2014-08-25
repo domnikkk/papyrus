@@ -35,7 +35,7 @@ import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
  * <pre>
  * This class provides a custom edit policy used to replace the GRAPHICAL_NODE_ROLE
  * for the Port and Property elements (when used in CompositeStructure Diagram).
- * 
+ *
  * The reason for this is that the creation of Connector requires not only to know
  * the ConnectableElement(s) on both end (given in CreateRelationshipRequest
  * Source and Target), but also the Property graphically owning the Port used at
@@ -68,15 +68,15 @@ public class CustomGraphicalNodeEditPolicy extends org.eclipse.gmf.runtime.diagr
 	 * <pre>
 	 * This method is overridden in order to add information (graphical parent of Port)
 	 * in the CreationRelationshipRequest.
-	 * 
+	 *
 	 * These information is stored in the request as Parameters under the following keys:
 	 * - &quot;SOURCE_PARENT&quot; : UML Element used as Graphical parent of the source Port (end of Connector)
 	 * - &quot;TARGET_PARENT&quot; : UML Element used as Graphical parent of the target Port (end of Connector)
 	 * - &quot;SOURCE_GRAPHICAL&quot; : GraphicalEditPart of the source
 	 * - &quot;TARGET_GRAPHICAL&quot; : GraphicalEditPart of the target
-	 * 
+	 *
 	 * This method is used too to call the custom command for InformationFlow creation.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

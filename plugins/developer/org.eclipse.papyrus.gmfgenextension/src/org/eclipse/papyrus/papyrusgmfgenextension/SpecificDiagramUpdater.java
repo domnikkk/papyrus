@@ -47,7 +47,7 @@ public interface SpecificDiagramUpdater extends ExternalHook {
 	 * If the meaning of the '<em>Gen Node</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Gen Node</em>' reference.
 	 * @see #setGenNode(GenCommonBase)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getSpecificDiagramUpdater_GenNode()
@@ -60,7 +60,7 @@ public interface SpecificDiagramUpdater extends ExternalHook {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.SpecificDiagramUpdater#getGenNode <em>Gen Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Gen Node</em>' reference.
 	 * @see #getGenNode()

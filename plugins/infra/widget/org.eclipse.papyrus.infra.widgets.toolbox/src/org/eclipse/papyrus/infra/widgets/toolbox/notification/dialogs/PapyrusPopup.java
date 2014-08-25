@@ -202,7 +202,7 @@ public abstract class PapyrusPopup extends Dialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.window.Window#getConstrainedShellBounds(org.eclipse.swt.graphics.Rectangle)
 	 */
 	@Override

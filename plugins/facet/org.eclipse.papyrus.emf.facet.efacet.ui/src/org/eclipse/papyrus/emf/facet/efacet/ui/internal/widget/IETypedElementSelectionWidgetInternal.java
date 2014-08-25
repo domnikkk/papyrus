@@ -12,10 +12,10 @@
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.widget;
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.widget.IETypedElementSelectionWidget;
 import org.eclipse.jface.viewers.IOpenListener;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.widget.IETypedElementSelectionWidget;
 import org.eclipse.ui.dialogs.FilteredTree;
 
 public interface IETypedElementSelectionWidgetInternal extends IETypedElementSelectionWidget {

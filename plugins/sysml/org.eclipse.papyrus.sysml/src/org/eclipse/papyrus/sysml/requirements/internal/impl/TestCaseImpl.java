@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.sysml.requirements.internal.impl;
 
 import java.util.Iterator;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;

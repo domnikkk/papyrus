@@ -32,7 +32,7 @@ public interface Editor extends EObject {
 	 * If the meaning of the '<em>Class</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Class</em>' attribute.
 	 * @see #setClass(String)
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.languagepreferencesPackage#getEditor_Class()
@@ -45,7 +45,7 @@ public interface Editor extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.properties.languagepreferences.Editor#getClass_ <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Class</em>' attribute.
 	 * @see #getClass_()

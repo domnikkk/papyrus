@@ -330,7 +330,7 @@ class ElementHandler extends DefaultHandler implements ContentHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.xml.sax.helpers.DefaultHandler#setDocumentLocator(org.xml.sax.Locator)
 	 */
 	@Override
@@ -340,7 +340,7 @@ class ElementHandler extends DefaultHandler implements ContentHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.xml.sax.helpers.DefaultHandler#startDocument()
 	 */
 	@Override
@@ -353,7 +353,7 @@ class ElementHandler extends DefaultHandler implements ContentHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.xml.sax.helpers.DefaultHandler#startPrefixMapping(java.lang.String, java.lang.String)
 	 */
 	@Override
@@ -371,7 +371,7 @@ class ElementHandler extends DefaultHandler implements ContentHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.xml.sax.helpers.DefaultHandler#endDocument()
 	 */
 	@Override
@@ -385,7 +385,7 @@ class ElementHandler extends DefaultHandler implements ContentHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.xml.sax.helpers.DefaultHandler#characters(char[], int, int)
 	 */
 	@Override
@@ -407,7 +407,7 @@ class ElementHandler extends DefaultHandler implements ContentHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.xml.sax.helpers.DefaultHandler#skippedEntity(java.lang.String)
 	 */
 	@Override
@@ -417,7 +417,7 @@ class ElementHandler extends DefaultHandler implements ContentHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.xml.sax.helpers.DefaultHandler#startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
 	 */
 	@Override
@@ -459,7 +459,7 @@ class ElementHandler extends DefaultHandler implements ContentHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.xml.sax.helpers.DefaultHandler#endElement(java.lang.String, java.lang.String, java.lang.String)
 	 */
 	@Override

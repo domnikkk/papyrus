@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.infra.viewpoints.configuration.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -48,7 +49,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	 * The default value of the '{@link #getCustomPalette() <em>Custom Palette</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCustomPalette()
 	 * @generated
 	 * @ordered
@@ -59,7 +60,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	 * The cached value of the '{@link #getCustomPalette() <em>Custom Palette</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCustomPalette()
 	 * @generated
 	 * @ordered
@@ -70,7 +71,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	 * The default value of the '{@link #getCustomStyle() <em>Custom Style</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCustomStyle()
 	 * @generated
 	 * @ordered
@@ -81,7 +82,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	 * The cached value of the '{@link #getCustomStyle() <em>Custom Style</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCustomStyle()
 	 * @generated
 	 * @ordered
@@ -92,7 +93,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	 * The cached value of the '{@link #getChildRules() <em>Child Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChildRules()
 	 * @generated
 	 * @ordered
@@ -103,7 +104,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	 * The cached value of the '{@link #getPaletteRules() <em>Palette Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPaletteRules()
 	 * @generated
 	 * @ordered
@@ -113,7 +114,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PapyrusDiagramImpl() {
@@ -123,7 +124,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +135,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getCustomPalette() {
@@ -144,7 +145,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCustomPalette(String newCustomPalette) {
@@ -158,7 +159,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getCustomStyle() {
@@ -168,7 +169,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCustomStyle(String newCustomStyle) {
@@ -182,7 +183,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ChildRule> getChildRules() {
@@ -195,7 +196,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<PaletteRule> getPaletteRules() {
@@ -208,7 +209,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +226,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +247,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -274,7 +275,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -299,7 +300,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +321,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

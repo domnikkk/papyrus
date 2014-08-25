@@ -16,19 +16,14 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.FeatureToSet;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply;
@@ -54,7 +49,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	 * The default value of the '{@link #getStereotypeQualifiedName() <em>Stereotype Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypeQualifiedName()
 	 * @generated
 	 * @ordered
@@ -65,7 +60,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	 * The cached value of the '{@link #getStereotypeQualifiedName() <em>Stereotype Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypeQualifiedName()
 	 * @generated
 	 * @ordered
@@ -76,7 +71,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	 * The default value of the '{@link #isUpdateName() <em>Update Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isUpdateName()
 	 * @generated
 	 * @ordered
@@ -87,7 +82,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	 * The cached value of the '{@link #isUpdateName() <em>Update Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isUpdateName()
 	 * @generated
 	 * @ordered
@@ -98,7 +93,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	 * The cached value of the '{@link #getRequiredProfiles() <em>Required Profiles</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRequiredProfiles()
 	 * @generated
 	 * @ordered
@@ -109,7 +104,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	 * The cached value of the '{@link #getFeaturesToSet() <em>Features To Set</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFeaturesToSet()
 	 * @generated
 	 * @ordered
@@ -119,7 +114,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StereotypeToApplyImpl() {
@@ -129,7 +124,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +135,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getStereotypeQualifiedName() {
@@ -150,7 +145,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStereotypeQualifiedName(String newStereotypeQualifiedName) {
@@ -164,7 +159,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isUpdateName() {
@@ -174,7 +169,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setUpdateName(boolean newUpdateName) {
@@ -188,7 +183,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getRequiredProfiles() {
@@ -201,7 +196,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<FeatureToSet> getFeaturesToSet() {
@@ -214,7 +209,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +224,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +245,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -278,7 +273,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +298,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +319,7 @@ public class StereotypeToApplyImpl extends EObjectImpl implements StereotypeToAp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

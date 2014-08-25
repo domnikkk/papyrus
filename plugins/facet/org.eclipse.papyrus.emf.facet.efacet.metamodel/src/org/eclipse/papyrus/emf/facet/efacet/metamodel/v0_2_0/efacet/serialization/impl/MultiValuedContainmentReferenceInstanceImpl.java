@@ -44,7 +44,7 @@ public class MultiValuedContainmentReferenceInstanceImpl extends AbstractReferen
 	 * The cached value of the '{@link #getOwnedElements() <em>Owned Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwnedElements()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class MultiValuedContainmentReferenceInstanceImpl extends AbstractReferen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MultiValuedContainmentReferenceInstanceImpl() {
@@ -64,7 +64,7 @@ public class MultiValuedContainmentReferenceInstanceImpl extends AbstractReferen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class MultiValuedContainmentReferenceInstanceImpl extends AbstractReferen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<EObject> getOwnedElements() {
@@ -88,7 +88,7 @@ public class MultiValuedContainmentReferenceInstanceImpl extends AbstractReferen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class MultiValuedContainmentReferenceInstanceImpl extends AbstractReferen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class MultiValuedContainmentReferenceInstanceImpl extends AbstractReferen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -136,7 +136,7 @@ public class MultiValuedContainmentReferenceInstanceImpl extends AbstractReferen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class MultiValuedContainmentReferenceInstanceImpl extends AbstractReferen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

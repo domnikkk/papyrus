@@ -15,14 +15,10 @@ package org.eclipse.papyrus.infra.viewpoints.iso42010.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
@@ -47,7 +43,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	 * The cached value of the '{@link #getGovernedBy() <em>Governed By</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGovernedBy()
 	 * @generated
 	 * @ordered
@@ -57,7 +53,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureModelImpl() {
@@ -67,7 +63,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +74,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelKind getGovernedBy() {
@@ -97,7 +93,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelKind basicGetGovernedBy() {
@@ -107,7 +103,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetGovernedBy(ModelKind newGovernedBy, NotificationChain msgs) {
@@ -127,7 +123,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setGovernedBy(ModelKind newGovernedBy) {
@@ -152,7 +148,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureView getView() {
@@ -165,7 +161,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetView(ArchitectureView newView, NotificationChain msgs) {
@@ -176,7 +172,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setView(ArchitectureView newView) {
@@ -204,7 +200,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +223,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +240,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +255,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +275,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +294,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,7 +313,7 @@ public class ArchitectureModelImpl extends ADElementImpl implements Architecture
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

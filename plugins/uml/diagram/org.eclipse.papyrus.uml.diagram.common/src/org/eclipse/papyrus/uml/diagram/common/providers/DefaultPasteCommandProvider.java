@@ -22,6 +22,7 @@ import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.RootEditPart;
+import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
@@ -32,11 +33,10 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.commands.requests.PasteRequest;
+import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.commands.CommentDropCreation;
 import org.eclipse.papyrus.uml.diagram.common.commands.PapyrusDuplicateWrapperCommand;
-import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.gef.commands.Command;
 
 /**
  * this provider has the following behavior

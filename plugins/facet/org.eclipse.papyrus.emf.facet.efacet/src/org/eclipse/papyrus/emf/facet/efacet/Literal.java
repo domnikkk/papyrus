@@ -45,7 +45,7 @@ public interface Literal extends Query {
 	 * <!-- begin-model-doc -->
 	 * The literal value is stored in a string.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getLiteral_Value()
@@ -60,7 +60,7 @@ public interface Literal extends Query {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.Literal#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()

@@ -10,18 +10,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.uml.properties.languagepreferences.Editor;
 import org.eclipse.papyrus.uml.properties.languagepreferences.Language;
 import org.eclipse.papyrus.uml.properties.languagepreferences.Preferences;
@@ -47,7 +42,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	 * The cached value of the '{@link #getLanguages() <em>Languages</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLanguages()
 	 * @generated
 	 * @ordered
@@ -58,7 +53,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	 * The cached value of the '{@link #getEditors() <em>Editors</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEditors()
 	 * @generated
 	 * @ordered
@@ -69,7 +64,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	 * The cached value of the '{@link #getDefaultEditor() <em>Default Editor</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDefaultEditor()
 	 * @generated
 	 * @ordered
@@ -79,7 +74,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PreferencesImpl() {
@@ -89,7 +84,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +95,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Language> getLanguages() {
@@ -113,7 +108,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Editor> getEditors() {
@@ -126,7 +121,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Editor getDefaultEditor() {
@@ -145,7 +140,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Editor basicGetDefaultEditor() {
@@ -155,7 +150,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDefaultEditor(Editor newDefaultEditor) {
@@ -169,7 +164,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +181,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +203,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -233,7 +228,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +250,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

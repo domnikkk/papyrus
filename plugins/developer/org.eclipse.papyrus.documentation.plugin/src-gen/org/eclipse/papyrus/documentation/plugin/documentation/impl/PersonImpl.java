@@ -7,12 +7,9 @@
 package org.eclipse.papyrus.documentation.plugin.documentation.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage;
 import org.eclipse.papyrus.documentation.plugin.documentation.Person;
 
@@ -37,7 +34,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	 * The default value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFirstName()
 	 * @generated
 	 * @ordered
@@ -48,7 +45,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	 * The cached value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFirstName()
 	 * @generated
 	 * @ordered
@@ -59,7 +56,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	 * The default value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLastName()
 	 * @generated
 	 * @ordered
@@ -70,7 +67,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	 * The cached value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLastName()
 	 * @generated
 	 * @ordered
@@ -81,7 +78,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	 * The default value of the '{@link #getEMail() <em>EMail</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEMail()
 	 * @generated
 	 * @ordered
@@ -92,7 +89,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	 * The cached value of the '{@link #getEMail() <em>EMail</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEMail()
 	 * @generated
 	 * @ordered
@@ -103,7 +100,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	 * The default value of the '{@link #getCurrentCompany() <em>Current Company</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCurrentCompany()
 	 * @generated
 	 * @ordered
@@ -114,7 +111,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	 * The cached value of the '{@link #getCurrentCompany() <em>Current Company</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCurrentCompany()
 	 * @generated
 	 * @ordered
@@ -124,7 +121,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PersonImpl() {
@@ -134,7 +131,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +142,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getFirstName() {
@@ -155,7 +152,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setFirstName(String newFirstName) {
@@ -169,7 +166,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLastName() {
@@ -179,7 +176,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLastName(String newLastName) {
@@ -193,7 +190,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getEMail() {
@@ -203,7 +200,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setEMail(String newEMail) {
@@ -217,7 +214,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getCurrentCompany() {
@@ -227,7 +224,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCurrentCompany(String newCurrentCompany) {
@@ -241,7 +238,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +259,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +284,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -312,7 +309,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -333,7 +330,7 @@ public class PersonImpl extends EModelElementImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

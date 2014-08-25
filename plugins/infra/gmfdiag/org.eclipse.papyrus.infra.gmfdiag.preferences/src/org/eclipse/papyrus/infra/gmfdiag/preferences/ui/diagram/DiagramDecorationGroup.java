@@ -14,8 +14,8 @@
 package org.eclipse.papyrus.infra.gmfdiag.preferences.ui.diagram;
 
 import org.eclipse.jface.dialogs.DialogPage;
-import org.eclipse.papyrus.infra.gmfdiag.preferences.ui.DecorationGroup;
 import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
+import org.eclipse.papyrus.infra.gmfdiag.preferences.ui.DecorationGroup;
 import org.eclipse.swt.widgets.Composite;
 
 /**
@@ -39,7 +39,7 @@ public class DiagramDecorationGroup extends DecorationGroup {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.AbstractGroup#getPreferenceConstant(int)
 	 */
 	@Override

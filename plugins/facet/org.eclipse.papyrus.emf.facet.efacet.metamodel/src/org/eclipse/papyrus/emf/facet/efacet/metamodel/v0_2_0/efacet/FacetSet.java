@@ -43,7 +43,7 @@ public interface FacetSet extends EPackage, DocumentedElement {
 	 * If the meaning of the '<em>Categories</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Categories</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetPackage#getFacetSet_Categories()
 	 * @model containment="true"
@@ -54,7 +54,7 @@ public interface FacetSet extends EPackage, DocumentedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation"
 	 *        annotation="GenModel documentation='The FacetSets aggregated by this FacetSet (this operation is overridden in Aggregate in the aggregate metamodel).'"
 	 * @generated

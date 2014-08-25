@@ -12,6 +12,7 @@ package org.eclipse.papyrus.xwt.internal.core;
 
 import java.lang.reflect.Method;
 
+import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.papyrus.xwt.IDataProvider;
 import org.eclipse.papyrus.xwt.IXWTLoader;
 import org.eclipse.papyrus.xwt.XWT;
@@ -55,7 +56,7 @@ public abstract class DynamicBinding implements IDynamicBinding {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.core.IDynamicBinding#getContextName()
 	 */
 	public IBindingContext getBindingContext() {
@@ -76,7 +77,7 @@ public abstract class DynamicBinding implements IDynamicBinding {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.core.IDynamicBinding#setBindingContext(IBindingContext
 	 * )

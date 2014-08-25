@@ -55,7 +55,7 @@ public abstract class AbstractCommandHandler extends AbstractModelExplorerHandle
 	 *
 	 * Returns the command to execute (to be implemented
 	 * in children implementing this class)
-	 * 
+	 *
 	 * @return the command to execute
 	 *
 	 * </pre>
@@ -70,7 +70,7 @@ public abstract class AbstractCommandHandler extends AbstractModelExplorerHandle
 	 * <pre>
 	 * Get the selected element, the first selected element if several are selected or null
 	 * if no selection or the selection is not an {@link EObject}.
-	 * 
+	 *
 	 * @return selected {@link EObject} or null
 	 * </pre>
 	 *
@@ -100,10 +100,10 @@ public abstract class AbstractCommandHandler extends AbstractModelExplorerHandle
 	 * <pre>
 	 * Parse current selection and extract the list of {@link EObject} from
 	 * this selection.
-	 * 
+	 *
 	 * This also tries to adapt selected element into {@link EObject}
 	 * (for example to get the {@link EObject} from a selection in the ModelExplorer).
-	 * 
+	 *
 	 * @return a list of currently selected {@link EObject}
 	 * </pre>
 	 *

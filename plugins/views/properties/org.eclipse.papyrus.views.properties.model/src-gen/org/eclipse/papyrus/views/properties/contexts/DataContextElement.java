@@ -36,7 +36,7 @@ public interface DataContextElement extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getDataContextElement_Name()
@@ -49,7 +49,7 @@ public interface DataContextElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.contexts.DataContextElement#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -66,7 +66,7 @@ public interface DataContextElement extends EObject {
 	 * If the meaning of the '<em>Properties</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Properties</em>' containment reference list.
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getDataContextElement_Properties()
 	 * @see org.eclipse.papyrus.views.properties.contexts.Property#getContextElement
@@ -83,7 +83,7 @@ public interface DataContextElement extends EObject {
 	 * If the meaning of the '<em>Package</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Package</em>' container reference.
 	 * @see #setPackage(DataContextPackage)
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getDataContextElement_Package()
@@ -97,7 +97,7 @@ public interface DataContextElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.contexts.DataContextElement#getPackage <em>Package</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Package</em>' container reference.
 	 * @see #getPackage()
@@ -113,7 +113,7 @@ public interface DataContextElement extends EObject {
 	 * If the meaning of the '<em>Supertypes</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Supertypes</em>' reference list.
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getDataContextElement_Supertypes()
 	 * @model

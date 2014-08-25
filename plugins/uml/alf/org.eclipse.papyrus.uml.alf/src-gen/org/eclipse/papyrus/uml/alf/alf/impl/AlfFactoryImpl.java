@@ -6,11 +6,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.eclipse.papyrus.uml.alf.alf.*;
 
 /**
@@ -1360,7 +1357,9 @@ public class AlfFactoryImpl extends EFactoryImpl implements AlfFactory
   public BooleanValue createBooleanValueFromString(EDataType eDataType, String initialValue)
   {
     BooleanValue result = BooleanValue.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    if (result == null) {
+		throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+	}
     return result;
   }
 
@@ -1382,7 +1381,9 @@ public class AlfFactoryImpl extends EFactoryImpl implements AlfFactory
   public LinkOperationKind createLinkOperationKindFromString(EDataType eDataType, String initialValue)
   {
     LinkOperationKind result = LinkOperationKind.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    if (result == null) {
+		throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+	}
     return result;
   }
 
@@ -1404,7 +1405,9 @@ public class AlfFactoryImpl extends EFactoryImpl implements AlfFactory
   public SelectOrRejectOperator createSelectOrRejectOperatorFromString(EDataType eDataType, String initialValue)
   {
     SelectOrRejectOperator result = SelectOrRejectOperator.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    if (result == null) {
+		throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+	}
     return result;
   }
 
@@ -1426,7 +1429,9 @@ public class AlfFactoryImpl extends EFactoryImpl implements AlfFactory
   public CollectOrIterateOperator createCollectOrIterateOperatorFromString(EDataType eDataType, String initialValue)
   {
     CollectOrIterateOperator result = CollectOrIterateOperator.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    if (result == null) {
+		throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+	}
     return result;
   }
 
@@ -1448,7 +1453,9 @@ public class AlfFactoryImpl extends EFactoryImpl implements AlfFactory
   public ForAllOrExistsOrOneOperator createForAllOrExistsOrOneOperatorFromString(EDataType eDataType, String initialValue)
   {
     ForAllOrExistsOrOneOperator result = ForAllOrExistsOrOneOperator.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    if (result == null) {
+		throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+	}
     return result;
   }
 
@@ -1470,7 +1477,9 @@ public class AlfFactoryImpl extends EFactoryImpl implements AlfFactory
   public AnnotationKind createAnnotationKindFromString(EDataType eDataType, String initialValue)
   {
     AnnotationKind result = AnnotationKind.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    if (result == null) {
+		throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+	}
     return result;
   }
 
@@ -1492,7 +1501,9 @@ public class AlfFactoryImpl extends EFactoryImpl implements AlfFactory
   public AssignmentOperator createAssignmentOperatorFromString(EDataType eDataType, String initialValue)
   {
     AssignmentOperator result = AssignmentOperator.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    if (result == null) {
+		throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+	}
     return result;
   }
 

@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.dialog.command;
 
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.dialog.AbstractCustomizationMainDialog;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.widget.command.AddCaseQueryWidget;
@@ -20,7 +21,6 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Q
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.IQueryContext;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.ICommandWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement2;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
 
 /**
  * Concrete dialog for the creation of a query in a case.

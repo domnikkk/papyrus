@@ -16,11 +16,8 @@ package org.eclipse.papyrus.infra.viewpoints.iso42010.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Architecture;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription;
@@ -41,7 +38,7 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory {
@@ -49,7 +46,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static Iso42010Factory init() {
@@ -68,7 +65,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Iso42010FactoryImpl() {
@@ -78,7 +75,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +117,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureDescription createArchitectureDescription() {
@@ -131,7 +128,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Stakeholder createStakeholder() {
@@ -142,7 +139,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureViewpoint createArchitectureViewpoint() {
@@ -153,7 +150,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelKind createModelKind() {
@@ -164,7 +161,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureModel createArchitectureModel() {
@@ -175,7 +172,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureView createArchitectureView() {
@@ -186,7 +183,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Concern createConcern() {
@@ -197,7 +194,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.papyrus.infra.viewpoints.iso42010.System createSystem() {
@@ -208,7 +205,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Architecture createArchitecture() {
@@ -219,7 +216,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureRationale createArchitectureRationale() {
@@ -230,7 +227,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Correspondence createCorrespondence() {
@@ -241,7 +238,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CorrespondenceRule createCorrespondenceRule() {
@@ -252,7 +249,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureDecision createArchitectureDecision() {
@@ -263,7 +260,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureFramework createArchitectureFramework() {
@@ -274,7 +271,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Iso42010Package getIso42010Package() {
@@ -284,7 +281,7 @@ public class Iso42010FactoryImpl extends EFactoryImpl implements Iso42010Factory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

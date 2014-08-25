@@ -29,7 +29,7 @@ public interface CallOrSignalEventRule extends EventRule
 	 * If the meaning of the '<em>Operation Or Signal</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Operation Or Signal</em>' reference.
 	 * @see #setOperationOrSignal(NamedElement)
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage#getCallOrSignalEventRule_OperationOrSignal()
@@ -42,7 +42,7 @@ public interface CallOrSignalEventRule extends EventRule
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.CallOrSignalEventRule#getOperationOrSignal <em>Operation Or Signal</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Operation Or Signal</em>' reference.
 	 * @see #getOperationOrSignal()

@@ -38,7 +38,7 @@ public interface StereotypedElementMatcherConfiguration extends MatcherConfigura
 	 * If the meaning of the '<em>Stereotyped Qualified Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stereotyped Qualified Name</em>' attribute.
 	 * @see #setStereotypedQualifiedName(String)
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.stereotypedelementmatcherconfiguration.StereotypedElementMatcherConfigurationPackage#getStereotypedElementMatcherConfiguration_StereotypedQualifiedName()
@@ -51,7 +51,7 @@ public interface StereotypedElementMatcherConfiguration extends MatcherConfigura
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.stereotypedelementmatcherconfiguration.StereotypedElementMatcherConfiguration#getStereotypedQualifiedName <em>Stereotyped Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Stereotyped Qualified Name</em>' attribute.
 	 * @see #getStereotypedQualifiedName()

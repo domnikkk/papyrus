@@ -48,7 +48,7 @@ import org.eclipse.papyrus.emf.facet.util.emf.core.internal.Activator;
 
 /**
  * Utility class for models.
- * 
+ *
  * @since 0.2
  */
 public final class ModelUtils {

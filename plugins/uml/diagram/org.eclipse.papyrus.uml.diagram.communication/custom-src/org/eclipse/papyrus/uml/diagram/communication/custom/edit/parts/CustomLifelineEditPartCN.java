@@ -182,7 +182,7 @@ public class CustomLifelineEditPartCN extends LifelineEditPartCN {
 	 * } else {
 	 * return super.getTargetConnectionAnchor(connEditPart);
 	 * }
-	 * 
+	 *
 	 * }
 	 */
 	/**
@@ -212,7 +212,7 @@ public class CustomLifelineEditPartCN extends LifelineEditPartCN {
 	 * return new LifelineAnchor(getPrimaryShape().getNameLabel());
 	 * }
 	 * }
-	 * 
+	 *
 	 * return super.getTargetConnectionAnchor(request);
 	 * }
 	 */

@@ -15,18 +15,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.Content;
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.Import;
@@ -53,7 +48,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	 * The default value of the '{@link #getCharset() <em>Charset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCharset()
 	 * @generated
 	 * @ordered
@@ -64,7 +59,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	 * The cached value of the '{@link #getCharset() <em>Charset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCharset()
 	 * @generated
 	 * @ordered
@@ -75,7 +70,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImports()
 	 * @generated
 	 * @ordered
@@ -86,7 +81,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	 * The cached value of the '{@link #getContents() <em>Contents</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContents()
 	 * @generated
 	 * @ordered
@@ -96,7 +91,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StylesheetImpl()
@@ -107,7 +102,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +114,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +126,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +142,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +158,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +174,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +193,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +214,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -246,7 +241,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +265,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +286,7 @@ public class StylesheetImpl extends MinimalEObjectImpl.Container implements Styl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -78,36 +78,36 @@ public class ConnectionPointReferenceEditorConfiguration extends DefaultXtextDir
 	 * return null;
 	 * }
 	 * connectionPoint = (ConnectionPointReference)graphicalEditPart.resolveSemanticElement();
-	 * 
+	 *
 	 * UMLConnectionPointReferenceJavaValidator.init(connectionPoint);
-	 * 
+	 *
 	 * // retrieves the XText injector
 	 * Injector injector = UMLConnectionPointReferenceActivator.getInstance().getInjector("org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.UMLConnectionPointReference");
-	 * 
+	 *
 	 * // builds the text content and extension for a temporary file, to be edited by the xtext editor
 	 * String textToEdit = "" + this.getTextToEdit(graphicalEditPart.resolveSemanticElement());
 	 * String fileExtension = "" + ".conncectionpointreference";
-	 * 
+	 *
 	 * // builds a new IXtextEMFReconciler.
 	 * // Its purpose is to extract any relevant information from the textual specification,
 	 * // and then merge it in the context UML model if necessary
 	 * IXtextEMFReconciler reconciler = new IXtextEMFReconciler() {
-	 * 
+	 *
 	 * public void reconcile(EObject modelObject, EObject xtextObject) {
-	 * 
+	 *
 	 * newEntries = new ArrayList<Pseudostate>();
 	 * newExits = new ArrayList<Pseudostate>();
-	 * 
+	 *
 	 * ConnectionPointReferenceRule rule = (ConnectionPointReferenceRule)xtextObject;
 	 * if(!rule.getEntry().isEmpty()) {
 	 * newEntries.addAll(rule.getEntry());
 	 * } else if(!rule.getExit().isEmpty()) {
 	 * newExits.addAll(rule.getExit());
 	 * }
-	 * 
+	 *
 	 * // Creates and executes the update command
 	 * UpdateConnectionPointReferenceCommand updateCommand = new UpdateConnectionPointReferenceCommand(connectionPoint);
-	 * 
+	 *
 	 * try {
 	 * TransactionalEditingDomain domain = ServiceUtilsForEObject.getInstance().getTransactionalEditingDomain(modelObject);
 	 * domain.getCommandStack().execute(new GMFtoEMFCommandWrapper(updateCommand));
@@ -131,7 +131,7 @@ public class ConnectionPointReferenceEditorConfiguration extends DefaultXtextDir
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor
 		 * , org.eclipse.core.runtime.IAdaptable)

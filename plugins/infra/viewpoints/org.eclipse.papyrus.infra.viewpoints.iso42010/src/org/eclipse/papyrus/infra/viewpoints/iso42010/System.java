@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.infra.viewpoints.iso42010;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -43,7 +42,7 @@ public interface System extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getSystem_Name()
@@ -56,7 +55,7 @@ public interface System extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.System#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -73,7 +72,7 @@ public interface System extends EObject {
 	 * If the meaning of the '<em>Stakeholders</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stakeholders</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getSystem_Stakeholders()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder#getHasInterestIn
@@ -90,7 +89,7 @@ public interface System extends EObject {
 	 * If the meaning of the '<em>Exhibits</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Exhibits</em>' reference.
 	 * @see #setExhibits(Architecture)
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getSystem_Exhibits()
@@ -104,7 +103,7 @@ public interface System extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.System#getExhibits <em>Exhibits</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Exhibits</em>' reference.
 	 * @see #getExhibits()

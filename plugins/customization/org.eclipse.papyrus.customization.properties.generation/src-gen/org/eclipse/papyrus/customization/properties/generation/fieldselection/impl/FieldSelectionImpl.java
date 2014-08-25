@@ -40,7 +40,7 @@ public class FieldSelectionImpl extends EObjectImpl implements FieldSelection {
 	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFields()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class FieldSelectionImpl extends EObjectImpl implements FieldSelection {
 	 * The cached value of the '{@link #getContextElements() <em>Context Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContextElements()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class FieldSelectionImpl extends EObjectImpl implements FieldSelection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FieldSelectionImpl() {
@@ -71,7 +71,7 @@ public class FieldSelectionImpl extends EObjectImpl implements FieldSelection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +82,7 @@ public class FieldSelectionImpl extends EObjectImpl implements FieldSelection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<PropertyDefinition> getFields() {
@@ -95,7 +95,7 @@ public class FieldSelectionImpl extends EObjectImpl implements FieldSelection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ContextElement> getContextElements() {
@@ -108,7 +108,7 @@ public class FieldSelectionImpl extends EObjectImpl implements FieldSelection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class FieldSelectionImpl extends EObjectImpl implements FieldSelection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class FieldSelectionImpl extends EObjectImpl implements FieldSelection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -164,7 +164,7 @@ public class FieldSelectionImpl extends EObjectImpl implements FieldSelection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class FieldSelectionImpl extends EObjectImpl implements FieldSelection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

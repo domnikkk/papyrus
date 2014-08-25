@@ -32,7 +32,7 @@ public class DynamicBeanProperty extends DynamicProperty {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.javabean.metadata.properties.DynamicProperty#getValue (java.lang.Object)
 	 */
 	@Override

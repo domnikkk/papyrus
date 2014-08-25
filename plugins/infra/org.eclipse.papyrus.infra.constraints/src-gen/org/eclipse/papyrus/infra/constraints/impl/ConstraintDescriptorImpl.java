@@ -43,7 +43,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	 * The default value of the '{@link #isOverrideable() <em>Overrideable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isOverrideable()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	 * The cached value of the '{@link #isOverrideable() <em>Overrideable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isOverrideable()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	 * The cached value of the '{@link #getOverriddenConstraints() <em>Overridden Constraints</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOverriddenConstraints()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConstraintDescriptorImpl() {
@@ -107,7 +107,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -128,7 +128,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -142,7 +142,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DisplayUnit getDisplay() {
@@ -155,7 +155,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDisplay(DisplayUnit newDisplay, NotificationChain msgs) {
@@ -166,7 +166,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDisplay(DisplayUnit newDisplay) {
@@ -194,7 +194,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isOverrideable() {
@@ -204,7 +204,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOverrideable(boolean newOverrideable) {
@@ -218,7 +218,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<SimpleConstraint> getOverriddenConstraints() {
@@ -231,7 +231,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +249,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +264,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +279,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +300,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -327,7 +327,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -352,7 +352,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -373,7 +373,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -57,9 +57,9 @@ public class ImagePapyrusAsyncNotificationPopup extends PapyrusAsyncNotification
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.toolbox.notification.dialogs.PapyrusAsyncNotificationPopup#doCreateClient(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override

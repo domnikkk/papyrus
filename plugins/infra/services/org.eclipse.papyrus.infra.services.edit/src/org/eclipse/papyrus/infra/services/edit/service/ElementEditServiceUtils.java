@@ -14,8 +14,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.edit.service;
 
+import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.Activator;
 import org.eclipse.papyrus.infra.services.edit.internal.ElementEditServiceProvider;
 import org.eclipse.papyrus.infra.services.edit.messages.Messages;
@@ -33,11 +35,11 @@ public class ElementEditServiceUtils {
 	 * <pre>
 	 * Try to retrieve an edit service for the object in parameter
 	 * (EObject or EClass expected).
-	 * 
+	 *
 	 * Current implementation directly use {@link IElementEditServiceProvider} instance
 	 * rather than using Papyrus {@link ServiceUtils} which requires Papyrus to be
 	 * the active editor.
-	 * 
+	 *
 	 * @param objectToEdit
 	 * @return the edit service or null
 	 * </pre>
@@ -69,7 +71,7 @@ public class ElementEditServiceUtils {
 	 * Get the edit service provider (using {@link ElementTypeRegistry} instead of
 	 * {@link ServiceUtils}). Note that {@link ServiceUtils} would return the same instance
 	 * anyway.
-	 * 
+	 *
 	 * @return the service provider
 	 * </pre>
 	 */

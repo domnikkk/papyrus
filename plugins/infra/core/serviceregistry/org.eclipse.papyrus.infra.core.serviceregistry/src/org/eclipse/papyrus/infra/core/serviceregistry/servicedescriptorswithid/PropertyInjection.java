@@ -29,7 +29,7 @@ public interface PropertyInjection extends FeatureInjection {
 	 * If the meaning of the '<em>Property Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Property Name</em>' attribute.
 	 * @see #setPropertyName(String)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getPropertyInjection_PropertyName()
@@ -42,7 +42,7 @@ public interface PropertyInjection extends FeatureInjection {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.PropertyInjection#getPropertyName <em>Property Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Property Name</em>' attribute.
 	 * @see #getPropertyName()
@@ -58,7 +58,7 @@ public interface PropertyInjection extends FeatureInjection {
 	 * If the meaning of the '<em>Values</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Values</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getPropertyInjection_Values()
 	 * @model containment="true" ordered="false"

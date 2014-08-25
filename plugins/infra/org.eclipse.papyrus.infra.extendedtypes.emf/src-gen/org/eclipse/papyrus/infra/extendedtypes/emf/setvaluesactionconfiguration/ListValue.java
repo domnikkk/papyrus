@@ -29,7 +29,7 @@ public interface ListValue extends FeatureValue {
 	 * If the meaning of the '<em>Values</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Values</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationPackage#getListValue_Values()
 	 * @model containment="true"

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.papyrus.emf.facet.util.core.DebugUtils;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Messages;
@@ -25,7 +26,6 @@ import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.util.widget.c
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.util.wizard.page.exception.SelectedEPackageRuntimeException;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.wizard.page.ISelectEPackageWizardPage;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.util.EditingUtil;
-import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;

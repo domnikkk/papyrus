@@ -36,15 +36,15 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.Activator;
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
-import org.eclipse.papyrus.emf.facet.util.core.internal.JavaUtils;
-import org.eclipse.papyrus.emf.facet.util.pde.core.internal.exported.PluginUtils;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.osgi.util.ManifestElement;
+import org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.Activator;
+import org.eclipse.papyrus.emf.facet.util.core.Logger;
+import org.eclipse.papyrus.emf.facet.util.core.internal.JavaUtils;
+import org.eclipse.papyrus.emf.facet.util.pde.core.internal.exported.PluginUtils;
 
 public final class JdtUtils {
 

@@ -246,5 +246,5 @@ public enum LinkOperationKind implements Enumerator
   {
     return literal;
   }
-  
+
 } //LinkOperationKind

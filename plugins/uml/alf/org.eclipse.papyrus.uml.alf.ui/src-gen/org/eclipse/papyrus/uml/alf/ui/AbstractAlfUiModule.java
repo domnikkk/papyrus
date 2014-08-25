@@ -4,20 +4,20 @@
  */
 package org.eclipse.papyrus.uml.alf.ui;
 
-import org.eclipse.xtext.ui.DefaultUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.DefaultUiModule;
 
 /**
  * Manual modifications go to {org.eclipse.papyrus.uml.alf.ui.AlfUiModule}
  */
 @SuppressWarnings("all")
 public abstract class AbstractAlfUiModule extends DefaultUiModule {
-	
+
 	public AbstractAlfUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
-	
-	
+
+
 	// contributed by org.eclipse.xtext.ui.generator.ImplicitUiFragment
 	public com.google.inject.Provider<org.eclipse.xtext.resource.containers.IAllContainersState> provideIAllContainersState() {
 		return org.eclipse.xtext.ui.shared.Access.getJavaProjectsState();
@@ -59,11 +59,13 @@ public abstract class AbstractAlfUiModule extends DefaultUiModule {
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
+	@Override
 	public Class<? extends org.eclipse.jface.viewers.ILabelProvider> bindILabelProvider() {
 		return org.eclipse.papyrus.uml.alf.ui.labeling.AlfLabelProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
+	@Override
 	public void configureResourceUIServiceLabelProvider(com.google.inject.Binder binder) {
 		binder.bind(org.eclipse.jface.viewers.ILabelProvider.class).annotatedWith(org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider.class).to(org.eclipse.papyrus.uml.alf.ui.labeling.AlfDescriptionLabelProvider.class);
 	}
@@ -79,6 +81,7 @@ public abstract class AbstractAlfUiModule extends DefaultUiModule {
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.quickfix.QuickfixProviderFragment
+	@Override
 	public Class<? extends org.eclipse.xtext.ui.editor.quickfix.IssueResolutionProvider> bindIssueResolutionProvider() {
 		return org.eclipse.papyrus.uml.alf.ui.quickfix.AlfQuickfixProvider.class;
 	}

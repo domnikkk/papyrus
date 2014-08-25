@@ -17,12 +17,12 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Activator;
-import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Messages;
-import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.utils.ImageProvider;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.papyrus.emf.facet.common.ui.internal.widgets.AnywhereFilterMatcher;
+import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Activator;
+import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Messages;
+import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.utils.ImageProvider;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;

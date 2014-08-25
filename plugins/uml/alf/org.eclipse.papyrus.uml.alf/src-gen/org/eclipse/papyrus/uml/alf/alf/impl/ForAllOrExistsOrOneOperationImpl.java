@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.ForAllOrExistsOrOneOperation;
 import org.eclipse.papyrus.uml.alf.alf.ForAllOrExistsOrOneOperator;
@@ -87,8 +84,9 @@ public class ForAllOrExistsOrOneOperationImpl extends SequenceExpansionExpressio
   {
     ForAllOrExistsOrOneOperator oldOp = op;
     op = newOp == null ? OP_EDEFAULT : newOp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.FOR_ALL_OR_EXISTS_OR_ONE_OPERATION__OP, oldOp, op));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.FOR_ALL_OR_EXISTS_OR_ONE_OPERATION__OP, oldOp, op));
+	}
   }
 
   /**
@@ -165,7 +163,9 @@ public class ForAllOrExistsOrOneOperationImpl extends SequenceExpansionExpressio
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (op: ");

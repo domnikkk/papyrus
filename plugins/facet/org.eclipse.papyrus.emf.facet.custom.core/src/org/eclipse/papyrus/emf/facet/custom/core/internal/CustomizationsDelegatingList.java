@@ -18,8 +18,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 
 /** Represents a list of {@link Customization}s that exists as a subset of a delegate list of {@link FacetSet}s. */
 public class CustomizationsDelegatingList implements List<Customization> {

@@ -36,7 +36,7 @@ public class PropertyPartCreateCommand extends org.eclipse.papyrus.uml.diagram.c
 	 * Checks if the Property can be created on the Property (means appearing graphically on the property).
 	 * The Property must be typed by a StructuredClassifier (in other words, an element that
 	 * can own Property). The new Property is owned be the type of the Property.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -56,7 +56,7 @@ public class PropertyPartCreateCommand extends org.eclipse.papyrus.uml.diagram.c
 	 * Custom creation of the Property type :
 	 * - resolve the Property type
 	 * - add a new Property on this type.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

@@ -28,11 +28,11 @@ public class OnlyDiFilter extends ViewerFilter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers
 	 * .Viewer, java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -42,11 +42,11 @@ public class OnlyDiFilter extends ViewerFilter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.jface.viewers.ViewerFilter#isFilterProperty(java.lang.Object,
 	 * java.lang.String)
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override

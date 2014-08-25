@@ -50,7 +50,7 @@ public interface ETypedElementPrimitiveTypeListResult<T> extends ETypedElementRe
 	 * If the meaning of the '<em>Result List</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Result List</em>' attribute list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.RuntimePackage#getETypedElementPrimitiveTypeListResult_ResultList()
 	 * @model

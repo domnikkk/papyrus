@@ -19,8 +19,8 @@ import org.eclipse.papyrus.emf.facet.efacet.Query;
 import org.eclipse.papyrus.emf.facet.efacet.QuerySet;
 import org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.QuerySetCatalog;
 import org.eclipse.papyrus.emf.facet.efacet.core.query.IQueryUtils;
-import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager;
 import org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog;
+import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager;
 
 /**
  * @deprecated This class manipulated the old facet metamodel. With the new eFacet2 metamodel, there

@@ -36,7 +36,7 @@ public interface Section extends DisplayUnit {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getSection_Name()
@@ -49,7 +49,7 @@ public interface Section extends DisplayUnit {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.contexts.Section#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -65,7 +65,7 @@ public interface Section extends DisplayUnit {
 	 * If the meaning of the '<em>Tab</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Tab</em>' container reference.
 	 * @see #setTab(Tab)
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getSection_Tab()
@@ -79,7 +79,7 @@ public interface Section extends DisplayUnit {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.contexts.Section#getTab <em>Tab</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Tab</em>' container reference.
 	 * @see #getTab()
@@ -94,7 +94,7 @@ public interface Section extends DisplayUnit {
 	 * If the meaning of the '<em>Section File</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Section File</em>' attribute.
 	 * @see #setSectionFile(String)
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getSection_SectionFile()
@@ -107,7 +107,7 @@ public interface Section extends DisplayUnit {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.contexts.Section#getSectionFile <em>Section File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Section File</em>' attribute.
 	 * @see #getSectionFile()
@@ -122,7 +122,7 @@ public interface Section extends DisplayUnit {
 	 * If the meaning of the '<em>Widget</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Widget</em>' reference.
 	 * @see #setWidget(CompositeWidget)
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getSection_Widget()
@@ -135,7 +135,7 @@ public interface Section extends DisplayUnit {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.contexts.Section#getWidget <em>Widget</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Widget</em>' reference.
 	 * @see #getWidget()

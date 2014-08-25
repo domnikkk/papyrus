@@ -40,7 +40,7 @@ public interface SingleValuedReferenceInstance extends AbstractReferenceInstance
 	 * If the meaning of the '<em>Referenced Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Referenced Element</em>' reference.
 	 * @see #setReferencedElement(EObject)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SerializationPackage#getSingleValuedReferenceInstance_ReferencedElement()
@@ -53,7 +53,7 @@ public interface SingleValuedReferenceInstance extends AbstractReferenceInstance
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedReferenceInstance#getReferencedElement <em>Referenced Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Referenced Element</em>' reference.
 	 * @see #getReferencedElement()

@@ -15,6 +15,7 @@ package org.eclipse.papyrus.views.modelexplorer.handler;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;

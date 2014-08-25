@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.RelativeTimeEventRule;
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage;
 
@@ -21,7 +20,7 @@ public class RelativeTimeEventRuleImpl extends TimeEventRuleImpl implements Rela
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RelativeTimeEventRuleImpl()
@@ -32,7 +31,7 @@ public class RelativeTimeEventRuleImpl extends TimeEventRuleImpl implements Rela
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

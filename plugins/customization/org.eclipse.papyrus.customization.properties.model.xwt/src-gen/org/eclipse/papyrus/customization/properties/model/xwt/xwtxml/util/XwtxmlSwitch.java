@@ -16,10 +16,18 @@ package org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.*;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Attribute;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.CDATA;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Comment;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.DocumentTypeDeclaration;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Element;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Namespace;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.ProcessingInstruction;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Root;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Text;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +38,7 @@ import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage
  * @generated
  */
@@ -39,7 +47,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static XwtxmlPackage modelPackage;
@@ -48,7 +56,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public XwtxmlSwitch() {
@@ -61,7 +69,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -75,7 +83,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -209,7 +217,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Node</em>'.
@@ -226,7 +234,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
@@ -243,7 +251,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Text</em>'.
@@ -260,7 +268,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
@@ -277,7 +285,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Root</em>'.
@@ -294,7 +302,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Namespace</em>'.
@@ -311,7 +319,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Comment</em>'.
@@ -328,7 +336,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Document Type Declaration</em>'.
@@ -345,7 +353,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>CDATA</em>'.
@@ -362,7 +370,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Processing Instruction</em>'.
@@ -379,7 +387,7 @@ public class XwtxmlSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

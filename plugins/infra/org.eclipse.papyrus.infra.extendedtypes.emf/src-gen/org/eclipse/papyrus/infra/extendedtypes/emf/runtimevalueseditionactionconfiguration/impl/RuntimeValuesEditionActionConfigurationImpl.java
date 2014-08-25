@@ -5,19 +5,14 @@ package org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionco
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfigurationPackage;
 import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.ViewToDisplay;
-
 import org.eclipse.papyrus.infra.extendedtypes.impl.SemanticActionConfigurationImpl;
 
 /**
@@ -38,7 +33,7 @@ public class RuntimeValuesEditionActionConfigurationImpl extends SemanticActionC
 	 * The cached value of the '{@link #getViewsToDisplay() <em>Views To Display</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getViewsToDisplay()
 	 * @generated
 	 * @ordered
@@ -48,7 +43,7 @@ public class RuntimeValuesEditionActionConfigurationImpl extends SemanticActionC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RuntimeValuesEditionActionConfigurationImpl() {
@@ -58,7 +53,7 @@ public class RuntimeValuesEditionActionConfigurationImpl extends SemanticActionC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,7 +64,7 @@ public class RuntimeValuesEditionActionConfigurationImpl extends SemanticActionC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +78,7 @@ public class RuntimeValuesEditionActionConfigurationImpl extends SemanticActionC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +93,7 @@ public class RuntimeValuesEditionActionConfigurationImpl extends SemanticActionC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +108,7 @@ public class RuntimeValuesEditionActionConfigurationImpl extends SemanticActionC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -131,7 +126,7 @@ public class RuntimeValuesEditionActionConfigurationImpl extends SemanticActionC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +142,7 @@ public class RuntimeValuesEditionActionConfigurationImpl extends SemanticActionC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

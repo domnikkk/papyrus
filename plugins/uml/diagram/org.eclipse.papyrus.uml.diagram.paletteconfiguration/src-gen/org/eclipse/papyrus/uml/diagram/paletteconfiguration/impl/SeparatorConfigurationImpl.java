@@ -23,7 +23,7 @@ public class SeparatorConfigurationImpl extends LeafConfigurationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SeparatorConfigurationImpl() {
@@ -33,7 +33,7 @@ public class SeparatorConfigurationImpl extends LeafConfigurationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

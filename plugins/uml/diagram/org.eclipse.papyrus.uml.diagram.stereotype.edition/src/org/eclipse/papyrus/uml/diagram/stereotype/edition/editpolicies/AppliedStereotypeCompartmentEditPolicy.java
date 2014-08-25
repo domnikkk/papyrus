@@ -28,6 +28,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.commands.SetNodeVisibilityCommand;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpart.IPapyrusEditPart;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.GMFUnsafe;
 import org.eclipse.papyrus.uml.appearance.helper.AppliedStereotypeHelper;
 import org.eclipse.papyrus.uml.appearance.helper.UMLVisualInformationPapyrusConstant;
@@ -76,7 +77,7 @@ public class AppliedStereotypeCompartmentEditPolicy extends AppliedStereotypeNod
 	/**
 	 * this method has in charge to calculate if a compartment must be displayed.
 	 * To know that it computes if a property of stereotype is displayed into it.
-	 * 
+	 *
 	 * @param applicationOfStereotype
 	 *            the eobject that represent the stereotype application
 	 * @return true if the compartment display a property of sterotype

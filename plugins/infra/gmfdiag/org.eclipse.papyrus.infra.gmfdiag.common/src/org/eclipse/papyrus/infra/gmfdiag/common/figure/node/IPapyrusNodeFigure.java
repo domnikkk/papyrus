@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.infra.gmfdiag.common.figure.node;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.swt.graphics.Color;
 
 /**

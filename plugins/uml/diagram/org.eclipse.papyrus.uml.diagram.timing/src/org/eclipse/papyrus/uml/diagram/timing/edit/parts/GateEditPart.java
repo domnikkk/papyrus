@@ -134,7 +134,7 @@ public class GateEditPart extends BorderedBorderItemEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.timing.custom.figures.GateFigure
-	 * 
+	 *
 	 * @generated
 	 */
 	public GateFigure getPrimaryShape() {
@@ -183,7 +183,7 @@ public class GateEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
 	 *            instance of generated figure class
 	 * @generated

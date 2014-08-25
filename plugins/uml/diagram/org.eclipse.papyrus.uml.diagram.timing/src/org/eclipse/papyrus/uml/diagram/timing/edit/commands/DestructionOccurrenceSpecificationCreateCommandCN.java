@@ -50,7 +50,7 @@ public class DestructionOccurrenceSpecificationCreateCommandCN extends EditEleme
 
 	/**
 	 * FIXME: replace with setElementToEdit()
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

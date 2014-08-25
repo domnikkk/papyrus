@@ -41,7 +41,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	 * The cached value of the '{@link #getOwnedElement() <em>Owned Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwnedElement()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SingleValuedContainmentReferenceInstanceImpl() {
@@ -61,7 +61,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject getOwnedElement() {
@@ -82,7 +82,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOwnedElement(EObject newOwnedElement, NotificationChain msgs) {
@@ -102,7 +102,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOwnedElement(EObject newOwnedElement) {
@@ -127,7 +127,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class SingleValuedContainmentReferenceInstanceImpl extends AbstractRefere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

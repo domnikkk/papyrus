@@ -18,6 +18,7 @@ import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.StructuredClassifier;
 
 /**
  * <pre>
@@ -31,7 +32,7 @@ public class StructuredClassifierHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Forbid move command of a {@link Connector} to a {@link StructuredClassifier}.
 	 * </pre>
 	 */

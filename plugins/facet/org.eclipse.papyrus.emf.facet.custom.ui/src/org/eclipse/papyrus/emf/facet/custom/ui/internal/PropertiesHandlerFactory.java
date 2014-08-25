@@ -14,13 +14,13 @@
 package org.eclipse.papyrus.emf.facet.custom.ui.internal;
 
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.ui.IContentPropertiesHandler;
 import org.eclipse.papyrus.emf.facet.custom.ui.IContentPropertiesHandlerFactory;
 import org.eclipse.papyrus.emf.facet.custom.ui.ISelectionPropertiesHandler;
 import org.eclipse.papyrus.emf.facet.custom.ui.ISelectionPropertiesHandlerFactory;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.exported.ILabelPropertiesHandler;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.exported.ILabelPropertiesHandlerFactory;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 
 public class PropertiesHandlerFactory implements
 		IContentPropertiesHandlerFactory, ILabelPropertiesHandlerFactory, ISelectionPropertiesHandlerFactory {

@@ -37,7 +37,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	 * The default value of the '{@link #getValueSingle() <em>Value Single</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValueSingle()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	 * The cached value of the '{@link #getValueSingle() <em>Value Single</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValueSingle()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	 * The default value of the '{@link #getValueMultiple() <em>Value Multiple</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValueMultiple()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	 * The cached value of the '{@link #getValueMultiple() <em>Value Multiple</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValueMultiple()
 	 * @generated
 	 * @ordered
@@ -102,7 +102,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyDefinitionImpl() {
@@ -112,7 +112,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -133,7 +133,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -147,7 +147,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public State getValueSingle() {
@@ -157,7 +157,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValueSingle(State newValueSingle) {
@@ -171,7 +171,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public State getValueMultiple() {
@@ -181,7 +181,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValueMultiple(State newValueMultiple) {
@@ -195,7 +195,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +236,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -258,7 +258,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +277,7 @@ public class PropertyDefinitionImpl extends EObjectImpl implements PropertyDefin
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -75,7 +75,7 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.editor.presentation.UMLModelWizard#addPages()
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.uml2.uml.editor.presentation.UMLModelWizard#createInitialModel()
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.dialogs.DialogPage#setVisible(boolean)
 		 */
 		@Override
@@ -222,7 +222,7 @@ public class UMLModelWithProfileWizard extends UMLModelWizard {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
 		 */
 		public void createControl(Composite parent) {

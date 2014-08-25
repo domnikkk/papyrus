@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.QualifiedNameWithBinding;
 import org.eclipse.papyrus.uml.alf.alf.TemplateBinding;
@@ -112,8 +109,9 @@ public class QualifiedNameWithBindingImpl extends MinimalEObjectImpl.Container i
   {
     String oldId = id;
     id = newId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.QUALIFIED_NAME_WITH_BINDING__ID, oldId, id));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.QUALIFIED_NAME_WITH_BINDING__ID, oldId, id));
+	}
   }
 
   /**
@@ -138,7 +136,11 @@ public class QualifiedNameWithBindingImpl extends MinimalEObjectImpl.Container i
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.QUALIFIED_NAME_WITH_BINDING__BINDING, oldBinding, newBinding);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -153,15 +155,20 @@ public class QualifiedNameWithBindingImpl extends MinimalEObjectImpl.Container i
     if (newBinding != binding)
     {
       NotificationChain msgs = null;
-      if (binding != null)
-        msgs = ((InternalEObject)binding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.QUALIFIED_NAME_WITH_BINDING__BINDING, null, msgs);
-      if (newBinding != null)
-        msgs = ((InternalEObject)newBinding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.QUALIFIED_NAME_WITH_BINDING__BINDING, null, msgs);
+      if (binding != null) {
+		msgs = ((InternalEObject)binding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.QUALIFIED_NAME_WITH_BINDING__BINDING, null, msgs);
+	}
+      if (newBinding != null) {
+		msgs = ((InternalEObject)newBinding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.QUALIFIED_NAME_WITH_BINDING__BINDING, null, msgs);
+	}
       msgs = basicSetBinding(newBinding, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.QUALIFIED_NAME_WITH_BINDING__BINDING, newBinding, newBinding));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.QUALIFIED_NAME_WITH_BINDING__BINDING, newBinding, newBinding));
+	}
   }
 
   /**
@@ -186,7 +193,11 @@ public class QualifiedNameWithBindingImpl extends MinimalEObjectImpl.Container i
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.QUALIFIED_NAME_WITH_BINDING__REMAINING, oldRemaining, newRemaining);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -201,15 +212,20 @@ public class QualifiedNameWithBindingImpl extends MinimalEObjectImpl.Container i
     if (newRemaining != remaining)
     {
       NotificationChain msgs = null;
-      if (remaining != null)
-        msgs = ((InternalEObject)remaining).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.QUALIFIED_NAME_WITH_BINDING__REMAINING, null, msgs);
-      if (newRemaining != null)
-        msgs = ((InternalEObject)newRemaining).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.QUALIFIED_NAME_WITH_BINDING__REMAINING, null, msgs);
+      if (remaining != null) {
+		msgs = ((InternalEObject)remaining).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.QUALIFIED_NAME_WITH_BINDING__REMAINING, null, msgs);
+	}
+      if (newRemaining != null) {
+		msgs = ((InternalEObject)newRemaining).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.QUALIFIED_NAME_WITH_BINDING__REMAINING, null, msgs);
+	}
       msgs = basicSetRemaining(newRemaining, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.QUALIFIED_NAME_WITH_BINDING__REMAINING, newRemaining, newRemaining));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.QUALIFIED_NAME_WITH_BINDING__REMAINING, newRemaining, newRemaining));
+	}
   }
 
   /**
@@ -324,7 +340,9 @@ public class QualifiedNameWithBindingImpl extends MinimalEObjectImpl.Container i
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (id: ");

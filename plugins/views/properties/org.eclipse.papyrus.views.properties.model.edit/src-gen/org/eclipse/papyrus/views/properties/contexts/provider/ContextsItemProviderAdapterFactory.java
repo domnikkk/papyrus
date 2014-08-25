@@ -32,7 +32,7 @@ import org.eclipse.papyrus.views.properties.contexts.util.ContextsAdapterFactory
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -40,7 +40,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -49,7 +49,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -58,7 +58,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -67,7 +67,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ContextsItemProviderAdapterFactory() {
@@ -82,7 +82,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.views.properties.contexts.Context} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ContextItemProvider contextItemProvider;
@@ -91,7 +91,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.views.properties.contexts.Context}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.views.properties.contexts.Tab} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TabItemProvider tabItemProvider;
@@ -116,7 +116,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.views.properties.contexts.Tab}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.views.properties.contexts.View} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ViewItemProvider viewItemProvider;
@@ -141,7 +141,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.views.properties.contexts.View}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.views.properties.contexts.Section} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SectionItemProvider sectionItemProvider;
@@ -166,7 +166,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.views.properties.contexts.Section}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.views.properties.contexts.DataContextElement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DataContextElementItemProvider dataContextElementItemProvider;
@@ -191,7 +191,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.views.properties.contexts.DataContextElement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.views.properties.contexts.Property} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyItemProvider propertyItemProvider;
@@ -216,7 +216,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.views.properties.contexts.Property}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.views.properties.contexts.UnknownProperty} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UnknownPropertyItemProvider unknownPropertyItemProvider;
@@ -241,7 +241,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.views.properties.contexts.UnknownProperty}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.views.properties.contexts.DataContextPackage} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DataContextPackageItemProvider dataContextPackageItemProvider;
@@ -266,7 +266,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.views.properties.contexts.DataContextPackage}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +282,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.views.properties.contexts.DataContextRoot} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DataContextRootItemProvider dataContextRootItemProvider;
@@ -291,7 +291,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.views.properties.contexts.DataContextRoot}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,7 +307,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,7 +319,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -330,7 +330,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -342,7 +342,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -353,7 +353,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +372,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,7 +384,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -396,7 +396,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -412,7 +412,7 @@ public class ContextsItemProviderAdapterFactory extends ContextsAdapterFactory i
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

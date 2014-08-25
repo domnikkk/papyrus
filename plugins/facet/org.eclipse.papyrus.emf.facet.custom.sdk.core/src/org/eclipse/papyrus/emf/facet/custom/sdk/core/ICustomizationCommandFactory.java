@@ -13,12 +13,12 @@
 package org.eclipse.papyrus.emf.facet.custom.sdk.core;
 
 import org.eclipse.emf.common.command.Command;
-import org.eclipse.papyrus.emf.facet.custom.sdk.core.internal.CustomizationCommandFactory;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization;
+import org.eclipse.papyrus.emf.facet.custom.sdk.core.internal.CustomizationCommandFactory;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
 
 /**
  * This interface provide a command factory. A command modify the editingDomain.

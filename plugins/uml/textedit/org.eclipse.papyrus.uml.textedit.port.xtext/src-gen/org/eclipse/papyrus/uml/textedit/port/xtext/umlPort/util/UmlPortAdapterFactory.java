@@ -4,19 +4,26 @@ package org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.*;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BoundSpecification;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifiersRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.MultiplicityRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.QualifiedName;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RedefinesRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage
  * @generated
  */
@@ -26,7 +33,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static UmlPortPackage modelPackage;
@@ -35,7 +42,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UmlPortAdapterFactory()
@@ -51,7 +58,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -73,7 +80,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UmlPortSwitch<Adapter> modelSwitch =
@@ -150,7 +157,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
@@ -169,7 +176,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule
 	 * @generated
@@ -185,7 +192,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule
 	 * @generated
@@ -201,7 +208,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.QualifiedName
 	 * @generated
@@ -217,7 +224,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.MultiplicityRule
 	 * @generated
@@ -233,7 +240,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BoundSpecification
 	 * @generated
@@ -249,7 +256,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifiersRule
 	 * @generated
@@ -265,7 +272,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification
 	 * @generated
@@ -281,7 +288,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RedefinesRule
 	 * @generated
@@ -297,7 +304,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule
 	 * @generated
@@ -313,7 +320,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule
 	 * @generated
@@ -328,7 +335,7 @@ public class UmlPortAdapterFactory extends AdapterFactoryImpl
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */

@@ -90,7 +90,7 @@ public class LinesBorder extends LineBorder {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Border#getInsets(org.eclipse.draw2d.IFigure)
 	 */
 	@Override

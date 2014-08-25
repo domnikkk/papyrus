@@ -42,7 +42,7 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ModelAutoCreateItemProvider
@@ -57,7 +57,7 @@ public class ModelAutoCreateItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelAutoCreateItemProvider(AdapterFactory adapterFactory) {
@@ -68,7 +68,7 @@ public class ModelAutoCreateItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,7 +87,7 @@ public class ModelAutoCreateItemProvider
 	 * This adds a property descriptor for the Feature feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected void addFeaturePropertyDescriptor(Object object) {
@@ -110,7 +110,7 @@ public class ModelAutoCreateItemProvider
 	 * This adds a property descriptor for the Origin feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addOriginPropertyDescriptor(Object object) {
@@ -133,7 +133,7 @@ public class ModelAutoCreateItemProvider
 	 * This adds a property descriptor for the Creation Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected void addCreationTypePropertyDescriptor(Object object) {
@@ -156,7 +156,7 @@ public class ModelAutoCreateItemProvider
 	 * This returns ModelAutoCreate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT - Custom Image
 	 */
 	@Override
@@ -190,7 +190,7 @@ public class ModelAutoCreateItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class ModelAutoCreateItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class ModelAutoCreateItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

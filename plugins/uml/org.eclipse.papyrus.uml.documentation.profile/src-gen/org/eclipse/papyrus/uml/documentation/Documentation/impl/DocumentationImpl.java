@@ -5,20 +5,14 @@ package org.eclipse.papyrus.uml.documentation.Documentation.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.papyrus.uml.documentation.Documentation.Documentation;
 import org.eclipse.papyrus.uml.documentation.Documentation.DocumentationPackage;
-
 import org.eclipse.uml2.uml.Comment;
 
 /**
@@ -40,7 +34,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	 * The cached value of the '{@link #getBase_Comment() <em>Base Comment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Comment()
 	 * @generated
 	 * @ordered
@@ -51,7 +45,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	 * The cached value of the '{@link #getAssociatedResource() <em>Associated Resource</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAssociatedResource()
 	 * @generated
 	 * @ordered
@@ -61,7 +55,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DocumentationImpl() {
@@ -71,7 +65,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +76,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +96,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Comment basicGetBase_Comment() {
@@ -112,7 +106,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +121,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +135,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +155,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -182,7 +176,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +195,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +212,7 @@ public class DocumentationImpl extends MinimalEObjectImpl.Container implements D
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

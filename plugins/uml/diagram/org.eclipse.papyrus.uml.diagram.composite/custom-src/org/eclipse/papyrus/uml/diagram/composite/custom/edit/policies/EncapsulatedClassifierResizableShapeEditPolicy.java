@@ -43,7 +43,7 @@ public class EncapsulatedClassifierResizableShapeEditPolicy extends PapyrusResiz
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Extends the default resize command by :
 	 * - fixing possible Port location issues before resizing parent
 	 * - make the default parent resize

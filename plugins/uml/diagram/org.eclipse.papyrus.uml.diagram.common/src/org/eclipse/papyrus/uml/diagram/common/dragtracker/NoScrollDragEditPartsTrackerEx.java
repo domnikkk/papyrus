@@ -85,7 +85,7 @@ public class NoScrollDragEditPartsTrackerEx extends DragEditPartsTrackerEx {
 
 	/**
 	 * Returns the border size
-	 * 
+	 *
 	 * @return the border size
 	 */
 	protected int getBorder() {
@@ -94,7 +94,7 @@ public class NoScrollDragEditPartsTrackerEx extends DragEditPartsTrackerEx {
 
 	/**
 	 * Sets the border size
-	 * 
+	 *
 	 * @param border
 	 *            the new border size
 	 */

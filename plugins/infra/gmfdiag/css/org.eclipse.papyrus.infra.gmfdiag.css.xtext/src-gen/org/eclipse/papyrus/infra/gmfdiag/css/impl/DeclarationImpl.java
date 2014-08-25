@@ -13,13 +13,10 @@ package org.eclipse.papyrus.infra.gmfdiag.css.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.Declaration;
 import org.eclipse.papyrus.infra.gmfdiag.css.Expression;
@@ -45,7 +42,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	 * The default value of the '{@link #getProperty() <em>Property</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProperty()
 	 * @generated
 	 * @ordered
@@ -56,7 +53,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	 * The cached value of the '{@link #getProperty() <em>Property</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProperty()
 	 * @generated
 	 * @ordered
@@ -67,7 +64,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExpression()
 	 * @generated
 	 * @ordered
@@ -78,7 +75,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	 * The default value of the '{@link #isImportant() <em>Important</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isImportant()
 	 * @generated
 	 * @ordered
@@ -89,7 +86,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	 * The cached value of the '{@link #isImportant() <em>Important</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isImportant()
 	 * @generated
 	 * @ordered
@@ -99,7 +96,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DeclarationImpl()
@@ -110,7 +107,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +119,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +131,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +147,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +159,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
@@ -184,7 +181,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +209,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +221,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +237,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +254,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +275,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +299,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +323,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -347,7 +344,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

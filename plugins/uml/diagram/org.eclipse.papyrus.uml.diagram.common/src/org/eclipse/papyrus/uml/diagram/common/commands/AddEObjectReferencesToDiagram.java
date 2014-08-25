@@ -69,7 +69,7 @@ public class AddEObjectReferencesToDiagram extends AbstractTransactionalCommand 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.operations.AbstractOperation#canExecute()
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class AddEObjectReferencesToDiagram extends AbstractTransactionalCommand 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.emf.commands.core.command.
 	 * AbstractTransactionalCommand
 	 * #doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,

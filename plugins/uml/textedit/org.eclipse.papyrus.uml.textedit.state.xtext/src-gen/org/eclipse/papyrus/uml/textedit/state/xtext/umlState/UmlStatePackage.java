@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.UmlStateFactory
  * @model kind="package"
  * @generated
@@ -30,7 +30,7 @@ public interface UmlStatePackage extends EPackage
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "umlState";
@@ -39,7 +39,7 @@ public interface UmlStatePackage extends EPackage
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/uml/textedit/state/xtext/UmlState";
@@ -48,7 +48,7 @@ public interface UmlStatePackage extends EPackage
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "umlState";
@@ -57,7 +57,7 @@ public interface UmlStatePackage extends EPackage
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	UmlStatePackage eINSTANCE = org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl.init();
@@ -66,7 +66,7 @@ public interface UmlStatePackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.StateRuleImpl <em>State Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.StateRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getStateRule()
 	 * @generated
@@ -77,7 +77,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -87,7 +87,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Submachine</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Entry</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Do</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +117,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Exit</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +127,7 @@ public interface UmlStatePackage extends EPackage
 	 * The number of structural features of the '<em>State Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +137,7 @@ public interface UmlStatePackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.SubmachineRuleImpl <em>Submachine Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.SubmachineRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getSubmachineRule()
 	 * @generated
@@ -148,7 +148,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -158,7 +158,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Submachine</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -168,7 +168,7 @@ public interface UmlStatePackage extends EPackage
 	 * The number of structural features of the '<em>Submachine Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +178,7 @@ public interface UmlStatePackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.QualifiedNameImpl <em>Qualified Name</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.QualifiedNameImpl
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getQualifiedName()
 	 * @generated
@@ -189,7 +189,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Path</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,7 +199,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Remaining</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -209,7 +209,7 @@ public interface UmlStatePackage extends EPackage
 	 * The number of structural features of the '<em>Qualified Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -219,7 +219,7 @@ public interface UmlStatePackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.EntryRuleImpl <em>Entry Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.EntryRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getEntryRule()
 	 * @generated
@@ -230,7 +230,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -240,7 +240,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Behavior Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -250,7 +250,7 @@ public interface UmlStatePackage extends EPackage
 	 * The number of structural features of the '<em>Entry Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -260,7 +260,7 @@ public interface UmlStatePackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.DoRuleImpl <em>Do Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.DoRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getDoRule()
 	 * @generated
@@ -271,7 +271,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -281,7 +281,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Behavior Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -291,7 +291,7 @@ public interface UmlStatePackage extends EPackage
 	 * The number of structural features of the '<em>Do Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -301,7 +301,7 @@ public interface UmlStatePackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.ExitRuleImpl <em>Exit Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.ExitRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getExitRule()
 	 * @generated
@@ -312,7 +312,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -322,7 +322,7 @@ public interface UmlStatePackage extends EPackage
 	 * The feature id for the '<em><b>Behavior Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -332,7 +332,7 @@ public interface UmlStatePackage extends EPackage
 	 * The number of structural features of the '<em>Exit Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -342,7 +342,7 @@ public interface UmlStatePackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.BehaviorKind <em>Behavior Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.BehaviorKind
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getBehaviorKind()
 	 * @generated
@@ -354,7 +354,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule <em>State Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>State Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule
 	 * @generated
@@ -365,7 +365,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule#getName()
 	 * @see #getStateRule()
@@ -377,7 +377,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule#getSubmachine <em>Submachine</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Submachine</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule#getSubmachine()
 	 * @see #getStateRule()
@@ -389,7 +389,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule#getEntry <em>Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Entry</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule#getEntry()
 	 * @see #getStateRule()
@@ -401,7 +401,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule#getDo <em>Do</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Do</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule#getDo()
 	 * @see #getStateRule()
@@ -413,7 +413,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule#getExit <em>Exit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Exit</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule#getExit()
 	 * @see #getStateRule()
@@ -425,7 +425,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.SubmachineRule <em>Submachine Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Submachine Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.SubmachineRule
 	 * @generated
@@ -436,7 +436,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.SubmachineRule#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.SubmachineRule#getPath()
 	 * @see #getSubmachineRule()
@@ -448,7 +448,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.SubmachineRule#getSubmachine <em>Submachine</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Submachine</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.SubmachineRule#getSubmachine()
 	 * @see #getSubmachineRule()
@@ -460,7 +460,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.QualifiedName <em>Qualified Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Qualified Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.QualifiedName
 	 * @generated
@@ -471,7 +471,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.QualifiedName#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.QualifiedName#getPath()
 	 * @see #getQualifiedName()
@@ -483,7 +483,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.QualifiedName#getRemaining <em>Remaining</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Remaining</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.QualifiedName#getRemaining()
 	 * @see #getQualifiedName()
@@ -495,7 +495,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.EntryRule <em>Entry Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Entry Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.EntryRule
 	 * @generated
@@ -506,7 +506,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.EntryRule#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.EntryRule#getKind()
 	 * @see #getEntryRule()
@@ -518,7 +518,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.EntryRule#getBehaviorName <em>Behavior Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Behavior Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.EntryRule#getBehaviorName()
 	 * @see #getEntryRule()
@@ -530,7 +530,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.DoRule <em>Do Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Do Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.DoRule
 	 * @generated
@@ -541,7 +541,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.DoRule#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.DoRule#getKind()
 	 * @see #getDoRule()
@@ -553,7 +553,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.DoRule#getBehaviorName <em>Behavior Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Behavior Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.DoRule#getBehaviorName()
 	 * @see #getDoRule()
@@ -565,7 +565,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.ExitRule <em>Exit Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Exit Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.ExitRule
 	 * @generated
@@ -576,7 +576,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.ExitRule#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.ExitRule#getKind()
 	 * @see #getExitRule()
@@ -588,7 +588,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.ExitRule#getBehaviorName <em>Behavior Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Behavior Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.ExitRule#getBehaviorName()
 	 * @see #getExitRule()
@@ -600,7 +600,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.BehaviorKind <em>Behavior Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Behavior Kind</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.BehaviorKind
 	 * @generated
@@ -611,7 +611,7 @@ public interface UmlStatePackage extends EPackage
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -627,7 +627,7 @@ public interface UmlStatePackage extends EPackage
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals
@@ -636,7 +636,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.StateRuleImpl <em>State Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.StateRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getStateRule()
 		 * @generated
@@ -647,7 +647,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STATE_RULE__NAME = eINSTANCE.getStateRule_Name();
@@ -656,7 +656,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Submachine</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STATE_RULE__SUBMACHINE = eINSTANCE.getStateRule_Submachine();
@@ -665,7 +665,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Entry</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STATE_RULE__ENTRY = eINSTANCE.getStateRule_Entry();
@@ -674,7 +674,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Do</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STATE_RULE__DO = eINSTANCE.getStateRule_Do();
@@ -683,7 +683,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Exit</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STATE_RULE__EXIT = eINSTANCE.getStateRule_Exit();
@@ -692,7 +692,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.SubmachineRuleImpl <em>Submachine Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.SubmachineRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getSubmachineRule()
 		 * @generated
@@ -703,7 +703,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Path</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SUBMACHINE_RULE__PATH = eINSTANCE.getSubmachineRule_Path();
@@ -712,7 +712,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Submachine</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SUBMACHINE_RULE__SUBMACHINE = eINSTANCE.getSubmachineRule_Submachine();
@@ -721,7 +721,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.QualifiedNameImpl <em>Qualified Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.QualifiedNameImpl
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getQualifiedName()
 		 * @generated
@@ -732,7 +732,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Path</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference QUALIFIED_NAME__PATH = eINSTANCE.getQualifiedName_Path();
@@ -741,7 +741,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Remaining</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference QUALIFIED_NAME__REMAINING = eINSTANCE.getQualifiedName_Remaining();
@@ -750,7 +750,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.EntryRuleImpl <em>Entry Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.EntryRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getEntryRule()
 		 * @generated
@@ -761,7 +761,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ENTRY_RULE__KIND = eINSTANCE.getEntryRule_Kind();
@@ -770,7 +770,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Behavior Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ENTRY_RULE__BEHAVIOR_NAME = eINSTANCE.getEntryRule_BehaviorName();
@@ -779,7 +779,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.DoRuleImpl <em>Do Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.DoRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getDoRule()
 		 * @generated
@@ -790,7 +790,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DO_RULE__KIND = eINSTANCE.getDoRule_Kind();
@@ -799,7 +799,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Behavior Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DO_RULE__BEHAVIOR_NAME = eINSTANCE.getDoRule_BehaviorName();
@@ -808,7 +808,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.ExitRuleImpl <em>Exit Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.ExitRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getExitRule()
 		 * @generated
@@ -819,7 +819,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EXIT_RULE__KIND = eINSTANCE.getExitRule_Kind();
@@ -828,7 +828,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '<em><b>Behavior Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EXIT_RULE__BEHAVIOR_NAME = eINSTANCE.getExitRule_BehaviorName();
@@ -837,7 +837,7 @@ public interface UmlStatePackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.state.xtext.umlState.BehaviorKind <em>Behavior Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.BehaviorKind
 		 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl.UmlStatePackageImpl#getBehaviorKind()
 		 * @generated

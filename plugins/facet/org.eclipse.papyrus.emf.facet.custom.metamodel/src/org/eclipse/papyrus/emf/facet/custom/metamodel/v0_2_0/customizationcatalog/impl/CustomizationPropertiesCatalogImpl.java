@@ -44,7 +44,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	 * The cached value of the '{@link #getInstalledEntries() <em>Installed Entries</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInstalledEntries()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CustomizationPropertiesCatalogImpl() {
@@ -86,7 +86,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<EObject> getInstalledEntries() {
@@ -110,7 +110,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -120,7 +120,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -134,7 +134,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -172,7 +172,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public class CustomizationPropertiesCatalogImpl extends EObjectImpl implements C
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

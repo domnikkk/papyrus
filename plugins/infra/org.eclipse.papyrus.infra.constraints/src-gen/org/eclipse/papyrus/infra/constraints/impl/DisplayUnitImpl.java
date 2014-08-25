@@ -40,7 +40,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstraints()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	 * The default value of the '{@link #getElementMultiplicity() <em>Element Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementMultiplicity()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	 * The cached value of the '{@link #getElementMultiplicity() <em>Element Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementMultiplicity()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DisplayUnitImpl() {
@@ -81,7 +81,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ConstraintDescriptor> getConstraints() {
@@ -105,7 +105,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getElementMultiplicity() {
@@ -115,7 +115,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElementMultiplicity(int newElementMultiplicity) {
@@ -129,7 +129,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -145,7 +145,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -198,7 +198,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public abstract class DisplayUnitImpl extends EObjectImpl implements DisplayUnit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AbstractServiceDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.InjectedService;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage;
@@ -31,7 +28,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	 * The cached value of the '{@link #getService() <em>Service</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getService()
 	 * @generated
 	 * @ordered
@@ -41,7 +38,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InjectedServiceImpl() {
@@ -51,7 +48,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -62,7 +59,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +79,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AbstractServiceDesc basicGetService() {
@@ -92,7 +89,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +104,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +122,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +138,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +154,7 @@ public class InjectedServiceImpl extends InjectedValueImpl implements InjectedSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -29,7 +29,7 @@ import org.eclipse.swt.widgets.Control;
 
 /**
  * Represents a preference combo field, which content can be updated
- * 
+ *
  * @author Laurent Wouters
  */
 public class UpdatableComboBoxFieldEditor extends FieldEditor {
@@ -42,7 +42,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/**
 	 * Initializes the field
-	 * 
+	 *
 	 * @param preference
 	 *            The target preference
 	 * @param label
@@ -79,7 +79,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/**
 	 * Gets the selected value
-	 * 
+	 *
 	 * @return The selection
 	 */
 	public EObject getSelection() {
@@ -88,7 +88,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/**
 	 * Sets the selected value
-	 * 
+	 *
 	 * @param obj
 	 *            The selection as an EObject
 	 */
@@ -99,7 +99,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/**
 	 * Sets the selected value
-	 * 
+	 *
 	 * @param value
 	 *            The selection as its display value
 	 */
@@ -110,7 +110,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/**
 	 * Changes the content of the combo
-	 * 
+	 *
 	 * @param data
 	 *            The new data
 	 * @param attribute
@@ -138,7 +138,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/**
 	 * Gets the string representation of the given object
-	 * 
+	 *
 	 * @param object
 	 *            An object
 	 * @return Its string representation
@@ -150,7 +150,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/**
 	 * Gets the display string of the given object
-	 * 
+	 *
 	 * @param object
 	 *            An object
 	 * @return The display string
@@ -162,7 +162,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#adjustForNumColumns(int)
 	 */
 	@Override
@@ -172,7 +172,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doFillIntoGrid(org.eclipse.swt.widgets.Composite, int)
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doLoad()
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doLoadDefault()
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/**
 	 * Loads the display data from the given value for selection
-	 * 
+	 *
 	 * @param value
 	 */
 	private void load(String value) {
@@ -237,7 +237,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doStore()
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#getNumberOfControls()
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class UpdatableComboBoxFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#setEnabled(boolean,
 	 * org.eclipse.swt.widgets.Composite)
 	 */

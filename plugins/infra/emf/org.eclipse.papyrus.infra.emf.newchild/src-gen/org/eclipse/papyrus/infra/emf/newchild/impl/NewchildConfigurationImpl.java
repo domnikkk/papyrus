@@ -43,7 +43,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	 * The cached value of the '{@link #getRoots() <em>Roots</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRoots()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	 * The cached value of the '{@link #getNewChildPolicies() <em>New Child Policies</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNewChildPolicies()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NewchildConfigurationImpl() {
@@ -96,7 +96,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<MenuRoot> getRoots() {
@@ -120,7 +120,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -130,7 +130,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -144,7 +144,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<NewChildPolicySet> getNewChildPolicies() {
@@ -157,7 +157,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -218,7 +218,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +240,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class NewchildConfigurationImpl extends EObjectImpl implements NewchildCo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

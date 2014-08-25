@@ -29,7 +29,7 @@ public interface EfacetcatalogFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	EfacetcatalogFactory eINSTANCE = org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.impl.EfacetcatalogFactoryImpl.init();
@@ -38,7 +38,7 @@ public interface EfacetcatalogFactory extends EFactory {
 	 * Returns a new object of class '<em>Query Set Catalog</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Query Set Catalog</em>'.
 	 * @generated
 	 */
@@ -48,7 +48,7 @@ public interface EfacetcatalogFactory extends EFactory {
 	 * Returns a new object of class '<em>Facet Set Catalog</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Facet Set Catalog</em>'.
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface EfacetcatalogFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

@@ -23,8 +23,8 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.papyrus.uml.diagram.common.providers.IPasteCommandProvider;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
+import org.eclipse.papyrus.uml.diagram.common.providers.IPasteCommandProvider;
 import org.osgi.framework.Bundle;
 
 /**

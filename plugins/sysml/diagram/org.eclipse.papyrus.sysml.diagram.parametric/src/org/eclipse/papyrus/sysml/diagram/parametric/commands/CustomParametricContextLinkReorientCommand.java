@@ -21,7 +21,6 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.service.types.utils.NamedElementHelper;
@@ -33,7 +32,7 @@ import org.eclipse.uml2.uml.Type;
 
 /**
  * A context link must have a Constraint as source and a Namespace as target
- * 
+ *
  * @See ContextLinkReorientCommand
  *
  */

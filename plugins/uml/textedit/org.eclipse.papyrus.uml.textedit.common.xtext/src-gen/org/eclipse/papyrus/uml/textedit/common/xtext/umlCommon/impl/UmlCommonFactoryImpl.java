@@ -6,18 +6,22 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.*;
+import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.BoundSpecification;
+import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.Direction;
+import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.MultiplicityRule;
+import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.QualifiedName;
+import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.TypeRule;
+import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonFactory;
+import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage;
+import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.VisibilityKind;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFactory
@@ -26,7 +30,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static UmlCommonFactory init()
@@ -49,7 +53,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UmlCommonFactoryImpl()
@@ -60,7 +64,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +88,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +108,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +128,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +141,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +154,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +167,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +180,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VisibilityKind createVisibilityKindFromString(EDataType eDataType, String initialValue)
@@ -191,7 +195,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertVisibilityKindToString(EDataType eDataType, Object instanceValue)
@@ -202,7 +206,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Direction createDirectionFromString(EDataType eDataType, String initialValue)
@@ -217,7 +221,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDirectionToString(EDataType eDataType, Object instanceValue)
@@ -228,7 +232,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +244,7 @@ public class UmlCommonFactoryImpl extends EFactoryImpl implements UmlCommonFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

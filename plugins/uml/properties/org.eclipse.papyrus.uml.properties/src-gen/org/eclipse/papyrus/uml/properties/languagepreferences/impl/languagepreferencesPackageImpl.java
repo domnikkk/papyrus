@@ -10,9 +10,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.uml.properties.languagepreferences.Editor;
 import org.eclipse.papyrus.uml.properties.languagepreferences.Language;
 import org.eclipse.papyrus.uml.properties.languagepreferences.Preferences;
@@ -23,14 +21,14 @@ import org.eclipse.papyrus.uml.properties.languagepreferences.languagepreference
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class languagepreferencesPackageImpl extends EPackageImpl implements languagepreferencesPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass languageEClass = null;
@@ -38,7 +36,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass editorEClass = null;
@@ -46,7 +44,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass preferencesEClass = null;
@@ -56,7 +54,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.languagepreferencesPackage#eNS_URI
 	 * @see #init()
@@ -69,7 +67,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -80,7 +78,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	 * <p>
 	 * This method is used to initialize {@link languagepreferencesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -115,7 +113,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getLanguage() {
@@ -125,7 +123,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLanguage_Name() {
@@ -135,7 +133,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getLanguage_PreferedEditor() {
@@ -145,7 +143,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getEditor() {
@@ -155,7 +153,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getEditor_Class() {
@@ -165,7 +163,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPreferences() {
@@ -175,7 +173,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPreferences_Languages() {
@@ -185,7 +183,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPreferences_Editors() {
@@ -195,7 +193,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPreferences_DefaultEditor() {
@@ -205,7 +203,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public languagepreferencesFactory getlanguagepreferencesFactory() {
@@ -215,7 +213,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -225,7 +223,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -251,7 +249,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -261,7 +259,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

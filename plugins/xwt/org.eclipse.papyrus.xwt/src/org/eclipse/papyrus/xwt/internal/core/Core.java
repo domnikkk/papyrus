@@ -154,7 +154,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getLogger()
 	 */
 	public ILogger getLogger() {
@@ -166,7 +166,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#setLogger(org.eclipse.papyrus.xwt.ILogger)
 	 */
 	public void setLogger(ILogger log) {
@@ -227,7 +227,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#findConvertor(java.lang.Class,
 	 * java.lang.Class)
 	 */
@@ -247,7 +247,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#registerConvertor(org.eclipse.core.databinding
 	 * .conversion.IConverter)
@@ -306,7 +306,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getConverterService()
 	 */
 	public ConverterService getConverterService() {
@@ -334,7 +334,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#addTracking(org.eclipse.papyrus.xwt.Tracking)
 	 */
@@ -346,7 +346,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#isTracking(org.eclipse.papyrus.xwt.Tracking)
 	 */
@@ -356,7 +356,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getTrackings()
 	 */
 	public Set<Tracking> getTrackings() {
@@ -365,7 +365,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeTracking(org.eclipse.papyrus.xwt.Tracking)
 	 */
@@ -377,7 +377,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#registerCommand(java.lang.String,
 	 * org.eclipse.papyrus.xwt.input.ICommand)
 	 */
@@ -387,7 +387,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getCommand(java.lang.String)
 	 */
 	public ICommand getCommand(String name) {
@@ -396,7 +396,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getCommands()
 	 */
 	public Map<String, ICommand> getCommands() {
@@ -405,7 +405,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#unregisterCommand(java.lang.String)
 	 */
 	public void unregisterCommand(String name) {
@@ -414,7 +414,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#addDefaultStyle(org.eclipse.papyrus.xwt.IStyle)
 	 */
@@ -424,7 +424,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeDefaultStyle(org.eclipse.papyrus.xwt.IStyle
 	 * )
@@ -435,7 +435,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getDefaultStyles()
 	 */
 	public Collection<IStyle> getDefaultStyles() {
@@ -444,7 +444,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#addDataProviderFactory(org.eclipse.papyrus.xwt
 	 * .IDataProviderFactory)
@@ -459,7 +459,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#registerMetaclass(java.lang.Class)
 	 */
 	public IMetaclass registerMetaclass(Class<?> type) {
@@ -468,7 +468,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeDataProviderFactory(org.eclipse.e4
 	 * .xwt.IDataProviderFactory)
@@ -482,7 +482,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeDataProviderFactory(org.eclipse.e4
 	 * .xwt.IDataProviderFactory)
@@ -501,7 +501,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getDataProviderFactories()
 	 */
 	public Collection<IDataProviderFactory> getDataProviderFactories() {
@@ -510,7 +510,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#findDataProvider(java.lang.Object)
 	 */
 	public IDataProvider findDataProvider(Object dataContext) {
@@ -530,7 +530,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getLoadingContext()
 	 */
 	public ILoadingContext getLoadingContext() {
@@ -542,7 +542,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.e4.xwt.IXWTLoader#setLoadingContext(org.eclipse.papyrus.xwt.
 	 * ILoadingContext)
 	 */
@@ -552,7 +552,7 @@ public class Core {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#findLoadingContext(java.lang.Object)
 	 */
 	public ILoadingContext findLoadingContext(Object container) {
@@ -895,7 +895,7 @@ public class Core {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.soyatec.xaml.IExtensionContext#getEncoding()
 		 */
 		public String getEncoding() {

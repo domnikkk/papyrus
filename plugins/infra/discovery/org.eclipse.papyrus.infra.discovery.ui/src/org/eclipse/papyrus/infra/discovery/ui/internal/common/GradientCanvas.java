@@ -71,7 +71,7 @@ public class GradientCanvas extends Canvas {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.swt.widgets.Control#forceFocus()
 	 */
 	@Override

@@ -41,7 +41,7 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 
 	/**
 	 * This variable is used to avoid reentrant call in canUndo/undo/redo
-	 * 
+	 *
 	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=389382
 	 */
 	protected boolean isBusy;
@@ -83,7 +83,7 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.common.core.command.AbstractCommand#
 	 * doExecuteWithResult(org.eclipse .core.runtime.IProgressMonitor,
 	 * org.eclipse.core.runtime.IAdaptable)
@@ -98,7 +98,7 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.core.command.AbstractCommand#doRedoWithResult
 	 * (org.eclipse. core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
 	 */
@@ -116,7 +116,7 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.core.command.AbstractCommand#doUndoWithResult
 	 * (org.eclipse. core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
 	 */
@@ -134,7 +134,7 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.operations.AbstractOperation#canExecute()
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.core.command.AbstractCommand#dispose()
 	 */
 	@Override
@@ -154,7 +154,7 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.operations.AbstractOperation#canUndo()
 	 */
 	@Override

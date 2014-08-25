@@ -27,7 +27,7 @@ public class ComposedElementCreationValidator implements ICreationElementValidat
 
 	/**
 	 * Default Constructor
-	 * 
+	 *
 	 * @param composedValidators
 	 *            the list of composed validators
 	 */
@@ -50,7 +50,7 @@ public class ComposedElementCreationValidator implements ICreationElementValidat
 
 	/**
 	 * Returns the list of composed validators
-	 * 
+	 *
 	 * @return the list of composed validators
 	 */
 	protected List<ICreationElementValidator> getComposedValidators() {

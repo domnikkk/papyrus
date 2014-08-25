@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc;
@@ -22,7 +21,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#servicesContains(java.lang.String) <em>Services Contains</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class RegistryDescTest extends TestCase {
@@ -31,7 +30,7 @@ public class RegistryDescTest extends TestCase {
 	 * The fixture for this Registry Desc test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RegistryDesc fixture = null;
@@ -39,7 +38,7 @@ public class RegistryDescTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -50,7 +49,7 @@ public class RegistryDescTest extends TestCase {
 	 * Constructs a new Registry Desc test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RegistryDescTest(String name) {
@@ -61,7 +60,7 @@ public class RegistryDescTest extends TestCase {
 	 * Sets the fixture for this Registry Desc test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(RegistryDesc fixture) {
@@ -72,7 +71,7 @@ public class RegistryDescTest extends TestCase {
 	 * Returns the fixture for this Registry Desc test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RegistryDesc getFixture() {
@@ -82,7 +81,7 @@ public class RegistryDescTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -94,7 +93,7 @@ public class RegistryDescTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -107,7 +106,7 @@ public class RegistryDescTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getServiceDesc(java.lang.String) <em>Get Service Desc</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getServiceDesc(java.lang.String)
 	 * @generated
 	 */
@@ -121,7 +120,7 @@ public class RegistryDescTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getServiceSetDesc(java.lang.String) <em>Get Service Set Desc</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getServiceSetDesc(java.lang.String)
 	 * @generated
 	 */
@@ -135,7 +134,7 @@ public class RegistryDescTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#servicesContains(java.lang.String) <em>Services Contains</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#servicesContains(java.lang.String)
 	 * @generated
 	 */
@@ -149,7 +148,7 @@ public class RegistryDescTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#serviceSetsContains(java.lang.String) <em>Service Sets Contains</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#serviceSetsContains(java.lang.String)
 	 * @generated
 	 */

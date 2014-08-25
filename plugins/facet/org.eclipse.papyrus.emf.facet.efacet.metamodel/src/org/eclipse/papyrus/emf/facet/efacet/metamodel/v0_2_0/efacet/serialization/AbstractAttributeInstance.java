@@ -41,7 +41,7 @@ public interface AbstractAttributeInstance extends EObject {
 	 * If the meaning of the '<em>EAttribute</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>EAttribute</em>' reference.
 	 * @see #setEAttribute(EAttribute)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SerializationPackage#getAbstractAttributeInstance_EAttribute()
@@ -54,7 +54,7 @@ public interface AbstractAttributeInstance extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractAttributeInstance#getEAttribute <em>EAttribute</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>EAttribute</em>' reference.
 	 * @see #getEAttribute()

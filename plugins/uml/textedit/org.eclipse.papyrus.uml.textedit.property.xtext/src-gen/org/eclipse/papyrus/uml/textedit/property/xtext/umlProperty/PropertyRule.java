@@ -36,7 +36,7 @@ public interface PropertyRule extends EObject
 	 * If the meaning of the '<em>Visibility</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Visibility</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind
 	 * @see #setVisibility(VisibilityKind)
@@ -50,7 +50,7 @@ public interface PropertyRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getVisibility <em>Visibility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Visibility</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind
@@ -66,7 +66,7 @@ public interface PropertyRule extends EObject
 	 * If the meaning of the '<em>Is Derived</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Derived</em>' attribute.
 	 * @see #setIsDerived(String)
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getPropertyRule_IsDerived()
@@ -79,7 +79,7 @@ public interface PropertyRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getIsDerived <em>Is Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Derived</em>' attribute.
 	 * @see #getIsDerived()
@@ -94,7 +94,7 @@ public interface PropertyRule extends EObject
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getPropertyRule_Name()
@@ -107,7 +107,7 @@ public interface PropertyRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -122,7 +122,7 @@ public interface PropertyRule extends EObject
 	 * If the meaning of the '<em>Type</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' containment reference.
 	 * @see #setType(TypeRule)
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getPropertyRule_Type()
@@ -135,7 +135,7 @@ public interface PropertyRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getType <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' containment reference.
 	 * @see #getType()
@@ -150,7 +150,7 @@ public interface PropertyRule extends EObject
 	 * If the meaning of the '<em>Multiplicity</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Multiplicity</em>' containment reference.
 	 * @see #setMultiplicity(MultiplicityRule)
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getPropertyRule_Multiplicity()
@@ -163,7 +163,7 @@ public interface PropertyRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getMultiplicity <em>Multiplicity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Multiplicity</em>' containment reference.
 	 * @see #getMultiplicity()
@@ -178,7 +178,7 @@ public interface PropertyRule extends EObject
 	 * If the meaning of the '<em>Modifiers</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Modifiers</em>' containment reference.
 	 * @see #setModifiers(ModifiersRule)
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getPropertyRule_Modifiers()
@@ -191,7 +191,7 @@ public interface PropertyRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getModifiers <em>Modifiers</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Modifiers</em>' containment reference.
 	 * @see #getModifiers()
@@ -206,7 +206,7 @@ public interface PropertyRule extends EObject
 	 * If the meaning of the '<em>Default</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Default</em>' containment reference.
 	 * @see #setDefault(DefaultValueRule)
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getPropertyRule_Default()
@@ -219,7 +219,7 @@ public interface PropertyRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getDefault <em>Default</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Default</em>' containment reference.
 	 * @see #getDefault()

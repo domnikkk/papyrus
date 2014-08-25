@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,12 +20,12 @@ public class NamespaceDefinition extends Member {
 	// Synthesized Properties
 	public List<Member> ownedMember ;
 	public UnitDefinition unit ;
-	
+
 	// Derived Properties
 	public List<Member> member ;
-	
+
 	// Constraints
-	
+
 	/*
 	 * The members of a namespace definition include references to all owned members. Also, if the
 	 * 	namespace definition has a unit with imports, then the members include imported members with
@@ -35,25 +35,26 @@ public class NamespaceDefinition extends Member {
 	 * 	owned member (as determined by the Member::isDistinguishableFrom operation) are not imported.
 	 */
 	public void checkNamespaceDefinitionMemberDerivation() {
-		
+
 	}
-	
+
 	/*
 	 * The members of a namespace must be distinguishable as determined by the
 	 * 	Member::isDistinguishableFrom operation.
 	 */
 	public void checkNamespaceDefinitionMemberDistinguishaibility() {
-		
+
 	}
-	
-	
+
+
 	// Helper Operations
-	
+
 	/*
 	 * Returns true if the annotation is @external.
 	 */
+	@Override
 	public boolean annotationAllowed(StereotypeAnnotation annotation) {
 		return false ;
 	}
-	
+
 }

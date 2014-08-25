@@ -8,9 +8,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BoundSpecification;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierKind;
@@ -25,14 +23,13 @@ import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortFactory;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
@@ -40,7 +37,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass portRuleEClass = null;
@@ -48,7 +45,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass typeRuleEClass = null;
@@ -56,7 +53,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass qualifiedNameEClass = null;
@@ -64,7 +61,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass multiplicityRuleEClass = null;
@@ -72,7 +69,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass boundSpecificationEClass = null;
@@ -80,7 +77,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass modifiersRuleEClass = null;
@@ -88,7 +85,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass modifierSpecificationEClass = null;
@@ -96,7 +93,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass redefinesRuleEClass = null;
@@ -104,7 +101,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass subsetsRuleEClass = null;
@@ -112,7 +109,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass defaultValueRuleEClass = null;
@@ -120,7 +117,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum visibilityKindEEnum = null;
@@ -128,7 +125,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum modifierKindEEnum = null;
@@ -138,7 +135,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#eNS_URI
 	 * @see #init()
@@ -152,7 +149,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -162,7 +159,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 *
 	 * <p>
 	 * This method is used to initialize {@link UmlPortPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -200,7 +197,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +209,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +221,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +233,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +245,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +257,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +269,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +281,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +293,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +305,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -320,7 +317,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +329,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -344,7 +341,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -356,7 +353,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -368,7 +365,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,7 +377,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +389,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +401,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -416,7 +413,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,7 +425,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -440,7 +437,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -452,7 +449,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -464,7 +461,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -476,7 +473,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -488,7 +485,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -500,7 +497,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -512,7 +509,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -524,7 +521,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -536,7 +533,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -548,7 +545,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -560,7 +557,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -572,7 +569,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -584,7 +581,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -596,7 +593,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -608,7 +605,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -618,7 +615,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents()
@@ -678,7 +675,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -688,7 +685,7 @@ public class UmlPortPackageImpl extends EPackageImpl implements UmlPortPackage
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents()

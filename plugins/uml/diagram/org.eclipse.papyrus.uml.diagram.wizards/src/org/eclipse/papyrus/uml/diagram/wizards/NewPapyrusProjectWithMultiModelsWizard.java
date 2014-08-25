@@ -55,7 +55,7 @@ public class NewPapyrusProjectWithMultiModelsWizard extends NewPapyrusProjectWiz
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.wizards.CreateModelWizard#createSelectDiagramCategoryPage()
 	 */
 	@Override

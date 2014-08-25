@@ -38,7 +38,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRoles()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	 * The cached value of the '{@link #getEClasses() <em>EClasses</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEClasses()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NewChildPolicyImpl() {
@@ -91,7 +91,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +102,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getRoles() {
@@ -115,7 +115,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<EClass> getEClasses() {
@@ -128,7 +128,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -138,7 +138,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -152,7 +152,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -196,7 +196,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +218,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +237,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

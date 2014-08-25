@@ -46,7 +46,7 @@ public class UmlStateScopeProvider extends AbstractDeclarativeScopeProvider {
 
 	/**
 	 * Rule for computing the scope of PropertyRule
-	 * 
+	 *
 	 * @param ctx
 	 * @param ref
 	 * @return scope

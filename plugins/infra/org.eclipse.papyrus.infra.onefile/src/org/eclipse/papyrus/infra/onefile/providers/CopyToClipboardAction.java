@@ -50,7 +50,7 @@ public class CopyToClipboardAction extends CopyResourceAction {
 
 	/**
 	 * Copy in the clipboard the selection
-	 * 
+	 *
 	 * @param selection
 	 */
 	public void copytoClipboardStructuredSelection(IStructuredSelection selection) {

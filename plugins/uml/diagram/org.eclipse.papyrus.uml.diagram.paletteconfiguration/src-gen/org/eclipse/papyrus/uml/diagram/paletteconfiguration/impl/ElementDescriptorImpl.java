@@ -36,7 +36,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	 * The default value of the '{@link #getElementTypeId() <em>Element Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeId()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	 * The cached value of the '{@link #getElementTypeId() <em>Element Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeId()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	 * The cached value of the '{@link #getGraphicalHints() <em>Graphical Hints</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGraphicalHints()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ElementDescriptorImpl() {
@@ -78,7 +78,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,7 +89,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getElementTypeId() {
@@ -99,7 +99,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElementTypeId(String newElementTypeId) {
@@ -113,7 +113,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getGraphicalHints() {
@@ -126,7 +126,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -164,7 +164,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class ElementDescriptorImpl extends EObjectImpl implements ElementDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

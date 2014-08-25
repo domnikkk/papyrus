@@ -26,14 +26,14 @@ public interface ITranscription {
 
 	/**
 	 * finalize the document
-	 * 
+	 *
 	 * @param out
 	 */
 	public abstract void writeEndingDocument(StringBuffer out);
 
 	/**
 	 * init the document
-	 * 
+	 *
 	 * @param out
 	 * @return the string buffer after adding the prefix for the document
 	 */
@@ -41,7 +41,7 @@ public interface ITranscription {
 
 	/**
 	 * write the document title
-	 * 
+	 *
 	 * @param out
 	 * @param documentModel
 	 *            the package
@@ -50,7 +50,7 @@ public interface ITranscription {
 
 	/**
 	 * withe the section title from a package
-	 * 
+	 *
 	 * @param out
 	 * @param level
 	 *            the heap of the package
@@ -61,7 +61,7 @@ public interface ITranscription {
 
 	/**
 	 * write a image
-	 * 
+	 *
 	 * @param out
 	 * @param packageableElement
 	 *            form a comment that contains the ref to the
@@ -72,7 +72,7 @@ public interface ITranscription {
 
 	/**
 	 * write a paragraph
-	 * 
+	 *
 	 * @param out
 	 * @param packageableElement
 	 *            from a comment

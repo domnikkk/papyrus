@@ -44,7 +44,7 @@ public class PapyrusClipboardTester extends PropertyTester {
 
 	/**
 	 * Test if the clipboard contains some Papyrus model (that is with a di extension)
-	 * 
+	 *
 	 * @param clipboard
 	 * @return
 	 */

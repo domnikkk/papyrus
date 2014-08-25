@@ -48,7 +48,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#getContext()
 	 */
 	public org.eclipse.core.databinding.DataBindingContext getContext() {
@@ -73,7 +73,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#getRealm()
 	 */
 	public Realm getRealm() {
@@ -82,7 +82,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#getStatus()
 	 */
 	public AggregateValidationStatus getStatus() {
@@ -102,7 +102,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#getStatusType()
 	 */
 	public int getStatusType() {
@@ -111,7 +111,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#bindValue(org.eclipse.core.databinding.observable.value.IObservableValue,
 	 * org.eclipse.core.databinding.observable.value.IObservableValue)
 	 */
@@ -121,7 +121,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#equals(java.lang.Object)
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#bindValue(org.eclipse.core.databinding.observable.value.IObservableValue,
 	 * org.eclipse.core.databinding.observable.value.IObservableValue, org.eclipse.core.databinding.UpdateValueStrategy,
 	 * org.eclipse.core.databinding.UpdateValueStrategy)
@@ -157,7 +157,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#bindList(org.eclipse.core.databinding.observable.list.IObservableList,
 	 * org.eclipse.core.databinding.observable.list.IObservableList)
 	 */
@@ -167,7 +167,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#bindList(org.eclipse.core.databinding.observable.list.IObservableList,
 	 * org.eclipse.core.databinding.observable.list.IObservableList, org.eclipse.core.databinding.UpdateListStrategy,
 	 * org.eclipse.core.databinding.UpdateListStrategy)
@@ -178,7 +178,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#bindSet(org.eclipse.core.databinding.observable.set.IObservableSet,
 	 * org.eclipse.core.databinding.observable.set.IObservableSet)
 	 */
@@ -188,7 +188,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#bindSet(org.eclipse.core.databinding.observable.set.IObservableSet,
 	 * org.eclipse.core.databinding.observable.set.IObservableSet, org.eclipse.core.databinding.UpdateSetStrategy,
 	 * org.eclipse.core.databinding.UpdateSetStrategy)
@@ -199,7 +199,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#dispose()
 	 */
 	public final void dispose() {
@@ -208,7 +208,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#getBindings()
 	 */
 	public final IObservableList getBindings() {
@@ -217,7 +217,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#getValidationStatusProviders()
 	 */
 	public final IObservableList getValidationStatusProviders() {
@@ -226,7 +226,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#getValidationStatusMap()
 	 */
 	public final IObservableMap getValidationStatusMap() {
@@ -235,7 +235,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#addBinding(org.eclipse.core.databinding.Binding)
 	 */
 	public void addBinding(Binding binding) {
@@ -244,7 +244,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#addValidationStatusProvider(org.eclipse.core.databinding.ValidationStatusProvider)
 	 */
 	public void addValidationStatusProvider(ValidationStatusProvider validationStatusProvider) {
@@ -253,7 +253,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#updateModels()
 	 */
 	public final void updateModels() {
@@ -262,7 +262,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#updateTargets()
 	 */
 	public final void updateTargets() {
@@ -271,7 +271,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#removeBinding(org.eclipse.core.databinding.Binding)
 	 */
 	public boolean removeBinding(Binding binding) {
@@ -280,7 +280,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.databinding.IDataBindingContext#removeValidationStatusProvider(org.eclipse.core.databinding.ValidationStatusProvider)
 	 */
@@ -290,7 +290,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#getValidationRealm()
 	 */
 	public final Realm getValidationRealm() {
@@ -299,7 +299,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#setRealm(org.eclipse.core.databinding.observable.Realm)
 	 */
 	public void setRealm(Realm realm) {
@@ -308,7 +308,7 @@ public class BindingContext implements IBindingContext {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#setStatusType(int)
 	 */
 	public void setStatusType(int statusType) {

@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.TypeRule;
 import org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.UmlCollaborationUsePackage;
 
@@ -21,7 +20,7 @@ public class TypeRuleImpl extends org.eclipse.papyrus.uml.textedit.common.xtext.
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TypeRuleImpl()
@@ -32,7 +31,7 @@ public class TypeRuleImpl extends org.eclipse.papyrus.uml.textedit.common.xtext.
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

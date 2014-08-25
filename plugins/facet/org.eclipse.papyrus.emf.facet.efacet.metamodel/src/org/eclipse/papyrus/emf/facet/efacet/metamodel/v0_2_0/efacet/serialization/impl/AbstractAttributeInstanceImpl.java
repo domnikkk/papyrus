@@ -41,7 +41,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	 * The cached value of the '{@link #getEAttribute() <em>EAttribute</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEAttribute()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AbstractAttributeInstanceImpl() {
@@ -61,7 +61,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getEAttribute() {
@@ -91,7 +91,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute basicGetEAttribute() {
@@ -101,7 +101,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setEAttribute(EAttribute newEAttribute) {
@@ -115,7 +115,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +149,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

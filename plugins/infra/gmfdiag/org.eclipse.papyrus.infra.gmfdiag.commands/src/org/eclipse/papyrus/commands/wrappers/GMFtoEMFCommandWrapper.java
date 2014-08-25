@@ -95,7 +95,7 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.AbstractCommand#canExecute()
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.AbstractCommand#dispose()
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.AbstractCommand#canUndo()
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#execute()
 	 */
 	public void execute() {
@@ -138,7 +138,7 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#redo()
 	 */
 	public void redo() {
@@ -151,7 +151,7 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.AbstractCommand#undo()
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#getAffectedObjects()
 	 */
 	@Override
@@ -175,7 +175,7 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#getDescription()
 	 */
 	@Override

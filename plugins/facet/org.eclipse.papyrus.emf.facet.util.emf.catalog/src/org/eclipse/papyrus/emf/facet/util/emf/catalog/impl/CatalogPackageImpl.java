@@ -27,14 +27,14 @@ import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass catalogSetEClass = null;
@@ -42,7 +42,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass catalogEClass = null;
@@ -52,7 +52,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogPackage#eNS_URI
 	 * @see #init()
@@ -65,7 +65,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -75,7 +75,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link CatalogPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -109,7 +109,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCatalogSet() {
@@ -119,7 +119,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCatalogSet_Catalogs() {
@@ -129,7 +129,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCatalog() {
@@ -139,7 +139,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCatalog_InstalledEntries() {
@@ -149,7 +149,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCatalog_Name() {
@@ -159,7 +159,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CatalogFactory getCatalogFactory() {
@@ -169,7 +169,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -179,7 +179,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -200,7 +200,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -210,7 +210,7 @@ public class CatalogPackageImpl extends EPackageImpl implements CatalogPackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

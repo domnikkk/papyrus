@@ -57,31 +57,31 @@ public class CollaborationUseEditor extends DefaultXtextDirectEditorConfiguratio
 	 */
 	/*
 	 * public IPopupEditorHelper createPopupEditorHelper(Object editPart) {
-	 * 
+	 *
 	 * // resolves the edit part, and the associated semantic element
 	 * IGraphicalEditPart graphicalEditPart = null;
 	 * if(!(editPart instanceof IGraphicalEditPart)) {
 	 * return null;
 	 * }
 	 * graphicalEditPart = (IGraphicalEditPart)editPart;
-	 * 
+	 *
 	 * if(!(graphicalEditPart.resolveSemanticElement() instanceof CollaborationUse)) {
 	 * return null;
 	 * }
 	 * collaborationUse = (CollaborationUse)graphicalEditPart.resolveSemanticElement();
-	 * 
+	 *
 	 * // retrieves the XText injector
 	 * Injector injector = UmlCollaborationUseActivator.getInstance().getInjector("org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.UmlCollaborationUse"); //$NON-NLS-1$
-	 * 
+	 *
 	 * // builds the text content and extension for a temporary file, to be edited by the xtext editor
 	 * String textToEdit = "" + this.getTextToEdit(graphicalEditPart.resolveSemanticElement()); //$NON-NLS-1$
 	 * String fileExtension = "" + ".umlcollaborationuse"; //$NON-NLS-1$ //$NON-NLS-2$
-	 * 
+	 *
 	 * // builds a new IXtextEMFReconciler.
 	 * // Its purpose is to extract any relevant information from the textual specification,
 	 * // and then merge it in the context UML model if necessary
 	 * IXtextEMFReconciler reconciler = new IXtextEMFReconciler() {
-	 * 
+	 *
 	 * public void reconcile(EObject modelObject, EObject xtextObject) {
 	 * // first: retrieves / determines if the xtextObject is a CollaborationUseRule object
 	 * EObject modifiedObject = xtextObject;
@@ -95,21 +95,21 @@ public class CollaborationUseEditor extends DefaultXtextDirectEditorConfiguratio
 	 * return;
 	 * }
 	 * CollaborationUseRule propertyRuleObject = (CollaborationUseRule)xtextObject;
-	 * 
+	 *
 	 * // Retrieves the information to be populated in modelObject
-	 * 
-	 * 
+	 *
+	 *
 	 * newName = "" + propertyRuleObject.getName(); //$NON-NLS-1$
-	 * 
+	 *
 	 * TypeRule typeRule = propertyRuleObject.getType();
 	 * if(typeRule == null) {
 	 * newType = null;
 	 * } else {
 	 * newType = (Collaboration)typeRule.getType();
 	 * }
-	 * 
+	 *
 	 * newVisibility = org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL;
-	 * 
+	 *
 	 * switch(propertyRuleObject.getVisibility()) {
 	 * case PUBLIC:
 	 * newVisibility = org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL;
@@ -126,9 +126,9 @@ public class CollaborationUseEditor extends DefaultXtextDirectEditorConfiguratio
 	 * default:
 	 * break;
 	 * }
-	 * 
+	 *
 	 * IUndoableOperation updateCommand = getUpdateCommand();
-	 * 
+	 *
 	 * try {
 	 * CheckedOperationHistory.getInstance().execute(updateCommand, new NullProgressMonitor(), null);
 	 * } catch (ExecutionException e) {

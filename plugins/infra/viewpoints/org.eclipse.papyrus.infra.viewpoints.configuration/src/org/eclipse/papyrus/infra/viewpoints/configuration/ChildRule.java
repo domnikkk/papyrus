@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.infra.viewpoints.configuration;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -44,7 +43,7 @@ public interface ChildRule extends Rule {
 	 * If the meaning of the '<em>Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element</em>' reference.
 	 * @see #setElement(EClass)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getChildRule_Element()
@@ -57,7 +56,7 @@ public interface ChildRule extends Rule {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule#getElement <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Element</em>' reference.
 	 * @see #getElement()
@@ -73,7 +72,7 @@ public interface ChildRule extends Rule {
 	 * If the meaning of the '<em>Stereotypes</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stereotypes</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getChildRule_Stereotypes()
 	 * @model
@@ -88,7 +87,7 @@ public interface ChildRule extends Rule {
 	 * If the meaning of the '<em>Origin</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Origin</em>' reference.
 	 * @see #setOrigin(EClass)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getChildRule_Origin()
@@ -101,7 +100,7 @@ public interface ChildRule extends Rule {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule#getOrigin <em>Origin</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Origin</em>' reference.
 	 * @see #getOrigin()
@@ -117,7 +116,7 @@ public interface ChildRule extends Rule {
 	 * If the meaning of the '<em>Insertion Path</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Insertion Path</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getChildRule_InsertionPath()
 	 * @model containment="true"

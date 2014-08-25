@@ -38,7 +38,7 @@ public interface Number extends Term
 	 * If the meaning of the '<em>Op</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Op</em>' containment reference.
 	 * @see #setOp(UnaryOperator)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getNumber_Op()
@@ -51,7 +51,7 @@ public interface Number extends Term
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Number#getOp <em>Op</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Op</em>' containment reference.
 	 * @see #getOp()
@@ -66,7 +66,7 @@ public interface Number extends Term
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getNumber_Value()
@@ -79,7 +79,7 @@ public interface Number extends Term
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Number#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()

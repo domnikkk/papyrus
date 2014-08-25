@@ -103,7 +103,7 @@ public class PapyrusDiagramGlobalActionHandler extends ImageSupportGlobalActionH
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.common.ui.services.action.global.IGlobalActionHandler
 	 * #getCommand(org.eclipse.gmf.runtime.common.ui.services.action.

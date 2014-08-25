@@ -36,7 +36,7 @@ public class FalseLiteralQueryImpl extends QueryImpl implements FalseLiteralQuer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FalseLiteralQueryImpl() {
@@ -46,7 +46,7 @@ public class FalseLiteralQueryImpl extends QueryImpl implements FalseLiteralQuer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

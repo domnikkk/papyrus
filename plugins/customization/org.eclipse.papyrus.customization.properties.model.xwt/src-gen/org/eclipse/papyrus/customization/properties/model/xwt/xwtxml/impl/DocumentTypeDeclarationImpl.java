@@ -15,11 +15,8 @@
 package org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.DocumentTypeDeclaration;
 import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage;
 
@@ -42,7 +39,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	 * The default value of the '{@link #getPublicID() <em>Public ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPublicID()
 	 * @generated
 	 * @ordered
@@ -53,7 +50,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	 * The cached value of the '{@link #getPublicID() <em>Public ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPublicID()
 	 * @generated
 	 * @ordered
@@ -64,7 +61,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	 * The default value of the '{@link #getSystemID() <em>System ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSystemID()
 	 * @generated
 	 * @ordered
@@ -75,7 +72,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	 * The cached value of the '{@link #getSystemID() <em>System ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSystemID()
 	 * @generated
 	 * @ordered
@@ -85,7 +82,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DocumentTypeDeclarationImpl() {
@@ -95,7 +92,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +103,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +114,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +129,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +140,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +155,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +172,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +191,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +210,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +227,7 @@ public class DocumentTypeDeclarationImpl extends NodeImpl implements DocumentTyp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

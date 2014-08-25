@@ -45,7 +45,7 @@ public interface ITabTooltipPreferences {
 
 	/**
 	 * Return the delay used to close automatically the tooltip.
-	 * 
+	 *
 	 * @return The delay in millisecond or -1 if there is no delay.
 	 */
 	public abstract int getTooltipAutoCloseDelay();

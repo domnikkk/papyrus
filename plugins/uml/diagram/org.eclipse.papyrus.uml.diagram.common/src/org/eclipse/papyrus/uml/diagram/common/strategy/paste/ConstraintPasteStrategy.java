@@ -60,7 +60,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getLabel()
 	 */
 	@Override
@@ -70,7 +70,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getID()
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getDescription()
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getSemanticCommand(org.eclipse.emf.edit.domain.EditingDomain,
 	 * org.eclipse.emf.ecore.EObject, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
@@ -185,7 +185,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 
 	/**
 	 * Check if the target contains the context
-	 * 
+	 *
 	 * @param targetOwner
 	 * @param context
 	 * @return
@@ -203,7 +203,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 
 	/**
 	 * Get the internal clipboard value from the target value
-	 * 
+	 *
 	 * @param papyrusClipboard
 	 * @param target
 	 * @return
@@ -221,7 +221,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#prepare(org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override

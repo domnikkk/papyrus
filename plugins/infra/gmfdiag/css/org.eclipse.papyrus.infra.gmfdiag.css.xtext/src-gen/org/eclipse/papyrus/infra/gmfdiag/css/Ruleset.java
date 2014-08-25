@@ -40,7 +40,7 @@ public interface Ruleset extends Content
 	 * If the meaning of the '<em>Selectors</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Selectors</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getRuleset_Selectors()
 	 * @model containment="true"
@@ -56,7 +56,7 @@ public interface Ruleset extends Content
 	 * If the meaning of the '<em>Properties</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Properties</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getRuleset_Properties()
 	 * @model containment="true"

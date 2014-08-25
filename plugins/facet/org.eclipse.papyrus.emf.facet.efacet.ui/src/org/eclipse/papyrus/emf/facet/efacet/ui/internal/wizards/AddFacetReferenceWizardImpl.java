@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards;
 
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.papyrus.emf.facet.efacet.EFacetFactory;
 import org.eclipse.papyrus.emf.facet.efacet.FacetReference;
 import org.eclipse.papyrus.emf.facet.efacet.Query;
@@ -21,7 +22,6 @@ import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.IQueryCr
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.AbstractFacetWizardPage;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.AddReferenceInFacetWizardPage;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.CreateQueryWizardPage;
-import org.eclipse.jface.viewers.ISelection;
 
 @Deprecated
 // TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601

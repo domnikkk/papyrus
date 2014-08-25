@@ -110,7 +110,7 @@ public class LabelEditorDialog extends Dialog implements ILabelEditorDialog {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.window.Window#configureShell(org.eclipse.swt.widgets .Shell)
 	 */
 	/**

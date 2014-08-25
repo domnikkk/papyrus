@@ -42,7 +42,7 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * Represents a dialog for the selection of a model element
- * 
+ *
  * @author Laurent Wouters
  */
 public class ModelElementSelectionDialog extends Dialog {

@@ -5,34 +5,28 @@ package org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionco
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
-
 import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfigurationFactory;
 import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfigurationPackage;
 import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.ViewToDisplay;
-
 import org.eclipse.papyrus.views.properties.contexts.ContextsPackage;
-
 import org.eclipse.papyrus.views.properties.environment.EnvironmentPackage;
-
 import org.eclipse.papyrus.views.properties.ui.UiPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackageImpl implements RuntimeValuesEditionActionConfigurationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass runtimeValuesEditionActionConfigurationEClass = null;
@@ -40,7 +34,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass viewToDisplayEClass = null;
@@ -50,7 +44,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfigurationPackage#eNS_URI
 	 * @see #init()
@@ -63,7 +57,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -74,7 +68,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	 * <p>
 	 * This method is used to initialize {@link RuntimeValuesEditionActionConfigurationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -115,7 +109,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,7 +120,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +131,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +142,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +153,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +164,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -180,7 +174,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -200,7 +194,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -210,7 +204,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

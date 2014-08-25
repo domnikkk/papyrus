@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>KIND</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getKIND()
  * @model
  * @generated
@@ -33,7 +33,7 @@ public enum KIND implements Enumerator
 	 * The '<em><b>FIRST CHILD</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FIRST_CHILD_VALUE
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public enum KIND implements Enumerator
 	 * The '<em><b>SIBLING</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SIBLING_VALUE
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public enum KIND implements Enumerator
 	 * If the meaning of '<em><b>FIRST CHILD</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FIRST_CHILD
 	 * @model literal=">"
 	 * @generated
@@ -73,7 +73,7 @@ public enum KIND implements Enumerator
 	 * If the meaning of '<em><b>SIBLING</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #SIBLING
 	 * @model literal="+"
 	 * @generated
@@ -85,7 +85,7 @@ public enum KIND implements Enumerator
 	 * An array of all the '<em><b>KIND</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final KIND[] VALUES_ARRAY =
@@ -99,7 +99,7 @@ public enum KIND implements Enumerator
 	 * A public read-only list of all the '<em><b>KIND</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<KIND> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -108,7 +108,7 @@ public enum KIND implements Enumerator
 	 * Returns the '<em><b>KIND</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static KIND get(String literal)
@@ -128,7 +128,7 @@ public enum KIND implements Enumerator
 	 * Returns the '<em><b>KIND</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static KIND getByName(String name)
@@ -148,7 +148,7 @@ public enum KIND implements Enumerator
 	 * Returns the '<em><b>KIND</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static KIND get(int value)
@@ -166,7 +166,7 @@ public enum KIND implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -174,7 +174,7 @@ public enum KIND implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -182,7 +182,7 @@ public enum KIND implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -191,7 +191,7 @@ public enum KIND implements Enumerator
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private KIND(int value, String name, String literal)
@@ -204,7 +204,7 @@ public enum KIND implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +216,7 @@ public enum KIND implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public enum KIND implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +241,7 @@ public enum KIND implements Enumerator
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

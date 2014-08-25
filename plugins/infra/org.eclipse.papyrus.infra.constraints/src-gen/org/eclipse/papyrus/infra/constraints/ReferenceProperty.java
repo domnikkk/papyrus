@@ -32,7 +32,7 @@ public interface ReferenceProperty extends ConfigProperty {
 	 * If the meaning of the '<em>Value</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' reference.
 	 * @see #setValue(EObject)
 	 * @see org.eclipse.papyrus.infra.constraints.ConstraintsPackage#getReferenceProperty_Value()
@@ -45,7 +45,7 @@ public interface ReferenceProperty extends ConfigProperty {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.constraints.ReferenceProperty#getValue <em>Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' reference.
 	 * @see #getValue()

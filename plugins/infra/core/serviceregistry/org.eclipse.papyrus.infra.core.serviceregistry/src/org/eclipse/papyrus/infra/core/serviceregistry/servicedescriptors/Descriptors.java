@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -32,7 +31,7 @@ public interface Descriptors extends EObject {
 	 * If the meaning of the '<em>Registries</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Registries</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage#getDescriptors_Registries()
 	 * @model containment="true" ordered="false"
@@ -48,7 +47,7 @@ public interface Descriptors extends EObject {
 	 * If the meaning of the '<em>Service Sets</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Service Sets</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage#getDescriptors_ServiceSets()
 	 * @model containment="true" ordered="false"
@@ -59,7 +58,7 @@ public interface Descriptors extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model required="true" ordered="false" nameDataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.String" nameRequired="true" nameOrdered="false"
 	 * @generated
 	 */
@@ -68,7 +67,7 @@ public interface Descriptors extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model required="true" ordered="false" nameDataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.String" nameRequired="true" nameOrdered="false"
 	 * @generated
 	 */

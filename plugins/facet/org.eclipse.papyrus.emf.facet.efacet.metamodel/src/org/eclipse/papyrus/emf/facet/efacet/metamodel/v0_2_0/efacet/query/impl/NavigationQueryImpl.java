@@ -46,7 +46,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	 * The cached value of the '{@link #getPath() <em>Path</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPath()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	 * The default value of the '{@link #isFailOnError() <em>Fail On Error</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isFailOnError()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	 * The cached value of the '{@link #isFailOnError() <em>Fail On Error</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isFailOnError()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NavigationQueryImpl() {
@@ -87,7 +87,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ETypedElement> getPath() {
@@ -111,7 +111,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isFailOnError() {
@@ -121,7 +121,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setFailOnError(boolean newFailOnError) {
@@ -135,7 +135,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -173,7 +173,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class NavigationQueryImpl extends QueryImpl implements NavigationQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

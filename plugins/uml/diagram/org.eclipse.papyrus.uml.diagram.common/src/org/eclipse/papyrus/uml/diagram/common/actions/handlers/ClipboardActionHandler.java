@@ -105,7 +105,7 @@ public/* abstract */class ClipboardActionHandler extends DiagramGlobalActionHand
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandler
 	 * #canCopy(org.eclipse.gmf.runtime.common.ui.services.action.global.
@@ -144,7 +144,7 @@ public/* abstract */class ClipboardActionHandler extends DiagramGlobalActionHand
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandler
 	 * #canCut(org.eclipse.gmf.runtime.common.ui.services.action.global.
@@ -158,7 +158,7 @@ public/* abstract */class ClipboardActionHandler extends DiagramGlobalActionHand
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandler
 	 * #canPaste(org.eclipse.gmf.runtime.common.ui.services.action.global.
@@ -194,7 +194,7 @@ public/* abstract */class ClipboardActionHandler extends DiagramGlobalActionHand
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandler
 	 * #getCommand(org.eclipse.gmf.runtime.common.ui.services.action.global.
@@ -234,7 +234,7 @@ public/* abstract */class ClipboardActionHandler extends DiagramGlobalActionHand
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandler
 	 * #getCopyCommand(org.eclipse.gmf.runtime.common.ui.services.action.global.
@@ -303,7 +303,7 @@ public/* abstract */class ClipboardActionHandler extends DiagramGlobalActionHand
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandler
 	 * #getCutCommand(org.eclipse.gmf.runtime.common.ui.services.action.global.

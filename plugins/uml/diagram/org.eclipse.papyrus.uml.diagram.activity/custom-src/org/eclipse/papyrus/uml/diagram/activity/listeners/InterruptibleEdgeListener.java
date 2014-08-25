@@ -248,7 +248,7 @@ public class InterruptibleEdgeListener extends AbstractPapyrusModifcationTrigger
 				/*
 				 * TODO test if needed
 				 * (non-Javadoc)
-				 * 
+				 *
 				 * @see
 				 * org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doUndo(org.eclipse.core.runtime.IProgressMonitor,
 				 * org.eclipse.core.runtime.IAdaptable)
@@ -263,7 +263,7 @@ public class InterruptibleEdgeListener extends AbstractPapyrusModifcationTrigger
 				/*
 				 * TODO test if needed
 				 * (non-Javadoc)
-				 * 
+				 *
 				 * @see
 				 * org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doUndo(org.eclipse.core.runtime.IProgressMonitor,
 				 * org.eclipse.core.runtime.IAdaptable)

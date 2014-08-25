@@ -22,7 +22,7 @@ public interface IDiagramVersionUpdater {
 
 	/**
 	 * Update a diagram to a new version.
-	 * 
+	 *
 	 * @param diagram
 	 *            the diagram to update
 	 * @param oldVersion

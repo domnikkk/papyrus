@@ -31,7 +31,7 @@ public abstract class ActivityNodeCreateCommand extends EditElementCommand {
 
 	/**
 	 * initialize the emf command that will add the child element
-	 * 
+	 *
 	 * @return the created child
 	 */
 	protected Element initAndExecuteEmfCommand(Element newElement) throws ExecutionException {

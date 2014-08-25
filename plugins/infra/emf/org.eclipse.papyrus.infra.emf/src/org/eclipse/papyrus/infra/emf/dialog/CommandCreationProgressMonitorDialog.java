@@ -25,10 +25,10 @@ import org.eclipse.swt.widgets.Shell;
  *
  * <pre>
  * CreationCommandProgressMonitorDialog commandCreationDialog = new CreationCommandProgressMonitorDialog(Display.getShell());
- * 
+ *
  * try {
  * 		commandCreationDialog.run(true, true, new IRunnableWithProgress() {
- * 
+ *
  * 			public void run(final IProgressMonitor cancelProvider) throws InvocationTargetException, InterruptedException {
  * 				final Command cmd = commandProvider.getCommand();
  * 				commandCreationDialog.setCreatedCommand(cmd);

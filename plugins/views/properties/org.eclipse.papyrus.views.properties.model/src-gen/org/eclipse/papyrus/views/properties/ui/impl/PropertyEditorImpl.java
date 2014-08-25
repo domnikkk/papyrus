@@ -41,7 +41,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	 * The cached value of the '{@link #getProperty() <em>Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProperty()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	 * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isReadOnly()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	 * The cached value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isReadOnly()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	 * The cached value of the '{@link #getWidgetType() <em>Widget Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidgetType()
 	 * @generated
 	 * @ordered
@@ -85,7 +85,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	 * The cached value of the '{@link #getUnresolvedProperty() <em>Unresolved Property</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUnresolvedProperty()
 	 * @generated
 	 * @ordered
@@ -96,7 +96,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	 * The default value of the '{@link #getContentProviderClass() <em>Content Provider Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContentProviderClass()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	 * The cached value of the '{@link #getContentProviderClass() <em>Content Provider Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContentProviderClass()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	 * The default value of the '{@link #isShowLabel() <em>Show Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isShowLabel()
 	 * @generated
 	 * @ordered
@@ -129,7 +129,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	 * The cached value of the '{@link #isShowLabel() <em>Show Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isShowLabel()
 	 * @generated
 	 * @ordered
@@ -140,7 +140,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	 * The default value of the '{@link #getCustomLabel() <em>Custom Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCustomLabel()
 	 * @generated
 	 * @ordered
@@ -151,7 +151,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	 * The cached value of the '{@link #getCustomLabel() <em>Custom Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCustomLabel()
 	 * @generated
 	 * @ordered
@@ -161,7 +161,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyEditorImpl() {
@@ -171,7 +171,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -182,7 +182,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetProperty() {
@@ -212,7 +212,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +227,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +253,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PropertyEditorType basicGetWidgetType() {
@@ -283,7 +283,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +298,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,7 +309,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetUnresolvedProperty(UnknownProperty newUnresolvedProperty, NotificationChain msgs) {
@@ -329,7 +329,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +355,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +366,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -381,7 +381,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +392,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -407,7 +407,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -418,7 +418,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -433,7 +433,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -448,7 +448,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -481,7 +481,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -515,7 +515,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -549,7 +549,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -576,7 +576,7 @@ public class PropertyEditorImpl extends WidgetImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

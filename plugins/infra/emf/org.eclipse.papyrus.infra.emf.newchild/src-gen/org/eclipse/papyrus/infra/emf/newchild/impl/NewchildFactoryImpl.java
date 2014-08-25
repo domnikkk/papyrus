@@ -27,7 +27,7 @@ import org.eclipse.papyrus.infra.emf.newchild.Separator;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory {
@@ -35,7 +35,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NewchildFactory init() {
@@ -54,7 +54,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NewchildFactoryImpl() {
@@ -64,7 +64,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NewchildConfiguration createNewchildConfiguration() {
@@ -135,7 +135,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MenuRoot createMenuRoot() {
@@ -146,7 +146,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Menu createMenu() {
@@ -157,7 +157,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MenuAction createMenuAction() {
@@ -168,7 +168,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Separator createSeparator() {
@@ -179,7 +179,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MenuGroup createMenuGroup() {
@@ -190,7 +190,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomFiller createCustomFiller() {
@@ -201,7 +201,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MenuPosition createMenuPositionFromString(EDataType eDataType, String initialValue) {
@@ -215,7 +215,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertMenuPositionToString(EDataType eDataType, Object instanceValue) {
@@ -225,7 +225,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NewchildPackage getNewchildPackage() {
@@ -235,7 +235,7 @@ public class NewchildFactoryImpl extends EFactoryImpl implements NewchildFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

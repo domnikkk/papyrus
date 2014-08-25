@@ -126,7 +126,7 @@ public class ClassEditPartCN extends NodeEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +238,7 @@ public class ClassEditPartCN extends NodeEditPart {
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
 	 *            instance of generated figure class
 	 * @generated

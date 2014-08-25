@@ -21,7 +21,7 @@ import org.eclipse.ui.IWorkbenchPart;
  * This method must be implemented and referenced by the extension point org.eclipse.papyrus.emf.facet.efacet.ui.displayeropener
  *
  * This is a new version of the org.eclipse.papyrus.emf.facet.infra.query.ui.views.queryExecution.QueryResultDisplayer.
- * 
+ *
  * @author Gregoire Dupe
  *
  */

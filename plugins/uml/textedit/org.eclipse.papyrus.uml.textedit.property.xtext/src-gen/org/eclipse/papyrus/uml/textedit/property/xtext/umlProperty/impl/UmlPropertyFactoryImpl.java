@@ -6,18 +6,28 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.*;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierKind;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifiersRule;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.MultiplicityRule;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.SubsetsRule;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyFactory;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage;
+import org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyFactory
@@ -26,7 +36,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static UmlPropertyFactory init()
@@ -49,7 +59,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UmlPropertyFactoryImpl()
@@ -60,7 +70,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +106,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +126,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +146,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +159,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +172,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +185,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +198,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,7 +211,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +224,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +237,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +250,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +263,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +276,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public VisibilityKind createVisibilityKindFromString(EDataType eDataType, String initialValue)
@@ -281,7 +291,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertVisibilityKindToString(EDataType eDataType, Object instanceValue)
@@ -292,7 +302,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModifierKind createModifierKindFromString(EDataType eDataType, String initialValue)
@@ -307,7 +317,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertModifierKindToString(EDataType eDataType, Object instanceValue)
@@ -318,7 +328,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -330,7 +340,7 @@ public class UmlPropertyFactoryImpl extends EFactoryImpl implements UmlPropertyF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

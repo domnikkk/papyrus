@@ -7,18 +7,12 @@ import java.io.IOException;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
-
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsFactory;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage;
@@ -27,7 +21,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * <!-- begin-user-doc -->
  * A sample utility for the '<em><b>servicedescriptors</b></em>' package.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ServicedescriptorsExample {
@@ -35,7 +29,7 @@ public class ServicedescriptorsExample {
 	 * <!-- begin-user-doc -->
 	 * Load all the argument file paths or URIs as instances of the model.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param args
 	 *            the file paths or URIs.
 	 * @generated
@@ -107,7 +101,7 @@ public class ServicedescriptorsExample {
 	 * <!-- begin-user-doc -->
 	 * Prints diagnostics with indentation.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param diagnostic
 	 *            the diagnostic to print.
 	 * @param indent

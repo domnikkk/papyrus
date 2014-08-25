@@ -52,7 +52,7 @@ public class StereotypeValueTreeObject extends ValueTreeObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.profile.tree.objects.ValueTreeObject#editMe()
 	 */
 	@Override

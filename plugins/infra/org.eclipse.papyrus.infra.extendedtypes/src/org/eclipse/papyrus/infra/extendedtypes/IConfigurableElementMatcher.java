@@ -22,7 +22,7 @@ public interface IConfigurableElementMatcher<T extends MatcherConfiguration> ext
 
 	/**
 	 * Inits the element matcher with the given contribution. Should be called once, after element matcher instantiation
-	 * 
+	 *
 	 * @param configuration
 	 *            the configuration of this {@link IElementMatcher}
 	 */

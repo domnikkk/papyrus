@@ -5,18 +5,15 @@ package org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.util;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
-
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage;
 
 /**
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UmlPortXMLProcessor extends XMLProcessor
@@ -26,7 +23,7 @@ public class UmlPortXMLProcessor extends XMLProcessor
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UmlPortXMLProcessor()
@@ -39,7 +36,7 @@ public class UmlPortXMLProcessor extends XMLProcessor
 	 * Register for "*" and "xml" file extensions the UmlPortResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

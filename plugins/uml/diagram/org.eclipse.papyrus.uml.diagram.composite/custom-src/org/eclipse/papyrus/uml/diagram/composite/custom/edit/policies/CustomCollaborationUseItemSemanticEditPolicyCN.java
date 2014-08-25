@@ -30,7 +30,7 @@ public class CustomCollaborationUseItemSemanticEditPolicyCN extends org.eclipse.
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a RoleBinding linked
 	 * to a ConnectableElement.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -46,7 +46,7 @@ public class CustomCollaborationUseItemSemanticEditPolicyCN extends org.eclipse.
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a RoleBinding linked
 	 * to a ConnectableElement.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

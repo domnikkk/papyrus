@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.gmfdiag.css.stylesheets;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EModelElement;
 
 /**
@@ -31,7 +30,7 @@ public interface WorkspaceThemes extends EModelElement {
 	 * If the meaning of the '<em>Themes</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Themes</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage#getWorkspaceThemes_Themes()
 	 * @model containment="true"

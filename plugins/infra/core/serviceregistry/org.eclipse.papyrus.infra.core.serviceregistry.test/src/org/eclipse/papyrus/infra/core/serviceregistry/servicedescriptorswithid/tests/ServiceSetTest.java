@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc;
@@ -22,7 +21,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#containsService(org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc) <em>Contains Service</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ServiceSetTest extends TestCase {
@@ -31,7 +30,7 @@ public class ServiceSetTest extends TestCase {
 	 * The fixture for this Service Set test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ServiceSetIdDesc fixture = null;
@@ -39,7 +38,7 @@ public class ServiceSetTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -50,7 +49,7 @@ public class ServiceSetTest extends TestCase {
 	 * Constructs a new Service Set test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ServiceSetTest(String name) {
@@ -61,7 +60,7 @@ public class ServiceSetTest extends TestCase {
 	 * Sets the fixture for this Service Set test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(ServiceSetIdDesc fixture) {
@@ -72,7 +71,7 @@ public class ServiceSetTest extends TestCase {
 	 * Returns the fixture for this Service Set test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ServiceSetIdDesc getFixture() {
@@ -82,7 +81,7 @@ public class ServiceSetTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -94,7 +93,7 @@ public class ServiceSetTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -107,7 +106,7 @@ public class ServiceSetTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getService(java.lang.Object) <em>Get Service</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getService(java.lang.Object)
 	 * @generated
 	 */
@@ -121,7 +120,7 @@ public class ServiceSetTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#containsService(java.lang.Object) <em>Contains Service</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#containsService(java.lang.Object)
 	 * @generated
 	 */
@@ -135,7 +134,7 @@ public class ServiceSetTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getService(org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc) <em>Get Service</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getService(org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc)
 	 * @generated
 	 */
@@ -150,7 +149,7 @@ public class ServiceSetTest extends TestCase {
 	 * operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#containsService(org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc)
 	 * @generated
 	 */

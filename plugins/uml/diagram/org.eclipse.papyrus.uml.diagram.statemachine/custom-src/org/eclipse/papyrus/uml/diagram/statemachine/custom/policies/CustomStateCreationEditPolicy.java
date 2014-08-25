@@ -109,7 +109,7 @@ public class CustomStateCreationEditPolicy extends CreationEditPolicy {
 						View stateView = (View) getHost().getModel();
 						/*
 						 * TO Check from last version
-						 * 
+						 *
 						 * View stateCompartmentView = (View)stateView.getChildren().get(1);
 						 */
 						View stateCompartmentView = ViewUtil.getChildBySemanticHint(stateView, String.valueOf(StateCompartmentEditPart.VISUAL_ID));

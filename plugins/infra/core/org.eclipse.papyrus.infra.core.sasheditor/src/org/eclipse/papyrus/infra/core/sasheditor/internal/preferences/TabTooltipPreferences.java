@@ -11,7 +11,7 @@ import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 /**
  * An implementation retrieving values from Eclipse preferences
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -29,7 +29,7 @@ public class TabTooltipPreferences implements ITabTooltipPreferences {
 
 	/**
 	 * Subclasses may implements this method in order to provide the requested preferenceStore.
-	 * 
+	 *
 	 * @return
 	 */
 	protected IPreferenceStore createPreferenceStore() {

@@ -34,7 +34,7 @@ public interface ReplacePolicy extends NewChildPolicy {
 	 * If the meaning of the '<em>Replace With</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Replace With</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage#getReplacePolicy_ReplaceWith()
 	 * @model containment="true" required="true"

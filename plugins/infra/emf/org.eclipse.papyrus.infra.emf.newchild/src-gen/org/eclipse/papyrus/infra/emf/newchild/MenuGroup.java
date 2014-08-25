@@ -33,7 +33,7 @@ public interface MenuGroup extends MenuContainer {
 	 * If the meaning of the '<em>Before</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Before</em>' attribute.
 	 * @see #setBefore(String)
 	 * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage#getMenuGroup_Before()
@@ -46,7 +46,7 @@ public interface MenuGroup extends MenuContainer {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.MenuGroup#getBefore <em>Before</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Before</em>' attribute.
 	 * @see #getBefore()
@@ -61,7 +61,7 @@ public interface MenuGroup extends MenuContainer {
 	 * If the meaning of the '<em>After</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>After</em>' attribute.
 	 * @see #setAfter(String)
 	 * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage#getMenuGroup_After()
@@ -74,7 +74,7 @@ public interface MenuGroup extends MenuContainer {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.MenuGroup#getAfter <em>After</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>After</em>' attribute.
 	 * @see #getAfter()
@@ -91,7 +91,7 @@ public interface MenuGroup extends MenuContainer {
 	 * If the meaning of the '<em>Absolute Position</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Absolute Position</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.MenuPosition
 	 * @see #setAbsolutePosition(MenuPosition)
@@ -105,7 +105,7 @@ public interface MenuGroup extends MenuContainer {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.MenuGroup#getAbsolutePosition <em>Absolute Position</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Absolute Position</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.MenuPosition

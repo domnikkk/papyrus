@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ public class IfStatement extends Statement {
 	// Derived Properties
 	public boolean isAssured ;
 	public boolean isDetermined ;
-	
+
 	// Constraints
-	
+
 	/*
 	 * If an if statement does not have a final else clause, then any name that is unassigned before the if
 	 * 	statement is unassigned after the if statement. If an if statement does have a final else clause, then any
@@ -40,48 +40,49 @@ public class IfStatement extends Statement {
 	 * 	statement.
 	 */
 	public void checkIfStatementAssignmentsAfter() {
-		
+
 	}
-	
+
 	/*
 	 * The assignments before all the non-final clauses of an if statement are the same as the assignments
 	 * 	before the if statement. If the statement has a final clause, then the assignments before that clause are
 	 * 	also the same as the assignments before the if statement.
 	 */
 	public void checkIfStatementAssignmentsBefore() {
-		
+
 	}
-	
+
 	/*
 	 * The enclosing statement of all the statements in the bodies of all non-final clauses and in the final clause
 	 * 	(if any) of an if statement is the if statement.
 	 */
 	public void checkIfStatementEnclosedStatements() {
-		
+
 	}
-	
+
 	/*
 	 * An if statement is assured if it has an @assured annotation.
 	 */
 	public void checkIfStatementIsAssuredDerivation() {
-		
+
 	}
-	
+
 	/*
 	 * An if statement is determined if it has an @determined annotation.
 	 */
 	public void checkIfStatementIsDeterminedDerivation() {
-		
+
 	}
-	
-	
+
+
 	// Helper Operations
 	/*
 	 * In addition to an @isolated annotation, an if statement may have @assured and @determined
 	 * 	annotations. They may not have arguments.
 	 */
+	@Override
 	public boolean annotationAllowed (Annotation annotation) {
 		return false ;
 	}
-	
+
 }

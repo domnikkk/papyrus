@@ -27,7 +27,6 @@ import org.eclipse.core.runtime.MultiStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.gmf.runtime.common.core.service.ProviderPriority;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.TrayDialog;
 import org.eclipse.jface.viewers.ISelection;
@@ -336,7 +335,7 @@ public abstract class AbstractDeployPaletteConfigurationHandler extends Abstract
 
 	/**
 	 * Warning. Can be <code>null</code>!
-	 * 
+	 *
 	 * @param identifier
 	 * @return
 	 */

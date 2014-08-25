@@ -8,9 +8,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AbsoluteTimeEventRule;
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AnyReceiveEventRule;
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.BehaviorKind;
@@ -24,14 +22,13 @@ import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TimeEvent
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TransitionRule;
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionFactory;
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransitionPackage
@@ -39,7 +36,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass transitionRuleEClass = null;
@@ -47,7 +44,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eventRuleEClass = null;
@@ -55,7 +52,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass callOrSignalEventRuleEClass = null;
@@ -63,7 +60,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass anyReceiveEventRuleEClass = null;
@@ -71,7 +68,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass timeEventRuleEClass = null;
@@ -79,7 +76,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass relativeTimeEventRuleEClass = null;
@@ -87,7 +84,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass absoluteTimeEventRuleEClass = null;
@@ -95,7 +92,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass changeEventRuleEClass = null;
@@ -103,7 +100,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass guardRuleEClass = null;
@@ -111,7 +108,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass effectRuleEClass = null;
@@ -119,7 +116,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum behaviorKindEEnum = null;
@@ -129,7 +126,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage#eNS_URI
 	 * @see #init()
@@ -143,7 +140,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -154,7 +151,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	 * <p>
 	 * This method is used to initialize {@link UmlTransitionPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -192,7 +189,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -204,7 +201,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +213,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +225,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +237,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +249,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +261,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +273,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -288,7 +285,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +297,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -312,7 +309,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -324,7 +321,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -336,7 +333,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -348,7 +345,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +357,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -372,7 +369,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,7 +381,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -396,7 +393,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -408,7 +405,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -420,7 +417,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -432,7 +429,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -444,7 +441,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -456,7 +453,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -466,7 +463,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents()
@@ -514,7 +511,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -524,7 +521,7 @@ public class UmlTransitionPackageImpl extends EPackageImpl implements UmlTransit
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents()

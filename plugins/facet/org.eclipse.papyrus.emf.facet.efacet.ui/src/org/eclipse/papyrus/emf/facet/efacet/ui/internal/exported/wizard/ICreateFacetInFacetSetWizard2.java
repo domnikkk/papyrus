@@ -17,7 +17,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
 
 /**
  * TODO This interface has to be renamed to ICreateFacetInFacetSetWizard before the release of 0.2
- * 
+ *
  * @since 0.2
  */
 // TODO This interface has to be renamed to ICreateFacetInFacetSetWizard before the release of 0.2

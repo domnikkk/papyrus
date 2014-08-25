@@ -44,7 +44,7 @@ public interface IPostAction extends IAspectAction {
 
 	/**
 	 * Needs to return true if an action is specified in runInPostCommit()
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean needsPostCommitRun();

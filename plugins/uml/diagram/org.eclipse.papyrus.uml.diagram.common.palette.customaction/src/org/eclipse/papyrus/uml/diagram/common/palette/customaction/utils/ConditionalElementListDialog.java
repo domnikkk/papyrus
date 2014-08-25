@@ -31,7 +31,7 @@ import com.google.common.collect.Lists;
 
 /**
  * ConditionalElementListDialog is widget displaying elements to choose
- * 
+ *
  * @author tfaure
  *
  * @param <T>

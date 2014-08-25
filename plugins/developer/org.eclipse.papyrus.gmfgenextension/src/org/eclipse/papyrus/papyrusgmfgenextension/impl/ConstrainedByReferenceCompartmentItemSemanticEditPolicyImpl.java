@@ -5,13 +5,9 @@ package org.eclipse.papyrus.papyrusgmfgenextension.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.gmf.codegen.gmfgen.GenCommonBase;
-
 import org.eclipse.papyrus.papyrusgmfgenextension.ConstrainedByReferenceCompartmentItemSemanticEditPolicy;
 import org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage;
 
@@ -33,7 +29,7 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	 * The cached value of the '{@link #getGenView() <em>Gen View</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenView()
 	 * @generated
 	 * @ordered
@@ -43,7 +39,7 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl() {
@@ -53,7 +49,7 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -64,7 +60,7 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +74,7 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +89,7 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -111,7 +107,7 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +123,7 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

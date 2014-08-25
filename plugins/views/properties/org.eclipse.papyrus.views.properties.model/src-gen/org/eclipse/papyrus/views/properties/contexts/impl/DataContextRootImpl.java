@@ -33,7 +33,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	 * The cached value of the '{@link #getModelElementFactory() <em>Model Element Factory</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getModelElementFactory()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DataContextRootImpl() {
@@ -75,7 +75,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +86,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelElementFactoryDescriptor basicGetModelElementFactory() {
@@ -142,7 +142,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

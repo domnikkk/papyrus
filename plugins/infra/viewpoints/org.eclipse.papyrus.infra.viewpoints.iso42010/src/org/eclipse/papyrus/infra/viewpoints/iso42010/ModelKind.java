@@ -42,7 +42,7 @@ public interface ModelKind extends ADElement {
 	 * If the meaning of the '<em>Governs</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Governs</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getModelKind_Governs()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel#getGovernedBy
@@ -59,7 +59,7 @@ public interface ModelKind extends ADElement {
 	 * If the meaning of the '<em>Viewpoint</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Viewpoint</em>' container reference.
 	 * @see #setViewpoint(ArchitectureViewpoint)
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getModelKind_Viewpoint()
@@ -73,7 +73,7 @@ public interface ModelKind extends ADElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind#getViewpoint <em>Viewpoint</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Viewpoint</em>' container reference.
 	 * @see #getViewpoint()

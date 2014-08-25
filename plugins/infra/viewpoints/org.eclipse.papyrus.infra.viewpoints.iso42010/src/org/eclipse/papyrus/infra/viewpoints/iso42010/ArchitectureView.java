@@ -42,7 +42,7 @@ public interface ArchitectureView extends ADElement {
 	 * If the meaning of the '<em>Governed By</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Governed By</em>' reference.
 	 * @see #setGovernedBy(ArchitectureViewpoint)
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureView_GovernedBy()
@@ -56,7 +56,7 @@ public interface ArchitectureView extends ADElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView#getGovernedBy <em>Governed By</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Governed By</em>' reference.
 	 * @see #getGovernedBy()
@@ -73,7 +73,7 @@ public interface ArchitectureView extends ADElement {
 	 * If the meaning of the '<em>Models</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Models</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureView_Models()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel#getView
@@ -91,7 +91,7 @@ public interface ArchitectureView extends ADElement {
 	 * If the meaning of the '<em>Addresses</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Addresses</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureView_Addresses()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getAddressedBy

@@ -31,7 +31,7 @@ public class CustomCollaborationCompositeCompartmentItemSemanticEditPolicy exten
 	 * <pre>
 	 * Calls a custom creation command to allow the correct creation of a
 	 * role on the Collaboration.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

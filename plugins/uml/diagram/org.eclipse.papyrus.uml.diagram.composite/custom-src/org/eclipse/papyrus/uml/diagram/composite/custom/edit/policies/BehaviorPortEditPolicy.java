@@ -95,7 +95,7 @@ public class BehaviorPortEditPolicy extends GraphicalEditPolicy implements Notif
 
 	/**
 	 * return the comment nodes that represent stereotype properties
-	 * 
+	 *
 	 * @return may be null if nothing is founded
 	 */
 	protected Node getBehaviorPortNode() {

@@ -40,7 +40,7 @@ public abstract class AbstractCommandHandler extends AbstractHandler {
 	 *
 	 * Returns the command to execute (to be implemented
 	 * in children implementing this class)
-	 * 
+	 *
 	 * @return the command to execute
 	 *
 	 * </pre>
@@ -50,7 +50,7 @@ public abstract class AbstractCommandHandler extends AbstractHandler {
 	/**
 	 * <pre>
 	 * Parse current selection and extract the command context (can be null).
-	 * 
+	 *
 	 * @return the command context based on current selection
 	 * </pre>
 	 */

@@ -52,7 +52,7 @@ public class AddSemanticElementTypeInGenericTopNode extends Action {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IViewActionDelegate#init(org.eclipse.ui.IViewPart)
 	 */
 	public void init(IViewPart view) {
@@ -61,7 +61,7 @@ public class AddSemanticElementTypeInGenericTopNode extends Action {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class AddSemanticElementTypeInGenericTopNode extends Action {
 
 	/**
 	 * Returns all the UML {@link GenClass} that are related to UML constructs which are not abstract
-	 * 
+	 *
 	 * @param resourceSet
 	 * @return
 	 */
@@ -130,7 +130,7 @@ public class AddSemanticElementTypeInGenericTopNode extends Action {
 
 	/**
 	 * Returns the top level node that corresponds to this metaclass
-	 * 
+	 *
 	 * @param metaclassName
 	 *            name of the metaclass for which element type has to be defined
 	 * @return the top level node found or <code>null</code>;

@@ -34,12 +34,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * <pre>
  * EditPolicy which support the RequestConstants.REQ_SNAP_BACK request type.
- * 
+ *
  * Returns a command to position a label's offset to it default set at creation.
- * 
+ *
  * This edit policy is a copy of LabelSnapBackEditPolicy, which does not only use the label view type
  * to find the snap back position (also takes into account the diagram and parent view type).
- * 
+ *
  * @see org.eclipse.gmf.runtime.diagram.ui.internal.editpolicies.LabelSnapBackEditPolicy
  * </pre>
  */

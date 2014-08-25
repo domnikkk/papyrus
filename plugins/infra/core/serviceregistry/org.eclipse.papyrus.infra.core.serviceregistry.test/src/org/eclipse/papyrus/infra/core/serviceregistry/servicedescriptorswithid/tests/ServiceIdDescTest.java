@@ -11,7 +11,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Service Id Desc</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ServiceIdDescTest extends AbstractServiceIdDescTest {
@@ -19,7 +19,7 @@ public class ServiceIdDescTest extends AbstractServiceIdDescTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class ServiceIdDescTest extends AbstractServiceIdDescTest {
 	 * Constructs a new Service Id Desc test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ServiceIdDescTest(String name) {
@@ -41,7 +41,7 @@ public class ServiceIdDescTest extends AbstractServiceIdDescTest {
 	 * Returns the fixture for this Service Id Desc test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class ServiceIdDescTest extends AbstractServiceIdDescTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public class ServiceIdDescTest extends AbstractServiceIdDescTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

@@ -3,6 +3,8 @@
  */
 package org.eclipse.papyrus.infra.core.sasheditor.editor;
 
+import org.eclipse.papyrus.infra.core.sasheditor.internal.SashWindowsContainer;
+
 
 
 /**

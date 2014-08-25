@@ -17,18 +17,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint;
@@ -55,7 +50,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	 * The cached value of the '{@link #getGovernedBy() <em>Governed By</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGovernedBy()
 	 * @generated
 	 * @ordered
@@ -66,7 +61,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	 * The cached value of the '{@link #getModels() <em>Models</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getModels()
 	 * @generated
 	 * @ordered
@@ -77,7 +72,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	 * The cached value of the '{@link #getAddresses() <em>Addresses</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAddresses()
 	 * @generated
 	 * @ordered
@@ -87,7 +82,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureViewImpl() {
@@ -97,7 +92,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +103,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureViewpoint getGovernedBy() {
@@ -127,7 +122,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureViewpoint basicGetGovernedBy() {
@@ -137,7 +132,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetGovernedBy(ArchitectureViewpoint newGovernedBy, NotificationChain msgs) {
@@ -157,7 +152,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setGovernedBy(ArchitectureViewpoint newGovernedBy) {
@@ -182,7 +177,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureModel> getModels() {
@@ -195,7 +190,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Concern> getAddresses() {
@@ -208,7 +203,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -231,7 +226,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +245,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +267,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -297,7 +292,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,7 +314,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

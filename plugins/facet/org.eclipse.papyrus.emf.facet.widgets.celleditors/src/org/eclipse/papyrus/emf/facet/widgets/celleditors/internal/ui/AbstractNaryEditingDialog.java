@@ -16,13 +16,13 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.papyrus.emf.facet.widgets.celleditors.IModelCellEditHandler;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.papyrus.emf.facet.widgets.celleditors.IModelCellEditHandler;
 import org.eclipse.swt.widgets.Shell;
 
 public abstract class AbstractNaryEditingDialog<T extends Object> extends Dialog {

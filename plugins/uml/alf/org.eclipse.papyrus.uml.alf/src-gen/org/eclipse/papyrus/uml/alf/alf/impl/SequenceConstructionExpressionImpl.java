@@ -6,17 +6,12 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.Expression;
 import org.eclipse.papyrus.uml.alf.alf.SequenceConstructionExpression;
@@ -115,7 +110,11 @@ public class SequenceConstructionExpressionImpl extends SequenceElementImpl impl
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_EXPRESSION__RANGE_UPPER, oldRangeUpper, newRangeUpper);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -130,15 +129,20 @@ public class SequenceConstructionExpressionImpl extends SequenceElementImpl impl
     if (newRangeUpper != rangeUpper)
     {
       NotificationChain msgs = null;
-      if (rangeUpper != null)
-        msgs = ((InternalEObject)rangeUpper).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_EXPRESSION__RANGE_UPPER, null, msgs);
-      if (newRangeUpper != null)
-        msgs = ((InternalEObject)newRangeUpper).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_EXPRESSION__RANGE_UPPER, null, msgs);
+      if (rangeUpper != null) {
+		msgs = ((InternalEObject)rangeUpper).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_EXPRESSION__RANGE_UPPER, null, msgs);
+	}
+      if (newRangeUpper != null) {
+		msgs = ((InternalEObject)newRangeUpper).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.SEQUENCE_CONSTRUCTION_EXPRESSION__RANGE_UPPER, null, msgs);
+	}
       msgs = basicSetRangeUpper(newRangeUpper, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_EXPRESSION__RANGE_UPPER, newRangeUpper, newRangeUpper));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SEQUENCE_CONSTRUCTION_EXPRESSION__RANGE_UPPER, newRangeUpper, newRangeUpper));
+	}
   }
 
   /**

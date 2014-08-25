@@ -40,7 +40,7 @@ public interface Architecture extends EObject {
 	 * If the meaning of the '<em>Exhibited In</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Exhibited In</em>' reference.
 	 * @see #setExhibitedIn(org.eclipse.papyrus.infra.viewpoints.iso42010.System)
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitecture_ExhibitedIn()
@@ -54,7 +54,7 @@ public interface Architecture extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.Architecture#getExhibitedIn <em>Exhibited In</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Exhibited In</em>' reference.
 	 * @see #getExhibitedIn()

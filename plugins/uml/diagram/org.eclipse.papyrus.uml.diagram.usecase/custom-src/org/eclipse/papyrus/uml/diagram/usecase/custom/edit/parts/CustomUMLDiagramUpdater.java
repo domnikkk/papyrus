@@ -55,7 +55,7 @@ public class CustomUMLDiagramUpdater extends UMLDiagramUpdater {
 
 	/**
 	 * overload it to avoid to count links as default named element
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.usecase.part.UMLDiagramUpdater#getPackage_1000SemanticChildren(org.eclipse.gmf.runtime.notation.View)
 	 *
 	 * @param view

@@ -214,7 +214,7 @@ public class MessageEditHelper extends ElementEditHelper {
 	/**
 	 * <pre>
 	 * This method provides a command to update the {@link Gate} concerned by a re-orient request.
-	 * 
+	 *
 	 * TODO : Not currently implemented.
 	 * </pre>
 	 *

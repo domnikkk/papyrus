@@ -13,12 +13,9 @@
 package org.eclipse.papyrus.infra.discovery.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.infra.discovery.DiscoveryPackage;
 import org.eclipse.papyrus.infra.discovery.Overview;
 
@@ -42,7 +39,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	 * The default value of the '{@link #getSummary() <em>Summary</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSummary()
 	 * @generated
 	 * @ordered
@@ -53,7 +50,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	 * The cached value of the '{@link #getSummary() <em>Summary</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSummary()
 	 * @generated
 	 * @ordered
@@ -64,7 +61,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	 * The default value of the '{@link #getScreenshot() <em>Screenshot</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getScreenshot()
 	 * @generated
 	 * @ordered
@@ -75,7 +72,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	 * The cached value of the '{@link #getScreenshot() <em>Screenshot</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getScreenshot()
 	 * @generated
 	 * @ordered
@@ -86,7 +83,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUrl()
 	 * @generated
 	 * @ordered
@@ -97,7 +94,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	 * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUrl()
 	 * @generated
 	 * @ordered
@@ -107,7 +104,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OverviewImpl() {
@@ -117,7 +114,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +125,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getSummary() {
@@ -138,7 +135,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSummary(String newSummary) {
@@ -152,7 +149,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getScreenshot() {
@@ -162,7 +159,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setScreenshot(String newScreenshot) {
@@ -176,7 +173,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getUrl() {
@@ -186,7 +183,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setUrl(String newUrl) {
@@ -200,7 +197,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +216,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +238,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +260,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +279,7 @@ public class OverviewImpl extends MinimalEObjectImpl implements Overview {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

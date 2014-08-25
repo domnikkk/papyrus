@@ -20,7 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
  * Represents a surrogate property descriptor delegating to an encapsulated descriptor
- * 
+ *
  * @author Laurent Wouters
  */
 public abstract class SurrogateItemPropertyDescriptor implements IItemPropertyDescriptor {

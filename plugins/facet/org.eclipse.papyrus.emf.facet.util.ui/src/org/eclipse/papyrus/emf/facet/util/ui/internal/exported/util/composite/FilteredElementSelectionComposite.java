@@ -11,9 +11,9 @@
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.composite;
 
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.composite.IFilteredElementSelectionComposite;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
@@ -78,7 +78,7 @@ public class FilteredElementSelectionComposite extends Composite implements
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.composite.
 	 * IFilteredElementSelectionComposite#setElements(java.lang.Object[])
 	 */
@@ -121,7 +121,7 @@ public class FilteredElementSelectionComposite extends Composite implements
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.composite.
 	 * IFilteredElementSelectionComposite#getFirstSelectedElement()
 	 */
@@ -136,7 +136,7 @@ public class FilteredElementSelectionComposite extends Composite implements
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.composite.
 	 * IFilteredElementSelectionComposite#getSelectedElements()
 	 */
@@ -150,7 +150,7 @@ public class FilteredElementSelectionComposite extends Composite implements
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.composite.
 	 * IFilteredElementSelectionComposite#getFilteredList()
 	 */
@@ -160,7 +160,7 @@ public class FilteredElementSelectionComposite extends Composite implements
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.composite.
 	 * IFilteredElementSelectionComposite#getFilterText()
 	 */

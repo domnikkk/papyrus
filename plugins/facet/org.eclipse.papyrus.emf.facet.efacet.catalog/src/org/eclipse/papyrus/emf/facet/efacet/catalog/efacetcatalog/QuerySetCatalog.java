@@ -48,7 +48,7 @@ public interface QuerySetCatalog extends Catalog {
 	 * <!-- begin-model-doc -->
 	 * "installedQuerySets" derived link aims at providing a direct access to QuerySet objects in the catalog.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Installed Query Sets</em>' reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.EfacetcatalogPackage#getQuerySetCatalog_InstalledQuerySets()
 	 * @model transient="true" volatile="true" derived="true"

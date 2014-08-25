@@ -27,7 +27,7 @@ public interface InjectedService extends InjectedValue {
 	 * If the meaning of the '<em>Service Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Service Name</em>' attribute.
 	 * @see #setServiceName(String)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getInjectedService_ServiceName()
@@ -40,7 +40,7 @@ public interface InjectedService extends InjectedValue {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedService#getServiceName <em>Service Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Service Name</em>' attribute.
 	 * @see #getServiceName()

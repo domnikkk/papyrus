@@ -35,7 +35,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass querySetCatalogEClass = null;
@@ -43,7 +43,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass facetSetCatalogEClass = null;
@@ -53,7 +53,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.EfacetcatalogPackage#eNS_URI
 	 * @see #init()
@@ -66,7 +66,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -77,7 +77,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	 * <p>
 	 * This method is used to initialize {@link EfacetcatalogPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -115,7 +115,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getQuerySetCatalog() {
@@ -125,7 +125,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getQuerySetCatalog_InstalledQuerySets() {
@@ -135,7 +135,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFacetSetCatalog() {
@@ -145,7 +145,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFacetSetCatalog_InstalledFacetSets() {
@@ -155,7 +155,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EfacetcatalogFactory getEfacetcatalogFactory() {
@@ -165,7 +165,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -175,7 +175,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -195,7 +195,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -205,7 +205,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
@@ -252,7 +252,7 @@ public class EfacetcatalogPackageImpl extends EPackageImpl implements Efacetcata
 	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {

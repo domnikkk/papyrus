@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * Clipboard for Papyrus Copy : cross Editor and cross model
- * 
+ *
  * @param <E>
  */
 public class PapyrusClipboard<E> extends ArrayList<E> {
@@ -47,7 +47,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 
 	/**
 	 * Set instance of papyrus clipboard
-	 * 
+	 *
 	 * @param pInstance
 	 */
 	public static void setInstance(PapyrusClipboard<Object> pInstance) {
@@ -56,7 +56,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 
 	/**
 	 * Init a new instance for a new copy selection
-	 * 
+	 *
 	 * @return
 	 */
 	public static PapyrusClipboard<Object> getNewInstance() {
@@ -82,7 +82,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 
 	/**
 	 * set containerType
-	 * 
+	 *
 	 * @param containerType
 	 */
 	public void setContainerType(String containerType) {
@@ -112,7 +112,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 
 	/**
 	 * Get the mapping for source to internal clipboard
-	 * 
+	 *
 	 * @return
 	 */
 	public Map<EObject, Object> getSourceToInternalClipboard() {
@@ -128,7 +128,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 
 	/**
 	 * Get the mapping for internal copy to target copy
-	 * 
+	 *
 	 * @return
 	 */
 	public Map<Object, EObject> getInternalClipboardToTargetCopy() {
@@ -143,7 +143,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 
 	/**
 	 * Store internal copy in clipboard while keeping mapping
-	 * 
+	 *
 	 * @param source
 	 *            the copied selection
 	 * @param copy
@@ -162,7 +162,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 
 	/**
 	 * Store internal copy in clipboard while keeping mapping
-	 * 
+	 *
 	 * @param source
 	 *            the copied selection
 	 * @param copy
@@ -174,7 +174,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 
 	/**
 	 * Add target for internal copy
-	 * 
+	 *
 	 * @param copy
 	 * @param target
 	 */
@@ -185,7 +185,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 	/**
 	 * Iterate on the copy selection
 	 * (Use by paste strategy to prepare IAdditionalData)
-	 * 
+	 *
 	 * @return
 	 */
 	public Iterator<EObject> iterateOnSource() {
@@ -195,7 +195,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 	/**
 	 * Get the internal clipboard copy from the source selection
 	 * (Use by paste strategy to prepare IAdditionalData)
-	 * 
+	 *
 	 * @return the internal clipboard copy
 	 */
 	public Object getCopyFromSource(EObject eObject) {
@@ -204,7 +204,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 
 	/**
 	 * Get Additional data for all strategies
-	 * 
+	 *
 	 * @return
 	 */
 	public Map<String, Map<E, IClipboardAdditionalData>> getStrategiesAdditionalData() {
@@ -213,7 +213,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 
 	/**
 	 * push data for a specific strategy
-	 * 
+	 *
 	 * @param key
 	 *            of the strategy
 	 * @param strategyAdditionalData
@@ -224,7 +224,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 
 	/**
 	 * Get Additional Data for a strategy
-	 * 
+	 *
 	 * @param key
 	 *            of the strategy
 	 * @return
@@ -235,7 +235,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 
 	/**
 	 * Get the target copy from the internal clipboard copy
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
@@ -246,7 +246,7 @@ public class PapyrusClipboard<E> extends ArrayList<E> {
 	/**
 	 * Iterate on the copy selection
 	 * (Use by paste strategy to prepare IAdditionalData)
-	 * 
+	 *
 	 * @return
 	 */
 	public Collection<EObject> getTarget() {

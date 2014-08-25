@@ -27,7 +27,7 @@ public class StyleSheetReferenceImpl extends EObjectImpl implements StyleSheetRe
 	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPath()
 	 * @generated
 	 * @ordered
@@ -38,7 +38,7 @@ public class StyleSheetReferenceImpl extends EObjectImpl implements StyleSheetRe
 	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPath()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class StyleSheetReferenceImpl extends EObjectImpl implements StyleSheetRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StyleSheetReferenceImpl() {
@@ -58,7 +58,7 @@ public class StyleSheetReferenceImpl extends EObjectImpl implements StyleSheetRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,7 +69,7 @@ public class StyleSheetReferenceImpl extends EObjectImpl implements StyleSheetRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getPath() {
@@ -79,7 +79,7 @@ public class StyleSheetReferenceImpl extends EObjectImpl implements StyleSheetRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPath(String newPath) {
@@ -93,7 +93,7 @@ public class StyleSheetReferenceImpl extends EObjectImpl implements StyleSheetRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class StyleSheetReferenceImpl extends EObjectImpl implements StyleSheetRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class StyleSheetReferenceImpl extends EObjectImpl implements StyleSheetRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class StyleSheetReferenceImpl extends EObjectImpl implements StyleSheetRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class StyleSheetReferenceImpl extends EObjectImpl implements StyleSheetRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

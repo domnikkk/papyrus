@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,25 +20,25 @@ import org.eclipse.papyrus.uml.alf.syntax.common.SyntaxElement;
 public abstract class Tuple extends SyntaxElement {
 
 	// Synthesized Properties
-	
+
 	/*
 	 * The invocation expression of which this tuple is a part.
 	 */
 	public InvocationExpression invocation ;
-	
+
 	// Derived Properties
 	public List<NamedExpression> input ;
 	public List<OutputNamedExpression> output ;
-	
+
 	// Constraints
-	
+
 	/*
 	 * A name may be assigned in at most one argument expression of a tuple.
 	 */
 	public void checkTupleAssignmentsAfter() {
-		
+
 	}
-	
+
 	/*
 	 * The assignments before each expression in a tuple are the same as the assignments before the tuple,
 	 * 	except in the case of a name expression that defines a new local name, in which case the assigned source
@@ -49,9 +49,9 @@ public abstract class Tuple extends SyntaxElement {
 	 * 	before the invocation.
 	 */
 	public void checkTupleAssignmentsBefore() {
-		
+
 	}
-	
+
 	/*
 	 * A tuple has the same number of inputs as its invocation has input parameters. For each input parameter,
 	 * 	the tuple has a corresponding input with the same name as the parameter and an expression that is the
@@ -59,16 +59,16 @@ public abstract class Tuple extends SyntaxElement {
 	 * 	argument.
 	 */
 	public void checkTupleInputDerivation() {
-		
+
 	}
-	
+
 	/*
 	 * An input parameter may only have a null argument if it has a multiplicity lower bound of 0.
 	 */
 	public void checkTupleNullInputs() {
-		
+
 	}
-	
+
 	/*
 	 * A tuple has the same number of outputs as its invocation has output parameters. For each output
 	 * 	parameter, the tuple has a corresponding output with the same name as the parameter and an expression
@@ -76,14 +76,14 @@ public abstract class Tuple extends SyntaxElement {
 	 * 	matching argument.
 	 */
 	public void checkTupleOutputDerivation() {
-		
+
 	}
-	
+
 	/*
 	 * An output parameter may only have a null argument if it is an out parameter.
 	 */
 	public void checkTupleOutputs() {
-		
+
 	}
-	
+
 }

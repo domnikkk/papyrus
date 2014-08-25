@@ -42,7 +42,7 @@ public interface MultiValuedReferenceInstance extends AbstractReferenceInstance 
 	 * If the meaning of the '<em>Referenced Elements</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Referenced Elements</em>' reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SerializationPackage#getMultiValuedReferenceInstance_ReferencedElements()
 	 * @model

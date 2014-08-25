@@ -45,7 +45,6 @@ import org.eclipse.papyrus.xwt.ResourceDictionary;
 import org.eclipse.papyrus.xwt.Tracking;
 import org.eclipse.papyrus.xwt.XWT;
 import org.eclipse.papyrus.xwt.XWTException;
-import org.eclipse.papyrus.xwt.XWTLoader;
 import org.eclipse.papyrus.xwt.XWTMaps;
 import org.eclipse.papyrus.xwt.annotation.UI;
 import org.eclipse.papyrus.xwt.callback.ICreatedCallback;
@@ -316,7 +315,7 @@ public class ResourceLoader implements IVisualElementLoader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IVisualElementLoader#createUIElement(org.eclipse.
 	 * e4.xwt.Element, org.eclipse.papyrus.xwt.ILoadData,
 	 * org.eclipse.papyrus.xwt.IResourceDictionary)

@@ -81,7 +81,7 @@ public abstract class XWTObservableValue extends AbstractObservableValue impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doSetValue(java.lang.Object)
 	 */
 	@Override
@@ -121,7 +121,7 @@ public abstract class XWTObservableValue extends AbstractObservableValue impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doGetValue()
 	 */
 	@Override
@@ -131,7 +131,7 @@ public abstract class XWTObservableValue extends AbstractObservableValue impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.IObservableValue#getValueType()
 	 */
 	public Class<?> getValueType() {

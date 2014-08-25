@@ -31,7 +31,7 @@ public class ModelExplorerUtils {
 	/**
 	 * <pre>
 	 * Parse current selection and extract the command context (can be null).
-	 * 
+	 *
 	 * @return the command context based on current selection
 	 * </pre>
 	 */

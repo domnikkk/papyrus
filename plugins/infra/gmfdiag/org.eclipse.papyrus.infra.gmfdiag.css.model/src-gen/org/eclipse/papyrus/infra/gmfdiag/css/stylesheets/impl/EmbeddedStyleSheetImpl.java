@@ -28,7 +28,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -39,7 +39,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContent()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContent()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EmbeddedStyleSheetImpl() {
@@ -81,7 +81,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLabel() {
@@ -102,7 +102,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLabel(String newLabel) {
@@ -116,7 +116,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getContent() {
@@ -126,7 +126,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setContent(String newContent) {
@@ -140,7 +140,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +212,7 @@ public class EmbeddedStyleSheetImpl extends EObjectImpl implements EmbeddedStyle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -37,7 +37,7 @@ public interface NewchildConfiguration extends EObject {
 	 * If the meaning of the '<em>Roots</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Roots</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage#getNewchildConfiguration_Roots()
 	 * @model containment="true"
@@ -52,7 +52,7 @@ public interface NewchildConfiguration extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage#getNewchildConfiguration_Name()
@@ -65,7 +65,7 @@ public interface NewchildConfiguration extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.NewchildConfiguration#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -81,7 +81,7 @@ public interface NewchildConfiguration extends EObject {
 	 * If the meaning of the '<em>New Child Policies</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>New Child Policies</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage#getNewchildConfiguration_NewChildPolicies()
 	 * @model containment="true"

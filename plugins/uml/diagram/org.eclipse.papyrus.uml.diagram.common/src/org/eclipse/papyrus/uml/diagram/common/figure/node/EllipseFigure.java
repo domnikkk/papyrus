@@ -23,7 +23,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.SlidableOvalAnchor;
 /**
  * Draws a circle figure. The figures bounds are guaranteed to be the circle
  * diameter
- * 
+ *
  * @author mhanner
  */
 public class EllipseFigure extends DefaultSizeNodeFigure implements IOvalAnchorableFigure {
@@ -31,7 +31,7 @@ public class EllipseFigure extends DefaultSizeNodeFigure implements IOvalAnchora
 
 	/**
 	 * Constructor for StateLineFigure.
-	 * 
+	 *
 	 * @param width
 	 *            figure width
 	 * @param height
@@ -51,7 +51,7 @@ public class EllipseFigure extends DefaultSizeNodeFigure implements IOvalAnchora
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createAnchor(org.eclipse.draw2d.geometry.PrecisionPoint)
 	 */
 	@Override
@@ -66,7 +66,7 @@ public class EllipseFigure extends DefaultSizeNodeFigure implements IOvalAnchora
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createDefaultAnchor()
 	 */
 	@Override

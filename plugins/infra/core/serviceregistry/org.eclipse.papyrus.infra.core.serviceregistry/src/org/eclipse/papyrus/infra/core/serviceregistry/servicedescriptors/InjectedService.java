@@ -27,7 +27,7 @@ public interface InjectedService extends InjectedValue {
 	 * If the meaning of the '<em>Service</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Service</em>' reference.
 	 * @see #setService(AbstractServiceDesc)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage#getInjectedService_Service()
@@ -40,7 +40,7 @@ public interface InjectedService extends InjectedValue {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.InjectedService#getService <em>Service</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Service</em>' reference.
 	 * @see #getService()

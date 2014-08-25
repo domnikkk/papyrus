@@ -41,7 +41,7 @@ public interface AbstractReferenceInstance extends EObject {
 	 * If the meaning of the '<em>EReference</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>EReference</em>' reference.
 	 * @see #setEReference(EReference)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SerializationPackage#getAbstractReferenceInstance_EReference()
@@ -54,7 +54,7 @@ public interface AbstractReferenceInstance extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractReferenceInstance#getEReference <em>EReference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>EReference</em>' reference.
 	 * @see #getEReference()

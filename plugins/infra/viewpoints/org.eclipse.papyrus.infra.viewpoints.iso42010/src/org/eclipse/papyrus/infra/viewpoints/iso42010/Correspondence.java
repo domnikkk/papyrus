@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.infra.viewpoints.iso42010;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -44,7 +43,7 @@ public interface Correspondence extends EObject {
 	 * If the meaning of the '<em>Governed By</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Governed By</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getCorrespondence_GovernedBy()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.CorrespondenceRule#getGoverns
@@ -61,7 +60,7 @@ public interface Correspondence extends EObject {
 	 * If the meaning of the '<em>Relates</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Relates</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getCorrespondence_Relates()
 	 * @model lower="2"

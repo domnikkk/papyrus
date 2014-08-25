@@ -167,10 +167,10 @@ public abstract class AbstractElementLinkEditPart extends UMLConnectionNodeEditP
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * This method override parent implementation to add a new set of
 	 * predefined decoration type.
-	 * 
+	 *
 	 * The arrowType available constants are given in {@link EdgeDecorationType}.
 	 * </pre>
 	 */

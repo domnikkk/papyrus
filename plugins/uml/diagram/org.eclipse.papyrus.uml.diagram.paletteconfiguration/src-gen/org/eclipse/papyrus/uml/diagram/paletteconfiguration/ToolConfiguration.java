@@ -35,7 +35,7 @@ public interface ToolConfiguration extends LeafConfiguration {
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolKind
 	 * @see #setKind(ToolKind)
@@ -49,7 +49,7 @@ public interface ToolConfiguration extends LeafConfiguration {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolConfiguration#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolKind
@@ -66,7 +66,7 @@ public interface ToolConfiguration extends LeafConfiguration {
 	 * If the meaning of the '<em>Element Descriptors</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Descriptors</em>' containment reference list.
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getToolConfiguration_ElementDescriptors()
 	 * @model containment="true"

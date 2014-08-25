@@ -43,7 +43,7 @@ public class PackageCreationEditPolicy extends DefaultCreationEditPolicy {
 
 	/**
 	 * return a command to reparent both the semantic and view elements.
-	 * 
+	 *
 	 * @param request
 	 *            the request
 	 * @return command

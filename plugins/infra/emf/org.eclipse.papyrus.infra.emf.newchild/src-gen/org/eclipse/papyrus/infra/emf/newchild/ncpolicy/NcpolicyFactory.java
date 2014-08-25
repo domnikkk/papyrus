@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage
  * @generated
  */
@@ -22,7 +22,7 @@ public interface NcpolicyFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	NcpolicyFactory eINSTANCE = org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NcpolicyFactoryImpl.init();
@@ -31,7 +31,7 @@ public interface NcpolicyFactory extends EFactory {
 	 * Returns a new object of class '<em>New EMF Child Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>New EMF Child Menu</em>'.
 	 * @generated
 	 */
@@ -41,7 +41,7 @@ public interface NcpolicyFactory extends EFactory {
 	 * Returns a new object of class '<em>New Child Policy Set</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>New Child Policy Set</em>'.
 	 * @generated
 	 */
@@ -51,7 +51,7 @@ public interface NcpolicyFactory extends EFactory {
 	 * Returns a new object of class '<em>Filter Policy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Filter Policy</em>'.
 	 * @generated
 	 */
@@ -61,7 +61,7 @@ public interface NcpolicyFactory extends EFactory {
 	 * Returns a new object of class '<em>Replace Policy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Replace Policy</em>'.
 	 * @generated
 	 */
@@ -71,7 +71,7 @@ public interface NcpolicyFactory extends EFactory {
 	 * Returns a new object of class '<em>Custom Policy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Custom Policy</em>'.
 	 * @generated
 	 */
@@ -81,7 +81,7 @@ public interface NcpolicyFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

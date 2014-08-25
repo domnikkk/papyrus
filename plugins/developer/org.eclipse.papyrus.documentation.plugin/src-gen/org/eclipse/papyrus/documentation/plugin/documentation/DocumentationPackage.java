@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EcorePackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationFactory
  * @model kind="package"
  * @generated
@@ -33,7 +33,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "documentation";
@@ -42,7 +42,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/documentation/plugin/documentation";
@@ -51,7 +51,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "doc";
@@ -60,7 +60,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	DocumentationPackage eINSTANCE = org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationPackageImpl.init();
@@ -69,7 +69,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationImpl <em>Documentation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationImpl
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationPackageImpl#getDocumentation()
 	 * @generated
@@ -80,7 +80,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -90,7 +90,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -100,7 +100,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Implicit Dependencies</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -110,7 +110,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Referent</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -120,7 +120,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Additional Comments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -130,7 +130,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The number of structural features of the '<em>Documentation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -140,7 +140,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.DependencyImpl <em>Dependency</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DependencyImpl
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationPackageImpl#getDependency()
 	 * @generated
@@ -151,7 +151,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -161,7 +161,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Plugin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -171,7 +171,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -181,7 +181,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The number of structural features of the '<em>Dependency</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -191,7 +191,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.FileDependencyImpl <em>File Dependency</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.FileDependencyImpl
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationPackageImpl#getFileDependency()
 	 * @generated
@@ -202,7 +202,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -212,7 +212,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Plugin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -222,7 +222,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -232,7 +232,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>File</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -242,7 +242,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The number of structural features of the '<em>File Dependency</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -252,7 +252,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.PersonImpl <em>Person</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.PersonImpl
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationPackageImpl#getPerson()
 	 * @generated
@@ -263,7 +263,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -273,7 +273,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>First Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -283,7 +283,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -293,7 +293,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>EMail</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -303,7 +303,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Current Company</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -313,7 +313,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The number of structural features of the '<em>Person</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -323,7 +323,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.CommentImpl <em>Comment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.CommentImpl
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationPackageImpl#getComment()
 	 * @generated
@@ -334,7 +334,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -344,7 +344,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -354,7 +354,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The feature id for the '<em><b>Contents</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -364,7 +364,7 @@ public interface DocumentationPackage extends EPackage {
 	 * The number of structural features of the '<em>Comment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -375,7 +375,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.documentation.plugin.documentation.Documentation <em>Documentation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Documentation</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Documentation
 	 * @generated
@@ -386,7 +386,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.documentation.plugin.documentation.Documentation#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Documentation#getDescription()
 	 * @see #getDocumentation()
@@ -398,7 +398,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.documentation.plugin.documentation.Documentation#getImplicitDependencies <em>Implicit Dependencies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Implicit Dependencies</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Documentation#getImplicitDependencies()
 	 * @see #getDocumentation()
@@ -410,7 +410,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.documentation.plugin.documentation.Documentation#getReferent <em>Referent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Referent</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Documentation#getReferent()
 	 * @see #getDocumentation()
@@ -422,7 +422,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.documentation.plugin.documentation.Documentation#getAdditionalComments <em>Additional Comments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Additional Comments</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Documentation#getAdditionalComments()
 	 * @see #getDocumentation()
@@ -434,7 +434,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.documentation.plugin.documentation.Dependency <em>Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Dependency</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Dependency
 	 * @generated
@@ -445,7 +445,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.documentation.plugin.documentation.Dependency#getPlugin <em>Plugin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Plugin</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Dependency#getPlugin()
 	 * @see #getDependency()
@@ -457,7 +457,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.documentation.plugin.documentation.Dependency#getComment <em>Comment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Comment</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Dependency#getComment()
 	 * @see #getDependency()
@@ -469,7 +469,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.documentation.plugin.documentation.FileDependency <em>File Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>File Dependency</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.FileDependency
 	 * @generated
@@ -480,7 +480,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.documentation.plugin.documentation.FileDependency#getFile <em>File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>File</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.FileDependency#getFile()
 	 * @see #getFileDependency()
@@ -492,7 +492,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.documentation.plugin.documentation.Person <em>Person</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Person</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Person
 	 * @generated
@@ -503,7 +503,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.documentation.plugin.documentation.Person#getFirstName <em>First Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>First Name</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Person#getFirstName()
 	 * @see #getPerson()
@@ -515,7 +515,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.documentation.plugin.documentation.Person#getLastName <em>Last Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Last Name</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Person#getLastName()
 	 * @see #getPerson()
@@ -527,7 +527,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.documentation.plugin.documentation.Person#getEMail <em>EMail</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>EMail</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Person#getEMail()
 	 * @see #getPerson()
@@ -539,7 +539,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.documentation.plugin.documentation.Person#getCurrentCompany <em>Current Company</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Current Company</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Person#getCurrentCompany()
 	 * @see #getPerson()
@@ -551,7 +551,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.documentation.plugin.documentation.Comment <em>Comment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Comment</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Comment
 	 * @generated
@@ -562,7 +562,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.documentation.plugin.documentation.Comment#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Title</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Comment#getTitle()
 	 * @see #getComment()
@@ -574,7 +574,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.documentation.plugin.documentation.Comment#getContents <em>Contents</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Contents</em>'.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.Comment#getContents()
 	 * @see #getComment()
@@ -586,7 +586,7 @@ public interface DocumentationPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -602,7 +602,7 @@ public interface DocumentationPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -610,7 +610,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationImpl <em>Documentation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationImpl
 		 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationPackageImpl#getDocumentation()
 		 * @generated
@@ -621,7 +621,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DOCUMENTATION__DESCRIPTION = eINSTANCE.getDocumentation_Description();
@@ -630,7 +630,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Implicit Dependencies</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DOCUMENTATION__IMPLICIT_DEPENDENCIES = eINSTANCE.getDocumentation_ImplicitDependencies();
@@ -639,7 +639,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Referent</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DOCUMENTATION__REFERENT = eINSTANCE.getDocumentation_Referent();
@@ -648,7 +648,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Additional Comments</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DOCUMENTATION__ADDITIONAL_COMMENTS = eINSTANCE.getDocumentation_AdditionalComments();
@@ -657,7 +657,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.DependencyImpl <em>Dependency</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DependencyImpl
 		 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationPackageImpl#getDependency()
 		 * @generated
@@ -668,7 +668,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Plugin</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DEPENDENCY__PLUGIN = eINSTANCE.getDependency_Plugin();
@@ -677,7 +677,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DEPENDENCY__COMMENT = eINSTANCE.getDependency_Comment();
@@ -686,7 +686,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.FileDependencyImpl <em>File Dependency</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.FileDependencyImpl
 		 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationPackageImpl#getFileDependency()
 		 * @generated
@@ -697,7 +697,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>File</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FILE_DEPENDENCY__FILE = eINSTANCE.getFileDependency_File();
@@ -706,7 +706,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.PersonImpl <em>Person</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.PersonImpl
 		 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationPackageImpl#getPerson()
 		 * @generated
@@ -717,7 +717,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PERSON__FIRST_NAME = eINSTANCE.getPerson_FirstName();
@@ -726,7 +726,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Last Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PERSON__LAST_NAME = eINSTANCE.getPerson_LastName();
@@ -735,7 +735,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>EMail</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PERSON__EMAIL = eINSTANCE.getPerson_EMail();
@@ -744,7 +744,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Current Company</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PERSON__CURRENT_COMPANY = eINSTANCE.getPerson_CurrentCompany();
@@ -753,7 +753,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.CommentImpl <em>Comment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.CommentImpl
 		 * @see org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationPackageImpl#getComment()
 		 * @generated
@@ -764,7 +764,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute COMMENT__TITLE = eINSTANCE.getComment_Title();
@@ -773,7 +773,7 @@ public interface DocumentationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Contents</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute COMMENT__CONTENTS = eINSTANCE.getComment_Contents();

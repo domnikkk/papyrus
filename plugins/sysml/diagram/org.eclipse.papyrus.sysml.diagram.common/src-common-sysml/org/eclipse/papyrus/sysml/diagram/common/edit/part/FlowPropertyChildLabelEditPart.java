@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.sysml.diagram.common.edit.part;
 
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.sysml.portandflows.FlowProperty;
 import org.eclipse.papyrus.uml.diagram.common.edit.part.AbstractElementChildLabelEditPart;
 
 /**

@@ -3,18 +3,15 @@
 package org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.util;
 
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
-
 import org.eclipse.emf.ecore.xmi.XMLResource;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.util.UmlPortResourceImpl
  * @generated
  */
@@ -24,7 +21,7 @@ public class UmlPortResourceFactoryImpl extends ResourceFactoryImpl
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UmlPortResourceFactoryImpl()
@@ -36,7 +33,7 @@ public class UmlPortResourceFactoryImpl extends ResourceFactoryImpl
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -30,14 +30,14 @@ import org.osgi.framework.Bundle;
 
 /**
  * Represents an Eclipse plugin that can be introspected
- * 
+ *
  * @author Laurent Wouters
  */
 public class Plugin {
 
 	/**
 	 * Gets an array of all the currently loaded plugins
-	 * 
+	 *
 	 * @return The currently loaded plugins
 	 */
 	public static Plugin[] getLoadedPlugins() {
@@ -65,7 +65,7 @@ public class Plugin {
 
 	/**
 	 * Gets the corresponding Eclipse bundle
-	 * 
+	 *
 	 * @return The Eclipse bundle represented by this object
 	 */
 	public Bundle getBundle() {
@@ -74,7 +74,7 @@ public class Plugin {
 
 	/**
 	 * Gets whether this plugin contains resources
-	 * 
+	 *
 	 * @return <code>true</code> if this plugin contains resources
 	 */
 	public boolean hasEntries() {
@@ -83,7 +83,7 @@ public class Plugin {
 
 	/**
 	 * Gets the top entries within this plugin
-	 * 
+	 *
 	 * @return The top entries
 	 */
 	public List<PluginEntry> entries() {
@@ -93,7 +93,7 @@ public class Plugin {
 	/**
 	 * Gets the qualified name of this plugin.
 	 * This is the symbolic name of the represented bundle
-	 * 
+	 *
 	 * @return The plugin's name
 	 */
 	public String getName() {
@@ -102,7 +102,7 @@ public class Plugin {
 
 	/**
 	 * Initializes this plugin with the given Eclipse bundle
-	 * 
+	 *
 	 * @param bundle
 	 *            The Eclipse bundle to represent
 	 */
@@ -126,7 +126,7 @@ public class Plugin {
 
 	/**
 	 * Gets the absolute physical path to this plugin
-	 * 
+	 *
 	 * @return The absolute path to this plugin
 	 */
 	public String getPhysicalPath() {
@@ -139,7 +139,7 @@ public class Plugin {
 	/**
 	 * Gets the entry corresponding to the given path, or <code>null</code> if none is found.
 	 * Paths shall be of the form <code>part1/part2/part3</code>, etc.
-	 * 
+	 *
 	 * @param path
 	 *            The path to lookup for an entry
 	 * @return The corresponding entry or <code>null</code> if none is found
@@ -212,7 +212,7 @@ public class Plugin {
 
 	/**
 	 * Builds the given embedded file with the given data
-	 * 
+	 *
 	 * @param parent
 	 *            The parent embedded directory
 	 * @param content

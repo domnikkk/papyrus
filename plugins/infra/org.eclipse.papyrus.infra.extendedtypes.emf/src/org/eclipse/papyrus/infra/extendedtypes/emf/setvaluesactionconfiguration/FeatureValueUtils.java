@@ -40,7 +40,7 @@ public class FeatureValueUtils {
 
 	/**
 	 * Returns the value to set for a given feature of a given element
-	 * 
+	 *
 	 * @param elementToConfigure
 	 *            eobject for which feature is set. This must not be <code>null</code>
 	 * @param feature

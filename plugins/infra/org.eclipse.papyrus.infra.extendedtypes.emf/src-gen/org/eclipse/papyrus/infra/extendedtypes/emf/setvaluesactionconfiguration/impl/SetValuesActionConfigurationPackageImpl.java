@@ -7,11 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
-
 import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ConstantValue;
 import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.DynamicValue;
 import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureToSet;
@@ -21,21 +18,20 @@ import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.
 import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationFactory;
 import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationPackage;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implements SetValuesActionConfigurationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass setValuesActionConfigurationEClass = null;
@@ -43,7 +39,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass featureToSetEClass = null;
@@ -51,7 +47,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass featureValueEClass = null;
@@ -59,7 +55,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass dynamicValueEClass = null;
@@ -67,7 +63,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass constantValueEClass = null;
@@ -75,7 +71,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass listValueEClass = null;
@@ -83,7 +79,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass queryExecutionValueEClass = null;
@@ -93,7 +89,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationPackage#eNS_URI
 	 * @see #init()
@@ -106,7 +102,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -117,7 +113,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	 * <p>
 	 * This method is used to initialize {@link SetValuesActionConfigurationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -156,7 +152,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +163,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +174,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +185,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -200,7 +196,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +207,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +218,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +229,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +240,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +251,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +262,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +273,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -288,7 +284,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -299,7 +295,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -309,7 +305,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -342,7 +338,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -352,7 +348,7 @@ public class SetValuesActionConfigurationPackageImpl extends EPackageImpl implem
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

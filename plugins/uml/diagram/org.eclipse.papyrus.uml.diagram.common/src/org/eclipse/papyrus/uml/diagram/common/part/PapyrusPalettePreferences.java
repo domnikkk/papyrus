@@ -773,7 +773,7 @@ public class PapyrusPalettePreferences implements IPapyrusPaletteConstant {
 
 	/**
 	 * compatibility with existing. should be called workspaceXX
-	 * 
+	 *
 	 * @param fileName
 	 * @return
 	 */

@@ -1078,7 +1078,7 @@ public class SashWindowsContainer implements ISashWindowsContainer {
 
 	/**
 	 * Get the event provider used to throw TabMouseEvents.
-	 * 
+	 *
 	 * @return the TabMouseEventsProvider
 	 */
 	public TabMouseEventsProvider getFolderTabMouseEventProvider() {

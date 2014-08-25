@@ -25,7 +25,7 @@ public class InverseValidationRule implements IValidationRule {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IValueValidator#getBindingMode()
 	 */
 	public Direction getBindingMode() {
@@ -42,7 +42,7 @@ public class InverseValidationRule implements IValidationRule {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IValueValidator#getPhase()
 	 */
 	public Phase getPhase() {
@@ -51,7 +51,7 @@ public class InverseValidationRule implements IValidationRule {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IValueValidator#validateBack(java.lang.Object)
 	 */
 	public IStatus validateBack(Object value) {
@@ -60,7 +60,7 @@ public class InverseValidationRule implements IValidationRule {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.validation.IValidator#validate(java.lang.Object)
 	 */
 	public IStatus validate(Object value) {

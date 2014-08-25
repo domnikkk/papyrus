@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 
 /**
  * Represents the prototype of a table defined in a viewpoint
- * 
+ *
  * @author Laurent Wouters
  */
 public class TableViewPrototype extends ViewPrototype {

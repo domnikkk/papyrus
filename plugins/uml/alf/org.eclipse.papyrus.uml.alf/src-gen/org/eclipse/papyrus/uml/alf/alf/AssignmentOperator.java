@@ -489,5 +489,5 @@ public enum AssignmentOperator implements Enumerator
   {
     return literal;
   }
-  
+
 } //AssignmentOperator

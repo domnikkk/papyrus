@@ -50,7 +50,7 @@ public class MessageOccurrenceSpecificationCreateCommandCN extends EditElementCo
 
 	/**
 	 * FIXME: replace with setElementToEdit()
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -10,18 +10,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.documentation.plugin.documentation.Comment;
 import org.eclipse.papyrus.documentation.plugin.documentation.Dependency;
 import org.eclipse.papyrus.documentation.plugin.documentation.Documentation;
@@ -49,7 +44,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -60,7 +55,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -71,7 +66,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	 * The cached value of the '{@link #getImplicitDependencies() <em>Implicit Dependencies</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImplicitDependencies()
 	 * @generated
 	 * @ordered
@@ -82,7 +77,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	 * The cached value of the '{@link #getReferent() <em>Referent</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReferent()
 	 * @generated
 	 * @ordered
@@ -93,7 +88,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	 * The cached value of the '{@link #getAdditionalComments() <em>Additional Comments</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAdditionalComments()
 	 * @generated
 	 * @ordered
@@ -103,7 +98,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DocumentationImpl() {
@@ -113,7 +108,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +119,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -134,7 +129,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -148,7 +143,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Dependency> getImplicitDependencies() {
@@ -161,7 +156,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Person> getReferent() {
@@ -174,7 +169,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Comment> getAdditionalComments() {
@@ -187,7 +182,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +201,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +222,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -256,7 +251,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +276,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +297,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -7,12 +7,9 @@
 package org.eclipse.papyrus.uml.properties.languagepreferences.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.uml.properties.languagepreferences.Editor;
 import org.eclipse.papyrus.uml.properties.languagepreferences.languagepreferencesPackage;
 
@@ -34,7 +31,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	 * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClass_()
 	 * @generated
 	 * @ordered
@@ -45,7 +42,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	 * The cached value of the '{@link #getClass_() <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClass_()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EditorImpl() {
@@ -65,7 +62,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +73,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getClass_() {
@@ -86,7 +83,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setClass(String newClass) {
@@ -100,7 +97,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +112,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +128,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +144,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +159,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

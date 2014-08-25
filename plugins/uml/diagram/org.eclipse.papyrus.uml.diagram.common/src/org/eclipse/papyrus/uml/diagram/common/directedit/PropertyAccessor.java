@@ -21,7 +21,7 @@ public abstract class PropertyAccessor implements IPropertyAccessor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.core.common.directedit.IPropertyAccessor#getPropertyName
 	 * ()
@@ -38,7 +38,7 @@ public abstract class PropertyAccessor implements IPropertyAccessor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.papyrus.core.common.directedit.IPropertyAccessor#getValue()
 	 */
 	/**
@@ -51,7 +51,7 @@ public abstract class PropertyAccessor implements IPropertyAccessor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.cea.papyrus.core.common.directedit.IPropertyAccessor#setValue(java
 	 * .lang.String)

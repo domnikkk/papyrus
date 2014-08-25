@@ -167,7 +167,7 @@ public class ImageToolTipManager {
 
 	/**
 	 * Do show th tooltip, unless we can't get an image for the part.
-	 * 
+	 *
 	 * @param pagePart
 	 * @param flyedControlBounds
 	 * @param mousePos
@@ -339,7 +339,7 @@ public class ImageToolTipManager {
 
 	/**
 	 * get the Image for the page.
-	 * 
+	 *
 	 * @param pagePart
 	 * @return
 	 */

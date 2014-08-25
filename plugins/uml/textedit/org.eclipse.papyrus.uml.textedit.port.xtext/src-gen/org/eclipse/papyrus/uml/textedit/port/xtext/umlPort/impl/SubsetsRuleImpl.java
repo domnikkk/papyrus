@@ -3,16 +3,12 @@
 package org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule;
 import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage;
-
 import org.eclipse.uml2.uml.Port;
 
 /**
@@ -34,7 +30,7 @@ public class SubsetsRuleImpl extends MinimalEObjectImpl.Container implements Sub
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPort()
 	 * @generated
 	 * @ordered
@@ -44,7 +40,7 @@ public class SubsetsRuleImpl extends MinimalEObjectImpl.Container implements Sub
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SubsetsRuleImpl()
@@ -55,7 +51,7 @@ public class SubsetsRuleImpl extends MinimalEObjectImpl.Container implements Sub
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -67,7 +63,7 @@ public class SubsetsRuleImpl extends MinimalEObjectImpl.Container implements Sub
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +86,7 @@ public class SubsetsRuleImpl extends MinimalEObjectImpl.Container implements Sub
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port basicGetPort()
@@ -101,7 +97,7 @@ public class SubsetsRuleImpl extends MinimalEObjectImpl.Container implements Sub
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +113,7 @@ public class SubsetsRuleImpl extends MinimalEObjectImpl.Container implements Sub
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +133,7 @@ public class SubsetsRuleImpl extends MinimalEObjectImpl.Container implements Sub
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +151,7 @@ public class SubsetsRuleImpl extends MinimalEObjectImpl.Container implements Sub
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +169,7 @@ public class SubsetsRuleImpl extends MinimalEObjectImpl.Container implements Sub
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

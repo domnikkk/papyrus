@@ -15,14 +15,14 @@ package org.eclipse.papyrus.emf.facet.util.emf.ui.internal.preference.pages;
 import java.util.List;
 
 import org.eclipse.core.runtime.preferences.InstanceScope;
+import org.eclipse.jface.preference.ComboFieldEditor;
+import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.papyrus.emf.facet.util.emf.core.IBrowserRegistry;
 import org.eclipse.papyrus.emf.facet.util.emf.core.IEObjectBrowserOpener;
 import org.eclipse.papyrus.emf.facet.util.emf.core.IEPackageBrowserOpener;
 import org.eclipse.papyrus.emf.facet.util.emf.core.IResourceBrowserOpener;
 import org.eclipse.papyrus.emf.facet.util.emf.core.internal.preferences.PreferenceConstants;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Messages;
-import org.eclipse.jface.preference.ComboFieldEditor;
-import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.eclipse.ui.preferences.ScopedPreferenceStore;

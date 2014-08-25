@@ -14,15 +14,11 @@
 package org.eclipse.papyrus.infra.viewpoints.configuration.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewpointImpl;
 
 /**
@@ -43,7 +39,7 @@ public class PapyrusViewpointImpl extends ArchitectureViewpointImpl implements P
 	 * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getParent()
 	 * @generated
 	 * @ordered
@@ -53,7 +49,7 @@ public class PapyrusViewpointImpl extends ArchitectureViewpointImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PapyrusViewpointImpl() {
@@ -63,7 +59,7 @@ public class PapyrusViewpointImpl extends ArchitectureViewpointImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +70,7 @@ public class PapyrusViewpointImpl extends ArchitectureViewpointImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusViewpoint getParent() {
@@ -93,7 +89,7 @@ public class PapyrusViewpointImpl extends ArchitectureViewpointImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusViewpoint basicGetParent() {
@@ -103,7 +99,7 @@ public class PapyrusViewpointImpl extends ArchitectureViewpointImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setParent(PapyrusViewpoint newParent) {
@@ -117,7 +113,7 @@ public class PapyrusViewpointImpl extends ArchitectureViewpointImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +131,7 @@ public class PapyrusViewpointImpl extends ArchitectureViewpointImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -151,7 +147,7 @@ public class PapyrusViewpointImpl extends ArchitectureViewpointImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +163,7 @@ public class PapyrusViewpointImpl extends ArchitectureViewpointImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

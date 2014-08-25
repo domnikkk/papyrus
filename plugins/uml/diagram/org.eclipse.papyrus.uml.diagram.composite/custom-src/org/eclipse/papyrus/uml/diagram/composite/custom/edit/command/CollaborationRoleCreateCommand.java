@@ -59,7 +59,7 @@ public class CollaborationRoleCreateCommand extends CollaborationRoleCreateComma
 	 * The method executes the creation :
 	 *  - opens a selection dialog to choose a {@link ConnectableElement} to reference as a role
 	 *  - add the selection in CollaborationRole eReference of the edited {@link Collaboration}.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

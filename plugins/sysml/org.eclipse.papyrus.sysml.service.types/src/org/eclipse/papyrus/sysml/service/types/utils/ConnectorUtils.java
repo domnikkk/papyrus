@@ -446,7 +446,7 @@ public class ConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.
 
 	/**
 	 * Filter connectors that have this property in their <NestedConnectorEnd> property path.
-	 * 
+	 *
 	 * @param connectors
 	 * @param part
 	 * @return connectors that have this property in their <NestedConnectorEnd> property path.

@@ -37,7 +37,7 @@ public class TrueLiteralQueryImpl extends QueryImpl implements TrueLiteralQuery 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TrueLiteralQueryImpl() {
@@ -47,7 +47,7 @@ public class TrueLiteralQueryImpl extends QueryImpl implements TrueLiteralQuery 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

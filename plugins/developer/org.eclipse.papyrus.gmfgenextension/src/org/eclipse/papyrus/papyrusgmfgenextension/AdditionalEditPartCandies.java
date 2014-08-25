@@ -32,7 +32,7 @@ public interface AdditionalEditPartCandies extends CommentedElement {
 	 * If the meaning of the '<em>Base Edit Helper Package</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Edit Helper Package</em>' attribute.
 	 * @see #setBaseEditHelperPackage(String)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getAdditionalEditPartCandies_BaseEditHelperPackage()
@@ -45,7 +45,7 @@ public interface AdditionalEditPartCandies extends CommentedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.AdditionalEditPartCandies#getBaseEditHelperPackage <em>Base Edit Helper Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Base Edit Helper Package</em>' attribute.
 	 * @see #getBaseEditHelperPackage()

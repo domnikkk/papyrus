@@ -31,7 +31,7 @@ import org.eclipse.papyrus.infra.hyperlink.util.HyperLinkConstants;
 
 /**
  * this is an helper to manager hyperlink web
- * 
+ *
  * @author PT202707
  *
  */

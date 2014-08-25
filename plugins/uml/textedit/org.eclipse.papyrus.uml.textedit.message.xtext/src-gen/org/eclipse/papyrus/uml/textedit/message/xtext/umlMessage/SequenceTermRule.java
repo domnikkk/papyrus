@@ -31,7 +31,7 @@ public interface SequenceTermRule extends EObject
 	 * If the meaning of the '<em>Sequencial Order</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sequencial Order</em>' attribute.
 	 * @see #setSequencialOrder(int)
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.UmlMessagePackage#getSequenceTermRule_SequencialOrder()
@@ -44,7 +44,7 @@ public interface SequenceTermRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule#getSequencialOrder <em>Sequencial Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Sequencial Order</em>' attribute.
 	 * @see #getSequencialOrder()
@@ -59,7 +59,7 @@ public interface SequenceTermRule extends EObject
 	 * If the meaning of the '<em>Sequence Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Sequence Name</em>' attribute.
 	 * @see #setSequenceName(String)
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.UmlMessagePackage#getSequenceTermRule_SequenceName()
@@ -72,7 +72,7 @@ public interface SequenceTermRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule#getSequenceName <em>Sequence Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Sequence Name</em>' attribute.
 	 * @see #getSequenceName()
@@ -87,7 +87,7 @@ public interface SequenceTermRule extends EObject
 	 * If the meaning of the '<em>Recurrence</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Recurrence</em>' attribute.
 	 * @see #setRecurrence(String)
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.UmlMessagePackage#getSequenceTermRule_Recurrence()
@@ -100,7 +100,7 @@ public interface SequenceTermRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule#getRecurrence <em>Recurrence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Recurrence</em>' attribute.
 	 * @see #getRecurrence()

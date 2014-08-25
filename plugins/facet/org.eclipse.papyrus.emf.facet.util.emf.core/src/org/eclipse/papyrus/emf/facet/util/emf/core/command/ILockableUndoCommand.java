@@ -12,7 +12,7 @@ package org.eclipse.papyrus.emf.facet.util.emf.core.command;
 
 /**
  * This interface is used to force an EMF command to not be "undo-able"
- * 
+ *
  * @since 0.1.1
  */
 public interface ILockableUndoCommand {

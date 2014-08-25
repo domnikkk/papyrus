@@ -62,7 +62,7 @@ public class CustomRoleBindingCreateCommand extends org.eclipse.papyrus.uml.diag
 	 *  The method executes the creation :
 	 *  - opens a selection dialog to choose a {@link ConnectableElement} reference as a role by the {@link CollaborationUse} type
 	 *  - created a dependency between the selected role and the {@link ConnectableElement} that will be bind to it
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

@@ -15,6 +15,9 @@ package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.widget.command
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomFactory;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
 import org.eclipse.papyrus.emf.facet.custom.sdk.core.ICustomizationCommandFactory;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.widget.getorcreate.GetExtendedFacetWidget;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.widget.getorcreate.GetOrCreateCustomizationWidget;
@@ -23,9 +26,6 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.AbstractCommandWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement2;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomFactory;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
 import org.eclipse.swt.widgets.Composite;
 
 /**

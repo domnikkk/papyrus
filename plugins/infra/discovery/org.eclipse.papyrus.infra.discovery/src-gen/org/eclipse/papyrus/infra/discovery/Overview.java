@@ -40,7 +40,7 @@ public interface Overview extends EObject {
 	 * If the meaning of the '<em>Summary</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Summary</em>' attribute.
 	 * @see #setSummary(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getOverview_Summary()
@@ -53,7 +53,7 @@ public interface Overview extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.Overview#getSummary <em>Summary</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Summary</em>' attribute.
 	 * @see #getSummary()
@@ -68,7 +68,7 @@ public interface Overview extends EObject {
 	 * If the meaning of the '<em>Screenshot</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Screenshot</em>' attribute.
 	 * @see #setScreenshot(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getOverview_Screenshot()
@@ -81,7 +81,7 @@ public interface Overview extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.Overview#getScreenshot <em>Screenshot</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Screenshot</em>' attribute.
 	 * @see #getScreenshot()
@@ -97,7 +97,7 @@ public interface Overview extends EObject {
 	 * If the meaning of the '<em>Url</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Url</em>' attribute.
 	 * @see #setUrl(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getOverview_Url()
@@ -110,7 +110,7 @@ public interface Overview extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.Overview#getUrl <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Url</em>' attribute.
 	 * @see #getUrl()

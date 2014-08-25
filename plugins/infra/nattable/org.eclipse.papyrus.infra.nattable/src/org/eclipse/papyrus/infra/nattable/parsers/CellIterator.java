@@ -23,7 +23,7 @@ public abstract class CellIterator implements Iterator<String> {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.util.Iterator#remove()
 	 */
 	@Override

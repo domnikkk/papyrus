@@ -17,18 +17,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Architecture;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder;
@@ -53,7 +48,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -64,7 +59,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -75,7 +70,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	 * The cached value of the '{@link #getStakeholders() <em>Stakeholders</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStakeholders()
 	 * @generated
 	 * @ordered
@@ -86,7 +81,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	 * The cached value of the '{@link #getExhibits() <em>Exhibits</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExhibits()
 	 * @generated
 	 * @ordered
@@ -96,7 +91,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SystemImpl() {
@@ -106,7 +101,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +112,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -127,7 +122,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -141,7 +136,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Stakeholder> getStakeholders() {
@@ -154,7 +149,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Architecture getExhibits() {
@@ -173,7 +168,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Architecture basicGetExhibits() {
@@ -183,7 +178,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetExhibits(Architecture newExhibits, NotificationChain msgs) {
@@ -203,7 +198,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setExhibits(Architecture newExhibits) {
@@ -228,7 +223,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -249,7 +244,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +261,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -288,7 +283,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -312,7 +307,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +329,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -353,7 +348,7 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements org.ecli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

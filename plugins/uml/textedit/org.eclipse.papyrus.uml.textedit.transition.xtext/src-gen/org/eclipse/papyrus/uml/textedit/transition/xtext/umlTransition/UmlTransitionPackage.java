@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionFactory
  * @model kind="package"
  * @generated
@@ -30,7 +30,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "umlTransition";
@@ -39,7 +39,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/uml/textedit/transition/xtext/UmlTransition";
@@ -48,7 +48,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "umlTransition";
@@ -57,7 +57,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	UmlTransitionPackage eINSTANCE = org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl.init();
@@ -66,7 +66,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.TransitionRuleImpl <em>Transition Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.TransitionRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getTransitionRule()
 	 * @generated
@@ -77,7 +77,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The feature id for the '<em><b>Triggers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -87,7 +87,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The feature id for the '<em><b>Effect</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The number of structural features of the '<em>Transition Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +117,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.EventRuleImpl <em>Event Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.EventRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getEventRule()
 	 * @generated
@@ -128,7 +128,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The number of structural features of the '<em>Event Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -138,7 +138,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.CallOrSignalEventRuleImpl <em>Call Or Signal Event Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.CallOrSignalEventRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getCallOrSignalEventRule()
 	 * @generated
@@ -149,7 +149,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The feature id for the '<em><b>Operation Or Signal</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -159,7 +159,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The number of structural features of the '<em>Call Or Signal Event Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -169,7 +169,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.AnyReceiveEventRuleImpl <em>Any Receive Event Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.AnyReceiveEventRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getAnyReceiveEventRule()
 	 * @generated
@@ -180,7 +180,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The feature id for the '<em><b>Is AReceive Event</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -190,7 +190,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The number of structural features of the '<em>Any Receive Event Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -200,7 +200,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.TimeEventRuleImpl <em>Time Event Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.TimeEventRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getTimeEventRule()
 	 * @generated
@@ -211,7 +211,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The feature id for the '<em><b>Expr</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -221,7 +221,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The number of structural features of the '<em>Time Event Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -231,7 +231,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.RelativeTimeEventRuleImpl <em>Relative Time Event Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.RelativeTimeEventRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getRelativeTimeEventRule()
 	 * @generated
@@ -242,7 +242,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The feature id for the '<em><b>Expr</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -252,7 +252,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The number of structural features of the '<em>Relative Time Event Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -262,7 +262,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.AbsoluteTimeEventRuleImpl <em>Absolute Time Event Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.AbsoluteTimeEventRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getAbsoluteTimeEventRule()
 	 * @generated
@@ -273,7 +273,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The feature id for the '<em><b>Expr</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -283,7 +283,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The number of structural features of the '<em>Absolute Time Event Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -293,7 +293,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.ChangeEventRuleImpl <em>Change Event Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.ChangeEventRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getChangeEventRule()
 	 * @generated
@@ -304,7 +304,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The feature id for the '<em><b>Exp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -314,7 +314,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The number of structural features of the '<em>Change Event Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -324,7 +324,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.GuardRuleImpl <em>Guard Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.GuardRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getGuardRule()
 	 * @generated
@@ -335,7 +335,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The feature id for the '<em><b>Constraint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -345,7 +345,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The number of structural features of the '<em>Guard Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -355,7 +355,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.EffectRuleImpl <em>Effect Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.EffectRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getEffectRule()
 	 * @generated
@@ -366,7 +366,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -376,7 +376,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The feature id for the '<em><b>Behavior Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -386,7 +386,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The number of structural features of the '<em>Effect Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -396,7 +396,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.BehaviorKind <em>Behavior Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.BehaviorKind
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getBehaviorKind()
 	 * @generated
@@ -408,7 +408,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TransitionRule <em>Transition Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Transition Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TransitionRule
 	 * @generated
@@ -419,7 +419,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TransitionRule#getTriggers <em>Triggers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Triggers</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TransitionRule#getTriggers()
 	 * @see #getTransitionRule()
@@ -431,7 +431,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TransitionRule#getGuard <em>Guard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Guard</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TransitionRule#getGuard()
 	 * @see #getTransitionRule()
@@ -443,7 +443,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TransitionRule#getEffect <em>Effect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Effect</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TransitionRule#getEffect()
 	 * @see #getTransitionRule()
@@ -455,7 +455,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.EventRule <em>Event Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Event Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.EventRule
 	 * @generated
@@ -466,7 +466,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.CallOrSignalEventRule <em>Call Or Signal Event Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Call Or Signal Event Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.CallOrSignalEventRule
 	 * @generated
@@ -477,7 +477,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.CallOrSignalEventRule#getOperationOrSignal <em>Operation Or Signal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Operation Or Signal</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.CallOrSignalEventRule#getOperationOrSignal()
 	 * @see #getCallOrSignalEventRule()
@@ -489,7 +489,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AnyReceiveEventRule <em>Any Receive Event Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Any Receive Event Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AnyReceiveEventRule
 	 * @generated
@@ -500,7 +500,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AnyReceiveEventRule#getIsAReceiveEvent <em>Is AReceive Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is AReceive Event</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AnyReceiveEventRule#getIsAReceiveEvent()
 	 * @see #getAnyReceiveEventRule()
@@ -512,7 +512,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TimeEventRule <em>Time Event Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Time Event Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TimeEventRule
 	 * @generated
@@ -523,7 +523,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TimeEventRule#getExpr <em>Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Expr</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.TimeEventRule#getExpr()
 	 * @see #getTimeEventRule()
@@ -535,7 +535,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.RelativeTimeEventRule <em>Relative Time Event Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Relative Time Event Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.RelativeTimeEventRule
 	 * @generated
@@ -546,7 +546,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AbsoluteTimeEventRule <em>Absolute Time Event Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Absolute Time Event Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AbsoluteTimeEventRule
 	 * @generated
@@ -557,7 +557,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.ChangeEventRule <em>Change Event Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Change Event Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.ChangeEventRule
 	 * @generated
@@ -568,7 +568,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.ChangeEventRule#getExp <em>Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Exp</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.ChangeEventRule#getExp()
 	 * @see #getChangeEventRule()
@@ -580,7 +580,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.GuardRule <em>Guard Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Guard Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.GuardRule
 	 * @generated
@@ -591,7 +591,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.GuardRule#getConstraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Constraint</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.GuardRule#getConstraint()
 	 * @see #getGuardRule()
@@ -603,7 +603,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.EffectRule <em>Effect Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Effect Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.EffectRule
 	 * @generated
@@ -614,7 +614,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.EffectRule#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.EffectRule#getKind()
 	 * @see #getEffectRule()
@@ -626,7 +626,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.EffectRule#getBehaviorName <em>Behavior Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Behavior Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.EffectRule#getBehaviorName()
 	 * @see #getEffectRule()
@@ -638,7 +638,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.BehaviorKind <em>Behavior Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Behavior Kind</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.BehaviorKind
 	 * @generated
@@ -649,7 +649,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -665,7 +665,7 @@ public interface UmlTransitionPackage extends EPackage
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals
@@ -674,7 +674,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.TransitionRuleImpl <em>Transition Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.TransitionRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getTransitionRule()
 		 * @generated
@@ -685,7 +685,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '<em><b>Triggers</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION_RULE__TRIGGERS = eINSTANCE.getTransitionRule_Triggers();
@@ -694,7 +694,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '<em><b>Guard</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION_RULE__GUARD = eINSTANCE.getTransitionRule_Guard();
@@ -703,7 +703,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '<em><b>Effect</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TRANSITION_RULE__EFFECT = eINSTANCE.getTransitionRule_Effect();
@@ -712,7 +712,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.EventRuleImpl <em>Event Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.EventRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getEventRule()
 		 * @generated
@@ -723,7 +723,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.CallOrSignalEventRuleImpl <em>Call Or Signal Event Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.CallOrSignalEventRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getCallOrSignalEventRule()
 		 * @generated
@@ -734,7 +734,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '<em><b>Operation Or Signal</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CALL_OR_SIGNAL_EVENT_RULE__OPERATION_OR_SIGNAL = eINSTANCE.getCallOrSignalEventRule_OperationOrSignal();
@@ -743,7 +743,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.AnyReceiveEventRuleImpl <em>Any Receive Event Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.AnyReceiveEventRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getAnyReceiveEventRule()
 		 * @generated
@@ -754,7 +754,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '<em><b>Is AReceive Event</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ANY_RECEIVE_EVENT_RULE__IS_ARECEIVE_EVENT = eINSTANCE.getAnyReceiveEventRule_IsAReceiveEvent();
@@ -763,7 +763,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.TimeEventRuleImpl <em>Time Event Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.TimeEventRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getTimeEventRule()
 		 * @generated
@@ -774,7 +774,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '<em><b>Expr</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute TIME_EVENT_RULE__EXPR = eINSTANCE.getTimeEventRule_Expr();
@@ -783,7 +783,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.RelativeTimeEventRuleImpl <em>Relative Time Event Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.RelativeTimeEventRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getRelativeTimeEventRule()
 		 * @generated
@@ -794,7 +794,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.AbsoluteTimeEventRuleImpl <em>Absolute Time Event Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.AbsoluteTimeEventRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getAbsoluteTimeEventRule()
 		 * @generated
@@ -805,7 +805,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.ChangeEventRuleImpl <em>Change Event Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.ChangeEventRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getChangeEventRule()
 		 * @generated
@@ -816,7 +816,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '<em><b>Exp</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CHANGE_EVENT_RULE__EXP = eINSTANCE.getChangeEventRule_Exp();
@@ -825,7 +825,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.GuardRuleImpl <em>Guard Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.GuardRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getGuardRule()
 		 * @generated
@@ -836,7 +836,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '<em><b>Constraint</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GUARD_RULE__CONSTRAINT = eINSTANCE.getGuardRule_Constraint();
@@ -845,7 +845,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.EffectRuleImpl <em>Effect Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.EffectRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getEffectRule()
 		 * @generated
@@ -856,7 +856,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EFFECT_RULE__KIND = eINSTANCE.getEffectRule_Kind();
@@ -865,7 +865,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '<em><b>Behavior Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EFFECT_RULE__BEHAVIOR_NAME = eINSTANCE.getEffectRule_BehaviorName();
@@ -874,7 +874,7 @@ public interface UmlTransitionPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.BehaviorKind <em>Behavior Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.BehaviorKind
 		 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl.UmlTransitionPackageImpl#getBehaviorKind()
 		 * @generated

@@ -33,7 +33,7 @@ public class SpecificDiagramUpdaterImpl extends ExternalHookImpl implements Spec
 	 * The cached value of the '{@link #getGenNode() <em>Gen Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenNode()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class SpecificDiagramUpdaterImpl extends ExternalHookImpl implements Spec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SpecificDiagramUpdaterImpl() {
@@ -53,7 +53,7 @@ public class SpecificDiagramUpdaterImpl extends ExternalHookImpl implements Spec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class SpecificDiagramUpdaterImpl extends ExternalHookImpl implements Spec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class SpecificDiagramUpdaterImpl extends ExternalHookImpl implements Spec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GenCommonBase basicGetGenNode() {
@@ -94,7 +94,7 @@ public class SpecificDiagramUpdaterImpl extends ExternalHookImpl implements Spec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class SpecificDiagramUpdaterImpl extends ExternalHookImpl implements Spec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class SpecificDiagramUpdaterImpl extends ExternalHookImpl implements Spec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +143,7 @@ public class SpecificDiagramUpdaterImpl extends ExternalHookImpl implements Spec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +159,7 @@ public class SpecificDiagramUpdaterImpl extends ExternalHookImpl implements Spec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

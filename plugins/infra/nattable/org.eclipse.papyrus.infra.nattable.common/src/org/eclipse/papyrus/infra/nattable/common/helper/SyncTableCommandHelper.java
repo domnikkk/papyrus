@@ -32,7 +32,7 @@ import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 
 /**
  * Represents the command helper for the viewpoints application to synchronized tables
- * 
+ *
  * @author Laurent Wouters
  */
 public class SyncTableCommandHelper implements IViewTypeHelper {

@@ -110,7 +110,7 @@ public class PapyrusPaletteService extends PaletteService implements IPalettePro
 
 		/**
 		 * Return the ID of the target editor for this ProviderDescriptor or null if none
-		 * 
+		 *
 		 * @return
 		 */
 		public String getTargetEditorID() {

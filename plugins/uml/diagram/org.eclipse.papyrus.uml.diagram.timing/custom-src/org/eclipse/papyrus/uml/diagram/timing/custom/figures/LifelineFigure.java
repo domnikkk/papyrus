@@ -72,7 +72,7 @@ public class LifelineFigure extends PapyrusNodeFigure implements IPapyrusNodeUML
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Figure#setPreferredSize(org.eclipse.draw2d.geometry.Dimension)
 	 */
 	@Override

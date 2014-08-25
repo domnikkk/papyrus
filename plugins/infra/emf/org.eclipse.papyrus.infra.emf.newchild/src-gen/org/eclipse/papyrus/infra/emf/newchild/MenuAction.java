@@ -32,7 +32,7 @@ public interface MenuAction extends MenuItem {
 	 * If the meaning of the '<em>Element Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Type</em>' reference.
 	 * @see #setElementType(ExtendedElementTypeConfiguration)
 	 * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage#getMenuAction_ElementType()
@@ -45,7 +45,7 @@ public interface MenuAction extends MenuItem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.MenuAction#getElementType <em>Element Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Element Type</em>' reference.
 	 * @see #getElementType()

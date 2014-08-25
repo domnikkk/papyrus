@@ -36,7 +36,7 @@ public interface PanelParent extends EObject {
 	 * If the meaning of the '<em>Children</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Children</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.DiPackage#getPanelParent_Children()
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.AbstractPanel#getParent
@@ -53,7 +53,7 @@ public interface PanelParent extends EObject {
 	 * Don't need to be implemented in TabFolder.
 	 * Used to insert a new SashPanel.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @model oldChildRequired="true" oldChildOrdered="false" newChildRequired="true" newChildOrdered="false"
 	 * @generated
 	 */

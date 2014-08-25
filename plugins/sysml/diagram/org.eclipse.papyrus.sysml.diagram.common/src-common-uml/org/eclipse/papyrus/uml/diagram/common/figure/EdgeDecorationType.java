@@ -18,7 +18,7 @@ import org.eclipse.gmf.runtime.notation.ArrowType;
 /**
  * <pre>
  * The class provides a list of predefined ids to create edge decorations.
- * 
+ *
  * Also see : org.eclipse.papyrus.uml.diagram.common.edit.part.AbstractElementLinkEditPart#getArrowDecoration().
  * </pre>
  */

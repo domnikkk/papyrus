@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.ClassificationClause;
 import org.eclipse.papyrus.uml.alf.alf.ClassifyStatement;
@@ -94,7 +91,11 @@ public class ClassifyStatementImpl extends StatementImpl implements ClassifyStat
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFY_STATEMENT__EXPRESSION, oldExpression, newExpression);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -109,15 +110,20 @@ public class ClassifyStatementImpl extends StatementImpl implements ClassifyStat
     if (newExpression != expression)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFY_STATEMENT__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFY_STATEMENT__EXPRESSION, null, msgs);
+      if (expression != null) {
+		msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFY_STATEMENT__EXPRESSION, null, msgs);
+	}
+      if (newExpression != null) {
+		msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFY_STATEMENT__EXPRESSION, null, msgs);
+	}
       msgs = basicSetExpression(newExpression, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFY_STATEMENT__EXPRESSION, newExpression, newExpression));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFY_STATEMENT__EXPRESSION, newExpression, newExpression));
+	}
   }
 
   /**
@@ -142,7 +148,11 @@ public class ClassifyStatementImpl extends StatementImpl implements ClassifyStat
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFY_STATEMENT__CLAUSE, oldClause, newClause);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -157,15 +167,20 @@ public class ClassifyStatementImpl extends StatementImpl implements ClassifyStat
     if (newClause != clause)
     {
       NotificationChain msgs = null;
-      if (clause != null)
-        msgs = ((InternalEObject)clause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFY_STATEMENT__CLAUSE, null, msgs);
-      if (newClause != null)
-        msgs = ((InternalEObject)newClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFY_STATEMENT__CLAUSE, null, msgs);
+      if (clause != null) {
+		msgs = ((InternalEObject)clause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFY_STATEMENT__CLAUSE, null, msgs);
+	}
+      if (newClause != null) {
+		msgs = ((InternalEObject)newClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.CLASSIFY_STATEMENT__CLAUSE, null, msgs);
+	}
       msgs = basicSetClause(newClause, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFY_STATEMENT__CLAUSE, newClause, newClause));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.CLASSIFY_STATEMENT__CLAUSE, newClause, newClause));
+	}
   }
 
   /**

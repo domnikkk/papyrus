@@ -40,7 +40,7 @@ public interface SingleValuedContainmentReferenceInstance extends AbstractRefere
 	 * If the meaning of the '<em>Owned Element</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned Element</em>' containment reference.
 	 * @see #setOwnedElement(EObject)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SerializationPackage#getSingleValuedContainmentReferenceInstance_OwnedElement()
@@ -53,7 +53,7 @@ public interface SingleValuedContainmentReferenceInstance extends AbstractRefere
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedContainmentReferenceInstance#getOwnedElement <em>Owned Element</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Owned Element</em>' containment reference.
 	 * @see #getOwnedElement()

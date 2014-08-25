@@ -37,7 +37,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -103,7 +103,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	 * The cached value of the '{@link #getIcon() <em>Icon</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -113,7 +113,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConfigurationImpl() {
@@ -123,7 +123,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getId() {
@@ -144,7 +144,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setId(String newId) {
@@ -158,7 +158,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLabel() {
@@ -168,7 +168,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLabel(String newLabel) {
@@ -182,7 +182,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -192,7 +192,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -206,7 +206,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IconDescriptor getIcon() {
@@ -216,7 +216,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetIcon(IconDescriptor newIcon, NotificationChain msgs) {
@@ -236,7 +236,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIcon(IconDescriptor newIcon) {
@@ -261,7 +261,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -276,7 +276,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +297,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,7 +322,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -347,7 +347,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -368,7 +368,7 @@ public abstract class ConfigurationImpl extends EObjectImpl implements Configura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

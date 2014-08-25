@@ -16,9 +16,9 @@ package org.eclipse.papyrus.sysml.diagram.requirement.edit.policy;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.ClassDiagramDragDropEditPolicy;
 import org.eclipse.papyrus.sysml.diagram.requirement.provider.GraphicalTypeRegistry;
 import org.eclipse.papyrus.sysml.diagram.requirement.provider.IGraphicalTypeRegistry;
+import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.ClassDiagramDragDropEditPolicy;
 
 /** Customization of the DND edit policy for the Requirement Diagram */
 public class RequirementDiagramDragDropEditPolicy extends ClassDiagramDragDropEditPolicy {

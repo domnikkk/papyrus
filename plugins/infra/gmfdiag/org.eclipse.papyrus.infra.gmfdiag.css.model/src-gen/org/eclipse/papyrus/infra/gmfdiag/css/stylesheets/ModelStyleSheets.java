@@ -30,7 +30,7 @@ public interface ModelStyleSheets extends EModelElement {
 	 * If the meaning of the '<em>Stylesheets</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stylesheets</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage#getModelStyleSheets_Stylesheets()
 	 * @model containment="true"

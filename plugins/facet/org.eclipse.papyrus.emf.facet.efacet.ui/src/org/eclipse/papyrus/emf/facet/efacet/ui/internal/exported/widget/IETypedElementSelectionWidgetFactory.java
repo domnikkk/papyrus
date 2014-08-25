@@ -16,8 +16,8 @@ package org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.widget;
 import java.util.Collection;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.widget.ETypedElementSelectionWidgetFactory;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.widget.ETypedElementSelectionWidgetFactory;
 import org.eclipse.swt.widgets.Composite;
 
 /**

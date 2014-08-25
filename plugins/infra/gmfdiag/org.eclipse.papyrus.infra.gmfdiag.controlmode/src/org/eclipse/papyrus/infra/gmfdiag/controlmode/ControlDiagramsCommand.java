@@ -55,7 +55,7 @@ public class ControlDiagramsCommand extends AbstractControlCommand {
 
 	/**
 	 * Reference the diagram about to be moved into the request in order to be used by other particpants
-	 * 
+	 *
 	 * @param diags
 	 */
 	@SuppressWarnings("unchecked")
@@ -87,7 +87,7 @@ public class ControlDiagramsCommand extends AbstractControlCommand {
 
 	/**
 	 * Get the list of all the diagrams to move
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */
@@ -106,7 +106,7 @@ public class ControlDiagramsCommand extends AbstractControlCommand {
 
 	/**
 	 * Get the old notation URI for request
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */

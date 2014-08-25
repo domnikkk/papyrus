@@ -40,7 +40,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
  * <pre>
  * TODO  : The port is not re-sizable
  * </pre>
- * 
+ *
  * .
  */
 public class PortPositionLocator implements IBorderItemLocator {

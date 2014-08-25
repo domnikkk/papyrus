@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.OrRule;
 
@@ -30,7 +29,7 @@ public class OrRuleImpl extends ComposedRuleConfigurationImpl implements OrRule 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected OrRuleImpl() {
@@ -40,7 +39,7 @@ public class OrRuleImpl extends ComposedRuleConfigurationImpl implements OrRule 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

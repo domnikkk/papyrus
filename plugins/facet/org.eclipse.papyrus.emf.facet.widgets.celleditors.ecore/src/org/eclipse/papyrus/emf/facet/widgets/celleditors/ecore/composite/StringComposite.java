@@ -83,7 +83,7 @@ public abstract class StringComposite<T> extends AbstractCellEditorComposite<T> 
 		final Listener clickListener = new Listener() {
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt. widgets.Event)
 			 */
 			public void handleEvent(final Event event) {

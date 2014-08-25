@@ -8,11 +8,8 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage;
-
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.EffectKind;
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.EffectRule;
 import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.ModifierKind;
@@ -26,7 +23,7 @@ import org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.UmlParamete
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UmlParameterPackageImpl extends EPackageImpl implements UmlParameterPackage
@@ -34,7 +31,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass parameterRuleEClass = null;
@@ -42,7 +39,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass modifiersRuleEClass = null;
@@ -50,7 +47,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass modifierSpecificationEClass = null;
@@ -58,7 +55,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass effectRuleEClass = null;
@@ -66,7 +63,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum modifierKindEEnum = null;
@@ -74,7 +71,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum effectKindEEnum = null;
@@ -84,7 +81,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.UmlParameterPackage#eNS_URI
 	 * @see #init()
@@ -98,7 +95,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -109,7 +106,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	 * <p>
 	 * This method is used to initialize {@link UmlParameterPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -147,7 +144,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +156,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +168,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +180,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +192,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +204,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +216,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +228,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +240,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +252,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +264,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +276,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +288,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -303,7 +300,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +312,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +324,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -339,7 +336,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -351,7 +348,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -361,7 +358,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents()
@@ -398,7 +395,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -408,7 +405,7 @@ public class UmlParameterPackageImpl extends EPackageImpl implements UmlParamete
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents()

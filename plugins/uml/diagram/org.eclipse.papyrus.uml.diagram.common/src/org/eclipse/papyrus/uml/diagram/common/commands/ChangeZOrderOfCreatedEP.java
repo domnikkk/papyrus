@@ -97,7 +97,7 @@ public class ChangeZOrderOfCreatedEP extends AbstractTransactionalCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.emf.commands.core.command.
 	 * AbstractTransactionalCommand#
 	 * doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,

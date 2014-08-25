@@ -28,7 +28,7 @@ import org.eclipse.papyrus.uml.diagram.common.utils.UMLGraphicalTypes;
 
 /**
  * Specific edit policy for compartment, to forbid the duplication of ports as affixed children.
- * 
+ *
  * @see bug 375041
  */
 public class CustomDuplicatePasteEditPolicy extends DuplicatePasteEditPolicy {

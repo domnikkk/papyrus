@@ -26,7 +26,7 @@ public class BaseViewInfoLabelProvider implements IBaseLabelProvider, ILabelProv
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
 	 */
 	@Override
@@ -37,7 +37,7 @@ public class BaseViewInfoLabelProvider implements IBaseLabelProvider, ILabelProv
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class BaseViewInfoLabelProvider implements IBaseLabelProvider, ILabelProv
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.
 	 * jface.viewers. ILabelProviderListener)
 	 */
@@ -62,7 +62,7 @@ public class BaseViewInfoLabelProvider implements IBaseLabelProvider, ILabelProv
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#dispose()
 	 */
 	@Override
@@ -72,7 +72,7 @@ public class BaseViewInfoLabelProvider implements IBaseLabelProvider, ILabelProv
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(java.lang
 	 * .Object, java.lang.String)
@@ -85,7 +85,7 @@ public class BaseViewInfoLabelProvider implements IBaseLabelProvider, ILabelProv
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.jface.viewers.IBaseLabelProvider#removeListener(org.eclipse
 	 * .jface.viewers. ILabelProviderListener)
 	 */

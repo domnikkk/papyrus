@@ -67,7 +67,7 @@ public class FilterViewsLabelsAction extends DiagramAction {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction#createTargetRequest
 	 * ()
@@ -79,7 +79,7 @@ public class FilterViewsLabelsAction extends DiagramAction {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction#isSelectionListener
 	 * ()
@@ -91,7 +91,7 @@ public class FilterViewsLabelsAction extends DiagramAction {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.action.Action#isEnabled()
 	 */
 	@Override
@@ -101,7 +101,7 @@ public class FilterViewsLabelsAction extends DiagramAction {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.common.ui.action.AbstractActionHandler#runWithEvent
 	 * (org.eclipse.swt .widgets.Event)
@@ -113,7 +113,7 @@ public class FilterViewsLabelsAction extends DiagramAction {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.action.AbstractActionHandler#run()
 	 */
 	@Override

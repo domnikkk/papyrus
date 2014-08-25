@@ -160,7 +160,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see
 			 * org.eclipse.core.runtime.preferences.IEclipsePreferences.INodeChangeListener#added(org.eclipse.core.runtime.preferences.IEclipsePreferences
 			 * .NodeChangeEvent)
@@ -173,7 +173,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see org.eclipse.core.runtime.preferences.IEclipsePreferences.INodeChangeListener#removed(org.eclipse.core.runtime.preferences.
 			 * IEclipsePreferences.NodeChangeEvent)
 			 */
@@ -192,7 +192,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 				/*
 				 * (non-Javadoc)
-				 * 
+				 *
 				 * @see org.eclipse.core.runtime.preferences.IEclipsePreferences.IPreferenceChangeListener#preferenceChange(org.eclipse.core.runtime.
 				 * preferences.IEclipsePreferences.PreferenceChangeEvent)
 				 */
@@ -269,7 +269,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#addPropertyChangeListener(org.eclipse.jface.util.IPropertyChangeListener)
 	 */
 	public void addPropertyChangeListener(IPropertyChangeListener listener) {
@@ -348,7 +348,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#contains(java.lang.String)
 	 */
 	public boolean contains(String name) {
@@ -360,7 +360,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#firePropertyChangeEvent(java.lang.String,
 	 * java.lang.Object, java.lang.Object)
 	 */
@@ -385,7 +385,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#getBoolean(java.lang.String)
 	 */
 	public boolean getBoolean(String name) {
@@ -395,7 +395,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#getDefaultBoolean(java.lang.String)
 	 */
 	public boolean getDefaultBoolean(String name) {
@@ -404,7 +404,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#getDefaultDouble(java.lang.String)
 	 */
 	public double getDefaultDouble(String name) {
@@ -413,7 +413,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#getDefaultFloat(java.lang.String)
 	 */
 	public float getDefaultFloat(String name) {
@@ -422,7 +422,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#getDefaultInt(java.lang.String)
 	 */
 	public int getDefaultInt(String name) {
@@ -431,7 +431,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#getDefaultLong(java.lang.String)
 	 */
 	public long getDefaultLong(String name) {
@@ -440,7 +440,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#getDefaultString(java.lang.String)
 	 */
 	public String getDefaultString(String name) {
@@ -449,7 +449,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#getDouble(java.lang.String)
 	 */
 	public double getDouble(String name) {
@@ -479,7 +479,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#getFloat(java.lang.String)
 	 */
 	public float getFloat(String name) {
@@ -496,7 +496,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#getInt(java.lang.String)
 	 */
 	public int getInt(String name) {
@@ -513,7 +513,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#getLong(java.lang.String)
 	 */
 	public long getLong(String name) {
@@ -530,7 +530,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#getString(java.lang.String)
 	 */
 	public String getString(String name) {
@@ -540,7 +540,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#isDefault(java.lang.String)
 	 */
 	public boolean isDefault(String name) {
@@ -552,7 +552,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#needsSaving()
 	 */
 	public boolean needsSaving() {
@@ -561,7 +561,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#putValue(java.lang.String,
 	 * java.lang.String)
 	 */
@@ -579,7 +579,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#removePropertyChangeListener(org.eclipse.jface.util.IPropertyChangeListener)
 	 */
 	public void removePropertyChangeListener(IPropertyChangeListener listener) {
@@ -591,7 +591,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setDefault(java.lang.String,
 	 * double)
 	 */
@@ -601,7 +601,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setDefault(java.lang.String,
 	 * float)
 	 */
@@ -611,7 +611,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setDefault(java.lang.String,
 	 * int)
 	 */
@@ -621,7 +621,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setDefault(java.lang.String,
 	 * long)
 	 */
@@ -631,7 +631,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setDefault(java.lang.String,
 	 * java.lang.String)
 	 */
@@ -641,7 +641,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setDefault(java.lang.String,
 	 * boolean)
 	 */
@@ -651,7 +651,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setToDefault(java.lang.String)
 	 */
 	public void setToDefault(String name) {
@@ -676,7 +676,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setValue(java.lang.String,
 	 * double)
 	 */
@@ -701,7 +701,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setValue(java.lang.String,
 	 * float)
 	 */
@@ -726,7 +726,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setValue(java.lang.String,
 	 * int)
 	 */
@@ -751,7 +751,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setValue(java.lang.String,
 	 * long)
 	 */
@@ -776,7 +776,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setValue(java.lang.String,
 	 * java.lang.String)
 	 */
@@ -792,7 +792,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPreferenceStore#setValue(java.lang.String,
 	 * boolean)
 	 */
@@ -817,7 +817,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.IPersistentPreferenceStore#save()
 	 */
 	public void save() throws IOException {

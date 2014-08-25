@@ -19,7 +19,6 @@ import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.papyrus.uml.textedit.transition.xtext.ui.editor.ContextEditorUtil;
 import org.eclipse.ui.ISources;
 import org.eclipse.ui.texteditor.ContentAssistAction;
-import org.eclipse.ui.texteditor.ITextEditor;
 import org.eclipse.xtext.ui.XtextUIMessages;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.handler.ContentAssistHandler;

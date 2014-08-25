@@ -38,7 +38,7 @@ public interface PseudoPage extends EObject
 	 * If the meaning of the '<em>Id</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getPseudoPage_Id()
@@ -51,7 +51,7 @@ public interface PseudoPage extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.PseudoPage#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Id</em>' attribute.
 	 * @see #getId()

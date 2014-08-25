@@ -21,7 +21,7 @@ import com.google.common.base.Predicate;
 
 /**
  * Predicate used to filter views by ID
- * 
+ *
  * @author arthur daussy
  */
 public class ViewTypePredicate implements Predicate<View> {
@@ -32,7 +32,7 @@ public class ViewTypePredicate implements Predicate<View> {
 
 	/**
 	 * Visual Id your are looking for
-	 * 
+	 *
 	 * @param id
 	 */
 	public ViewTypePredicate(String id) {

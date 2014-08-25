@@ -4,10 +4,19 @@ package org.eclipse.papyrus.customization.model.customizationplugin.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.customization.model.customizationplugin.*;
+import org.eclipse.papyrus.customization.model.customizationplugin.ConstraintsEnvironment;
+import org.eclipse.papyrus.customization.model.customizationplugin.CustomizableElement;
+import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationConfiguration;
+import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage;
+import org.eclipse.papyrus.customization.model.customizationplugin.FileBasedCustomizableElement;
+import org.eclipse.papyrus.customization.model.customizationplugin.ModelTemplate;
+import org.eclipse.papyrus.customization.model.customizationplugin.Palette;
+import org.eclipse.papyrus.customization.model.customizationplugin.Profile;
+import org.eclipse.papyrus.customization.model.customizationplugin.PropertyView;
+import org.eclipse.papyrus.customization.model.customizationplugin.PropertyViewEnvironment;
+import org.eclipse.papyrus.customization.model.customizationplugin.UICustom;
+import org.eclipse.papyrus.customization.model.customizationplugin.UMLModel;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +27,7 @@ import org.eclipse.papyrus.customization.model.customizationplugin.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage
  * @generated
  */
@@ -27,7 +36,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static CustomizationPluginPackage modelPackage;
@@ -36,7 +45,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomizationPluginSwitch() {
@@ -49,7 +58,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -63,7 +72,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -192,7 +201,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Customization Configuration</em>'.
@@ -209,7 +218,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Customizable Element</em>'.
@@ -226,7 +235,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>File Based Customizable Element</em>'.
@@ -243,7 +252,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Property View</em>'.
@@ -260,7 +269,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>UI Custom</em>'.
@@ -277,7 +286,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Model Template</em>'.
@@ -294,7 +303,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Palette</em>'.
@@ -311,7 +320,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Profile</em>'.
@@ -328,7 +337,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>UML Model</em>'.
@@ -345,7 +354,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Constraints Environment</em>'.
@@ -362,7 +371,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Property View Environment</em>'.
@@ -379,7 +388,7 @@ public class CustomizationPluginSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

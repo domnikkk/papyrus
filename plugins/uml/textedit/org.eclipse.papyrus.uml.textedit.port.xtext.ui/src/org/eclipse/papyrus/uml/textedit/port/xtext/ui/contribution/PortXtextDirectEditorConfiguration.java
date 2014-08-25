@@ -276,7 +276,7 @@ public class PortXtextDirectEditorConfiguration extends DefaultXtextDirectEditor
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.xtext.gmf.glue.PopupEditorConfiguration#getTextToEdit(java
 	 * .lang.Object)

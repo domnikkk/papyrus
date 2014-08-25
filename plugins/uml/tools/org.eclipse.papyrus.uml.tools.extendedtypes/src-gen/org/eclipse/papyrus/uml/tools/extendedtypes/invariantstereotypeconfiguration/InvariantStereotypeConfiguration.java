@@ -40,7 +40,7 @@ public interface InvariantStereotypeConfiguration extends InvariantRuleConfigura
 	 * If the meaning of the '<em>Stereotype Qualified Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stereotype Qualified Name</em>' attribute.
 	 * @see #setStereotypeQualifiedName(String)
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.InvariantStereotypeConfigurationPackage#getInvariantStereotypeConfiguration_StereotypeQualifiedName()
@@ -53,7 +53,7 @@ public interface InvariantStereotypeConfiguration extends InvariantRuleConfigura
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.InvariantStereotypeConfiguration#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Stereotype Qualified Name</em>' attribute.
 	 * @see #getStereotypeQualifiedName()
@@ -68,7 +68,7 @@ public interface InvariantStereotypeConfiguration extends InvariantRuleConfigura
 	 * If the meaning of the '<em>Required Profile</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Required Profile</em>' attribute.
 	 * @see #setRequiredProfile(String)
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.InvariantStereotypeConfigurationPackage#getInvariantStereotypeConfiguration_RequiredProfile()
@@ -81,7 +81,7 @@ public interface InvariantStereotypeConfiguration extends InvariantRuleConfigura
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.InvariantStereotypeConfiguration#getRequiredProfile <em>Required Profile</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Required Profile</em>' attribute.
 	 * @see #getRequiredProfile()

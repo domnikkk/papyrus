@@ -19,18 +19,17 @@ package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacetcatalog.impl
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacetcatalog.*;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacetcatalog.EfacetcatalogFactory;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacetcatalog.EfacetcatalogPackage;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacetcatalog.FacetSetCatalog;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EfacetcatalogFactoryImpl extends EFactoryImpl implements EfacetcatalogFactory {
@@ -38,7 +37,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EfacetcatalogFactory init() {
@@ -57,7 +56,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EfacetcatalogFactoryImpl() {
@@ -67,7 +66,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +82,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FacetSetCatalog createFacetSetCatalog() {
@@ -94,7 +93,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EfacetcatalogPackage getEfacetcatalogPackage() {
@@ -104,7 +103,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

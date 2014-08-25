@@ -138,7 +138,7 @@ public class MetaclassEditPart extends ClassifierEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.common.figure.node.ClassifierFigure
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,7 +222,7 @@ public class MetaclassEditPart extends ClassifierEditPart {
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
 	 *            instance of generated figure class
 	 * @generated

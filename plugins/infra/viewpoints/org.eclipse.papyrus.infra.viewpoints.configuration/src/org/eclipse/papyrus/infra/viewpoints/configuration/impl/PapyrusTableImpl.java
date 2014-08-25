@@ -14,11 +14,8 @@
 package org.eclipse.papyrus.infra.viewpoints.configuration.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable;
 
@@ -40,7 +37,7 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	 * The default value of the '{@link #getConfiguration() <em>Configuration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConfiguration()
 	 * @generated
 	 * @ordered
@@ -51,7 +48,7 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	 * The cached value of the '{@link #getConfiguration() <em>Configuration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConfiguration()
 	 * @generated
 	 * @ordered
@@ -61,7 +58,7 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PapyrusTableImpl() {
@@ -71,7 +68,7 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +79,7 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getConfiguration() {
@@ -92,7 +89,7 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setConfiguration(String newConfiguration) {
@@ -106,7 +103,7 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +118,7 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +134,7 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +150,7 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +165,7 @@ public class PapyrusTableImpl extends PapyrusViewImpl implements PapyrusTable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

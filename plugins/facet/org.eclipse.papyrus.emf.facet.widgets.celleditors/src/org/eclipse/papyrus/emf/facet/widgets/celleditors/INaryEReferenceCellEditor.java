@@ -44,11 +44,11 @@ public interface INaryEReferenceCellEditor<T extends EObject> {
 	 * Both lists are given here because in some case, we cannot calculate the the available
 	 * element, for instance when editing FacetReference, we need to have the FacetContext deal with
 	 * it.
-	 * 
+	 *
 	 * The EStructuralFeature is given here so that in the dialog we can know whether it is a
 	 * containment one, which has an impact on the edition. It is also needed to instantiate new
 	 * element, because we need to know its eType.
-	 * 
+	 *
 	 * The EObject is only here for dialog customization for instance. Do not modify it in the
 	 * dialog, the dialog has to return the new values.
 	 */

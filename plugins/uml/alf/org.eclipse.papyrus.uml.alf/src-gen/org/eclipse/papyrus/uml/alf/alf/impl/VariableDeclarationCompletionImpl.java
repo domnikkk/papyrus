@@ -4,13 +4,10 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.AssignmentCompletion;
 import org.eclipse.papyrus.uml.alf.alf.VariableDeclarationCompletion;
@@ -122,8 +119,9 @@ public class VariableDeclarationCompletionImpl extends MinimalEObjectImpl.Contai
   {
     boolean oldMultiplicityIndicator = multiplicityIndicator;
     multiplicityIndicator = newMultiplicityIndicator;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.VARIABLE_DECLARATION_COMPLETION__MULTIPLICITY_INDICATOR, oldMultiplicityIndicator, multiplicityIndicator));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.VARIABLE_DECLARATION_COMPLETION__MULTIPLICITY_INDICATOR, oldMultiplicityIndicator, multiplicityIndicator));
+	}
   }
 
   /**
@@ -145,8 +143,9 @@ public class VariableDeclarationCompletionImpl extends MinimalEObjectImpl.Contai
   {
     String oldVariableName = variableName;
     variableName = newVariableName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.VARIABLE_DECLARATION_COMPLETION__VARIABLE_NAME, oldVariableName, variableName));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.VARIABLE_DECLARATION_COMPLETION__VARIABLE_NAME, oldVariableName, variableName));
+	}
   }
 
   /**
@@ -171,7 +170,11 @@ public class VariableDeclarationCompletionImpl extends MinimalEObjectImpl.Contai
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.VARIABLE_DECLARATION_COMPLETION__INIT_VALUE, oldInitValue, newInitValue);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -186,15 +189,20 @@ public class VariableDeclarationCompletionImpl extends MinimalEObjectImpl.Contai
     if (newInitValue != initValue)
     {
       NotificationChain msgs = null;
-      if (initValue != null)
-        msgs = ((InternalEObject)initValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.VARIABLE_DECLARATION_COMPLETION__INIT_VALUE, null, msgs);
-      if (newInitValue != null)
-        msgs = ((InternalEObject)newInitValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.VARIABLE_DECLARATION_COMPLETION__INIT_VALUE, null, msgs);
+      if (initValue != null) {
+		msgs = ((InternalEObject)initValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.VARIABLE_DECLARATION_COMPLETION__INIT_VALUE, null, msgs);
+	}
+      if (newInitValue != null) {
+		msgs = ((InternalEObject)newInitValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.VARIABLE_DECLARATION_COMPLETION__INIT_VALUE, null, msgs);
+	}
       msgs = basicSetInitValue(newInitValue, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.VARIABLE_DECLARATION_COMPLETION__INIT_VALUE, newInitValue, newInitValue));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.VARIABLE_DECLARATION_COMPLETION__INIT_VALUE, newInitValue, newInitValue));
+	}
   }
 
   /**
@@ -307,7 +315,9 @@ public class VariableDeclarationCompletionImpl extends MinimalEObjectImpl.Contai
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (multiplicityIndicator: ");

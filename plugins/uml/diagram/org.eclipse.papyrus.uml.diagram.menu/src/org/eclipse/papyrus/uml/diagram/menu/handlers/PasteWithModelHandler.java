@@ -30,7 +30,7 @@ import org.eclipse.papyrus.uml.diagram.common.service.PasteCommandService;
 
 /**
  * The handler for the paste with model action
- * 
+ *
  * @deprecated since February 2014 use org.eclipse.papyrus.infra.gmfdiag.menu.handlers.PasteInDiagramHandler
  */
 @Deprecated

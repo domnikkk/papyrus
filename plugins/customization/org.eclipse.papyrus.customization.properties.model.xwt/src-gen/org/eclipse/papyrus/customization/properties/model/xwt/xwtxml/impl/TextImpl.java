@@ -15,7 +15,6 @@
 package org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Text;
 import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage;
 
@@ -32,7 +31,7 @@ public class TextImpl extends NodeImpl implements Text {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected TextImpl() {
@@ -42,7 +41,7 @@ public class TextImpl extends NodeImpl implements Text {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -38,7 +38,7 @@ public interface Function extends Term
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getFunction_Name()
@@ -51,7 +51,7 @@ public interface Function extends Term
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Function#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -66,7 +66,7 @@ public interface Function extends Term
 	 * If the meaning of the '<em>Args</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Args</em>' containment reference.
 	 * @see #setArgs(Expression)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getFunction_Args()
@@ -79,7 +79,7 @@ public interface Function extends Term
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Function#getArgs <em>Args</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Args</em>' containment reference.
 	 * @see #getArgs()

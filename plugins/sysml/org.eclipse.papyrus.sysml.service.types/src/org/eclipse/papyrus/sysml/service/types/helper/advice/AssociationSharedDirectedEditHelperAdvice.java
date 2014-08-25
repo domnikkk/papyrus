@@ -23,10 +23,10 @@ public class AssociationSharedDirectedEditHelperAdvice extends AssociationShared
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * The currently created {@link Association} is Shared (manage by super class), and directed
 	 * (meaning navigable in one direction only) which in SysML means the target end is owned by the association itself.
-	 * 
+	 *
 	 * Moreover this end name should not be set in that case, this latter rule is not followed here for now.
 	 *
 	 * </pre>

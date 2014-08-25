@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortFactory
  * @model kind="package"
  * @generated
@@ -30,7 +30,7 @@ public interface UmlPortPackage extends EPackage
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "umlPort";
@@ -39,7 +39,7 @@ public interface UmlPortPackage extends EPackage
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/uml/textedit/port/xtext/UmlPort";
@@ -48,7 +48,7 @@ public interface UmlPortPackage extends EPackage
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "umlPort";
@@ -57,7 +57,7 @@ public interface UmlPortPackage extends EPackage
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	UmlPortPackage eINSTANCE = org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl.init();
@@ -66,7 +66,7 @@ public interface UmlPortPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl <em>Port Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getPortRule()
 	 * @generated
@@ -77,7 +77,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -87,7 +87,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Is Derived</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Is Conjugated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +117,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +127,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Multiplicity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +137,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Modifiers</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,7 +147,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -157,7 +157,7 @@ public interface UmlPortPackage extends EPackage
 	 * The number of structural features of the '<em>Port Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -167,7 +167,7 @@ public interface UmlPortPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.TypeRuleImpl <em>Type Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.TypeRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getTypeRule()
 	 * @generated
@@ -178,7 +178,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -188,7 +188,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -198,7 +198,7 @@ public interface UmlPortPackage extends EPackage
 	 * The number of structural features of the '<em>Type Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,7 +208,7 @@ public interface UmlPortPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.QualifiedNameImpl <em>Qualified Name</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.QualifiedNameImpl
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getQualifiedName()
 	 * @generated
@@ -219,7 +219,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Path</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -229,7 +229,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Remaining</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -239,7 +239,7 @@ public interface UmlPortPackage extends EPackage
 	 * The number of structural features of the '<em>Qualified Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -249,7 +249,7 @@ public interface UmlPortPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.MultiplicityRuleImpl <em>Multiplicity Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.MultiplicityRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getMultiplicityRule()
 	 * @generated
@@ -260,7 +260,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -270,7 +270,7 @@ public interface UmlPortPackage extends EPackage
 	 * The number of structural features of the '<em>Multiplicity Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -280,7 +280,7 @@ public interface UmlPortPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.BoundSpecificationImpl <em>Bound Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.BoundSpecificationImpl
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getBoundSpecification()
 	 * @generated
@@ -291,7 +291,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -301,7 +301,7 @@ public interface UmlPortPackage extends EPackage
 	 * The number of structural features of the '<em>Bound Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -311,7 +311,7 @@ public interface UmlPortPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.ModifiersRuleImpl <em>Modifiers Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.ModifiersRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getModifiersRule()
 	 * @generated
@@ -322,7 +322,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -332,7 +332,7 @@ public interface UmlPortPackage extends EPackage
 	 * The number of structural features of the '<em>Modifiers Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -342,7 +342,7 @@ public interface UmlPortPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.ModifierSpecificationImpl <em>Modifier Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.ModifierSpecificationImpl
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getModifierSpecification()
 	 * @generated
@@ -353,7 +353,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -363,7 +363,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Redefines</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -373,7 +373,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Subsets</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -383,7 +383,7 @@ public interface UmlPortPackage extends EPackage
 	 * The number of structural features of the '<em>Modifier Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -393,7 +393,7 @@ public interface UmlPortPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.RedefinesRuleImpl <em>Redefines Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.RedefinesRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getRedefinesRule()
 	 * @generated
@@ -404,7 +404,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -414,7 +414,7 @@ public interface UmlPortPackage extends EPackage
 	 * The number of structural features of the '<em>Redefines Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -424,7 +424,7 @@ public interface UmlPortPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.SubsetsRuleImpl <em>Subsets Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.SubsetsRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getSubsetsRule()
 	 * @generated
@@ -435,7 +435,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -445,7 +445,7 @@ public interface UmlPortPackage extends EPackage
 	 * The number of structural features of the '<em>Subsets Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -455,7 +455,7 @@ public interface UmlPortPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.DefaultValueRuleImpl <em>Default Value Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.DefaultValueRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getDefaultValueRule()
 	 * @generated
@@ -466,7 +466,7 @@ public interface UmlPortPackage extends EPackage
 	 * The feature id for the '<em><b>Default</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -476,7 +476,7 @@ public interface UmlPortPackage extends EPackage
 	 * The number of structural features of the '<em>Default Value Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -486,7 +486,7 @@ public interface UmlPortPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind <em>Visibility Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getVisibilityKind()
 	 * @generated
@@ -497,7 +497,7 @@ public interface UmlPortPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierKind <em>Modifier Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierKind
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getModifierKind()
 	 * @generated
@@ -509,7 +509,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule <em>Port Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Port Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule
 	 * @generated
@@ -520,7 +520,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getVisibility <em>Visibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Visibility</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getVisibility()
 	 * @see #getPortRule()
@@ -532,7 +532,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsDerived <em>Is Derived</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Derived</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsDerived()
 	 * @see #getPortRule()
@@ -544,7 +544,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getName()
 	 * @see #getPortRule()
@@ -556,7 +556,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsConjugated <em>Is Conjugated</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Conjugated</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsConjugated()
 	 * @see #getPortRule()
@@ -568,7 +568,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getType()
 	 * @see #getPortRule()
@@ -580,7 +580,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getMultiplicity <em>Multiplicity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Multiplicity</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getMultiplicity()
 	 * @see #getPortRule()
@@ -592,7 +592,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getModifiers <em>Modifiers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Modifiers</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getModifiers()
 	 * @see #getPortRule()
@@ -604,7 +604,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getDefault <em>Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Default</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getDefault()
 	 * @see #getPortRule()
@@ -616,7 +616,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule <em>Type Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Type Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule
 	 * @generated
@@ -627,7 +627,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule#getPath()
 	 * @see #getTypeRule()
@@ -639,7 +639,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule#getType()
 	 * @see #getTypeRule()
@@ -651,7 +651,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.QualifiedName <em>Qualified Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Qualified Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.QualifiedName
 	 * @generated
@@ -662,7 +662,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.QualifiedName#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.QualifiedName#getPath()
 	 * @see #getQualifiedName()
@@ -674,7 +674,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.QualifiedName#getRemaining <em>Remaining</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Remaining</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.QualifiedName#getRemaining()
 	 * @see #getQualifiedName()
@@ -686,7 +686,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.MultiplicityRule <em>Multiplicity Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Multiplicity Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.MultiplicityRule
 	 * @generated
@@ -697,7 +697,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.MultiplicityRule#getBounds <em>Bounds</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Bounds</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.MultiplicityRule#getBounds()
 	 * @see #getMultiplicityRule()
@@ -709,7 +709,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BoundSpecification <em>Bound Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Bound Specification</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BoundSpecification
 	 * @generated
@@ -720,7 +720,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BoundSpecification#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BoundSpecification#getValue()
 	 * @see #getBoundSpecification()
@@ -732,7 +732,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifiersRule <em>Modifiers Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Modifiers Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifiersRule
 	 * @generated
@@ -743,7 +743,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifiersRule#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Values</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifiersRule#getValues()
 	 * @see #getModifiersRule()
@@ -755,7 +755,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification <em>Modifier Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Modifier Specification</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification
 	 * @generated
@@ -766,7 +766,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification#getValue()
 	 * @see #getModifierSpecification()
@@ -778,7 +778,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification#getRedefines <em>Redefines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Redefines</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification#getRedefines()
 	 * @see #getModifierSpecification()
@@ -790,7 +790,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification#getSubsets <em>Subsets</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Subsets</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification#getSubsets()
 	 * @see #getModifierSpecification()
@@ -802,7 +802,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RedefinesRule <em>Redefines Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Redefines Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RedefinesRule
 	 * @generated
@@ -813,7 +813,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RedefinesRule#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Port</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RedefinesRule#getPort()
 	 * @see #getRedefinesRule()
@@ -825,7 +825,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule <em>Subsets Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Subsets Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule
 	 * @generated
@@ -836,7 +836,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Port</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule#getPort()
 	 * @see #getSubsetsRule()
@@ -848,7 +848,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule <em>Default Value Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Default Value Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule
 	 * @generated
@@ -859,7 +859,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule#getDefault <em>Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Default</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule#getDefault()
 	 * @see #getDefaultValueRule()
@@ -871,7 +871,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind <em>Visibility Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Visibility Kind</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind
 	 * @generated
@@ -882,7 +882,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierKind <em>Modifier Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Modifier Kind</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierKind
 	 * @generated
@@ -893,7 +893,7 @@ public interface UmlPortPackage extends EPackage
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -909,7 +909,7 @@ public interface UmlPortPackage extends EPackage
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals
@@ -918,7 +918,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl <em>Port Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.PortRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getPortRule()
 		 * @generated
@@ -929,7 +929,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PORT_RULE__VISIBILITY = eINSTANCE.getPortRule_Visibility();
@@ -938,7 +938,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Is Derived</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PORT_RULE__IS_DERIVED = eINSTANCE.getPortRule_IsDerived();
@@ -947,7 +947,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PORT_RULE__NAME = eINSTANCE.getPortRule_Name();
@@ -956,7 +956,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Is Conjugated</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PORT_RULE__IS_CONJUGATED = eINSTANCE.getPortRule_IsConjugated();
@@ -965,7 +965,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PORT_RULE__TYPE = eINSTANCE.getPortRule_Type();
@@ -974,7 +974,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Multiplicity</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PORT_RULE__MULTIPLICITY = eINSTANCE.getPortRule_Multiplicity();
@@ -983,7 +983,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Modifiers</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PORT_RULE__MODIFIERS = eINSTANCE.getPortRule_Modifiers();
@@ -992,7 +992,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Default</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PORT_RULE__DEFAULT = eINSTANCE.getPortRule_Default();
@@ -1001,7 +1001,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.TypeRuleImpl <em>Type Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.TypeRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getTypeRule()
 		 * @generated
@@ -1012,7 +1012,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Path</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TYPE_RULE__PATH = eINSTANCE.getTypeRule_Path();
@@ -1021,7 +1021,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TYPE_RULE__TYPE = eINSTANCE.getTypeRule_Type();
@@ -1030,7 +1030,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.QualifiedNameImpl <em>Qualified Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.QualifiedNameImpl
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getQualifiedName()
 		 * @generated
@@ -1041,7 +1041,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Path</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference QUALIFIED_NAME__PATH = eINSTANCE.getQualifiedName_Path();
@@ -1050,7 +1050,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Remaining</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference QUALIFIED_NAME__REMAINING = eINSTANCE.getQualifiedName_Remaining();
@@ -1059,7 +1059,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.MultiplicityRuleImpl <em>Multiplicity Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.MultiplicityRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getMultiplicityRule()
 		 * @generated
@@ -1070,7 +1070,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Bounds</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MULTIPLICITY_RULE__BOUNDS = eINSTANCE.getMultiplicityRule_Bounds();
@@ -1079,7 +1079,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.BoundSpecificationImpl <em>Bound Specification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.BoundSpecificationImpl
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getBoundSpecification()
 		 * @generated
@@ -1090,7 +1090,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute BOUND_SPECIFICATION__VALUE = eINSTANCE.getBoundSpecification_Value();
@@ -1099,7 +1099,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.ModifiersRuleImpl <em>Modifiers Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.ModifiersRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getModifiersRule()
 		 * @generated
@@ -1110,7 +1110,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MODIFIERS_RULE__VALUES = eINSTANCE.getModifiersRule_Values();
@@ -1119,7 +1119,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.ModifierSpecificationImpl <em>Modifier Specification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.ModifierSpecificationImpl
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getModifierSpecification()
 		 * @generated
@@ -1130,7 +1130,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MODIFIER_SPECIFICATION__VALUE = eINSTANCE.getModifierSpecification_Value();
@@ -1139,7 +1139,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Redefines</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MODIFIER_SPECIFICATION__REDEFINES = eINSTANCE.getModifierSpecification_Redefines();
@@ -1148,7 +1148,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Subsets</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MODIFIER_SPECIFICATION__SUBSETS = eINSTANCE.getModifierSpecification_Subsets();
@@ -1157,7 +1157,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.RedefinesRuleImpl <em>Redefines Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.RedefinesRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getRedefinesRule()
 		 * @generated
@@ -1168,7 +1168,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Port</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REDEFINES_RULE__PORT = eINSTANCE.getRedefinesRule_Port();
@@ -1177,7 +1177,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.SubsetsRuleImpl <em>Subsets Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.SubsetsRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getSubsetsRule()
 		 * @generated
@@ -1188,7 +1188,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Port</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SUBSETS_RULE__PORT = eINSTANCE.getSubsetsRule_Port();
@@ -1197,7 +1197,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.DefaultValueRuleImpl <em>Default Value Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.DefaultValueRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getDefaultValueRule()
 		 * @generated
@@ -1208,7 +1208,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '<em><b>Default</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DEFAULT_VALUE_RULE__DEFAULT = eINSTANCE.getDefaultValueRule_Default();
@@ -1217,7 +1217,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind <em>Visibility Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getVisibilityKind()
 		 * @generated
@@ -1228,7 +1228,7 @@ public interface UmlPortPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierKind <em>Modifier Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierKind
 		 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.impl.UmlPortPackageImpl#getModifierKind()
 		 * @generated

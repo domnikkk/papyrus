@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.infra.discovery;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -42,7 +41,7 @@ public interface DiscoveryDefinition extends EObject {
 	 * If the meaning of the '<em>Categories</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Categories</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getDiscoveryDefinition_Categories()
 	 * @model containment="true" keys="name"
@@ -58,7 +57,7 @@ public interface DiscoveryDefinition extends EObject {
 	 * If the meaning of the '<em>Filters</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Filters</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getDiscoveryDefinition_Filters()
 	 * @model containment="true"

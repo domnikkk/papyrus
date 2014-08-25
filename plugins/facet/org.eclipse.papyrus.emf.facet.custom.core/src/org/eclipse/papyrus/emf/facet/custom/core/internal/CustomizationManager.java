@@ -26,13 +26,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
+import org.eclipse.papyrus.emf.facet.custom.core.exception.CustomizationException;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManagerFactory;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
-import org.eclipse.papyrus.emf.facet.custom.core.exception.CustomizationException;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 
 public class CustomizationManager implements ICustomizationManager {
 
@@ -109,7 +109,7 @@ public class CustomizationManager implements ICustomizationManager {
 		 * + " but EReference is expected."); //$NON-NLS-1$
 		 * }
 		 * }
-		 * 
+		 *
 		 * if (!(eStructuralFeature instanceof EAttribute)) {
 		 * if (customizationProperty.getScope().equals(
 		 * CustomizationPropertyScope.EATTRIBUTE)) {

@@ -49,7 +49,7 @@ public interface SpecificLocator extends ExternalHook {
 	 * If the meaning of the '<em>Gen Child Side Affixed Node</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Gen Child Side Affixed Node</em>' reference list.
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getSpecificLocator_GenChildSideAffixedNode()
 	 * @model

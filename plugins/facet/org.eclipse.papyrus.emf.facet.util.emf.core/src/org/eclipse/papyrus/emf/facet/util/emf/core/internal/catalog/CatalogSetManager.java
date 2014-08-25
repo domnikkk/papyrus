@@ -39,14 +39,14 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
+import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogFactory;
+import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
 import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogManager;
 import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager;
 import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager2;
 import org.eclipse.papyrus.emf.facet.util.emf.core.exception.InvalidFacetSetException;
 import org.eclipse.papyrus.emf.facet.util.emf.core.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.pde.core.internal.exported.PluginUtils;
-import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogFactory;
-import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
 import org.osgi.framework.Bundle;
 
 @SuppressWarnings("deprecation")

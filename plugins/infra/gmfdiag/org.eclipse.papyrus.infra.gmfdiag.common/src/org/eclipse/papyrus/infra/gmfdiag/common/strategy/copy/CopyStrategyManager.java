@@ -12,8 +12,8 @@
 package org.eclipse.papyrus.infra.gmfdiag.common.strategy.copy;
 
 import org.eclipse.papyrus.infra.gmfdiag.common.Activator;
-import org.eclipse.papyrus.infra.gmfdiag.common.strategy.StrategyManager;
 import org.eclipse.papyrus.infra.gmfdiag.common.strategy.IStrategyManager;
+import org.eclipse.papyrus.infra.gmfdiag.common.strategy.StrategyManager;
 
 /**
  * Singleton instance. This class is used to read and manage the various Copy Strategies

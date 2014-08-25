@@ -50,7 +50,7 @@ public final class DebugUtils {
 
 	/**
 	 * This methods returns the qualified name of the calling method.
-	 * 
+	 *
 	 * @param stackOffset
 	 * @return
 	 */

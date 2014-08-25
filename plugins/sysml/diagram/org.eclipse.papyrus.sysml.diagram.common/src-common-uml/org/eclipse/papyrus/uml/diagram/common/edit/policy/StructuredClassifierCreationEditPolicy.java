@@ -63,11 +63,11 @@ public class StructuredClassifierCreationEditPolicy extends CreationEditPolicy {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * The goal here is to create the view and to move it at the mouse location,
 	 * respecting a given locator. It is assumed that only affixed Port can be created on
 	 * edit part that have this edit policy, and the locator is a {@link PortPositionLocator}.
-	 * 
+	 *
 	 * @see DefaultCreationEditPolicy#getCreateCommand().
 	 * </pre>
 	 */

@@ -37,7 +37,7 @@ public interface Comment extends EModelElement {
 	 * If the meaning of the '<em>Title</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(String)
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage#getComment_Title()
@@ -50,7 +50,7 @@ public interface Comment extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.documentation.plugin.documentation.Comment#getTitle <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Title</em>' attribute.
 	 * @see #getTitle()
@@ -65,7 +65,7 @@ public interface Comment extends EModelElement {
 	 * If the meaning of the '<em>Contents</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Contents</em>' attribute.
 	 * @see #setContents(String)
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage#getComment_Contents()
@@ -78,7 +78,7 @@ public interface Comment extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.documentation.plugin.documentation.Comment#getContents <em>Contents</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Contents</em>' attribute.
 	 * @see #getContents()

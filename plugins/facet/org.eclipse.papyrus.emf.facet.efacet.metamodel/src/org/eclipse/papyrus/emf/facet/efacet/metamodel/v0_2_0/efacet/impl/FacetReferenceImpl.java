@@ -53,7 +53,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	 * The cached value of the '{@link #getCategories() <em>Categories</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCategories()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	 * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQuery()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	 * The cached value of the '{@link #getOverride() <em>Override</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOverride()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FacetReferenceImpl() {
@@ -117,7 +117,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDocumentation() {
@@ -138,7 +138,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDocumentation(String newDocumentation) {
@@ -152,7 +152,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Category> getCategories() {
@@ -165,7 +165,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Query getQuery() {
@@ -175,7 +175,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetQuery(Query newQuery, NotificationChain msgs) {
@@ -195,7 +195,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setQuery(Query newQuery) {
@@ -220,7 +220,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DerivedTypedElement getOverride() {
@@ -239,7 +239,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DerivedTypedElement basicGetOverride() {
@@ -249,7 +249,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOverride(DerivedTypedElement newOverride) {
@@ -263,7 +263,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +278,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +302,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -329,7 +329,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -354,7 +354,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -375,7 +375,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -412,7 +412,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -449,7 +449,7 @@ public class FacetReferenceImpl extends EReferenceImpl implements FacetReference
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

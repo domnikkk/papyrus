@@ -42,7 +42,7 @@ public interface MultiValuedContainmentReferenceInstance extends AbstractReferen
 	 * If the meaning of the '<em>Owned Elements</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned Elements</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SerializationPackage#getMultiValuedContainmentReferenceInstance_OwnedElements()
 	 * @model containment="true"

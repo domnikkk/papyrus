@@ -40,7 +40,7 @@ import org.osgi.framework.Bundle;
 
 /**
  * Represents a dialog for the selection of plugins and their resources by a user
- * 
+ *
  * @author Laurent Wouters
  */
 public class PluginsContentDialog extends Dialog {
@@ -57,7 +57,7 @@ public class PluginsContentDialog extends Dialog {
 
 	/**
 	 * Gets the selected element
-	 * 
+	 *
 	 * @return The element selected by the user
 	 */
 	public Object getSelection() {
@@ -66,7 +66,7 @@ public class PluginsContentDialog extends Dialog {
 
 	/**
 	 * Creates a new dialog
-	 * 
+	 *
 	 * @param parentShell
 	 *            The parent shell
 	 * @param validator
@@ -171,7 +171,7 @@ public class PluginsContentDialog extends Dialog {
 
 	/**
 	 * Gets the viewer sorter for this dialog
-	 * 
+	 *
 	 * @return A viewer sorter
 	 */
 	private ViewerSorter getViewerSorter() {

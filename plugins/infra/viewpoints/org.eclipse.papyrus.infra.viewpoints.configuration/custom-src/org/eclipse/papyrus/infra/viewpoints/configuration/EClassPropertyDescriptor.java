@@ -25,7 +25,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
  * Represents a descriptor for properties of type EClass
- * 
+ *
  * @author Laurent Wouters
  */
 public class EClassPropertyDescriptor extends SurrogateItemPropertyDescriptor {

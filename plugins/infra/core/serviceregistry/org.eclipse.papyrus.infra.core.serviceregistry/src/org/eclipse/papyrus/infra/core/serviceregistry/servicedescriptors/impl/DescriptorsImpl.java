@@ -5,17 +5,12 @@ package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Descriptors;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceSetDesc;
@@ -40,7 +35,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	 * The cached value of the '{@link #getRegistries() <em>Registries</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRegistries()
 	 * @generated
 	 * @ordered
@@ -51,7 +46,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	 * The cached value of the '{@link #getServiceSets() <em>Service Sets</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getServiceSets()
 	 * @generated
 	 * @ordered
@@ -61,7 +56,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DescriptorsImpl() {
@@ -71,7 +66,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +77,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +91,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +107,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	 * return null if not found.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -132,7 +127,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	 * return null if not found.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -149,7 +144,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +161,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +178,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -205,7 +200,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +219,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

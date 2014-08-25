@@ -16,13 +16,13 @@ package org.eclipse.papyrus.infra.core.pluginexplorer;
 
 /**
  * Validates the selection of a resource in a plugin
- * 
+ *
  * @author Laurent Wouters
  */
 public interface PluginsContentSelectionValidator {
 	/**
 	 * Determines whether the given plugin is a valid selection
-	 * 
+	 *
 	 * @param plugin
 	 *            The plugin
 	 * @return <code>true</code> if the plugin is a valid selection
@@ -31,7 +31,7 @@ public interface PluginsContentSelectionValidator {
 
 	/**
 	 * Determines whether the given plugin entry is a valid selection
-	 * 
+	 *
 	 * @param entry
 	 *            The plugin entry
 	 * @return <code>true</code> if the plugin entry is a valid selection

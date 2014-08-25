@@ -193,7 +193,7 @@ public class PasteElementCommand extends AbstractCommand {
 
 	/**
 	 * Rename duplicated objects
-	 * 
+	 *
 	 * @param domain
 	 * @param targetOwner
 	 * @param objectsToMove

@@ -39,7 +39,7 @@ public interface UnaryOperator extends EObject
 	 * If the meaning of the '<em>Operator</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.UNARY
 	 * @see #setOperator(UNARY)
@@ -53,7 +53,7 @@ public interface UnaryOperator extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.UnaryOperator#getOperator <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Operator</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.UNARY

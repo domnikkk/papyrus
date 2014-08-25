@@ -42,7 +42,7 @@ public interface SashModel extends EObject {
 	 * If the meaning of the '<em>Windows</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Windows</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.DiPackage#getSashModel_Windows()
 	 * @model containment="true" ordered="false"
@@ -57,7 +57,7 @@ public interface SashModel extends EObject {
 	 * If the meaning of the '<em>Current Selection</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Current Selection</em>' reference.
 	 * @see #setCurrentSelection(TabFolder)
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.DiPackage#getSashModel_CurrentSelection()
@@ -70,7 +70,7 @@ public interface SashModel extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.SashModel#getCurrentSelection <em>Current Selection</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Current Selection</em>' reference.
 	 * @see #getCurrentSelection()
@@ -81,7 +81,7 @@ public interface SashModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model pageIdentifierDataType="org.eclipse.papyrus.infra.core.sashwindows.di.JavaObject" pageIdentifierRequired="true" pageIdentifierOrdered="false"
 	 * @generated
 	 * @deprecated use {@link #addPage(TabFolder, Object)}
@@ -92,7 +92,7 @@ public interface SashModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model pageIdentifierDataType="org.eclipse.papyrus.infra.core.sashwindows.di.JavaObject" pageIdentifierRequired="true" pageIdentifierOrdered="false"
 	 * @generated
 	 */
@@ -101,7 +101,7 @@ public interface SashModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model pageIdentifierDataType="org.eclipse.papyrus.infra.core.sashwindows.di.JavaObject" pageIdentifierRequired="true" pageIdentifierOrdered="false"
 	 * @generated
 	 */
@@ -110,7 +110,7 @@ public interface SashModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model pageIdentifierDataType="org.eclipse.papyrus.infra.core.sashwindows.di.JavaObject" pageIdentifierRequired="true" pageIdentifierOrdered="false"
 	 * @generated
 	 */
@@ -119,7 +119,7 @@ public interface SashModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model selectionRequired="true" selectionOrdered="false"
 	 * @generated
 	 */
@@ -133,7 +133,7 @@ public interface SashModel extends EObject {
 	 * Return the pageRef or null if not found.
 	 * Lookup in the entire SashModel structure.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @model required="true" ordered="false" pageIdentifierDataType="org.eclipse.papyrus.infra.core.sashwindows.di.JavaObject" pageIdentifierRequired="true" pageIdentifierOrdered="false"
 	 * @generated
 	 */
@@ -142,7 +142,7 @@ public interface SashModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model srcParentFolderRequired="true" srcParentFolderOrdered="false" srcIndexDataType="org.eclipse.papyrus.infra.core.sashwindows.di.int" srcIndexRequired="true" srcIndexOrdered="false" targetParentFolderRequired="true" targetParentFolderOrdered="false"
 	 *        targetIndexDataType="org.eclipse.papyrus.infra.core.sashwindows.di.int" targetIndexRequired="true" targetIndexOrdered="false"
 	 * @generated
@@ -152,7 +152,7 @@ public interface SashModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model folderToInsertRequired="true" folderToInsertOrdered="false" refFolderRequired="true" refFolderOrdered="false" refFolderSideDataType="org.eclipse.papyrus.infra.core.sashwindows.di.int" refFolderSideRequired="true" refFolderSideOrdered="false"
 	 * @generated
 	 */
@@ -161,7 +161,7 @@ public interface SashModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model srcParentFolderRequired="true" srcParentFolderOrdered="false" srcIndexDataType="org.eclipse.papyrus.infra.core.sashwindows.di.int" srcIndexRequired="true" srcIndexOrdered="false" targetParentFolderRequired="true" targetParentFolderOrdered="false"
 	 * @generated
 	 */
@@ -170,7 +170,7 @@ public interface SashModel extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model folderRequired="true" folderOrdered="false"
 	 * @generated
 	 */
@@ -182,7 +182,7 @@ public interface SashModel extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Remove all pages from the model. Only left one empty top level folder.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @model
 	 * @generated
 	 */
@@ -194,7 +194,7 @@ public interface SashModel extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Remove pages other than the one specified from the model. Intermediate folders are also removed.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @model pageIdentifierDataType="org.eclipse.papyrus.infra.core.sashwindows.di.JavaObject" pageIdentifierRequired="true" pageIdentifierOrdered="false"
 	 * @generated
 	 */
@@ -206,7 +206,7 @@ public interface SashModel extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Get the first available window.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
@@ -218,7 +218,7 @@ public interface SashModel extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Lookup the first available folder.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */

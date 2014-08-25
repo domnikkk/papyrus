@@ -34,7 +34,7 @@ public interface MiscClass extends EObject {
 	 * If the meaning of the '<em>Label</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(String)
 	 * @see org.eclipse.papyrus.views.properties.environment.EnvironmentPackage#getMiscClass_Label()
@@ -47,7 +47,7 @@ public interface MiscClass extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.environment.MiscClass#getLabel <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Label</em>' attribute.
 	 * @see #getLabel()
@@ -62,7 +62,7 @@ public interface MiscClass extends EObject {
 	 * If the meaning of the '<em>Class</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Class</em>' attribute.
 	 * @see #setClass(String)
 	 * @see org.eclipse.papyrus.views.properties.environment.EnvironmentPackage#getMiscClass_Class()
@@ -75,7 +75,7 @@ public interface MiscClass extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.environment.MiscClass#getClass_ <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Class</em>' attribute.
 	 * @see #getClass_()
@@ -90,7 +90,7 @@ public interface MiscClass extends EObject {
 	 * If the meaning of the '<em>Namespace</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Namespace</em>' reference.
 	 * @see #setNamespace(Namespace)
 	 * @see org.eclipse.papyrus.views.properties.environment.EnvironmentPackage#getMiscClass_Namespace()
@@ -103,7 +103,7 @@ public interface MiscClass extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.environment.MiscClass#getNamespace <em>Namespace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Namespace</em>' reference.
 	 * @see #getNamespace()

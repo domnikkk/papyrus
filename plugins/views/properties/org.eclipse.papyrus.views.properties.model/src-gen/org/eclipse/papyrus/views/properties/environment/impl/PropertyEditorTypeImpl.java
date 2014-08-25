@@ -32,7 +32,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	 * The default value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMultiplicity()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	 * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMultiplicity()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyEditorTypeImpl() {
@@ -85,7 +85,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class PropertyEditorTypeImpl extends WidgetTypeImpl implements PropertyEd
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

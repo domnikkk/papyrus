@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.Pin;
 /**
  * PinEditHelper. used for:
  * -> Delete command should delete incoming and outgoing activity edge from the model
- * 
+ *
  * @author arthur daussy
  *
  */

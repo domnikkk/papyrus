@@ -46,7 +46,7 @@ public interface OppositeReference extends FacetElement {
 	 * If the meaning of the '<em>FOpposite</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>FOpposite</em>' reference.
 	 * @see #setFOpposite(EReference)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getOppositeReference_FOpposite()
@@ -61,7 +61,7 @@ public interface OppositeReference extends FacetElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.OppositeReference#getFOpposite <em>FOpposite</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>FOpposite</em>' reference.
 	 * @see #getFOpposite()

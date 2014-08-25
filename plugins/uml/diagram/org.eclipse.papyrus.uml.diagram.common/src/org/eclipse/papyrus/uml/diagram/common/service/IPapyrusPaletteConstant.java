@@ -24,7 +24,7 @@ public interface IPapyrusPaletteConstant {
 	public final String PALETTE_DEFINITION = "paletteDefinition"; //$NON-NLS-1$
 
 	/** Papyrus palette definition full extension point identifier */
-	public final String PALETTE_DEFINITION_FULL_ID = Activator.ID + "." + PALETTE_DEFINITION; //$NON-NLS-1$ 
+	public final String PALETTE_DEFINITION_FULL_ID = Activator.ID + "." + PALETTE_DEFINITION; //$NON-NLS-1$
 
 	/** name for the field giving the path to the XML file */
 	public final String CONTENT = "content"; //$NON-NLS-1$

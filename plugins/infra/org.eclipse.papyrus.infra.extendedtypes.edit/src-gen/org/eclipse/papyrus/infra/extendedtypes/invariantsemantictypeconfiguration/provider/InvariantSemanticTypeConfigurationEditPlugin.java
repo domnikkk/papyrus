@@ -13,18 +13,15 @@
 package org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 import org.eclipse.papyrus.infra.extendedtypes.provider.ExtendedTypesEditPlugin;
 
 /**
  * This is the central singleton for the InvariantSemanticTypeConfiguration edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public final class InvariantSemanticTypeConfigurationEditPlugin extends EMFPlugin {
@@ -32,7 +29,7 @@ public final class InvariantSemanticTypeConfigurationEditPlugin extends EMFPlugi
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final InvariantSemanticTypeConfigurationEditPlugin INSTANCE = new InvariantSemanticTypeConfigurationEditPlugin();
@@ -41,7 +38,7 @@ public final class InvariantSemanticTypeConfigurationEditPlugin extends EMFPlugi
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static Implementation plugin;
@@ -50,7 +47,7 @@ public final class InvariantSemanticTypeConfigurationEditPlugin extends EMFPlugi
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantSemanticTypeConfigurationEditPlugin() {
@@ -64,7 +61,7 @@ public final class InvariantSemanticTypeConfigurationEditPlugin extends EMFPlugi
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -77,7 +74,7 @@ public final class InvariantSemanticTypeConfigurationEditPlugin extends EMFPlugi
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -89,7 +86,7 @@ public final class InvariantSemanticTypeConfigurationEditPlugin extends EMFPlugi
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static class Implementation extends EclipsePlugin {
@@ -97,7 +94,7 @@ public final class InvariantSemanticTypeConfigurationEditPlugin extends EMFPlugi
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public Implementation() {

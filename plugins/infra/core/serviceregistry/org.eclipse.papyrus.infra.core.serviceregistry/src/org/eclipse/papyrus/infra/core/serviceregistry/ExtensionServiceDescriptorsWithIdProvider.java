@@ -104,7 +104,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 	/**
 	 * Get the descriptor for the specified registry.
 	 * Return null if not found.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.IServiceDescriptorsWithIdProvider#getRegistryDescriptor(java.lang.String)
 	 *
 	 * @param registryName
@@ -193,7 +193,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 
 	/**
 	 * Parse the parent declaration of a Registry.
-	 * 
+	 *
 	 * @param ele
 	 * @param registryIdDesc
 	 * @param warnings
@@ -217,7 +217,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 
 	/**
 	 * Parse the extends declaration of a Registry.
-	 * 
+	 *
 	 * @param parentElement
 	 *            The element to parse. This element must represent a Registry.
 	 * @param registryIdDesc
@@ -312,7 +312,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 	/**
 	 * Add the ServiceSetIdDesc declarations found in the provided {@link IConfigurationElement}, and add
 	 * it to the provided {@link ServiceSetIdDesc}.
-	 * 
+	 *
 	 * @param ele
 	 * @param warnings
 	 */
@@ -326,7 +326,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 
 	/**
 	 * Parse a {@link ServiceSetIdDesc}
-	 * 
+	 *
 	 * @param ele
 	 * @param warnings
 	 * @return A newly created ServiceSetIdDesc initialized with the declaration found in ele.
@@ -341,7 +341,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 
 	/**
 	 * Parse the extended attribute of a ServiceSetIdDesc declaration.
-	 * 
+	 *
 	 * @param parentElement
 	 * @param serviceSet
 	 * @param warnings
@@ -422,7 +422,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 
 	/**
 	 * Read an alias descriptor.
-	 * 
+	 *
 	 * @param ele
 	 * @return
 	 */
@@ -486,7 +486,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 
 	/**
 	 * Parse the StartupKind attribute.
-	 * 
+	 *
 	 * @param ele
 	 * @return
 	 * @throws DeclarationException
@@ -525,7 +525,7 @@ public class ExtensionServiceDescriptorsWithIdProvider implements IServiceDescri
 
 	/**
 	 * Parse the dependsOn attribute of a service.
-	 * 
+	 *
 	 * @param parentElement
 	 *            The {@link IConfigurationElement} containing a dependsOn attribute.
 	 * @param dependsOnServices

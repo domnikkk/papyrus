@@ -15,17 +15,12 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.SelectorCondition;
 import org.eclipse.papyrus.infra.gmfdiag.css.SimpleSelector;
@@ -50,7 +45,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	 * The default value of the '{@link #getElementName() <em>Element Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementName()
 	 * @generated
 	 * @ordered
@@ -61,7 +56,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	 * The cached value of the '{@link #getElementName() <em>Element Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementName()
 	 * @generated
 	 * @ordered
@@ -72,7 +67,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCondition()
 	 * @generated
 	 * @ordered
@@ -82,7 +77,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SimpleSelectorImpl()
@@ -93,7 +88,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +100,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +112,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +128,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -149,7 +144,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +161,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +180,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -208,7 +203,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -229,7 +224,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -248,7 +243,7 @@ public class SimpleSelectorImpl extends SelectorImpl implements SimpleSelector
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

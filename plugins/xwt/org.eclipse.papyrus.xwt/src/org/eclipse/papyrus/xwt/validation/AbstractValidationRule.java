@@ -28,7 +28,7 @@ public abstract class AbstractValidationRule implements IValidationRule {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IValueValidator#getBindingMode()
 	 */
 	public Direction getBindingMode() {
@@ -37,7 +37,7 @@ public abstract class AbstractValidationRule implements IValidationRule {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.xwt.IValueValidator#getPhase()
 	 */
 	public Phase getPhase() {

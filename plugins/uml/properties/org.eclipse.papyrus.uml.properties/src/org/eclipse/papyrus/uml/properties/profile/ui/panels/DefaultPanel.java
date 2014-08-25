@@ -53,7 +53,7 @@ public class DefaultPanel extends AbstractPanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.cea.actionlanguage.texteditor.ui.panels.AccordUMLAbstractPanel#createContent()
 	 */
 	/**

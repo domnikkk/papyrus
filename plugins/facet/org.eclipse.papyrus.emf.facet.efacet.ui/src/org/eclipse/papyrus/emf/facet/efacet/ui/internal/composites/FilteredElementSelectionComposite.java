@@ -10,8 +10,8 @@
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.composites;
 
-import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;

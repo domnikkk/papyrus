@@ -424,7 +424,7 @@ public class PackageUtil {
 
 	/**
 	 * Return all top-level packages within a resource set.
-	 * 
+	 *
 	 * @param element
 	 *            an element
 	 * @return the list of top-level packages

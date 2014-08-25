@@ -34,7 +34,7 @@ public interface DataContextPackage extends DataContextElement {
 	 * If the meaning of the '<em>Elements</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Elements</em>' containment reference list.
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getDataContextPackage_Elements()
 	 * @see org.eclipse.papyrus.views.properties.contexts.DataContextElement#getPackage

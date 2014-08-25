@@ -21,11 +21,14 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.*;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.EObjectLiteralQuery;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FalseLiteralQuery;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FloatLiteralQuery;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IntegerLiteralQuery;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IsOneOfQuery;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NavigationQuery;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NullLiteralQuery;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.OperationCallQuery;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryFactory;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryPackage;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.StringLiteralQuery;
@@ -35,7 +38,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.TrueLi
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
@@ -43,7 +46,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static QueryFactory init() {
@@ -62,7 +65,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public QueryFactoryImpl() {
@@ -72,7 +75,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +109,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NavigationQuery createNavigationQuery() {
@@ -117,7 +120,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IsOneOfQuery createIsOneOfQuery() {
@@ -128,7 +131,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StringLiteralQuery createStringLiteralQuery() {
@@ -139,7 +142,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public TrueLiteralQuery createTrueLiteralQuery() {
@@ -150,7 +153,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FalseLiteralQuery createFalseLiteralQuery() {
@@ -161,7 +164,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NullLiteralQuery createNullLiteralQuery() {
@@ -172,7 +175,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IntegerLiteralQuery createIntegerLiteralQuery() {
@@ -183,7 +186,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FloatLiteralQuery createFloatLiteralQuery() {
@@ -194,7 +197,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObjectLiteralQuery createEObjectLiteralQuery() {
@@ -205,7 +208,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OperationCallQuery createOperationCallQuery() {
@@ -216,7 +219,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public QueryPackage getQueryPackage() {
@@ -226,7 +229,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

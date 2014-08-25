@@ -43,7 +43,7 @@ public interface FacetCustomization extends Facet {
 	 * If the meaning of the '<em>Customized Facet</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Customized Facet</em>' reference.
 	 * @see #setCustomizedFacet(Facet)
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage#getFacetCustomization_CustomizedFacet()
@@ -56,7 +56,7 @@ public interface FacetCustomization extends Facet {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization#getCustomizedFacet <em>Customized Facet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Customized Facet</em>' reference.
 	 * @see #getCustomizedFacet()

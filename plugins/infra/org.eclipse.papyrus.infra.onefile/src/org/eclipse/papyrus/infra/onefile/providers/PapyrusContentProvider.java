@@ -150,7 +150,7 @@ public class PapyrusContentProvider extends WorkbenchContentProvider {
 
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see java.lang.Runnable#run()
 			 */
 			public void run() {

@@ -16,12 +16,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.core.runtime.Plugin;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.viewers.DecorationOverlayIcon;
 import org.eclipse.papyrus.emf.facet.util.core.DebugUtils;
 import org.eclipse.papyrus.emf.facet.util.jface.ui.imageprovider.IImageProvider;
 import org.eclipse.papyrus.emf.facet.util.jface.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.swt.imageprovider.IImageProviderFactory;
-import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.jface.viewers.DecorationOverlayIcon;
 import org.eclipse.swt.graphics.Image;
 import org.osgi.framework.Bundle;
 

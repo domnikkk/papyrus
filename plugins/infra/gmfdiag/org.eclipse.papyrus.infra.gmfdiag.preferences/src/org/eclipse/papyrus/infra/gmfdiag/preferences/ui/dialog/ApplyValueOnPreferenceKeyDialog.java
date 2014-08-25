@@ -65,7 +65,7 @@ public class ApplyValueOnPreferenceKeyDialog extends AbstractApplyValueOnPrefere
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.ITableColorProvider#getForeground(java.lang.Object, int)
 		 */
 		public Color getForeground(Object element, int columnIndex) {
@@ -75,7 +75,7 @@ public class ApplyValueOnPreferenceKeyDialog extends AbstractApplyValueOnPrefere
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.ITableColorProvider#getBackground(java.lang.Object, int)
 		 */
 		public Color getBackground(Object element, int columnIndex) {
@@ -85,7 +85,7 @@ public class ApplyValueOnPreferenceKeyDialog extends AbstractApplyValueOnPrefere
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnImage(java.lang.Object, int)
 		 */
 		public Image getColumnImage(Object element, int columnIndex) {
@@ -102,7 +102,7 @@ public class ApplyValueOnPreferenceKeyDialog extends AbstractApplyValueOnPrefere
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnText(java.lang.Object, int)
 		 */
 		public String getColumnText(Object element, int columnIndex) {
@@ -147,7 +147,7 @@ public class ApplyValueOnPreferenceKeyDialog extends AbstractApplyValueOnPrefere
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
 		 */
 		public void dispose() {
@@ -155,7 +155,7 @@ public class ApplyValueOnPreferenceKeyDialog extends AbstractApplyValueOnPrefere
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 		 */
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
@@ -163,7 +163,7 @@ public class ApplyValueOnPreferenceKeyDialog extends AbstractApplyValueOnPrefere
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
 		 */
 		public Object[] getElements(Object inputElement) {

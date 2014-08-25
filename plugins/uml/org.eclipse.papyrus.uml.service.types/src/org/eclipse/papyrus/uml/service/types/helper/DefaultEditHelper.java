@@ -36,19 +36,19 @@ import org.eclipse.papyrus.uml.service.types.command.CreateEditBasedElementComma
 /**
  * <pre>
  * This is a default Helper for UML element.
- * 
+ *
  * The only reason to override getDestroyElementWithDependentsCommand and getDestroyElementCommand
  * method here is to propagate the shared IClientContext used by Papyrus during the request creation.
  * Without this changes, the command to destroy dependent element won't be correctly created,
  * in EditHelper(s) the getDestroyDependentsCommand will only be called with default element type
  * (null command) and in AdviceHelper the getBeforeDestroyDependentsCommand will work but will
  * not retrieve command to destroy elements that themselves depend on dependent element to destroy.
- * 
+ *
  * The changes are replacing:
  * ElementTypeRegistry.getInstance().getElementType(req.getElementToDestroy());
  * by
  * ElementTypeRegistry.getInstance().getElementType(req.getElementToDestroy(), req.getClientContext());
- * 
+ *
  * See:
  * - Bug328232 (https://bugs.eclipse.org/bugs/show_bug.cgi?id=328232)
  * - Bug328506 (https://bugs.eclipse.org/bugs/show_bug.cgi?id=328506)

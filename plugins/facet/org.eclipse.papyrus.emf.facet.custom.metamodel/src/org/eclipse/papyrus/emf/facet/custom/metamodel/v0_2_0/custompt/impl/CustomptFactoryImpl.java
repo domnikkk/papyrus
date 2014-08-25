@@ -21,13 +21,16 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IColor;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IImage;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custompt.*;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custompt.Alignment;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custompt.CustomptFactory;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custompt.CustomptPackage;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custompt.Shadow;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory {
@@ -35,7 +38,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static CustomptFactory init() {
@@ -54,7 +57,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomptFactoryImpl() {
@@ -64,7 +67,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +81,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +103,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +125,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Shadow createShadowFromString(EDataType eDataType, String initialValue) {
@@ -136,7 +139,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertShadowToString(EDataType eDataType, Object instanceValue) {
@@ -146,7 +149,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Alignment createAlignmentFromString(EDataType eDataType, String initialValue) {
@@ -160,7 +163,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertAlignmentToString(EDataType eDataType, Object instanceValue) {
@@ -170,7 +173,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IImage createImageFromString(EDataType eDataType, String initialValue) {
@@ -180,7 +183,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertImageToString(EDataType eDataType, Object instanceValue) {
@@ -190,7 +193,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IColor createColorFromString(EDataType eDataType, String initialValue) {
@@ -200,7 +203,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertColorToString(EDataType eDataType, Object instanceValue) {
@@ -210,7 +213,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomptPackage getCustomptPackage() {
@@ -220,7 +223,7 @@ public class CustomptFactoryImpl extends EFactoryImpl implements CustomptFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

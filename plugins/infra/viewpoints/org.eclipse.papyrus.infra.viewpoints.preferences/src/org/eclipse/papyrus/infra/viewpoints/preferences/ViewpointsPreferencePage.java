@@ -39,7 +39,7 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 
 /**
  * Represents the preference page for the viewpoints configuration
- * 
+ *
  * @author Laurent Wouters
  */
 public class ViewpointsPreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
@@ -298,7 +298,7 @@ public class ViewpointsPreferencePage extends FieldEditorPreferencePage implemen
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
 	public void init(IWorkbench workbench) {

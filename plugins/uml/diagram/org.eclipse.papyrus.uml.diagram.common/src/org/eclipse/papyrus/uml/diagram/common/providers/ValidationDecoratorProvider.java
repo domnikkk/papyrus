@@ -285,7 +285,7 @@ public abstract class ValidationDecoratorProvider extends AbstractProvider imple
 		 * contains just the view element. But some decorations need to apply to multiple elements.
 		 * In particular, decorations for a value specification of a constraint need to apply for the
 		 * constraint as well - see bug 427863 - Constraint does not show ValueSpecification error marker
-		 * 
+		 *
 		 * @param viewElement
 		 * @return the list of observed decorations
 		 */
@@ -306,7 +306,7 @@ public abstract class ValidationDecoratorProvider extends AbstractProvider imple
 
 		/**
 		 * Does the viewElement match a decoration?
-		 * 
+		 *
 		 * @param viewElement
 		 *            the element behind a view
 		 * @param decoration

@@ -23,7 +23,7 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.stereotypedelementmatcherconf
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StereotypedElementMatcherConfigurationXMLProcessor extends XMLProcessor {
@@ -32,7 +32,7 @@ public class StereotypedElementMatcherConfigurationXMLProcessor extends XMLProce
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StereotypedElementMatcherConfigurationXMLProcessor() {
@@ -44,7 +44,7 @@ public class StereotypedElementMatcherConfigurationXMLProcessor extends XMLProce
 	 * Register for "*" and "xml" file extensions the StereotypedElementMatcherConfigurationResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

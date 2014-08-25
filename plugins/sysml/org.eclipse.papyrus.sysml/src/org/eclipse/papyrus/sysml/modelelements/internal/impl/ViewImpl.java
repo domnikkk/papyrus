@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.sysml.modelelements.internal.impl;
 
 import java.util.Iterator;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;

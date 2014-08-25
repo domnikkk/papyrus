@@ -7,9 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.MessageRule;
 import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule;
 import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.UmlMessageFactory;
@@ -19,7 +17,7 @@ import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.UmlMessagePacka
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePackage
@@ -27,7 +25,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass messageRuleEClass = null;
@@ -35,7 +33,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass sequenceTermRuleEClass = null;
@@ -45,7 +43,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.UmlMessagePackage#eNS_URI
 	 * @see #init()
@@ -59,7 +57,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -69,7 +67,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	 *
 	 * <p>
 	 * This method is used to initialize {@link UmlMessagePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -107,7 +105,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +117,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +129,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +141,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +153,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +165,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +177,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +189,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +201,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -213,7 +211,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents()
@@ -237,7 +235,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -247,7 +245,7 @@ public class UmlMessagePackageImpl extends EPackageImpl implements UmlMessagePac
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents()

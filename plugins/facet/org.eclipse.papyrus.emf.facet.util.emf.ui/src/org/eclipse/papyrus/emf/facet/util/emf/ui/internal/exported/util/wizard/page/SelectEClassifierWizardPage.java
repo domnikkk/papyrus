@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.ETypedElement;
+import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.papyrus.emf.facet.util.core.DebugUtils;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Messages;
@@ -25,7 +26,6 @@ import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.util.composit
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.util.wizard.page.exception.SelectedEClassifierRuntimeException;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.wizard.page.ISelectEClassifierWizardPage;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.wizard.page.ISelectEPackageWizardPage;
-import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionEvent;

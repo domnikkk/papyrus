@@ -27,7 +27,6 @@ import org.eclipse.papyrus.uml.diagram.composite.edit.commands.CommentAnnotatedE
 import org.eclipse.papyrus.uml.diagram.composite.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.papyrus.uml.diagram.composite.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.papyrus.uml.diagram.composite.edit.commands.ConstraintConstrainedElementReorientCommand;
-import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
 
 /**
  * <pre>

@@ -33,7 +33,7 @@ public interface UIComponent extends Element {
 	 * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see org.eclipse.papyrus.views.properties.ui.UiPackage#getUIComponent_Attributes()
 	 * @model containment="true"

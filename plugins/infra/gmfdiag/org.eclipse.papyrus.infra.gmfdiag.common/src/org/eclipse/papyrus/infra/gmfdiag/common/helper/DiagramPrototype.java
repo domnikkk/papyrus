@@ -29,7 +29,7 @@ import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 
 /**
  * Represents a prototype of GMF diagram for the viewpoints infrastructure
- * 
+ *
  * @author Laurent Wouters
  */
 public class DiagramPrototype extends ViewPrototype {

@@ -38,7 +38,7 @@ public interface Group extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getGroup_Name()
@@ -51,7 +51,7 @@ public interface Group extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.Group#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()

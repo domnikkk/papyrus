@@ -28,7 +28,7 @@ import org.eclipse.papyrus.uml.commands.command.PasteElementCommand;
 
 /**
  * Handler for the Paste Action
- * 
+ *
  * @deprecated use org.eclipse.papyrus.views.modelexplorer.handler.PasteHandler
  */
 @Deprecated

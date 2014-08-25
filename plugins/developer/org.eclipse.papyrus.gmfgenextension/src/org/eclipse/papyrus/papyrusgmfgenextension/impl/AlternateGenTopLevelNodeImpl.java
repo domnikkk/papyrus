@@ -36,7 +36,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	 * The cached value of the '{@link #getGenTopLevelNode() <em>Gen Top Level Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenTopLevelNode()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	 * The cached value of the '{@link #getTypeModelFacet() <em>Type Model Facet</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypeModelFacet()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AlternateGenTopLevelNodeImpl() {
@@ -67,7 +67,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GenTopLevelNode basicGetGenTopLevelNode() {
@@ -108,7 +108,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTypeModelFacet(TypeModelFacet newTypeModelFacet, NotificationChain msgs) {
@@ -154,7 +154,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -180,7 +180,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +195,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +253,7 @@ public class AlternateGenTopLevelNodeImpl extends CommentedElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

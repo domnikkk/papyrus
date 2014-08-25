@@ -49,7 +49,7 @@ public class BindingGate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.databinding.IBindingContext#bind(org.eclipse.core.
 	 * databinding.observable.value.IObservableValue,
@@ -109,7 +109,7 @@ public class BindingGate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.databinding.IBindingContext#bind(org.eclipse.core.
 	 * databinding.observable.value.IObservableValue,
@@ -160,7 +160,7 @@ public class BindingGate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.databinding.IBindingContext#bind(org.eclipse.core.
 	 * databinding.observable.value.IObservableValue,
@@ -246,7 +246,7 @@ public class BindingGate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.databinding.IBindingContext#bind(org.eclipse.core.
 	 * databinding.observable.value.IObservableValue,
@@ -316,7 +316,7 @@ public class BindingGate {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.xwt.databinding.IBindingContext#bind(org.eclipse.core.
 	 * databinding.observable.value.IObservableValue,

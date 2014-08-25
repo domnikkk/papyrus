@@ -15,12 +15,11 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.NattableFactory;
+import org.eclipse.papyrus.infra.nattable.model.nattable.NattablePackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 
 /**
  * <!-- begin-user-doc -->

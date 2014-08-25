@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
 
 /**
@@ -46,7 +45,7 @@ public interface ETypedElementSwitchQuery extends Query {
 	 * If the meaning of the '<em>Cases</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Cases</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage#getETypedElementSwitchQuery_Cases()
 	 * @model containment="true"

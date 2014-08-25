@@ -14,13 +14,13 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.papyrus.emf.facet.custom.ui.internal.exception.CustomizedContentProviderRuntimeException;
-import org.eclipse.papyrus.emf.facet.util.core.DebugUtils;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EAttributeTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EObjectTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EReferenceTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EStructuralFeatureTreeElement;
+import org.eclipse.papyrus.emf.facet.custom.ui.internal.exception.CustomizedContentProviderRuntimeException;
+import org.eclipse.papyrus.emf.facet.util.core.DebugUtils;
 
 public class TreeElementAdapter implements Adapter {
 

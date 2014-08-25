@@ -57,7 +57,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	 * The cached value of the '{@link #getDerivedTypedElement() <em>Derived Typed Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDerivedTypedElement()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	 * The cached value of the '{@link #getParameterValues() <em>Parameter Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getParameterValues()
 	 * @generated
 	 * @ordered
@@ -79,7 +79,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	 * The default value of the '{@link #getException() <em>Exception</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getException()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	 * The cached value of the '{@link #getException() <em>Exception</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getException()
 	 * @generated
 	 * @ordered
@@ -111,7 +111,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ETypedElementResultImpl() {
@@ -121,7 +121,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ETypedElement getDerivedTypedElement() {
@@ -151,7 +151,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ETypedElement basicGetDerivedTypedElement() {
@@ -161,7 +161,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDerivedTypedElement(ETypedElement newDerivedTypedElement) {
@@ -175,7 +175,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ParameterValue> getParameterValues() {
@@ -188,7 +188,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject getSource() {
@@ -207,7 +207,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetSource() {
@@ -217,7 +217,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setSource(EObject newSource) {
@@ -231,7 +231,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Throwable getException() {
@@ -241,7 +241,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setException(Throwable newException) {
@@ -255,7 +255,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +297,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -324,7 +324,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +349,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -370,7 +370,7 @@ public abstract class ETypedElementResultImpl extends EObjectImpl implements ETy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

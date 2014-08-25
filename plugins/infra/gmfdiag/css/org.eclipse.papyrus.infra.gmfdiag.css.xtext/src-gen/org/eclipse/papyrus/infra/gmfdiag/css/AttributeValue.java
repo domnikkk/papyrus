@@ -40,7 +40,7 @@ public interface AttributeValue extends EObject
 	 * If the meaning of the '<em>Operator</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.ATTRIBUTE_OP
 	 * @see #setOperator(ATTRIBUTE_OP)
@@ -54,7 +54,7 @@ public interface AttributeValue extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.AttributeValue#getOperator <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Operator</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.ATTRIBUTE_OP
@@ -70,7 +70,7 @@ public interface AttributeValue extends EObject
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getAttributeValue_Value()
@@ -83,7 +83,7 @@ public interface AttributeValue extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.AttributeValue#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()

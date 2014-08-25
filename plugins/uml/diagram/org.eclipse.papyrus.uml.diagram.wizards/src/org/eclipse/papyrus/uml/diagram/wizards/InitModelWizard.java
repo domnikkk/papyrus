@@ -266,7 +266,7 @@ public class InitModelWizard extends CreateModelWizard {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.ui.dialogs.WizardNewFileCreationPage#validatePage()
 		 */
 		@Override

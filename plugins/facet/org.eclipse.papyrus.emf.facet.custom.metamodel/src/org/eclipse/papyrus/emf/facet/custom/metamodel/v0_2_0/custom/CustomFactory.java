@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EFactory;
 /**
  * <!-- begin-user-doc --> The <b>Factory</b> for the model. It provides a
  * create method for each non-abstract class of the model. <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage
  * @generated
  */
@@ -27,7 +27,7 @@ public interface CustomFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	CustomFactory eINSTANCE = org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.impl.CustomFactoryImpl.init();
@@ -36,7 +36,7 @@ public interface CustomFactory extends EFactory {
 	 * Returns a new object of class '<em>Customization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Customization</em>'.
 	 * @generated
 	 */
@@ -46,7 +46,7 @@ public interface CustomFactory extends EFactory {
 	 * Returns a new object of class '<em>EClass Customization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>EClass Customization</em>'.
 	 * @generated
 	 */
@@ -56,7 +56,7 @@ public interface CustomFactory extends EFactory {
 	 * Returns a new object of class '<em>Facet Customization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Facet Customization</em>'.
 	 * @generated
 	 */
@@ -66,7 +66,7 @@ public interface CustomFactory extends EFactory {
 	 * Returns a new object of class '<em>ETyped Element Switch Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>ETyped Element Switch Query</em>'.
 	 * @generated
 	 */
@@ -76,7 +76,7 @@ public interface CustomFactory extends EFactory {
 	 * Returns a new object of class '<em>ETyped Element Case</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>ETyped Element Case</em>'.
 	 * @generated
 	 */
@@ -86,7 +86,7 @@ public interface CustomFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

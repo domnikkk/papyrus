@@ -13,12 +13,9 @@
 package org.eclipse.papyrus.infra.discovery.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.infra.discovery.DiscoveryPackage;
 import org.eclipse.papyrus.infra.discovery.Message;
 import org.eclipse.papyrus.infra.discovery.Severity;
@@ -43,7 +40,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTitle()
 	 * @generated
 	 * @ordered
@@ -54,7 +51,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTitle()
 	 * @generated
 	 * @ordered
@@ -65,7 +62,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -76,7 +73,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -87,7 +84,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -98,7 +95,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	 * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -108,7 +105,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MessageImpl() {
@@ -118,7 +115,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +126,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getTitle() {
@@ -139,7 +136,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setTitle(String newTitle) {
@@ -153,7 +150,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getMessage() {
@@ -163,7 +160,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMessage(String newMessage) {
@@ -177,7 +174,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Severity getIcon() {
@@ -187,7 +184,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIcon(Severity newIcon) {
@@ -201,7 +198,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +217,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +239,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +261,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +280,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -28,7 +28,7 @@ public interface AnyReceiveEventRule extends EventRule
 	 * If the meaning of the '<em>Is AReceive Event</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is AReceive Event</em>' attribute.
 	 * @see #setIsAReceiveEvent(String)
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage#getAnyReceiveEventRule_IsAReceiveEvent()
@@ -41,7 +41,7 @@ public interface AnyReceiveEventRule extends EventRule
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.AnyReceiveEventRule#getIsAReceiveEvent <em>Is AReceive Event</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is AReceive Event</em>' attribute.
 	 * @see #getIsAReceiveEvent()

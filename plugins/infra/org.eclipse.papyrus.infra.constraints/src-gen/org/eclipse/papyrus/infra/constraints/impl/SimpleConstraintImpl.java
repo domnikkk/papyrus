@@ -40,7 +40,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	 * The cached value of the '{@link #getConstraintType() <em>Constraint Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstraintType()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProperties()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SimpleConstraintImpl() {
@@ -71,7 +71,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +82,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintType getConstraintType() {
@@ -101,7 +101,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintType basicGetConstraintType() {
@@ -111,7 +111,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setConstraintType(ConstraintType newConstraintType) {
@@ -125,7 +125,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ConfigProperty> getProperties() {
@@ -138,7 +138,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -194,7 +194,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +213,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

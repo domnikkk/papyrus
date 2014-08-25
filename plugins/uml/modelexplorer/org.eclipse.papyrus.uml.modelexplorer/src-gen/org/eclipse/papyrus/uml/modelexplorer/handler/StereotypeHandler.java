@@ -19,7 +19,7 @@ public class StereotypeHandler extends AbstractUmlModelExplorerCreateCommandHand
 	/**
 	 * <pre>
 	 * @see org.eclipse.papyrus.uml.service.creation.handler.CreateHandler#getElementTypeToCreate()
-	 * 
+	 *
 	 * @return the IElementType this handler is supposed to create
 	 *
 	 * </pre>

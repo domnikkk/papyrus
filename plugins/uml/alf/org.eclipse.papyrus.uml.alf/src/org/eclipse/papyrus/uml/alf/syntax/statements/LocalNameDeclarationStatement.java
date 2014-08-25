@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,10 +24,10 @@ public class LocalNameDeclarationStatement extends Statement {
 	public boolean hasMultiplicity = false ;
 	public String name ;
 	public QualifiedName typeName ;
-	
+
 	// Derived Properties
 	public ElementReference type ;
-	
+
 	// Constraints
 	/*
 	 * The assignments after a local name declaration statement are the assignments before the statement plus a
@@ -37,47 +37,47 @@ public class LocalNameDeclarationStatement extends Statement {
 	 * 	is [0..*], otherwise it is [0..1].
 	 */
 	public void checkLocalNameDeclarationStatementAssignmentsAfter() {
-		
+
 	}
-	
+
 	/*
 	 * The assignments before the expression of a local name declaration statement are the same as the
 	 * 	assignments before the statement.
 	 */
 	public void checkLocalNameDeclarationStatementAssignmentsBefore() {
-		
+
 	}
-	
+
 	/*
 	 * If a local name declaration statement does not have multiplicity, then the multiplicity of upper bound of
 	 * 	the assigned expression must not be greater than 1.
 	 */
 	public void checkLocalNameDeclarationStatementExpressionMultiplicity() {
-		
+
 	}
-	
+
 	/*
 	 * The local name in a local name declaration statement must be unassigned before the statement and
 	 * 	before the expression in the statement. It must remain unassigned after the expression.
 	 */
 	public void checkLocalNameDeclarationStatementLocalName() {
-		
+
 	}
-	
+
 	/*
 	 * If the type name in a local name declaration statement is not empty, then it must resolve to a nontemplate
 	 * 	classifier and the expression must be assignable to that classifier.
 	 */
 	public void checkLocalNameDeclarationStatementType() {
-		
+
 	}
-	
+
 	/*
 	 * The type of a local name declaration statement with a type name is the single classifier referent of the
 	 * 	type name. Otherwise it is the type of the expression of the statement.
 	 */
 	public void checkLocalNameDeclarationStatementTypeDerivation() {
-		
+
 	}
-	
+
 }

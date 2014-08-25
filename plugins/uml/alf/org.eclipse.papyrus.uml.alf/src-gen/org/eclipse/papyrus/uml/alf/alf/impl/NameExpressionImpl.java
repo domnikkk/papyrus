@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.NameExpression;
 import org.eclipse.papyrus.uml.alf.alf.QualifiedNamePath;
@@ -178,8 +175,9 @@ public class NameExpressionImpl extends ValueSpecificationImpl implements NameEx
   {
     String oldPrefixOp = prefixOp;
     prefixOp = newPrefixOp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__PREFIX_OP, oldPrefixOp, prefixOp));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__PREFIX_OP, oldPrefixOp, prefixOp));
+	}
   }
 
   /**
@@ -204,7 +202,11 @@ public class NameExpressionImpl extends ValueSpecificationImpl implements NameEx
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__PATH, oldPath, newPath);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -219,15 +221,20 @@ public class NameExpressionImpl extends ValueSpecificationImpl implements NameEx
     if (newPath != path)
     {
       NotificationChain msgs = null;
-      if (path != null)
-        msgs = ((InternalEObject)path).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__PATH, null, msgs);
-      if (newPath != null)
-        msgs = ((InternalEObject)newPath).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__PATH, null, msgs);
+      if (path != null) {
+		msgs = ((InternalEObject)path).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__PATH, null, msgs);
+	}
+      if (newPath != null) {
+		msgs = ((InternalEObject)newPath).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__PATH, null, msgs);
+	}
       msgs = basicSetPath(newPath, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__PATH, newPath, newPath));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__PATH, newPath, newPath));
+	}
   }
 
   /**
@@ -249,8 +256,9 @@ public class NameExpressionImpl extends ValueSpecificationImpl implements NameEx
   {
     String oldId = id;
     id = newId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__ID, oldId, id));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__ID, oldId, id));
+	}
   }
 
   /**
@@ -275,7 +283,11 @@ public class NameExpressionImpl extends ValueSpecificationImpl implements NameEx
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__INVOCATION_COMPLETION, oldInvocationCompletion, newInvocationCompletion);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -290,15 +302,20 @@ public class NameExpressionImpl extends ValueSpecificationImpl implements NameEx
     if (newInvocationCompletion != invocationCompletion)
     {
       NotificationChain msgs = null;
-      if (invocationCompletion != null)
-        msgs = ((InternalEObject)invocationCompletion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__INVOCATION_COMPLETION, null, msgs);
-      if (newInvocationCompletion != null)
-        msgs = ((InternalEObject)newInvocationCompletion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__INVOCATION_COMPLETION, null, msgs);
+      if (invocationCompletion != null) {
+		msgs = ((InternalEObject)invocationCompletion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__INVOCATION_COMPLETION, null, msgs);
+	}
+      if (newInvocationCompletion != null) {
+		msgs = ((InternalEObject)newInvocationCompletion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__INVOCATION_COMPLETION, null, msgs);
+	}
       msgs = basicSetInvocationCompletion(newInvocationCompletion, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__INVOCATION_COMPLETION, newInvocationCompletion, newInvocationCompletion));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__INVOCATION_COMPLETION, newInvocationCompletion, newInvocationCompletion));
+	}
   }
 
   /**
@@ -323,7 +340,11 @@ public class NameExpressionImpl extends ValueSpecificationImpl implements NameEx
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__SEQUENCE_CONSTRUCTION_COMPLETION, oldSequenceConstructionCompletion, newSequenceConstructionCompletion);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -338,15 +359,20 @@ public class NameExpressionImpl extends ValueSpecificationImpl implements NameEx
     if (newSequenceConstructionCompletion != sequenceConstructionCompletion)
     {
       NotificationChain msgs = null;
-      if (sequenceConstructionCompletion != null)
-        msgs = ((InternalEObject)sequenceConstructionCompletion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__SEQUENCE_CONSTRUCTION_COMPLETION, null, msgs);
-      if (newSequenceConstructionCompletion != null)
-        msgs = ((InternalEObject)newSequenceConstructionCompletion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__SEQUENCE_CONSTRUCTION_COMPLETION, null, msgs);
+      if (sequenceConstructionCompletion != null) {
+		msgs = ((InternalEObject)sequenceConstructionCompletion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__SEQUENCE_CONSTRUCTION_COMPLETION, null, msgs);
+	}
+      if (newSequenceConstructionCompletion != null) {
+		msgs = ((InternalEObject)newSequenceConstructionCompletion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__SEQUENCE_CONSTRUCTION_COMPLETION, null, msgs);
+	}
       msgs = basicSetSequenceConstructionCompletion(newSequenceConstructionCompletion, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__SEQUENCE_CONSTRUCTION_COMPLETION, newSequenceConstructionCompletion, newSequenceConstructionCompletion));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__SEQUENCE_CONSTRUCTION_COMPLETION, newSequenceConstructionCompletion, newSequenceConstructionCompletion));
+	}
   }
 
   /**
@@ -368,8 +394,9 @@ public class NameExpressionImpl extends ValueSpecificationImpl implements NameEx
   {
     String oldPostfixOp = postfixOp;
     postfixOp = newPostfixOp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__POSTFIX_OP, oldPostfixOp, postfixOp));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__POSTFIX_OP, oldPostfixOp, postfixOp));
+	}
   }
 
   /**
@@ -394,7 +421,11 @@ public class NameExpressionImpl extends ValueSpecificationImpl implements NameEx
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__SUFFIX, oldSuffix, newSuffix);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -409,15 +440,20 @@ public class NameExpressionImpl extends ValueSpecificationImpl implements NameEx
     if (newSuffix != suffix)
     {
       NotificationChain msgs = null;
-      if (suffix != null)
-        msgs = ((InternalEObject)suffix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__SUFFIX, null, msgs);
-      if (newSuffix != null)
-        msgs = ((InternalEObject)newSuffix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__SUFFIX, null, msgs);
+      if (suffix != null) {
+		msgs = ((InternalEObject)suffix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__SUFFIX, null, msgs);
+	}
+      if (newSuffix != null) {
+		msgs = ((InternalEObject)newSuffix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.NAME_EXPRESSION__SUFFIX, null, msgs);
+	}
       msgs = basicSetSuffix(newSuffix, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__SUFFIX, newSuffix, newSuffix));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NAME_EXPRESSION__SUFFIX, newSuffix, newSuffix));
+	}
   }
 
   /**
@@ -576,7 +612,9 @@ public class NameExpressionImpl extends ValueSpecificationImpl implements NameEx
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (prefixOp: ");

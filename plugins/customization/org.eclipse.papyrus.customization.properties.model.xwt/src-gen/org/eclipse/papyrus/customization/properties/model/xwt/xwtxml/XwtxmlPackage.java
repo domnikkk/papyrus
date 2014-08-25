@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlFactory
  * @model kind="package"
  * @generated
@@ -41,7 +41,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "xwtxml";
@@ -50,7 +50,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/xwt/XML";
@@ -59,7 +59,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "xwtxml";
@@ -68,7 +68,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	XwtxmlPackage eINSTANCE = org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl.init();
@@ -77,7 +77,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.NodeImpl <em>Node</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.NodeImpl
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getNode()
 	 * @generated
@@ -88,7 +88,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +98,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +108,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of structural features of the '<em>Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,7 +118,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of operations of the '<em>Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -128,7 +128,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.AttributeImpl <em>Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.AttributeImpl
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getAttribute()
 	 * @generated
@@ -139,7 +139,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -149,7 +149,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -159,7 +159,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -169,7 +169,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of structural features of the '<em>Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -179,7 +179,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of operations of the '<em>Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -189,7 +189,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.TextImpl <em>Text</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.TextImpl
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getText()
 	 * @generated
@@ -200,7 +200,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -210,7 +210,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -220,7 +220,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of structural features of the '<em>Text</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -230,7 +230,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of operations of the '<em>Text</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -240,7 +240,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.ElementImpl <em>Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.ElementImpl
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getElement()
 	 * @generated
@@ -251,7 +251,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -261,7 +261,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -271,7 +271,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -281,7 +281,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of structural features of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -291,7 +291,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of operations of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -301,7 +301,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.RootImpl <em>Root</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.RootImpl
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getRoot()
 	 * @generated
@@ -312,7 +312,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -322,7 +322,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -332,7 +332,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -342,7 +342,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Namespaces</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -352,7 +352,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Dtd</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -362,7 +362,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Leading PIs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -372,7 +372,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of structural features of the '<em>Root</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -382,7 +382,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of operations of the '<em>Root</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -392,7 +392,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.NamespaceImpl <em>Namespace</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.NamespaceImpl
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getNamespace()
 	 * @generated
@@ -403,7 +403,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -413,7 +413,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -423,7 +423,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -433,7 +433,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of structural features of the '<em>Namespace</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -443,7 +443,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of operations of the '<em>Namespace</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -453,7 +453,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.CommentImpl <em>Comment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.CommentImpl
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getComment()
 	 * @generated
@@ -464,7 +464,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -474,7 +474,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -484,7 +484,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of structural features of the '<em>Comment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -494,7 +494,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of operations of the '<em>Comment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -504,7 +504,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.DocumentTypeDeclarationImpl <em>Document Type Declaration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.DocumentTypeDeclarationImpl
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getDocumentTypeDeclaration()
 	 * @generated
@@ -515,7 +515,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -525,7 +525,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -535,7 +535,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Public ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -545,7 +545,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>System ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -555,7 +555,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of structural features of the '<em>Document Type Declaration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -565,7 +565,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of operations of the '<em>Document Type Declaration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -575,7 +575,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.CDATAImpl <em>CDATA</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.CDATAImpl
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getCDATA()
 	 * @generated
@@ -586,7 +586,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -596,7 +596,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -606,7 +606,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of structural features of the '<em>CDATA</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -616,7 +616,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of operations of the '<em>CDATA</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -626,7 +626,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.ProcessingInstructionImpl <em>Processing Instruction</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.ProcessingInstructionImpl
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getProcessingInstruction()
 	 * @generated
@@ -637,7 +637,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -647,7 +647,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -657,7 +657,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -667,7 +667,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of structural features of the '<em>Processing Instruction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -677,7 +677,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * The number of operations of the '<em>Processing Instruction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -688,7 +688,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node <em>Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Node</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node
 	 * @generated
@@ -699,7 +699,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getName()
 	 * @see #getNode()
@@ -711,7 +711,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Parent</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getParent()
 	 * @see #getNode()
@@ -723,7 +723,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Attribute <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Attribute</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Attribute
 	 * @generated
@@ -734,7 +734,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Attribute#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Attribute#getValue()
 	 * @see #getAttribute()
@@ -746,7 +746,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Text <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Text</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Text
 	 * @generated
@@ -757,7 +757,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Element <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Element</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Element
 	 * @generated
@@ -768,7 +768,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Element#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Children</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Element#getChildren()
 	 * @see #getElement()
@@ -780,7 +780,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Root <em>Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Root</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Root
 	 * @generated
@@ -791,7 +791,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Root#getNamespaces <em>Namespaces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Namespaces</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Root#getNamespaces()
 	 * @see #getRoot()
@@ -803,7 +803,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Root#getDtd <em>Dtd</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Dtd</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Root#getDtd()
 	 * @see #getRoot()
@@ -815,7 +815,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Root#getLeadingPIs <em>Leading PIs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Leading PIs</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Root#getLeadingPIs()
 	 * @see #getRoot()
@@ -827,7 +827,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Namespace <em>Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Namespace</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Namespace
 	 * @generated
@@ -838,7 +838,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Comment <em>Comment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Comment</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Comment
 	 * @generated
@@ -849,7 +849,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.DocumentTypeDeclaration <em>Document Type Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Document Type Declaration</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.DocumentTypeDeclaration
 	 * @generated
@@ -860,7 +860,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.DocumentTypeDeclaration#getPublicID <em>Public ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Public ID</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.DocumentTypeDeclaration#getPublicID()
 	 * @see #getDocumentTypeDeclaration()
@@ -872,7 +872,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.DocumentTypeDeclaration#getSystemID <em>System ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>System ID</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.DocumentTypeDeclaration#getSystemID()
 	 * @see #getDocumentTypeDeclaration()
@@ -884,7 +884,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.CDATA <em>CDATA</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>CDATA</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.CDATA
 	 * @generated
@@ -895,7 +895,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.ProcessingInstruction <em>Processing Instruction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Processing Instruction</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.ProcessingInstruction
 	 * @generated
@@ -906,7 +906,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.ProcessingInstruction#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.ProcessingInstruction#getData()
 	 * @see #getProcessingInstruction()
@@ -918,7 +918,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -935,7 +935,7 @@ public interface XwtxmlPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -943,7 +943,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.NodeImpl <em>Node</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.NodeImpl
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getNode()
 		 * @generated
@@ -954,7 +954,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute NODE__NAME = eINSTANCE.getNode_Name();
@@ -963,7 +963,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NODE__PARENT = eINSTANCE.getNode_Parent();
@@ -972,7 +972,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.AttributeImpl <em>Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.AttributeImpl
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getAttribute()
 		 * @generated
@@ -983,7 +983,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ATTRIBUTE__VALUE = eINSTANCE.getAttribute_Value();
@@ -992,7 +992,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.TextImpl <em>Text</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.TextImpl
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getText()
 		 * @generated
@@ -1003,7 +1003,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.ElementImpl <em>Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.ElementImpl
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getElement()
 		 * @generated
@@ -1014,7 +1014,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ELEMENT__CHILDREN = eINSTANCE.getElement_Children();
@@ -1023,7 +1023,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.RootImpl <em>Root</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.RootImpl
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getRoot()
 		 * @generated
@@ -1034,7 +1034,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Namespaces</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ROOT__NAMESPACES = eINSTANCE.getRoot_Namespaces();
@@ -1043,7 +1043,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Dtd</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ROOT__DTD = eINSTANCE.getRoot_Dtd();
@@ -1052,7 +1052,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Leading PIs</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ROOT__LEADING_PIS = eINSTANCE.getRoot_LeadingPIs();
@@ -1061,7 +1061,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.NamespaceImpl <em>Namespace</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.NamespaceImpl
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getNamespace()
 		 * @generated
@@ -1072,7 +1072,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.CommentImpl <em>Comment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.CommentImpl
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getComment()
 		 * @generated
@@ -1083,7 +1083,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.DocumentTypeDeclarationImpl <em>Document Type Declaration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.DocumentTypeDeclarationImpl
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getDocumentTypeDeclaration()
 		 * @generated
@@ -1094,7 +1094,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Public ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DOCUMENT_TYPE_DECLARATION__PUBLIC_ID = eINSTANCE.getDocumentTypeDeclaration_PublicID();
@@ -1103,7 +1103,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '<em><b>System ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DOCUMENT_TYPE_DECLARATION__SYSTEM_ID = eINSTANCE.getDocumentTypeDeclaration_SystemID();
@@ -1112,7 +1112,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.CDATAImpl <em>CDATA</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.CDATAImpl
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getCDATA()
 		 * @generated
@@ -1123,7 +1123,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.ProcessingInstructionImpl <em>Processing Instruction</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.ProcessingInstructionImpl
 		 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.XwtxmlPackageImpl#getProcessingInstruction()
 		 * @generated
@@ -1134,7 +1134,7 @@ public interface XwtxmlPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PROCESSING_INSTRUCTION__DATA = eINSTANCE.getProcessingInstruction_Data();

@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.customization.model.customizationplugin;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -40,7 +39,7 @@ public interface CustomizationConfiguration extends EObject {
 	 * If the meaning of the '<em>Plugin</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Plugin</em>' attribute.
 	 * @see #setPlugin(String)
 	 * @see org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage#getCustomizationConfiguration_Plugin()
@@ -53,7 +52,7 @@ public interface CustomizationConfiguration extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.model.customizationplugin.CustomizationConfiguration#getPlugin <em>Plugin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Plugin</em>' attribute.
 	 * @see #getPlugin()
@@ -69,7 +68,7 @@ public interface CustomizationConfiguration extends EObject {
 	 * If the meaning of the '<em>Elements</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Elements</em>' containment reference list.
 	 * @see org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage#getCustomizationConfiguration_Elements()
 	 * @model containment="true"

@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.emf.facet.efacet;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -31,7 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQuerySet()
- * @model 
+ * @model
  *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='not(self.queries->exists(q1|self.queries->exists(q2|q2&lt;>q1 and q2.name = q1.name and q2.scope=q1.scope and q2.parameters = q1.parameters) and self.queries->forAll(q|q.scope = null)'"
  * @generated
  * @deprecated use the new eFacet metamodel in org.eclipse.papyrus.emf.facet.efacet.metamodel. Cf.
@@ -47,7 +46,7 @@ public interface QuerySet extends EObject {
 	 * If the meaning of the '<em>Queries</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Queries</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQuerySet_Queries()
 	 * @model containment="true"
@@ -64,7 +63,7 @@ public interface QuerySet extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQuerySet_Name()
@@ -79,7 +78,7 @@ public interface QuerySet extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.QuerySet#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()

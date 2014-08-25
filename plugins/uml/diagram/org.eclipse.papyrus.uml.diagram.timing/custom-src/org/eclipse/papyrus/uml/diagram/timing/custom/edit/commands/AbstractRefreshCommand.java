@@ -10,6 +10,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.timing.custom.edit.commands;
 
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.RootEditPart;
 import org.eclipse.gef.commands.Command;

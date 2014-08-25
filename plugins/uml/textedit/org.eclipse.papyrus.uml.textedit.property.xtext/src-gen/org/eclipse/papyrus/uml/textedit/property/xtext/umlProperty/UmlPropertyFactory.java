@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage
  * @generated
  */
@@ -19,7 +19,7 @@ public interface UmlPropertyFactory extends EFactory
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	UmlPropertyFactory eINSTANCE = org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyFactoryImpl.init();
@@ -28,7 +28,7 @@ public interface UmlPropertyFactory extends EFactory
 	 * Returns a new object of class '<em>Property Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Property Rule</em>'.
 	 * @generated
 	 */
@@ -38,7 +38,7 @@ public interface UmlPropertyFactory extends EFactory
 	 * Returns a new object of class '<em>Type Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Type Rule</em>'.
 	 * @generated
 	 */
@@ -48,7 +48,7 @@ public interface UmlPropertyFactory extends EFactory
 	 * Returns a new object of class '<em>Qualified Name</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Qualified Name</em>'.
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface UmlPropertyFactory extends EFactory
 	 * Returns a new object of class '<em>Multiplicity Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Multiplicity Rule</em>'.
 	 * @generated
 	 */
@@ -68,7 +68,7 @@ public interface UmlPropertyFactory extends EFactory
 	 * Returns a new object of class '<em>Bound Specification</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Bound Specification</em>'.
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface UmlPropertyFactory extends EFactory
 	 * Returns a new object of class '<em>Modifiers Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Modifiers Rule</em>'.
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface UmlPropertyFactory extends EFactory
 	 * Returns a new object of class '<em>Modifier Specification</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Modifier Specification</em>'.
 	 * @generated
 	 */
@@ -98,7 +98,7 @@ public interface UmlPropertyFactory extends EFactory
 	 * Returns a new object of class '<em>Redefines Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Redefines Rule</em>'.
 	 * @generated
 	 */
@@ -108,7 +108,7 @@ public interface UmlPropertyFactory extends EFactory
 	 * Returns a new object of class '<em>Subsets Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Subsets Rule</em>'.
 	 * @generated
 	 */
@@ -118,7 +118,7 @@ public interface UmlPropertyFactory extends EFactory
 	 * Returns a new object of class '<em>Default Value Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Default Value Rule</em>'.
 	 * @generated
 	 */
@@ -128,7 +128,7 @@ public interface UmlPropertyFactory extends EFactory
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

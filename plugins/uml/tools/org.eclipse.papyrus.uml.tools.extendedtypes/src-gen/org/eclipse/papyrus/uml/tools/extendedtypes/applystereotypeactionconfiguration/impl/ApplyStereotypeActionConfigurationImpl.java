@@ -15,17 +15,12 @@ package org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfigu
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.extendedtypes.impl.SemanticActionConfigurationImpl;
-
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfiguration;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply;
@@ -48,7 +43,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	 * The cached value of the '{@link #getStereotypesToApply() <em>Stereotypes To Apply</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypesToApply()
 	 * @generated
 	 * @ordered
@@ -58,7 +53,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ApplyStereotypeActionConfigurationImpl() {
@@ -68,7 +63,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +74,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<StereotypeToApply> getStereotypesToApply() {
@@ -92,7 +87,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +102,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +117,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -140,7 +135,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +151,7 @@ public class ApplyStereotypeActionConfigurationImpl extends SemanticActionConfig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

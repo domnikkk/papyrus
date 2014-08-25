@@ -45,7 +45,7 @@ public class ETypedElementEObjectResultImpl<T extends EObject> extends ETypedEle
 	 * The cached value of the '{@link #getResult() <em>Result</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResult()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class ETypedElementEObjectResultImpl<T extends EObject> extends ETypedEle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ETypedElementEObjectResultImpl() {
@@ -65,7 +65,7 @@ public class ETypedElementEObjectResultImpl<T extends EObject> extends ETypedEle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +76,7 @@ public class ETypedElementEObjectResultImpl<T extends EObject> extends ETypedEle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -96,7 +96,7 @@ public class ETypedElementEObjectResultImpl<T extends EObject> extends ETypedEle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public T basicGetResult() {
@@ -106,7 +106,7 @@ public class ETypedElementEObjectResultImpl<T extends EObject> extends ETypedEle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setResult(T newResult) {
@@ -120,7 +120,7 @@ public class ETypedElementEObjectResultImpl<T extends EObject> extends ETypedEle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class ETypedElementEObjectResultImpl<T extends EObject> extends ETypedEle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -155,7 +155,7 @@ public class ETypedElementEObjectResultImpl<T extends EObject> extends ETypedEle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class ETypedElementEObjectResultImpl<T extends EObject> extends ETypedEle
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

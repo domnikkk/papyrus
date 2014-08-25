@@ -26,7 +26,7 @@ import org.eclipse.swt.widgets.Control;
  * gridData.horizontalAlignment = GridData.FILL;
  * gridData.grabExcessHorizontalSpace = true;
  * button1.setLayoutData(gridData);
- * 
+ *
  * gridData = new GridData();
  * gridData.horizontalAlignment = GridData.FILL;
  * gridData.verticalAlignment = GridData.FILL;

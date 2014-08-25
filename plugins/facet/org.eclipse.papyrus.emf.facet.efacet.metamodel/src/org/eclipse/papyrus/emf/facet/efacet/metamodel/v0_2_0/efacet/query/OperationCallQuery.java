@@ -23,9 +23,7 @@
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EOperation;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
 
 /**
@@ -54,7 +52,7 @@ public interface OperationCallQuery extends Query {
 	 * If the meaning of the '<em>Operation</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Operation</em>' reference.
 	 * @see #setOperation(EOperation)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryPackage#getOperationCallQuery_Operation()
@@ -67,7 +65,7 @@ public interface OperationCallQuery extends Query {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.OperationCallQuery#getOperation <em>Operation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Operation</em>' reference.
 	 * @see #getOperation()
@@ -83,7 +81,7 @@ public interface OperationCallQuery extends Query {
 	 * If the meaning of the '<em>Arguments</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Arguments</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryPackage#getOperationCallQuery_Arguments()
 	 * @model containment="true"

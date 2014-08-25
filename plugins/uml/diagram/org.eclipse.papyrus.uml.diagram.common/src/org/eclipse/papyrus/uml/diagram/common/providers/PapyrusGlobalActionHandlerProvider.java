@@ -45,7 +45,7 @@ public class PapyrusGlobalActionHandlerProvider extends AbstractGlobalActionHand
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.action.global.
 	 * IGlobalActionHandlerProvider
 	 * #getGlobalActionHandler(org.eclipse.gmf.runtime.common

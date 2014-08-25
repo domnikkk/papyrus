@@ -17,7 +17,7 @@ package org.eclipse.papyrus.uml.service.types.utils;
  * <pre>
  * IDs of request parameters.
  * </pre>
- * 
+ *
  * @use org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants instead
  */
 public interface RequestParameterConstants extends org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants {

@@ -3,12 +3,11 @@
  */
 package org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.ui;
 
+import org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.ui.internal.UMLConnectionPointReferenceActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
-
-import org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.ui.internal.UMLConnectionPointReferenceActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly

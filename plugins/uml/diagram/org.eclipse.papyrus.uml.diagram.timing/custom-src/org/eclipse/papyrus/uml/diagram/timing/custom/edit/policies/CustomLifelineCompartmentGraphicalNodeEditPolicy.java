@@ -23,6 +23,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.INodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.timing.custom.Messages;
+import org.eclipse.papyrus.uml.diagram.timing.custom.edit.parts.CustomFullLifelineEditPartCN;
 import org.eclipse.papyrus.uml.diagram.timing.custom.utils.MessageUtils;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.MessageFoundEditPart;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.MessageLostEditPart;

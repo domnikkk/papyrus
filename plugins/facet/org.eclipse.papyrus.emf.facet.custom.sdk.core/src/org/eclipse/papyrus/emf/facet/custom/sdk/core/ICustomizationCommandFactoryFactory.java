@@ -12,8 +12,8 @@
 package org.eclipse.papyrus.emf.facet.custom.sdk.core;
 
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.papyrus.emf.facet.custom.sdk.core.internal.CustomizationCommandFactoryFactory;
 import org.eclipse.papyrus.emf.facet.custom.sdk.core.internal.CustomizationCommandFactory;
+import org.eclipse.papyrus.emf.facet.custom.sdk.core.internal.CustomizationCommandFactoryFactory;
 
 /**
  * This interface provide a command factory. A command modify the editingDomain.

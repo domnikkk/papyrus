@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.gmfdiag.css.CssFactory
  * @model kind="package"
  * @generated
@@ -39,7 +39,7 @@ public interface CssPackage extends EPackage
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "css";
@@ -48,7 +48,7 @@ public interface CssPackage extends EPackage
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/infra/gmfdiag/CSS";
@@ -57,7 +57,7 @@ public interface CssPackage extends EPackage
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "css";
@@ -66,7 +66,7 @@ public interface CssPackage extends EPackage
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	CssPackage eINSTANCE = org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl.init();
@@ -75,7 +75,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.StylesheetImpl <em>Stylesheet</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.StylesheetImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getStylesheet()
 	 * @generated
@@ -86,7 +86,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Charset</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -96,7 +96,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -106,7 +106,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Contents</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -116,7 +116,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Stylesheet</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -126,7 +126,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.ContentImpl <em>Content</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.ContentImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getContent()
 	 * @generated
@@ -137,7 +137,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Content</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,7 +147,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.ImportImpl <em>Import</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.ImportImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getImport()
 	 * @generated
@@ -158,7 +158,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>String</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -168,7 +168,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Uri</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +178,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Media</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -188,7 +188,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Import</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -198,7 +198,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.MediaImpl <em>Media</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.MediaImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getMedia()
 	 * @generated
@@ -209,7 +209,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Media</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -219,7 +219,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -229,7 +229,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Media</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -239,7 +239,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.PageImpl <em>Page</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.PageImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getPage()
 	 * @generated
@@ -250,7 +250,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Pseudo</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -260,7 +260,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Declarations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -270,7 +270,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Page</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -280,7 +280,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.PseudoPageImpl <em>Pseudo Page</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.PseudoPageImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getPseudoPage()
 	 * @generated
@@ -291,7 +291,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -301,7 +301,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Pseudo Page</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -311,7 +311,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.RulesetImpl <em>Ruleset</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.RulesetImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getRuleset()
 	 * @generated
@@ -322,7 +322,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Selectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -332,7 +332,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -342,7 +342,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Ruleset</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -352,7 +352,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.SelectorImpl <em>Selector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.SelectorImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getSelector()
 	 * @generated
@@ -363,7 +363,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Selector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -373,7 +373,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.CompositeSelectorImpl <em>Composite Selector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CompositeSelectorImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getCompositeSelector()
 	 * @generated
@@ -384,7 +384,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -394,7 +394,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Combinator</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -404,7 +404,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Right</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -414,7 +414,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Composite Selector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -424,7 +424,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.SimpleSelectorImpl <em>Simple Selector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.SimpleSelectorImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getSimpleSelector()
 	 * @generated
@@ -435,7 +435,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Element Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -445,7 +445,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -455,7 +455,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Simple Selector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -465,7 +465,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.SelectorConditionImpl <em>Selector Condition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.SelectorConditionImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getSelectorCondition()
 	 * @generated
@@ -476,7 +476,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Selector Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -486,7 +486,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.CombinatorImpl <em>Combinator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CombinatorImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getCombinator()
 	 * @generated
@@ -497,7 +497,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -507,7 +507,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Combinator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -517,7 +517,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.DeclarationImpl <em>Declaration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.DeclarationImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getDeclaration()
 	 * @generated
@@ -528,7 +528,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Property</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -538,7 +538,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -548,7 +548,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Important</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -558,7 +558,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Declaration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -568,7 +568,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.ExpressionImpl <em>Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.ExpressionImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getExpression()
 	 * @generated
@@ -579,7 +579,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Terms</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -589,7 +589,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Subterms</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -599,7 +599,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -609,7 +609,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.SubtermImpl <em>Subterm</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.SubtermImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getSubterm()
 	 * @generated
@@ -620,7 +620,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -630,7 +630,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Term</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -640,7 +640,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Subterm</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -650,7 +650,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.TermImpl <em>Term</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.TermImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getTerm()
 	 * @generated
@@ -661,7 +661,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Term</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -671,7 +671,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.FunctionImpl <em>Function</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.FunctionImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getFunction()
 	 * @generated
@@ -682,7 +682,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -692,7 +692,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Args</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -702,7 +702,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Function</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -712,7 +712,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.NameImpl <em>Name</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.NameImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getName_()
 	 * @generated
@@ -723,7 +723,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -733,7 +733,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -743,7 +743,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.NumberImpl <em>Number</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.NumberImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getNumber()
 	 * @generated
@@ -754,7 +754,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -764,7 +764,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -774,7 +774,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Number</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -784,7 +784,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.PercentageImpl <em>Percentage</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.PercentageImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getPercentage()
 	 * @generated
@@ -795,7 +795,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -805,7 +805,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -815,7 +815,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -825,7 +825,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Percentage</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -835,7 +835,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.LengthImpl <em>Length</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.LengthImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getLength()
 	 * @generated
@@ -846,7 +846,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -856,7 +856,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -866,7 +866,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -876,7 +876,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Length</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -886,7 +886,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.EmsImpl <em>Ems</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.EmsImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getEms()
 	 * @generated
@@ -897,7 +897,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -907,7 +907,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -917,7 +917,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -927,7 +927,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Ems</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -937,7 +937,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.ExsImpl <em>Exs</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.ExsImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getExs()
 	 * @generated
@@ -948,7 +948,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -958,7 +958,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -968,7 +968,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -978,7 +978,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Exs</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -988,7 +988,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.AngleImpl <em>Angle</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.AngleImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getAngle()
 	 * @generated
@@ -999,7 +999,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1009,7 +1009,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1019,7 +1019,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1029,7 +1029,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Angle</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1039,7 +1039,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.TimeImpl <em>Time</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.TimeImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getTime()
 	 * @generated
@@ -1050,7 +1050,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1060,7 +1060,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1070,7 +1070,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1080,7 +1080,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Time</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1090,7 +1090,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.FrequencyImpl <em>Frequency</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.FrequencyImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getFrequency()
 	 * @generated
@@ -1101,7 +1101,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Op</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1111,7 +1111,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1121,7 +1121,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1131,7 +1131,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Frequency</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1141,7 +1141,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.UriImpl <em>Uri</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.UriImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getUri()
 	 * @generated
@@ -1152,7 +1152,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1162,7 +1162,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Uri</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1172,7 +1172,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.StringValueImpl <em>String Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.StringValueImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getStringValue()
 	 * @generated
@@ -1183,7 +1183,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1193,7 +1193,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>String Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1203,7 +1203,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.HexColorImpl <em>Hex Color</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.HexColorImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getHexColor()
 	 * @generated
@@ -1214,7 +1214,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1224,7 +1224,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Hex Color</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1234,7 +1234,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.ClassImpl <em>Class</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.ClassImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getClass_()
 	 * @generated
@@ -1245,7 +1245,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1255,7 +1255,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1265,7 +1265,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.AttributeImpl <em>Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.AttributeImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getAttribute()
 	 * @generated
@@ -1276,7 +1276,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1286,7 +1286,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1296,7 +1296,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1306,7 +1306,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.AttributeValueImpl <em>Attribute Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.AttributeValueImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getAttributeValue()
 	 * @generated
@@ -1317,7 +1317,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1327,7 +1327,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1337,7 +1337,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Attribute Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1347,7 +1347,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.PseudoImpl <em>Pseudo</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.PseudoImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getPseudo()
 	 * @generated
@@ -1358,7 +1358,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1368,7 +1368,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Args</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1378,7 +1378,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Pseudo</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1388,7 +1388,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.CSSIdImpl <em>CSS Id</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CSSIdImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getCSSId()
 	 * @generated
@@ -1399,7 +1399,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1409,7 +1409,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>CSS Id</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1419,7 +1419,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.UnaryOperatorImpl <em>Unary Operator</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.UnaryOperatorImpl
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getUnaryOperator()
 	 * @generated
@@ -1430,7 +1430,7 @@ public interface CssPackage extends EPackage
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1440,7 +1440,7 @@ public interface CssPackage extends EPackage
 	 * The number of structural features of the '<em>Unary Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1450,7 +1450,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.UNARY <em>UNARY</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.UNARY
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getUNARY()
 	 * @generated
@@ -1461,7 +1461,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.KIND <em>KIND</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.KIND
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getKIND()
 	 * @generated
@@ -1472,7 +1472,7 @@ public interface CssPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.ATTRIBUTE_OP <em>ATTRIBUTE OP</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.ATTRIBUTE_OP
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getATTRIBUTE_OP()
 	 * @generated
@@ -1484,7 +1484,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Stylesheet <em>Stylesheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Stylesheet</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Stylesheet
 	 * @generated
@@ -1495,7 +1495,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Stylesheet#getCharset <em>Charset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Charset</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Stylesheet#getCharset()
 	 * @see #getStylesheet()
@@ -1507,7 +1507,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.gmfdiag.css.Stylesheet#getImports <em>Imports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Imports</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Stylesheet#getImports()
 	 * @see #getStylesheet()
@@ -1519,7 +1519,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.gmfdiag.css.Stylesheet#getContents <em>Contents</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Contents</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Stylesheet#getContents()
 	 * @see #getStylesheet()
@@ -1531,7 +1531,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Content <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Content</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Content
 	 * @generated
@@ -1542,7 +1542,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Import <em>Import</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Import</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Import
 	 * @generated
@@ -1553,7 +1553,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Import#getString <em>String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>String</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Import#getString()
 	 * @see #getImport()
@@ -1565,7 +1565,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Import#getUri <em>Uri</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Uri</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Import#getUri()
 	 * @see #getImport()
@@ -1577,7 +1577,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.gmfdiag.css.Import#getMedia <em>Media</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Media</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Import#getMedia()
 	 * @see #getImport()
@@ -1589,7 +1589,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Media <em>Media</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Media</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Media
 	 * @generated
@@ -1600,7 +1600,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.gmfdiag.css.Media#getMedia <em>Media</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Media</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Media#getMedia()
 	 * @see #getMedia()
@@ -1612,7 +1612,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.gmfdiag.css.Media#getRules <em>Rules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Rules</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Media#getRules()
 	 * @see #getMedia()
@@ -1624,7 +1624,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Page <em>Page</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Page</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Page
 	 * @generated
@@ -1635,7 +1635,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Page#getPseudo <em>Pseudo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Pseudo</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Page#getPseudo()
 	 * @see #getPage()
@@ -1647,7 +1647,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.gmfdiag.css.Page#getDeclarations <em>Declarations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Declarations</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Page#getDeclarations()
 	 * @see #getPage()
@@ -1659,7 +1659,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.PseudoPage <em>Pseudo Page</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Pseudo Page</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.PseudoPage
 	 * @generated
@@ -1670,7 +1670,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.PseudoPage#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Id</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.PseudoPage#getId()
 	 * @see #getPseudoPage()
@@ -1682,7 +1682,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Ruleset <em>Ruleset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Ruleset</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Ruleset
 	 * @generated
@@ -1693,7 +1693,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.gmfdiag.css.Ruleset#getSelectors <em>Selectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Selectors</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Ruleset#getSelectors()
 	 * @see #getRuleset()
@@ -1705,7 +1705,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.gmfdiag.css.Ruleset#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Properties</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Ruleset#getProperties()
 	 * @see #getRuleset()
@@ -1717,7 +1717,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Selector <em>Selector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Selector</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Selector
 	 * @generated
@@ -1728,7 +1728,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.CompositeSelector <em>Composite Selector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Composite Selector</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CompositeSelector
 	 * @generated
@@ -1739,7 +1739,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.CompositeSelector#getLeft <em>Left</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Left</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CompositeSelector#getLeft()
 	 * @see #getCompositeSelector()
@@ -1751,7 +1751,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.CompositeSelector#getCombinator <em>Combinator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Combinator</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CompositeSelector#getCombinator()
 	 * @see #getCompositeSelector()
@@ -1763,7 +1763,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.CompositeSelector#getRight <em>Right</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Right</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CompositeSelector#getRight()
 	 * @see #getCompositeSelector()
@@ -1775,7 +1775,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.SimpleSelector <em>Simple Selector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Simple Selector</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.SimpleSelector
 	 * @generated
@@ -1786,7 +1786,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.SimpleSelector#getElementName <em>Element Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Element Name</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.SimpleSelector#getElementName()
 	 * @see #getSimpleSelector()
@@ -1798,7 +1798,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.gmfdiag.css.SimpleSelector#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Condition</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.SimpleSelector#getCondition()
 	 * @see #getSimpleSelector()
@@ -1810,7 +1810,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.SelectorCondition <em>Selector Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Selector Condition</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.SelectorCondition
 	 * @generated
@@ -1821,7 +1821,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Combinator <em>Combinator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Combinator</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Combinator
 	 * @generated
@@ -1832,7 +1832,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Combinator#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Kind</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Combinator#getKind()
 	 * @see #getCombinator()
@@ -1844,7 +1844,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Declaration <em>Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Declaration</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Declaration
 	 * @generated
@@ -1855,7 +1855,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Declaration#getProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Property</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Declaration#getProperty()
 	 * @see #getDeclaration()
@@ -1867,7 +1867,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Declaration#getExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Expression</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Declaration#getExpression()
 	 * @see #getDeclaration()
@@ -1879,7 +1879,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Declaration#isImportant <em>Important</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Important</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Declaration#isImportant()
 	 * @see #getDeclaration()
@@ -1891,7 +1891,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Expression</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Expression
 	 * @generated
@@ -1902,7 +1902,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Expression#getTerms <em>Terms</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Terms</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Expression#getTerms()
 	 * @see #getExpression()
@@ -1914,7 +1914,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.gmfdiag.css.Expression#getSubterms <em>Subterms</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Subterms</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Expression#getSubterms()
 	 * @see #getExpression()
@@ -1926,7 +1926,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Subterm <em>Subterm</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Subterm</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Subterm
 	 * @generated
@@ -1937,7 +1937,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Subterm#getOperator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Operator</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Subterm#getOperator()
 	 * @see #getSubterm()
@@ -1949,7 +1949,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Subterm#getTerm <em>Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Term</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Subterm#getTerm()
 	 * @see #getSubterm()
@@ -1961,7 +1961,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Term <em>Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Term</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Term
 	 * @generated
@@ -1972,7 +1972,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Function <em>Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Function</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Function
 	 * @generated
@@ -1983,7 +1983,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Function#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Function#getName()
 	 * @see #getFunction()
@@ -1995,7 +1995,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Function#getArgs <em>Args</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Args</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Function#getArgs()
 	 * @see #getFunction()
@@ -2007,7 +2007,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Name <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Name
 	 * @generated
@@ -2018,7 +2018,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Name#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Name#getValue()
 	 * @see #getName_()
@@ -2030,7 +2030,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Number <em>Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Number</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Number
 	 * @generated
@@ -2041,7 +2041,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Number#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Number#getOp()
 	 * @see #getNumber()
@@ -2053,7 +2053,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Number#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Number#getValue()
 	 * @see #getNumber()
@@ -2065,7 +2065,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Percentage <em>Percentage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Percentage</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Percentage
 	 * @generated
@@ -2076,7 +2076,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Percentage#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Percentage#getOp()
 	 * @see #getPercentage()
@@ -2088,7 +2088,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Percentage#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Percentage#getValue()
 	 * @see #getPercentage()
@@ -2100,7 +2100,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Percentage#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Percentage#getUnit()
 	 * @see #getPercentage()
@@ -2112,7 +2112,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Length <em>Length</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Length</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Length
 	 * @generated
@@ -2123,7 +2123,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Length#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Length#getOp()
 	 * @see #getLength()
@@ -2135,7 +2135,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Length#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Length#getValue()
 	 * @see #getLength()
@@ -2147,7 +2147,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Length#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Length#getUnit()
 	 * @see #getLength()
@@ -2159,7 +2159,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Ems <em>Ems</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Ems</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Ems
 	 * @generated
@@ -2170,7 +2170,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Ems#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Ems#getOp()
 	 * @see #getEms()
@@ -2182,7 +2182,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Ems#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Ems#getValue()
 	 * @see #getEms()
@@ -2194,7 +2194,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Ems#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Ems#getUnit()
 	 * @see #getEms()
@@ -2206,7 +2206,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Exs <em>Exs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Exs</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Exs
 	 * @generated
@@ -2217,7 +2217,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Exs#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Exs#getOp()
 	 * @see #getExs()
@@ -2229,7 +2229,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Exs#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Exs#getValue()
 	 * @see #getExs()
@@ -2241,7 +2241,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Exs#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Exs#getUnit()
 	 * @see #getExs()
@@ -2253,7 +2253,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Angle <em>Angle</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Angle</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Angle
 	 * @generated
@@ -2264,7 +2264,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Angle#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Angle#getOp()
 	 * @see #getAngle()
@@ -2276,7 +2276,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Angle#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Angle#getValue()
 	 * @see #getAngle()
@@ -2288,7 +2288,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Angle#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Angle#getUnit()
 	 * @see #getAngle()
@@ -2300,7 +2300,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Time <em>Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Time</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Time
 	 * @generated
@@ -2311,7 +2311,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Time#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Time#getOp()
 	 * @see #getTime()
@@ -2323,7 +2323,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Time#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Time#getValue()
 	 * @see #getTime()
@@ -2335,7 +2335,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Time#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Time#getUnit()
 	 * @see #getTime()
@@ -2347,7 +2347,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Frequency <em>Frequency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Frequency</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Frequency
 	 * @generated
@@ -2358,7 +2358,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Frequency#getOp <em>Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Op</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Frequency#getOp()
 	 * @see #getFrequency()
@@ -2370,7 +2370,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Frequency#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Frequency#getValue()
 	 * @see #getFrequency()
@@ -2382,7 +2382,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Frequency#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Frequency#getUnit()
 	 * @see #getFrequency()
@@ -2394,7 +2394,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Uri <em>Uri</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Uri</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Uri
 	 * @generated
@@ -2405,7 +2405,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Uri#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Uri#getValue()
 	 * @see #getUri()
@@ -2417,7 +2417,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.StringValue <em>String Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>String Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.StringValue
 	 * @generated
@@ -2428,7 +2428,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.StringValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.StringValue#getValue()
 	 * @see #getStringValue()
@@ -2440,7 +2440,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.HexColor <em>Hex Color</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Hex Color</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.HexColor
 	 * @generated
@@ -2451,7 +2451,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.HexColor#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.HexColor#getValue()
 	 * @see #getHexColor()
@@ -2463,7 +2463,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Class <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Class</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Class
 	 * @generated
@@ -2474,7 +2474,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Class#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Class</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Class#getClass_()
 	 * @see #getClass_()
@@ -2486,7 +2486,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Attribute <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Attribute</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Attribute
 	 * @generated
@@ -2497,7 +2497,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Attribute#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Attribute#getName()
 	 * @see #getAttribute()
@@ -2509,7 +2509,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.gmfdiag.css.Attribute#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Attribute#getValue()
 	 * @see #getAttribute()
@@ -2521,7 +2521,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.AttributeValue <em>Attribute Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Attribute Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.AttributeValue
 	 * @generated
@@ -2532,7 +2532,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.AttributeValue#getOperator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Operator</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.AttributeValue#getOperator()
 	 * @see #getAttributeValue()
@@ -2544,7 +2544,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.AttributeValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.AttributeValue#getValue()
 	 * @see #getAttributeValue()
@@ -2556,7 +2556,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.Pseudo <em>Pseudo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Pseudo</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Pseudo
 	 * @generated
@@ -2567,7 +2567,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Pseudo#getPseudo <em>Pseudo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Pseudo</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Pseudo#getPseudo()
 	 * @see #getPseudo()
@@ -2579,7 +2579,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.Pseudo#getArgs <em>Args</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Args</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.Pseudo#getArgs()
 	 * @see #getPseudo()
@@ -2591,7 +2591,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.CSSId <em>CSS Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>CSS Id</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CSSId
 	 * @generated
@@ -2602,7 +2602,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.CSSId#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CSSId#getValue()
 	 * @see #getCSSId()
@@ -2614,7 +2614,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.gmfdiag.css.UnaryOperator <em>Unary Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Unary Operator</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.UnaryOperator
 	 * @generated
@@ -2625,7 +2625,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.gmfdiag.css.UnaryOperator#getOperator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Operator</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.UnaryOperator#getOperator()
 	 * @see #getUnaryOperator()
@@ -2637,7 +2637,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.infra.gmfdiag.css.UNARY <em>UNARY</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>UNARY</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.UNARY
 	 * @generated
@@ -2648,7 +2648,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.infra.gmfdiag.css.KIND <em>KIND</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>KIND</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.KIND
 	 * @generated
@@ -2659,7 +2659,7 @@ public interface CssPackage extends EPackage
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.infra.gmfdiag.css.ATTRIBUTE_OP <em>ATTRIBUTE OP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>ATTRIBUTE OP</em>'.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.ATTRIBUTE_OP
 	 * @generated
@@ -2670,7 +2670,7 @@ public interface CssPackage extends EPackage
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -2686,7 +2686,7 @@ public interface CssPackage extends EPackage
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals
@@ -2695,7 +2695,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.StylesheetImpl <em>Stylesheet</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.StylesheetImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getStylesheet()
 		 * @generated
@@ -2706,7 +2706,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Charset</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STYLESHEET__CHARSET = eINSTANCE.getStylesheet_Charset();
@@ -2715,7 +2715,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STYLESHEET__IMPORTS = eINSTANCE.getStylesheet_Imports();
@@ -2724,7 +2724,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Contents</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STYLESHEET__CONTENTS = eINSTANCE.getStylesheet_Contents();
@@ -2733,7 +2733,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.ContentImpl <em>Content</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.ContentImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getContent()
 		 * @generated
@@ -2744,7 +2744,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.ImportImpl <em>Import</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.ImportImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getImport()
 		 * @generated
@@ -2755,7 +2755,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>String</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute IMPORT__STRING = eINSTANCE.getImport_String();
@@ -2764,7 +2764,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Uri</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference IMPORT__URI = eINSTANCE.getImport_Uri();
@@ -2773,7 +2773,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Media</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute IMPORT__MEDIA = eINSTANCE.getImport_Media();
@@ -2782,7 +2782,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.MediaImpl <em>Media</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.MediaImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getMedia()
 		 * @generated
@@ -2793,7 +2793,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Media</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MEDIA__MEDIA = eINSTANCE.getMedia_Media();
@@ -2802,7 +2802,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MEDIA__RULES = eINSTANCE.getMedia_Rules();
@@ -2811,7 +2811,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.PageImpl <em>Page</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.PageImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getPage()
 		 * @generated
@@ -2822,7 +2822,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Pseudo</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PAGE__PSEUDO = eINSTANCE.getPage_Pseudo();
@@ -2831,7 +2831,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Declarations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PAGE__DECLARATIONS = eINSTANCE.getPage_Declarations();
@@ -2840,7 +2840,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.PseudoPageImpl <em>Pseudo Page</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.PseudoPageImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getPseudoPage()
 		 * @generated
@@ -2851,7 +2851,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PSEUDO_PAGE__ID = eINSTANCE.getPseudoPage_Id();
@@ -2860,7 +2860,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.RulesetImpl <em>Ruleset</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.RulesetImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getRuleset()
 		 * @generated
@@ -2871,7 +2871,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Selectors</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference RULESET__SELECTORS = eINSTANCE.getRuleset_Selectors();
@@ -2880,7 +2880,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference RULESET__PROPERTIES = eINSTANCE.getRuleset_Properties();
@@ -2889,7 +2889,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.SelectorImpl <em>Selector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.SelectorImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getSelector()
 		 * @generated
@@ -2900,7 +2900,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.CompositeSelectorImpl <em>Composite Selector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CompositeSelectorImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getCompositeSelector()
 		 * @generated
@@ -2911,7 +2911,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference COMPOSITE_SELECTOR__LEFT = eINSTANCE.getCompositeSelector_Left();
@@ -2920,7 +2920,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Combinator</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference COMPOSITE_SELECTOR__COMBINATOR = eINSTANCE.getCompositeSelector_Combinator();
@@ -2929,7 +2929,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference COMPOSITE_SELECTOR__RIGHT = eINSTANCE.getCompositeSelector_Right();
@@ -2938,7 +2938,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.SimpleSelectorImpl <em>Simple Selector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.SimpleSelectorImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getSimpleSelector()
 		 * @generated
@@ -2949,7 +2949,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Element Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SIMPLE_SELECTOR__ELEMENT_NAME = eINSTANCE.getSimpleSelector_ElementName();
@@ -2958,7 +2958,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SIMPLE_SELECTOR__CONDITION = eINSTANCE.getSimpleSelector_Condition();
@@ -2967,7 +2967,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.SelectorConditionImpl <em>Selector Condition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.SelectorConditionImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getSelectorCondition()
 		 * @generated
@@ -2978,7 +2978,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.CombinatorImpl <em>Combinator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CombinatorImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getCombinator()
 		 * @generated
@@ -2989,7 +2989,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute COMBINATOR__KIND = eINSTANCE.getCombinator_Kind();
@@ -2998,7 +2998,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.DeclarationImpl <em>Declaration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.DeclarationImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getDeclaration()
 		 * @generated
@@ -3009,7 +3009,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Property</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DECLARATION__PROPERTY = eINSTANCE.getDeclaration_Property();
@@ -3018,7 +3018,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DECLARATION__EXPRESSION = eINSTANCE.getDeclaration_Expression();
@@ -3027,7 +3027,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Important</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DECLARATION__IMPORTANT = eINSTANCE.getDeclaration_Important();
@@ -3036,7 +3036,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.ExpressionImpl <em>Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.ExpressionImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getExpression()
 		 * @generated
@@ -3047,7 +3047,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Terms</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EXPRESSION__TERMS = eINSTANCE.getExpression_Terms();
@@ -3056,7 +3056,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Subterms</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EXPRESSION__SUBTERMS = eINSTANCE.getExpression_Subterms();
@@ -3065,7 +3065,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.SubtermImpl <em>Subterm</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.SubtermImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getSubterm()
 		 * @generated
@@ -3076,7 +3076,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SUBTERM__OPERATOR = eINSTANCE.getSubterm_Operator();
@@ -3085,7 +3085,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Term</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SUBTERM__TERM = eINSTANCE.getSubterm_Term();
@@ -3094,7 +3094,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.TermImpl <em>Term</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.TermImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getTerm()
 		 * @generated
@@ -3105,7 +3105,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.FunctionImpl <em>Function</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.FunctionImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getFunction()
 		 * @generated
@@ -3116,7 +3116,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FUNCTION__NAME = eINSTANCE.getFunction_Name();
@@ -3125,7 +3125,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Args</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FUNCTION__ARGS = eINSTANCE.getFunction_Args();
@@ -3134,7 +3134,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.NameImpl <em>Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.NameImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getName_()
 		 * @generated
@@ -3145,7 +3145,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute NAME__VALUE = eINSTANCE.getName_Value();
@@ -3154,7 +3154,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.NumberImpl <em>Number</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.NumberImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getNumber()
 		 * @generated
@@ -3165,7 +3165,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NUMBER__OP = eINSTANCE.getNumber_Op();
@@ -3174,7 +3174,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute NUMBER__VALUE = eINSTANCE.getNumber_Value();
@@ -3183,7 +3183,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.PercentageImpl <em>Percentage</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.PercentageImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getPercentage()
 		 * @generated
@@ -3194,7 +3194,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PERCENTAGE__OP = eINSTANCE.getPercentage_Op();
@@ -3203,7 +3203,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PERCENTAGE__VALUE = eINSTANCE.getPercentage_Value();
@@ -3212,7 +3212,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PERCENTAGE__UNIT = eINSTANCE.getPercentage_Unit();
@@ -3221,7 +3221,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.LengthImpl <em>Length</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.LengthImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getLength()
 		 * @generated
@@ -3232,7 +3232,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LENGTH__OP = eINSTANCE.getLength_Op();
@@ -3241,7 +3241,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LENGTH__VALUE = eINSTANCE.getLength_Value();
@@ -3250,7 +3250,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LENGTH__UNIT = eINSTANCE.getLength_Unit();
@@ -3259,7 +3259,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.EmsImpl <em>Ems</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.EmsImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getEms()
 		 * @generated
@@ -3270,7 +3270,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EMS__OP = eINSTANCE.getEms_Op();
@@ -3279,7 +3279,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EMS__VALUE = eINSTANCE.getEms_Value();
@@ -3288,7 +3288,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EMS__UNIT = eINSTANCE.getEms_Unit();
@@ -3297,7 +3297,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.ExsImpl <em>Exs</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.ExsImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getExs()
 		 * @generated
@@ -3308,7 +3308,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EXS__OP = eINSTANCE.getExs_Op();
@@ -3317,7 +3317,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EXS__VALUE = eINSTANCE.getExs_Value();
@@ -3326,7 +3326,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EXS__UNIT = eINSTANCE.getExs_Unit();
@@ -3335,7 +3335,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.AngleImpl <em>Angle</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.AngleImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getAngle()
 		 * @generated
@@ -3346,7 +3346,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ANGLE__OP = eINSTANCE.getAngle_Op();
@@ -3355,7 +3355,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ANGLE__VALUE = eINSTANCE.getAngle_Value();
@@ -3364,7 +3364,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ANGLE__UNIT = eINSTANCE.getAngle_Unit();
@@ -3373,7 +3373,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.TimeImpl <em>Time</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.TimeImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getTime()
 		 * @generated
@@ -3384,7 +3384,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TIME__OP = eINSTANCE.getTime_Op();
@@ -3393,7 +3393,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute TIME__VALUE = eINSTANCE.getTime_Value();
@@ -3402,7 +3402,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute TIME__UNIT = eINSTANCE.getTime_Unit();
@@ -3411,7 +3411,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.FrequencyImpl <em>Frequency</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.FrequencyImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getFrequency()
 		 * @generated
@@ -3422,7 +3422,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FREQUENCY__OP = eINSTANCE.getFrequency_Op();
@@ -3431,7 +3431,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FREQUENCY__VALUE = eINSTANCE.getFrequency_Value();
@@ -3440,7 +3440,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FREQUENCY__UNIT = eINSTANCE.getFrequency_Unit();
@@ -3449,7 +3449,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.UriImpl <em>Uri</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.UriImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getUri()
 		 * @generated
@@ -3460,7 +3460,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute URI__VALUE = eINSTANCE.getUri_Value();
@@ -3469,7 +3469,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.StringValueImpl <em>String Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.StringValueImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getStringValue()
 		 * @generated
@@ -3480,7 +3480,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STRING_VALUE__VALUE = eINSTANCE.getStringValue_Value();
@@ -3489,7 +3489,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.HexColorImpl <em>Hex Color</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.HexColorImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getHexColor()
 		 * @generated
@@ -3500,7 +3500,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute HEX_COLOR__VALUE = eINSTANCE.getHexColor_Value();
@@ -3509,7 +3509,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.ClassImpl <em>Class</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.ClassImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getClass_()
 		 * @generated
@@ -3520,7 +3520,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CLASS__CLASS = eINSTANCE.getClass_Class();
@@ -3529,7 +3529,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.AttributeImpl <em>Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.AttributeImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getAttribute()
 		 * @generated
@@ -3540,7 +3540,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ATTRIBUTE__NAME = eINSTANCE.getAttribute_Name();
@@ -3549,7 +3549,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ATTRIBUTE__VALUE = eINSTANCE.getAttribute_Value();
@@ -3558,7 +3558,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.AttributeValueImpl <em>Attribute Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.AttributeValueImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getAttributeValue()
 		 * @generated
@@ -3569,7 +3569,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ATTRIBUTE_VALUE__OPERATOR = eINSTANCE.getAttributeValue_Operator();
@@ -3578,7 +3578,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ATTRIBUTE_VALUE__VALUE = eINSTANCE.getAttributeValue_Value();
@@ -3587,7 +3587,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.PseudoImpl <em>Pseudo</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.PseudoImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getPseudo()
 		 * @generated
@@ -3598,7 +3598,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Pseudo</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PSEUDO__PSEUDO = eINSTANCE.getPseudo_Pseudo();
@@ -3607,7 +3607,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Args</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PSEUDO__ARGS = eINSTANCE.getPseudo_Args();
@@ -3616,7 +3616,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.CSSIdImpl <em>CSS Id</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CSSIdImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getCSSId()
 		 * @generated
@@ -3627,7 +3627,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CSS_ID__VALUE = eINSTANCE.getCSSId_Value();
@@ -3636,7 +3636,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.impl.UnaryOperatorImpl <em>Unary Operator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.UnaryOperatorImpl
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getUnaryOperator()
 		 * @generated
@@ -3647,7 +3647,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute UNARY_OPERATOR__OPERATOR = eINSTANCE.getUnaryOperator_Operator();
@@ -3656,7 +3656,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.UNARY <em>UNARY</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.UNARY
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getUNARY()
 		 * @generated
@@ -3667,7 +3667,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.KIND <em>KIND</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.KIND
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getKIND()
 		 * @generated
@@ -3678,7 +3678,7 @@ public interface CssPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.gmfdiag.css.ATTRIBUTE_OP <em>ATTRIBUTE OP</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.ATTRIBUTE_OP
 		 * @see org.eclipse.papyrus.infra.gmfdiag.css.impl.CssPackageImpl#getATTRIBUTE_OP()
 		 * @generated

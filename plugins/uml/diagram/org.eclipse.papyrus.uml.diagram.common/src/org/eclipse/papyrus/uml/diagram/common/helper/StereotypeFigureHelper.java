@@ -367,7 +367,7 @@ public abstract class StereotypeFigureHelper {
 	/**
 	 * Return true if the Rectangle containing the the stereotype has to be
 	 * filled
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isStereotypeContainerFilled() {
@@ -376,7 +376,7 @@ public abstract class StereotypeFigureHelper {
 
 	/**
 	 * If set to true the rectangle containing the stereotype will be filled
-	 * 
+	 *
 	 * @param isStereotypeContainerFilled
 	 */
 	public void setStereotypeContainerFilled(boolean isStereotypeContainerFilled) {

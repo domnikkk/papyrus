@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.uml.diagram.activity.draw2d;
 
 import org.eclipse.draw2d.Border;
-import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;

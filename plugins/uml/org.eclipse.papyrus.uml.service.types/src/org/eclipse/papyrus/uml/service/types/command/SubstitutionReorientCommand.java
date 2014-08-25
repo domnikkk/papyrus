@@ -28,7 +28,7 @@ public class SubstitutionReorientCommand extends DependencyReorientCommand {
 	/**
 	 * <pre>
 	 * Constructor.
-	 * 
+	 *
 	 * @param request the re-orient relationship request.
 	 * </pre>
 	 */
@@ -39,7 +39,7 @@ public class SubstitutionReorientCommand extends DependencyReorientCommand {
 	/**
 	 * <pre>
 	 * @see org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand#canExecute()
-	 * 
+	 *
 	 * @return true if the command is executable.
 	 * </pre>
 	 */

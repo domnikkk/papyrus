@@ -14,13 +14,9 @@
 package org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.impl.QueryImpl;
-
 import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQuery;
 import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQueryPackage;
 
@@ -42,7 +38,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	 * The default value of the '{@link #getImplementationClassName() <em>Implementation Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImplementationClassName()
 	 * @generated
 	 * @ordered
@@ -53,7 +49,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	 * The cached value of the '{@link #getImplementationClassName() <em>Implementation Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getImplementationClassName()
 	 * @generated
 	 * @ordered
@@ -63,7 +59,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected JavaQueryImpl() {
@@ -73,7 +69,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +80,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getImplementationClassName() {
@@ -94,7 +90,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setImplementationClassName(String newImplementationClassName) {
@@ -108,7 +104,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +119,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +135,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +151,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +166,7 @@ public class JavaQueryImpl extends QueryImpl implements JavaQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -321,7 +321,7 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
 			 */
 			public void createControl(Composite parent) {
@@ -366,7 +366,7 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see org.eclipse.ltk.ui.refactoring.UserInputWizardPage#performFinish()
 			 */
 			@Override
@@ -378,7 +378,7 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see org.eclipse.ltk.ui.refactoring.UserInputWizardPage#getNextPage()
 			 */
 			@Override

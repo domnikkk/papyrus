@@ -15,11 +15,8 @@ package org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfigurati
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.AndRule;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.ComposedRuleConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantRuleConfiguration;
@@ -32,14 +29,14 @@ import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguratio
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl implements InvariantSemanticTypeConfigurationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass invariantSemanticTypeConfigurationEClass = null;
@@ -47,7 +44,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass invariantRuleConfigurationEClass = null;
@@ -55,7 +52,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass composedRuleConfigurationEClass = null;
@@ -63,7 +60,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass andRuleEClass = null;
@@ -71,7 +68,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass orRuleEClass = null;
@@ -81,7 +78,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage#eNS_URI
 	 * @see #init()
@@ -94,7 +91,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -105,7 +102,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	 * <p>
 	 * This method is used to initialize {@link InvariantSemanticTypeConfigurationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -143,7 +140,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getInvariantSemanticTypeConfiguration() {
@@ -153,7 +150,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getInvariantSemanticTypeConfiguration_InvariantRuleConfiguration() {
@@ -163,7 +160,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getInvariantRuleConfiguration() {
@@ -173,7 +170,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getComposedRuleConfiguration() {
@@ -183,7 +180,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getComposedRuleConfiguration_ComposedRules() {
@@ -193,7 +190,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getAndRule() {
@@ -203,7 +200,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getOrRule() {
@@ -213,7 +210,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantSemanticTypeConfigurationFactory getInvariantSemanticTypeConfigurationFactory() {
@@ -223,7 +220,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -233,7 +230,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -259,7 +256,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -269,7 +266,7 @@ public class InvariantSemanticTypeConfigurationPackageImpl extends EPackageImpl 
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

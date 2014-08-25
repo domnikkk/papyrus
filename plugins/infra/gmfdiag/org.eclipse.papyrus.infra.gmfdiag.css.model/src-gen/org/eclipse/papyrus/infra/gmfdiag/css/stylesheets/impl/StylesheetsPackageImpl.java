@@ -21,14 +21,14 @@ import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.WorkspaceThemes;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass modelStyleSheetsEClass = null;
@@ -36,7 +36,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass styleSheetEClass = null;
@@ -44,7 +44,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass styleSheetReferenceEClass = null;
@@ -52,7 +52,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass embeddedStyleSheetEClass = null;
@@ -60,7 +60,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass workspaceThemesEClass = null;
@@ -68,7 +68,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass themeEClass = null;
@@ -78,7 +78,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage#eNS_URI
 	 * @see #init()
@@ -91,7 +91,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -101,7 +101,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	 *
 	 * <p>
 	 * This method is used to initialize {@link StylesheetsPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -138,7 +138,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getModelStyleSheets() {
@@ -148,7 +148,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getModelStyleSheets_Stylesheets() {
@@ -158,7 +158,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getStyleSheet() {
@@ -168,7 +168,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getStyleSheetReference() {
@@ -178,7 +178,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getStyleSheetReference_Path() {
@@ -188,7 +188,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getEmbeddedStyleSheet() {
@@ -198,7 +198,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getEmbeddedStyleSheet_Label() {
@@ -208,7 +208,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getEmbeddedStyleSheet_Content() {
@@ -218,7 +218,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getWorkspaceThemes() {
@@ -228,7 +228,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getWorkspaceThemes_Themes() {
@@ -238,7 +238,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getTheme() {
@@ -248,7 +248,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getTheme_Id() {
@@ -258,7 +258,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getTheme_Label() {
@@ -268,7 +268,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getTheme_Icon() {
@@ -278,7 +278,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getTheme_Stylesheets() {
@@ -288,7 +288,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StylesheetsFactory getStylesheetsFactory() {
@@ -298,7 +298,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -308,7 +308,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -343,7 +343,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -353,7 +353,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

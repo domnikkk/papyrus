@@ -41,7 +41,7 @@ public class ActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.activitygroup.AbstractContainerNodeDescriptor#getContainerEClass()
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class ActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.activitygroup.AbstractContainerNodeDescriptor#getChildrenReferences()
 	 */
 	@Override
@@ -61,7 +61,7 @@ public class ActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.activitygroup.AbstractContainerNodeDescriptor#getParentReferences()
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class ActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.activitygroup.AbstractContainerNodeDescriptor#getParentEOppositeReferences()
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class ActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.uml.diagram.activity.activitygroup.AbstractContainerNodeDescriptor#getCompartmentPartFromView(org.eclipse.gmf.runtime.diagram
 	 * .ui.editparts.IGraphicalEditPart)
@@ -107,7 +107,7 @@ public class ActivityNodeContainment extends AbstractContainerNodeDescriptor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.activitygroup.IContainerNodeDescriptor#getGroupPriority()
 	 */
 	@Override

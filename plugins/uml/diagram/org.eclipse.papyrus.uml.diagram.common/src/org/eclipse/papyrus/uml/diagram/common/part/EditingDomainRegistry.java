@@ -167,7 +167,7 @@ public class EditingDomainRegistry extends HashMap<String, TransactionalEditingD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.util.HashMap#get(java.lang.Object)
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class EditingDomainRegistry extends HashMap<String, TransactionalEditingD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener2#partActivated(org.eclipse.ui.
 	 * IWorkbenchPartReference)
 	 */
@@ -284,7 +284,7 @@ public class EditingDomainRegistry extends HashMap<String, TransactionalEditingD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener2#partBroughtToTop(org.eclipse.ui.
 	 * IWorkbenchPartReference)
 	 */
@@ -295,7 +295,7 @@ public class EditingDomainRegistry extends HashMap<String, TransactionalEditingD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener2#partClosed(org.eclipse.ui.
 	 * IWorkbenchPartReference)
 	 */
@@ -306,7 +306,7 @@ public class EditingDomainRegistry extends HashMap<String, TransactionalEditingD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener2#partDeactivated(org.eclipse.ui.
 	 * IWorkbenchPartReference)
 	 */
@@ -317,7 +317,7 @@ public class EditingDomainRegistry extends HashMap<String, TransactionalEditingD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener2#partHidden(org.eclipse.ui.
 	 * IWorkbenchPartReference)
 	 */
@@ -328,7 +328,7 @@ public class EditingDomainRegistry extends HashMap<String, TransactionalEditingD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener2#partInputChanged(org.eclipse.ui.
 	 * IWorkbenchPartReference)
 	 */
@@ -339,7 +339,7 @@ public class EditingDomainRegistry extends HashMap<String, TransactionalEditingD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener2#partOpened(org.eclipse.ui.
 	 * IWorkbenchPartReference)
 	 */
@@ -350,7 +350,7 @@ public class EditingDomainRegistry extends HashMap<String, TransactionalEditingD
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IPartListener2#partVisible(org.eclipse.ui.
 	 * IWorkbenchPartReference)
 	 */

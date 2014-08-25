@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -33,7 +32,7 @@ public interface ServiceSetIdDesc extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getServiceSetIdDesc_Name()
@@ -46,7 +45,7 @@ public interface ServiceSetIdDesc extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -62,7 +61,7 @@ public interface ServiceSetIdDesc extends EObject {
 	 * If the meaning of the '<em>Extends</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Extends</em>' attribute list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getServiceSetIdDesc_Extends()
 	 * @model dataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.String"
@@ -77,7 +76,7 @@ public interface ServiceSetIdDesc extends EObject {
 	 * If the meaning of the '<em>Description</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getServiceSetIdDesc_Description()
@@ -90,7 +89,7 @@ public interface ServiceSetIdDesc extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
@@ -107,7 +106,7 @@ public interface ServiceSetIdDesc extends EObject {
 	 * If the meaning of the '<em>Service IdDescriptors</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Service Descriptors</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getServiceSetIdDesc_ServiceDescriptors()
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getNamespace
@@ -119,7 +118,7 @@ public interface ServiceSetIdDesc extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model required="true" ordered="false" serviceIdDataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.Object" serviceIdRequired="true" serviceIdOrdered="false"
 	 * @generated
 	 */
@@ -128,7 +127,7 @@ public interface ServiceSetIdDesc extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.boolean" required="true" ordered="false" serviceIdDataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.Object" serviceIdRequired="true"
 	 *        serviceIdOrdered="false"
 	 * @generated
@@ -138,7 +137,7 @@ public interface ServiceSetIdDesc extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model required="true" ordered="false" serviceDescRequired="true" serviceDescOrdered="false"
 	 * @generated
 	 */
@@ -147,7 +146,7 @@ public interface ServiceSetIdDesc extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model dataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.boolean" required="true" ordered="false" serviceDescRequired="true" serviceDescOrdered="false"
 	 * @generated
 	 */

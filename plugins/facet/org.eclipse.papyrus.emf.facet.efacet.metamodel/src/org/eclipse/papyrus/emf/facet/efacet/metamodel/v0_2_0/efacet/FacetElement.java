@@ -46,7 +46,7 @@ public interface FacetElement extends ETypedElement, DocumentedElement {
 	 * If the meaning of the '<em>Categories</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Categories</em>' reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetPackage#getFacetElement_Categories()
 	 * @model

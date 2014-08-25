@@ -34,7 +34,7 @@ public class PapyrusExtensionRootNodeImpl extends CommentedElementImpl implement
 	/**
 	 * The cached value of the '{@link #getExtensionNodes() <em>Extension Nodes</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtensionNodes()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class PapyrusExtensionRootNodeImpl extends CommentedElementImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PapyrusExtensionRootNodeImpl() {
@@ -52,7 +52,7 @@ public class PapyrusExtensionRootNodeImpl extends CommentedElementImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -62,7 +62,7 @@ public class PapyrusExtensionRootNodeImpl extends CommentedElementImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class PapyrusExtensionRootNodeImpl extends CommentedElementImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,7 +89,7 @@ public class PapyrusExtensionRootNodeImpl extends CommentedElementImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class PapyrusExtensionRootNodeImpl extends CommentedElementImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -120,7 +120,7 @@ public class PapyrusExtensionRootNodeImpl extends CommentedElementImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public class PapyrusExtensionRootNodeImpl extends CommentedElementImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

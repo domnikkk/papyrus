@@ -11,8 +11,8 @@
  */
 package org.eclipse.papyrus.emf.facet.util.emf.ui.internal;
 
-import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.IEmfLabelProviderFactory;
 import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.exported.IEmfLabelProviderFactory;
 
 public class EmfLabelProviderFactory implements
 		IEmfLabelProviderFactory {

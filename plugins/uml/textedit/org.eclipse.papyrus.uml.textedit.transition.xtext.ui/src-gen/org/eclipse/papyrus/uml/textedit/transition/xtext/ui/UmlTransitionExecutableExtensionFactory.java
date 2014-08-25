@@ -3,12 +3,11 @@
  */
 package org.eclipse.papyrus.uml.textedit.transition.xtext.ui;
 
+import org.eclipse.papyrus.uml.textedit.transition.xtext.ui.internal.UmlTransitionActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
-
-import org.eclipse.papyrus.uml.textedit.transition.xtext.ui.internal.UmlTransitionActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly

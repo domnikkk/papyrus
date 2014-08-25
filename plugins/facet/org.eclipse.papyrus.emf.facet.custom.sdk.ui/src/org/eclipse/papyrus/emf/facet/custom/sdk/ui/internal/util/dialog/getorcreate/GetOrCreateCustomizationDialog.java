@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.dialog.getorcreate;
 
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.sync.SynchronizedGetOrCreateFilteredElementCommmandWidget;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.dialog.AbstractGetOrCreateCustomizationDialog;
@@ -21,7 +22,6 @@ import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IWithResul
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.ICommandWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.IGetOrCreateFilteredElementCommmandWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement2;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 
 /**
  * Provide a dialog where the user can select a {@link Customization} in the

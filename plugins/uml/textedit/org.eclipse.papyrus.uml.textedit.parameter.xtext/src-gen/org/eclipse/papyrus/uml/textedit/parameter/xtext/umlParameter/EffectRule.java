@@ -30,7 +30,7 @@ public interface EffectRule extends EObject
 	 * If the meaning of the '<em>Effect Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Effect Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.EffectKind
 	 * @see #setEffectKind(EffectKind)
@@ -44,7 +44,7 @@ public interface EffectRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.EffectRule#getEffectKind <em>Effect Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Effect Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.EffectKind

@@ -40,7 +40,7 @@ public class CreateOrSelectBlockPropertyTypeDialog extends CreateOrSelectTypeDia
 	/**
 	 * If we create a Part type by a ConstraintBlock, thisPart will become a ConstraintProperty and representation will immediately disappear.
 	 * So we filter ConstraintBlock type => Only strict Block are allowed
-	 * 
+	 *
 	 * @return
 	 */
 	@SuppressWarnings("deprecation")

@@ -27,7 +27,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
  * Represents a descriptor for stereotype properties
- * 
+ *
  * @author Laurent Wouters
  */
 public class StereotypePropertyDescriptor extends SurrogateItemPropertyDescriptor {

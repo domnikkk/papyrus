@@ -14,12 +14,12 @@
 package org.eclipse.papyrus.emf.facet.custom.core;
 
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
 import org.eclipse.papyrus.emf.facet.custom.core.internal.CustomizationManagerFactory;
+import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
 
 /**
  * Used to instantiate a customization manager
- * 
+ *
  * @author Gregoire Dupe
  * @since 0.2
  * @noextend This interface is not intended to be extended by clients.

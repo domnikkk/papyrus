@@ -81,7 +81,7 @@ public class DirectEditorEditingSupport extends EditingSupport {
 	/**
 	 * Obtain direct editor configuration for an element that can be adapted to
 	 * an EObject
-	 * 
+	 *
 	 * @param element
 	 *            an adaptable element
 	 * @return The direct editor configuration, if it exists.
@@ -93,7 +93,7 @@ public class DirectEditorEditingSupport extends EditingSupport {
 
 	/**
 	 * Obtain direct editor configuration for a semantic element
-	 * 
+	 *
 	 * @param element
 	 *            a sementic element
 	 * @return The direct editor configuration, if it exists.

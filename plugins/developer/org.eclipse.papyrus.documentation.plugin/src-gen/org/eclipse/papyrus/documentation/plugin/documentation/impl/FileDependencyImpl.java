@@ -7,11 +7,8 @@
 package org.eclipse.papyrus.documentation.plugin.documentation.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage;
 import org.eclipse.papyrus.documentation.plugin.documentation.FileDependency;
 
@@ -33,7 +30,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	 * The default value of the '{@link #getFile() <em>File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFile()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	 * The cached value of the '{@link #getFile() <em>File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFile()
 	 * @generated
 	 * @ordered
@@ -54,7 +51,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FileDependencyImpl() {
@@ -64,7 +61,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +72,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getFile() {
@@ -85,7 +82,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setFile(String newFile) {
@@ -99,7 +96,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +111,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +127,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +143,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +158,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.emf.facet.efacet;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 
@@ -54,7 +53,7 @@ public interface Facet extends EClassifier {
 	 * If the meaning of the '<em>Facet Set</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Facet Set</em>' container reference.
 	 * @see #setFacetSet(FacetSet)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getFacet_FacetSet()
@@ -70,7 +69,7 @@ public interface Facet extends EClassifier {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.Facet#getFacetSet <em>Facet Set</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Facet Set</em>' container reference.
 	 * @see #getFacetSet()
@@ -87,7 +86,7 @@ public interface Facet extends EClassifier {
 	 * If the meaning of the '<em>Conformance Query</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Conformance Query</em>' containment reference.
 	 * @see #setConformanceQuery(Query)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getFacet_ConformanceQuery()
@@ -104,7 +103,7 @@ public interface Facet extends EClassifier {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.Facet#getConformanceQuery <em>Conformance Query</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Conformance Query</em>' containment reference.
 	 * @see #getConformanceQuery()
@@ -121,7 +120,7 @@ public interface Facet extends EClassifier {
 	 * If the meaning of the '<em>Extended Metaclass</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Extended Metaclass</em>' reference.
 	 * @see #setExtendedMetaclass(EClass)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getFacet_ExtendedMetaclass()
@@ -136,7 +135,7 @@ public interface Facet extends EClassifier {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.Facet#getExtendedMetaclass <em>Extended Metaclass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Extended Metaclass</em>' reference.
 	 * @see #getExtendedMetaclass()
@@ -155,7 +154,7 @@ public interface Facet extends EClassifier {
 	 * <!-- begin-model-doc -->
 	 * This composite reference contains virtual attributes, references and operations.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Facet Elements</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getFacet_FacetElements()
 	 * @see org.eclipse.papyrus.emf.facet.efacet.FacetElement#getFacet

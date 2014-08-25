@@ -44,7 +44,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	 * The cached value of the '{@link #getParents() <em>Parents</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getParents()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	 * The cached value of the '{@link #getChildren() <em>Children</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	 * The cached value of the '{@link #getExtends() <em>Extends</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtends()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	 * The cached value of the '{@link #getServiceSets() <em>Service Sets</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getServiceSets()
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	 * The default value of the '{@link #isUnique() <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isUnique()
 	 * @generated
 	 * @ordered
@@ -143,7 +143,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	 * The cached value of the '{@link #isUnique() <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isUnique()
 	 * @generated
 	 * @ordered
@@ -154,7 +154,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	 * The cached value of the '{@link #getServices() <em>Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getServices()
 	 * @generated
 	 * @ordered
@@ -164,7 +164,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RegistryDescImpl() {
@@ -174,7 +174,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -211,7 +211,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +225,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +239,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +253,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +264,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,7 +279,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -293,7 +293,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,7 +304,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,7 +319,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -333,7 +333,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -354,7 +354,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -375,7 +375,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -386,7 +386,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -397,7 +397,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -415,7 +415,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -432,7 +432,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -461,7 +461,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -504,7 +504,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -541,7 +541,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -570,7 +570,7 @@ public class RegistryDescImpl extends EObjectImpl implements RegistryDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -40,7 +40,7 @@ public interface Declaration extends EObject
 	 * If the meaning of the '<em>Property</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Property</em>' attribute.
 	 * @see #setProperty(String)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getDeclaration_Property()
@@ -53,7 +53,7 @@ public interface Declaration extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Declaration#getProperty <em>Property</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Property</em>' attribute.
 	 * @see #getProperty()
@@ -68,7 +68,7 @@ public interface Declaration extends EObject
 	 * If the meaning of the '<em>Expression</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Expression</em>' containment reference.
 	 * @see #setExpression(Expression)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getDeclaration_Expression()
@@ -81,7 +81,7 @@ public interface Declaration extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Declaration#getExpression <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Expression</em>' containment reference.
 	 * @see #getExpression()
@@ -96,7 +96,7 @@ public interface Declaration extends EObject
 	 * If the meaning of the '<em>Important</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Important</em>' attribute.
 	 * @see #setImportant(boolean)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getDeclaration_Important()
@@ -109,7 +109,7 @@ public interface Declaration extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Declaration#isImportant <em>Important</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Important</em>' attribute.
 	 * @see #isImportant()

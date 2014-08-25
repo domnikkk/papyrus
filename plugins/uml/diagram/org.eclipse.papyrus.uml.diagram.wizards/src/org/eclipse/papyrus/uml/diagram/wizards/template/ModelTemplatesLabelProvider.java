@@ -16,7 +16,6 @@ package org.eclipse.papyrus.uml.diagram.wizards.template;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.papyrus.uml.diagram.wizards.Messages;
 import org.eclipse.swt.graphics.Image;
 
 /**

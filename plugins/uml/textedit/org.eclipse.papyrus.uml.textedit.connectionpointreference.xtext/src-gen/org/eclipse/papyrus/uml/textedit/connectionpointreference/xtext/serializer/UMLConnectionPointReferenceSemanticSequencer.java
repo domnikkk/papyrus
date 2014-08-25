@@ -1,11 +1,12 @@
 package org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.serializer;
 
-import com.google.inject.Inject;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.services.UMLConnectionPointReferenceGrammarAccess;
 import org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.uMLConnectionPointReference.ConnectionPointReferenceRule;
 import org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.uMLConnectionPointReference.UMLConnectionPointReferencePackage;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class UMLConnectionPointReferenceSemanticSequencer extends AbstractDelegatingSemanticSequencer {

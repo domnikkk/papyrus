@@ -40,7 +40,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	 * The cached value of the '{@link #getReferencedElement() <em>Referenced Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getReferencedElement()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SingleValuedReferenceInstanceImpl() {
@@ -60,7 +60,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +71,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject getReferencedElement() {
@@ -90,7 +90,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetReferencedElement() {
@@ -100,7 +100,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setReferencedElement(EObject newReferencedElement) {
@@ -114,7 +114,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class SingleValuedReferenceInstanceImpl extends AbstractReferenceInstance
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -20,13 +20,13 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.jface.dialogs.IMessageProvider;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.CreateFacetSetWizardImpl;
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.papyrus.emf.facet.util.pde.core.internal.exported.PluginUtils;
-import org.eclipse.jface.dialogs.IMessageProvider;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
 @Deprecated

@@ -45,7 +45,7 @@ public class MarkerToPseudoSelectorMappingService implements IService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#startService()
 	 */
 	@Override
@@ -55,7 +55,7 @@ public class MarkerToPseudoSelectorMappingService implements IService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#disposeService()
 	 */
 	@Override

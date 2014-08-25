@@ -13,12 +13,12 @@
 package org.eclipse.papyrus.emf.facet.query.ocl.sdk.ui.internal.widget.oclexpression;
 
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.ocl.ParserException;
 import org.eclipse.papyrus.emf.facet.query.ocl.core.util.OclQueryUtil;
 import org.eclipse.papyrus.emf.facet.query.ocl.sdk.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.query.ocl.sdk.ui.widget.oclexpression.IOCLExpressionWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.AbstractWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement;
-import org.eclipse.ocl.ParserException;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;

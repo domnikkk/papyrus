@@ -41,14 +41,14 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ConfigurationPackageImpl extends EPackageImpl implements ConfigurationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass papyrusConfigurationEClass = null;
@@ -56,7 +56,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass papyrusViewpointEClass = null;
@@ -64,7 +64,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass papyrusViewEClass = null;
@@ -72,7 +72,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass papyrusDiagramEClass = null;
@@ -80,7 +80,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass papyrusSyncTableEClass = null;
@@ -88,7 +88,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass papyrusTableEClass = null;
@@ -96,7 +96,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass modelRuleEClass = null;
@@ -104,7 +104,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass owningRuleEClass = null;
@@ -112,7 +112,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass childRuleEClass = null;
@@ -120,7 +120,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass paletteRuleEClass = null;
@@ -128,7 +128,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass ruleEClass = null;
@@ -136,7 +136,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass pathElementEClass = null;
@@ -144,7 +144,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass categoryEClass = null;
@@ -152,7 +152,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass modelAutoCreateEClass = null;
@@ -162,7 +162,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#eNS_URI
 	 * @see #init()
@@ -175,7 +175,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -186,7 +186,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	 * <p>
 	 * This method is used to initialize {@link ConfigurationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -224,7 +224,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPapyrusConfiguration() {
@@ -234,7 +234,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusConfiguration_DefaultStakeholder() {
@@ -244,7 +244,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusConfiguration_Metamodel() {
@@ -254,7 +254,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusConfiguration_Categories() {
@@ -264,7 +264,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPapyrusViewpoint() {
@@ -274,7 +274,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusViewpoint_Parent() {
@@ -284,7 +284,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPapyrusView() {
@@ -294,7 +294,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPapyrusView_Icon() {
@@ -304,7 +304,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusView_Parent() {
@@ -314,7 +314,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusView_Profiles() {
@@ -324,7 +324,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusView_ModelRules() {
@@ -334,7 +334,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusView_OwningRules() {
@@ -344,7 +344,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPapyrusView_ImplementationID() {
@@ -354,7 +354,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusView_Categories() {
@@ -364,7 +364,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPapyrusDiagram() {
@@ -374,7 +374,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPapyrusDiagram_CustomPalette() {
@@ -384,7 +384,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPapyrusDiagram_CustomStyle() {
@@ -394,7 +394,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusDiagram_ChildRules() {
@@ -404,7 +404,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusDiagram_PaletteRules() {
@@ -414,7 +414,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPapyrusSyncTable() {
@@ -424,7 +424,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPapyrusTable() {
@@ -434,7 +434,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPapyrusTable_Configuration() {
@@ -444,7 +444,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getModelRule() {
@@ -454,7 +454,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getModelRule_Element() {
@@ -464,7 +464,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getModelRule_Stereotypes() {
@@ -474,7 +474,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getModelRule_Multiplicity() {
@@ -484,7 +484,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getOwningRule() {
@@ -494,7 +494,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getOwningRule_Element() {
@@ -504,7 +504,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getOwningRule_Stereotypes() {
@@ -514,7 +514,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getOwningRule_Multiplicity() {
@@ -524,7 +524,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getOwningRule_NewModelPath() {
@@ -534,7 +534,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getChildRule() {
@@ -544,7 +544,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getChildRule_Element() {
@@ -554,7 +554,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getChildRule_Stereotypes() {
@@ -564,7 +564,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getChildRule_Origin() {
@@ -574,7 +574,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getChildRule_InsertionPath() {
@@ -584,7 +584,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPaletteRule() {
@@ -594,7 +594,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getPaletteRule_Element() {
@@ -604,7 +604,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getRule() {
@@ -614,7 +614,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRule_Permit() {
@@ -624,7 +624,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPathElement() {
@@ -634,7 +634,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPathElement_Feature() {
@@ -644,7 +644,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPathElement_Origin() {
@@ -654,7 +654,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPathElement_Target() {
@@ -664,7 +664,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCategory() {
@@ -674,7 +674,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCategory_Name() {
@@ -684,7 +684,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getModelAutoCreate() {
@@ -694,7 +694,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getModelAutoCreate_Feature() {
@@ -704,7 +704,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getModelAutoCreate_Origin() {
@@ -714,7 +714,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getModelAutoCreate_CreationType() {
@@ -724,7 +724,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConfigurationFactory getConfigurationFactory() {
@@ -734,7 +734,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -744,7 +744,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -822,7 +822,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -832,7 +832,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

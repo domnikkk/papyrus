@@ -14,7 +14,7 @@ package org.eclipse.papyrus.emf.facet.custom.core.exception;
 
 /**
  * This exception is thrown when the computation of a customization property value failed.
- * 
+ *
  * @author Gregoire Dupe
  * @noinstantiate This class is not intended to be instantiated by clients.
  */

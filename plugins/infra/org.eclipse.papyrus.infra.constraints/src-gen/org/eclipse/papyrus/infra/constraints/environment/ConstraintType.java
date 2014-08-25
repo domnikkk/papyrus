@@ -33,7 +33,7 @@ public interface ConstraintType extends EObject {
 	 * If the meaning of the '<em>Label</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(String)
 	 * @see org.eclipse.papyrus.infra.constraints.environment.EnvironmentPackage#getConstraintType_Label()
@@ -46,7 +46,7 @@ public interface ConstraintType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.constraints.environment.ConstraintType#getLabel <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Label</em>' attribute.
 	 * @see #getLabel()
@@ -61,7 +61,7 @@ public interface ConstraintType extends EObject {
 	 * If the meaning of the '<em>Constraint Class</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Constraint Class</em>' attribute.
 	 * @see #setConstraintClass(String)
 	 * @see org.eclipse.papyrus.infra.constraints.environment.EnvironmentPackage#getConstraintType_ConstraintClass()
@@ -74,7 +74,7 @@ public interface ConstraintType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.constraints.environment.ConstraintType#getConstraintClass <em>Constraint Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Constraint Class</em>' attribute.
 	 * @see #getConstraintClass()

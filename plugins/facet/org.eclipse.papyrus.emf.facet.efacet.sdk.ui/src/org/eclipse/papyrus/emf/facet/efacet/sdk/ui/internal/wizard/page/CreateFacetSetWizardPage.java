@@ -20,9 +20,9 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.wizard.page.ICreateFacetSetWizardPage;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
 public class CreateFacetSetWizardPage extends WizardNewFileCreationPage

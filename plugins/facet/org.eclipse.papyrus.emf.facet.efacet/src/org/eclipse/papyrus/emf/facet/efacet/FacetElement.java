@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.emf.facet.efacet;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.ETypedElement;
 
 /**
@@ -51,7 +50,7 @@ public interface FacetElement extends ETypedElement {
 	 * If the meaning of the '<em>Categories</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Categories</em>' reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getFacetElement_Categories()
 	 * @model
@@ -69,7 +68,7 @@ public interface FacetElement extends ETypedElement {
 	 * If the meaning of the '<em>Facet</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Facet</em>' container reference.
 	 * @see #setFacet(Facet)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getFacetElement_Facet()
@@ -85,7 +84,7 @@ public interface FacetElement extends ETypedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.FacetElement#getFacet <em>Facet</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Facet</em>' container reference.
 	 * @see #getFacet()
@@ -102,7 +101,7 @@ public interface FacetElement extends ETypedElement {
 	 * If the meaning of the '<em>Override</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Override</em>' reference.
 	 * @see #setOverride(ETypedElement)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getFacetElement_Override()
@@ -117,7 +116,7 @@ public interface FacetElement extends ETypedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.FacetElement#getOverride <em>Override</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Override</em>' reference.
 	 * @see #getOverride()

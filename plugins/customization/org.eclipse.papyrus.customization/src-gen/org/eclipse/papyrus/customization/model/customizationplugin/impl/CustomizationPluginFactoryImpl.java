@@ -5,18 +5,25 @@ package org.eclipse.papyrus.customization.model.customizationplugin.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.customization.model.customizationplugin.*;
+import org.eclipse.papyrus.customization.model.customizationplugin.ConstraintsEnvironment;
+import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationConfiguration;
+import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginFactory;
+import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage;
+import org.eclipse.papyrus.customization.model.customizationplugin.ModelTemplate;
+import org.eclipse.papyrus.customization.model.customizationplugin.Palette;
+import org.eclipse.papyrus.customization.model.customizationplugin.Profile;
+import org.eclipse.papyrus.customization.model.customizationplugin.PropertyView;
+import org.eclipse.papyrus.customization.model.customizationplugin.PropertyViewEnvironment;
+import org.eclipse.papyrus.customization.model.customizationplugin.UICustom;
+import org.eclipse.papyrus.customization.model.customizationplugin.UMLModel;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CustomizationPluginFactoryImpl extends EFactoryImpl implements CustomizationPluginFactory {
@@ -24,7 +31,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static CustomizationPluginFactory init() {
@@ -43,7 +50,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomizationPluginFactoryImpl() {
@@ -53,7 +60,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +92,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomizationConfiguration createCustomizationConfiguration() {
@@ -96,7 +103,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PropertyView createPropertyView() {
@@ -107,7 +114,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UICustom createUICustom() {
@@ -118,7 +125,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelTemplate createModelTemplate() {
@@ -129,7 +136,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Palette createPalette() {
@@ -140,7 +147,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Profile createProfile() {
@@ -151,7 +158,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UMLModel createUMLModel() {
@@ -162,7 +169,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintsEnvironment createConstraintsEnvironment() {
@@ -173,7 +180,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PropertyViewEnvironment createPropertyViewEnvironment() {
@@ -184,7 +191,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomizationPluginPackage getCustomizationPluginPackage() {
@@ -194,7 +201,7 @@ public class CustomizationPluginFactoryImpl extends EFactoryImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

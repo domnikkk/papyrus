@@ -36,7 +36,7 @@ import org.eclipse.uml2.uml.StructuredClassifier;
 /**
  * <pre>
  * Re-orient command for binary {@link Association}.
- * 
+ *
  * Expected behavior:
  * When the association is re-oriented, the type of the property on the opposite side
  * of the re-oriented association end has to be modified accordingly to the new end

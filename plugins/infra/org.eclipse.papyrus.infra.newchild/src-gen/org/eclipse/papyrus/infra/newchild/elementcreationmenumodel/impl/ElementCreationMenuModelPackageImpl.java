@@ -17,9 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.CreationMenu;
 import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelFactory;
 import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelPackage;
@@ -30,14 +28,14 @@ import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Menu;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements ElementCreationMenuModelPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass folderEClass = null;
@@ -45,7 +43,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass menuEClass = null;
@@ -53,7 +51,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass creationMenuEClass = null;
@@ -63,7 +61,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelPackage#eNS_URI
 	 * @see #init()
@@ -76,7 +74,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -87,7 +85,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	 * <p>
 	 * This method is used to initialize {@link ElementCreationMenuModelPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -125,7 +123,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFolder() {
@@ -135,7 +133,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFolder_Menu() {
@@ -145,7 +143,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMenu() {
@@ -155,7 +153,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMenu_Label() {
@@ -165,7 +163,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMenu_Icon() {
@@ -175,7 +173,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMenu_Visible() {
@@ -185,7 +183,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCreationMenu() {
@@ -195,7 +193,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCreationMenu_ElementTypeIdRef() {
@@ -205,7 +203,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCreationMenu_Role() {
@@ -215,7 +213,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCreationMenu_DisplayAllRoles() {
@@ -225,7 +223,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementCreationMenuModelFactory getElementCreationMenuModelFactory() {
@@ -235,7 +233,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -245,7 +243,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -272,7 +270,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -282,7 +280,7 @@ public class ElementCreationMenuModelPackageImpl extends EPackageImpl implements
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

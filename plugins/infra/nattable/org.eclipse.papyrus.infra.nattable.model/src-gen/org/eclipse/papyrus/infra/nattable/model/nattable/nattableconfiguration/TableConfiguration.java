@@ -13,11 +13,8 @@
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattableconfiguration;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.TableHeaderAxisConfiguration;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.AbstractAxisProvider;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattabletester.AbstractTableTester;
 
 /**

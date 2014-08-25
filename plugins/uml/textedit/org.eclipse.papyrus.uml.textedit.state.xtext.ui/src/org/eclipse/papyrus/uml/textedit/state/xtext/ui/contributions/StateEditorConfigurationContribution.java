@@ -138,7 +138,7 @@ public class StateEditorConfigurationContribution extends DefaultXtextDirectEdit
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.infra.gmfdiag.xtext.glue.PopupEditorConfiguration
 	 * #getTextToEdit(java.lang.Object)
@@ -199,7 +199,7 @@ public class StateEditorConfigurationContribution extends DefaultXtextDirectEdit
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.
 		 * AbstractTransactionalCommand
 		 * #doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor ,

@@ -11,7 +11,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.serializer;
 
-import com.google.inject.Inject;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.gmfdiag.css.Angle;
 import org.eclipse.papyrus.infra.gmfdiag.css.Attribute;
@@ -48,6 +47,8 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class CSSSemanticSequencer extends AbstractDelegatingSemanticSequencer {

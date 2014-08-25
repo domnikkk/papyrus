@@ -11,7 +11,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Injected Service</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InjectedServiceTest extends InjectedValueTest {
@@ -19,7 +19,7 @@ public class InjectedServiceTest extends InjectedValueTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class InjectedServiceTest extends InjectedValueTest {
 	 * Constructs a new Injected Service test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InjectedServiceTest(String name) {
@@ -41,7 +41,7 @@ public class InjectedServiceTest extends InjectedValueTest {
 	 * Returns the fixture for this Injected Service test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class InjectedServiceTest extends InjectedValueTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public class InjectedServiceTest extends InjectedValueTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

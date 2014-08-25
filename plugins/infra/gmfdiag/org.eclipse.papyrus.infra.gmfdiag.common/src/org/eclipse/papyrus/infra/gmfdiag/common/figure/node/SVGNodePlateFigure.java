@@ -325,7 +325,7 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createAnchor(org.eclipse.draw2d.geometry.PrecisionPoint)
 	 */
 	@Override
@@ -347,7 +347,7 @@ public class SVGNodePlateFigure extends DefaultSizeNodeFigure {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createDefaultAnchor()
 	 */
 	@Override

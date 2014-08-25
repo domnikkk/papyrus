@@ -39,7 +39,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	 * The default value of the '{@link #getStereotypeQualifiedName() <em>Stereotype Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypeQualifiedName()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	 * The cached value of the '{@link #getStereotypeQualifiedName() <em>Stereotype Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypeQualifiedName()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	 * The default value of the '{@link #getRequiredProfile() <em>Required Profile</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRequiredProfile()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	 * The cached value of the '{@link #getRequiredProfile() <em>Required Profile</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRequiredProfile()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InvariantStereotypeConfigurationImpl() {
@@ -92,7 +92,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getStereotypeQualifiedName() {
@@ -113,7 +113,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStereotypeQualifiedName(String newStereotypeQualifiedName) {
@@ -127,7 +127,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getRequiredProfile() {
@@ -137,7 +137,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRequiredProfile(String newRequiredProfile) {
@@ -151,7 +151,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class InvariantStereotypeConfigurationImpl extends InvariantRuleConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -6,18 +6,29 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.*;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AliasDesc;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ConstructorInjection;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Descriptors;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.InjectedService;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.MethodInjection;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.OpaqueInjectedValue;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ParameterInjection;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.PropertyInjection;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceDesc;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceFactoryDesc;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceSetDesc;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsFactory;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.StartupKind;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements ServicedescriptorsFactory {
@@ -25,7 +36,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ServicedescriptorsFactory init() {
@@ -44,7 +55,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ServicedescriptorsFactoryImpl() {
@@ -54,7 +65,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +103,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +125,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +147,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +159,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +171,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +183,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +195,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +207,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +219,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +231,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +243,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +255,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +267,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +279,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +291,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StartupKind createStartupKindFromString(EDataType eDataType, String initialValue) {
@@ -294,7 +305,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertStartupKindToString(EDataType eDataType, Object instanceValue) {
@@ -304,7 +315,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createStringFromString(EDataType eDataType, String initialValue) {
@@ -314,7 +325,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertStringToString(EDataType eDataType, Object instanceValue) {
@@ -324,7 +335,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Boolean createbooleanFromString(EDataType eDataType, String initialValue) {
@@ -334,7 +345,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertbooleanToString(EDataType eDataType, Object instanceValue) {
@@ -344,7 +355,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Integer createintFromString(EDataType eDataType, String initialValue) {
@@ -354,7 +365,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertintToString(EDataType eDataType, Object instanceValue) {
@@ -364,7 +375,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -375,7 +386,7 @@ public class ServicedescriptorsFactoryImpl extends EFactoryImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

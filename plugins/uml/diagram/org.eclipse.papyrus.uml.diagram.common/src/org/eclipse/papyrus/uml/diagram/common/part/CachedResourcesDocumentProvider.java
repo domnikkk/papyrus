@@ -129,7 +129,7 @@ public class CachedResourcesDocumentProvider extends AbstractDocumentProvider im
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.diagram.ui.resources.editor.document.
 	 * AbstractDocumentProvider#disposeElementInfo(java.lang.Object,
 	 * org.eclipse.
@@ -193,7 +193,7 @@ public class CachedResourcesDocumentProvider extends AbstractDocumentProvider im
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.diagram.ui.resources.editor.document.
 	 * AbstractDocumentProvider#createEmptyDocument()
 	 */

@@ -5,18 +5,21 @@ package org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.*;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ConstantValue;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureToSet;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ListValue;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.QueryExecutionValue;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationFactory;
+import org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SetValuesActionConfigurationFactoryImpl extends EFactoryImpl implements SetValuesActionConfigurationFactory {
@@ -24,7 +27,7 @@ public class SetValuesActionConfigurationFactoryImpl extends EFactoryImpl implem
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SetValuesActionConfigurationFactory init() {
@@ -43,7 +46,7 @@ public class SetValuesActionConfigurationFactoryImpl extends EFactoryImpl implem
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SetValuesActionConfigurationFactoryImpl() {
@@ -53,7 +56,7 @@ public class SetValuesActionConfigurationFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +80,7 @@ public class SetValuesActionConfigurationFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,7 +92,7 @@ public class SetValuesActionConfigurationFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +104,7 @@ public class SetValuesActionConfigurationFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +116,7 @@ public class SetValuesActionConfigurationFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +128,7 @@ public class SetValuesActionConfigurationFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +140,7 @@ public class SetValuesActionConfigurationFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +151,7 @@ public class SetValuesActionConfigurationFactoryImpl extends EFactoryImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

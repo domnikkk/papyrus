@@ -54,7 +54,7 @@ public class ObservableList<T> extends ArrayList<T> implements IObservableList<T
 
 	/**
 	 * For testing purpose.
-	 * 
+	 *
 	 * @return the listeners
 	 */
 	protected List<IObservableListListener<T>> getListeners() {
@@ -63,7 +63,7 @@ public class ObservableList<T> extends ArrayList<T> implements IObservableList<T
 
 	/**
 	 * Add a listener on list change event event.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.utils.IObservableList#addListener(org.eclipse.papyrus.infra.core.sasheditor.utils.IObservableListListener)
 	 *
 	 * @param listener
@@ -79,7 +79,7 @@ public class ObservableList<T> extends ArrayList<T> implements IObservableList<T
 
 	/**
 	 * Remove a listener on the list.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.utils.IObservableList#removeListener(org.eclipse.papyrus.infra.core.sasheditor.utils.IObservableListListener)
 	 *
 	 * @param listener
@@ -92,7 +92,7 @@ public class ObservableList<T> extends ArrayList<T> implements IObservableList<T
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param element
 	 *            The newly added element
 	 */
@@ -105,7 +105,7 @@ public class ObservableList<T> extends ArrayList<T> implements IObservableList<T
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param element
 	 *            The removed element.
 	 */
@@ -118,7 +118,7 @@ public class ObservableList<T> extends ArrayList<T> implements IObservableList<T
 
 	/**
 	 * Add the element, and fire the appropriate event.
-	 * 
+	 *
 	 * @see java.util.ArrayList#add(java.lang.Object)
 	 *
 	 * @param e

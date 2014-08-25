@@ -39,7 +39,7 @@ public interface URIImageQuery extends Query {
 	 * If the meaning of the '<em>Uri</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Uri</em>' attribute.
 	 * @see #setUri(String)
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.QueryPackage#getURIImageQuery_Uri()
@@ -52,7 +52,7 @@ public interface URIImageQuery extends Query {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.URIImageQuery#getUri <em>Uri</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Uri</em>' attribute.
 	 * @see #getUri()

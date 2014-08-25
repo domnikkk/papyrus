@@ -144,7 +144,7 @@ public class SetNestedPathCommand extends EditElementCommand {
 
 	/**
 	 * Get the {@link ConnectorEnd} currently modified by the command.
-	 * 
+	 *
 	 * @return the modified {@link ConnectorEnd}.
 	 */
 	private ConnectorEnd getModifiedConnectorEnd() {
@@ -153,7 +153,7 @@ public class SetNestedPathCommand extends EditElementCommand {
 
 	/**
 	 * Get the {@link Connector} currently under creation or re-orient that hold {@link ConnectorEnd} to update.
-	 * 
+	 *
 	 * @return the related {@link Connector}.
 	 */
 	private Connector getConnector() {

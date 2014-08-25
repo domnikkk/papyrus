@@ -20,6 +20,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
@@ -170,7 +171,7 @@ public abstract class BorderUMLNodeEditPart extends BorderNodeEditPart implement
 	 * <pre>
 	 * Refresh used font. This method should not be overridden by subclasses.
 	 * To refresh labels font, the method refreshLabelsFont should be used.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

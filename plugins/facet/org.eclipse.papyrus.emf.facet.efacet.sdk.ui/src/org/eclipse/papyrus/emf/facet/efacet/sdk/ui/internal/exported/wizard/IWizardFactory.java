@@ -11,9 +11,9 @@
  */
 package org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.wizard;
 
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.wizard.WizardFactory;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.wizard.IExtendedWizard;
-import org.eclipse.jface.viewers.ISelection;
 
 /**
  * Factory for the wizards creation.

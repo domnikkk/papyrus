@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
 
 /**
@@ -30,7 +29,7 @@ import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationFactory
  * @model kind="package"
  * @generated
@@ -40,7 +39,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "applystereotypeactionconfiguration";
@@ -49,7 +48,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/infra/extendedtypes/uml/applystereotypeaction/1.0";
@@ -58,7 +57,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "applystereotypeactionconfiguration";
@@ -67,7 +66,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	ApplyStereotypeActionConfigurationPackage eINSTANCE = org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl.init();
@@ -76,7 +75,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationImpl <em>Apply Stereotype Action Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationImpl
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getApplyStereotypeActionConfiguration()
 	 * @generated
@@ -87,7 +86,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +96,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +106,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +116,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon Entry</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +126,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Stereotypes To Apply</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +136,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Apply Stereotype Action Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,7 +146,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.StereotypeToApplyImpl <em>Stereotype To Apply</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.StereotypeToApplyImpl
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getStereotypeToApply()
 	 * @generated
@@ -158,7 +157,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Stereotype Qualified Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -168,7 +167,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Update Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +177,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Required Profiles</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -188,7 +187,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Features To Set</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -198,7 +197,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Stereotype To Apply</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,7 +207,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.FeatureToSetImpl <em>Feature To Set</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.FeatureToSetImpl
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getFeatureToSet()
 	 * @generated
@@ -219,7 +218,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Feature Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -229,7 +228,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -239,7 +238,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Feature To Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -249,7 +248,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.FeatureValueImpl <em>Feature Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.FeatureValueImpl
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getFeatureValue()
 	 * @generated
@@ -260,7 +259,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Feature Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -270,7 +269,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ListValueImpl <em>List Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ListValueImpl
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getListValue()
 	 * @generated
@@ -281,7 +280,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -291,7 +290,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>List Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -301,7 +300,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ConstantValueImpl <em>Constant Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ConstantValueImpl
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getConstantValue()
 	 * @generated
@@ -312,7 +311,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Value Instance</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -322,7 +321,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Constant Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -332,7 +331,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.DynamicValueImpl <em>Dynamic Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.DynamicValueImpl
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getDynamicValue()
 	 * @generated
@@ -343,7 +342,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Dynamic Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -353,7 +352,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.QueryExecutionValueImpl <em>Query Execution Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.QueryExecutionValueImpl
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getQueryExecutionValue()
 	 * @generated
@@ -364,7 +363,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Query Execution Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -375,7 +374,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfiguration <em>Apply Stereotype Action Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Apply Stereotype Action Configuration</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfiguration
 	 * @generated
@@ -386,7 +385,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfiguration#getStereotypesToApply <em>Stereotypes To Apply</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Stereotypes To Apply</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfiguration#getStereotypesToApply()
 	 * @see #getApplyStereotypeActionConfiguration()
@@ -398,7 +397,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply <em>Stereotype To Apply</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Stereotype To Apply</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply
 	 * @generated
@@ -409,7 +408,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Stereotype Qualified Name</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getStereotypeQualifiedName()
 	 * @see #getStereotypeToApply()
@@ -421,7 +420,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#isUpdateName <em>Update Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Update Name</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#isUpdateName()
 	 * @see #getStereotypeToApply()
@@ -433,7 +432,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getRequiredProfiles <em>Required Profiles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Required Profiles</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getRequiredProfiles()
 	 * @see #getStereotypeToApply()
@@ -445,7 +444,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getFeaturesToSet <em>Features To Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Features To Set</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getFeaturesToSet()
 	 * @see #getStereotypeToApply()
@@ -457,7 +456,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.FeatureToSet <em>Feature To Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Feature To Set</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.FeatureToSet
 	 * @generated
@@ -468,7 +467,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.FeatureToSet#getFeatureName <em>Feature Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Feature Name</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.FeatureToSet#getFeatureName()
 	 * @see #getFeatureToSet()
@@ -480,7 +479,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.FeatureToSet#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.FeatureToSet#getValue()
 	 * @see #getFeatureToSet()
@@ -492,7 +491,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.FeatureValue <em>Feature Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Feature Value</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.FeatureValue
 	 * @generated
@@ -503,7 +502,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ListValue <em>List Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>List Value</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ListValue
 	 * @generated
@@ -514,7 +513,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ListValue#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Values</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ListValue#getValues()
 	 * @see #getListValue()
@@ -526,7 +525,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ConstantValue <em>Constant Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Constant Value</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ConstantValue
 	 * @generated
@@ -537,7 +536,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ConstantValue#getValueInstance <em>Value Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Value Instance</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ConstantValue#getValueInstance()
 	 * @see #getConstantValue()
@@ -549,7 +548,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.DynamicValue <em>Dynamic Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Dynamic Value</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.DynamicValue
 	 * @generated
@@ -560,7 +559,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.QueryExecutionValue <em>Query Execution Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Query Execution Value</em>'.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.QueryExecutionValue
 	 * @generated
@@ -571,7 +570,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -587,7 +586,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -595,7 +594,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationImpl <em>Apply Stereotype Action Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationImpl
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getApplyStereotypeActionConfiguration()
 		 * @generated
@@ -606,7 +605,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stereotypes To Apply</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference APPLY_STEREOTYPE_ACTION_CONFIGURATION__STEREOTYPES_TO_APPLY = eINSTANCE.getApplyStereotypeActionConfiguration_StereotypesToApply();
@@ -615,7 +614,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.StereotypeToApplyImpl <em>Stereotype To Apply</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.StereotypeToApplyImpl
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getStereotypeToApply()
 		 * @generated
@@ -626,7 +625,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stereotype Qualified Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STEREOTYPE_TO_APPLY__STEREOTYPE_QUALIFIED_NAME = eINSTANCE.getStereotypeToApply_StereotypeQualifiedName();
@@ -635,7 +634,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Update Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STEREOTYPE_TO_APPLY__UPDATE_NAME = eINSTANCE.getStereotypeToApply_UpdateName();
@@ -644,7 +643,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Required Profiles</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STEREOTYPE_TO_APPLY__REQUIRED_PROFILES = eINSTANCE.getStereotypeToApply_RequiredProfiles();
@@ -653,7 +652,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Features To Set</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference STEREOTYPE_TO_APPLY__FEATURES_TO_SET = eINSTANCE.getStereotypeToApply_FeaturesToSet();
@@ -662,7 +661,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.FeatureToSetImpl <em>Feature To Set</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.FeatureToSetImpl
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getFeatureToSet()
 		 * @generated
@@ -673,7 +672,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Feature Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FEATURE_TO_SET__FEATURE_NAME = eINSTANCE.getFeatureToSet_FeatureName();
@@ -682,7 +681,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FEATURE_TO_SET__VALUE = eINSTANCE.getFeatureToSet_Value();
@@ -691,7 +690,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.FeatureValueImpl <em>Feature Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.FeatureValueImpl
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getFeatureValue()
 		 * @generated
@@ -702,7 +701,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ListValueImpl <em>List Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ListValueImpl
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getListValue()
 		 * @generated
@@ -713,7 +712,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LIST_VALUE__VALUES = eINSTANCE.getListValue_Values();
@@ -722,7 +721,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ConstantValueImpl <em>Constant Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ConstantValueImpl
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getConstantValue()
 		 * @generated
@@ -733,7 +732,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value Instance</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONSTANT_VALUE__VALUE_INSTANCE = eINSTANCE.getConstantValue_ValueInstance();
@@ -742,7 +741,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.DynamicValueImpl <em>Dynamic Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.DynamicValueImpl
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getDynamicValue()
 		 * @generated
@@ -753,7 +752,7 @@ public interface ApplyStereotypeActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.QueryExecutionValueImpl <em>Query Execution Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.QueryExecutionValueImpl
 		 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ApplyStereotypeActionConfigurationPackageImpl#getQueryExecutionValue()
 		 * @generated

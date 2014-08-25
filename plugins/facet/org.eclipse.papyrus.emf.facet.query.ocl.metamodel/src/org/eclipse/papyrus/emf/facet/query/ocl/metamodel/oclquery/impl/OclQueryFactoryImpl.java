@@ -16,18 +16,17 @@ package org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.*;
+import org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQuery;
+import org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQueryFactory;
+import org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQueryPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class OclQueryFactoryImpl extends EFactoryImpl implements OclQueryFactory {
@@ -35,7 +34,7 @@ public class OclQueryFactoryImpl extends EFactoryImpl implements OclQueryFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static OclQueryFactory init() {
@@ -54,7 +53,7 @@ public class OclQueryFactoryImpl extends EFactoryImpl implements OclQueryFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OclQueryFactoryImpl() {
@@ -64,7 +63,7 @@ public class OclQueryFactoryImpl extends EFactoryImpl implements OclQueryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +79,7 @@ public class OclQueryFactoryImpl extends EFactoryImpl implements OclQueryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +91,7 @@ public class OclQueryFactoryImpl extends EFactoryImpl implements OclQueryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +102,7 @@ public class OclQueryFactoryImpl extends EFactoryImpl implements OclQueryFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

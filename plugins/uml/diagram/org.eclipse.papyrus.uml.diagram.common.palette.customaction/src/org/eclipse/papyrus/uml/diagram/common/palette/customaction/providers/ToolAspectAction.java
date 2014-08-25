@@ -103,7 +103,7 @@ public class ToolAspectAction extends ModelPostAction implements
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.papyrus.uml.diagram.common.service.palette.IAspectAction#save
 	 * (org.w3c.dom.Node)
@@ -181,7 +181,7 @@ public class ToolAspectAction extends ModelPostAction implements
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.service.palette.IFeatureSetterAspectAction#getAllImpactedFeatures()
 	 */
 	public EStructuralFeature[] getAllImpactedFeatures() {

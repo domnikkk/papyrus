@@ -28,14 +28,14 @@ import org.eclipse.papyrus.infra.viewpoints.style.StylePackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StylePackageImpl extends EPackageImpl implements StylePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass papyrusViewStyleEClass = null;
@@ -45,7 +45,7 @@ public class StylePackageImpl extends EPackageImpl implements StylePackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.viewpoints.style.StylePackage#eNS_URI
 	 * @see #init()
@@ -58,7 +58,7 @@ public class StylePackageImpl extends EPackageImpl implements StylePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -68,7 +68,7 @@ public class StylePackageImpl extends EPackageImpl implements StylePackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link StylePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -106,7 +106,7 @@ public class StylePackageImpl extends EPackageImpl implements StylePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPapyrusViewStyle() {
@@ -116,7 +116,7 @@ public class StylePackageImpl extends EPackageImpl implements StylePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusViewStyle_Owner() {
@@ -126,7 +126,7 @@ public class StylePackageImpl extends EPackageImpl implements StylePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getPapyrusViewStyle_Configuration() {
@@ -136,7 +136,7 @@ public class StylePackageImpl extends EPackageImpl implements StylePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StyleFactory getStyleFactory() {
@@ -146,7 +146,7 @@ public class StylePackageImpl extends EPackageImpl implements StylePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -156,7 +156,7 @@ public class StylePackageImpl extends EPackageImpl implements StylePackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -174,7 +174,7 @@ public class StylePackageImpl extends EPackageImpl implements StylePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -184,7 +184,7 @@ public class StylePackageImpl extends EPackageImpl implements StylePackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

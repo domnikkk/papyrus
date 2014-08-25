@@ -1306,12 +1306,12 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 			 * // use the real width to compute the preferred height which will be used during the layout
 			 * int newNameContainerHeight = getPrimaryShape().getNameContainerPreferredHeight(updatedRect.width); //fix width would cause height
 			 * expand
-			 * 
+			 *
 			 * if(oldNameContainerHeight != newNameContainerHeight) {
-			 * 
+			 *
 			 * if(oldNameContainerHeight != 0) {
 			 * int heightDiff = oldNameContainerHeight - newNameContainerHeight;
-			 * 
+			 *
 			 * if(rect.height != -1) {
 			 * rect.height -= heightDiff;
 			 * }
@@ -1320,7 +1320,7 @@ public class CustomLifelineEditPart extends LifelineEditPart {
 			 * rect.y += heightDiff;
 			 * updateLifelineBounds(rect);
 			 * }
-			 * 
+			 *
 			 * oldNameContainerHeight = newNameContainerHeight;
 			 * }
 			 */

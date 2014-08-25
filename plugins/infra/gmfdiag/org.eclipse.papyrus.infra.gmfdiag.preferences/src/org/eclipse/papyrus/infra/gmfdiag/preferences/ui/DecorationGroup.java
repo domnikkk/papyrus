@@ -15,8 +15,8 @@ package org.eclipse.papyrus.infra.gmfdiag.preferences.ui;
 
 import org.eclipse.jface.dialogs.DialogPage;
 import org.eclipse.jface.preference.BooleanFieldEditor;
-import org.eclipse.papyrus.infra.gmfdiag.preferences.Messages;
 import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
+import org.eclipse.papyrus.infra.gmfdiag.preferences.Messages;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;

@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
 
 /**
@@ -20,7 +19,7 @@ import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationFactory
  * @model kind="package"
  * @generated
@@ -30,7 +29,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "setvaluesactionconfiguration";
@@ -39,7 +38,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/infra/extendedtypes/emf/setvaluesaction/1.0";
@@ -48,7 +47,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "setvaluesactionconfiguration";
@@ -57,7 +56,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	SetValuesActionConfigurationPackage eINSTANCE = org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl.init();
@@ -66,7 +65,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationImpl <em>Set Values Action Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getSetValuesActionConfiguration()
 	 * @generated
@@ -77,7 +76,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -87,7 +86,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +96,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +106,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon Entry</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +116,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Features To Set</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +126,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Set Values Action Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +136,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.FeatureToSetImpl <em>Feature To Set</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.FeatureToSetImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getFeatureToSet()
 	 * @generated
@@ -148,7 +147,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Feature Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -158,7 +157,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -168,7 +167,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Feature To Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +177,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.FeatureValueImpl <em>Feature Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.FeatureValueImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getFeatureValue()
 	 * @generated
@@ -189,7 +188,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Feature Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -199,7 +198,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.DynamicValueImpl <em>Dynamic Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.DynamicValueImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getDynamicValue()
 	 * @generated
@@ -210,7 +209,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Dynamic Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -220,7 +219,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.ConstantValueImpl <em>Constant Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.ConstantValueImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getConstantValue()
 	 * @generated
@@ -231,7 +230,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Value Instance</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -241,7 +240,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Constant Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -251,7 +250,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.ListValueImpl <em>List Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.ListValueImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getListValue()
 	 * @generated
@@ -262,7 +261,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -272,7 +271,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>List Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -282,7 +281,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.QueryExecutionValueImpl <em>Query Execution Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.QueryExecutionValueImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getQueryExecutionValue()
 	 * @generated
@@ -293,7 +292,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * The number of structural features of the '<em>Query Execution Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -304,7 +303,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfiguration <em>Set Values Action Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Set Values Action Configuration</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfiguration
 	 * @generated
@@ -315,7 +314,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfiguration#getFeaturesToSet <em>Features To Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Features To Set</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfiguration#getFeaturesToSet()
 	 * @see #getSetValuesActionConfiguration()
@@ -327,7 +326,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureToSet <em>Feature To Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Feature To Set</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureToSet
 	 * @generated
@@ -338,7 +337,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureToSet#getFeatureName <em>Feature Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Feature Name</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureToSet#getFeatureName()
 	 * @see #getFeatureToSet()
@@ -350,7 +349,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureToSet#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureToSet#getValue()
 	 * @see #getFeatureToSet()
@@ -362,7 +361,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureValue <em>Feature Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Feature Value</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.FeatureValue
 	 * @generated
@@ -373,7 +372,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.DynamicValue <em>Dynamic Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Dynamic Value</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.DynamicValue
 	 * @generated
@@ -384,7 +383,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ConstantValue <em>Constant Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Constant Value</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ConstantValue
 	 * @generated
@@ -395,7 +394,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ConstantValue#getValueInstance <em>Value Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Value Instance</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ConstantValue#getValueInstance()
 	 * @see #getConstantValue()
@@ -407,7 +406,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ListValue <em>List Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>List Value</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ListValue
 	 * @generated
@@ -418,7 +417,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ListValue#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Values</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ListValue#getValues()
 	 * @see #getListValue()
@@ -430,7 +429,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.QueryExecutionValue <em>Query Execution Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Query Execution Value</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.QueryExecutionValue
 	 * @generated
@@ -441,7 +440,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -457,7 +456,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -465,7 +464,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationImpl <em>Set Values Action Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getSetValuesActionConfiguration()
 		 * @generated
@@ -476,7 +475,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Features To Set</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SET_VALUES_ACTION_CONFIGURATION__FEATURES_TO_SET = eINSTANCE.getSetValuesActionConfiguration_FeaturesToSet();
@@ -485,7 +484,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.FeatureToSetImpl <em>Feature To Set</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.FeatureToSetImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getFeatureToSet()
 		 * @generated
@@ -496,7 +495,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Feature Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FEATURE_TO_SET__FEATURE_NAME = eINSTANCE.getFeatureToSet_FeatureName();
@@ -505,7 +504,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference FEATURE_TO_SET__VALUE = eINSTANCE.getFeatureToSet_Value();
@@ -514,7 +513,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.FeatureValueImpl <em>Feature Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.FeatureValueImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getFeatureValue()
 		 * @generated
@@ -525,7 +524,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.DynamicValueImpl <em>Dynamic Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.DynamicValueImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getDynamicValue()
 		 * @generated
@@ -536,7 +535,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.ConstantValueImpl <em>Constant Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.ConstantValueImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getConstantValue()
 		 * @generated
@@ -547,7 +546,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value Instance</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONSTANT_VALUE__VALUE_INSTANCE = eINSTANCE.getConstantValue_ValueInstance();
@@ -556,7 +555,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.ListValueImpl <em>List Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.ListValueImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getListValue()
 		 * @generated
@@ -567,7 +566,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference LIST_VALUE__VALUES = eINSTANCE.getListValue_Values();
@@ -576,7 +575,7 @@ public interface SetValuesActionConfigurationPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.QueryExecutionValueImpl <em>Query Execution Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.QueryExecutionValueImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationPackageImpl#getQueryExecutionValue()
 		 * @generated

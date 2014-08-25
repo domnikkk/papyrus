@@ -19,7 +19,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
 /**
  * <pre>
  * This class provides convenience methods to manage Port location.
- * 
+ *
  * The method are base on the Port and its graphical parent bounds (given as Rectangle), which can either be
  * based on the figure bounds or the view bounds.
  * </pre>
@@ -29,7 +29,7 @@ public class PortPositionLocatorUtils {
 	/**
 	 * Get the valid border location of the Port with the proposed location on
 	 * the parent.
-	 * 
+	 *
 	 * @param parentFigureBounds
 	 *            the parent bounds.
 	 * @param proposedFigureBounds
@@ -92,14 +92,14 @@ public class PortPositionLocatorUtils {
 
 	/**
 	 * Get the current side (on the parent) where the Port is located.
-	 * 
+	 *
 	 * @param parentFigureBounds
 	 *            the parent bounds.
 	 * @param proposedFigureBounds
 	 *            the proposed Port bounds.
 	 * @param borderItemOffset
 	 *            the overlapping size of the Port over its parent figure.
-	 * 
+	 *
 	 * @return the position of the port around its parent. This position can be
 	 *         <ul>
 	 *         <li>{@linkplain PositionConstants#NORTH}</li>

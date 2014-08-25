@@ -17,13 +17,13 @@ import java.util.Collections;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.dialogs.SaveAsDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallback;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IOkDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IOkDialogFactory;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IWithResultDialogCallback;
-import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Shell;
 
 public final class ResourceUiUtils {

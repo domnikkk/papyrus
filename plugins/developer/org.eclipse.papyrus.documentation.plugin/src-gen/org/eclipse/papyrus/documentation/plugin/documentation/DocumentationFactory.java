@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage
  * @generated
  */
@@ -22,7 +22,7 @@ public interface DocumentationFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	DocumentationFactory eINSTANCE = org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationFactoryImpl.init();
@@ -31,7 +31,7 @@ public interface DocumentationFactory extends EFactory {
 	 * Returns a new object of class '<em>Documentation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Documentation</em>'.
 	 * @generated
 	 */
@@ -41,7 +41,7 @@ public interface DocumentationFactory extends EFactory {
 	 * Returns a new object of class '<em>Dependency</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Dependency</em>'.
 	 * @generated
 	 */
@@ -51,7 +51,7 @@ public interface DocumentationFactory extends EFactory {
 	 * Returns a new object of class '<em>File Dependency</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>File Dependency</em>'.
 	 * @generated
 	 */
@@ -61,7 +61,7 @@ public interface DocumentationFactory extends EFactory {
 	 * Returns a new object of class '<em>Person</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Person</em>'.
 	 * @generated
 	 */
@@ -71,7 +71,7 @@ public interface DocumentationFactory extends EFactory {
 	 * Returns a new object of class '<em>Comment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Comment</em>'.
 	 * @generated
 	 */
@@ -81,7 +81,7 @@ public interface DocumentationFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

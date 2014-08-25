@@ -41,7 +41,7 @@ public interface MultiValuedAttributeInstance extends AbstractAttributeInstance 
 	 * If the meaning of the '<em>Values</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Values</em>' attribute list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SerializationPackage#getMultiValuedAttributeInstance_Values()
 	 * @model

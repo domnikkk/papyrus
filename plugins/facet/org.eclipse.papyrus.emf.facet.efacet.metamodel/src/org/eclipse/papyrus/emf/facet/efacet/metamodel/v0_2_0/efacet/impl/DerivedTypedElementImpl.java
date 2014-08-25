@@ -42,7 +42,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	 * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQuery()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	 * The cached value of the '{@link #getOverride() <em>Override</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOverride()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DerivedTypedElementImpl() {
@@ -73,7 +73,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Query getQuery() {
@@ -94,7 +94,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetQuery(Query newQuery, NotificationChain msgs) {
@@ -114,7 +114,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setQuery(Query newQuery) {
@@ -139,7 +139,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DerivedTypedElement getOverride() {
@@ -158,7 +158,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DerivedTypedElement basicGetOverride() {
@@ -168,7 +168,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setOverride(DerivedTypedElement newOverride) {
@@ -182,7 +182,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +197,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +236,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,7 +255,7 @@ public abstract class DerivedTypedElementImpl extends FacetElementImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

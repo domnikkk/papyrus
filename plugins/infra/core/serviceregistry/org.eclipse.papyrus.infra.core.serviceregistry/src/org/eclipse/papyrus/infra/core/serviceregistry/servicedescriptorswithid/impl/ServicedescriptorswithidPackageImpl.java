@@ -9,15 +9,13 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractMethodInjection;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AliasIdDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ConstructorInjection;
-import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.IdDescriptors;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.FeatureInjection;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.IdDescriptors;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedService;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedValue;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection;
@@ -25,8 +23,8 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.O
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.PropertyInjection;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc;
-import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceFactoryIdDesc;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidFactory;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage;
@@ -36,14 +34,14 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements ServicedescriptorswithidPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass registryIdDescEClass = null;
@@ -51,7 +49,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass serviceIdDescEClass = null;
@@ -59,7 +57,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass abstractServiceIdDescEClass = null;
@@ -67,7 +65,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass serviceSetIdDescEClass = null;
@@ -75,7 +73,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass featureInjectionEClass = null;
@@ -83,7 +81,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass aliasIdDescEClass = null;
@@ -91,7 +89,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass idDescriptorsEClass = null;
@@ -99,7 +97,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass propertyInjectionEClass = null;
@@ -107,7 +105,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass injectedValueEClass = null;
@@ -115,7 +113,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass methodInjectionEClass = null;
@@ -123,7 +121,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass abstractMethodInjectionEClass = null;
@@ -131,7 +129,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass parameterInjectionEClass = null;
@@ -139,7 +137,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass injectedServiceEClass = null;
@@ -147,7 +145,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass opaqueInjectedValueEClass = null;
@@ -155,7 +153,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass constructorInjectionEClass = null;
@@ -163,7 +161,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass serviceFactoryIdDescEClass = null;
@@ -171,7 +169,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum startupKindEEnum = null;
@@ -179,7 +177,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType stringEDataType = null;
@@ -187,7 +185,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType booleanEDataType = null;
@@ -195,7 +193,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType objectEDataType = null;
@@ -203,7 +201,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType intEDataType = null;
@@ -213,7 +211,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#eNS_URI
 	 * @see #init()
@@ -226,7 +224,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -237,7 +235,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	 * <p>
 	 * This method is used to initialize {@link ServicedescriptorswithidPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -272,7 +270,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +281,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +292,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +303,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +314,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +325,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +336,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +347,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +358,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -371,7 +369,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -382,7 +380,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -393,7 +391,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +402,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +413,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -426,7 +424,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -437,7 +435,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -448,7 +446,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -459,7 +457,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -470,7 +468,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -481,7 +479,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -492,7 +490,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -503,7 +501,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -514,7 +512,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -525,7 +523,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -536,7 +534,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -547,7 +545,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -558,7 +556,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -569,7 +567,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -580,7 +578,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -591,7 +589,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -602,7 +600,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -613,7 +611,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -624,7 +622,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -635,7 +633,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -646,7 +644,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -657,7 +655,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -668,7 +666,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -679,7 +677,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -690,7 +688,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -701,7 +699,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -712,7 +710,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -723,7 +721,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -734,7 +732,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -745,7 +743,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -756,7 +754,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -767,7 +765,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -778,7 +776,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -789,7 +787,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -800,7 +798,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -811,7 +809,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -822,7 +820,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -833,7 +831,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -844,7 +842,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -855,7 +853,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -866,7 +864,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -876,7 +874,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -963,7 +961,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -973,7 +971,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

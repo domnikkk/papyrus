@@ -20,6 +20,8 @@ import org.eclipse.papyrus.uml.diagram.timing.edit.parts.TimeConstraintEditPart;
 import org.eclipse.papyrus.uml.diagram.timing.edit.parts.TimeObservationEditPart;
 import org.eclipse.uml2.uml.DurationConstraint;
 import org.eclipse.uml2.uml.DurationObservation;
+import org.eclipse.uml2.uml.OccurrenceSpecification;
+import org.eclipse.uml2.uml.StateInvariant;
 import org.eclipse.uml2.uml.TimeConstraint;
 import org.eclipse.uml2.uml.TimeObservation;
 import org.eclipse.uml2.uml.UMLPackage;

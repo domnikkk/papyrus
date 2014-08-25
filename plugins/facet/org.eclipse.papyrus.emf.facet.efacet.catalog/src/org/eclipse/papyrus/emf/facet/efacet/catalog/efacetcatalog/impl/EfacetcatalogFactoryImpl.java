@@ -35,7 +35,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EfacetcatalogFactory init() {
@@ -54,7 +54,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EfacetcatalogFactoryImpl() {
@@ -64,7 +64,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +82,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public QuerySetCatalog createQuerySetCatalog() {
@@ -93,7 +93,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FacetSetCatalog createFacetSetCatalog() {
@@ -104,7 +104,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EfacetcatalogPackage getEfacetcatalogPackage() {
@@ -114,7 +114,7 @@ public class EfacetcatalogFactoryImpl extends EFactoryImpl implements Efacetcata
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

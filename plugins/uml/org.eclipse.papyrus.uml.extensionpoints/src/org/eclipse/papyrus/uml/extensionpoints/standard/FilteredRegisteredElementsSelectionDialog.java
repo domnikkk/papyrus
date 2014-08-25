@@ -156,7 +156,7 @@ public class FilteredRegisteredElementsSelectionDialog extends FilteredItemsSele
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.dialogs.FilteredItemsSelectionDialog#validateItem(java.lang.Object)
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class FilteredRegisteredElementsSelectionDialog extends FilteredItemsSele
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.dialogs.FilteredItemsSelectionDialog#createFilter()
 	 */
 	@Override

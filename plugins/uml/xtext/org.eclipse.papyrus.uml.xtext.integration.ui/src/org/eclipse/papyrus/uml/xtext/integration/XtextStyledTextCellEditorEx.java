@@ -11,8 +11,8 @@
 
 package org.eclipse.papyrus.uml.xtext.integration;
 
-import org.eclipse.papyrus.uml.xtext.integration.core.IXtextFakeContextResourcesProvider;
 import org.eclipse.papyrus.uml.xtext.integration.core.ContextElementAdapter.IContextElementProvider;
+import org.eclipse.papyrus.uml.xtext.integration.core.IXtextFakeContextResourcesProvider;
 
 import com.google.inject.Injector;
 
@@ -73,7 +73,7 @@ public class XtextStyledTextCellEditorEx extends XtextStyledTextCellEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.CellEditor#doSetValue(java.lang.Object)
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class XtextStyledTextCellEditorEx extends XtextStyledTextCellEditor {
 	/*
 	 * Runs super deactivate unless it has been locked and otherwise unlocks
 	 * deactivation
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.CellEditor#deactivate()
 	 */
 	@Override

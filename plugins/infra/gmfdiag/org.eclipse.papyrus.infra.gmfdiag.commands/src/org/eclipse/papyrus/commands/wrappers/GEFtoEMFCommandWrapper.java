@@ -64,7 +64,7 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.AbstractCommand#canExecute()
 	 */
 	@Override
@@ -74,7 +74,7 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.AbstractCommand#dispose()
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.AbstractCommand#canUndo()
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#execute()
 	 */
 	public void execute() {
@@ -104,7 +104,7 @@ public class GEFtoEMFCommandWrapper extends AbstractCommand {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.Command#redo()
 	 */
 	public void redo() {

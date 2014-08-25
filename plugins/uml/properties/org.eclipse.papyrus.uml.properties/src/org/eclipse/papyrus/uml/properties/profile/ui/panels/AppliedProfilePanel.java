@@ -105,7 +105,7 @@ public class AppliedProfilePanel extends AppliedStereotypePanel {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.odf.platform.uml2.ui.panels.AbstractPanel#createContent()
 	 */
 	/**

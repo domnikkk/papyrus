@@ -37,7 +37,7 @@ public interface NewChildPolicy extends EObject {
 	 * If the meaning of the '<em>Roles</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Roles</em>' attribute list.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage#getNewChildPolicy_Roles()
 	 * @model
@@ -53,7 +53,7 @@ public interface NewChildPolicy extends EObject {
 	 * If the meaning of the '<em>EClasses</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>EClasses</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage#getNewChildPolicy_EClasses()
 	 * @model
@@ -68,7 +68,7 @@ public interface NewChildPolicy extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage#getNewChildPolicy_Name()
@@ -81,7 +81,7 @@ public interface NewChildPolicy extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicy#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()

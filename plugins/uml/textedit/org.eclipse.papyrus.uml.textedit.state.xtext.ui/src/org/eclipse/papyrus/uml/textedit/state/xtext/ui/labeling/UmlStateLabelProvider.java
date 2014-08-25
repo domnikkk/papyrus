@@ -32,11 +32,11 @@ public class UmlStateLabelProvider extends DefaultEObjectLabelProvider {
 
 	/*
 	 * //Labels and icons can be computed like this:
-	 * 
+	 *
 	 * String text(MyModel ele) {
 	 * return "my "+ele.getName();
 	 * }
-	 * 
+	 *
 	 * String image(MyModel ele) {
 	 * return "MyModel.gif";
 	 * }

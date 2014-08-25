@@ -43,7 +43,7 @@ public interface Root extends Element {
 	 * If the meaning of the '<em>Namespaces</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Namespaces</em>' containment reference list.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage#getRoot_Namespaces()
 	 * @model containment="true"
@@ -58,7 +58,7 @@ public interface Root extends Element {
 	 * If the meaning of the '<em>Dtd</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Dtd</em>' containment reference.
 	 * @see #setDtd(DocumentTypeDeclaration)
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage#getRoot_Dtd()
@@ -71,7 +71,7 @@ public interface Root extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Root#getDtd <em>Dtd</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Dtd</em>' containment reference.
 	 * @see #getDtd()
@@ -87,7 +87,7 @@ public interface Root extends Element {
 	 * If the meaning of the '<em>Leading PIs</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Leading PIs</em>' containment reference list.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage#getRoot_LeadingPIs()
 	 * @model containment="true"

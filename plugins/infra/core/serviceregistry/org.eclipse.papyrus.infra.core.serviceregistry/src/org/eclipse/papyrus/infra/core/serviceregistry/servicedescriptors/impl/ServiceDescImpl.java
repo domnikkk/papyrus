@@ -6,17 +6,12 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.FeatureInjection;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage;
@@ -42,7 +37,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	 * The default value of the '{@link #getStartKind() <em>Start Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStartKind()
 	 * @generated
 	 * @ordered
@@ -53,7 +48,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	 * The cached value of the '{@link #getStartKind() <em>Start Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStartKind()
 	 * @generated
 	 * @ordered
@@ -64,7 +59,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	 * The default value of the '{@link #getClassname() <em>Classname</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassname()
 	 * @generated
 	 * @ordered
@@ -75,7 +70,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	 * The cached value of the '{@link #getClassname() <em>Classname</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClassname()
 	 * @generated
 	 * @ordered
@@ -86,7 +81,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	 * The cached value of the '{@link #getInjections() <em>Injections</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInjections()
 	 * @generated
 	 * @ordered
@@ -96,7 +91,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ServiceDescImpl() {
@@ -106,7 +101,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +112,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +123,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +138,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +149,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +164,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +178,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -198,7 +193,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +212,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -241,7 +236,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +258,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +277,7 @@ public class ServiceDescImpl extends AbstractServiceDescImpl implements ServiceD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

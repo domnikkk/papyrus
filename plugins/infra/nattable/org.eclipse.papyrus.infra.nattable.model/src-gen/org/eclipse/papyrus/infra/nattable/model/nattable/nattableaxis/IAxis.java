@@ -13,9 +13,7 @@
 package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisManagerRepresentation;
-
 import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration;
 
 /**

@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.infra.nattable.celleditor;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.infra.nattable.celleditor.AbstractStyledTextCellEditor;
 import org.eclipse.papyrus.infra.nattable.manager.table.ITableAxisElementProvider;
 import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 

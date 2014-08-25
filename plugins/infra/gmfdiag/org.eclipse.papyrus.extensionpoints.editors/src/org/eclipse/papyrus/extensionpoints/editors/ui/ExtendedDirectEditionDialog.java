@@ -143,7 +143,7 @@ public class ExtendedDirectEditionDialog extends LabelEditorDialog {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * org.eclipse.swt.custom.VerifyKeyListener#verifyKey(org.eclipse.swt.events.VerifyEvent)
 		 */

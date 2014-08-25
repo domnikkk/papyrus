@@ -39,7 +39,7 @@ public interface CompositeSelector extends Selector
 	 * If the meaning of the '<em>Left</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Left</em>' containment reference.
 	 * @see #setLeft(SimpleSelector)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getCompositeSelector_Left()
@@ -52,7 +52,7 @@ public interface CompositeSelector extends Selector
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.CompositeSelector#getLeft <em>Left</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Left</em>' containment reference.
 	 * @see #getLeft()
@@ -67,7 +67,7 @@ public interface CompositeSelector extends Selector
 	 * If the meaning of the '<em>Combinator</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Combinator</em>' containment reference.
 	 * @see #setCombinator(Combinator)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getCompositeSelector_Combinator()
@@ -80,7 +80,7 @@ public interface CompositeSelector extends Selector
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.CompositeSelector#getCombinator <em>Combinator</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Combinator</em>' containment reference.
 	 * @see #getCombinator()
@@ -95,7 +95,7 @@ public interface CompositeSelector extends Selector
 	 * If the meaning of the '<em>Right</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Right</em>' containment reference.
 	 * @see #setRight(Selector)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getCompositeSelector_Right()
@@ -108,7 +108,7 @@ public interface CompositeSelector extends Selector
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.CompositeSelector#getRight <em>Right</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Right</em>' containment reference.
 	 * @see #getRight()

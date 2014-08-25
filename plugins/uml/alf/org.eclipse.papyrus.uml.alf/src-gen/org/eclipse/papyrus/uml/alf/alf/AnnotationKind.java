@@ -273,5 +273,5 @@ public enum AnnotationKind implements Enumerator
   {
     return literal;
   }
-  
+
 } //AnnotationKind

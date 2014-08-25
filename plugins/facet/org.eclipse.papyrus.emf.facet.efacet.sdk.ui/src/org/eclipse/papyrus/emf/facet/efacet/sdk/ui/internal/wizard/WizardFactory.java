@@ -11,10 +11,10 @@
  */
 package org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.wizard;
 
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.wizard.IWizardFactory;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.wizard.SynchronizedWizard;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.wizard.IExtendedWizard;
-import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.widgets.Display;
 
 /**

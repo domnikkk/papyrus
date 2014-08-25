@@ -13,6 +13,7 @@
 package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.widget.getorcreate;
 
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.dialog.getorcreate.GetOrCreateCustomizationDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog;
@@ -21,7 +22,6 @@ import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.comma
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.IGetOrCreateFilteredElementCommmandWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.component.getorcreate.AbstractGetOrCreateElementWithDialogButtonWidget;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement2;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.swt.widgets.Composite;
 
 /**

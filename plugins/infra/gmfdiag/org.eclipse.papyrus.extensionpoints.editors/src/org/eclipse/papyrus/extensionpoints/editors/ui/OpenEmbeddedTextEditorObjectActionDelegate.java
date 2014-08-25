@@ -139,11 +139,11 @@ public abstract class OpenEmbeddedTextEditorObjectActionDelegate implements IObj
 	 * protected void setManager(DirectEditManager manager) {
 	 * this.manager = manager;
 	 * }
-	 * 
+	 *
 	 * public void setParser(IParser parser) {
 	 * this.parser = parser;
 	 * }
-	 * 
+	 *
 	 * protected void initializeDirectEditManager(final Request request) {
 	 * // initialize the direct edit manager
 	 * try {

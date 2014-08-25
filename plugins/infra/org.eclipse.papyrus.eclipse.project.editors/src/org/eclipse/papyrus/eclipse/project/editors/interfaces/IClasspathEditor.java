@@ -27,7 +27,7 @@ public interface IClasspathEditor extends IFileEditor {
 
 	/**
 	 * add a source folder to the class path
-	 * 
+	 *
 	 * @param folderPath
 	 */
 	public void addSourceFolderToClasspath(final String folderPath);

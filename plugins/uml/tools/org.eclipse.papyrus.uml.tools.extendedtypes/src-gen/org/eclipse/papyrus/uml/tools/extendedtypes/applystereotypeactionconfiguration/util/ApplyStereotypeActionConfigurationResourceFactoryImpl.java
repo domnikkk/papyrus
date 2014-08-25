@@ -13,18 +13,15 @@
 package org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.util;
 
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
-
 import org.eclipse.emf.ecore.xmi.XMLResource;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.util.ApplyStereotypeActionConfigurationResourceImpl
  * @generated
  */
@@ -33,7 +30,7 @@ public class ApplyStereotypeActionConfigurationResourceFactoryImpl extends Resou
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ApplyStereotypeActionConfigurationResourceFactoryImpl() {
@@ -44,7 +41,7 @@ public class ApplyStereotypeActionConfigurationResourceFactoryImpl extends Resou
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

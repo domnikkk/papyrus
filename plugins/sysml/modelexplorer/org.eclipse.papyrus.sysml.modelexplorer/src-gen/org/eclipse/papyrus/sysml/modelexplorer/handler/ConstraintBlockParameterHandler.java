@@ -40,7 +40,7 @@ public class ConstraintBlockParameterHandler extends AbstractSysmlModelExplorerC
 	/**
 	 * <pre>
 	 * @see org.eclipse.papyrus.uml.service.types.handlers.AbstractCreateCommandHandler#getElementTypeToCreate()
-	 * 
+	 *
 	 * @return the IElementType this handler is supposed to create
 	 *
 	 * </pre>

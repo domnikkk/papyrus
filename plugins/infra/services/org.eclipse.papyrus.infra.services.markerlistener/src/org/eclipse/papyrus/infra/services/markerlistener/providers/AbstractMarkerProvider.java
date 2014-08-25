@@ -120,7 +120,7 @@ public abstract class AbstractMarkerProvider
 	/**
 	 * Delete all markers of a given type for EObjects that are within the subtree of the passed
 	 * first parameter.
-	 * 
+	 *
 	 * @param eObject
 	 *            the root of the subtree for which markers should be deleted.
 	 * @param monitor
@@ -175,7 +175,7 @@ public abstract class AbstractMarkerProvider
 
 	/**
 	 * Check if the first passed EObject is an indirect child of the 2nd passed object (or identical)
-	 * 
+	 *
 	 * @param subEObj
 	 *            a potential child
 	 * @param eObj

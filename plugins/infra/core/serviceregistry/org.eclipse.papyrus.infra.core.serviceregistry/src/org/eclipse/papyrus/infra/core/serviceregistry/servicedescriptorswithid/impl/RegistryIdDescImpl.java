@@ -5,16 +5,11 @@ package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage;
 
@@ -41,7 +36,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -52,7 +47,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -63,7 +58,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -74,7 +69,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -85,7 +80,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	 * The default value of the '{@link #isUnique() <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isUnique()
 	 * @generated
 	 * @ordered
@@ -96,7 +91,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	 * The cached value of the '{@link #isUnique() <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isUnique()
 	 * @generated
 	 * @ordered
@@ -107,7 +102,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	 * The cached value of the '{@link #getSets() <em>Sets</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSets()
 	 * @generated
 	 * @ordered
@@ -118,7 +113,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	 * The cached value of the '{@link #getExtends() <em>Extends</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExtends()
 	 * @generated
 	 * @ordered
@@ -129,7 +124,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	 * The cached value of the '{@link #getParents() <em>Parents</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getParents()
 	 * @generated
 	 * @ordered
@@ -139,7 +134,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RegistryIdDescImpl() {
@@ -149,7 +144,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +155,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +166,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,7 +181,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -197,7 +192,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +207,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +218,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +233,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -252,7 +247,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +261,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +275,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +300,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -340,7 +335,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -371,7 +366,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -396,7 +391,7 @@ public class RegistryIdDescImpl extends EObjectImpl implements RegistryIdDesc {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

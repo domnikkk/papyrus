@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.customization.model.customizationplugin.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage;
 import org.eclipse.papyrus.customization.model.customizationplugin.Profile;
 
@@ -33,7 +30,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	 * The default value of the '{@link #getQualifiednames() <em>Qualifiednames</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQualifiednames()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	 * The cached value of the '{@link #getQualifiednames() <em>Qualifiednames</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getQualifiednames()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	 * The default value of the '{@link #getIconpath() <em>Iconpath</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIconpath()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	 * The cached value of the '{@link #getIconpath() <em>Iconpath</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIconpath()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -88,7 +85,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -99,7 +96,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	 * The default value of the '{@link #getProvider() <em>Provider</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProvider()
 	 * @generated
 	 * @ordered
@@ -110,7 +107,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	 * The cached value of the '{@link #getProvider() <em>Provider</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getProvider()
 	 * @generated
 	 * @ordered
@@ -121,7 +118,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -132,7 +129,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -142,7 +139,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ProfileImpl() {
@@ -152,7 +149,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +160,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getQualifiednames() {
@@ -173,7 +170,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setQualifiednames(String newQualifiednames) {
@@ -187,7 +184,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIconpath() {
@@ -197,7 +194,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIconpath(String newIconpath) {
@@ -211,7 +208,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -221,7 +218,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -235,7 +232,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getProvider() {
@@ -245,7 +242,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setProvider(String newProvider) {
@@ -259,7 +256,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -269,7 +266,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -283,7 +280,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -306,7 +303,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -334,7 +331,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -362,7 +359,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -385,7 +382,7 @@ public class ProfileImpl extends FileBasedCustomizableElementImpl implements Pro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

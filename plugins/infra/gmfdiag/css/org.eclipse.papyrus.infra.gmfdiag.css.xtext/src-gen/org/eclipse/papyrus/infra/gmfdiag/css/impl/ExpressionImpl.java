@@ -15,18 +15,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.Expression;
 import org.eclipse.papyrus.infra.gmfdiag.css.Subterm;
@@ -52,7 +47,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	 * The cached value of the '{@link #getTerms() <em>Terms</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTerms()
 	 * @generated
 	 * @ordered
@@ -63,7 +58,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	 * The cached value of the '{@link #getSubterms() <em>Subterms</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSubterms()
 	 * @generated
 	 * @ordered
@@ -73,7 +68,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExpressionImpl()
@@ -84,7 +79,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +91,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +103,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTerms(Term newTerms, NotificationChain msgs)
@@ -130,7 +125,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +153,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +169,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +188,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +207,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -235,7 +230,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +251,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

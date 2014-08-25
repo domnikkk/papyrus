@@ -30,7 +30,7 @@ import org.eclipse.papyrus.views.properties.ui.UiPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.views.properties.ui.PropertyEditor} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PropertyEditorItemProvider
@@ -45,7 +45,7 @@ public class PropertyEditorItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PropertyEditorItemProvider(AdapterFactory adapterFactory) {
@@ -56,7 +56,7 @@ public class PropertyEditorItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class PropertyEditorItemProvider
 	 * This adds a property descriptor for the Property feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addPropertyPropertyDescriptor(Object object) {
@@ -101,7 +101,7 @@ public class PropertyEditorItemProvider
 	 * This adds a property descriptor for the Read Only feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addReadOnlyPropertyDescriptor(Object object) {
@@ -124,7 +124,7 @@ public class PropertyEditorItemProvider
 	 * This adds a property descriptor for the Widget Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addWidgetTypePropertyDescriptor(Object object) {
@@ -147,7 +147,7 @@ public class PropertyEditorItemProvider
 	 * This adds a property descriptor for the Content Provider Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addContentProviderClassPropertyDescriptor(Object object) {
@@ -170,7 +170,7 @@ public class PropertyEditorItemProvider
 	 * This adds a property descriptor for the Show Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addShowLabelPropertyDescriptor(Object object) {
@@ -193,7 +193,7 @@ public class PropertyEditorItemProvider
 	 * This adds a property descriptor for the Custom Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addCustomLabelPropertyDescriptor(Object object) {
@@ -217,7 +217,7 @@ public class PropertyEditorItemProvider
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class PropertyEditorItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -247,7 +247,7 @@ public class PropertyEditorItemProvider
 	 * This returns PropertyEditor.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class PropertyEditorItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class PropertyEditorItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -299,7 +299,7 @@ public class PropertyEditorItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

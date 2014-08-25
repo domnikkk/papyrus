@@ -14,9 +14,9 @@
 package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
 
-import org.eclipse.papyrus.infra.core.sasheditor.Activator;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.papyrus.infra.core.sasheditor.Activator;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.actionbarcontributor.IMultiPageEditorActionBarContributor;
 import org.eclipse.papyrus.infra.core.sasheditor.internal.ActivePageTracker.IActiveEditorChangedListener;
 import org.eclipse.papyrus.infra.core.sasheditor.internal.eclipsecopy.MultiPageSelectionProvider;

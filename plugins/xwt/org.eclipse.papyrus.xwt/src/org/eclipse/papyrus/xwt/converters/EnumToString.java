@@ -19,7 +19,7 @@ public class EnumToString implements IConverter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.conversion.IConverter#convert(java.lang.Object)
 	 */
 	public Object convert(Object fromObject) {
@@ -28,7 +28,7 @@ public class EnumToString implements IConverter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.conversion.IConverter#getFromType()
 	 */
 	public Object getFromType() {
@@ -37,7 +37,7 @@ public class EnumToString implements IConverter {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.conversion.IConverter#getToType()
 	 */
 	public Object getToType() {

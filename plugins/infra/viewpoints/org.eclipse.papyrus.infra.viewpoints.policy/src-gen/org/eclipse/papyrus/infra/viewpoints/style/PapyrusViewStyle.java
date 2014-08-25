@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.infra.viewpoints.style;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.gmf.runtime.notation.Style;
 import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView;
 
@@ -43,7 +42,7 @@ public interface PapyrusViewStyle extends Style {
 	 * If the meaning of the '<em>Owner</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owner</em>' reference.
 	 * @see #setOwner(EObject)
 	 * @see org.eclipse.papyrus.infra.viewpoints.style.StylePackage#getPapyrusViewStyle_Owner()
@@ -56,7 +55,7 @@ public interface PapyrusViewStyle extends Style {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.style.PapyrusViewStyle#getOwner <em>Owner</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Owner</em>' reference.
 	 * @see #getOwner()
@@ -71,7 +70,7 @@ public interface PapyrusViewStyle extends Style {
 	 * If the meaning of the '<em>Configuration</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Configuration</em>' reference.
 	 * @see #setConfiguration(PapyrusView)
 	 * @see org.eclipse.papyrus.infra.viewpoints.style.StylePackage#getPapyrusViewStyle_Configuration()
@@ -84,7 +83,7 @@ public interface PapyrusViewStyle extends Style {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.style.PapyrusViewStyle#getConfiguration <em>Configuration</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Configuration</em>' reference.
 	 * @see #getConfiguration()

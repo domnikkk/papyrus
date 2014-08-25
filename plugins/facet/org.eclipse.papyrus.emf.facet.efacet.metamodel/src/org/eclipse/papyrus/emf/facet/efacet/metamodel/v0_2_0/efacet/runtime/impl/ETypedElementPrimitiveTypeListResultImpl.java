@@ -45,7 +45,7 @@ public class ETypedElementPrimitiveTypeListResultImpl<T> extends ETypedElementRe
 	 * The cached value of the '{@link #getResultList() <em>Result List</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResultList()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class ETypedElementPrimitiveTypeListResultImpl<T> extends ETypedElementRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ETypedElementPrimitiveTypeListResultImpl() {
@@ -65,7 +65,7 @@ public class ETypedElementPrimitiveTypeListResultImpl<T> extends ETypedElementRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +76,7 @@ public class ETypedElementPrimitiveTypeListResultImpl<T> extends ETypedElementRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<T> getResultList() {
@@ -89,7 +89,7 @@ public class ETypedElementPrimitiveTypeListResultImpl<T> extends ETypedElementRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class ETypedElementPrimitiveTypeListResultImpl<T> extends ETypedElementRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -122,7 +122,7 @@ public class ETypedElementPrimitiveTypeListResultImpl<T> extends ETypedElementRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class ETypedElementPrimitiveTypeListResultImpl<T> extends ETypedElementRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class ETypedElementPrimitiveTypeListResultImpl<T> extends ETypedElementRe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

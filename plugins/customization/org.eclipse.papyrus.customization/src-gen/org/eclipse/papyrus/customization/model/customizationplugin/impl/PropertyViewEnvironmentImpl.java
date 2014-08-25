@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.customization.model.customizationplugin.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage;
 import org.eclipse.papyrus.customization.model.customizationplugin.PropertyViewEnvironment;
 
@@ -20,7 +19,7 @@ public class PropertyViewEnvironmentImpl extends FileBasedCustomizableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyViewEnvironmentImpl() {
@@ -30,7 +29,7 @@ public class PropertyViewEnvironmentImpl extends FileBasedCustomizableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

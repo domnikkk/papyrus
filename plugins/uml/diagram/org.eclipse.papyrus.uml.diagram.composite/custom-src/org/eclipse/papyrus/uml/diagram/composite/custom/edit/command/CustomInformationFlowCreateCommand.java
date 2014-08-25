@@ -41,7 +41,6 @@ import org.eclipse.papyrus.uml.diagram.composite.providers.ElementInitializers;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.InformationFlow;
 import org.eclipse.uml2.uml.InformationItem;
@@ -66,7 +65,7 @@ public class CustomInformationFlowCreateCommand extends org.eclipse.papyrus.uml.
 	 *  - opens a selection dialog to choose {@link InformationItem} or {@link Classifier} reference as a convoyed Classifier
 	 *   by the {@link InformationFlow} type
 	 *  - create the InformationFlow between the source and the target
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

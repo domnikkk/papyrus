@@ -17,10 +17,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +40,7 @@ public class FacetCustomizationImpl extends FacetImpl implements FacetCustomizat
 	 * The cached value of the '{@link #getCustomizedFacet() <em>Customized Facet</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCustomizedFacet()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class FacetCustomizationImpl extends FacetImpl implements FacetCustomizat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FacetCustomizationImpl() {
@@ -60,7 +60,7 @@ public class FacetCustomizationImpl extends FacetImpl implements FacetCustomizat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +71,7 @@ public class FacetCustomizationImpl extends FacetImpl implements FacetCustomizat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Facet getCustomizedFacet() {
@@ -90,7 +90,7 @@ public class FacetCustomizationImpl extends FacetImpl implements FacetCustomizat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Facet basicGetCustomizedFacet() {
@@ -100,7 +100,7 @@ public class FacetCustomizationImpl extends FacetImpl implements FacetCustomizat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setCustomizedFacet(Facet newCustomizedFacet) {
@@ -114,7 +114,7 @@ public class FacetCustomizationImpl extends FacetImpl implements FacetCustomizat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class FacetCustomizationImpl extends FacetImpl implements FacetCustomizat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class FacetCustomizationImpl extends FacetImpl implements FacetCustomizat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +164,7 @@ public class FacetCustomizationImpl extends FacetImpl implements FacetCustomizat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

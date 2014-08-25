@@ -37,7 +37,7 @@ public class PropertiesRootImpl extends EObjectImpl implements PropertiesRoot {
 	 * The cached value of the '{@link #getEnvironments() <em>Environments</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEnvironments()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class PropertiesRootImpl extends EObjectImpl implements PropertiesRoot {
 	 * The cached value of the '{@link #getContexts() <em>Contexts</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getContexts()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class PropertiesRootImpl extends EObjectImpl implements PropertiesRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertiesRootImpl() {
@@ -68,7 +68,7 @@ public class PropertiesRootImpl extends EObjectImpl implements PropertiesRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class PropertiesRootImpl extends EObjectImpl implements PropertiesRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Environment> getEnvironments() {
@@ -92,7 +92,7 @@ public class PropertiesRootImpl extends EObjectImpl implements PropertiesRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Context> getContexts() {
@@ -105,7 +105,7 @@ public class PropertiesRootImpl extends EObjectImpl implements PropertiesRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class PropertiesRootImpl extends EObjectImpl implements PropertiesRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -144,7 +144,7 @@ public class PropertiesRootImpl extends EObjectImpl implements PropertiesRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +163,7 @@ public class PropertiesRootImpl extends EObjectImpl implements PropertiesRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

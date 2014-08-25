@@ -17,13 +17,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.*;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.QueryFactory;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.QueryPackage;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.URIImageQuery;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
@@ -31,7 +33,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static QueryFactory init() {
@@ -50,7 +52,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public QueryFactoryImpl() {
@@ -60,7 +62,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,7 +78,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public URIImageQuery createURIImageQuery() {
@@ -87,7 +89,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public QueryPackage getQueryPackage() {
@@ -97,7 +99,7 @@ public class QueryFactoryImpl extends EFactoryImpl implements QueryFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

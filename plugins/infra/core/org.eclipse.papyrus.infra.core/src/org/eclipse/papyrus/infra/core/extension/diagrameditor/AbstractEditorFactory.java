@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.extension.diagrameditor;
 
+import org.eclipse.papyrus.infra.core.editorsfactory.IEditorFactory;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 
 /**

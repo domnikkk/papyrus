@@ -25,7 +25,7 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfigurat
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl implements InvariantStereotypeConfigurationFactory {
@@ -34,7 +34,7 @@ public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl im
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static InvariantStereotypeConfigurationFactory init() {
@@ -53,7 +53,7 @@ public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl im
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantStereotypeConfigurationFactoryImpl() {
@@ -63,7 +63,7 @@ public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantStereotypeConfiguration createInvariantStereotypeConfiguration() {
@@ -90,7 +90,7 @@ public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantStereotypeConfigurationPackage getInvariantStereotypeConfigurationPackage() {
@@ -100,7 +100,7 @@ public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

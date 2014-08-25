@@ -18,9 +18,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Attribute;
 import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Comment;
 import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.DocumentTypeDeclaration;
@@ -37,14 +35,14 @@ import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPacka
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass nodeEClass = null;
@@ -52,7 +50,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass attributeEClass = null;
@@ -60,7 +58,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass textEClass = null;
@@ -68,7 +66,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass elementEClass = null;
@@ -76,7 +74,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass rootEClass = null;
@@ -84,7 +82,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass namespaceEClass = null;
@@ -92,7 +90,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass commentEClass = null;
@@ -100,7 +98,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass documentTypeDeclarationEClass = null;
@@ -108,7 +106,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass cdataEClass = null;
@@ -116,7 +114,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass processingInstructionEClass = null;
@@ -126,7 +124,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage#eNS_URI
 	 * @see #init()
@@ -139,7 +137,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -149,7 +147,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link XwtxmlPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -183,7 +181,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -194,7 +192,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +203,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +214,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +225,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +236,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +247,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +258,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +269,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -282,7 +280,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -293,7 +291,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,7 +302,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +313,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +324,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -337,7 +335,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -348,7 +346,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -359,7 +357,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -370,7 +368,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -381,7 +379,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +390,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -403,7 +401,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -414,7 +412,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -424,7 +422,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -468,7 +466,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -478,7 +476,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

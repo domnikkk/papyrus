@@ -12,10 +12,10 @@
  */
 package org.eclipse.papyrus.emf.facet.custom.ui.internal;
 
+import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedContentProvider;
 import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedContentProviderFactory;
 import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedTreeContentProvider;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 
 @SuppressWarnings("deprecation")
 // @SuppressWarnings("deprecation") : Bug 380229 - [deprecated] ICustomizedContentProvider

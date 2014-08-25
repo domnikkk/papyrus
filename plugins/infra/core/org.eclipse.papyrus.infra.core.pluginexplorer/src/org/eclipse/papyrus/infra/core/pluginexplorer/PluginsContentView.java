@@ -40,7 +40,7 @@ import org.osgi.framework.Bundle;
 
 /**
  * This represents an Eclipse View displaying reflective information about the loaded Eclipse plugins
- * 
+ *
  * @author Laurent Wouters
  */
 public class PluginsContentView extends ViewPart {
@@ -63,7 +63,7 @@ public class PluginsContentView extends ViewPart {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.WorkbenchPart#createPartControl(org.eclipse.swt.widgets.Composite)
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class PluginsContentView extends ViewPart {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.WorkbenchPart#setFocus()
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class PluginsContentView extends ViewPart {
 
 	/**
 	 * Gets the viewer sorter for this dialog
-	 * 
+	 *
 	 * @return A viewer sorter
 	 */
 	private ViewerSorter getViewerSorter() {

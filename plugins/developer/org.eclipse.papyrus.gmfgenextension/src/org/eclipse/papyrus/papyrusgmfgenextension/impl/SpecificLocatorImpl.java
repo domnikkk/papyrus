@@ -34,7 +34,7 @@ public class SpecificLocatorImpl extends ExternalHookImpl implements SpecificLoc
 	 * The cached value of the '{@link #getGenChildSideAffixedNode() <em>Gen Child Side Affixed Node</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenChildSideAffixedNode()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class SpecificLocatorImpl extends ExternalHookImpl implements SpecificLoc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SpecificLocatorImpl() {
@@ -54,7 +54,7 @@ public class SpecificLocatorImpl extends ExternalHookImpl implements SpecificLoc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -65,7 +65,7 @@ public class SpecificLocatorImpl extends ExternalHookImpl implements SpecificLoc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class SpecificLocatorImpl extends ExternalHookImpl implements SpecificLoc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class SpecificLocatorImpl extends ExternalHookImpl implements SpecificLoc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -112,7 +112,7 @@ public class SpecificLocatorImpl extends ExternalHookImpl implements SpecificLoc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class SpecificLocatorImpl extends ExternalHookImpl implements SpecificLoc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

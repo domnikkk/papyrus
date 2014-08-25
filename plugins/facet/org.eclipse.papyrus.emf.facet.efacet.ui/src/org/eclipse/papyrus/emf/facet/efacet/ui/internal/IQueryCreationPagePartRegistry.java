@@ -18,7 +18,7 @@ import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.IQueryCr
 
 /**
  * This interface is dedicated to the registry
- * 
+ *
  * @since 0.2
  * @deprecated This interface has been replaced by {@link IQueryCreationPagePart2Registry}. No tracking bug needed because this API has not been released yet.
  */

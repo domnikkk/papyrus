@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.customization.model.customizationplugin.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage;
 import org.eclipse.papyrus.customization.model.customizationplugin.UICustom;
 
@@ -29,7 +26,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	 * The default value of the '{@link #isLoadByDefault() <em>Load By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isLoadByDefault()
 	 * @generated
 	 * @ordered
@@ -40,7 +37,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	 * The cached value of the '{@link #isLoadByDefault() <em>Load By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isLoadByDefault()
 	 * @generated
 	 * @ordered
@@ -50,7 +47,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UICustomImpl() {
@@ -60,7 +57,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +68,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isLoadByDefault() {
@@ -81,7 +78,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setLoadByDefault(boolean newLoadByDefault) {
@@ -95,7 +92,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +107,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,7 +123,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +139,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +154,7 @@ public class UICustomImpl extends FileBasedCustomizableElementImpl implements UI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -12,13 +12,13 @@
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.dialogs;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.emf.facet.efacet.Query;
 import org.eclipse.papyrus.emf.facet.efacet.QuerySet;
 import org.eclipse.papyrus.emf.facet.efacet.catalog.efacetcatalog.QuerySetCatalog;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
-import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog;
+import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;

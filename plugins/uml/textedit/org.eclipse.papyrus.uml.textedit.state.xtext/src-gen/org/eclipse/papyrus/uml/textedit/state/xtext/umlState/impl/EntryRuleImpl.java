@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.uml.textedit.state.xtext.umlState.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.BehaviorKind;
 import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.EntryRule;
 import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.UmlStatePackage;
@@ -33,7 +30,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -44,7 +41,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	 * The default value of the '{@link #getBehaviorName() <em>Behavior Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBehaviorName()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	 * The cached value of the '{@link #getBehaviorName() <em>Behavior Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBehaviorName()
 	 * @generated
 	 * @ordered
@@ -76,7 +73,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EntryRuleImpl()
@@ -87,7 +84,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +96,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +108,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +124,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +136,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +152,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +171,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,7 +192,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +213,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -235,7 +232,7 @@ public class EntryRuleImpl extends MinimalEObjectImpl.Container implements Entry
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -35,7 +35,7 @@ public class PapyrusRubberbandDragTracker extends PapyrusRubberbandSelectionTool
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#handleFinished()
 	 */
 	@Override

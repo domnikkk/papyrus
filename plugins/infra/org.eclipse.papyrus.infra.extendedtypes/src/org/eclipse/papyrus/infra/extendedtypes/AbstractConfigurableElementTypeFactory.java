@@ -23,8 +23,6 @@ import org.eclipse.gmf.runtime.emf.type.core.IContainerDescriptor;
 import org.eclipse.gmf.runtime.emf.type.core.IElementMatcher;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.IEditHelperAdvice;
-import org.eclipse.papyrus.infra.extendedtypes.ElementTypeConfiguration;
-import org.eclipse.papyrus.infra.extendedtypes.IconEntry;
 import org.eclipse.papyrus.infra.extendedtypes.types.ExtendedHintedElementType;
 import org.eclipse.papyrus.infra.extendedtypes.types.IExtendedHintedElementType;
 import org.osgi.framework.Bundle;
@@ -80,7 +78,7 @@ public abstract class AbstractConfigurableElementTypeFactory<T extends ElementTy
 
 	/**
 	 * Creates the element matcher for the given configuration
-	 * 
+	 *
 	 * @param configuration
 	 *            the configuration from which element matcher should be created
 	 * @return the new element matcher for the created element type

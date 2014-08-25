@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.infra.viewpoints.iso42010;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -51,7 +50,7 @@ public interface ArchitectureDescription extends EObject {
 	 * If the meaning of the '<em>Stakeholders</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stakeholders</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDescription_Stakeholders()
 	 * @model containment="true" required="true"
@@ -67,7 +66,7 @@ public interface ArchitectureDescription extends EObject {
 	 * If the meaning of the '<em>Concerns</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Concerns</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDescription_Concerns()
 	 * @model containment="true" required="true"
@@ -83,7 +82,7 @@ public interface ArchitectureDescription extends EObject {
 	 * If the meaning of the '<em>Viewpoints</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Viewpoints</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDescription_Viewpoints()
 	 * @model containment="true" required="true"
@@ -99,7 +98,7 @@ public interface ArchitectureDescription extends EObject {
 	 * If the meaning of the '<em>Views</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Views</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDescription_Views()
 	 * @model containment="true" required="true"
@@ -114,7 +113,7 @@ public interface ArchitectureDescription extends EObject {
 	 * If the meaning of the '<em>System</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>System</em>' containment reference.
 	 * @see #setSystem(org.eclipse.papyrus.infra.viewpoints.iso42010.System)
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDescription_System()
@@ -127,7 +126,7 @@ public interface ArchitectureDescription extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getSystem <em>System</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>System</em>' containment reference.
 	 * @see #getSystem()
@@ -142,7 +141,7 @@ public interface ArchitectureDescription extends EObject {
 	 * If the meaning of the '<em>Expresses</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Expresses</em>' containment reference.
 	 * @see #setExpresses(Architecture)
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDescription_Expresses()
@@ -155,7 +154,7 @@ public interface ArchitectureDescription extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription#getExpresses <em>Expresses</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Expresses</em>' containment reference.
 	 * @see #getExpresses()
@@ -171,7 +170,7 @@ public interface ArchitectureDescription extends EObject {
 	 * If the meaning of the '<em>Rationales</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Rationales</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDescription_Rationales()
 	 * @model containment="true" required="true"
@@ -187,7 +186,7 @@ public interface ArchitectureDescription extends EObject {
 	 * If the meaning of the '<em>Correspondences</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Correspondences</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDescription_Correspondences()
 	 * @model containment="true"
@@ -203,7 +202,7 @@ public interface ArchitectureDescription extends EObject {
 	 * If the meaning of the '<em>Rules</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Rules</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDescription_Rules()
 	 * @model containment="true"
@@ -219,7 +218,7 @@ public interface ArchitectureDescription extends EObject {
 	 * If the meaning of the '<em>Decisions</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Decisions</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureDescription_Decisions()
 	 * @model containment="true"

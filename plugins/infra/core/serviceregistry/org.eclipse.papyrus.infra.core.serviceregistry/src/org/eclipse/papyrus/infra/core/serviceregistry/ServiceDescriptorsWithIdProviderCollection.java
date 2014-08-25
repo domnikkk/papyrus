@@ -49,7 +49,7 @@ public class ServiceDescriptorsWithIdProviderCollection /* implements IServiceDe
 
 	/**
 	 * Add all the provided {@link IServiceDescriptorsWithIdProvider} to the list of providers to use.
-	 * 
+	 *
 	 * @param declaredDescriptorProviders
 	 */
 	public void addAll(IServiceDescriptorsWithIdProvider... declaredDescriptorProviders) {
@@ -152,7 +152,7 @@ public class ServiceDescriptorsWithIdProviderCollection /* implements IServiceDe
 	 * <li></li>
 	 * <li></li>
 	 * </ul>
-	 * 
+	 *
 	 * @param setName
 	 * @return
 	 * @throws DeclarationException
@@ -185,7 +185,7 @@ public class ServiceDescriptorsWithIdProviderCollection /* implements IServiceDe
 
 	/**
 	 * Collect the services that are set in the parent, but not found in the collect.
-	 * 
+	 *
 	 * @param res
 	 * @param resolvedServiceSet
 	 */
@@ -237,7 +237,7 @@ public class ServiceDescriptorsWithIdProviderCollection /* implements IServiceDe
 
 	/**
 	 * Remove double names from the provided list.
-	 * 
+	 *
 	 * @param list
 	 */
 	private void removeDoubleName(List<String> list) {

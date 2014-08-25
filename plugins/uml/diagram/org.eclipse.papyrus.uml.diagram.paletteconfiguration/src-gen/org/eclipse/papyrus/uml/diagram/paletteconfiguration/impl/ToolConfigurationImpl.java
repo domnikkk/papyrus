@@ -40,7 +40,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getKind()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	 * The cached value of the '{@link #getElementDescriptors() <em>Element Descriptors</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementDescriptors()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ToolConfigurationImpl() {
@@ -82,7 +82,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ToolKind getKind() {
@@ -103,7 +103,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setKind(ToolKind newKind) {
@@ -117,7 +117,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ElementDescriptor> getElementDescriptors() {
@@ -130,7 +130,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -183,7 +183,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class ToolConfigurationImpl extends LeafConfigurationImpl implements Tool
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

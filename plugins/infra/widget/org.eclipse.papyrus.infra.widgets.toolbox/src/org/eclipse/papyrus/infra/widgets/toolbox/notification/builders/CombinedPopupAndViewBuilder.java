@@ -38,11 +38,11 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
  * This builder creates notification both in a temporary pop-up and in Papyrus notification view.
  * It is not supposed to be registered in extension point as its implementation can possibly interfere with existing ones
  * ({@link ViewBuilder}, {@link AsyncNotifierBuilder}).
- * 
+ *
  * It is assumed the title, message and type are set before use.
- * 
+ *
  * Usage example : new NotificationBuilder().setBuilderClass(MyBuilder.class).setType(type).setTitle(title).setMessage(message).run();
- * 
+ *
  * The expected behavior is the following :
  * - if the notification view is not active, a popup is shown and a notification is added in the view.
  * - if the notification view is active the notification is added in the view (no popup).
@@ -53,7 +53,7 @@ public class CombinedPopupAndViewBuilder implements IBuilder {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.toolbox.notification.IBuilder#build(org.eclipse.papyrus.infra.widgets.toolbox.notification.PropertyWrapper,
 	 * org.eclipse.ui.forms.widgets.FormToolkit)
 	 */
@@ -82,7 +82,7 @@ public class CombinedPopupAndViewBuilder implements IBuilder {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.toolbox.notification.IBuilder#accept(java.lang.String, java.lang.Object)
 	 */
 	public boolean accept(String parameterName, Object value) {

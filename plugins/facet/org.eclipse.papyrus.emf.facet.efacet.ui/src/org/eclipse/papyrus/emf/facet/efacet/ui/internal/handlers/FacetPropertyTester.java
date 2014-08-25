@@ -12,12 +12,12 @@
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.handlers;
 
 import org.eclipse.core.expressions.PropertyTester;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.papyrus.emf.facet.efacet.Facet;
 import org.eclipse.papyrus.emf.facet.efacet.FacetAttribute;
 import org.eclipse.papyrus.emf.facet.efacet.FacetOperation;
 import org.eclipse.papyrus.emf.facet.efacet.FacetReference;
 import org.eclipse.papyrus.emf.facet.efacet.FacetSet;
-import org.eclipse.jface.viewers.StructuredSelection;
 
 @Deprecated
 // TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601

@@ -117,7 +117,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		 * <p>
 		 * This method can be overloaded when diagram editor inherits from another one, but should never be <code>null</code>
 		 * </p>
-		 * 
+		 *
 		 * @return the unique identifier of the diagram for which views are provided.
 		 */
 		return ModelEditPart.MODEL_ID;

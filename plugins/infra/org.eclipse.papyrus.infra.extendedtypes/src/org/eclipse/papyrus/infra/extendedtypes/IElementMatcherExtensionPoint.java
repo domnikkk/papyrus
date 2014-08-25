@@ -12,7 +12,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.extendedtypes;
 
-import org.eclipse.papyrus.infra.extendedtypes.Activator;
 
 
 /**

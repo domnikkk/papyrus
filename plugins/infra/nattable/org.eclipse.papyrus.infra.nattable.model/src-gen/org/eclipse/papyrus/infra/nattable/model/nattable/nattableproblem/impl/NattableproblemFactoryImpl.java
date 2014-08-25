@@ -15,12 +15,12 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.NattableproblemFactory;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.NattableproblemPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.Problem;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.StringResolutionProblem;
 
 /**
  * <!-- begin-user-doc -->

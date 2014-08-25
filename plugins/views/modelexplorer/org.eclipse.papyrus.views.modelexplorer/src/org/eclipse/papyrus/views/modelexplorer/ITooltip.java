@@ -12,6 +12,7 @@
  /*****************************************************************************/
 package org.eclipse.papyrus.views.modelexplorer;
 
+import org.eclipse.jface.viewers.CellLabelProvider;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 

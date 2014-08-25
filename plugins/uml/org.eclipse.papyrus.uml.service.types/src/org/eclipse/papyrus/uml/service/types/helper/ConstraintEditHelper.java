@@ -37,7 +37,7 @@ import org.eclipse.uml2.uml.ValueSpecification;
  * <pre>
  *
  * Edit helper class for {@link Constraint}
- * 
+ *
  * Expected behavior:
  * - Initialize specification with a LiteralString
  * - Set new ValueSpecification as specification of the parent constraint

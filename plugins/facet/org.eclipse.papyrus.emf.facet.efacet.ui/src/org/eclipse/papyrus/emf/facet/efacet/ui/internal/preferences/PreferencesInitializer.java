@@ -12,9 +12,9 @@
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.preferences;
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.widget.ETypedElementSelectionControl;
-import org.eclipse.jface.preference.IPreferenceStore;
 
 public class PreferencesInitializer extends AbstractPreferenceInitializer {
 

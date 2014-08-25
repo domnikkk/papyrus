@@ -57,7 +57,7 @@ public class DiagramReconcilersReader extends RegistryReader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.plugin.RegistryReader#readElement(org.eclipse.core.runtime.IConfigurationElement, boolean)
 	 */
 	@Override

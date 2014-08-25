@@ -14,10 +14,16 @@ package org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.*;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.EObjectAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.EStructuralFeatureAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.FeatureAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.FeatureIdAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.IAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.IdAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.NattableaxisPackage;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.ObjectAxis;
+import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.ObjectIdAxis;
 
 /**
  * <!-- begin-user-doc -->

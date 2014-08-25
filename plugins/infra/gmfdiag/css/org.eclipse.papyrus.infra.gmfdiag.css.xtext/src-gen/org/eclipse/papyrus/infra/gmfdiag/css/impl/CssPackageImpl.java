@@ -11,14 +11,14 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.impl;
 
+import static org.eclipse.papyrus.infra.gmfdiag.css.CssPackage.CLASS;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.Angle;
 import org.eclipse.papyrus.infra.gmfdiag.css.Attribute;
 import org.eclipse.papyrus.infra.gmfdiag.css.AttributeValue;
@@ -59,7 +59,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.Uri;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CssPackageImpl extends EPackageImpl implements CssPackage
@@ -67,7 +67,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass stylesheetEClass = null;
@@ -75,7 +75,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass contentEClass = null;
@@ -83,7 +83,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass importEClass = null;
@@ -91,7 +91,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass mediaEClass = null;
@@ -99,7 +99,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass pageEClass = null;
@@ -107,7 +107,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass pseudoPageEClass = null;
@@ -115,7 +115,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass rulesetEClass = null;
@@ -123,7 +123,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass selectorEClass = null;
@@ -131,7 +131,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass compositeSelectorEClass = null;
@@ -139,7 +139,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass simpleSelectorEClass = null;
@@ -147,7 +147,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass selectorConditionEClass = null;
@@ -155,7 +155,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass combinatorEClass = null;
@@ -163,7 +163,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass declarationEClass = null;
@@ -171,7 +171,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass expressionEClass = null;
@@ -179,7 +179,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass subtermEClass = null;
@@ -187,7 +187,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass termEClass = null;
@@ -195,7 +195,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass functionEClass = null;
@@ -203,7 +203,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass nameEClass = null;
@@ -211,7 +211,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass numberEClass = null;
@@ -219,7 +219,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass percentageEClass = null;
@@ -227,7 +227,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass lengthEClass = null;
@@ -235,7 +235,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass emsEClass = null;
@@ -243,7 +243,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass exsEClass = null;
@@ -251,7 +251,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass angleEClass = null;
@@ -259,7 +259,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass timeEClass = null;
@@ -267,7 +267,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass frequencyEClass = null;
@@ -275,7 +275,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass uriEClass = null;
@@ -283,7 +283,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass stringValueEClass = null;
@@ -291,7 +291,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass hexColorEClass = null;
@@ -299,7 +299,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass classEClass = null;
@@ -307,7 +307,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass attributeEClass = null;
@@ -315,7 +315,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass attributeValueEClass = null;
@@ -323,7 +323,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass pseudoEClass = null;
@@ -331,7 +331,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass cssIdEClass = null;
@@ -339,7 +339,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass unaryOperatorEClass = null;
@@ -347,7 +347,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum unaryEEnum = null;
@@ -355,7 +355,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum kindEEnum = null;
@@ -363,7 +363,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum attributE_OPEEnum = null;
@@ -373,7 +373,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#eNS_URI
 	 * @see #init()
@@ -387,7 +387,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -397,7 +397,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	 *
 	 * <p>
 	 * This method is used to initialize {@link CssPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -432,7 +432,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -444,7 +444,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -456,7 +456,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -468,7 +468,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -480,7 +480,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -492,7 +492,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -504,7 +504,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -516,7 +516,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -528,7 +528,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -540,7 +540,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -552,7 +552,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -564,7 +564,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -576,7 +576,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -588,7 +588,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -600,7 +600,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -612,7 +612,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -624,7 +624,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -636,7 +636,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -648,7 +648,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -660,7 +660,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -672,7 +672,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -684,7 +684,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -696,7 +696,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -708,7 +708,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -720,7 +720,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -732,7 +732,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -744,7 +744,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -756,7 +756,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -768,7 +768,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -780,7 +780,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -792,7 +792,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -804,7 +804,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -816,7 +816,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -828,7 +828,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -840,7 +840,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -852,7 +852,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -864,7 +864,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -876,7 +876,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -888,7 +888,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -900,7 +900,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -912,7 +912,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -924,7 +924,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -936,7 +936,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -948,7 +948,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -960,7 +960,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -972,7 +972,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -984,7 +984,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -996,7 +996,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1008,7 +1008,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1020,7 +1020,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1032,7 +1032,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1044,7 +1044,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1056,7 +1056,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1068,7 +1068,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1080,7 +1080,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1092,7 +1092,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1104,7 +1104,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1116,7 +1116,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1128,7 +1128,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1140,7 +1140,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1152,7 +1152,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1164,7 +1164,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1176,7 +1176,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1188,7 +1188,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1200,7 +1200,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1212,7 +1212,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1224,7 +1224,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1236,7 +1236,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1248,7 +1248,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1260,7 +1260,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1272,7 +1272,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1284,7 +1284,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1296,7 +1296,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1308,7 +1308,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1320,7 +1320,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1332,7 +1332,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1344,7 +1344,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1356,7 +1356,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1368,7 +1368,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1380,7 +1380,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1392,7 +1392,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1404,7 +1404,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1416,7 +1416,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1428,7 +1428,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1440,7 +1440,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1452,7 +1452,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1464,7 +1464,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1476,7 +1476,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1488,7 +1488,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1500,7 +1500,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1512,7 +1512,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1524,7 +1524,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1536,7 +1536,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1548,7 +1548,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1560,7 +1560,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1572,7 +1572,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1584,7 +1584,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1596,7 +1596,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1608,7 +1608,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1620,7 +1620,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1632,7 +1632,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1644,7 +1644,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1656,7 +1656,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1668,7 +1668,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -1678,7 +1678,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents()
@@ -1832,7 +1832,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -1842,7 +1842,7 @@ public class CssPackageImpl extends EPackageImpl implements CssPackage
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents()

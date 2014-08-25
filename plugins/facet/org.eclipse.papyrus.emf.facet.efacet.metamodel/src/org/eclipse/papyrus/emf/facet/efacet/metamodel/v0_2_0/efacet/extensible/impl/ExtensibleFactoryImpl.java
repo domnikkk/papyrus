@@ -26,7 +26,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.E
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ExtensibleFactoryImpl extends EFactoryImpl implements ExtensibleFactory {
@@ -34,7 +34,7 @@ public class ExtensibleFactoryImpl extends EFactoryImpl implements ExtensibleFac
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ExtensibleFactory init() {
@@ -53,7 +53,7 @@ public class ExtensibleFactoryImpl extends EFactoryImpl implements ExtensibleFac
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtensibleFactoryImpl() {
@@ -63,7 +63,7 @@ public class ExtensibleFactoryImpl extends EFactoryImpl implements ExtensibleFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +77,7 @@ public class ExtensibleFactoryImpl extends EFactoryImpl implements ExtensibleFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtensiblePackage getExtensiblePackage() {
@@ -87,7 +87,7 @@ public class ExtensibleFactoryImpl extends EFactoryImpl implements ExtensibleFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

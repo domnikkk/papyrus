@@ -11,7 +11,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.extendedtypes;
 
-import org.eclipse.papyrus.infra.extendedtypes.ActionConfiguration;
 
 /**
  * Constants for the extension point aspectActionConfiguration (registering models containing definition of {@link ActionConfiguration}).

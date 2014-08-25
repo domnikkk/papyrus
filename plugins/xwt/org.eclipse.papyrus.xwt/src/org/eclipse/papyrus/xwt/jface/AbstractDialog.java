@@ -18,7 +18,6 @@ import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.papyrus.xwt.IXWTLoader;
 import org.eclipse.papyrus.xwt.XWT;
 import org.eclipse.papyrus.xwt.XWTException;
-import org.eclipse.papyrus.xwt.XWTLoader;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;

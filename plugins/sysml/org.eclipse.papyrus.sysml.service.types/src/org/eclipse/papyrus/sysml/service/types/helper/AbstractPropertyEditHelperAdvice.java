@@ -71,7 +71,7 @@ public abstract class AbstractPropertyEditHelperAdvice extends AbstractEditHelpe
 
 	/**
 	 * Returns the duplicate Part or Reference.
-	 * 
+	 *
 	 * @param request
 	 *            the duplicate request for which we try to find the property
 	 * @return the found Property

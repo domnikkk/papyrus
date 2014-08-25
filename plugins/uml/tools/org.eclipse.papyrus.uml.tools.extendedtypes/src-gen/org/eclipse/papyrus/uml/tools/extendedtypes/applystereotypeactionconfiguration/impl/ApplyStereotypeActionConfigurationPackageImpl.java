@@ -17,11 +17,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
-
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfiguration;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationFactory;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage;
@@ -32,21 +29,20 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfigur
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ListValue;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.QueryExecutionValue;
 import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl implements ApplyStereotypeActionConfigurationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass applyStereotypeActionConfigurationEClass = null;
@@ -54,7 +50,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass stereotypeToApplyEClass = null;
@@ -62,7 +58,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass featureToSetEClass = null;
@@ -70,7 +66,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass featureValueEClass = null;
@@ -78,7 +74,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass listValueEClass = null;
@@ -86,7 +82,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass constantValueEClass = null;
@@ -94,7 +90,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass dynamicValueEClass = null;
@@ -102,7 +98,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass queryExecutionValueEClass = null;
@@ -112,7 +108,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage#eNS_URI
 	 * @see #init()
@@ -125,7 +121,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -136,7 +132,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	 * <p>
 	 * This method is used to initialize {@link ApplyStereotypeActionConfigurationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -175,7 +171,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getApplyStereotypeActionConfiguration() {
@@ -185,7 +181,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getApplyStereotypeActionConfiguration_StereotypesToApply() {
@@ -195,7 +191,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getStereotypeToApply() {
@@ -205,7 +201,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getStereotypeToApply_StereotypeQualifiedName() {
@@ -215,7 +211,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getStereotypeToApply_UpdateName() {
@@ -225,7 +221,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getStereotypeToApply_RequiredProfiles() {
@@ -235,7 +231,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getStereotypeToApply_FeaturesToSet() {
@@ -245,7 +241,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFeatureToSet() {
@@ -255,7 +251,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getFeatureToSet_FeatureName() {
@@ -265,7 +261,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFeatureToSet_Value() {
@@ -275,7 +271,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFeatureValue() {
@@ -285,7 +281,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getListValue() {
@@ -295,7 +291,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getListValue_Values() {
@@ -305,7 +301,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getConstantValue() {
@@ -315,7 +311,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConstantValue_ValueInstance() {
@@ -325,7 +321,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDynamicValue() {
@@ -335,7 +331,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getQueryExecutionValue() {
@@ -345,7 +341,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ApplyStereotypeActionConfigurationFactory getApplyStereotypeActionConfigurationFactory() {
@@ -355,7 +351,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -365,7 +361,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -404,7 +400,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -414,7 +410,7 @@ public class ApplyStereotypeActionConfigurationPackageImpl extends EPackageImpl 
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

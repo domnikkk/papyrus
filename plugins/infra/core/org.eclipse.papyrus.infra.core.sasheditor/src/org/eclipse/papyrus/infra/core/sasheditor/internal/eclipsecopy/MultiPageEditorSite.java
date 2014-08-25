@@ -395,7 +395,7 @@ public class MultiPageEditorSite implements IMultiPageEditorSite, INestable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
 	 */
 	@Override
@@ -474,7 +474,7 @@ public class MultiPageEditorSite implements IMultiPageEditorSite, INestable {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IWorkbenchPartSite#getPart()
 	 */
 	@Override

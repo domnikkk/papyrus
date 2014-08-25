@@ -37,7 +37,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	 * The cached value of the '{@link #getPageList() <em>Page List</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPageList()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	 * The cached value of the '{@link #getSashModel() <em>Sash Model</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSashModel()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SashWindowsMngrImpl() {
@@ -68,7 +68,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPageList(PageList newPageList, NotificationChain msgs) {
@@ -110,7 +110,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSashModel(SashModel newSashModel, NotificationChain msgs) {
@@ -167,7 +167,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +193,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +227,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +246,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public class SashWindowsMngrImpl extends EObjectImpl implements SashWindowsMngr 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

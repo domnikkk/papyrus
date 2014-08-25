@@ -40,7 +40,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	 * The cached value of the '{@link #getPolicies() <em>Policies</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPolicies()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NewChildPolicySetImpl() {
@@ -82,7 +82,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -103,7 +103,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -117,7 +117,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<NewChildPolicy> getPolicies() {
@@ -130,7 +130,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +145,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -183,7 +183,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class NewChildPolicySetImpl extends DisplayUnitImpl implements NewChildPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

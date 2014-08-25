@@ -33,7 +33,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	 * The default value of the '{@link #getBefore() <em>Before</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBefore()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	 * The cached value of the '{@link #getBefore() <em>Before</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBefore()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	 * The default value of the '{@link #getAfter() <em>After</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAfter()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	 * The cached value of the '{@link #getAfter() <em>After</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAfter()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	 * The default value of the '{@link #getAbsolutePosition() <em>Absolute Position</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAbsolutePosition()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	 * The cached value of the '{@link #getAbsolutePosition() <em>Absolute Position</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAbsolutePosition()
 	 * @generated
 	 * @ordered
@@ -98,7 +98,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MenuGroupImpl() {
@@ -108,7 +108,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getBefore() {
@@ -129,7 +129,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBefore(String newBefore) {
@@ -143,7 +143,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getAfter() {
@@ -153,7 +153,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAfter(String newAfter) {
@@ -167,7 +167,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MenuPosition getAbsolutePosition() {
@@ -177,7 +177,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setAbsolutePosition(MenuPosition newAbsolutePosition) {
@@ -191,7 +191,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -254,7 +254,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +273,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

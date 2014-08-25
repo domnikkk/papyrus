@@ -57,7 +57,7 @@ public class LogHelper {
 	/**
 	 * Set the associated plugin.
 	 * This plugin log will be used as log.
-	 * 
+	 *
 	 * @param activator
 	 */
 	public void setPlugin(Plugin activator) {

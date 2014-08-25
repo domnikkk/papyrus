@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Property;
 
 /**
@@ -31,7 +30,7 @@ public interface RedefinesRule extends EObject
 	 * If the meaning of the '<em>Property</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Property</em>' reference.
 	 * @see #setProperty(Property)
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyPackage#getRedefinesRule_Property()
@@ -44,7 +43,7 @@ public interface RedefinesRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule#getProperty <em>Property</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Property</em>' reference.
 	 * @see #getProperty()

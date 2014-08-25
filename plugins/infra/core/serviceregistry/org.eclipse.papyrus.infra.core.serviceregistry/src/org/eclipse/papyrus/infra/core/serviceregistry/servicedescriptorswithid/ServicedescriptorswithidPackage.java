@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidFactory
  * @model kind="package"
  * @generated
@@ -30,7 +30,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "servicedescriptorswithid";
@@ -39,7 +39,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "org.eclipse.papyrus..infra.core.servicedescriptorswithid";
@@ -48,7 +48,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "servicedescriptorswithid";
@@ -57,7 +57,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	ServicedescriptorswithidPackage eINSTANCE = org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl.init();
@@ -66,7 +66,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.RegistryIdDescImpl <em>Registry Id Desc</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.RegistryIdDescImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getRegistryIdDesc()
 	 * @generated
@@ -77,7 +77,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -87,7 +87,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Is Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Sets</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +117,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Extends</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +127,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Parents</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +137,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Registry Id Desc</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,7 +147,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl <em>Abstract Service Id Desc</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getAbstractServiceIdDesc()
 	 * @generated
@@ -158,7 +158,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -168,7 +168,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Namespace</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +178,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -188,7 +188,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Depends On</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -198,7 +198,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -208,7 +208,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Bundle ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -218,7 +218,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Abstract Service Id Desc</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -228,7 +228,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceIdDescImpl <em>Service Id Desc</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceIdDescImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getServiceIdDesc()
 	 * @generated
@@ -239,7 +239,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -249,7 +249,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Namespace</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -259,7 +259,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -269,7 +269,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Depends On</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -279,7 +279,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -289,7 +289,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Bundle ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -299,7 +299,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Start Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -309,7 +309,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Classname</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -319,7 +319,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Injections</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -329,7 +329,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Service Id Desc</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -339,7 +339,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceSetIdDescImpl <em>Service Set Id Desc</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceSetIdDescImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getServiceSetIdDesc()
 	 * @generated
@@ -350,7 +350,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -360,7 +360,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Extends</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -370,7 +370,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -380,7 +380,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Service Descriptors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -390,7 +390,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Service Set Id Desc</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -400,7 +400,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.FeatureInjectionImpl <em>Feature Injection</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.FeatureInjectionImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getFeatureInjection()
 	 * @generated
@@ -411,7 +411,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -421,7 +421,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Feature Injection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -431,7 +431,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AliasIdDescImpl <em>Alias Id Desc</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AliasIdDescImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getAliasIdDesc()
 	 * @generated
@@ -442,7 +442,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -452,7 +452,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Namespace</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -462,7 +462,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -472,7 +472,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Depends On</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -482,7 +482,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -492,7 +492,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Bundle ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -502,7 +502,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Aliased Service</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -512,7 +512,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Alias Id Desc</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -522,7 +522,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.IdDescriptorsImpl <em>Id Descriptors</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.IdDescriptorsImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getIdDescriptors()
 	 * @generated
@@ -533,7 +533,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Registries</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -543,7 +543,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Service Sets</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -553,7 +553,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Id Descriptors</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -563,7 +563,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.PropertyInjectionImpl <em>Property Injection</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.PropertyInjectionImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getPropertyInjection()
 	 * @generated
@@ -574,7 +574,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -584,7 +584,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -594,7 +594,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -604,7 +604,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Property Injection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -614,7 +614,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.InjectedValueImpl <em>Injected Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.InjectedValueImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getInjectedValue()
 	 * @generated
@@ -625,7 +625,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -635,7 +635,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Injected Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -645,7 +645,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractMethodInjectionImpl <em>Abstract Method Injection</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractMethodInjectionImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getAbstractMethodInjection()
 	 * @generated
@@ -656,7 +656,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -666,7 +666,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -676,7 +676,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Abstract Method Injection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -686,7 +686,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.MethodInjectionImpl <em>Method Injection</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.MethodInjectionImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getMethodInjection()
 	 * @generated
@@ -697,7 +697,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -707,7 +707,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -717,7 +717,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Method Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -727,7 +727,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Method Injection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -737,7 +737,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ParameterInjectionImpl <em>Parameter Injection</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ParameterInjectionImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getParameterInjection()
 	 * @generated
@@ -748,7 +748,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Parameter Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -758,7 +758,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -768,7 +768,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Parameter Injection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -778,7 +778,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.InjectedServiceImpl <em>Injected Service</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.InjectedServiceImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getInjectedService()
 	 * @generated
@@ -789,7 +789,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -799,7 +799,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Service Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -809,7 +809,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Injected Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -819,7 +819,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.OpaqueInjectedValueImpl <em>Opaque Injected Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.OpaqueInjectedValueImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getOpaqueInjectedValue()
 	 * @generated
@@ -830,7 +830,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -840,7 +840,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -850,7 +850,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Opaque Injected Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -860,7 +860,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ConstructorInjectionImpl <em>Constructor Injection</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ConstructorInjectionImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getConstructorInjection()
 	 * @generated
@@ -871,7 +871,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -881,7 +881,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -891,7 +891,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Constructor Injection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -901,7 +901,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceFactoryIdDescImpl <em>Service Factory Id Desc</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceFactoryIdDescImpl
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getServiceFactoryIdDesc()
 	 * @generated
@@ -912,7 +912,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -922,7 +922,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Namespace</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -932,7 +932,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -942,7 +942,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Depends On</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -952,7 +952,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -962,7 +962,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Bundle ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -972,7 +972,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Start Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -982,7 +982,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Classname</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -992,7 +992,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The feature id for the '<em><b>Injections</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1002,7 +1002,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The number of structural features of the '<em>Service Factory Id Desc</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1012,7 +1012,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.StartupKind <em>Startup Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.StartupKind
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getStartupKind()
 	 * @generated
@@ -1023,7 +1023,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '<em>String</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getString()
 	 * @generated
@@ -1034,7 +1034,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '<em>boolean</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getboolean()
 	 * @generated
 	 */
@@ -1044,7 +1044,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '<em>Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see java.lang.Object
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getObject()
 	 * @generated
@@ -1055,7 +1055,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * The meta object id for the '<em>int</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getint()
 	 * @generated
 	 */
@@ -1066,7 +1066,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc <em>Registry Id Desc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Registry Id Desc</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc
 	 * @generated
@@ -1077,7 +1077,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc#getName()
 	 * @see #getRegistryIdDesc()
@@ -1089,7 +1089,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc#getDescription()
 	 * @see #getRegistryIdDesc()
@@ -1101,7 +1101,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc#isUnique <em>Is Unique</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Unique</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc#isUnique()
 	 * @see #getRegistryIdDesc()
@@ -1113,7 +1113,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc#getSets <em>Sets</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Sets</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc#getSets()
 	 * @see #getRegistryIdDesc()
@@ -1125,7 +1125,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc#getExtends <em>Extends</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Extends</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc#getExtends()
 	 * @see #getRegistryIdDesc()
@@ -1137,7 +1137,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc#getParents <em>Parents</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Parents</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc#getParents()
 	 * @see #getRegistryIdDesc()
@@ -1149,7 +1149,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc <em>Service Id Desc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Service Id Desc</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc
 	 * @generated
@@ -1160,7 +1160,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc#getStartKind <em>Start Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Start Kind</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc#getStartKind()
 	 * @see #getServiceIdDesc()
@@ -1172,7 +1172,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc#getClassname <em>Classname</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Classname</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc#getClassname()
 	 * @see #getServiceIdDesc()
@@ -1184,7 +1184,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc#getInjections <em>Injections</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Injections</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc#getInjections()
 	 * @see #getServiceIdDesc()
@@ -1196,7 +1196,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc <em>Abstract Service Id Desc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Abstract Service Id Desc</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc
 	 * @generated
@@ -1207,7 +1207,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getName()
 	 * @see #getAbstractServiceIdDesc()
@@ -1219,7 +1219,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getNamespace <em>Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Namespace</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getNamespace()
 	 * @see #getAbstractServiceIdDesc()
@@ -1231,7 +1231,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getDescription()
 	 * @see #getAbstractServiceIdDesc()
@@ -1243,7 +1243,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getDependsOn <em>Depends On</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Depends On</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getDependsOn()
 	 * @see #getAbstractServiceIdDesc()
@@ -1255,7 +1255,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getPriority <em>Priority</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Priority</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getPriority()
 	 * @see #getAbstractServiceIdDesc()
@@ -1267,7 +1267,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getBundleID <em>Bundle ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Bundle ID</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc#getBundleID()
 	 * @see #getAbstractServiceIdDesc()
@@ -1279,7 +1279,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc <em>Service Set Id Desc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Service Set Id Desc</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc
 	 * @generated
@@ -1290,7 +1290,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getName()
 	 * @see #getServiceSetIdDesc()
@@ -1302,7 +1302,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getExtends <em>Extends</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Extends</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getExtends()
 	 * @see #getServiceSetIdDesc()
@@ -1314,7 +1314,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getDescription()
 	 * @see #getServiceSetIdDesc()
@@ -1326,7 +1326,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getServiceDescriptors <em>Service Descriptors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Service Descriptors</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc#getServiceDescriptors()
 	 * @see #getServiceSetIdDesc()
@@ -1338,7 +1338,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.FeatureInjection <em>Feature Injection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Feature Injection</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.FeatureInjection
 	 * @generated
@@ -1349,7 +1349,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.FeatureInjection#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.FeatureInjection#getDescription()
 	 * @see #getFeatureInjection()
@@ -1361,7 +1361,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AliasIdDesc <em>Alias Id Desc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Alias Id Desc</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AliasIdDesc
 	 * @generated
@@ -1372,7 +1372,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AliasIdDesc#getAliasedService <em>Aliased Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Aliased Service</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AliasIdDesc#getAliasedService()
 	 * @see #getAliasIdDesc()
@@ -1384,7 +1384,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.IdDescriptors <em>Id Descriptors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Id Descriptors</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.IdDescriptors
 	 * @generated
@@ -1395,7 +1395,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.IdDescriptors#getRegistries <em>Registries</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Registries</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.IdDescriptors#getRegistries()
 	 * @see #getIdDescriptors()
@@ -1407,7 +1407,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.IdDescriptors#getServiceSets <em>Service Sets</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Service Sets</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.IdDescriptors#getServiceSets()
 	 * @see #getIdDescriptors()
@@ -1419,7 +1419,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.PropertyInjection <em>Property Injection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Property Injection</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.PropertyInjection
 	 * @generated
@@ -1430,7 +1430,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.PropertyInjection#getPropertyName <em>Property Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Property Name</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.PropertyInjection#getPropertyName()
 	 * @see #getPropertyInjection()
@@ -1442,7 +1442,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.PropertyInjection#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Values</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.PropertyInjection#getValues()
 	 * @see #getPropertyInjection()
@@ -1454,7 +1454,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedValue <em>Injected Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Injected Value</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedValue
 	 * @generated
@@ -1465,7 +1465,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedValue#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedValue#getDescription()
 	 * @see #getInjectedValue()
@@ -1477,7 +1477,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection <em>Method Injection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Method Injection</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection
 	 * @generated
@@ -1488,7 +1488,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection#getMethodName <em>Method Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Method Name</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection#getMethodName()
 	 * @see #getMethodInjection()
@@ -1500,7 +1500,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractMethodInjection <em>Abstract Method Injection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Abstract Method Injection</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractMethodInjection
 	 * @generated
@@ -1511,7 +1511,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractMethodInjection#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractMethodInjection#getParameters()
 	 * @see #getAbstractMethodInjection()
@@ -1523,7 +1523,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection <em>Parameter Injection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Parameter Injection</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection
 	 * @generated
@@ -1534,7 +1534,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection#getParameterName <em>Parameter Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Parameter Name</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection#getParameterName()
 	 * @see #getParameterInjection()
@@ -1546,7 +1546,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Values</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection#getValues()
 	 * @see #getParameterInjection()
@@ -1558,7 +1558,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedService <em>Injected Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Injected Service</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedService
 	 * @generated
@@ -1569,7 +1569,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedService#getServiceName <em>Service Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Service Name</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedService#getServiceName()
 	 * @see #getInjectedService()
@@ -1581,7 +1581,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.OpaqueInjectedValue <em>Opaque Injected Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Opaque Injected Value</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.OpaqueInjectedValue
 	 * @generated
@@ -1592,7 +1592,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.OpaqueInjectedValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.OpaqueInjectedValue#getValue()
 	 * @see #getOpaqueInjectedValue()
@@ -1604,7 +1604,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ConstructorInjection <em>Constructor Injection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Constructor Injection</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ConstructorInjection
 	 * @generated
@@ -1615,7 +1615,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceFactoryIdDesc <em>Service Factory Id Desc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Service Factory Id Desc</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceFactoryIdDesc
 	 * @generated
@@ -1626,7 +1626,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.StartupKind <em>Startup Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Startup Kind</em>'.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.StartupKind
 	 * @generated
@@ -1637,7 +1637,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>String</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -1649,7 +1649,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for data type '<em>boolean</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>boolean</em>'.
 	 * @model instanceClass="boolean"
 	 * @generated
@@ -1660,7 +1660,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.Object <em>Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Object</em>'.
 	 * @see java.lang.Object
 	 * @model instanceClass="java.lang.Object"
@@ -1672,7 +1672,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the meta object for data type '<em>int</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>int</em>'.
 	 * @model instanceClass="int"
 	 * @generated
@@ -1683,7 +1683,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1699,7 +1699,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -1707,7 +1707,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.RegistryIdDescImpl <em>Registry Id Desc</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.RegistryIdDescImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getRegistryIdDesc()
 		 * @generated
@@ -1718,7 +1718,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REGISTRY_ID_DESC__NAME = eINSTANCE.getRegistryIdDesc_Name();
@@ -1727,7 +1727,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REGISTRY_ID_DESC__DESCRIPTION = eINSTANCE.getRegistryIdDesc_Description();
@@ -1736,7 +1736,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Is Unique</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REGISTRY_ID_DESC__IS_UNIQUE = eINSTANCE.getRegistryIdDesc_IsUnique();
@@ -1745,7 +1745,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Sets</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REGISTRY_ID_DESC__SETS = eINSTANCE.getRegistryIdDesc_Sets();
@@ -1754,7 +1754,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Extends</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REGISTRY_ID_DESC__EXTENDS = eINSTANCE.getRegistryIdDesc_Extends();
@@ -1763,7 +1763,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parents</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute REGISTRY_ID_DESC__PARENTS = eINSTANCE.getRegistryIdDesc_Parents();
@@ -1772,7 +1772,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceIdDescImpl <em>Service Id Desc</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceIdDescImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getServiceIdDesc()
 		 * @generated
@@ -1783,7 +1783,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SERVICE_ID_DESC__START_KIND = eINSTANCE.getServiceIdDesc_StartKind();
@@ -1792,7 +1792,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Classname</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SERVICE_ID_DESC__CLASSNAME = eINSTANCE.getServiceIdDesc_Classname();
@@ -1801,7 +1801,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Injections</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SERVICE_ID_DESC__INJECTIONS = eINSTANCE.getServiceIdDesc_Injections();
@@ -1810,7 +1810,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl <em>Abstract Service Id Desc</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getAbstractServiceIdDesc()
 		 * @generated
@@ -1821,7 +1821,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ABSTRACT_SERVICE_ID_DESC__NAME = eINSTANCE.getAbstractServiceIdDesc_Name();
@@ -1830,7 +1830,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Namespace</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ABSTRACT_SERVICE_ID_DESC__NAMESPACE = eINSTANCE.getAbstractServiceIdDesc_Namespace();
@@ -1839,7 +1839,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ABSTRACT_SERVICE_ID_DESC__DESCRIPTION = eINSTANCE.getAbstractServiceIdDesc_Description();
@@ -1848,7 +1848,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Depends On</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ABSTRACT_SERVICE_ID_DESC__DEPENDS_ON = eINSTANCE.getAbstractServiceIdDesc_DependsOn();
@@ -1857,7 +1857,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ABSTRACT_SERVICE_ID_DESC__PRIORITY = eINSTANCE.getAbstractServiceIdDesc_Priority();
@@ -1866,7 +1866,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Bundle ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ABSTRACT_SERVICE_ID_DESC__BUNDLE_ID = eINSTANCE.getAbstractServiceIdDesc_BundleID();
@@ -1875,7 +1875,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceSetIdDescImpl <em>Service Set Id Desc</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceSetIdDescImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getServiceSetIdDesc()
 		 * @generated
@@ -1886,7 +1886,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SERVICE_SET_ID_DESC__NAME = eINSTANCE.getServiceSetIdDesc_Name();
@@ -1895,7 +1895,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Extends</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SERVICE_SET_ID_DESC__EXTENDS = eINSTANCE.getServiceSetIdDesc_Extends();
@@ -1904,7 +1904,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SERVICE_SET_ID_DESC__DESCRIPTION = eINSTANCE.getServiceSetIdDesc_Description();
@@ -1913,7 +1913,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Service Descriptors</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS = eINSTANCE.getServiceSetIdDesc_ServiceDescriptors();
@@ -1922,7 +1922,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.FeatureInjectionImpl <em>Feature Injection</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.FeatureInjectionImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getFeatureInjection()
 		 * @generated
@@ -1933,7 +1933,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FEATURE_INJECTION__DESCRIPTION = eINSTANCE.getFeatureInjection_Description();
@@ -1942,7 +1942,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AliasIdDescImpl <em>Alias Id Desc</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AliasIdDescImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getAliasIdDesc()
 		 * @generated
@@ -1953,7 +1953,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Aliased Service</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ALIAS_ID_DESC__ALIASED_SERVICE = eINSTANCE.getAliasIdDesc_AliasedService();
@@ -1962,7 +1962,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.IdDescriptorsImpl <em>Id Descriptors</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.IdDescriptorsImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getIdDescriptors()
 		 * @generated
@@ -1973,7 +1973,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Registries</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ID_DESCRIPTORS__REGISTRIES = eINSTANCE.getIdDescriptors_Registries();
@@ -1982,7 +1982,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Service Sets</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ID_DESCRIPTORS__SERVICE_SETS = eINSTANCE.getIdDescriptors_ServiceSets();
@@ -1991,7 +1991,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.PropertyInjectionImpl <em>Property Injection</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.PropertyInjectionImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getPropertyInjection()
 		 * @generated
@@ -2002,7 +2002,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PROPERTY_INJECTION__PROPERTY_NAME = eINSTANCE.getPropertyInjection_PropertyName();
@@ -2011,7 +2011,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_INJECTION__VALUES = eINSTANCE.getPropertyInjection_Values();
@@ -2020,7 +2020,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.InjectedValueImpl <em>Injected Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.InjectedValueImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getInjectedValue()
 		 * @generated
@@ -2031,7 +2031,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INJECTED_VALUE__DESCRIPTION = eINSTANCE.getInjectedValue_Description();
@@ -2040,7 +2040,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.MethodInjectionImpl <em>Method Injection</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.MethodInjectionImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getMethodInjection()
 		 * @generated
@@ -2051,7 +2051,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Method Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute METHOD_INJECTION__METHOD_NAME = eINSTANCE.getMethodInjection_MethodName();
@@ -2060,7 +2060,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractMethodInjectionImpl <em>Abstract Method Injection</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractMethodInjectionImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getAbstractMethodInjection()
 		 * @generated
@@ -2071,7 +2071,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ABSTRACT_METHOD_INJECTION__PARAMETERS = eINSTANCE.getAbstractMethodInjection_Parameters();
@@ -2080,7 +2080,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ParameterInjectionImpl <em>Parameter Injection</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ParameterInjectionImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getParameterInjection()
 		 * @generated
@@ -2091,7 +2091,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parameter Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PARAMETER_INJECTION__PARAMETER_NAME = eINSTANCE.getParameterInjection_ParameterName();
@@ -2100,7 +2100,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PARAMETER_INJECTION__VALUES = eINSTANCE.getParameterInjection_Values();
@@ -2109,7 +2109,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.InjectedServiceImpl <em>Injected Service</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.InjectedServiceImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getInjectedService()
 		 * @generated
@@ -2120,7 +2120,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Service Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INJECTED_SERVICE__SERVICE_NAME = eINSTANCE.getInjectedService_ServiceName();
@@ -2129,7 +2129,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.OpaqueInjectedValueImpl <em>Opaque Injected Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.OpaqueInjectedValueImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getOpaqueInjectedValue()
 		 * @generated
@@ -2140,7 +2140,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute OPAQUE_INJECTED_VALUE__VALUE = eINSTANCE.getOpaqueInjectedValue_Value();
@@ -2149,7 +2149,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ConstructorInjectionImpl <em>Constructor Injection</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ConstructorInjectionImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getConstructorInjection()
 		 * @generated
@@ -2160,7 +2160,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceFactoryIdDescImpl <em>Service Factory Id Desc</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceFactoryIdDescImpl
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getServiceFactoryIdDesc()
 		 * @generated
@@ -2171,7 +2171,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.StartupKind <em>Startup Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.StartupKind
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getStartupKind()
 		 * @generated
@@ -2182,7 +2182,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em>String</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getString()
 		 * @generated
@@ -2193,7 +2193,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em>boolean</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getboolean()
 		 * @generated
 		 */
@@ -2203,7 +2203,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em>Object</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see java.lang.Object
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getObject()
 		 * @generated
@@ -2214,7 +2214,7 @@ public interface ServicedescriptorswithidPackage extends EPackage {
 		 * The meta object literal for the '<em>int</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServicedescriptorswithidPackageImpl#getint()
 		 * @generated
 		 */

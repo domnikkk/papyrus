@@ -35,7 +35,7 @@ public interface TabFolder extends AbstractPanel {
 	 * If the meaning of the '<em>Children</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Children</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.DiPackage#getTabFolder_Children()
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.PageRef#getParent
@@ -47,7 +47,7 @@ public interface TabFolder extends AbstractPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model oldIndexDataType="org.eclipse.papyrus.infra.core.sashwindows.di.int" oldIndexRequired="true" oldIndexOrdered="false" newIndexDataType="org.eclipse.papyrus.infra.core.sashwindows.di.int" newIndexRequired="true" newIndexOrdered="false"
 	 * @generated
 	 */
@@ -56,7 +56,7 @@ public interface TabFolder extends AbstractPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model pageIdentifierDataType="org.eclipse.papyrus.infra.core.sashwindows.di.JavaObject" pageIdentifierRequired="true" pageIdentifierOrdered="false"
 	 * @generated
 	 */
@@ -65,7 +65,7 @@ public interface TabFolder extends AbstractPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model pageIdentifierDataType="org.eclipse.papyrus.infra.core.sashwindows.di.JavaObject" pageIdentifierRequired="true" pageIdentifierOrdered="false"
 	 * @generated
 	 */
@@ -74,7 +74,7 @@ public interface TabFolder extends AbstractPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model pageIndexDataType="org.eclipse.papyrus.infra.core.sashwindows.di.int" pageIndexRequired="true" pageIndexOrdered="false"
 	 * @generated
 	 */

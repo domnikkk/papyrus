@@ -45,7 +45,7 @@ public class IPageUtils {
 
 	/**
 	 * Get the real model rather than the PageRef. This method is a trick to temporally solve the bug 309943.
-	 * 
+	 *
 	 * @param page
 	 * @return
 	 */

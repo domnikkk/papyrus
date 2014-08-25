@@ -65,7 +65,7 @@ public class ConstraintParameterAffixedNodeEditPart extends AbstractElementBorde
 			/**
 			 * <pre>
 			 * {@inheritDoc}
-			 * 
+			 *
 			 * This modifies the edit policy in order to call refreshVisuals() whenever the stereotype image to show is null.
 			 * (required to show the Port default image correctly).
 			 * </pre>
@@ -143,7 +143,7 @@ public class ConstraintParameterAffixedNodeEditPart extends AbstractElementBorde
 	 * <pre>
 	 * Calls the figure refresh when a change event is detected on
 	 * UMLPackage.eINSTANCE.getProperty_Aggregation().
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -180,9 +180,9 @@ public class ConstraintParameterAffixedNodeEditPart extends AbstractElementBorde
 	 * A post layout listener is added during activate and remove the first time the layout occurs.
 	 * This is required in order to be able to find the side of this border item on its parent when opening the model.
 	 * Without this, the locator is unable to guess the parent side because the parent constraint is not set yet.
-	 * 
+	 *
 	 * Once the initialization is done, the listener become useless and can be removed.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

@@ -15,10 +15,10 @@ package org.eclipse.papyrus.emf.facet.query.java.sdk.ui.internal.wizard;
 import java.util.Locale;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.papyrus.emf.facet.efacet.core.FacetUtils;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet;
 import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.IQueryContext;
-import org.eclipse.jdt.core.IJavaProject;
 
 public final class JavaQueryUtils {
 

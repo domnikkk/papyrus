@@ -13,6 +13,9 @@
 package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.dialog;
 
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.dialog.ICustomizationDialogFactory;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.dialog.command.AddCaseQueryDialog;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.dialog.command.AddCustomizationPropertyDialog;
@@ -22,9 +25,6 @@ import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.handler.HandlerUtils;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.dialog.SynchronizedAbstractDialog;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.ICommandWidget;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
 import org.eclipse.swt.widgets.Display;
 
 /**

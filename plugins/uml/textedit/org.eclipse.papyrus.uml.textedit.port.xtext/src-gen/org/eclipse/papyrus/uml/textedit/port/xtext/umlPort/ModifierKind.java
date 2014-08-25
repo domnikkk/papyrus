@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Modifier Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getModifierKind()
  * @model
  * @generated
@@ -24,7 +24,7 @@ public enum ModifierKind implements Enumerator
 	 * The '<em><b>Read Only</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #READ_ONLY_VALUE
 	 * @generated
 	 * @ordered
@@ -35,7 +35,7 @@ public enum ModifierKind implements Enumerator
 	 * The '<em><b>Union</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNION_VALUE
 	 * @generated
 	 * @ordered
@@ -46,7 +46,7 @@ public enum ModifierKind implements Enumerator
 	 * The '<em><b>Ordered</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ORDERED_VALUE
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public enum ModifierKind implements Enumerator
 	 * The '<em><b>Unique</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNIQUE_VALUE
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public enum ModifierKind implements Enumerator
 	 * If the meaning of '<em><b>Read Only</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #READ_ONLY
 	 * @model name="readOnly"
 	 * @generated
@@ -86,7 +86,7 @@ public enum ModifierKind implements Enumerator
 	 * If the meaning of '<em><b>Union</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNION
 	 * @model name="union"
 	 * @generated
@@ -101,7 +101,7 @@ public enum ModifierKind implements Enumerator
 	 * If the meaning of '<em><b>Ordered</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #ORDERED
 	 * @model name="ordered"
 	 * @generated
@@ -116,7 +116,7 @@ public enum ModifierKind implements Enumerator
 	 * If the meaning of '<em><b>Unique</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNIQUE
 	 * @model name="unique"
 	 * @generated
@@ -128,7 +128,7 @@ public enum ModifierKind implements Enumerator
 	 * An array of all the '<em><b>Modifier Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final ModifierKind[] VALUES_ARRAY =
@@ -144,7 +144,7 @@ public enum ModifierKind implements Enumerator
 	 * A public read-only list of all the '<em><b>Modifier Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ModifierKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -153,7 +153,7 @@ public enum ModifierKind implements Enumerator
 	 * Returns the '<em><b>Modifier Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ModifierKind get(String literal)
@@ -173,7 +173,7 @@ public enum ModifierKind implements Enumerator
 	 * Returns the '<em><b>Modifier Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ModifierKind getByName(String name)
@@ -193,7 +193,7 @@ public enum ModifierKind implements Enumerator
 	 * Returns the '<em><b>Modifier Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ModifierKind get(int value)
@@ -215,7 +215,7 @@ public enum ModifierKind implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -223,7 +223,7 @@ public enum ModifierKind implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -231,7 +231,7 @@ public enum ModifierKind implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -240,7 +240,7 @@ public enum ModifierKind implements Enumerator
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ModifierKind(int value, String name, String literal)
@@ -253,7 +253,7 @@ public enum ModifierKind implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -265,7 +265,7 @@ public enum ModifierKind implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +277,7 @@ public enum ModifierKind implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -290,7 +290,7 @@ public enum ModifierKind implements Enumerator
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

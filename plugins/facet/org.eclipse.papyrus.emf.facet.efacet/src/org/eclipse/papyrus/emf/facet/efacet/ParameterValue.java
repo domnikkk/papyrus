@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.emf.facet.efacet;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -49,7 +48,7 @@ public interface ParameterValue extends EObject {
 	 * If the meaning of the '<em>Parameter</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Parameter</em>' reference.
 	 * @see #setParameter(Parameter)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getParameterValue_Parameter()
@@ -64,7 +63,7 @@ public interface ParameterValue extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.ParameterValue#getParameter <em>Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Parameter</em>' reference.
 	 * @see #getParameter()
@@ -82,7 +81,7 @@ public interface ParameterValue extends EObject {
 	 * If the meaning of the '<em>Value</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' attribute list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getParameterValue_Value()
 	 * @model

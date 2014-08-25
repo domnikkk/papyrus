@@ -32,7 +32,7 @@ public interface ServiceIdDesc extends AbstractServiceIdDesc {
 	 * If the meaning of the '<em>Start Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Start Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.StartupKind
 	 * @see #setStartKind(StartupKind)
@@ -46,7 +46,7 @@ public interface ServiceIdDesc extends AbstractServiceIdDesc {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc#getStartKind <em>Start Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Start Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.StartupKind
@@ -62,7 +62,7 @@ public interface ServiceIdDesc extends AbstractServiceIdDesc {
 	 * If the meaning of the '<em>Classname</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Classname</em>' attribute.
 	 * @see #setClassname(String)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getServiceIdDesc_Classname()
@@ -75,7 +75,7 @@ public interface ServiceIdDesc extends AbstractServiceIdDesc {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc#getClassname <em>Classname</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Classname</em>' attribute.
 	 * @see #getClassname()
@@ -91,7 +91,7 @@ public interface ServiceIdDesc extends AbstractServiceIdDesc {
 	 * If the meaning of the '<em>Injections</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Injections</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getServiceIdDesc_Injections()
 	 * @model containment="true" ordered="false"

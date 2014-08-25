@@ -219,5 +219,5 @@ public enum SelectOrRejectOperator implements Enumerator
   {
     return literal;
   }
-  
+
 } //SelectOrRejectOperator

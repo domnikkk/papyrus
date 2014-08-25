@@ -22,7 +22,7 @@ import org.eclipse.jface.viewers.Viewer;
 
 /**
  * Represents a provider of plugins their content
- * 
+ *
  * @author Laurent Wouters
  */
 public class PluginsContentProvider implements ITreeContentProvider {
@@ -43,7 +43,7 @@ public class PluginsContentProvider implements ITreeContentProvider {
 
 	/**
 	 * Creates the provider with the given filter on plugins' names
-	 * 
+	 *
 	 * @param plugins
 	 *            The plugins to provide
 	 * @param filter
@@ -59,7 +59,7 @@ public class PluginsContentProvider implements ITreeContentProvider {
 
 	/**
 	 * Gets the plugins to provide after the application of the filter
-	 * 
+	 *
 	 * @return The plugins to provide
 	 */
 	private Object[] getFilteredPlugins() {
@@ -78,7 +78,7 @@ public class PluginsContentProvider implements ITreeContentProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
 	 */
 	public void dispose() {
@@ -86,7 +86,7 @@ public class PluginsContentProvider implements ITreeContentProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 	 */
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
@@ -94,7 +94,7 @@ public class PluginsContentProvider implements ITreeContentProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getElements(java.lang.Object)
 	 */
 	public Object[] getElements(Object inputElement) {
@@ -103,7 +103,7 @@ public class PluginsContentProvider implements ITreeContentProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getChildren(java.lang.Object)
 	 */
 	public Object[] getChildren(Object element) {
@@ -120,7 +120,7 @@ public class PluginsContentProvider implements ITreeContentProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getParent(java.lang.Object)
 	 */
 	public Object getParent(Object element) {
@@ -135,7 +135,7 @@ public class PluginsContentProvider implements ITreeContentProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#hasChildren(java.lang.Object)
 	 */
 	public boolean hasChildren(Object element) {

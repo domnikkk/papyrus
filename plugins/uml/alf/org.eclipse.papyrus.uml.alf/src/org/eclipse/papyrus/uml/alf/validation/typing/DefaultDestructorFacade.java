@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,11 +14,11 @@
 package org.eclipse.papyrus.uml.alf.validation.typing;
 
 public class DefaultDestructorFacade extends SignatureFacade {
-	
+
 	public DefaultDestructorFacade() {
 		super() ;
 	}
-	
+
 	@Override
 	public String getName() {
 		return "destroy";
@@ -38,10 +38,10 @@ public class DefaultDestructorFacade extends SignatureFacade {
 	public boolean isAConstructor() {
 		return false;
 	}
-	
+
 	@Override
 	public boolean isADestructor(){
 		return true ;
 	}
-	
+
 }

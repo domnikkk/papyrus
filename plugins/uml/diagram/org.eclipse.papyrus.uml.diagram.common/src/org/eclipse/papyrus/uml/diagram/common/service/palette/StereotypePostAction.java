@@ -1834,7 +1834,7 @@ public class StereotypePostAction extends ModelPostAction {
 		/*
 		 * we copy the stereotype with runtime properties we copy the runtime
 		 * properties (note that the values aren't not copied)
-		 * 
+		 *
 		 * so steWithPropToEdit contains only stereotypes with only their
 		 * runtime properties.
 		 */

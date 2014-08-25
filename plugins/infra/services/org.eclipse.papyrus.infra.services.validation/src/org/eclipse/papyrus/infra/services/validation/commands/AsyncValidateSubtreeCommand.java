@@ -31,7 +31,7 @@ public class AsyncValidateSubtreeCommand extends ValidateSubtreeCommand {
 
 	/**
 	 * Constructor based on selected element and diagnostician
-	 * 
+	 *
 	 * @param selectedElement
 	 *            the element from which on a subtree should be validated
 	 * @param diagnostician

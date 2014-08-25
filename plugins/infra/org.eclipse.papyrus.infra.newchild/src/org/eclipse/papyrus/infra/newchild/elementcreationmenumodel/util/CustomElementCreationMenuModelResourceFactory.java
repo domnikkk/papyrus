@@ -23,7 +23,7 @@ public class CustomElementCreationMenuModelResourceFactory extends ElementCreati
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomElementCreationMenuModelResourceFactory() {
@@ -34,7 +34,7 @@ public class CustomElementCreationMenuModelResourceFactory extends ElementCreati
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

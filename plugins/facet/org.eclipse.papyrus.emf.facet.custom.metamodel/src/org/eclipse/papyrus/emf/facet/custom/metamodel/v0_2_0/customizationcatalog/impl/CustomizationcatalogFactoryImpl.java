@@ -18,13 +18,16 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.customizationcatalog.*;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.customizationcatalog.CustomizationCatalog;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.customizationcatalog.CustomizationPropertiesCatalog;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.customizationcatalog.CustomizationcatalogFactory;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.customizationcatalog.CustomizationcatalogPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CustomizationcatalogFactoryImpl extends EFactoryImpl implements CustomizationcatalogFactory {
@@ -32,7 +35,7 @@ public class CustomizationcatalogFactoryImpl extends EFactoryImpl implements Cus
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static CustomizationcatalogFactory init() {
@@ -51,7 +54,7 @@ public class CustomizationcatalogFactoryImpl extends EFactoryImpl implements Cus
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomizationcatalogFactoryImpl() {
@@ -61,7 +64,7 @@ public class CustomizationcatalogFactoryImpl extends EFactoryImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +82,7 @@ public class CustomizationcatalogFactoryImpl extends EFactoryImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomizationCatalog createCustomizationCatalog() {
@@ -90,7 +93,7 @@ public class CustomizationcatalogFactoryImpl extends EFactoryImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomizationPropertiesCatalog createCustomizationPropertiesCatalog() {
@@ -101,7 +104,7 @@ public class CustomizationcatalogFactoryImpl extends EFactoryImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomizationcatalogPackage getCustomizationcatalogPackage() {
@@ -111,7 +114,7 @@ public class CustomizationcatalogFactoryImpl extends EFactoryImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

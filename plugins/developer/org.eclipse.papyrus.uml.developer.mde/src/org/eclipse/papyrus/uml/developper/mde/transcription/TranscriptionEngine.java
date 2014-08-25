@@ -118,7 +118,7 @@ public class TranscriptionEngine {
 
 	/**
 	 * create a content from a package
-	 * 
+	 *
 	 * @param out
 	 *            the result
 	 * @param documentModel

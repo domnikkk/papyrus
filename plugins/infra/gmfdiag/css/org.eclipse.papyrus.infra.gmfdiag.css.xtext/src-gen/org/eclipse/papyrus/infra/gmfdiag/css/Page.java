@@ -39,7 +39,7 @@ public interface Page extends Content
 	 * If the meaning of the '<em>Pseudo</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Pseudo</em>' containment reference.
 	 * @see #setPseudo(PseudoPage)
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getPage_Pseudo()
@@ -52,7 +52,7 @@ public interface Page extends Content
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.gmfdiag.css.Page#getPseudo <em>Pseudo</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Pseudo</em>' containment reference.
 	 * @see #getPseudo()
@@ -68,7 +68,7 @@ public interface Page extends Content
 	 * If the meaning of the '<em>Declarations</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Declarations</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getPage_Declarations()
 	 * @model containment="true"

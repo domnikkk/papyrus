@@ -95,7 +95,7 @@ public class SashTabDecorationSynchronizer {
 	/**
 	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param container
 	 *            The container to synchronize.
 	 *
@@ -132,7 +132,7 @@ public class SashTabDecorationSynchronizer {
 
 	/**
 	 * Start listening on change for the specified page.
-	 * 
+	 *
 	 * @param page
 	 */
 	protected void attachPage(IPage page) {
@@ -147,7 +147,7 @@ public class SashTabDecorationSynchronizer {
 
 	/**
 	 * Stop listening on change for the specified page.
-	 * 
+	 *
 	 * @param page
 	 */
 	protected void detachPage(IPage page) {
@@ -169,7 +169,7 @@ public class SashTabDecorationSynchronizer {
 
 	/**
 	 * Refresh the tab for the specified page
-	 * 
+	 *
 	 * @param page
 	 */
 	protected void refreshContainerTabForPage(IPage page) {
@@ -198,7 +198,7 @@ public class SashTabDecorationSynchronizer {
 
 	/**
 	 * Visitor to visit all pages of the container and attach the page.
-	 * 
+	 *
 	 * @author dumoulin
 	 *
 	 */
@@ -218,7 +218,7 @@ public class SashTabDecorationSynchronizer {
 
 	/**
 	 * Visitor to visit all pages of the container and attach the page.
-	 * 
+	 *
 	 * @author dumoulin
 	 *
 	 */

@@ -67,7 +67,7 @@ public class PasteInDiagramHandler extends AbstractGraphicalCommandHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.menu.handlers.AbstractGraphicalCommandHandler#setEnabled(java.lang.Object)
 	 */
 	@Override

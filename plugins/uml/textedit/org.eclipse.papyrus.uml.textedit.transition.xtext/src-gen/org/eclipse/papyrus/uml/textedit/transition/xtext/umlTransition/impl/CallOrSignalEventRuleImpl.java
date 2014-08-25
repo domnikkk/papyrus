@@ -3,15 +3,11 @@
 package org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.CallOrSignalEventRule;
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage;
-
 import org.eclipse.uml2.uml.NamedElement;
 
 /**
@@ -33,7 +29,7 @@ public class CallOrSignalEventRuleImpl extends EventRuleImpl implements CallOrSi
 	 * The cached value of the '{@link #getOperationOrSignal() <em>Operation Or Signal</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperationOrSignal()
 	 * @generated
 	 * @ordered
@@ -43,7 +39,7 @@ public class CallOrSignalEventRuleImpl extends EventRuleImpl implements CallOrSi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CallOrSignalEventRuleImpl()
@@ -54,7 +50,7 @@ public class CallOrSignalEventRuleImpl extends EventRuleImpl implements CallOrSi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -66,7 +62,7 @@ public class CallOrSignalEventRuleImpl extends EventRuleImpl implements CallOrSi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,7 +85,7 @@ public class CallOrSignalEventRuleImpl extends EventRuleImpl implements CallOrSi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement basicGetOperationOrSignal()
@@ -100,7 +96,7 @@ public class CallOrSignalEventRuleImpl extends EventRuleImpl implements CallOrSi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +112,7 @@ public class CallOrSignalEventRuleImpl extends EventRuleImpl implements CallOrSi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +132,7 @@ public class CallOrSignalEventRuleImpl extends EventRuleImpl implements CallOrSi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,7 +150,7 @@ public class CallOrSignalEventRuleImpl extends EventRuleImpl implements CallOrSi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +168,7 @@ public class CallOrSignalEventRuleImpl extends EventRuleImpl implements CallOrSi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

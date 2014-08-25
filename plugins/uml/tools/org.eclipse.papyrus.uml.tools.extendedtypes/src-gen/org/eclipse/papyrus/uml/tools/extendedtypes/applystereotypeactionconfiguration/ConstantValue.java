@@ -38,7 +38,7 @@ public interface ConstantValue extends FeatureValue {
 	 * If the meaning of the '<em>Value Instance</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value Instance</em>' containment reference.
 	 * @see #setValueInstance(ValueSpecification)
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage#getConstantValue_ValueInstance()
@@ -51,7 +51,7 @@ public interface ConstantValue extends FeatureValue {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ConstantValue#getValueInstance <em>Value Instance</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value Instance</em>' containment reference.
 	 * @see #getValueInstance()

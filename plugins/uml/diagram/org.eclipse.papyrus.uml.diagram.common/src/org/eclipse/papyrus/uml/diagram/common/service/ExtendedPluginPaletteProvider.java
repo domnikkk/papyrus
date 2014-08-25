@@ -427,7 +427,7 @@ public class ExtendedPluginPaletteProvider extends AbstractProvider implements I
 
 	/**
 	 * Generates a {@link PaletteSeparator}, adds it to a container and returns it
-	 * 
+	 *
 	 * @param container
 	 *            the container where to add the created separator
 	 * @param leafConfiguration

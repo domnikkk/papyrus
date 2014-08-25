@@ -46,7 +46,7 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	 * The cached value of the '{@link #getResultList() <em>Result List</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getResultList()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ETypedElementEObjectListResultImpl() {
@@ -66,7 +66,7 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +77,7 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<T> getResultList() {
@@ -90,7 +90,7 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -123,7 +123,7 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class ETypedElementEObjectListResultImpl<T extends EObject> extends EType
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

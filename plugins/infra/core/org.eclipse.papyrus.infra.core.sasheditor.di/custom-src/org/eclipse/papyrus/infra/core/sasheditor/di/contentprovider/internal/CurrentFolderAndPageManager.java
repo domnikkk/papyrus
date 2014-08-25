@@ -50,7 +50,7 @@ public class CurrentFolderAndPageManager implements ICurrentFolderAndPageMngr {
 	 * This implementation ask to the {@link ISashWindowsContainer}. <br>
 	 * The current folder is usually the folder containing the currently active
 	 * page.
-	 * 
+	 *
 	 * @return The current folder, or null if no folder is selected.
 	 */
 	@Override

@@ -29,14 +29,14 @@ public interface IObservableListListener<E> {
 
 	/**
 	 * Method called when an element is added to the list.
-	 * 
+	 *
 	 * @param element
 	 */
 	public void elementAdded(E element);
 
 	/**
 	 * Method called when an element is removed from the list.
-	 * 
+	 *
 	 * @param element
 	 */
 	public void elementRemoved(E element);

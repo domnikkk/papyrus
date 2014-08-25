@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -43,7 +42,7 @@ public interface StereotypeToApply extends EObject {
 	 * If the meaning of the '<em>Stereotype Qualified Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stereotype Qualified Name</em>' attribute.
 	 * @see #setStereotypeQualifiedName(String)
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage#getStereotypeToApply_StereotypeQualifiedName()
@@ -56,7 +55,7 @@ public interface StereotypeToApply extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Stereotype Qualified Name</em>' attribute.
 	 * @see #getStereotypeQualifiedName()
@@ -71,7 +70,7 @@ public interface StereotypeToApply extends EObject {
 	 * If the meaning of the '<em>Update Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Update Name</em>' attribute.
 	 * @see #setUpdateName(boolean)
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage#getStereotypeToApply_UpdateName()
@@ -84,7 +83,7 @@ public interface StereotypeToApply extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#isUpdateName <em>Update Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Update Name</em>' attribute.
 	 * @see #isUpdateName()
@@ -100,7 +99,7 @@ public interface StereotypeToApply extends EObject {
 	 * If the meaning of the '<em>Required Profiles</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Required Profiles</em>' attribute list.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage#getStereotypeToApply_RequiredProfiles()
 	 * @model required="true"
@@ -116,7 +115,7 @@ public interface StereotypeToApply extends EObject {
 	 * If the meaning of the '<em>Features To Set</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Features To Set</em>' containment reference list.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage#getStereotypeToApply_FeaturesToSet()
 	 * @model containment="true"

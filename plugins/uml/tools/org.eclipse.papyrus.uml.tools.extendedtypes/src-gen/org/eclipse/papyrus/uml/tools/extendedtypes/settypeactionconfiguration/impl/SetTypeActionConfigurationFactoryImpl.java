@@ -15,18 +15,17 @@ package org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.i
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.*;
+import org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.SetTypeActionConfiguration;
+import org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.SetTypeActionConfigurationFactory;
+import org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.SetTypeActionConfigurationPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SetTypeActionConfigurationFactoryImpl extends EFactoryImpl implements SetTypeActionConfigurationFactory {
@@ -34,7 +33,7 @@ public class SetTypeActionConfigurationFactoryImpl extends EFactoryImpl implemen
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SetTypeActionConfigurationFactory init() {
@@ -53,7 +52,7 @@ public class SetTypeActionConfigurationFactoryImpl extends EFactoryImpl implemen
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SetTypeActionConfigurationFactoryImpl() {
@@ -63,7 +62,7 @@ public class SetTypeActionConfigurationFactoryImpl extends EFactoryImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +78,7 @@ public class SetTypeActionConfigurationFactoryImpl extends EFactoryImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SetTypeActionConfiguration createSetTypeActionConfiguration() {
@@ -90,7 +89,7 @@ public class SetTypeActionConfigurationFactoryImpl extends EFactoryImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SetTypeActionConfigurationPackage getSetTypeActionConfigurationPackage() {
@@ -100,7 +99,7 @@ public class SetTypeActionConfigurationFactoryImpl extends EFactoryImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

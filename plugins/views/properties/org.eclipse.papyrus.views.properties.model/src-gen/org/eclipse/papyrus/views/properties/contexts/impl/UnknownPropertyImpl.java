@@ -23,7 +23,7 @@ public class UnknownPropertyImpl extends PropertyImpl implements UnknownProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected UnknownPropertyImpl() {
@@ -33,7 +33,7 @@ public class UnknownPropertyImpl extends PropertyImpl implements UnknownProperty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

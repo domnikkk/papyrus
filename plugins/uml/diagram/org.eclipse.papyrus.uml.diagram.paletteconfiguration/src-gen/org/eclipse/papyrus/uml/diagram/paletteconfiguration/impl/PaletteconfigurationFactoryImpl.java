@@ -27,7 +27,7 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolKind;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements PaletteconfigurationFactory {
@@ -35,7 +35,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static PaletteconfigurationFactory init() {
@@ -54,7 +54,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PaletteconfigurationFactoryImpl() {
@@ -64,7 +64,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PaletteConfiguration createPaletteConfiguration() {
@@ -135,7 +135,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ToolConfiguration createToolConfiguration() {
@@ -146,7 +146,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StackConfiguration createStackConfiguration() {
@@ -157,7 +157,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DrawerConfiguration createDrawerConfiguration() {
@@ -168,7 +168,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IconDescriptor createIconDescriptor() {
@@ -179,7 +179,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementDescriptor createElementDescriptor() {
@@ -190,7 +190,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SeparatorConfiguration createSeparatorConfiguration() {
@@ -201,7 +201,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ToolKind createToolKindFromString(EDataType eDataType, String initialValue) {
@@ -215,7 +215,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertToolKindToString(EDataType eDataType, Object instanceValue) {
@@ -225,7 +225,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PaletteconfigurationPackage getPaletteconfigurationPackage() {
@@ -235,7 +235,7 @@ public class PaletteconfigurationFactoryImpl extends EFactoryImpl implements Pal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

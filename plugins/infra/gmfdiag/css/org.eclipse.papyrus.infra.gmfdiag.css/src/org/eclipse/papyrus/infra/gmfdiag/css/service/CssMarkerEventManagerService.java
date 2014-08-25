@@ -139,7 +139,7 @@ public class CssMarkerEventManagerService implements IMarkerEventListener {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.markerlistener.IMarkerEventListener#notifyMarkerChange(org.eclipse.emf.ecore.EObject,
 	 * org.eclipse.core.resources.IMarker, int)
 	 */
@@ -228,7 +228,7 @@ public class CssMarkerEventManagerService implements IMarkerEventListener {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.markerlistener.IMarkerEventListener#isNotifiedOnInitialMarkerCheck()
 	 */
 	@Override

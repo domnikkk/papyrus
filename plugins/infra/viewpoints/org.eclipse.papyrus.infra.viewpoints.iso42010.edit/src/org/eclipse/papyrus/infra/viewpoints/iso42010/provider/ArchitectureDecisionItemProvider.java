@@ -19,7 +19,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -27,7 +26,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
 
@@ -35,7 +33,7 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ArchitectureDecisionItemProvider
@@ -50,7 +48,7 @@ public class ArchitectureDecisionItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ArchitectureDecisionItemProvider(AdapterFactory adapterFactory) {
@@ -61,7 +59,7 @@ public class ArchitectureDecisionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +81,7 @@ public class ArchitectureDecisionItemProvider
 	 * This adds a property descriptor for the Justified By feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addJustifiedByPropertyDescriptor(Object object) {
@@ -106,7 +104,7 @@ public class ArchitectureDecisionItemProvider
 	 * This adds a property descriptor for the Depends Upon feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDependsUponPropertyDescriptor(Object object) {
@@ -129,7 +127,7 @@ public class ArchitectureDecisionItemProvider
 	 * This adds a property descriptor for the Dependents feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDependentsPropertyDescriptor(Object object) {
@@ -152,7 +150,7 @@ public class ArchitectureDecisionItemProvider
 	 * This adds a property descriptor for the Raises feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addRaisesPropertyDescriptor(Object object) {
@@ -175,7 +173,7 @@ public class ArchitectureDecisionItemProvider
 	 * This adds a property descriptor for the Pertains To feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addPertainsToPropertyDescriptor(Object object) {
@@ -198,7 +196,7 @@ public class ArchitectureDecisionItemProvider
 	 * This adds a property descriptor for the Affects feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addAffectsPropertyDescriptor(Object object) {
@@ -221,7 +219,7 @@ public class ArchitectureDecisionItemProvider
 	 * This returns ArchitectureDecision.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +231,7 @@ public class ArchitectureDecisionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +247,7 @@ public class ArchitectureDecisionItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +261,7 @@ public class ArchitectureDecisionItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

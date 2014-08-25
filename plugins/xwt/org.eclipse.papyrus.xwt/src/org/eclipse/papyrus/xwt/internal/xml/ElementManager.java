@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.xwt.internal.xml;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PushbackInputStream;
@@ -29,6 +30,7 @@ import javax.xml.parsers.SAXParserFactory;
 import org.eclipse.papyrus.xwt.IConstants;
 import org.eclipse.papyrus.xwt.XWT;
 import org.eclipse.papyrus.xwt.callback.IBeforeParsingCallback;
+import org.eclipse.papyrus.xwt.internal.core.Core;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
@@ -91,7 +93,7 @@ public class ElementManager {
 
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see
 			 * org.xml.sax.ErrorHandler#error(org.xml.sax.SAXParseException)
 			 */
@@ -114,7 +116,7 @@ public class ElementManager {
 
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see
 			 * org.xml.sax.ErrorHandler#fatalError(org.xml.sax.SAXParseException
 			 * )
@@ -139,7 +141,7 @@ public class ElementManager {
 
 			/*
 			 * (non-Javadoc)
-			 * 
+			 *
 			 * @see
 			 * org.xml.sax.ErrorHandler#warning(org.xml.sax.SAXParseException)
 			 */
@@ -164,7 +166,7 @@ public class ElementManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IElementManager#getDocumentRoot()
 	 */
 	public DocumentRoot getDocumentRoot() {
@@ -173,7 +175,7 @@ public class ElementManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IElementManager#getElement(java.lang.String)
 	 */
 	public Element getElement(String id) {
@@ -183,7 +185,7 @@ public class ElementManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IElementManager#getElements()
 	 */
 	public String[] getElements() {
@@ -192,7 +194,7 @@ public class ElementManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IElementManager#getEncoding()
 	 */
 	public String getEncoding() {
@@ -201,7 +203,7 @@ public class ElementManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IElementManager#getRootElement()
 	 */
 	public Element getRootElement() {
@@ -220,7 +222,7 @@ public class ElementManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.soyatec.xaml.IElementManager#hasElement(java.lang.String)
 	 */
 	public boolean hasElement(String id) {

@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.NUMBER_LITERAL;
 
@@ -86,8 +83,9 @@ public class NUMBER_LITERALImpl extends LITERALImpl implements NUMBER_LITERAL
   {
     String oldValue = value;
     value = newValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NUMBER_LITERAL__VALUE, oldValue, value));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.NUMBER_LITERAL__VALUE, oldValue, value));
+	}
   }
 
   /**
@@ -164,7 +162,9 @@ public class NUMBER_LITERALImpl extends LITERALImpl implements NUMBER_LITERAL
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (value: ");

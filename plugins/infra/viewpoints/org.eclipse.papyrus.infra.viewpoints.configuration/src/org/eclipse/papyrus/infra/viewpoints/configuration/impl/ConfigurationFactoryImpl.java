@@ -16,18 +16,29 @@ package org.eclipse.papyrus.infra.viewpoints.configuration.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.viewpoints.configuration.*;
+import org.eclipse.papyrus.infra.viewpoints.configuration.Category;
+import org.eclipse.papyrus.infra.viewpoints.configuration.ChildRule;
+import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationFactory;
+import org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage;
+import org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate;
+import org.eclipse.papyrus.infra.viewpoints.configuration.ModelRule;
+import org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusSyncTable;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusTable;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusView;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint;
+import org.eclipse.papyrus.infra.viewpoints.configuration.PathElement;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ConfigurationFactoryImpl extends EFactoryImpl implements ConfigurationFactory {
@@ -35,7 +46,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ConfigurationFactory init() {
@@ -54,7 +65,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConfigurationFactoryImpl() {
@@ -64,7 +75,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +115,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusConfiguration createPapyrusConfiguration() {
@@ -115,7 +126,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusViewpoint createPapyrusViewpoint() {
@@ -126,7 +137,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusView createPapyrusView() {
@@ -137,7 +148,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusDiagram createPapyrusDiagram() {
@@ -148,7 +159,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusSyncTable createPapyrusSyncTable() {
@@ -159,7 +170,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusTable createPapyrusTable() {
@@ -170,7 +181,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelRule createModelRule() {
@@ -181,7 +192,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public OwningRule createOwningRule() {
@@ -192,7 +203,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ChildRule createChildRule() {
@@ -203,7 +214,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PaletteRule createPaletteRule() {
@@ -214,7 +225,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PathElement createPathElement() {
@@ -225,7 +236,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Category createCategory() {
@@ -236,7 +247,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelAutoCreate createModelAutoCreate() {
@@ -247,7 +258,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConfigurationPackage getConfigurationPackage() {
@@ -257,7 +268,7 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

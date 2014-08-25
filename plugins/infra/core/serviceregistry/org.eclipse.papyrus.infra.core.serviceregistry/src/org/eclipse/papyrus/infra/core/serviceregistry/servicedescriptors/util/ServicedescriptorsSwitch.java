@@ -4,10 +4,24 @@ package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.*;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AbstractMethodInjection;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AbstractServiceDesc;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AliasDesc;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ConstructorInjection;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Descriptors;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.FeatureInjection;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.InjectedService;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.InjectedValue;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.MethodInjection;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.OpaqueInjectedValue;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ParameterInjection;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.PropertyInjection;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceDesc;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceFactoryDesc;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceSetDesc;
+import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +32,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage
  * @generated
  */
@@ -27,7 +41,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static ServicedescriptorsPackage modelPackage;
@@ -36,7 +50,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ServicedescriptorsSwitch() {
@@ -49,7 +63,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -63,7 +77,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -245,7 +259,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Registry Desc</em>'.
@@ -262,7 +276,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Service Set Desc</em>'.
@@ -279,7 +293,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Abstract Service Desc</em>'.
@@ -296,7 +310,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Service Desc</em>'.
@@ -313,7 +327,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Feature Injection</em>'.
@@ -330,7 +344,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Alias Desc</em>'.
@@ -347,7 +361,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Descriptors</em>'.
@@ -364,7 +378,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Property Injection</em>'.
@@ -381,7 +395,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Injected Value</em>'.
@@ -398,7 +412,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Method Injection</em>'.
@@ -415,7 +429,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Abstract Method Injection</em>'.
@@ -432,7 +446,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Parameter Injection</em>'.
@@ -449,7 +463,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Injected Service</em>'.
@@ -466,7 +480,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Opaque Injected Value</em>'.
@@ -483,7 +497,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Constructor Injection</em>'.
@@ -500,7 +514,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Service Factory Desc</em>'.
@@ -517,7 +531,7 @@ public class ServicedescriptorsSwitch<T> extends Switch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

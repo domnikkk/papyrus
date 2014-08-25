@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.gmf.diagram.common.edit.policy;
 
-import static org.eclipse.papyrus.gmf.diagram.common.provider.IGraphicalTypeRegistry.UNDEFINED_TYPE;
+import static org.eclipse.papyrus.infra.gmfdiag.common.providers.IGraphicalTypeRegistry.UNDEFINED_TYPE;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -96,7 +96,7 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	/**
 	 * <pre>
 	 * {@inheritedDoc}.
-	 * 
+	 *
 	 * Overridden method to fix some exception occurring while moving affixed element (nodes or labels)
 	 * (https://bugs.eclipse.org/bugs/show_bug.cgi?id=350680).
 	 * </pre>
@@ -318,7 +318,7 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	 * <pre>
 	 * Sub-classes have to implement this method in order to provides specific drop command for
 	 * element which require a specific treatment.
-	 * 
+	 *
 	 * @param dropRequest current drop request
 	 * @param droppedEObject the dropped object
 	 * @param nodeType the graphical type of the dropped element (node representation)
@@ -334,7 +334,7 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	 * <pre>
 	 * Sub-classes have to implement this method in order to provides drop command for
 	 * elements that are not natively known by the diagram.
-	 * 
+	 *
 	 * @param dropRequest current drop request
 	 * @param droppedEObject the dropped object
 	 * @return the drop command

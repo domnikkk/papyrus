@@ -14,9 +14,9 @@
 
 package org.eclipse.papyrus.infra.core.serviceregistry;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
@@ -73,7 +73,7 @@ public class ServicesRegistryWithParentTest {
 	 * Create a registry with 2 parents.
 	 * Add a service in each registry
 	 * Try to get each service from the main regitry.
-	 * 
+	 *
 	 * @throws ServiceException
 	 *
 	 */
@@ -122,7 +122,7 @@ public class ServicesRegistryWithParentTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry#getService(java.lang.Class)}.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Test
@@ -165,7 +165,7 @@ public class ServicesRegistryWithParentTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry#startRegistry()}.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Test
@@ -183,7 +183,7 @@ public class ServicesRegistryWithParentTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry#disposeRegistry()}.
-	 * 
+	 *
 	 * @throws ServiceMultiException
 	 */
 	@Test
@@ -224,7 +224,7 @@ public class ServicesRegistryWithParentTest {
 
 	/**
 	 * Test the start order for services having a dependency in a parent registry
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Test
@@ -258,7 +258,7 @@ public class ServicesRegistryWithParentTest {
 
 	/**
 	 * Test {@link ServicesRegistry#isStarted(Object)} for services in a parent registry
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Test
@@ -293,7 +293,7 @@ public class ServicesRegistryWithParentTest {
 
 	/**
 	 * Test {@link ServicesRegistry#isStarted(Object)} for services in a parent registry
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Test
@@ -328,7 +328,7 @@ public class ServicesRegistryWithParentTest {
 
 	/**
 	 * Test the alias service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Test

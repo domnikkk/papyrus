@@ -13,12 +13,9 @@ package org.eclipse.papyrus.infra.gmfdiag.css.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.Combinator;
 import org.eclipse.papyrus.infra.gmfdiag.css.CompositeSelector;
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
@@ -46,7 +43,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	 * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLeft()
 	 * @generated
 	 * @ordered
@@ -57,7 +54,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	 * The cached value of the '{@link #getCombinator() <em>Combinator</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCombinator()
 	 * @generated
 	 * @ordered
@@ -68,7 +65,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	 * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRight()
 	 * @generated
 	 * @ordered
@@ -78,7 +75,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CompositeSelectorImpl()
@@ -89,7 +86,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +98,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +110,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLeft(SimpleSelector newLeft, NotificationChain msgs)
@@ -135,7 +132,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +160,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +172,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetCombinator(Combinator newCombinator, NotificationChain msgs)
@@ -197,7 +194,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +222,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,7 +234,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetRight(Selector newRight, NotificationChain msgs)
@@ -259,7 +256,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +284,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +305,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -329,7 +326,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -353,7 +350,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -377,7 +374,7 @@ public class CompositeSelectorImpl extends SelectorImpl implements CompositeSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

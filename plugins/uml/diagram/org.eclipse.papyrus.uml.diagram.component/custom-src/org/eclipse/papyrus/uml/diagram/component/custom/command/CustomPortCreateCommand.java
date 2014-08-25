@@ -42,7 +42,7 @@ public class CustomPortCreateCommand extends org.eclipse.papyrus.uml.diagram.com
 	 * Checks if the Port can be created on the Property.
 	 * The Property must be typed by a StructuredClassifier (in other words, an element that
 	 * can own Port). The new Port is owned be the type of the Property.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -62,7 +62,7 @@ public class CustomPortCreateCommand extends org.eclipse.papyrus.uml.diagram.com
 	 * Custom creation of the Port :
 	 * - resolve the Property type
 	 * - add a new Port on this type.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

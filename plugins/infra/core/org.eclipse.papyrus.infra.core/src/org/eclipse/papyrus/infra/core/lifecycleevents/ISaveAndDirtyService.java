@@ -14,6 +14,7 @@
 
 package org.eclipse.papyrus.infra.core.lifecycleevents;
 
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.ui.ISaveablePart;
 
 /**

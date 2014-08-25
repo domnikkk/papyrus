@@ -18,7 +18,7 @@ import org.eclipse.papyrus.gmf.diagram.common.compatibility.IDiagramVersionUpdat
 
 /**
  * Diagram version updater for the Internal Block Diagram.*
- * 
+ *
  * @Deprecated
  * @link org.eclipse.papyrus.sysml.diagram.internalblock.migration.InternalBlockDiagramReconcilierUndefinedTo100
  */

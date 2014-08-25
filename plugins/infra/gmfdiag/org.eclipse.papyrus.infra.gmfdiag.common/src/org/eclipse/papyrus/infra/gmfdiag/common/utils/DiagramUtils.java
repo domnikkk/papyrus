@@ -210,7 +210,7 @@ public class DiagramUtils {
 
 	/**
 	 * Return the diagram containing this view
-	 * 
+	 *
 	 * @param view
 	 * @return
 	 */
@@ -227,7 +227,7 @@ public class DiagramUtils {
 
 	/**
 	 * Return the type of the diagram containing this view
-	 * 
+	 *
 	 * @param view
 	 * @return
 	 */

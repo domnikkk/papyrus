@@ -36,14 +36,14 @@ import org.eclipse.uml2.types.TypesPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass newEMFChildMenuEClass = null;
@@ -51,7 +51,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass newChildPolicySetEClass = null;
@@ -59,7 +59,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass newChildPolicyEClass = null;
@@ -67,7 +67,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass filterPolicyEClass = null;
@@ -75,7 +75,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass replacePolicyEClass = null;
@@ -83,7 +83,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass customPolicyEClass = null;
@@ -91,7 +91,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum createInEEnum = null;
@@ -99,7 +99,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum layoutEEnum = null;
@@ -109,7 +109,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage#eNS_URI
 	 * @see #init()
@@ -122,7 +122,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -132,7 +132,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	 *
 	 * <p>
 	 * This method is used to initialize {@link NcpolicyPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -177,7 +177,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getNewEMFChildMenu() {
@@ -187,7 +187,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNewEMFChildMenu_CreateIn() {
@@ -197,7 +197,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNewEMFChildMenu_Layout() {
@@ -207,7 +207,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getNewEMFChildMenu_Groups() {
@@ -217,7 +217,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getNewChildPolicySet() {
@@ -227,7 +227,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNewChildPolicySet_Name() {
@@ -237,7 +237,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getNewChildPolicySet_Policies() {
@@ -247,7 +247,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getNewChildPolicy() {
@@ -257,7 +257,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNewChildPolicy_Roles() {
@@ -267,7 +267,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getNewChildPolicy_EClasses() {
@@ -277,7 +277,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNewChildPolicy_Name() {
@@ -287,7 +287,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFilterPolicy() {
@@ -297,7 +297,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getReplacePolicy() {
@@ -307,7 +307,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getReplacePolicy_ReplaceWith() {
@@ -317,7 +317,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCustomPolicy() {
@@ -327,7 +327,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCustomPolicy_ClassName() {
@@ -337,7 +337,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getCreateIn() {
@@ -347,7 +347,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getLayout() {
@@ -357,7 +357,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NcpolicyFactory getNcpolicyFactory() {
@@ -367,7 +367,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -377,7 +377,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -417,7 +417,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -427,7 +427,7 @@ public class NcpolicyPackageImpl extends EPackageImpl implements NcpolicyPackage
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

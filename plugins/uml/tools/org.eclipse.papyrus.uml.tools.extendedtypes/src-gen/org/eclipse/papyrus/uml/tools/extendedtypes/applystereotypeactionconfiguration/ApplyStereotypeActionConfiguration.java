@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.papyrus.infra.extendedtypes.SemanticActionConfiguration;
 
 /**
@@ -41,7 +40,7 @@ public interface ApplyStereotypeActionConfiguration extends SemanticActionConfig
 	 * If the meaning of the '<em>Stereotypes To Apply</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stereotypes To Apply</em>' containment reference list.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage#getApplyStereotypeActionConfiguration_StereotypesToApply()
 	 * @model containment="true"

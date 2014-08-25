@@ -25,8 +25,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.infra.core.resource.IReadOnlyHandler2;
-import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
 
 import com.google.common.base.Optional;
 

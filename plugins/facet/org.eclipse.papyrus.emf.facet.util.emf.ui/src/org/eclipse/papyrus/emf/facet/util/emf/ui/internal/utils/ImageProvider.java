@@ -11,10 +11,10 @@
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.util.emf.ui.internal.utils;
 
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.util.swt.imageprovider.IImageProvider;
 import org.eclipse.papyrus.emf.facet.util.swt.imageprovider.IImageProviderFactory;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 /**

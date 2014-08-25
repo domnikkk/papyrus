@@ -35,7 +35,7 @@ public class JavaqueryFactoryImpl extends EFactoryImpl implements JavaqueryFacto
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static JavaqueryFactory init() {
@@ -54,7 +54,7 @@ public class JavaqueryFactoryImpl extends EFactoryImpl implements JavaqueryFacto
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaqueryFactoryImpl() {
@@ -64,7 +64,7 @@ public class JavaqueryFactoryImpl extends EFactoryImpl implements JavaqueryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class JavaqueryFactoryImpl extends EFactoryImpl implements JavaqueryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaQuery createJavaQuery() {
@@ -91,7 +91,7 @@ public class JavaqueryFactoryImpl extends EFactoryImpl implements JavaqueryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public JavaqueryPackage getJavaqueryPackage() {
@@ -101,7 +101,7 @@ public class JavaqueryFactoryImpl extends EFactoryImpl implements JavaqueryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

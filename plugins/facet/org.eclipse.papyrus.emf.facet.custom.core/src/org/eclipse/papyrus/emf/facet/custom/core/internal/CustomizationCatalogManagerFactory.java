@@ -12,8 +12,8 @@
 package org.eclipse.papyrus.emf.facet.custom.core.internal;
 
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManagerFactory;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationCatalogManager;
+import org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManagerFactory;
 
 public class CustomizationCatalogManagerFactory implements
 		org.eclipse.papyrus.emf.facet.custom.core.ICustomizationCatalogManagerFactory {

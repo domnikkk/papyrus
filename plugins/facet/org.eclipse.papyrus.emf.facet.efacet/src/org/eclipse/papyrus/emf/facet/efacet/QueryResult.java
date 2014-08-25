@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.emf.facet.efacet;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -53,7 +52,7 @@ public interface QueryResult extends EObject {
 	 * <!-- begin-model-doc -->
 	 * The reference "query" references the executed query.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Query</em>' reference.
 	 * @see #setQuery(Query)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQueryResult_Query()
@@ -68,7 +67,7 @@ public interface QueryResult extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.QueryResult#getQuery <em>Query</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Query</em>' reference.
 	 * @see #getQuery()
@@ -85,7 +84,7 @@ public interface QueryResult extends EObject {
 	 * <!-- begin-model-doc -->
 	 * The scope references the model elements on which the query has been applied.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Scope</em>' reference.
 	 * @see #setScope(EObject)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQueryResult_Scope()
@@ -100,7 +99,7 @@ public interface QueryResult extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.QueryResult#getScope <em>Scope</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Scope</em>' reference.
 	 * @see #getScope()
@@ -118,7 +117,7 @@ public interface QueryResult extends EObject {
 	 * <!-- begin-model-doc -->
 	 * This is the list of the values given as parameters for the query execution.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Parameter Values</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQueryResult_ParameterValues()
 	 * @model containment="true"
@@ -135,7 +134,7 @@ public interface QueryResult extends EObject {
 	 * <!-- begin-model-doc -->
 	 * This is the result returned by the query execution.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Result</em>' attribute.
 	 * @see #setResult(Object)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQueryResult_Result()
@@ -150,7 +149,7 @@ public interface QueryResult extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.QueryResult#getResult <em>Result</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Result</em>' attribute.
 	 * @see #getResult()
@@ -167,7 +166,7 @@ public interface QueryResult extends EObject {
 	 * If the meaning of the '<em>Exception</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Exception</em>' attribute.
 	 * @see #setException(Exception)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQueryResult_Exception()
@@ -182,7 +181,7 @@ public interface QueryResult extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.QueryResult#getException <em>Exception</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Exception</em>' attribute.
 	 * @see #getException()
@@ -199,7 +198,7 @@ public interface QueryResult extends EObject {
 	 * If the meaning of the '<em>Source</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(EObject)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getQueryResult_Source()
@@ -214,7 +213,7 @@ public interface QueryResult extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.QueryResult#getSource <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Source</em>' reference.
 	 * @see #getSource()

@@ -36,7 +36,7 @@ public class StackConfigurationImpl extends ChildConfigurationImpl implements St
 	 * The cached value of the '{@link #getOwnedConfigurations() <em>Owned Configurations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOwnedConfigurations()
 	 * @generated
 	 * @ordered
@@ -46,7 +46,7 @@ public class StackConfigurationImpl extends ChildConfigurationImpl implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StackConfigurationImpl() {
@@ -56,7 +56,7 @@ public class StackConfigurationImpl extends ChildConfigurationImpl implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -67,7 +67,7 @@ public class StackConfigurationImpl extends ChildConfigurationImpl implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<LeafConfiguration> getOwnedConfigurations() {
@@ -80,7 +80,7 @@ public class StackConfigurationImpl extends ChildConfigurationImpl implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class StackConfigurationImpl extends ChildConfigurationImpl implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +110,7 @@ public class StackConfigurationImpl extends ChildConfigurationImpl implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -128,7 +128,7 @@ public class StackConfigurationImpl extends ChildConfigurationImpl implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +144,7 @@ public class StackConfigurationImpl extends ChildConfigurationImpl implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

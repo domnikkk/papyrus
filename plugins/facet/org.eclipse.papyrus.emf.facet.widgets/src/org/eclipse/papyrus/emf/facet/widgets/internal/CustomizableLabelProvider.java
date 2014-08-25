@@ -23,10 +23,10 @@ import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
-import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedLabelProvider;
-import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedLabelProviderFactory;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
+import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedLabelProvider;
+import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedLabelProviderFactory;
 import org.eclipse.swt.graphics.Image;
 
 @Deprecated

@@ -41,7 +41,7 @@ public class UMLConnectionPointReferenceScopeProvider extends AbstractDeclarativ
 
 	/**
 	 * Rule for computing the scope of entry references
-	 * 
+	 *
 	 * @param ctx
 	 * @param ref
 	 * @return
@@ -62,7 +62,7 @@ public class UMLConnectionPointReferenceScopeProvider extends AbstractDeclarativ
 
 	/**
 	 * Rule for computing the scope of exit references
-	 * 
+	 *
 	 * @param ctx
 	 * @param ref
 	 * @return

@@ -103,7 +103,7 @@ public class CommunicationDeferredCreateConnectionViewCommand extends CommonDefe
 
 			/*
 			 * Code Commented to no more set the the semantic element of the connector
-			 * 
+			 *
 			 * //Set element of the connector to Interaction !! This has to be changed in the next release, because it is incoherent !!!
 			 * //If setElement(null) , I can not do the reorient anymore !!
 			 * // View temp = (View)(createRequest.getConnectionViewDescriptor().getAdapter(View.class));

@@ -49,7 +49,7 @@ public interface ETypedElementEObjectResult<T extends EObject> extends ETypedEle
 	 * If the meaning of the '<em>Result</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Result</em>' reference.
 	 * @see #setResult(EObject)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.RuntimePackage#getETypedElementEObjectResult_Result()
@@ -62,7 +62,7 @@ public interface ETypedElementEObjectResult<T extends EObject> extends ETypedEle
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.ETypedElementEObjectResult#getResult <em>Result</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Result</em>' reference.
 	 * @see #getResult()

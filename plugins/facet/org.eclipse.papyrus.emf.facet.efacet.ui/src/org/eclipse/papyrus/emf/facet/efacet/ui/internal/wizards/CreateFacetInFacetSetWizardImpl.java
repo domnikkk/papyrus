@@ -16,6 +16,11 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
+import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.papyrus.emf.facet.efacet.EFacetFactory;
 import org.eclipse.papyrus.emf.facet.efacet.Facet;
 import org.eclipse.papyrus.emf.facet.efacet.FacetSet;
@@ -27,11 +32,6 @@ import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.ICreateF
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.IQueryCreationPagePart;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.CreateFacetInFacetSetWizardPage;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.CreateQueryWizardPage;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.window.Window;
-import org.eclipse.jface.wizard.Wizard;
-import org.eclipse.jface.wizard.WizardDialog;
 
 @Deprecated
 // TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601

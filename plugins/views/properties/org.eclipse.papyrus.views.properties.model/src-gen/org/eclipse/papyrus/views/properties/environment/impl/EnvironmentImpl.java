@@ -49,7 +49,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	 * The cached value of the '{@link #getModelElementFactories() <em>Model Element Factories</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getModelElementFactories()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	 * The cached value of the '{@link #getWidgetTypes() <em>Widget Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidgetTypes()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	 * The cached value of the '{@link #getPropertyEditorTypes() <em>Property Editor Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropertyEditorTypes()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	 * The cached value of the '{@link #getCompositeWidgetTypes() <em>Composite Widget Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCompositeWidgetTypes()
 	 * @generated
 	 * @ordered
@@ -93,7 +93,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	 * The cached value of the '{@link #getLayoutTypes() <em>Layout Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayoutTypes()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	 * The cached value of the '{@link #getNamespaces() <em>Namespaces</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNamespaces()
 	 * @generated
 	 * @ordered
@@ -115,7 +115,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	 * The cached value of the '{@link #getMiscClasses() <em>Misc Classes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMiscClasses()
 	 * @generated
 	 * @ordered
@@ -125,7 +125,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EnvironmentImpl() {
@@ -135,7 +135,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +216,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +230,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -298,7 +298,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -340,7 +340,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -374,7 +374,7 @@ public class EnvironmentImpl extends ConstraintEnvironmentImpl implements Enviro
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

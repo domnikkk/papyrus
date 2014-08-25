@@ -189,7 +189,7 @@ public class GmfMultiDiagramDocumentProvider extends AbstractDocumentProvider im
 	/**
 	 * Return true if the URI is a faulty URI, false otherwise.
 	 * Faulty URI: scheme = pathmap, platform
-	 * 
+	 *
 	 * @param resource
 	 * @return
 	 */

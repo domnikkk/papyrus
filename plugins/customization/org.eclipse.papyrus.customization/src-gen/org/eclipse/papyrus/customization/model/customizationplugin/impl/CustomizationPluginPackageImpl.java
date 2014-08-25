@@ -6,9 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.customization.model.customizationplugin.ConstraintsEnvironment;
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizableElement;
 import org.eclipse.papyrus.customization.model.customizationplugin.CustomizationConfiguration;
@@ -27,14 +25,14 @@ import org.eclipse.papyrus.customization.model.customizationplugin.UMLModel;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CustomizationPluginPackageImpl extends EPackageImpl implements CustomizationPluginPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass customizationConfigurationEClass = null;
@@ -42,7 +40,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass customizableElementEClass = null;
@@ -50,7 +48,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass fileBasedCustomizableElementEClass = null;
@@ -58,7 +56,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass propertyViewEClass = null;
@@ -66,7 +64,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass uiCustomEClass = null;
@@ -74,7 +72,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass modelTemplateEClass = null;
@@ -82,7 +80,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass paletteEClass = null;
@@ -90,7 +88,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass profileEClass = null;
@@ -98,7 +96,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass umlModelEClass = null;
@@ -106,7 +104,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass constraintsEnvironmentEClass = null;
@@ -114,7 +112,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass propertyViewEnvironmentEClass = null;
@@ -124,7 +122,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.customization.model.customizationplugin.CustomizationPluginPackage#eNS_URI
 	 * @see #init()
@@ -137,7 +135,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -148,7 +146,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	 * <p>
 	 * This method is used to initialize {@link CustomizationPluginPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -183,7 +181,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCustomizationConfiguration() {
@@ -193,7 +191,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCustomizationConfiguration_Plugin() {
@@ -203,7 +201,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCustomizationConfiguration_Elements() {
@@ -213,7 +211,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCustomizableElement() {
@@ -223,7 +221,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFileBasedCustomizableElement() {
@@ -233,7 +231,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getFileBasedCustomizableElement_File() {
@@ -243,7 +241,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPropertyView() {
@@ -253,7 +251,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getUICustom() {
@@ -263,7 +261,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getUICustom_LoadByDefault() {
@@ -273,7 +271,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getModelTemplate() {
@@ -283,7 +281,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getModelTemplate_Language() {
@@ -293,7 +291,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getModelTemplate_Name() {
@@ -303,7 +301,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getModelTemplate_Id() {
@@ -313,7 +311,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPalette() {
@@ -323,7 +321,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getProfile() {
@@ -333,7 +331,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getProfile_Qualifiednames() {
@@ -343,7 +341,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getProfile_Iconpath() {
@@ -353,7 +351,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getProfile_Description() {
@@ -363,7 +361,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getProfile_Provider() {
@@ -373,7 +371,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getProfile_Name() {
@@ -383,7 +381,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getUMLModel() {
@@ -393,7 +391,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getUMLModel_Name() {
@@ -403,7 +401,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getUMLModel_Iconpath() {
@@ -413,7 +411,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getUMLModel_Description() {
@@ -423,7 +421,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getUMLModel_Provider() {
@@ -433,7 +431,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getConstraintsEnvironment() {
@@ -443,7 +441,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getPropertyViewEnvironment() {
@@ -453,7 +451,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CustomizationPluginFactory getCustomizationPluginFactory() {
@@ -463,7 +461,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -473,7 +471,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -525,7 +523,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -535,7 +533,7 @@ public class CustomizationPluginPackageImpl extends EPackageImpl implements Cust
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

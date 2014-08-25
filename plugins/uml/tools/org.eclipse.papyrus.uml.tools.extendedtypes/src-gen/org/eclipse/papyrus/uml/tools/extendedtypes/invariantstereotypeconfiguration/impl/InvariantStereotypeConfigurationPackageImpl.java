@@ -26,7 +26,7 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfigurat
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl implements InvariantStereotypeConfigurationPackage {
@@ -34,7 +34,7 @@ public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass invariantStereotypeConfigurationEClass = null;
@@ -44,7 +44,7 @@ public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl im
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfiguration.InvariantStereotypeConfigurationPackage#eNS_URI
 	 * @see #init()
@@ -57,7 +57,7 @@ public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -68,7 +68,7 @@ public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl im
 	 * <p>
 	 * This method is used to initialize {@link InvariantStereotypeConfigurationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -98,7 +98,7 @@ public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getInvariantStereotypeConfiguration() {
@@ -108,7 +108,7 @@ public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInvariantStereotypeConfiguration_StereotypeQualifiedName() {
@@ -118,7 +118,7 @@ public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInvariantStereotypeConfiguration_RequiredProfile() {
@@ -128,7 +128,7 @@ public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantStereotypeConfigurationFactory getInvariantStereotypeConfigurationFactory() {
@@ -138,7 +138,7 @@ public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -148,7 +148,7 @@ public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl im
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -165,7 +165,7 @@ public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -175,7 +175,7 @@ public class InvariantStereotypeConfigurationPackageImpl extends EPackageImpl im
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

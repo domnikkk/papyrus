@@ -254,7 +254,7 @@ public class DecorationService extends Observable implements IDecorationService 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.markerlistener.IMarkerEventListener#notifyMarkerChange(org.eclipse.emf.ecore.EObject,
 	 * org.eclipse.core.resources.IMarker, int)
 	 */
@@ -268,7 +268,7 @@ public class DecorationService extends Observable implements IDecorationService 
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.markerlistener.IMarkerEventListener#isNotifiedOnInitialMarkerCheck()
 	 */
 	public boolean isNotifiedOnInitialMarkerCheck() {

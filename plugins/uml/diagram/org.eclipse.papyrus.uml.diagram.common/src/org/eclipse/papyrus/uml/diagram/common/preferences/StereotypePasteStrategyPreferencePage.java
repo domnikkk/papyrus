@@ -28,7 +28,7 @@ public class StereotypePasteStrategyPreferencePage extends FieldEditorPreference
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
 	@Override
@@ -38,7 +38,7 @@ public class StereotypePasteStrategyPreferencePage extends FieldEditorPreference
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditorPreferencePage#createFieldEditors()
 	 */
 	@Override

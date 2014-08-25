@@ -45,7 +45,7 @@ public abstract class AbstractApplyValueOnPreferenceKeyDialog extends AbstractPr
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
 	 */
 	@Override
@@ -60,7 +60,7 @@ public abstract class AbstractApplyValueOnPreferenceKeyDialog extends AbstractPr
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#cancelPressed()
 	 */
 	@Override

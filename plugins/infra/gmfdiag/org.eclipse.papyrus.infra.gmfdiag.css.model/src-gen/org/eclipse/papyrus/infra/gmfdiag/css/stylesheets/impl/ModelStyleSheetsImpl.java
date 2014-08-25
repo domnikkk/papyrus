@@ -33,7 +33,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	 * The cached value of the '{@link #getStylesheets() <em>Stylesheets</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStylesheets()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ModelStyleSheetsImpl() {
@@ -53,7 +53,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<StyleSheet> getStylesheets() {
@@ -77,7 +77,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -125,7 +125,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +141,7 @@ public class ModelStyleSheetsImpl extends EModelElementImpl implements ModelStyl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

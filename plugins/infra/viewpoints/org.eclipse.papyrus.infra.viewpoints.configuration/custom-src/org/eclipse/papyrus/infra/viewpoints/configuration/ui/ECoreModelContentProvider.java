@@ -19,7 +19,7 @@ import org.eclipse.jface.viewers.Viewer;
 
 /**
  * Represents a content provider for a hierarchy of Ecore objects
- * 
+ *
  * @author Laurent Wouters
  */
 public class ECoreModelContentProvider implements ITreeContentProvider {
@@ -32,7 +32,7 @@ public class ECoreModelContentProvider implements ITreeContentProvider {
 
 	/**
 	 * Initializes this provider with the given object as root
-	 * 
+	 *
 	 * @param root
 	 *            The root object
 	 */

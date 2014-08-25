@@ -9,18 +9,19 @@ package org.eclipse.papyrus.uml.properties.languagepreferences.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.uml.properties.languagepreferences.*;
+import org.eclipse.papyrus.uml.properties.languagepreferences.Editor;
+import org.eclipse.papyrus.uml.properties.languagepreferences.Language;
+import org.eclipse.papyrus.uml.properties.languagepreferences.Preferences;
+import org.eclipse.papyrus.uml.properties.languagepreferences.languagepreferencesFactory;
+import org.eclipse.papyrus.uml.properties.languagepreferences.languagepreferencesPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class languagepreferencesFactoryImpl extends EFactoryImpl implements languagepreferencesFactory {
@@ -28,7 +29,7 @@ public class languagepreferencesFactoryImpl extends EFactoryImpl implements lang
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static languagepreferencesFactory init() {
@@ -47,7 +48,7 @@ public class languagepreferencesFactoryImpl extends EFactoryImpl implements lang
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public languagepreferencesFactoryImpl() {
@@ -57,7 +58,7 @@ public class languagepreferencesFactoryImpl extends EFactoryImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,7 +78,7 @@ public class languagepreferencesFactoryImpl extends EFactoryImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Language createLanguage() {
@@ -88,7 +89,7 @@ public class languagepreferencesFactoryImpl extends EFactoryImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Editor createEditor() {
@@ -99,7 +100,7 @@ public class languagepreferencesFactoryImpl extends EFactoryImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Preferences createPreferences() {
@@ -110,7 +111,7 @@ public class languagepreferencesFactoryImpl extends EFactoryImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public languagepreferencesPackage getlanguagepreferencesPackage() {
@@ -120,7 +121,7 @@ public class languagepreferencesFactoryImpl extends EFactoryImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

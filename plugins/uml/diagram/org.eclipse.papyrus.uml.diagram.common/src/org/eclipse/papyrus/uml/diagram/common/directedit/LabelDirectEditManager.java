@@ -70,7 +70,7 @@ public class LabelDirectEditManager extends DirectEditManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.DirectEditManager#bringDown()
 	 */
 	/**
@@ -92,7 +92,7 @@ public class LabelDirectEditManager extends DirectEditManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gef.tools.DirectEditManager#createCellEditorOn(org.eclipse
 	 * .swt.widgets.Composite)
@@ -111,7 +111,7 @@ public class LabelDirectEditManager extends DirectEditManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.DirectEditManager#createDirectEditRequest()
 	 */
 	/**

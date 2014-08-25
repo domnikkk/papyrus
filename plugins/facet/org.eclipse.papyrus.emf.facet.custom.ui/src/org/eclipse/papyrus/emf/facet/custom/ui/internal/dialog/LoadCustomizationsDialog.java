@@ -21,11 +21,6 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.papyrus.emf.facet.custom.ui.internal.Messages;
-import org.eclipse.papyrus.emf.facet.custom.ui.internal.exported.dialog.ILoadCustomizationsDialog;
-import org.eclipse.papyrus.emf.facet.custom.ui.internal.exported.exception.IllegalParameterException;
-import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallback;
-import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallbackWithPreCommit;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.DoubleClickEvent;
@@ -39,6 +34,11 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.custom.ui.internal.Messages;
+import org.eclipse.papyrus.emf.facet.custom.ui.internal.exported.dialog.ILoadCustomizationsDialog;
+import org.eclipse.papyrus.emf.facet.custom.ui.internal.exported.exception.IllegalParameterException;
+import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallback;
+import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallbackWithPreCommit;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -161,17 +161,17 @@ public class LoadCustomizationsDialog<D> extends Dialog implements
 	 * private List<Customization> filterForMetamodel(
 	 * final Collection<Customization> allCustomizations, final Collection<EPackage> ePackages) {
 	 * List<Customization> filteredCustomizations = new ArrayList<Customization>();
-	 * 
+	 *
 	 * // show only Customizations corresponding to the current EPackages or
 	 * // referenced EPackages
 	 * final Set<EPackage> allReferencedPackages = new HashSet<EPackage>();
-	 * 
+	 *
 	 * for (EPackage ePackage : ePackages) {
 	 * allReferencedPackages.add(ePackage);
 	 * final Set<EPackage> referencedPackages = ModelUtils.computeReferencedPackages(ePackage);
 	 * allReferencedPackages.addAll(referencedPackages);
 	 * }
-	 * 
+	 *
 	 * for (Customization metamodelView : Customization) {
 	 * String nsURI = metamodelView.getMetamodelURI();
 	 * EPackage ePackage = EPackage.Registry.INSTANCE.getEPackage(nsURI);

@@ -16,18 +16,17 @@ package org.eclipse.papyrus.infra.viewpoints.style.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.viewpoints.style.*;
+import org.eclipse.papyrus.infra.viewpoints.style.PapyrusViewStyle;
+import org.eclipse.papyrus.infra.viewpoints.style.StyleFactory;
+import org.eclipse.papyrus.infra.viewpoints.style.StylePackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StyleFactoryImpl extends EFactoryImpl implements StyleFactory {
@@ -35,7 +34,7 @@ public class StyleFactoryImpl extends EFactoryImpl implements StyleFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static StyleFactory init() {
@@ -54,7 +53,7 @@ public class StyleFactoryImpl extends EFactoryImpl implements StyleFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StyleFactoryImpl() {
@@ -64,7 +63,7 @@ public class StyleFactoryImpl extends EFactoryImpl implements StyleFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +79,7 @@ public class StyleFactoryImpl extends EFactoryImpl implements StyleFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PapyrusViewStyle createPapyrusViewStyle() {
@@ -91,7 +90,7 @@ public class StyleFactoryImpl extends EFactoryImpl implements StyleFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StylePackage getStylePackage() {
@@ -101,7 +100,7 @@ public class StyleFactoryImpl extends EFactoryImpl implements StyleFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

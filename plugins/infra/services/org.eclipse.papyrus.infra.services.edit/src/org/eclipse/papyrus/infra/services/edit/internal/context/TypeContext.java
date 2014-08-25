@@ -17,6 +17,7 @@ package org.eclipse.papyrus.infra.services.edit.internal.context;
 
 import org.eclipse.gmf.runtime.emf.type.core.ClientContextManager;
 import org.eclipse.gmf.runtime.emf.type.core.IClientContext;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.services.edit.messages.Messages;
@@ -26,7 +27,7 @@ import org.eclipse.papyrus.infra.services.edit.messages.Messages;
  * The centralized model type edit service relies on GMF Runtime extensible
  * type framework, used via a single common {@link IClientContext} on which
  * the various {@link IElementType} used by Papyrus are registered.
- * 
+ *
  * This class stores this context ID and provides a convenient API to
  * get the {@link IClientContext} from the {@link ClientContextManager}.
  * </pre>

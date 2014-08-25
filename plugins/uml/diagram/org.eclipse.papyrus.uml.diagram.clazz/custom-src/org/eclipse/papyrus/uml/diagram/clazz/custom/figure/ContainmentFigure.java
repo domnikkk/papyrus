@@ -99,7 +99,7 @@ public class ContainmentFigure extends DefaultSizeNodeFigure implements IOvalAnc
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createAnchor(org.eclipse.draw2d.geometry.PrecisionPoint)
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class ContainmentFigure extends DefaultSizeNodeFigure implements IOvalAnc
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createDefaultAnchor()
 	 */
 	@Override

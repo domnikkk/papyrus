@@ -130,7 +130,7 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 	/**
 	 * Create a new dialog to initialize an ActivityParameterNode.
 	 * This dialog will filter certain Stereotypes
-	 * 
+	 *
 	 * @param shell
 	 *            parent shell
 	 * @param owner

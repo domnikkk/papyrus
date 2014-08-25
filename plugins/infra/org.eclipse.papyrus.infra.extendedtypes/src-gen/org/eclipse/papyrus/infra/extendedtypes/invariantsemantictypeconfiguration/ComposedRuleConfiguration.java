@@ -39,7 +39,7 @@ public interface ComposedRuleConfiguration extends InvariantRuleConfiguration {
 	 * If the meaning of the '<em>Composed Rules</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Composed Rules</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage#getComposedRuleConfiguration_ComposedRules()
 	 * @model lower="2"

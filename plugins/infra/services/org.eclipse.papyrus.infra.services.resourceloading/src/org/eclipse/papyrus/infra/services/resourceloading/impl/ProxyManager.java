@@ -102,7 +102,7 @@ public class ProxyManager implements IProxyManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.resourceloading.IProxyManager#loadResource(URI)
 	 */
 	public boolean loadResource(URI uri) {
@@ -276,7 +276,7 @@ public class ProxyManager implements IProxyManager {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.resourceloading.IProxyManager#dispose()
 	 */
 	public void dispose() {

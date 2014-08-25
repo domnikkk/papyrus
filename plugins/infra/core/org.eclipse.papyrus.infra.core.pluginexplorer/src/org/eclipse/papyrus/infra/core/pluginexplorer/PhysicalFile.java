@@ -26,7 +26,7 @@ import org.eclipse.core.runtime.Path;
 
 /**
  * Represents a physical file (on disk) as a resource within a plugin
- * 
+ *
  * @author Laurent Wouters
  */
 public class PhysicalFile implements PluginEntry {
@@ -50,7 +50,7 @@ public class PhysicalFile implements PluginEntry {
 
 	/**
 	 * Creates the representation of a physical file as a plugin entry
-	 * 
+	 *
 	 * @param plugin
 	 *            The parent plugin
 	 * @param file
@@ -63,7 +63,7 @@ public class PhysicalFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getPlugin()
 	 */
 	public Plugin getPlugin() {
@@ -72,7 +72,7 @@ public class PhysicalFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getName()
 	 */
 	public String getName() {
@@ -81,7 +81,7 @@ public class PhysicalFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getLogicalPath()
 	 */
 	public String getLogicalPath() {
@@ -92,7 +92,7 @@ public class PhysicalFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getPhysicalPath()
 	 */
 	public String getPhysicalPath() {
@@ -101,7 +101,7 @@ public class PhysicalFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#hasChildren()
 	 */
 	public boolean hasChildren() {
@@ -114,7 +114,7 @@ public class PhysicalFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#children()
 	 */
 	public List<PluginEntry> children() {
@@ -131,7 +131,7 @@ public class PhysicalFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getChild(java.lang.String)
 	 */
 	public PluginEntry getChild(String name) {
@@ -148,7 +148,7 @@ public class PhysicalFile implements PluginEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getInputStream()
 	 */
 	public InputStream getInputStream() {

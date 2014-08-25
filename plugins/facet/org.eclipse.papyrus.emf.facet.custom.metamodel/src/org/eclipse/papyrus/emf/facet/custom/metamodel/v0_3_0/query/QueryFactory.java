@@ -27,7 +27,7 @@ public interface QueryFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	QueryFactory eINSTANCE = org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.impl.QueryFactoryImpl.init();
@@ -36,7 +36,7 @@ public interface QueryFactory extends EFactory {
 	 * Returns a new object of class '<em>URI Image Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>URI Image Query</em>'.
 	 * @generated
 	 */
@@ -46,7 +46,7 @@ public interface QueryFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

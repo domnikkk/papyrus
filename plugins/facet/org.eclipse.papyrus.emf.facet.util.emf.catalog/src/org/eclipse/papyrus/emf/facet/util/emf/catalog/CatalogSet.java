@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.emf.facet.util.emf.catalog;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -49,7 +48,7 @@ public interface CatalogSet extends EObject {
 	 * <!-- begin-model-doc -->
 	 * The "catalogs" reference references all the EMF Facet Catalog catalogs contained by a CatalogSet
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Catalogs</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogPackage#getCatalogSet_Catalogs()
 	 * @model containment="true"

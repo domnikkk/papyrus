@@ -2,10 +2,8 @@ package org.eclipse.papyrus.infra.widgets.editors;
 
 import org.eclipse.core.databinding.conversion.IConverter;
 import org.eclipse.core.databinding.conversion.StringToNumberConverter;
-
 import org.eclipse.papyrus.infra.widgets.Activator;
 import org.eclipse.papyrus.infra.widgets.validator.UnlimitedNaturalValidator;
-
 import org.eclipse.swt.widgets.Composite;
 
 public class UnlimitedNaturalEditor extends StringEditor {
@@ -59,7 +57,7 @@ public class UnlimitedNaturalEditor extends StringEditor {
 					String newString = ((String) fromObject).replaceAll(" ", ""); //$NON-NLS-1$ //$NON-NLS-2$
 					if (newString.equals("*"))
 					{
-						return -1; //$NON-NLS-1$
+						return -1;
 					}
 					return (Integer) StringToNumberConverter.toInteger(false).convert(newString);
 				}

@@ -43,7 +43,7 @@ public interface ArchitectureViewpoint extends ADElement {
 	 * If the meaning of the '<em>Model Kinds</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Model Kinds</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureViewpoint_ModelKinds()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind#getViewpoint
@@ -60,7 +60,7 @@ public interface ArchitectureViewpoint extends ADElement {
 	 * If the meaning of the '<em>Governs</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Governs</em>' reference.
 	 * @see #setGoverns(ArchitectureView)
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureViewpoint_Governs()
@@ -74,7 +74,7 @@ public interface ArchitectureViewpoint extends ADElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint#getGoverns <em>Governs</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Governs</em>' reference.
 	 * @see #getGoverns()
@@ -91,7 +91,7 @@ public interface ArchitectureViewpoint extends ADElement {
 	 * If the meaning of the '<em>Frames</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Frames</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureViewpoint_Frames()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Concern#getFramedBy

@@ -1,6 +1,5 @@
 package org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.serializer;
 
-import com.google.inject.Inject;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.uml.alf.alf.AcceptBlock;
 import org.eclipse.papyrus.uml.alf.alf.AcceptClause;
@@ -104,6 +103,8 @@ import org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.services.Applie
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class AppliedStereotypePropertySemanticSequencer extends AlfSemanticSequencer {

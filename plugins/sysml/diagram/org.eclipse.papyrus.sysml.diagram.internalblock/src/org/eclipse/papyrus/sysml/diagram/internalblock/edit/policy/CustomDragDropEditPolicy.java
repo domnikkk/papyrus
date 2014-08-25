@@ -143,7 +143,7 @@ public class CustomDragDropEditPolicy extends CommonDiagramDragDropEditPolicy {
 
 	/**
 	 * get the first valid target view for the given source. the couple source/target is valid if the path to them from the future container is valid
-	 * 
+	 *
 	 * @param sourceView
 	 * @param targetViews
 	 * @return

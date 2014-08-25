@@ -7,7 +7,6 @@
 package org.eclipse.papyrus.papyrusgmfgenextension;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.gmf.codegen.gmfgen.GenCompartment;
 
 /**
@@ -40,7 +39,7 @@ public interface CompartmentTitleVisibilityPreference extends CommentedElement {
 	 * If the meaning of the '<em>Visible By Default</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Visible By Default</em>' attribute.
 	 * @see #setVisibleByDefault(boolean)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getCompartmentTitleVisibilityPreference_VisibleByDefault()
@@ -53,7 +52,7 @@ public interface CompartmentTitleVisibilityPreference extends CommentedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.CompartmentTitleVisibilityPreference#isVisibleByDefault <em>Visible By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Visible By Default</em>' attribute.
 	 * @see #isVisibleByDefault()
@@ -69,7 +68,7 @@ public interface CompartmentTitleVisibilityPreference extends CommentedElement {
 	 * If the meaning of the '<em>Compartments</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Compartments</em>' reference list.
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getCompartmentTitleVisibilityPreference_Compartments()
 	 * @model

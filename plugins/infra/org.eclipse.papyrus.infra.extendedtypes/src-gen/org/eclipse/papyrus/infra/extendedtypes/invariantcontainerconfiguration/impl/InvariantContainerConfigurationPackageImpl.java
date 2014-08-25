@@ -17,28 +17,25 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.HierarchyPermission;
 import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfigurationFactory;
 import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfigurationPackage;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InvariantContainerConfigurationPackageImpl extends EPackageImpl implements InvariantContainerConfigurationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass invariantContainerConfigurationEClass = null;
@@ -46,7 +43,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass hierarchyPermissionEClass = null;
@@ -56,7 +53,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfigurationPackage#eNS_URI
 	 * @see #init()
@@ -69,7 +66,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -80,7 +77,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	 * <p>
 	 * This method is used to initialize {@link InvariantContainerConfigurationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -118,7 +115,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getInvariantContainerConfiguration() {
@@ -128,7 +125,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getInvariantContainerConfiguration_Permissions() {
@@ -138,7 +135,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getHierarchyPermission() {
@@ -148,7 +145,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getHierarchyPermission_ChildType() {
@@ -158,7 +155,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getHierarchyPermission_IsPermitted() {
@@ -168,7 +165,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getHierarchyPermission_IsStrict() {
@@ -178,7 +175,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantContainerConfigurationFactory getInvariantContainerConfigurationFactory() {
@@ -188,7 +185,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -198,7 +195,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -220,7 +217,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -230,7 +227,7 @@ public class InvariantContainerConfigurationPackageImpl extends EPackageImpl imp
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

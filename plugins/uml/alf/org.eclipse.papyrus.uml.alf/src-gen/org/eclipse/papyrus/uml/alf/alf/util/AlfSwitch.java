@@ -4,9 +4,7 @@ package org.eclipse.papyrus.uml.alf.alf.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.eclipse.papyrus.uml.alf.alf.*;
 
 /**
@@ -76,775 +74,1101 @@ public class AlfSwitch<T> extends Switch<T>
       {
         Test test = (Test)theEObject;
         T result = caseTest(test);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.LITERAL:
       {
         LITERAL literal = (LITERAL)theEObject;
         T result = caseLITERAL(literal);
-        if (result == null) result = caseValueSpecification(literal);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseValueSpecification(literal);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.BOOLEAN_LITERAL:
       {
         BOOLEAN_LITERAL booleaN_LITERAL = (BOOLEAN_LITERAL)theEObject;
         T result = caseBOOLEAN_LITERAL(booleaN_LITERAL);
-        if (result == null) result = caseLITERAL(booleaN_LITERAL);
-        if (result == null) result = caseValueSpecification(booleaN_LITERAL);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseLITERAL(booleaN_LITERAL);
+		}
+        if (result == null) {
+			result = caseValueSpecification(booleaN_LITERAL);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.NUMBER_LITERAL:
       {
         NUMBER_LITERAL numbeR_LITERAL = (NUMBER_LITERAL)theEObject;
         T result = caseNUMBER_LITERAL(numbeR_LITERAL);
-        if (result == null) result = caseLITERAL(numbeR_LITERAL);
-        if (result == null) result = caseValueSpecification(numbeR_LITERAL);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseLITERAL(numbeR_LITERAL);
+		}
+        if (result == null) {
+			result = caseValueSpecification(numbeR_LITERAL);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.INTEGER_LITERAL:
       {
         INTEGER_LITERAL integeR_LITERAL = (INTEGER_LITERAL)theEObject;
         T result = caseINTEGER_LITERAL(integeR_LITERAL);
-        if (result == null) result = caseNUMBER_LITERAL(integeR_LITERAL);
-        if (result == null) result = caseLITERAL(integeR_LITERAL);
-        if (result == null) result = caseValueSpecification(integeR_LITERAL);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseNUMBER_LITERAL(integeR_LITERAL);
+		}
+        if (result == null) {
+			result = caseLITERAL(integeR_LITERAL);
+		}
+        if (result == null) {
+			result = caseValueSpecification(integeR_LITERAL);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.UNLIMITED_LITERAL:
       {
         UNLIMITED_LITERAL unlimiteD_LITERAL = (UNLIMITED_LITERAL)theEObject;
         T result = caseUNLIMITED_LITERAL(unlimiteD_LITERAL);
-        if (result == null) result = caseNUMBER_LITERAL(unlimiteD_LITERAL);
-        if (result == null) result = caseLITERAL(unlimiteD_LITERAL);
-        if (result == null) result = caseValueSpecification(unlimiteD_LITERAL);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseNUMBER_LITERAL(unlimiteD_LITERAL);
+		}
+        if (result == null) {
+			result = caseLITERAL(unlimiteD_LITERAL);
+		}
+        if (result == null) {
+			result = caseValueSpecification(unlimiteD_LITERAL);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.STRING_LITERAL:
       {
         STRING_LITERAL strinG_LITERAL = (STRING_LITERAL)theEObject;
         T result = caseSTRING_LITERAL(strinG_LITERAL);
-        if (result == null) result = caseLITERAL(strinG_LITERAL);
-        if (result == null) result = caseValueSpecification(strinG_LITERAL);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseLITERAL(strinG_LITERAL);
+		}
+        if (result == null) {
+			result = caseValueSpecification(strinG_LITERAL);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.NAME_EXPRESSION:
       {
         NameExpression nameExpression = (NameExpression)theEObject;
         T result = caseNameExpression(nameExpression);
-        if (result == null) result = caseValueSpecification(nameExpression);
-        if (result == null) result = caseNonLiteralValueSpecification(nameExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseValueSpecification(nameExpression);
+		}
+        if (result == null) {
+			result = caseNonLiteralValueSpecification(nameExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.QUALIFIED_NAME_PATH:
       {
         QualifiedNamePath qualifiedNamePath = (QualifiedNamePath)theEObject;
         T result = caseQualifiedNamePath(qualifiedNamePath);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.UNQUALIFIED_NAME:
       {
         UnqualifiedName unqualifiedName = (UnqualifiedName)theEObject;
         T result = caseUnqualifiedName(unqualifiedName);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.TEMPLATE_BINDING:
       {
         TemplateBinding templateBinding = (TemplateBinding)theEObject;
         T result = caseTemplateBinding(templateBinding);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.NAMED_TEMPLATE_BINDING:
       {
         NamedTemplateBinding namedTemplateBinding = (NamedTemplateBinding)theEObject;
         T result = caseNamedTemplateBinding(namedTemplateBinding);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.QUALIFIED_NAME_WITH_BINDING:
       {
         QualifiedNameWithBinding qualifiedNameWithBinding = (QualifiedNameWithBinding)theEObject;
         T result = caseQualifiedNameWithBinding(qualifiedNameWithBinding);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.TUPLE:
       {
         Tuple tuple = (Tuple)theEObject;
         T result = caseTuple(tuple);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.TUPLE_ELEMENT:
       {
         TupleElement tupleElement = (TupleElement)theEObject;
         T result = caseTupleElement(tupleElement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.EXPRESSION:
       {
         Expression expression = (Expression)theEObject;
         T result = caseExpression(expression);
-        if (result == null) result = caseSequenceElement(expression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSequenceElement(expression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.CONDITIONAL_TEST_EXPRESSION:
       {
         ConditionalTestExpression conditionalTestExpression = (ConditionalTestExpression)theEObject;
         T result = caseConditionalTestExpression(conditionalTestExpression);
-        if (result == null) result = caseExpression(conditionalTestExpression);
-        if (result == null) result = caseSequenceElement(conditionalTestExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseExpression(conditionalTestExpression);
+		}
+        if (result == null) {
+			result = caseSequenceElement(conditionalTestExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.CONDITIONAL_OR_EXPRESSION:
       {
         ConditionalOrExpression conditionalOrExpression = (ConditionalOrExpression)theEObject;
         T result = caseConditionalOrExpression(conditionalOrExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.CONDITIONAL_AND_EXPRESSION:
       {
         ConditionalAndExpression conditionalAndExpression = (ConditionalAndExpression)theEObject;
         T result = caseConditionalAndExpression(conditionalAndExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.INCLUSIVE_OR_EXPRESSION:
       {
         InclusiveOrExpression inclusiveOrExpression = (InclusiveOrExpression)theEObject;
         T result = caseInclusiveOrExpression(inclusiveOrExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.EXCLUSIVE_OR_EXPRESSION:
       {
         ExclusiveOrExpression exclusiveOrExpression = (ExclusiveOrExpression)theEObject;
         T result = caseExclusiveOrExpression(exclusiveOrExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.AND_EXPRESSION:
       {
         AndExpression andExpression = (AndExpression)theEObject;
         T result = caseAndExpression(andExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.EQUALITY_EXPRESSION:
       {
         EqualityExpression equalityExpression = (EqualityExpression)theEObject;
         T result = caseEqualityExpression(equalityExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.CLASSIFICATION_EXPRESSION:
       {
         ClassificationExpression classificationExpression = (ClassificationExpression)theEObject;
         T result = caseClassificationExpression(classificationExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.RELATIONAL_EXPRESSION:
       {
         RelationalExpression relationalExpression = (RelationalExpression)theEObject;
         T result = caseRelationalExpression(relationalExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SHIFT_EXPRESSION:
       {
         ShiftExpression shiftExpression = (ShiftExpression)theEObject;
         T result = caseShiftExpression(shiftExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.ADDITIVE_EXPRESSION:
       {
         AdditiveExpression additiveExpression = (AdditiveExpression)theEObject;
         T result = caseAdditiveExpression(additiveExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.MULTIPLICATIVE_EXPRESSION:
       {
         MultiplicativeExpression multiplicativeExpression = (MultiplicativeExpression)theEObject;
         T result = caseMultiplicativeExpression(multiplicativeExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.UNARY_EXPRESSION:
       {
         UnaryExpression unaryExpression = (UnaryExpression)theEObject;
         T result = caseUnaryExpression(unaryExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.PRIMARY_EXPRESSION:
       {
         PrimaryExpression primaryExpression = (PrimaryExpression)theEObject;
         T result = casePrimaryExpression(primaryExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SUFFIX_EXPRESSION:
       {
         SuffixExpression suffixExpression = (SuffixExpression)theEObject;
         T result = caseSuffixExpression(suffixExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.OPERATION_CALL_EXPRESSION:
       {
         OperationCallExpression operationCallExpression = (OperationCallExpression)theEObject;
         T result = caseOperationCallExpression(operationCallExpression);
-        if (result == null) result = caseSuffixExpression(operationCallExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSuffixExpression(operationCallExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.PROPERTY_CALL_EXPRESSION:
       {
         PropertyCallExpression propertyCallExpression = (PropertyCallExpression)theEObject;
         T result = casePropertyCallExpression(propertyCallExpression);
-        if (result == null) result = caseSuffixExpression(propertyCallExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSuffixExpression(propertyCallExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.LINK_OPERATION_EXPRESSION:
       {
         LinkOperationExpression linkOperationExpression = (LinkOperationExpression)theEObject;
         T result = caseLinkOperationExpression(linkOperationExpression);
-        if (result == null) result = caseSuffixExpression(linkOperationExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSuffixExpression(linkOperationExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.LINK_OPERATION_TUPLE:
       {
         LinkOperationTuple linkOperationTuple = (LinkOperationTuple)theEObject;
         T result = caseLinkOperationTuple(linkOperationTuple);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.LINK_OPERATION_TUPLE_ELEMENT:
       {
         LinkOperationTupleElement linkOperationTupleElement = (LinkOperationTupleElement)theEObject;
         T result = caseLinkOperationTupleElement(linkOperationTupleElement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SEQUENCE_OPERATION_EXPRESSION:
       {
         SequenceOperationExpression sequenceOperationExpression = (SequenceOperationExpression)theEObject;
         T result = caseSequenceOperationExpression(sequenceOperationExpression);
-        if (result == null) result = caseSuffixExpression(sequenceOperationExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSuffixExpression(sequenceOperationExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SEQUENCE_REDUCTION_EXPRESSION:
       {
         SequenceReductionExpression sequenceReductionExpression = (SequenceReductionExpression)theEObject;
         T result = caseSequenceReductionExpression(sequenceReductionExpression);
-        if (result == null) result = caseSuffixExpression(sequenceReductionExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSuffixExpression(sequenceReductionExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SEQUENCE_EXPANSION_EXPRESSION:
       {
         SequenceExpansionExpression sequenceExpansionExpression = (SequenceExpansionExpression)theEObject;
         T result = caseSequenceExpansionExpression(sequenceExpansionExpression);
-        if (result == null) result = caseSuffixExpression(sequenceExpansionExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSuffixExpression(sequenceExpansionExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SELECT_OR_REJECT_OPERATION:
       {
         SelectOrRejectOperation selectOrRejectOperation = (SelectOrRejectOperation)theEObject;
         T result = caseSelectOrRejectOperation(selectOrRejectOperation);
-        if (result == null) result = caseSequenceExpansionExpression(selectOrRejectOperation);
-        if (result == null) result = caseSuffixExpression(selectOrRejectOperation);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSequenceExpansionExpression(selectOrRejectOperation);
+		}
+        if (result == null) {
+			result = caseSuffixExpression(selectOrRejectOperation);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.COLLECT_OR_ITERATE_OPERATION:
       {
         CollectOrIterateOperation collectOrIterateOperation = (CollectOrIterateOperation)theEObject;
         T result = caseCollectOrIterateOperation(collectOrIterateOperation);
-        if (result == null) result = caseSequenceExpansionExpression(collectOrIterateOperation);
-        if (result == null) result = caseSuffixExpression(collectOrIterateOperation);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSequenceExpansionExpression(collectOrIterateOperation);
+		}
+        if (result == null) {
+			result = caseSuffixExpression(collectOrIterateOperation);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.FOR_ALL_OR_EXISTS_OR_ONE_OPERATION:
       {
         ForAllOrExistsOrOneOperation forAllOrExistsOrOneOperation = (ForAllOrExistsOrOneOperation)theEObject;
         T result = caseForAllOrExistsOrOneOperation(forAllOrExistsOrOneOperation);
-        if (result == null) result = caseSequenceExpansionExpression(forAllOrExistsOrOneOperation);
-        if (result == null) result = caseSuffixExpression(forAllOrExistsOrOneOperation);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSequenceExpansionExpression(forAllOrExistsOrOneOperation);
+		}
+        if (result == null) {
+			result = caseSuffixExpression(forAllOrExistsOrOneOperation);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.IS_UNIQUE_OPERATION:
       {
         IsUniqueOperation isUniqueOperation = (IsUniqueOperation)theEObject;
         T result = caseIsUniqueOperation(isUniqueOperation);
-        if (result == null) result = caseSequenceExpansionExpression(isUniqueOperation);
-        if (result == null) result = caseSuffixExpression(isUniqueOperation);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSequenceExpansionExpression(isUniqueOperation);
+		}
+        if (result == null) {
+			result = caseSuffixExpression(isUniqueOperation);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.VALUE_SPECIFICATION:
       {
         ValueSpecification valueSpecification = (ValueSpecification)theEObject;
         T result = caseValueSpecification(valueSpecification);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.NON_LITERAL_VALUE_SPECIFICATION:
       {
         NonLiteralValueSpecification nonLiteralValueSpecification = (NonLiteralValueSpecification)theEObject;
         T result = caseNonLiteralValueSpecification(nonLiteralValueSpecification);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.PARENTHESIZED_EXPRESSION:
       {
         ParenthesizedExpression parenthesizedExpression = (ParenthesizedExpression)theEObject;
         T result = caseParenthesizedExpression(parenthesizedExpression);
-        if (result == null) result = caseValueSpecification(parenthesizedExpression);
-        if (result == null) result = caseNonLiteralValueSpecification(parenthesizedExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseValueSpecification(parenthesizedExpression);
+		}
+        if (result == null) {
+			result = caseNonLiteralValueSpecification(parenthesizedExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.NULL_EXPRESSION:
       {
         NullExpression nullExpression = (NullExpression)theEObject;
         T result = caseNullExpression(nullExpression);
-        if (result == null) result = caseValueSpecification(nullExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseValueSpecification(nullExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.THIS_EXPRESSION:
       {
         ThisExpression thisExpression = (ThisExpression)theEObject;
         T result = caseThisExpression(thisExpression);
-        if (result == null) result = caseValueSpecification(thisExpression);
-        if (result == null) result = caseNonLiteralValueSpecification(thisExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseValueSpecification(thisExpression);
+		}
+        if (result == null) {
+			result = caseNonLiteralValueSpecification(thisExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SUPER_INVOCATION_EXPRESSION:
       {
         SuperInvocationExpression superInvocationExpression = (SuperInvocationExpression)theEObject;
         T result = caseSuperInvocationExpression(superInvocationExpression);
-        if (result == null) result = caseValueSpecification(superInvocationExpression);
-        if (result == null) result = caseNonLiteralValueSpecification(superInvocationExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseValueSpecification(superInvocationExpression);
+		}
+        if (result == null) {
+			result = caseNonLiteralValueSpecification(superInvocationExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.INSTANCE_CREATION_EXPRESSION:
       {
         InstanceCreationExpression instanceCreationExpression = (InstanceCreationExpression)theEObject;
         T result = caseInstanceCreationExpression(instanceCreationExpression);
-        if (result == null) result = caseValueSpecification(instanceCreationExpression);
-        if (result == null) result = caseNonLiteralValueSpecification(instanceCreationExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseValueSpecification(instanceCreationExpression);
+		}
+        if (result == null) {
+			result = caseNonLiteralValueSpecification(instanceCreationExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.INSTANCE_CREATION_TUPLE:
       {
         InstanceCreationTuple instanceCreationTuple = (InstanceCreationTuple)theEObject;
         T result = caseInstanceCreationTuple(instanceCreationTuple);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.INSTANCE_CREATION_TUPLE_ELEMENT:
       {
         InstanceCreationTupleElement instanceCreationTupleElement = (InstanceCreationTupleElement)theEObject;
         T result = caseInstanceCreationTupleElement(instanceCreationTupleElement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SEQUENCE_CONSTRUCTION_OR_ACCESS_COMPLETION:
       {
         SequenceConstructionOrAccessCompletion sequenceConstructionOrAccessCompletion = (SequenceConstructionOrAccessCompletion)theEObject;
         T result = caseSequenceConstructionOrAccessCompletion(sequenceConstructionOrAccessCompletion);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.ACCESS_COMPLETION:
       {
         AccessCompletion accessCompletion = (AccessCompletion)theEObject;
         T result = caseAccessCompletion(accessCompletion);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.PARTIAL_SEQUENCE_CONSTRUCTION_COMPLETION:
       {
         PartialSequenceConstructionCompletion partialSequenceConstructionCompletion = (PartialSequenceConstructionCompletion)theEObject;
         T result = casePartialSequenceConstructionCompletion(partialSequenceConstructionCompletion);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SEQUENCE_CONSTRUCTION_EXPRESSION:
       {
         SequenceConstructionExpression sequenceConstructionExpression = (SequenceConstructionExpression)theEObject;
         T result = caseSequenceConstructionExpression(sequenceConstructionExpression);
-        if (result == null) result = caseSequenceElement(sequenceConstructionExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSequenceElement(sequenceConstructionExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SEQUENCE_ELEMENT:
       {
         SequenceElement sequenceElement = (SequenceElement)theEObject;
         T result = caseSequenceElement(sequenceElement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.CLASS_EXTENT_EXPRESSION:
       {
         ClassExtentExpression classExtentExpression = (ClassExtentExpression)theEObject;
         T result = caseClassExtentExpression(classExtentExpression);
-        if (result == null) result = caseSuffixExpression(classExtentExpression);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseSuffixExpression(classExtentExpression);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.BLOCK:
       {
         Block block = (Block)theEObject;
         T result = caseBlock(block);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.STATEMENT_SEQUENCE:
       {
         StatementSequence statementSequence = (StatementSequence)theEObject;
         T result = caseStatementSequence(statementSequence);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.DOCUMENTED_STATEMENT:
       {
         DocumentedStatement documentedStatement = (DocumentedStatement)theEObject;
         T result = caseDocumentedStatement(documentedStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.INLINE_STATEMENT:
       {
         InlineStatement inlineStatement = (InlineStatement)theEObject;
         T result = caseInlineStatement(inlineStatement);
-        if (result == null) result = caseStatement(inlineStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(inlineStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.ANNOTATED_STATEMENT:
       {
         AnnotatedStatement annotatedStatement = (AnnotatedStatement)theEObject;
         T result = caseAnnotatedStatement(annotatedStatement);
-        if (result == null) result = caseStatement(annotatedStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(annotatedStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.STATEMENT:
       {
         Statement statement = (Statement)theEObject;
         T result = caseStatement(statement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.ANNOTATION:
       {
         Annotation annotation = (Annotation)theEObject;
         T result = caseAnnotation(annotation);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.BLOCK_STATEMENT:
       {
         BlockStatement blockStatement = (BlockStatement)theEObject;
         T result = caseBlockStatement(blockStatement);
-        if (result == null) result = caseStatement(blockStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(blockStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.EMPTY_STATEMENT:
       {
         EmptyStatement emptyStatement = (EmptyStatement)theEObject;
         T result = caseEmptyStatement(emptyStatement);
-        if (result == null) result = caseStatement(emptyStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(emptyStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT:
       {
         LocalNameDeclarationStatement localNameDeclarationStatement = (LocalNameDeclarationStatement)theEObject;
         T result = caseLocalNameDeclarationStatement(localNameDeclarationStatement);
-        if (result == null) result = caseStatement(localNameDeclarationStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(localNameDeclarationStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.IF_STATEMENT:
       {
         IfStatement ifStatement = (IfStatement)theEObject;
         T result = caseIfStatement(ifStatement);
-        if (result == null) result = caseStatement(ifStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(ifStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SEQUENTIAL_CLAUSES:
       {
         SequentialClauses sequentialClauses = (SequentialClauses)theEObject;
         T result = caseSequentialClauses(sequentialClauses);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.CONCURRENT_CLAUSES:
       {
         ConcurrentClauses concurrentClauses = (ConcurrentClauses)theEObject;
         T result = caseConcurrentClauses(concurrentClauses);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.NON_FINAL_CLAUSE:
       {
         NonFinalClause nonFinalClause = (NonFinalClause)theEObject;
         T result = caseNonFinalClause(nonFinalClause);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.FINAL_CLAUSE:
       {
         FinalClause finalClause = (FinalClause)theEObject;
         T result = caseFinalClause(finalClause);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SWITCH_STATEMENT:
       {
         SwitchStatement switchStatement = (SwitchStatement)theEObject;
         T result = caseSwitchStatement(switchStatement);
-        if (result == null) result = caseStatement(switchStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(switchStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SWITCH_CLAUSE:
       {
         SwitchClause switchClause = (SwitchClause)theEObject;
         T result = caseSwitchClause(switchClause);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SWITCH_CASE:
       {
         SwitchCase switchCase = (SwitchCase)theEObject;
         T result = caseSwitchCase(switchCase);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SWITCH_DEFAULT_CLAUSE:
       {
         SwitchDefaultClause switchDefaultClause = (SwitchDefaultClause)theEObject;
         T result = caseSwitchDefaultClause(switchDefaultClause);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.NON_EMPTY_STATEMENT_SEQUENCE:
       {
         NonEmptyStatementSequence nonEmptyStatementSequence = (NonEmptyStatementSequence)theEObject;
         T result = caseNonEmptyStatementSequence(nonEmptyStatementSequence);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.WHILE_STATEMENT:
       {
         WhileStatement whileStatement = (WhileStatement)theEObject;
         T result = caseWhileStatement(whileStatement);
-        if (result == null) result = caseStatement(whileStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(whileStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.DO_STATEMENT:
       {
         DoStatement doStatement = (DoStatement)theEObject;
         T result = caseDoStatement(doStatement);
-        if (result == null) result = caseStatement(doStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(doStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.FOR_STATEMENT:
       {
         ForStatement forStatement = (ForStatement)theEObject;
         T result = caseForStatement(forStatement);
-        if (result == null) result = caseStatement(forStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(forStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.FOR_CONTROL:
       {
         ForControl forControl = (ForControl)theEObject;
         T result = caseForControl(forControl);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.LOOP_VARIABLE_DEFINITION:
       {
         LoopVariableDefinition loopVariableDefinition = (LoopVariableDefinition)theEObject;
         T result = caseLoopVariableDefinition(loopVariableDefinition);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.BREAK_STATEMENT:
       {
         BreakStatement breakStatement = (BreakStatement)theEObject;
         T result = caseBreakStatement(breakStatement);
-        if (result == null) result = caseStatement(breakStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(breakStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.RETURN_STATEMENT:
       {
         ReturnStatement returnStatement = (ReturnStatement)theEObject;
         T result = caseReturnStatement(returnStatement);
-        if (result == null) result = caseStatement(returnStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(returnStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.ACCEPT_STATEMENT:
       {
         AcceptStatement acceptStatement = (AcceptStatement)theEObject;
         T result = caseAcceptStatement(acceptStatement);
-        if (result == null) result = caseStatement(acceptStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(acceptStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SIMPLE_ACCEPT_STATEMENT_COMPLETION:
       {
         SimpleAcceptStatementCompletion simpleAcceptStatementCompletion = (SimpleAcceptStatementCompletion)theEObject;
         T result = caseSimpleAcceptStatementCompletion(simpleAcceptStatementCompletion);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.COMPOUND_ACCEPT_STATEMENT_COMPLETION:
       {
         CompoundAcceptStatementCompletion compoundAcceptStatementCompletion = (CompoundAcceptStatementCompletion)theEObject;
         T result = caseCompoundAcceptStatementCompletion(compoundAcceptStatementCompletion);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.ACCEPT_BLOCK:
       {
         AcceptBlock acceptBlock = (AcceptBlock)theEObject;
         T result = caseAcceptBlock(acceptBlock);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.ACCEPT_CLAUSE:
       {
         AcceptClause acceptClause = (AcceptClause)theEObject;
         T result = caseAcceptClause(acceptClause);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.CLASSIFY_STATEMENT:
       {
         ClassifyStatement classifyStatement = (ClassifyStatement)theEObject;
         T result = caseClassifyStatement(classifyStatement);
-        if (result == null) result = caseStatement(classifyStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(classifyStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.CLASSIFICATION_CLAUSE:
       {
         ClassificationClause classificationClause = (ClassificationClause)theEObject;
         T result = caseClassificationClause(classificationClause);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.CLASSIFICATION_FROM_CLAUSE:
       {
         ClassificationFromClause classificationFromClause = (ClassificationFromClause)theEObject;
         T result = caseClassificationFromClause(classificationFromClause);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.CLASSIFICATION_TO_CLAUSE:
       {
         ClassificationToClause classificationToClause = (ClassificationToClause)theEObject;
         T result = caseClassificationToClause(classificationToClause);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.RECLASSIFY_ALL_CLAUSE:
       {
         ReclassifyAllClause reclassifyAllClause = (ReclassifyAllClause)theEObject;
         T result = caseReclassifyAllClause(reclassifyAllClause);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.QUALIFIED_NAME_LIST:
       {
         QualifiedNameList qualifiedNameList = (QualifiedNameList)theEObject;
         T result = caseQualifiedNameList(qualifiedNameList);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.INVOCATION_OR_ASSIGNEMENT_OR_DECLARATION_STATEMENT:
       {
         InvocationOrAssignementOrDeclarationStatement invocationOrAssignementOrDeclarationStatement = (InvocationOrAssignementOrDeclarationStatement)theEObject;
         T result = caseInvocationOrAssignementOrDeclarationStatement(invocationOrAssignementOrDeclarationStatement);
-        if (result == null) result = caseStatement(invocationOrAssignementOrDeclarationStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(invocationOrAssignementOrDeclarationStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.SUPER_INVOCATION_STATEMENT:
       {
         SuperInvocationStatement superInvocationStatement = (SuperInvocationStatement)theEObject;
         T result = caseSuperInvocationStatement(superInvocationStatement);
-        if (result == null) result = caseStatement(superInvocationStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(superInvocationStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.THIS_INVOCATION_STATEMENT:
       {
         ThisInvocationStatement thisInvocationStatement = (ThisInvocationStatement)theEObject;
         T result = caseThisInvocationStatement(thisInvocationStatement);
-        if (result == null) result = caseStatement(thisInvocationStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(thisInvocationStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.INSTANCE_CREATION_INVOCATION_STATEMENT:
       {
         InstanceCreationInvocationStatement instanceCreationInvocationStatement = (InstanceCreationInvocationStatement)theEObject;
         T result = caseInstanceCreationInvocationStatement(instanceCreationInvocationStatement);
-        if (result == null) result = caseStatement(instanceCreationInvocationStatement);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = caseStatement(instanceCreationInvocationStatement);
+		}
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.VARIABLE_DECLARATION_COMPLETION:
       {
         VariableDeclarationCompletion variableDeclarationCompletion = (VariableDeclarationCompletion)theEObject;
         T result = caseVariableDeclarationCompletion(variableDeclarationCompletion);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       case AlfPackage.ASSIGNMENT_COMPLETION:
       {
         AssignmentCompletion assignmentCompletion = (AssignmentCompletion)theEObject;
         T result = caseAssignmentCompletion(assignmentCompletion);
-        if (result == null) result = defaultCase(theEObject);
+        if (result == null) {
+			result = defaultCase(theEObject);
+		}
         return result;
       }
       default: return defaultCase(theEObject);

@@ -30,7 +30,7 @@ public interface IFillableModelSetQueryAdapter extends IModelSetQueryAdapter {
 
 	/**
 	 * Determines if the cache already contain this EClassifier
-	 * 
+	 *
 	 * @param type
 	 *            , the desired type
 	 * @return true if the cache already compute this entry

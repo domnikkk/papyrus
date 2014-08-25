@@ -35,7 +35,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Represents the creation command for a SysML internal block diagram
- * 
+ *
  * @author Laurent Wouters
  */
 public class InternalBlockDiagramCreateCommand extends AbstractPapyrusGmfCreateDiagramCommandHandler {

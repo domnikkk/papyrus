@@ -24,6 +24,7 @@ import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.part.IPageSite;
 import org.eclipse.ui.part.Page;
+import org.eclipse.ui.part.ViewPart;
 
 
 /**
@@ -143,7 +144,7 @@ public abstract class ViewPartPage extends Page implements IAdaptable {
 
 	/**
 	 * Dispose the page, and its associated viewer.
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.Page#dispose()
 	 *
 	 */

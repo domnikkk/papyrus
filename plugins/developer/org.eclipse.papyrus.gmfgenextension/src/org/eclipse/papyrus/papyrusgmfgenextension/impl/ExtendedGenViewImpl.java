@@ -44,7 +44,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	 * The cached value of the '{@link #getGenView() <em>Gen View</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGenView()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	 * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsAbstract()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	 * The cached value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isIsAbstract()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	 * The cached value of the '{@link #getSuperGenViews() <em>Super Gen Views</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuperGenViews()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	 * The cached value of the '{@link #getPropRefreshHook() <em>Prop Refresh Hook</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPropRefreshHook()
 	 * @generated
 	 * @ordered
@@ -99,7 +99,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	 * The default value of the '{@link #getSuperOwnedEditPart() <em>Super Owned Edit Part</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuperOwnedEditPart()
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	 * The cached value of the '{@link #getSuperOwnedEditPart() <em>Super Owned Edit Part</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSuperOwnedEditPart()
 	 * @generated
 	 * @ordered
@@ -142,7 +142,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExtendedGenViewImpl() {
@@ -152,7 +152,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +163,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,7 +177,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -228,7 +228,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetPropRefreshHook(PropertyRefreshHook newPropRefreshHook, NotificationChain msgs) {
@@ -248,7 +248,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -300,7 +300,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +311,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +326,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -341,7 +341,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +366,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -400,7 +400,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -431,7 +431,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -456,7 +456,7 @@ public class ExtendedGenViewImpl extends CommentedElementImpl implements Extende
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

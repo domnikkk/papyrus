@@ -33,7 +33,7 @@ public interface CommentedElement extends EObject {
 	 * <!-- begin-model-doc -->
 	 * All extended classes have a comment in order to describe the puprose of this extension
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Comment</em>' attribute.
 	 * @see #setComment(String)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getCommentedElement_Comment()
@@ -46,7 +46,7 @@ public interface CommentedElement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.CommentedElement#getComment <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Comment</em>' attribute.
 	 * @see #getComment()

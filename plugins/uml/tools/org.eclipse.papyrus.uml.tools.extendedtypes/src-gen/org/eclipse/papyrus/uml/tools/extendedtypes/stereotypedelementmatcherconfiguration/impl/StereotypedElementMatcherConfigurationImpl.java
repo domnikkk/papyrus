@@ -37,7 +37,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	 * The default value of the '{@link #getStereotypedQualifiedName() <em>Stereotyped Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypedQualifiedName()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	 * The cached value of the '{@link #getStereotypedQualifiedName() <em>Stereotyped Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypedQualifiedName()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StereotypedElementMatcherConfigurationImpl() {
@@ -68,7 +68,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getStereotypedQualifiedName() {
@@ -89,7 +89,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStereotypedQualifiedName(String newStereotypedQualifiedName) {
@@ -103,7 +103,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class StereotypedElementMatcherConfigurationImpl extends MatcherConfigura
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

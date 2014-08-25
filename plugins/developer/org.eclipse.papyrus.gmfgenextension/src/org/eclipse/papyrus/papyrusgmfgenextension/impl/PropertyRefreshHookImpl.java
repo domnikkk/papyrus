@@ -32,7 +32,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	 * The default value of the '{@link #getTriggeringCondition() <em>Triggering Condition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTriggeringCondition()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	 * The cached value of the '{@link #getTriggeringCondition() <em>Triggering Condition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTriggeringCondition()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAction()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	 * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAction()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertyRefreshHookImpl() {
@@ -85,7 +85,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -96,7 +96,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +133,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class PropertyRefreshHookImpl extends ExternalHookImpl implements Propert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

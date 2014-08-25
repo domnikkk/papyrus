@@ -38,7 +38,7 @@ public interface NewEMFChildMenu extends Menu {
 	 * If the meaning of the '<em>Create In</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Create In</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CreateIn
 	 * @see #setCreateIn(CreateIn)
@@ -52,7 +52,7 @@ public interface NewEMFChildMenu extends Menu {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getCreateIn <em>Create In</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Create In</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.CreateIn
@@ -70,7 +70,7 @@ public interface NewEMFChildMenu extends Menu {
 	 * If the meaning of the '<em>Layout</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Layout</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.Layout
 	 * @see #setLayout(Layout)
@@ -84,7 +84,7 @@ public interface NewEMFChildMenu extends Menu {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewEMFChildMenu#getLayout <em>Layout</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Layout</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.Layout
@@ -101,7 +101,7 @@ public interface NewEMFChildMenu extends Menu {
 	 * If the meaning of the '<em>Groups</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Groups</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage#getNewEMFChildMenu_Groups()
 	 * @model containment="true"

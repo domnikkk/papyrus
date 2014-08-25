@@ -42,6 +42,7 @@ import org.eclipse.papyrus.emf.facet.efacet.core.FacetUtils;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManagerListener;
 import org.eclipse.papyrus.emf.facet.efacet.core.exception.FacetManagerException;
 import org.eclipse.papyrus.emf.facet.efacet.core.internal.FacetManager.ConformanceState;
+import org.eclipse.papyrus.emf.facet.efacet.core.internal.exception.FacetConformanceEvaluationException;
 import org.eclipse.papyrus.emf.facet.efacet.core.internal.exception.UnmatchingExpectedTypeException;
 import org.eclipse.papyrus.emf.facet.efacet.core.internal.exported.IResolverManager;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DerivedTypedElement;

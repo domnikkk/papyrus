@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -38,7 +38,7 @@ public class CustomRegionCompartmentItemSemanticEditPolicy extends RegionCompart
 			IEditCommandRequest gmfRequest = ((EditCommandRequestWrapper) request).getEditCommandRequest();
 			if (gmfRequest instanceof CreateElementRequest) {
 				CreateElementRequest createRequest = (CreateElementRequest) gmfRequest;
-				IElementType elementType = createRequest.getElementType(); 
+				IElementType elementType = createRequest.getElementType();
 				if (((IHintedType) elementType).getSemanticHint().equals(((IHintedType) UMLElementTypes.Constraint_668).getSemanticHint())) {
 					ICommand cmd = new CustomConstraintCreateCommand(createRequest, DiagramUtils.getDiagramFrom(getHost()));
 					return new ICommandProxy(cmd);

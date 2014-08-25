@@ -29,7 +29,7 @@ public interface CustomptFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	CustomptFactory eINSTANCE = org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custompt.impl.CustomptFactoryImpl.init();
@@ -38,7 +38,7 @@ public interface CustomptFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

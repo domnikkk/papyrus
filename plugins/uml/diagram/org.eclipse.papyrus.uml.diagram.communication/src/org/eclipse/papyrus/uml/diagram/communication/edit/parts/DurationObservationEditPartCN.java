@@ -166,7 +166,7 @@ public class DurationObservationEditPartCN extends AbstractObservationEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.communication.custom.figures.DurationObservationNodeFigure
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +216,7 @@ public class DurationObservationEditPartCN extends AbstractObservationEditPart {
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
 	 *            instance of generated figure class
 	 * @generated

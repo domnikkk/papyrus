@@ -31,7 +31,7 @@ public interface EffectRule extends EObject
 	 * If the meaning of the '<em>Kind</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.BehaviorKind
 	 * @see #setKind(BehaviorKind)
@@ -45,7 +45,7 @@ public interface EffectRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.EffectRule#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Kind</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.BehaviorKind
@@ -61,7 +61,7 @@ public interface EffectRule extends EObject
 	 * If the meaning of the '<em>Behavior Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Behavior Name</em>' attribute.
 	 * @see #setBehaviorName(String)
 	 * @see org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage#getEffectRule_BehaviorName()
@@ -74,7 +74,7 @@ public interface EffectRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.EffectRule#getBehaviorName <em>Behavior Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Behavior Name</em>' attribute.
 	 * @see #getBehaviorName()

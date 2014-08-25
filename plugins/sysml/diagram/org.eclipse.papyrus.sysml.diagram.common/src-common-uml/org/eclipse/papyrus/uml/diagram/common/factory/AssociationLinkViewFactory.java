@@ -36,7 +36,7 @@ public class AssociationLinkViewFactory extends ConnectorViewFactory {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Add two EObjectValueStyle in order to store the Properties that are associated with
 	 * the Graphical ends.
 	 * </pre>
@@ -59,7 +59,7 @@ public class AssociationLinkViewFactory extends ConnectorViewFactory {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Store {@link Association} semantic ends (Property) in dedicated styles.
 	 * </pre>
 	 */

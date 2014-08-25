@@ -76,7 +76,7 @@ public class PropertyEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * While setting {@link Property} (excluding {@link Port} and {@link ConstraintParameter} type:
 	 * - add possibly required (sysML) association re-factor command when needed.
 	 * - add/remove possibly required ConstraintProperty stereotype when needed.

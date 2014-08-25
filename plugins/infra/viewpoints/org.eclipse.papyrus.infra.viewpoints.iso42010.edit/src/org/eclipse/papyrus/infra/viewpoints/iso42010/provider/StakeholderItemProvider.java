@@ -33,7 +33,7 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StakeholderItemProvider
@@ -48,7 +48,7 @@ public class StakeholderItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StakeholderItemProvider(AdapterFactory adapterFactory) {
@@ -59,7 +59,7 @@ public class StakeholderItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class StakeholderItemProvider
 	 * This adds a property descriptor for the Concerns feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addConcernsPropertyDescriptor(Object object) {
@@ -101,7 +101,7 @@ public class StakeholderItemProvider
 	 * This adds a property descriptor for the Viewpoints feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addViewpointsPropertyDescriptor(Object object) {
@@ -124,7 +124,7 @@ public class StakeholderItemProvider
 	 * This adds a property descriptor for the Has Interest In feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addHasInterestInPropertyDescriptor(Object object) {
@@ -147,7 +147,7 @@ public class StakeholderItemProvider
 	 * This returns Stakeholder.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +171,7 @@ public class StakeholderItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -185,7 +185,7 @@ public class StakeholderItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

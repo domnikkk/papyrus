@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.infra.viewpoints.configuration.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -51,7 +52,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstraints()
 	 * @generated
 	 * @ordered
@@ -62,7 +63,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	 * The default value of the '{@link #getElementMultiplicity() <em>Element Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementMultiplicity()
 	 * @generated
 	 * @ordered
@@ -73,7 +74,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	 * The cached value of the '{@link #getElementMultiplicity() <em>Element Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementMultiplicity()
 	 * @generated
 	 * @ordered
@@ -84,7 +85,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	 * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -95,7 +96,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	 * The cached value of the '{@link #getStereotypes() <em>Stereotypes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypes()
 	 * @generated
 	 * @ordered
@@ -106,7 +107,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	 * The default value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMultiplicity()
 	 * @generated
 	 * @ordered
@@ -117,7 +118,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	 * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMultiplicity()
 	 * @generated
 	 * @ordered
@@ -127,7 +128,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ModelRuleImpl() {
@@ -137,7 +138,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +149,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ConstraintDescriptor> getConstraints() {
@@ -161,7 +162,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getElementMultiplicity() {
@@ -171,7 +172,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElementMultiplicity(int newElementMultiplicity) {
@@ -185,7 +186,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getElement() {
@@ -204,7 +205,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass basicGetElement() {
@@ -214,7 +215,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElement(EClass newElement) {
@@ -228,7 +229,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<EClass> getStereotypes() {
@@ -241,7 +242,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getMultiplicity() {
@@ -251,7 +252,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMultiplicity(int newMultiplicity) {
@@ -265,7 +266,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -281,7 +282,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,7 +297,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -322,7 +323,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -353,7 +354,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -381,7 +382,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +405,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -425,7 +426,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -446,7 +447,7 @@ public class ModelRuleImpl extends RuleImpl implements ModelRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

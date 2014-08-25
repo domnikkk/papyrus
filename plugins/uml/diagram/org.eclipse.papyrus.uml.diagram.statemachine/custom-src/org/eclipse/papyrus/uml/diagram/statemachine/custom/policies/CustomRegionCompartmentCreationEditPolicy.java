@@ -144,10 +144,10 @@ public class CustomRegionCompartmentCreationEditPolicy extends CreationEditPolic
 				/*
 				 * ChangeBoundsRequest changeBoundsRequest = (ChangeBoundsRequest)request;
 				 * Point mouseLocation = changeBoundsRequest.getLocation();
-				 * 
+				 *
 				 * DropObjectsRequest dropRequest = new DropObjectsRequest();
 				 * dropRequest.setLocation(mouseLocation);
-				 * 
+				 *
 				 * List<View> list = new ArrayList<View>();
 				 * Iterator<EditPart> it = changeBoundsRequest.getEditParts().iterator();
 				 * while(it.hasNext()) {

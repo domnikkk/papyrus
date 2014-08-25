@@ -15,7 +15,7 @@ import org.eclipse.gef.EditPart;
 
 /**
  * An ITool must run a code from a given edit part
- * 
+ *
  * @author tfaure
  *
  */
@@ -23,7 +23,7 @@ public interface ITool {
 
 	/**
 	 * Code the tool has to perform when the user has created the desired element
-	 * 
+	 *
 	 * @param editPart
 	 */
 	void run(EditPart editPart);

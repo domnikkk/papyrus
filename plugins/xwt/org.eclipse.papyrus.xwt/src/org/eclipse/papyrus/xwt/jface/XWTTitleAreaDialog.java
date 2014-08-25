@@ -22,7 +22,6 @@ import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.papyrus.xwt.IConstants;
 import org.eclipse.papyrus.xwt.IXWTLoader;
 import org.eclipse.papyrus.xwt.XWT;
-import org.eclipse.papyrus.xwt.XWTLoader;
 import org.eclipse.papyrus.xwt.databinding.BindingContext;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;

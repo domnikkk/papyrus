@@ -31,10 +31,10 @@ import org.eclipse.uml2.uml.Element;
  * <pre>
  *
  * Edit helper class for {@link Element}
- * 
+ *
  * Expected behavior:
  * - Removes any stereotype application before deletion
- * 
+ *
  * The configure command allows contributions provided by the request parameters.
  * </pre>
  */

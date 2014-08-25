@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.UmlMessageFactory
  * @model kind="package"
  * @generated
@@ -29,7 +29,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "umlMessage";
@@ -38,7 +38,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/uml/textedit/message/xtext/UmlMessage";
@@ -47,7 +47,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "umlMessage";
@@ -56,7 +56,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	UmlMessagePackage eINSTANCE = org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.UmlMessagePackageImpl.init();
@@ -65,7 +65,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.MessageRuleImpl <em>Message Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.MessageRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.UmlMessagePackageImpl#getMessageRule()
 	 * @generated
@@ -76,7 +76,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The feature id for the '<em><b>Sequence Term</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -86,7 +86,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -96,7 +96,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The number of structural features of the '<em>Message Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -106,7 +106,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.SequenceTermRuleImpl <em>Sequence Term Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.SequenceTermRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.UmlMessagePackageImpl#getSequenceTermRule()
 	 * @generated
@@ -117,7 +117,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The feature id for the '<em><b>Sequencial Order</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +127,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The feature id for the '<em><b>Sequence Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +137,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The feature id for the '<em><b>Recurrence</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,7 +147,7 @@ public interface UmlMessagePackage extends EPackage
 	 * The number of structural features of the '<em>Sequence Term Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -158,7 +158,7 @@ public interface UmlMessagePackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.MessageRule <em>Message Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Message Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.MessageRule
 	 * @generated
@@ -169,7 +169,7 @@ public interface UmlMessagePackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.MessageRule#getSequenceTerm <em>Sequence Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Sequence Term</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.MessageRule#getSequenceTerm()
 	 * @see #getMessageRule()
@@ -181,7 +181,7 @@ public interface UmlMessagePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.MessageRule#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.MessageRule#getName()
 	 * @see #getMessageRule()
@@ -193,7 +193,7 @@ public interface UmlMessagePackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule <em>Sequence Term Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Sequence Term Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule
 	 * @generated
@@ -204,7 +204,7 @@ public interface UmlMessagePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule#getSequencialOrder <em>Sequencial Order</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Sequencial Order</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule#getSequencialOrder()
 	 * @see #getSequenceTermRule()
@@ -216,7 +216,7 @@ public interface UmlMessagePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule#getSequenceName <em>Sequence Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Sequence Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule#getSequenceName()
 	 * @see #getSequenceTermRule()
@@ -228,7 +228,7 @@ public interface UmlMessagePackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule#getRecurrence <em>Recurrence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Recurrence</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule#getRecurrence()
 	 * @see #getSequenceTermRule()
@@ -240,7 +240,7 @@ public interface UmlMessagePackage extends EPackage
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -256,7 +256,7 @@ public interface UmlMessagePackage extends EPackage
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals
@@ -265,7 +265,7 @@ public interface UmlMessagePackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.MessageRuleImpl <em>Message Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.MessageRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.UmlMessagePackageImpl#getMessageRule()
 		 * @generated
@@ -276,7 +276,7 @@ public interface UmlMessagePackage extends EPackage
 		 * The meta object literal for the '<em><b>Sequence Term</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MESSAGE_RULE__SEQUENCE_TERM = eINSTANCE.getMessageRule_SequenceTerm();
@@ -285,7 +285,7 @@ public interface UmlMessagePackage extends EPackage
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MESSAGE_RULE__NAME = eINSTANCE.getMessageRule_Name();
@@ -294,7 +294,7 @@ public interface UmlMessagePackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.SequenceTermRuleImpl <em>Sequence Term Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.SequenceTermRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl.UmlMessagePackageImpl#getSequenceTermRule()
 		 * @generated
@@ -305,7 +305,7 @@ public interface UmlMessagePackage extends EPackage
 		 * The meta object literal for the '<em><b>Sequencial Order</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SEQUENCE_TERM_RULE__SEQUENCIAL_ORDER = eINSTANCE.getSequenceTermRule_SequencialOrder();
@@ -314,7 +314,7 @@ public interface UmlMessagePackage extends EPackage
 		 * The meta object literal for the '<em><b>Sequence Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SEQUENCE_TERM_RULE__SEQUENCE_NAME = eINSTANCE.getSequenceTermRule_SequenceName();
@@ -323,7 +323,7 @@ public interface UmlMessagePackage extends EPackage
 		 * The meta object literal for the '<em><b>Recurrence</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SEQUENCE_TERM_RULE__RECURRENCE = eINSTANCE.getSequenceTermRule_Recurrence();

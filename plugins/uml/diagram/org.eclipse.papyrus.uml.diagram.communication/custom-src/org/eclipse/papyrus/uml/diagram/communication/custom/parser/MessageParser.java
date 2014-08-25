@@ -29,7 +29,7 @@ public class MessageParser implements IParser {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getEditString(org.eclipse.core.runtime.IAdaptable, int)
 	 */
 	public String getEditString(IAdaptable element, int flags) {
@@ -38,7 +38,7 @@ public class MessageParser implements IParser {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#isValidEditString(org.eclipse.core.runtime.IAdaptable, java.lang.String)
 	 */
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
@@ -47,7 +47,7 @@ public class MessageParser implements IParser {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getParseCommand(org.eclipse.core.runtime.IAdaptable, java.lang.String, int)
 	 */
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
@@ -56,7 +56,7 @@ public class MessageParser implements IParser {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getPrintString(org.eclipse.core.runtime.IAdaptable, int)
 	 */
 	public String getPrintString(IAdaptable element, int flags) {
@@ -89,7 +89,7 @@ public class MessageParser implements IParser {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#isAffectingEvent(java.lang.Object, int)
 	 */
 	public boolean isAffectingEvent(Object event, int flags) {
@@ -98,7 +98,7 @@ public class MessageParser implements IParser {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getCompletionProcessor(org.eclipse.core.runtime.IAdaptable)
 	 */
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {

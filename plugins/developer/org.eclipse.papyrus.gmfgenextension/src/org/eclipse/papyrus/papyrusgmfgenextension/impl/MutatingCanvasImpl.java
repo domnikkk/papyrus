@@ -37,7 +37,7 @@ public class MutatingCanvasImpl extends CommentedElementImpl implements Mutating
 	 * The cached value of the '{@link #getAlternateCanvases() <em>Alternate Canvases</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAlternateCanvases()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class MutatingCanvasImpl extends CommentedElementImpl implements Mutating
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MutatingCanvasImpl() {
@@ -57,7 +57,7 @@ public class MutatingCanvasImpl extends CommentedElementImpl implements Mutating
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,7 +68,7 @@ public class MutatingCanvasImpl extends CommentedElementImpl implements Mutating
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +82,7 @@ public class MutatingCanvasImpl extends CommentedElementImpl implements Mutating
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class MutatingCanvasImpl extends CommentedElementImpl implements Mutating
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,7 +112,7 @@ public class MutatingCanvasImpl extends CommentedElementImpl implements Mutating
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -130,7 +130,7 @@ public class MutatingCanvasImpl extends CommentedElementImpl implements Mutating
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class MutatingCanvasImpl extends CommentedElementImpl implements Mutating
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

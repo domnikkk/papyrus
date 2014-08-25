@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.ChangeEventRule;
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage;
 
@@ -30,7 +27,7 @@ public class ChangeEventRuleImpl extends EventRuleImpl implements ChangeEventRul
 	 * The default value of the '{@link #getExp() <em>Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExp()
 	 * @generated
 	 * @ordered
@@ -41,7 +38,7 @@ public class ChangeEventRuleImpl extends EventRuleImpl implements ChangeEventRul
 	 * The cached value of the '{@link #getExp() <em>Exp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExp()
 	 * @generated
 	 * @ordered
@@ -51,7 +48,7 @@ public class ChangeEventRuleImpl extends EventRuleImpl implements ChangeEventRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ChangeEventRuleImpl()
@@ -62,7 +59,7 @@ public class ChangeEventRuleImpl extends EventRuleImpl implements ChangeEventRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,7 +71,7 @@ public class ChangeEventRuleImpl extends EventRuleImpl implements ChangeEventRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +83,7 @@ public class ChangeEventRuleImpl extends EventRuleImpl implements ChangeEventRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +99,7 @@ public class ChangeEventRuleImpl extends EventRuleImpl implements ChangeEventRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +116,7 @@ public class ChangeEventRuleImpl extends EventRuleImpl implements ChangeEventRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +134,7 @@ public class ChangeEventRuleImpl extends EventRuleImpl implements ChangeEventRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +152,7 @@ public class ChangeEventRuleImpl extends EventRuleImpl implements ChangeEventRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,7 +169,7 @@ public class ChangeEventRuleImpl extends EventRuleImpl implements ChangeEventRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

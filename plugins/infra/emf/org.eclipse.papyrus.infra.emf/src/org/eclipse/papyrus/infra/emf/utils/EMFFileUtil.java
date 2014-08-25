@@ -27,9 +27,9 @@ public class EMFFileUtil {
 
 	/*
 	 * Returns the path to the IFile (Encoded)
-	 * 
+	 *
 	 * @param file
-	 * 
+	 *
 	 * @return
 	 */
 	public static String getPath(IFile file) {
@@ -43,9 +43,9 @@ public class EMFFileUtil {
 	 * Returns the IFile (Workspace file) from the given location.
 	 * The location may be either absolute (From the FileSystem) or
 	 * relative to the workspace root.
-	 * 
+	 *
 	 * @param location
-	 * 
+	 *
 	 * @return
 	 */
 	public static IFile getIFile(String location) {
@@ -66,9 +66,9 @@ public class EMFFileUtil {
 	 * Returns the Java File from the given location.
 	 * The location may be either absolute (From the FileSystem) or
 	 * relative to the workspace root.
-	 * 
+	 *
 	 * @param location
-	 * 
+	 *
 	 * @return
 	 */
 	public static File getFile(String location) {
@@ -83,9 +83,9 @@ public class EMFFileUtil {
 	/*
 	 * Returns the Java File from the given location.
 	 * The location is relative to the workspace root.
-	 * 
+	 *
 	 * @param location
-	 * 
+	 *
 	 * @return
 	 */
 	public static File getWorkspaceFile(String location) {

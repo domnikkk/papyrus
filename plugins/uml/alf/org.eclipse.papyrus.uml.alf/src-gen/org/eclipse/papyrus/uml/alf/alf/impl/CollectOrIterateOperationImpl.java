@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.CollectOrIterateOperation;
 import org.eclipse.papyrus.uml.alf.alf.CollectOrIterateOperator;
@@ -87,8 +84,9 @@ public class CollectOrIterateOperationImpl extends SequenceExpansionExpressionIm
   {
     CollectOrIterateOperator oldOp = op;
     op = newOp == null ? OP_EDEFAULT : newOp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.COLLECT_OR_ITERATE_OPERATION__OP, oldOp, op));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.COLLECT_OR_ITERATE_OPERATION__OP, oldOp, op));
+	}
   }
 
   /**
@@ -165,7 +163,9 @@ public class CollectOrIterateOperationImpl extends SequenceExpansionExpressionIm
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (op: ");

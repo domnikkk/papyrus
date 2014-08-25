@@ -10,7 +10,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.I
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Injected Value</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public abstract class InjectedValueTest extends TestCase {
@@ -19,7 +19,7 @@ public abstract class InjectedValueTest extends TestCase {
 	 * The fixture for this Injected Value test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InjectedValue fixture = null;
@@ -28,7 +28,7 @@ public abstract class InjectedValueTest extends TestCase {
 	 * Constructs a new Injected Value test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InjectedValueTest(String name) {
@@ -39,7 +39,7 @@ public abstract class InjectedValueTest extends TestCase {
 	 * Sets the fixture for this Injected Value test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(InjectedValue fixture) {
@@ -50,7 +50,7 @@ public abstract class InjectedValueTest extends TestCase {
 	 * Returns the fixture for this Injected Value test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InjectedValue getFixture() {

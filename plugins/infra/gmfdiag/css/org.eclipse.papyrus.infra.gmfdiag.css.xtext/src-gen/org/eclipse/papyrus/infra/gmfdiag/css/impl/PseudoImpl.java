@@ -12,11 +12,8 @@
 package org.eclipse.papyrus.infra.gmfdiag.css.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.Pseudo;
 
@@ -40,7 +37,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	 * The default value of the '{@link #getPseudo() <em>Pseudo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPseudo()
 	 * @generated
 	 * @ordered
@@ -51,7 +48,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	 * The cached value of the '{@link #getPseudo() <em>Pseudo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPseudo()
 	 * @generated
 	 * @ordered
@@ -62,7 +59,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	 * The default value of the '{@link #getArgs() <em>Args</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getArgs()
 	 * @generated
 	 * @ordered
@@ -73,7 +70,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	 * The cached value of the '{@link #getArgs() <em>Args</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getArgs()
 	 * @generated
 	 * @ordered
@@ -83,7 +80,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PseudoImpl()
@@ -94,7 +91,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +103,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +115,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +131,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +143,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +159,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +178,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +199,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +220,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -242,7 +239,7 @@ public class PseudoImpl extends SelectorConditionImpl implements Pseudo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -24,6 +24,7 @@ import org.eclipse.papyrus.uml.diagram.timing.edit.commands.TimeConstraintCreate
 import org.eclipse.papyrus.uml.diagram.timing.edit.commands.TimeObservationCreateCommand;
 import org.eclipse.papyrus.uml.diagram.timing.edit.policies.MessageOccurrenceSpecificationItemSemanticEditPolicyCN;
 import org.eclipse.papyrus.uml.diagram.timing.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
 
 /** Semantic edit policy for {@link MessageOccurrenceSpecification}s */
 public class CustomMessageOccurrenceSpecificationItemSemanticEditPolicy extends MessageOccurrenceSpecificationItemSemanticEditPolicyCN {

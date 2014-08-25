@@ -41,7 +41,7 @@ public interface ArchitectureRationale extends ADElement {
 	 * If the meaning of the '<em>Justifies</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Justifies</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getArchitectureRationale_Justifies()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getJustifiedBy

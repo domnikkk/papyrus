@@ -45,7 +45,7 @@ public interface DerivedTypedElement extends FacetElement {
 	 * If the meaning of the '<em>Query</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Query</em>' containment reference.
 	 * @see #setQuery(Query)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetPackage#getDerivedTypedElement_Query()
@@ -58,7 +58,7 @@ public interface DerivedTypedElement extends FacetElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DerivedTypedElement#getQuery <em>Query</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Query</em>' containment reference.
 	 * @see #getQuery()
@@ -73,7 +73,7 @@ public interface DerivedTypedElement extends FacetElement {
 	 * <!-- begin-model-doc -->
 	 * If it exists a facet A which extends a facet B then a derived typed element of A can override a typed element of B; if the both typed elements have the same name, same multiplicity, and same type.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Override</em>' reference.
 	 * @see #setOverride(DerivedTypedElement)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetPackage#getDerivedTypedElement_Override()
@@ -86,7 +86,7 @@ public interface DerivedTypedElement extends FacetElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DerivedTypedElement#getOverride <em>Override</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Override</em>' reference.
 	 * @see #getOverride()

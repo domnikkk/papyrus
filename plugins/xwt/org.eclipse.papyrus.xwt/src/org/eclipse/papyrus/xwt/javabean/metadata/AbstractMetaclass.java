@@ -193,7 +193,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.xaswt.core.metadata.IMetaclass#findDefaultProperty()
 	 */
 	public IProperty findDefaultProperty() {
@@ -202,7 +202,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.soyatec.xaswt.core.metadata.IMetaclass#findEvent(java.lang.String)
 	 */
@@ -213,7 +213,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.soyatec.xaswt.core.metadata.IMetaclass#findProperty(java.lang.String)
 	 */
@@ -249,7 +249,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.xaswt.core.metadata.IMetaclass#getEvents()
 	 */
 	public IEvent[] getEvents() {
@@ -259,7 +259,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.xaswt.core.metadata.IMetaclass#getName()
 	 */
 	public String getName() {
@@ -268,7 +268,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.xaswt.core.metadata.IMetaclass#getProperties()
 	 */
 	public IProperty[] getProperties() {
@@ -278,7 +278,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.xaswt.core.metadata.IMetaclass#getSuperClass()
 	 */
 	public IMetaclass getSuperClass() {
@@ -287,7 +287,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.xaswt.core.metadata.IMetaclass#getType()
 	 */
 	public Class<?> getType() {
@@ -296,7 +296,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.xaswt.core.metadata.IMetaclass#isAbstract()
 	 */
 	public boolean isAbstract() {
@@ -305,7 +305,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.soyatec.xaswt.core.metadata.IMetaclass#isAssignableFrom(com.soyatec
 	 * .xaswt.core.metadata.IMetaclass)
@@ -316,7 +316,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.soyatec.xaswt.core.metadata.IMetaclass#isInstance(java.lang.Object)
 	 */
@@ -326,7 +326,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.soyatec.xaswt.core.metadata.IMetaclass#isSubclassOf(com.soyatec.xaswt
 	 * .core.metadata.IMetaclass)
@@ -350,7 +350,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.soyatec.xaswt.core.metadata.IMetaclass#isSuperclassOf(com.soyatec
 	 * .xaswt.core.metadata.IMetaclass)
@@ -361,7 +361,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.xaswt.core.metadata.IMetaclass#newInstance()
 	 */
 	public Object newInstance(Object[] parameters) {
@@ -477,7 +477,7 @@ public abstract class AbstractMetaclass implements IMetaclass {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.xaswt.core.metadata.IMetaclass#newInstance()
 	 */
 	public Object doNewInstance(Object[] parameters) {

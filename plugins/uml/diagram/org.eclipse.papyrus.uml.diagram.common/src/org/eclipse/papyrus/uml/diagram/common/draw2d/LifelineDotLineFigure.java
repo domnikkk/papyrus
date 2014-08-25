@@ -51,7 +51,7 @@ public class LifelineDotLineFigure extends Shape {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Shape#fillShape(org.eclipse.draw2d.Graphics)
 	 */
 	@Override
@@ -66,7 +66,7 @@ public class LifelineDotLineFigure extends Shape {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Shape#outlineShape(org.eclipse.draw2d.Graphics)
 	 */
 	@Override

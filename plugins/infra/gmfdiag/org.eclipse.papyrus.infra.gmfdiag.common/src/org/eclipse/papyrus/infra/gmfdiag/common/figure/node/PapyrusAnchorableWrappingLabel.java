@@ -35,7 +35,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createDefaultAnchor()
 	 */
@@ -45,7 +45,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#szAnchor()
 	 */
@@ -53,7 +53,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getConnectionAnchor()
 	 */
@@ -76,7 +76,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createAnchor()
 	 */
@@ -92,7 +92,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getConnectionAnchors()
 	 */
@@ -105,7 +105,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#connectionAnchors()
 	 */
@@ -113,7 +113,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getConnectionAnchorTerminal()
 	 */
@@ -139,7 +139,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getSourceConnectionAnchorAt()
 	 */
@@ -150,7 +150,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getTargetConnectionAnchorAt()
 	 */
@@ -161,7 +161,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createConnectionAnchor()
 	 */
@@ -181,7 +181,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#isDefaultAnchorArea()
 	 */
@@ -191,7 +191,7 @@ public class PapyrusAnchorableWrappingLabel extends PapyrusWrappingLabel impleme
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IAnchorableFigure#getConnectionAnchor(java.lang.String)
 	 * Copied from @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#getSlidableAnchorArea()
 	 */

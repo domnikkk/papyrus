@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.VisibilityKind;
 
 /**
@@ -34,7 +33,7 @@ public interface CollaborationUseRule extends EObject
 	 * If the meaning of the '<em>Visibility</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Visibility</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.VisibilityKind
 	 * @see #setVisibility(VisibilityKind)
@@ -48,7 +47,7 @@ public interface CollaborationUseRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.CollaborationUseRule#getVisibility <em>Visibility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Visibility</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.VisibilityKind
@@ -64,7 +63,7 @@ public interface CollaborationUseRule extends EObject
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.UmlCollaborationUsePackage#getCollaborationUseRule_Name()
@@ -77,7 +76,7 @@ public interface CollaborationUseRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.CollaborationUseRule#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -92,7 +91,7 @@ public interface CollaborationUseRule extends EObject
 	 * If the meaning of the '<em>Type</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' containment reference.
 	 * @see #setType(TypeRule)
 	 * @see org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.UmlCollaborationUsePackage#getCollaborationUseRule_Type()
@@ -105,7 +104,7 @@ public interface CollaborationUseRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.CollaborationUseRule#getType <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' containment reference.
 	 * @see #getType()

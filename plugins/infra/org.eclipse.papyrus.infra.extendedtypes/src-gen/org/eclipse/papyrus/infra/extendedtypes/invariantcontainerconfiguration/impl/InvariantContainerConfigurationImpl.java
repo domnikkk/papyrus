@@ -15,19 +15,14 @@ package org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.HierarchyPermission;
 import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfigurationPackage;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl.InvariantRuleConfigurationImpl;
 
 /**
@@ -48,7 +43,7 @@ public class InvariantContainerConfigurationImpl extends InvariantRuleConfigurat
 	 * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPermissions()
 	 * @generated
 	 * @ordered
@@ -58,7 +53,7 @@ public class InvariantContainerConfigurationImpl extends InvariantRuleConfigurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected InvariantContainerConfigurationImpl() {
@@ -68,7 +63,7 @@ public class InvariantContainerConfigurationImpl extends InvariantRuleConfigurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +74,7 @@ public class InvariantContainerConfigurationImpl extends InvariantRuleConfigurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<HierarchyPermission> getPermissions() {
@@ -92,7 +87,7 @@ public class InvariantContainerConfigurationImpl extends InvariantRuleConfigurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +102,7 @@ public class InvariantContainerConfigurationImpl extends InvariantRuleConfigurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +117,7 @@ public class InvariantContainerConfigurationImpl extends InvariantRuleConfigurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -140,7 +135,7 @@ public class InvariantContainerConfigurationImpl extends InvariantRuleConfigurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +151,7 @@ public class InvariantContainerConfigurationImpl extends InvariantRuleConfigurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

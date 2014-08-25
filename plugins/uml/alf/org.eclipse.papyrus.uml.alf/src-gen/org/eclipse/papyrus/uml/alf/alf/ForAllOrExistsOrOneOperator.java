@@ -246,5 +246,5 @@ public enum ForAllOrExistsOrOneOperator implements Enumerator
   {
     return literal;
   }
-  
+
 } //ForAllOrExistsOrOneOperator

@@ -27,7 +27,7 @@ public interface MethodInjection extends AbstractMethodInjection {
 	 * If the meaning of the '<em>Method Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Method Name</em>' attribute.
 	 * @see #setMethodName(String)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getMethodInjection_MethodName()
@@ -40,7 +40,7 @@ public interface MethodInjection extends AbstractMethodInjection {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection#getMethodName <em>Method Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Method Name</em>' attribute.
 	 * @see #getMethodName()

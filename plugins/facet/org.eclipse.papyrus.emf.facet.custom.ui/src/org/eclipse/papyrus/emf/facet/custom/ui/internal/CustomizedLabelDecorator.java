@@ -15,9 +15,6 @@ package org.eclipse.papyrus.emf.facet.custom.ui.internal;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.ETypedElement;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
-import org.eclipse.papyrus.emf.facet.util.jface.ui.imageprovider.IImageProvider;
-import org.eclipse.papyrus.emf.facet.util.jface.ui.imageprovider.IImageProviderFactory;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.DecorationOverlayIcon;
 import org.eclipse.jface.viewers.IDecorationContext;
@@ -26,6 +23,9 @@ import org.eclipse.jface.viewers.LabelDecorator;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.core.internal.exported.CustomizationUtils;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IImage;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
+import org.eclipse.papyrus.emf.facet.util.jface.ui.imageprovider.IImageProvider;
+import org.eclipse.papyrus.emf.facet.util.jface.ui.imageprovider.IImageProviderFactory;
 import org.eclipse.swt.graphics.Image;
 
 public class CustomizedLabelDecorator extends LabelDecorator {

@@ -44,7 +44,7 @@ public class IsOneOfQueryImpl extends QueryImpl implements IsOneOfQuery {
 	 * The cached value of the '{@link #getExpectedEObjects() <em>Expected EObjects</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getExpectedEObjects()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class IsOneOfQueryImpl extends QueryImpl implements IsOneOfQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IsOneOfQueryImpl() {
@@ -64,7 +64,7 @@ public class IsOneOfQueryImpl extends QueryImpl implements IsOneOfQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +75,7 @@ public class IsOneOfQueryImpl extends QueryImpl implements IsOneOfQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<EObject> getExpectedEObjects() {
@@ -88,7 +88,7 @@ public class IsOneOfQueryImpl extends QueryImpl implements IsOneOfQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class IsOneOfQueryImpl extends QueryImpl implements IsOneOfQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -121,7 +121,7 @@ public class IsOneOfQueryImpl extends QueryImpl implements IsOneOfQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class IsOneOfQueryImpl extends QueryImpl implements IsOneOfQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -6,12 +6,9 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage;
@@ -36,7 +33,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	 * The cached value of the '{@link #getThemes() <em>Themes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getThemes()
 	 * @generated
 	 * @ordered
@@ -46,7 +43,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected WorkspaceThemesImpl() {
@@ -56,7 +53,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -67,7 +64,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Theme> getThemes() {
@@ -80,7 +77,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +92,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +107,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -128,7 +125,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +141,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

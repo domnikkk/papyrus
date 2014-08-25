@@ -55,7 +55,7 @@ public class TabMouseEventListener implements ITabMouseEventsListener {
 
 	/**
 	 * Register this class as a listener of {@link ISashWindowsContainerChangedListener}
-	 * 
+	 *
 	 * @param container
 	 */
 	private void initialize(ISashWindowsContainer container) {
@@ -67,7 +67,7 @@ public class TabMouseEventListener implements ITabMouseEventsListener {
 
 	/**
 	 * Dispose this listener. Unregister all pages, and itself.
-	 * 
+	 *
 	 * @param container
 	 *            The container used to register this listener.
 	 *
@@ -155,7 +155,7 @@ public class TabMouseEventListener implements ITabMouseEventsListener {
 
 	/**
 	 * Double click event detected. Call the associated command.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.editor.ITabMouseEventsListener#mouseDoubleClick(org.eclipse.papyrus.infra.core.sasheditor.editor.ITabMouseEvent)
 	 *
 	 * @param event

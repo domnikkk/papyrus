@@ -5,18 +5,18 @@ package org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.*;
+import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.MessageRule;
+import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.SequenceTermRule;
+import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.UmlMessageFactory;
+import org.eclipse.papyrus.uml.textedit.message.xtext.umlMessage.UmlMessagePackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UmlMessageFactoryImpl extends EFactoryImpl implements UmlMessageFactory
@@ -25,7 +25,7 @@ public class UmlMessageFactoryImpl extends EFactoryImpl implements UmlMessageFac
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static UmlMessageFactory init()
@@ -48,7 +48,7 @@ public class UmlMessageFactoryImpl extends EFactoryImpl implements UmlMessageFac
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UmlMessageFactoryImpl()
@@ -59,7 +59,7 @@ public class UmlMessageFactoryImpl extends EFactoryImpl implements UmlMessageFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class UmlMessageFactoryImpl extends EFactoryImpl implements UmlMessageFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +92,7 @@ public class UmlMessageFactoryImpl extends EFactoryImpl implements UmlMessageFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -105,7 +105,7 @@ public class UmlMessageFactoryImpl extends EFactoryImpl implements UmlMessageFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class UmlMessageFactoryImpl extends EFactoryImpl implements UmlMessageFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

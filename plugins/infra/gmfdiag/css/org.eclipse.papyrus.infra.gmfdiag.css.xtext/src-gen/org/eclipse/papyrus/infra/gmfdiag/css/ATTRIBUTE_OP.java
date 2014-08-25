@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>ATTRIBUTE OP</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.gmfdiag.css.CssPackage#getATTRIBUTE_OP()
  * @model
  * @generated
@@ -33,7 +33,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * The '<em><b>EQUALS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EQUALS_VALUE
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * The '<em><b>CONTAINS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CONTAINS_VALUE
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * The '<em><b>UNEQUALS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNEQUALS_VALUE
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * If the meaning of '<em><b>EQUALS</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #EQUALS
 	 * @model literal="="
 	 * @generated
@@ -84,7 +84,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * If the meaning of '<em><b>CONTAINS</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CONTAINS
 	 * @model literal="~="
 	 * @generated
@@ -99,7 +99,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * If the meaning of '<em><b>UNEQUALS</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #UNEQUALS
 	 * @model literal="!="
 	 * @generated
@@ -111,7 +111,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * An array of all the '<em><b>ATTRIBUTE OP</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final ATTRIBUTE_OP[] VALUES_ARRAY =
@@ -126,7 +126,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * A public read-only list of all the '<em><b>ATTRIBUTE OP</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<ATTRIBUTE_OP> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -135,7 +135,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * Returns the '<em><b>ATTRIBUTE OP</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ATTRIBUTE_OP get(String literal)
@@ -155,7 +155,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * Returns the '<em><b>ATTRIBUTE OP</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ATTRIBUTE_OP getByName(String name)
@@ -175,7 +175,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * Returns the '<em><b>ATTRIBUTE OP</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ATTRIBUTE_OP get(int value)
@@ -195,7 +195,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -203,7 +203,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -211,7 +211,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -220,7 +220,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private ATTRIBUTE_OP(int value, String name, String literal)
@@ -233,7 +233,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +245,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,7 +257,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -270,7 +270,7 @@ public enum ATTRIBUTE_OP implements Enumerator
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

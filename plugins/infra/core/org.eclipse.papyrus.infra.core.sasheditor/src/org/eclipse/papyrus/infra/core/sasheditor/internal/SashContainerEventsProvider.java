@@ -47,7 +47,7 @@ public class SashContainerEventsProvider {
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param newEditor
 	 */
 	public void firePageOpenedEvent(PagePart page) {
@@ -59,7 +59,7 @@ public class SashContainerEventsProvider {
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param newEditor
 	 */
 	public void firePageClosedEvent(PagePart page) {
@@ -71,7 +71,7 @@ public class SashContainerEventsProvider {
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param newEditor
 	 */
 	public void firePageAboutToBeOpenedEvent(PagePart page) {
@@ -83,7 +83,7 @@ public class SashContainerEventsProvider {
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param newEditor
 	 */
 	public void firePageAboutToBeClosedEvent(PagePart page) {
@@ -95,7 +95,7 @@ public class SashContainerEventsProvider {
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param newEditor
 	 */
 	public void firePageActivatedEvent(PagePart page) {
@@ -107,7 +107,7 @@ public class SashContainerEventsProvider {
 
 	/**
 	 * Notify all listener with event.
-	 * 
+	 *
 	 * @param newEditor
 	 */
 	public void firePageDeactivatedEvent(PagePart page) {

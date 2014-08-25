@@ -55,7 +55,7 @@ public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 
 	/**
 	 * Construct a delete command with the cut selection
-	 * 
+	 *
 	 * @return the delete command
 	 */
 	protected Command buildDeleteCommand() {
@@ -99,7 +99,7 @@ public class CutInDiagramHandler extends AbstractGraphicalCommandHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.menu.handlers.
 	 * AbstractGraphicalCommandHandler#setEnabled(java.lang.Object)
 	 */

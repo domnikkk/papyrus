@@ -31,7 +31,7 @@ public class ExternalHookImpl extends CommentedElementImpl implements ExternalHo
 	 * The default value of the '{@link #getClasspath() <em>Classpath</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClasspath()
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public class ExternalHookImpl extends CommentedElementImpl implements ExternalHo
 	 * The cached value of the '{@link #getClasspath() <em>Classpath</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClasspath()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class ExternalHookImpl extends CommentedElementImpl implements ExternalHo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExternalHookImpl() {
@@ -62,7 +62,7 @@ public class ExternalHookImpl extends CommentedElementImpl implements ExternalHo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +73,7 @@ public class ExternalHookImpl extends CommentedElementImpl implements ExternalHo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class ExternalHookImpl extends CommentedElementImpl implements ExternalHo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +99,7 @@ public class ExternalHookImpl extends CommentedElementImpl implements ExternalHo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class ExternalHookImpl extends CommentedElementImpl implements ExternalHo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class ExternalHookImpl extends CommentedElementImpl implements ExternalHo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class ExternalHookImpl extends CommentedElementImpl implements ExternalHo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -161,7 +161,7 @@ public class ExternalHookImpl extends CommentedElementImpl implements ExternalHo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

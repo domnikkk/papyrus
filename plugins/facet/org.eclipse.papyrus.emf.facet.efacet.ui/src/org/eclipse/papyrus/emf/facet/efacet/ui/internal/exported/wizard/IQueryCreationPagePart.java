@@ -23,7 +23,7 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * This interface has to be implemented by {@link Query} factory UI Class. It is used to complete a
  * generic {@link Query} creation wizard with specific widget.
- * 
+ *
  * @deprecated This interface has been replaced by {@link IQueryCreationPagePart2}. No tracking bug needed because this API has not been released yet.
  * @since 0.2
  */

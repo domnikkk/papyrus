@@ -46,14 +46,14 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SerializationPackageImpl extends EPackageImpl implements SerializationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass abstractReferenceInstanceEClass = null;
@@ -61,7 +61,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass multiValuedContainmentReferenceInstanceEClass = null;
@@ -69,7 +69,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass multiValuedReferenceInstanceEClass = null;
@@ -77,7 +77,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass singleValuedAttributeInstanceEClass = null;
@@ -85,7 +85,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass extendedEObjectReferenceEClass = null;
@@ -93,7 +93,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass singleValuedContainmentReferenceInstanceEClass = null;
@@ -101,7 +101,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass singleValuedReferenceInstanceEClass = null;
@@ -109,7 +109,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass multiValuedAttributeInstanceEClass = null;
@@ -117,7 +117,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass abstractAttributeInstanceEClass = null;
@@ -127,7 +127,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SerializationPackage#eNS_URI
 	 * @see #init()
@@ -140,7 +140,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -151,7 +151,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	 * <p>
 	 * This method is used to initialize {@link SerializationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -203,7 +203,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getAbstractReferenceInstance() {
@@ -213,7 +213,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getAbstractReferenceInstance_EReference() {
@@ -223,7 +223,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMultiValuedContainmentReferenceInstance() {
@@ -233,7 +233,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getMultiValuedContainmentReferenceInstance_OwnedElements() {
@@ -243,7 +243,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMultiValuedReferenceInstance() {
@@ -253,7 +253,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getMultiValuedReferenceInstance_ReferencedElements() {
@@ -263,7 +263,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getSingleValuedAttributeInstance() {
@@ -273,7 +273,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getSingleValuedAttributeInstance_Value() {
@@ -283,7 +283,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getExtendedEObjectReference() {
@@ -293,7 +293,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getExtendedEObjectReference_ExtendedEObject() {
@@ -303,7 +303,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getExtendedEObjectReference_AttributeInstances() {
@@ -313,7 +313,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getExtendedEObjectReference_ReferenceInstances() {
@@ -323,7 +323,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getSingleValuedContainmentReferenceInstance() {
@@ -333,7 +333,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getSingleValuedContainmentReferenceInstance_OwnedElement() {
@@ -343,7 +343,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getSingleValuedReferenceInstance() {
@@ -353,7 +353,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getSingleValuedReferenceInstance_ReferencedElement() {
@@ -363,7 +363,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMultiValuedAttributeInstance() {
@@ -373,7 +373,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMultiValuedAttributeInstance_Values() {
@@ -383,7 +383,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getAbstractAttributeInstance() {
@@ -393,7 +393,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getAbstractAttributeInstance_EAttribute() {
@@ -403,7 +403,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SerializationFactory getSerializationFactory() {
@@ -413,7 +413,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -423,7 +423,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -466,7 +466,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -476,7 +476,7 @@ public class SerializationPackageImpl extends EPackageImpl implements Serializat
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

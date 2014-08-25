@@ -19,7 +19,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -31,7 +30,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.util.Iso42010AdapterFactory;
 
 /**
@@ -41,7 +39,7 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.util.Iso42010AdapterFactory
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -49,7 +47,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -58,7 +56,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -67,7 +65,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -76,7 +74,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Iso42010ItemProviderAdapterFactory() {
@@ -91,7 +89,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureDescriptionItemProvider architectureDescriptionItemProvider;
@@ -100,7 +98,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDescription}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +114,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StakeholderItemProvider stakeholderItemProvider;
@@ -125,7 +123,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -141,7 +139,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureViewpointItemProvider architectureViewpointItemProvider;
@@ -150,7 +148,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +164,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ModelKindItemProvider modelKindItemProvider;
@@ -175,7 +173,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ModelKind}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +189,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureModelItemProvider architectureModelItemProvider;
@@ -200,7 +198,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureModel}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +214,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureViewItemProvider architectureViewItemProvider;
@@ -225,7 +223,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +239,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.Concern} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConcernItemProvider concernItemProvider;
@@ -250,7 +248,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.Concern}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,7 +264,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.System} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SystemItemProvider systemItemProvider;
@@ -275,7 +273,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.System}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -291,7 +289,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.Architecture} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureItemProvider architectureItemProvider;
@@ -300,7 +298,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.Architecture}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +314,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureRationale} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureRationaleItemProvider architectureRationaleItemProvider;
@@ -325,7 +323,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureRationale}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -341,7 +339,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.Correspondence} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CorrespondenceItemProvider correspondenceItemProvider;
@@ -350,7 +348,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.Correspondence}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +364,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.CorrespondenceRule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CorrespondenceRuleItemProvider correspondenceRuleItemProvider;
@@ -375,7 +373,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.CorrespondenceRule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -391,7 +389,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureDecisionItemProvider architectureDecisionItemProvider;
@@ -400,7 +398,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -416,7 +414,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureFrameworkItemProvider architectureFrameworkItemProvider;
@@ -425,7 +423,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureFramework}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -441,7 +439,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
@@ -452,7 +450,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
@@ -462,7 +460,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -474,7 +472,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -485,7 +483,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -504,7 +502,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
@@ -515,7 +513,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
@@ -526,7 +524,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void fireNotifyChanged(Notification notification) {
@@ -541,7 +539,7 @@ public class Iso42010ItemProviderAdapterFactory extends Iso42010AdapterFactory i
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void dispose() {

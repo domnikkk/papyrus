@@ -23,7 +23,7 @@ import org.eclipse.uml2.uml.Element;
  * - distinguish between UML and SysML expected behavior for {@link Association}.
  * - decide whether and {@link Association} can be dropped and used in a specific diagram.
  * - select the property view to use.
- * 
+ *
  * Existing Associations (created in previous Papyrus version and which have no nature set)
  * are treated as UML Associations.
  * </pre>

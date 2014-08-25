@@ -11,10 +11,10 @@
  */
 package org.eclipse.papyrus.emf.facet.custom.ui.internal.dialog;
 
-import org.eclipse.papyrus.emf.facet.custom.ui.internal.ImageProvider;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.custom.ui.internal.ImageProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;

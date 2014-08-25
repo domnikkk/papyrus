@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ParameterInjection;
@@ -13,7 +12,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Parameter Injection</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ParameterInjectionTest extends TestCase {
@@ -22,7 +21,7 @@ public class ParameterInjectionTest extends TestCase {
 	 * The fixture for this Parameter Injection test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ParameterInjection fixture = null;
@@ -30,7 +29,7 @@ public class ParameterInjectionTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -41,7 +40,7 @@ public class ParameterInjectionTest extends TestCase {
 	 * Constructs a new Parameter Injection test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ParameterInjectionTest(String name) {
@@ -52,7 +51,7 @@ public class ParameterInjectionTest extends TestCase {
 	 * Sets the fixture for this Parameter Injection test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(ParameterInjection fixture) {
@@ -63,7 +62,7 @@ public class ParameterInjectionTest extends TestCase {
 	 * Returns the fixture for this Parameter Injection test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ParameterInjection getFixture() {
@@ -73,7 +72,7 @@ public class ParameterInjectionTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -85,7 +84,7 @@ public class ParameterInjectionTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */

@@ -4,10 +4,18 @@ package org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.*;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.BoundSpecification;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.DefaultValueRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifierSpecification;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.ModifiersRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.MultiplicityRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.QualifiedName;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.RedefinesRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.TypeRule;
+import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +26,7 @@ import org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage
  * @generated
  */
@@ -28,7 +36,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static UmlPortPackage modelPackage;
@@ -37,7 +45,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UmlPortSwitch()
@@ -52,7 +60,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -67,7 +75,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -167,7 +175,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Port Rule</em>'.
@@ -185,7 +193,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Type Rule</em>'.
@@ -203,7 +211,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Qualified Name</em>'.
@@ -221,7 +229,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Multiplicity Rule</em>'.
@@ -239,7 +247,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Bound Specification</em>'.
@@ -257,7 +265,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Modifiers Rule</em>'.
@@ -275,7 +283,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Modifier Specification</em>'.
@@ -293,7 +301,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Redefines Rule</em>'.
@@ -311,7 +319,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Subsets Rule</em>'.
@@ -329,7 +337,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Default Value Rule</em>'.
@@ -347,7 +355,7 @@ public class UmlPortSwitch<T> extends Switch<T>
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

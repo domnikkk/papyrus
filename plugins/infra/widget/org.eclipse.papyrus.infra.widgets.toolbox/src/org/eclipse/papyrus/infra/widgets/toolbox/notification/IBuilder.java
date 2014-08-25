@@ -11,6 +11,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.toolbox.notification;
 
+import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.NotificationBuilder;
 import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.PropertyWrapper;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 

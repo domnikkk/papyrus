@@ -39,7 +39,7 @@ public class EditorDecorationGroup extends DecorationGroup {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.AbstractGroup#getPreferenceConstant(int)
 	 */
 	@Override

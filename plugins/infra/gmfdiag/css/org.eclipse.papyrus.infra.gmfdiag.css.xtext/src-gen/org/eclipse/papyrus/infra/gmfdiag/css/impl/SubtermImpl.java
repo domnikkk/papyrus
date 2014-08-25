@@ -13,13 +13,10 @@ package org.eclipse.papyrus.infra.gmfdiag.css.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.Subterm;
 import org.eclipse.papyrus.infra.gmfdiag.css.Term;
@@ -44,7 +41,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperator()
 	 * @generated
 	 * @ordered
@@ -55,7 +52,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getOperator()
 	 * @generated
 	 * @ordered
@@ -66,7 +63,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	 * The cached value of the '{@link #getTerm() <em>Term</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTerm()
 	 * @generated
 	 * @ordered
@@ -76,7 +73,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SubtermImpl()
@@ -87,7 +84,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -99,7 +96,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +108,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +124,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +136,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetTerm(Term newTerm, NotificationChain msgs)
@@ -161,7 +158,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -189,7 +186,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +203,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -225,7 +222,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -246,7 +243,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +264,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +283,7 @@ public class SubtermImpl extends MinimalEObjectImpl.Container implements Subterm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -21,7 +21,7 @@ import com.google.common.base.Function;
 
 /**
  * Function to transform a {@link Setting} to an {@link EObject}
- * 
+ *
  * @author adaussy
  *
  */

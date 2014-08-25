@@ -18,17 +18,12 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.DocumentTypeDeclaration;
 import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Namespace;
 import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.ProcessingInstruction;
@@ -55,7 +50,7 @@ public class RootImpl extends ElementImpl implements Root {
 	 * The cached value of the '{@link #getNamespaces() <em>Namespaces</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getNamespaces()
 	 * @generated
 	 * @ordered
@@ -66,7 +61,7 @@ public class RootImpl extends ElementImpl implements Root {
 	 * The cached value of the '{@link #getDtd() <em>Dtd</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDtd()
 	 * @generated
 	 * @ordered
@@ -77,7 +72,7 @@ public class RootImpl extends ElementImpl implements Root {
 	 * The cached value of the '{@link #getLeadingPIs() <em>Leading PIs</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLeadingPIs()
 	 * @generated
 	 * @ordered
@@ -87,7 +82,7 @@ public class RootImpl extends ElementImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RootImpl() {
@@ -97,7 +92,7 @@ public class RootImpl extends ElementImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +103,7 @@ public class RootImpl extends ElementImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +117,7 @@ public class RootImpl extends ElementImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +128,7 @@ public class RootImpl extends ElementImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDtd(DocumentTypeDeclaration newDtd, NotificationChain msgs) {
@@ -153,7 +148,7 @@ public class RootImpl extends ElementImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +174,7 @@ public class RootImpl extends ElementImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +188,7 @@ public class RootImpl extends ElementImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,7 +207,7 @@ public class RootImpl extends ElementImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,7 +226,7 @@ public class RootImpl extends ElementImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -256,7 +251,7 @@ public class RootImpl extends ElementImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +273,7 @@ public class RootImpl extends ElementImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

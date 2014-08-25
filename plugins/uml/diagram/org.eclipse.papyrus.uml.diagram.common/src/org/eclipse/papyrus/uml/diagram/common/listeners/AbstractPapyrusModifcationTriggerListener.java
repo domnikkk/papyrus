@@ -28,7 +28,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.TriggerListener;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.emf.core.util.CrossReferenceAdapter;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
@@ -41,7 +40,7 @@ import com.google.common.collect.Iterables;
 
 /**
  * Abstract method used to trigger model modification by listenning the ressource set
- * 
+ *
  * @author adaussy
  *
  */
@@ -62,7 +61,7 @@ public abstract class AbstractPapyrusModifcationTriggerListener extends TriggerL
 
 	/**
 	 * Command which will react to the trigger
-	 * 
+	 *
 	 * @param notif
 	 * @return
 	 */
@@ -83,7 +82,7 @@ public abstract class AbstractPapyrusModifcationTriggerListener extends TriggerL
 
 	/**
 	 * Get the referencing views
-	 * 
+	 *
 	 * @param oldEObject
 	 * @param predicates
 	 *            Additionnal predecate use to speciy search
@@ -121,7 +120,7 @@ public abstract class AbstractPapyrusModifcationTriggerListener extends TriggerL
 
 	/**
 	 * Get the transactionnal editing domain from EObject
-	 * 
+	 *
 	 * @param o
 	 * @return
 	 */

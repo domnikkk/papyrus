@@ -35,7 +35,7 @@ public final class FolderUtils {
 
 	/**
 	 * This method delete the content of the folder
-	 * 
+	 *
 	 * @param folder
 	 *            The folder that has to be emptied
 	 */
@@ -59,7 +59,7 @@ public final class FolderUtils {
 
 	/**
 	 * This method create a folder and it parents if they do not exists.
-	 * 
+	 *
 	 * @param folder
 	 *            The folder that have to be created.
 	 * @throws CoreException

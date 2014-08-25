@@ -21,7 +21,7 @@ import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.ClassDiagramDragDro
 
 /**
  * Customization of the DND edit policy for the BlockDefinition Diagram
- * 
+ *
  * @deprecated prefer using {@link CustomDiagramDragDropEditPolicy}.
  */
 @Deprecated

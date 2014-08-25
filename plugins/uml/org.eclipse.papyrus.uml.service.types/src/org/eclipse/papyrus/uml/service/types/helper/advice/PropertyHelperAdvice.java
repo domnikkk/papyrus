@@ -39,7 +39,6 @@ import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
 import org.eclipse.papyrus.uml.service.types.utils.ElementUtil;
-import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.ConnectableElement;
@@ -62,7 +61,7 @@ public class PropertyHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * While deleting a {@link Property}:
 	 * - remove related {@link ConnectorEnd}
 	 * - remove related {@link Association} when less than 2 ends remains.
@@ -114,7 +113,7 @@ public class PropertyHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * While setting {@link Property} (excluding {@link Port}) type:
 	 * - remove related {@link ConnectorEnd} if they become inconsistent due to the new {@link Type}.
 	 * - add possibly required (UML) association re-factor command when needed.

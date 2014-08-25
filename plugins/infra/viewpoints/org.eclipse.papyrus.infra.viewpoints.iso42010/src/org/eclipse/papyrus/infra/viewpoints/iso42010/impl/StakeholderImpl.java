@@ -17,18 +17,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Concern;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
@@ -54,7 +49,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	 * The cached value of the '{@link #getConcerns() <em>Concerns</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConcerns()
 	 * @generated
 	 * @ordered
@@ -65,7 +60,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	 * The cached value of the '{@link #getViewpoints() <em>Viewpoints</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getViewpoints()
 	 * @generated
 	 * @ordered
@@ -76,7 +71,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	 * The cached value of the '{@link #getHasInterestIn() <em>Has Interest In</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getHasInterestIn()
 	 * @generated
 	 * @ordered
@@ -86,7 +81,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StakeholderImpl() {
@@ -96,7 +91,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +102,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Concern> getConcerns() {
@@ -120,7 +115,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureViewpoint> getViewpoints() {
@@ -133,7 +128,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.papyrus.infra.viewpoints.iso42010.System getHasInterestIn() {
@@ -152,7 +147,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.papyrus.infra.viewpoints.iso42010.System basicGetHasInterestIn() {
@@ -162,7 +157,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetHasInterestIn(org.eclipse.papyrus.infra.viewpoints.iso42010.System newHasInterestIn, NotificationChain msgs) {
@@ -182,7 +177,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setHasInterestIn(org.eclipse.papyrus.infra.viewpoints.iso42010.System newHasInterestIn) {
@@ -207,7 +202,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -228,7 +223,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +240,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +262,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -292,7 +287,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +309,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

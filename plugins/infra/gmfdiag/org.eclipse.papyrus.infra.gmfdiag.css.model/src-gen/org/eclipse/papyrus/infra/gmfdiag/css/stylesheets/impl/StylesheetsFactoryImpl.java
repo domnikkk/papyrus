@@ -7,18 +7,19 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.*;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.EmbeddedStyleSheet;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.ModelStyleSheets;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StyleSheetReference;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsFactory;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage;
+import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.Theme;
+import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.WorkspaceThemes;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class StylesheetsFactoryImpl extends EFactoryImpl implements StylesheetsFactory {
@@ -26,7 +27,7 @@ public class StylesheetsFactoryImpl extends EFactoryImpl implements StylesheetsF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static StylesheetsFactory init() {
@@ -45,7 +46,7 @@ public class StylesheetsFactoryImpl extends EFactoryImpl implements StylesheetsF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StylesheetsFactoryImpl() {
@@ -55,7 +56,7 @@ public class StylesheetsFactoryImpl extends EFactoryImpl implements StylesheetsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +80,7 @@ public class StylesheetsFactoryImpl extends EFactoryImpl implements StylesheetsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelStyleSheets createModelStyleSheets() {
@@ -90,7 +91,7 @@ public class StylesheetsFactoryImpl extends EFactoryImpl implements StylesheetsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StyleSheetReference createStyleSheetReference() {
@@ -101,7 +102,7 @@ public class StylesheetsFactoryImpl extends EFactoryImpl implements StylesheetsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EmbeddedStyleSheet createEmbeddedStyleSheet() {
@@ -112,7 +113,7 @@ public class StylesheetsFactoryImpl extends EFactoryImpl implements StylesheetsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public WorkspaceThemes createWorkspaceThemes() {
@@ -123,7 +124,7 @@ public class StylesheetsFactoryImpl extends EFactoryImpl implements StylesheetsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Theme createTheme() {
@@ -134,7 +135,7 @@ public class StylesheetsFactoryImpl extends EFactoryImpl implements StylesheetsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StylesheetsPackage getStylesheetsPackage() {
@@ -144,7 +145,7 @@ public class StylesheetsFactoryImpl extends EFactoryImpl implements StylesheetsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

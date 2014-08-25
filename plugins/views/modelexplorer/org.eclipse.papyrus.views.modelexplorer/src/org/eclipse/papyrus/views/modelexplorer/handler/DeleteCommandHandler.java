@@ -42,7 +42,7 @@ public class DeleteCommandHandler extends AbstractCommandHandler implements IHan
 
 	/**
 	 * Check if the selection allow delete
-	 * 
+	 *
 	 * @param selectedElements
 	 * @return
 	 */
@@ -83,7 +83,7 @@ public class DeleteCommandHandler extends AbstractCommandHandler implements IHan
 	 * elements.
 	 * @param selectedElements elements to delete
 	 * @return the composite deletion command for current selection
-	 * 
+	 *
 	 * @TODO : Manage possible Diagrams listed in the selection
 	 *
 	 * </pre>

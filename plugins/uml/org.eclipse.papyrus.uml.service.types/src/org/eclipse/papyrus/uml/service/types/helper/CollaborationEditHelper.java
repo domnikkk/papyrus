@@ -14,16 +14,17 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.service.types.helper;
 
+import org.eclipse.uml2.uml.Collaboration;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <pre>
  *
  * Edit helper class for {@link Collaboration}
- * 
+ *
  * Expected behavior:
  * - Add new nested behavior as "ownedBehavior"
- * 
+ *
  * Also see:
  * - {@link BehavioredClassifierEditHelper} default containment duplicated here as, due to multiple inheritance
  *   (Collaboration is also a StructuredClassifier), the ElementType framework may recover an incorrect EditHelper.

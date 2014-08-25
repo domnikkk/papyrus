@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.Namespace;
 /**
  * <pre>
  * This is an advice helper used to initialize namedElement.
- * 
+ *
  * In particular the name of such elements is initialized in order
  * to have a unique name for a specific type of element per {@link Namespace}.
  *

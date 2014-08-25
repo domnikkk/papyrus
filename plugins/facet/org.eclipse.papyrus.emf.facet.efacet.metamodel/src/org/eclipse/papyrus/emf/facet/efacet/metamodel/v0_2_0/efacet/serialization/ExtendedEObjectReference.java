@@ -43,7 +43,7 @@ public interface ExtendedEObjectReference extends EObject {
 	 * If the meaning of the '<em>Extended EObject</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Extended EObject</em>' reference.
 	 * @see #setExtendedEObject(EObject)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SerializationPackage#getExtendedEObjectReference_ExtendedEObject()
@@ -56,7 +56,7 @@ public interface ExtendedEObjectReference extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.ExtendedEObjectReference#getExtendedEObject <em>Extended EObject</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Extended EObject</em>' reference.
 	 * @see #getExtendedEObject()
@@ -72,7 +72,7 @@ public interface ExtendedEObjectReference extends EObject {
 	 * If the meaning of the '<em>Attribute Instances</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Attribute Instances</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SerializationPackage#getExtendedEObjectReference_AttributeInstances()
 	 * @model containment="true"
@@ -88,7 +88,7 @@ public interface ExtendedEObjectReference extends EObject {
 	 * If the meaning of the '<em>Reference Instances</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Reference Instances</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SerializationPackage#getExtendedEObjectReference_ReferenceInstances()
 	 * @model containment="true"

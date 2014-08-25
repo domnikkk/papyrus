@@ -33,7 +33,7 @@ public interface PropertyEditorType extends WidgetType {
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see org.eclipse.papyrus.views.properties.environment.Type
 	 * @see #setType(Type)
@@ -47,7 +47,7 @@ public interface PropertyEditorType extends WidgetType {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.environment.PropertyEditorType#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' attribute.
 	 * @see org.eclipse.papyrus.views.properties.environment.Type
@@ -64,7 +64,7 @@ public interface PropertyEditorType extends WidgetType {
 	 * If the meaning of the '<em>Multiplicity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Multiplicity</em>' attribute.
 	 * @see #setMultiplicity(int)
 	 * @see org.eclipse.papyrus.views.properties.environment.EnvironmentPackage#getPropertyEditorType_Multiplicity()
@@ -77,7 +77,7 @@ public interface PropertyEditorType extends WidgetType {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.environment.PropertyEditorType#getMultiplicity <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Multiplicity</em>' attribute.
 	 * @see #getMultiplicity()

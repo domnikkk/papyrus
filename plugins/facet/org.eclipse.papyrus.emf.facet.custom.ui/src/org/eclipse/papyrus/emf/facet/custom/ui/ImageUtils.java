@@ -12,9 +12,9 @@
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.custom.ui;
 
+import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IImage;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.custompt.ImageWrapper;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.custompt.URIImage;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.custompt.IImage;
 import org.eclipse.swt.graphics.Image;
 
 /**
@@ -49,7 +49,7 @@ public final class ImageUtils {
 
 	/**
 	 * Creates an {@link IImage} that wraps the given uri
-	 * 
+	 *
 	 * @since 0.4
 	 */
 	public static IImage wrap(final String uri) {

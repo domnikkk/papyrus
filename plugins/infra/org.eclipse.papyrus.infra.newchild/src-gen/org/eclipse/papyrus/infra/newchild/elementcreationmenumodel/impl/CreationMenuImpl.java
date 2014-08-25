@@ -13,11 +13,8 @@
 package org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.CreationMenu;
 import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelPackage;
 
@@ -41,7 +38,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	 * The default value of the '{@link #getElementTypeIdRef() <em>Element Type Id Ref</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeIdRef()
 	 * @generated
 	 * @ordered
@@ -52,7 +49,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	 * The cached value of the '{@link #getElementTypeIdRef() <em>Element Type Id Ref</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeIdRef()
 	 * @generated
 	 * @ordered
@@ -63,7 +60,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	 * The default value of the '{@link #getRole() <em>Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRole()
 	 * @generated
 	 * @ordered
@@ -74,7 +71,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	 * The cached value of the '{@link #getRole() <em>Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRole()
 	 * @generated
 	 * @ordered
@@ -85,7 +82,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	 * The default value of the '{@link #isDisplayAllRoles() <em>Display All Roles</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDisplayAllRoles()
 	 * @generated
 	 * @ordered
@@ -96,7 +93,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	 * The cached value of the '{@link #isDisplayAllRoles() <em>Display All Roles</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDisplayAllRoles()
 	 * @generated
 	 * @ordered
@@ -106,7 +103,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CreationMenuImpl() {
@@ -116,7 +113,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +124,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getElementTypeIdRef() {
@@ -137,7 +134,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElementTypeIdRef(String newElementTypeIdRef) {
@@ -151,7 +148,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getRole() {
@@ -161,7 +158,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRole(String newRole) {
@@ -175,7 +172,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isDisplayAllRoles() {
@@ -185,7 +182,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDisplayAllRoles(boolean newDisplayAllRoles) {
@@ -199,7 +196,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +215,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +237,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +259,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,7 +278,7 @@ public class CreationMenuImpl extends MenuImpl implements CreationMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

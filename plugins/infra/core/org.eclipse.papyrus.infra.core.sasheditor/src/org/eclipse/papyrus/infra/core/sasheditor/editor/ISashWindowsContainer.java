@@ -3,6 +3,7 @@ package org.eclipse.papyrus.infra.core.sasheditor.editor;
 import java.util.List;
 
 import org.eclipse.jface.action.MenuManager;
+import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel;
 import org.eclipse.papyrus.infra.core.sasheditor.utils.IObservableList;
 import org.eclipse.ui.IEditorPart;
@@ -107,7 +108,7 @@ public interface ISashWindowsContainer {
 
 	/**
 	 * Add a listener {@link ITabMouseEventsListener} on folder's tabs events.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void addFolderTabMouseEventListener(ITabMouseEventsListener listener);
@@ -123,7 +124,7 @@ public interface ISashWindowsContainer {
 
 	/**
 	 * Set a {@link MenuManager} used to manage a contextual menu that is shown on the tabs area of the folders.
-	 * 
+	 *
 	 * @param menuManager
 	 *            The {@link MenuManager} used to create the menu on the tab area.
 	 */

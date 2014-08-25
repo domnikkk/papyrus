@@ -35,7 +35,7 @@ public class AcceptTimeEventActionStereotypeExternalNodeEditPolicy extends Appli
 
 	/**
 	 * add a specific test about TimeEvent
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeExternalNodeEditPolicy#refreshStereotypeDisplay()
 	 *
 	 */
@@ -65,7 +65,7 @@ public class AcceptTimeEventActionStereotypeExternalNodeEditPolicy extends Appli
 	/**
 	 *
 	 * do not pary attention if this compartment or brace due to shape change
-	 * 
+	 *
 	 * @return the list of stereotypes to display with properties if there are
 	 *         selected to be displayed
 	 */
@@ -123,7 +123,7 @@ public class AcceptTimeEventActionStereotypeExternalNodeEditPolicy extends Appli
 
 	/**
 	 * add notification about trigger
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.editpolicies.AbstractAppliedStereotypeDisplayEditPolicy#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param notification

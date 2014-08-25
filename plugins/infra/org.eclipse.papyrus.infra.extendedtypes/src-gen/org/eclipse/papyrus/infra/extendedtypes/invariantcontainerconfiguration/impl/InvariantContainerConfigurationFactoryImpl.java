@@ -15,18 +15,18 @@ package org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.*;
+import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.HierarchyPermission;
+import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfigurationFactory;
+import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.InvariantContainerConfigurationPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InvariantContainerConfigurationFactoryImpl extends EFactoryImpl implements InvariantContainerConfigurationFactory {
@@ -34,7 +34,7 @@ public class InvariantContainerConfigurationFactoryImpl extends EFactoryImpl imp
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static InvariantContainerConfigurationFactory init() {
@@ -53,7 +53,7 @@ public class InvariantContainerConfigurationFactoryImpl extends EFactoryImpl imp
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantContainerConfigurationFactoryImpl() {
@@ -63,7 +63,7 @@ public class InvariantContainerConfigurationFactoryImpl extends EFactoryImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class InvariantContainerConfigurationFactoryImpl extends EFactoryImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantContainerConfiguration createInvariantContainerConfiguration() {
@@ -92,7 +92,7 @@ public class InvariantContainerConfigurationFactoryImpl extends EFactoryImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public HierarchyPermission createHierarchyPermission() {
@@ -103,7 +103,7 @@ public class InvariantContainerConfigurationFactoryImpl extends EFactoryImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InvariantContainerConfigurationPackage getInvariantContainerConfigurationPackage() {
@@ -113,7 +113,7 @@ public class InvariantContainerConfigurationFactoryImpl extends EFactoryImpl imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

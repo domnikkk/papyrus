@@ -3,16 +3,11 @@
 package org.eclipse.papyrus.papyrusgmfgenextension.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.gmf.codegen.gmfgen.impl.MetamodelTypeImpl;
-
 import org.eclipse.papyrus.domaincontextcodegen.ElementType;
-
 import org.eclipse.papyrus.papyrusgmfgenextension.ExternalMetamodelType;
 import org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage;
 
@@ -34,7 +29,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	 * The cached value of the '{@link #getElementTypeRef() <em>Element Type Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementTypeRef()
 	 * @generated
 	 * @ordered
@@ -44,7 +39,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExternalMetamodelTypeImpl() {
@@ -54,7 +49,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -65,7 +60,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +80,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementType basicGetElementTypeRef() {
@@ -95,7 +90,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +105,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +123,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -144,7 +139,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +155,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

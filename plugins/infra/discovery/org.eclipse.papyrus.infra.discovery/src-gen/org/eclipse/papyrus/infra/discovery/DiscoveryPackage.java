@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.discovery.DiscoveryFactory
  * @model kind="package"
  * @generated
@@ -39,7 +39,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "discovery";
@@ -48,7 +48,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/discovery/1.0";
@@ -57,7 +57,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "discovery";
@@ -66,7 +66,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	DiscoveryPackage eINSTANCE = org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl.init();
@@ -75,7 +75,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.discovery.impl.InstallableComponentImpl <em>Installable Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.discovery.impl.InstallableComponentImpl
 	 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getInstallableComponent()
 	 * @generated
@@ -86,7 +86,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -96,7 +96,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Provider</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -106,7 +106,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Sites URLS</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -116,7 +116,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -126,7 +126,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Overview</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -136,7 +136,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Category</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -146,7 +146,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Id</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -156,7 +156,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>License</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -166,7 +166,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Selected</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -176,7 +176,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Available</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -186,7 +186,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Installed</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -196,7 +196,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -206,7 +206,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Image32</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -216,7 +216,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Incubation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -226,7 +226,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -236,7 +236,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Visible</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -246,7 +246,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Hidding Feature ID</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -256,7 +256,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The number of structural features of the '<em>Installable Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -266,7 +266,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.discovery.impl.OverviewImpl <em>Overview</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.discovery.impl.OverviewImpl
 	 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getOverview()
 	 * @generated
@@ -277,7 +277,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -287,7 +287,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Screenshot</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -297,7 +297,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -307,7 +307,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The number of structural features of the '<em>Overview</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -317,7 +317,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.discovery.impl.CategoryImpl <em>Category</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.discovery.impl.CategoryImpl
 	 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getCategory()
 	 * @generated
@@ -328,7 +328,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -338,7 +338,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -348,7 +348,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -358,7 +358,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Relevance</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -368,7 +368,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Overview</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -378,7 +378,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Image48</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -388,7 +388,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The number of structural features of the '<em>Category</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -398,7 +398,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.discovery.impl.DiscoveryDefinitionImpl <em>Definition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryDefinitionImpl
 	 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getDiscoveryDefinition()
 	 * @generated
@@ -409,7 +409,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Categories</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -419,7 +419,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -429,7 +429,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The number of structural features of the '<em>Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -439,7 +439,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.discovery.impl.GroupImpl <em>Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.discovery.impl.GroupImpl
 	 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getGroup()
 	 * @generated
@@ -450,7 +450,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -460,7 +460,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The number of structural features of the '<em>Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -470,7 +470,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.discovery.impl.MessageImpl <em>Message</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.discovery.impl.MessageImpl
 	 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getMessage()
 	 * @generated
@@ -481,7 +481,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -491,7 +491,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -501,7 +501,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -511,7 +511,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The number of structural features of the '<em>Message</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -521,7 +521,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.discovery.Severity <em>Severity</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.discovery.Severity
 	 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getSeverity()
 	 * @generated
@@ -533,7 +533,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent <em>Installable Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Installable Component</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent
 	 * @generated
@@ -544,7 +544,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getName()
 	 * @see #getInstallableComponent()
@@ -556,7 +556,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getProvider <em>Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Provider</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getProvider()
 	 * @see #getInstallableComponent()
@@ -568,7 +568,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getSitesURLS <em>Sites URLS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Sites URLS</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getSitesURLS()
 	 * @see #getInstallableComponent()
@@ -580,7 +580,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getDescription()
 	 * @see #getInstallableComponent()
@@ -592,7 +592,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getOverview <em>Overview</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Overview</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getOverview()
 	 * @see #getInstallableComponent()
@@ -604,7 +604,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getCategory <em>Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Category</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getCategory()
 	 * @see #getInstallableComponent()
@@ -616,7 +616,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Id</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getId()
 	 * @see #getInstallableComponent()
@@ -628,7 +628,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getLicense <em>License</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>License</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getLicense()
 	 * @see #getInstallableComponent()
@@ -640,7 +640,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isSelected <em>Selected</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Selected</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#isSelected()
 	 * @see #getInstallableComponent()
@@ -652,7 +652,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isAvailable <em>Available</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Available</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#isAvailable()
 	 * @see #getInstallableComponent()
@@ -664,7 +664,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isInstalled <em>Installed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Installed</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#isInstalled()
 	 * @see #getInstallableComponent()
@@ -676,7 +676,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getGroups <em>Groups</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Groups</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getGroups()
 	 * @see #getInstallableComponent()
@@ -688,7 +688,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getImage32 <em>Image32</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Image32</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getImage32()
 	 * @see #getInstallableComponent()
@@ -700,7 +700,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isIncubation <em>Incubation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Incubation</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#isIncubation()
 	 * @see #getInstallableComponent()
@@ -712,7 +712,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getMessages <em>Messages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Messages</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getMessages()
 	 * @see #getInstallableComponent()
@@ -724,7 +724,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#isVisible <em>Visible</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Visible</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#isVisible()
 	 * @see #getInstallableComponent()
@@ -736,7 +736,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.infra.discovery.InstallableComponent#getHiddingFeatureID <em>Hidding Feature ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Hidding Feature ID</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.InstallableComponent#getHiddingFeatureID()
 	 * @see #getInstallableComponent()
@@ -748,7 +748,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.discovery.Overview <em>Overview</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Overview</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Overview
 	 * @generated
@@ -759,7 +759,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.Overview#getSummary <em>Summary</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Summary</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Overview#getSummary()
 	 * @see #getOverview()
@@ -771,7 +771,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.Overview#getScreenshot <em>Screenshot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Screenshot</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Overview#getScreenshot()
 	 * @see #getOverview()
@@ -783,7 +783,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.Overview#getUrl <em>Url</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Url</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Overview#getUrl()
 	 * @see #getOverview()
@@ -795,7 +795,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.discovery.Category <em>Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Category</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Category
 	 * @generated
@@ -806,7 +806,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.Category#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Category#getName()
 	 * @see #getCategory()
@@ -818,7 +818,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.Category#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Category#getDescription()
 	 * @see #getCategory()
@@ -830,7 +830,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.discovery.Category#getComponents <em>Components</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Components</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Category#getComponents()
 	 * @see #getCategory()
@@ -842,7 +842,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.Category#getRelevance <em>Relevance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Relevance</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Category#getRelevance()
 	 * @see #getCategory()
@@ -854,7 +854,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.infra.discovery.Category#getOverview <em>Overview</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Overview</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Category#getOverview()
 	 * @see #getCategory()
@@ -866,7 +866,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.Category#getImage48 <em>Image48</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Image48</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Category#getImage48()
 	 * @see #getCategory()
@@ -878,7 +878,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.discovery.DiscoveryDefinition <em>Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Definition</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryDefinition
 	 * @generated
@@ -889,7 +889,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.discovery.DiscoveryDefinition#getCategories <em>Categories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Categories</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryDefinition#getCategories()
 	 * @see #getDiscoveryDefinition()
@@ -901,7 +901,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.discovery.DiscoveryDefinition#getFilters <em>Filters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Filters</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryDefinition#getFilters()
 	 * @see #getDiscoveryDefinition()
@@ -913,7 +913,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.discovery.Group <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Group
 	 * @generated
@@ -924,7 +924,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.Group#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Group#getName()
 	 * @see #getGroup()
@@ -936,7 +936,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.discovery.Message <em>Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Message</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Message
 	 * @generated
@@ -947,7 +947,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.Message#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Title</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Message#getTitle()
 	 * @see #getMessage()
@@ -959,7 +959,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.Message#getMessage <em>Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Message</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Message#getMessage()
 	 * @see #getMessage()
@@ -971,7 +971,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.infra.discovery.Message#getIcon <em>Icon</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Icon</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Message#getIcon()
 	 * @see #getMessage()
@@ -983,7 +983,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.infra.discovery.Severity <em>Severity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Severity</em>'.
 	 * @see org.eclipse.papyrus.infra.discovery.Severity
 	 * @generated
@@ -994,7 +994,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1010,7 +1010,7 @@ public interface DiscoveryPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -1018,7 +1018,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.discovery.impl.InstallableComponentImpl <em>Installable Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.discovery.impl.InstallableComponentImpl
 		 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getInstallableComponent()
 		 * @generated
@@ -1029,7 +1029,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__NAME = eINSTANCE.getInstallableComponent_Name();
@@ -1038,7 +1038,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Provider</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__PROVIDER = eINSTANCE.getInstallableComponent_Provider();
@@ -1047,7 +1047,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Sites URLS</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__SITES_URLS = eINSTANCE.getInstallableComponent_SitesURLS();
@@ -1056,7 +1056,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__DESCRIPTION = eINSTANCE.getInstallableComponent_Description();
@@ -1065,7 +1065,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Overview</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INSTALLABLE_COMPONENT__OVERVIEW = eINSTANCE.getInstallableComponent_Overview();
@@ -1074,7 +1074,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Category</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INSTALLABLE_COMPONENT__CATEGORY = eINSTANCE.getInstallableComponent_Category();
@@ -1083,7 +1083,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__ID = eINSTANCE.getInstallableComponent_Id();
@@ -1092,7 +1092,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>License</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__LICENSE = eINSTANCE.getInstallableComponent_License();
@@ -1101,7 +1101,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__SELECTED = eINSTANCE.getInstallableComponent_Selected();
@@ -1110,7 +1110,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Available</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__AVAILABLE = eINSTANCE.getInstallableComponent_Available();
@@ -1119,7 +1119,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Installed</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__INSTALLED = eINSTANCE.getInstallableComponent_Installed();
@@ -1128,7 +1128,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Groups</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INSTALLABLE_COMPONENT__GROUPS = eINSTANCE.getInstallableComponent_Groups();
@@ -1137,7 +1137,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Image32</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__IMAGE32 = eINSTANCE.getInstallableComponent_Image32();
@@ -1146,7 +1146,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Incubation</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__INCUBATION = eINSTANCE.getInstallableComponent_Incubation();
@@ -1155,7 +1155,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Messages</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference INSTALLABLE_COMPONENT__MESSAGES = eINSTANCE.getInstallableComponent_Messages();
@@ -1164,7 +1164,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Visible</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__VISIBLE = eINSTANCE.getInstallableComponent_Visible();
@@ -1173,7 +1173,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Hidding Feature ID</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute INSTALLABLE_COMPONENT__HIDDING_FEATURE_ID = eINSTANCE.getInstallableComponent_HiddingFeatureID();
@@ -1182,7 +1182,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.discovery.impl.OverviewImpl <em>Overview</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.discovery.impl.OverviewImpl
 		 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getOverview()
 		 * @generated
@@ -1193,7 +1193,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Summary</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute OVERVIEW__SUMMARY = eINSTANCE.getOverview_Summary();
@@ -1202,7 +1202,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Screenshot</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute OVERVIEW__SCREENSHOT = eINSTANCE.getOverview_Screenshot();
@@ -1211,7 +1211,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute OVERVIEW__URL = eINSTANCE.getOverview_Url();
@@ -1220,7 +1220,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.discovery.impl.CategoryImpl <em>Category</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.discovery.impl.CategoryImpl
 		 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getCategory()
 		 * @generated
@@ -1231,7 +1231,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CATEGORY__NAME = eINSTANCE.getCategory_Name();
@@ -1240,7 +1240,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CATEGORY__DESCRIPTION = eINSTANCE.getCategory_Description();
@@ -1249,7 +1249,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Components</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CATEGORY__COMPONENTS = eINSTANCE.getCategory_Components();
@@ -1258,7 +1258,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Relevance</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CATEGORY__RELEVANCE = eINSTANCE.getCategory_Relevance();
@@ -1267,7 +1267,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Overview</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CATEGORY__OVERVIEW = eINSTANCE.getCategory_Overview();
@@ -1276,7 +1276,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Image48</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CATEGORY__IMAGE48 = eINSTANCE.getCategory_Image48();
@@ -1285,7 +1285,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.discovery.impl.DiscoveryDefinitionImpl <em>Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryDefinitionImpl
 		 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getDiscoveryDefinition()
 		 * @generated
@@ -1296,7 +1296,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Categories</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DISCOVERY_DEFINITION__CATEGORIES = eINSTANCE.getDiscoveryDefinition_Categories();
@@ -1305,7 +1305,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Filters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DISCOVERY_DEFINITION__FILTERS = eINSTANCE.getDiscoveryDefinition_Filters();
@@ -1314,7 +1314,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.discovery.impl.GroupImpl <em>Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.discovery.impl.GroupImpl
 		 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getGroup()
 		 * @generated
@@ -1325,7 +1325,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GROUP__NAME = eINSTANCE.getGroup_Name();
@@ -1334,7 +1334,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.discovery.impl.MessageImpl <em>Message</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.discovery.impl.MessageImpl
 		 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getMessage()
 		 * @generated
@@ -1345,7 +1345,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MESSAGE__TITLE = eINSTANCE.getMessage_Title();
@@ -1354,7 +1354,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MESSAGE__MESSAGE = eINSTANCE.getMessage_Message();
@@ -1363,7 +1363,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MESSAGE__ICON = eINSTANCE.getMessage_Icon();
@@ -1372,7 +1372,7 @@ public interface DiscoveryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.discovery.Severity <em>Severity</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.discovery.Severity
 		 * @see org.eclipse.papyrus.infra.discovery.impl.DiscoveryPackageImpl#getSeverity()
 		 * @generated

@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.papyrus.commands.DestroyElementPapyrusCommand;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.ActivityNode;
+
 import com.google.common.collect.Sets;
 
 /**

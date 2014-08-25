@@ -16,7 +16,6 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.gef.palette.CombinedTemplateCreationEntry;
 import org.eclipse.gef.palette.PaletteEntry;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.customization.palette.dialog.LocalPaletteContentPage.EntryType;
 import org.eclipse.papyrus.uml.diagram.common.Activator;

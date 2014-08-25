@@ -41,7 +41,7 @@ public class ElementTypeValidator implements ISelectionStatusValidator {
 	/**
 	 * <pre>
 	 * The selection has to match the {@link IElementType} for validation.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

@@ -32,7 +32,7 @@ public class LayoutImpl extends UIComponentImpl implements Layout {
 	 * The cached value of the '{@link #getLayoutType() <em>Layout Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLayoutType()
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public class LayoutImpl extends UIComponentImpl implements Layout {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LayoutImpl() {
@@ -52,7 +52,7 @@ public class LayoutImpl extends UIComponentImpl implements Layout {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,7 +63,7 @@ public class LayoutImpl extends UIComponentImpl implements Layout {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class LayoutImpl extends UIComponentImpl implements Layout {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LayoutType basicGetLayoutType() {
@@ -93,7 +93,7 @@ public class LayoutImpl extends UIComponentImpl implements Layout {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class LayoutImpl extends UIComponentImpl implements Layout {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -126,7 +126,7 @@ public class LayoutImpl extends UIComponentImpl implements Layout {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class LayoutImpl extends UIComponentImpl implements Layout {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +158,7 @@ public class LayoutImpl extends UIComponentImpl implements Layout {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

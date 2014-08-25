@@ -40,7 +40,7 @@ public interface Message extends EObject {
 	 * If the meaning of the '<em>Title</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getMessage_Title()
@@ -53,7 +53,7 @@ public interface Message extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.Message#getTitle <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Title</em>' attribute.
 	 * @see #getTitle()
@@ -68,7 +68,7 @@ public interface Message extends EObject {
 	 * If the meaning of the '<em>Message</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Message</em>' attribute.
 	 * @see #setMessage(String)
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#getMessage_Message()
@@ -81,7 +81,7 @@ public interface Message extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.Message#getMessage <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Message</em>' attribute.
 	 * @see #getMessage()
@@ -97,7 +97,7 @@ public interface Message extends EObject {
 	 * If the meaning of the '<em>Icon</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Icon</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.discovery.Severity
 	 * @see #setIcon(Severity)
@@ -111,7 +111,7 @@ public interface Message extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.discovery.Message#getIcon <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Icon</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.discovery.Severity

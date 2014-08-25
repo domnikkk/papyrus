@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -32,7 +31,7 @@ public interface ModifiersRule extends EObject
 	 * If the meaning of the '<em>Values</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Values</em>' containment reference list.
 	 * @see org.eclipse.papyrus.uml.textedit.parameter.xtext.umlParameter.UmlParameterPackage#getModifiersRule_Values()
 	 * @model containment="true"

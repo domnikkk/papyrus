@@ -148,7 +148,7 @@ public class StereotypeEditPartCN extends ClassifierEditPart {
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.profile.custom.figure.StereotypeFigure
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,7 +260,7 @@ public class StereotypeEditPartCN extends ClassifierEditPart {
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
 	 *            instance of generated figure class
 	 * @generated

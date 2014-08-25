@@ -42,7 +42,7 @@ public class StringLiteralQueryImpl extends QueryImpl implements StringLiteralQu
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class StringLiteralQueryImpl extends QueryImpl implements StringLiteralQu
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class StringLiteralQueryImpl extends QueryImpl implements StringLiteralQu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StringLiteralQueryImpl() {
@@ -73,7 +73,7 @@ public class StringLiteralQueryImpl extends QueryImpl implements StringLiteralQu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class StringLiteralQueryImpl extends QueryImpl implements StringLiteralQu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getValue() {
@@ -94,7 +94,7 @@ public class StringLiteralQueryImpl extends QueryImpl implements StringLiteralQu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValue(String newValue) {
@@ -108,7 +108,7 @@ public class StringLiteralQueryImpl extends QueryImpl implements StringLiteralQu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class StringLiteralQueryImpl extends QueryImpl implements StringLiteralQu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class StringLiteralQueryImpl extends QueryImpl implements StringLiteralQu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class StringLiteralQueryImpl extends QueryImpl implements StringLiteralQu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,7 +170,7 @@ public class StringLiteralQueryImpl extends QueryImpl implements StringLiteralQu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

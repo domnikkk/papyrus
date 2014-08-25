@@ -29,7 +29,7 @@ public class InterfaceRealizationReorientCommand extends DependencyReorientComma
 	/**
 	 * <pre>
 	 * Constructor.
-	 * 
+	 *
 	 * @param request the re-orient relationship request.
 	 * </pre>
 	 */
@@ -40,7 +40,7 @@ public class InterfaceRealizationReorientCommand extends DependencyReorientComma
 	/**
 	 * <pre>
 	 * @see org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand#canExecute()
-	 * 
+	 *
 	 * @return true if the command is executable.
 	 * </pre>
 	 */

@@ -20,7 +20,6 @@ import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.validation.internal.service.ResourceStatus;
 
 /**
  * This class must be used to open a dialog during a validation. Its usage

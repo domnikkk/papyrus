@@ -9,9 +9,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AbstractMethodInjection;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AbstractServiceDesc;
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AliasDesc;
@@ -36,14 +34,14 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Startup
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ServicedescriptorsPackageImpl extends EPackageImpl implements ServicedescriptorsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass registryDescEClass = null;
@@ -51,7 +49,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass serviceSetDescEClass = null;
@@ -59,7 +57,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass abstractServiceDescEClass = null;
@@ -67,7 +65,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass serviceDescEClass = null;
@@ -75,7 +73,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass featureInjectionEClass = null;
@@ -83,7 +81,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass aliasDescEClass = null;
@@ -91,7 +89,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass descriptorsEClass = null;
@@ -99,7 +97,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass propertyInjectionEClass = null;
@@ -107,7 +105,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass injectedValueEClass = null;
@@ -115,7 +113,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass methodInjectionEClass = null;
@@ -123,7 +121,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass abstractMethodInjectionEClass = null;
@@ -131,7 +129,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass parameterInjectionEClass = null;
@@ -139,7 +137,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass injectedServiceEClass = null;
@@ -147,7 +145,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass opaqueInjectedValueEClass = null;
@@ -155,7 +153,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass constructorInjectionEClass = null;
@@ -163,7 +161,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass serviceFactoryDescEClass = null;
@@ -171,7 +169,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum startupKindEEnum = null;
@@ -179,7 +177,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType stringEDataType = null;
@@ -187,7 +185,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType booleanEDataType = null;
@@ -195,7 +193,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType intEDataType = null;
@@ -205,7 +203,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage#eNS_URI
 	 * @see #init()
@@ -218,7 +216,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -229,7 +227,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	 * <p>
 	 * This method is used to initialize {@link ServicedescriptorsPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -264,7 +262,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +273,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +284,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,7 +295,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -308,7 +306,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,7 +317,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -330,7 +328,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -341,7 +339,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -352,7 +350,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -363,7 +361,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -374,7 +372,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -385,7 +383,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -396,7 +394,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -407,7 +405,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -418,7 +416,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -429,7 +427,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -440,7 +438,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -451,7 +449,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -462,7 +460,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -473,7 +471,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -484,7 +482,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -495,7 +493,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -506,7 +504,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -517,7 +515,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -528,7 +526,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -539,7 +537,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -550,7 +548,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -561,7 +559,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -572,7 +570,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -583,7 +581,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -594,7 +592,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -605,7 +603,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -616,7 +614,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -627,7 +625,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -638,7 +636,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -649,7 +647,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -660,7 +658,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -671,7 +669,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -682,7 +680,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -693,7 +691,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -704,7 +702,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -715,7 +713,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -726,7 +724,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -737,7 +735,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -748,7 +746,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -759,7 +757,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -770,7 +768,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -781,7 +779,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -792,7 +790,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -803,7 +801,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -814,7 +812,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -825,7 +823,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -836,7 +834,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -847,7 +845,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -858,7 +856,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -869,7 +867,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -880,7 +878,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -891,7 +889,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -902,7 +900,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -912,7 +910,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -1003,7 +1001,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -1013,7 +1011,7 @@ public class ServicedescriptorsPackageImpl extends EPackageImpl implements Servi
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

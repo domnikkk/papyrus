@@ -8,6 +8,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.emf.core.util.PackageUtil;
 import org.eclipse.gmf.runtime.emf.type.core.commands.MoveElementsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
+import org.eclipse.uml2.uml.Activity;
+import org.eclipse.uml2.uml.ActivityPartition;
+import org.eclipse.uml2.uml.InterruptibleActivityRegion;
 
 /**
  * This command handles the move of the elements from the graphical containers different from
@@ -22,7 +25,7 @@ public class NotContainmentMoveCommand extends MoveElementsCommand {
 
 	/**
 	 * Default constructor
-	 * 
+	 *
 	 * @param request
 	 */
 	public NotContainmentMoveCommand(MoveRequest request) {

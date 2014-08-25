@@ -32,17 +32,17 @@ public class PropertyDiagramUpdater implements ICustomDiagramUpdater<UMLNodeDesc
 	/**
 	 * <pre>
 	 * The original generated method of {@link UMLDiagramUpdater} class is kept commented below.
-	 * 
+	 *
 	 * In the CompositeStructure Diagram, Port may be shown graphically attached to
 	 * a Property. This is only possible if the Property is typed by the StructuredClassifier
 	 * that owns the Port.
-	 * 
+	 *
 	 * In order to implement this in GMF, the Port is declared as an affixed child for both
 	 * StructuredClassifier and Property, but as the Port is not contained by Property, the
 	 * Property related getSemanticChildren is not generated properly.
-	 * 
+	 *
 	 * FIXME : Not sure whether the {@link UMLDiagramUpdater} class is really needed by Papyrus
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

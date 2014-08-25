@@ -140,7 +140,7 @@ public class DefaultDiagramPasteCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Construct the drop request
-	 * 
+	 *
 	 * @param targetEditPart
 	 * @param objectToDrop
 	 */
@@ -173,7 +173,7 @@ public class DefaultDiagramPasteCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Look in sub container for a dropcommand
-	 * 
+	 *
 	 * @param targetEditPart
 	 * @param objectToDrop
 	 * @return
@@ -232,7 +232,7 @@ public class DefaultDiagramPasteCommand extends AbstractTransactionalCommand {
 	// TODO : move it in a View utility class
 	/**
 	 * Shift position to avoid overlap
-	 * 
+	 *
 	 * @param point
 	 * @return
 	 */

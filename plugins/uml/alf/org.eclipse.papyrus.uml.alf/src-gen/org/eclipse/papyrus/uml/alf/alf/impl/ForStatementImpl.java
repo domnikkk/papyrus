@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.Block;
 import org.eclipse.papyrus.uml.alf.alf.ForControl;
@@ -94,7 +91,11 @@ public class ForStatementImpl extends StatementImpl implements ForStatement
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.FOR_STATEMENT__CONTROL, oldControl, newControl);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -109,15 +110,20 @@ public class ForStatementImpl extends StatementImpl implements ForStatement
     if (newControl != control)
     {
       NotificationChain msgs = null;
-      if (control != null)
-        msgs = ((InternalEObject)control).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.FOR_STATEMENT__CONTROL, null, msgs);
-      if (newControl != null)
-        msgs = ((InternalEObject)newControl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.FOR_STATEMENT__CONTROL, null, msgs);
+      if (control != null) {
+		msgs = ((InternalEObject)control).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.FOR_STATEMENT__CONTROL, null, msgs);
+	}
+      if (newControl != null) {
+		msgs = ((InternalEObject)newControl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.FOR_STATEMENT__CONTROL, null, msgs);
+	}
       msgs = basicSetControl(newControl, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.FOR_STATEMENT__CONTROL, newControl, newControl));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.FOR_STATEMENT__CONTROL, newControl, newControl));
+	}
   }
 
   /**
@@ -142,7 +148,11 @@ public class ForStatementImpl extends StatementImpl implements ForStatement
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.FOR_STATEMENT__BLOCK, oldBlock, newBlock);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -157,15 +167,20 @@ public class ForStatementImpl extends StatementImpl implements ForStatement
     if (newBlock != block)
     {
       NotificationChain msgs = null;
-      if (block != null)
-        msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.FOR_STATEMENT__BLOCK, null, msgs);
-      if (newBlock != null)
-        msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.FOR_STATEMENT__BLOCK, null, msgs);
+      if (block != null) {
+		msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.FOR_STATEMENT__BLOCK, null, msgs);
+	}
+      if (newBlock != null) {
+		msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.FOR_STATEMENT__BLOCK, null, msgs);
+	}
       msgs = basicSetBlock(newBlock, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.FOR_STATEMENT__BLOCK, newBlock, newBlock));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.FOR_STATEMENT__BLOCK, newBlock, newBlock));
+	}
   }
 
   /**

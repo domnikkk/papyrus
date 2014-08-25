@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceSetDesc;
@@ -20,7 +19,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceSetDesc#servicesContains(java.lang.String) <em>Services Contains</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ServiceSetDescTest extends TestCase {
@@ -29,7 +28,7 @@ public class ServiceSetDescTest extends TestCase {
 	 * The fixture for this Service Set Desc test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ServiceSetDesc fixture = null;
@@ -37,7 +36,7 @@ public class ServiceSetDescTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -48,7 +47,7 @@ public class ServiceSetDescTest extends TestCase {
 	 * Constructs a new Service Set Desc test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ServiceSetDescTest(String name) {
@@ -59,7 +58,7 @@ public class ServiceSetDescTest extends TestCase {
 	 * Sets the fixture for this Service Set Desc test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void setFixture(ServiceSetDesc fixture) {
@@ -70,7 +69,7 @@ public class ServiceSetDescTest extends TestCase {
 	 * Returns the fixture for this Service Set Desc test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ServiceSetDesc getFixture() {
@@ -80,7 +79,7 @@ public class ServiceSetDescTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -92,7 +91,7 @@ public class ServiceSetDescTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -105,7 +104,7 @@ public class ServiceSetDescTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceSetDesc#getServiceDesc(java.lang.String) <em>Get Service Desc</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceSetDesc#getServiceDesc(java.lang.String)
 	 * @generated
 	 */
@@ -119,7 +118,7 @@ public class ServiceSetDescTest extends TestCase {
 	 * Tests the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceSetDesc#servicesContains(java.lang.String) <em>Services Contains</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceSetDesc#servicesContains(java.lang.String)
 	 * @generated
 	 */

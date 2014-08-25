@@ -18,6 +18,8 @@
  */
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl;
 
+import static org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetPackage.RESOURCE;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -51,14 +53,14 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass facetAttributeEClass = null;
@@ -66,7 +68,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass facetReferenceEClass = null;
@@ -74,7 +76,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass facetOperationEClass = null;
@@ -82,7 +84,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass facetSetEClass = null;
@@ -90,7 +92,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass facetEClass = null;
@@ -98,7 +100,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass categoryEClass = null;
@@ -106,7 +108,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass facetElementEClass = null;
@@ -114,7 +116,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass derivedTypedElementEClass = null;
@@ -122,7 +124,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass parameterValueEClass = null;
@@ -130,7 +132,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass documentedElementEClass = null;
@@ -138,7 +140,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType resourceEDataType = null;
@@ -148,7 +150,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetPackage#eNS_URI
 	 * @see #init()
@@ -161,7 +163,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -171,7 +173,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	 *
 	 * <p>
 	 * This method is used to initialize {@link EFacetPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -224,7 +226,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFacetAttribute() {
@@ -234,7 +236,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFacetReference() {
@@ -244,7 +246,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFacetOperation() {
@@ -254,7 +256,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFacetSet() {
@@ -264,7 +266,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFacetSet_Categories() {
@@ -274,7 +276,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFacet() {
@@ -284,7 +286,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFacet_ExtendedMetaclass() {
@@ -294,7 +296,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFacet_FacetElements() {
@@ -304,7 +306,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFacet_FacetOperations() {
@@ -314,7 +316,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFacet_ConformanceTypedElement() {
@@ -324,7 +326,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFacet_ExtendedFacets() {
@@ -334,7 +336,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCategory() {
@@ -344,7 +346,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getFacetElement() {
@@ -354,7 +356,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getFacetElement_Categories() {
@@ -364,7 +366,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDerivedTypedElement() {
@@ -374,7 +376,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDerivedTypedElement_Query() {
@@ -384,7 +386,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDerivedTypedElement_Override() {
@@ -394,7 +396,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getParameterValue() {
@@ -404,7 +406,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getParameterValue_Parameter() {
@@ -414,7 +416,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getParameterValue_Value() {
@@ -424,7 +426,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDocumentedElement() {
@@ -434,7 +436,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDocumentedElement_Documentation() {
@@ -444,7 +446,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EDataType getResource() {
@@ -454,7 +456,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EFacetFactory getEFacetFactory() {
@@ -464,7 +466,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -474,7 +476,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -523,7 +525,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -533,7 +535,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
@@ -640,7 +642,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
@@ -663,14 +665,14 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	 * Initializes the annotations for <b>GenModel</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createGenModel_1Annotations() {
 		String source = "GenModel"; //$NON-NLS-1$
 		addAnnotation(facetSetEClass,
 				source,
-				new String[] { "documentation", "A \"FacetSet\" is the root element of a facet model. It contains a list of \"Facet\"." //$NON-NLS-1$ //$NON-NLS-2$ 
+				new String[] { "documentation", "A \"FacetSet\" is the root element of a facet model. It contains a list of \"Facet\"." //$NON-NLS-1$ //$NON-NLS-2$
 				});
 		addAnnotation(facetSetEClass.getEOperations().get(0),
 				source,
@@ -678,7 +680,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 				});
 		addAnnotation(getFacet_ExtendedMetaclass(),
 				source,
-				new String[] { "documentation", "The \"extendedMetaclass\" reference references the virtually subtyped EClass." //$NON-NLS-1$ //$NON-NLS-2$ 
+				new String[] { "documentation", "The \"extendedMetaclass\" reference references the virtually subtyped EClass." //$NON-NLS-1$ //$NON-NLS-2$
 				});
 		addAnnotation(getFacet_ExtendedFacets(),
 				source,
@@ -690,7 +692,7 @@ public class EFacetPackageImpl extends EPackageImpl implements EFacetPackage {
 	 * Initializes the annotations for <b>org.eclipse.ocl.ecore.OCL</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createOrgAnnotations() {

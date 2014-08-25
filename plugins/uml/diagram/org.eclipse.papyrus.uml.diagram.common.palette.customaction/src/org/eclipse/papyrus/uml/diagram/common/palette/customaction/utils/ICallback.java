@@ -13,7 +13,7 @@ package org.eclipse.papyrus.uml.diagram.common.palette.customaction.utils;
 
 /**
  * A convenient interface for providing call back operations
- * 
+ *
  * @author tfaure
  *
  * @param <T>

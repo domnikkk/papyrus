@@ -11,9 +11,9 @@
  */
 package org.eclipse.papyrus.emf.facet.util.ui.internal.widget.metaclass;
 
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.AbstractWidget;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;

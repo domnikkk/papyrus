@@ -11,9 +11,9 @@
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.custom.ui.internal;
 
+import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedLabelProvider;
 import org.eclipse.papyrus.emf.facet.custom.ui.IResolvingCustomizedLabelProviderFactory;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 
 public class ResolvingCustomizedLabelProviderFactory implements IResolvingCustomizedLabelProviderFactory {
 

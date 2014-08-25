@@ -52,10 +52,10 @@ import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
  *   // Add your services
  *   serviceRegistry.add( ...);
  *   serviceRegistry.add( ...);
- * 
+ *
  *   // start the services
  *   serviceRegistry.startRegistry();
- * 
+ *
  *   // Retrieve a service
  *   myService = serviceRegistry.getService( serviceKey );
  * </code>
@@ -70,7 +70,7 @@ import org.eclipse.papyrus.infra.core.utils.AdapterUtils;
  *   // Add your new services
  *   serviceRegistry.add( key1, ...);
  *   serviceRegistry.add( key2, ...);
- * 
+ *
  *   // start the new services
  *   serviceRegistry.startRegistry(key1, key2);
  * </code>

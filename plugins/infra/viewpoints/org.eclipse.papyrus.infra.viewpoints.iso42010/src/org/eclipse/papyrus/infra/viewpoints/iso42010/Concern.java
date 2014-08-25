@@ -45,7 +45,7 @@ public interface Concern extends ADElement {
 	 * If the meaning of the '<em>Framed By</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Framed By</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getConcern_FramedBy()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint#getFrames
@@ -63,7 +63,7 @@ public interface Concern extends ADElement {
 	 * If the meaning of the '<em>Addressed By</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Addressed By</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getConcern_AddressedBy()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView#getAddresses
@@ -81,7 +81,7 @@ public interface Concern extends ADElement {
 	 * If the meaning of the '<em>Stakeholders</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Stakeholders</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getConcern_Stakeholders()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder#getConcerns
@@ -99,7 +99,7 @@ public interface Concern extends ADElement {
 	 * If the meaning of the '<em>Raised By</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Raised By</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getConcern_RaisedBy()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getRaises
@@ -117,7 +117,7 @@ public interface Concern extends ADElement {
 	 * If the meaning of the '<em>Decisions</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Decisions</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#getConcern_Decisions()
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision#getPertainsTo

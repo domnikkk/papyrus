@@ -34,7 +34,7 @@ public interface PapyrusExtensionRootNode extends CommentedElement {
 	 * If the meaning of the '<em>Extension Nodes</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Extension Nodes</em>' containment reference list.
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getPapyrusExtensionRootNode_ExtensionNodes()
 	 * @model containment="true"

@@ -23,7 +23,7 @@ package org.eclipse.papyrus.infra.gmfdiag.common.figure.node;
 public interface ICustomNodePlate {
 	/**
 	 * set the SVG node plate that contain this custom node plate
-	 * 
+	 *
 	 * @param svgNodePlateFigure
 	 *            not null
 	 */
@@ -31,7 +31,7 @@ public interface ICustomNodePlate {
 
 	/**
 	 * get the SVG node plate that contains this custom node plate
-	 * 
+	 *
 	 * @return the SVG node plate
 	 */
 	public SVGNodePlateFigure getSvgNodePlateContainer();

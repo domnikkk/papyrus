@@ -15,11 +15,8 @@ package org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfigurati
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.ComposedRuleConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantRuleConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage;
@@ -42,7 +39,7 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	 * The cached value of the '{@link #getComposedRules() <em>Composed Rules</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getComposedRules()
 	 * @generated
 	 * @ordered
@@ -52,7 +49,7 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedRuleConfigurationImpl() {
@@ -62,7 +59,7 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +70,7 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<InvariantRuleConfiguration> getComposedRules() {
@@ -86,7 +83,7 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +98,7 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -119,7 +116,7 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +132,7 @@ public abstract class ComposedRuleConfigurationImpl extends InvariantRuleConfigu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

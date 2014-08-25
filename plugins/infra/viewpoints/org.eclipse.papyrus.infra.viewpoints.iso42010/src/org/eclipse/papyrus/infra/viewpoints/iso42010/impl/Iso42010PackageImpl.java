@@ -17,9 +17,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ADElement;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Architecture;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision;
@@ -41,14 +39,14 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass adElementEClass = null;
@@ -56,7 +54,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass architectureDescriptionEClass = null;
@@ -64,7 +62,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass stakeholderEClass = null;
@@ -72,7 +70,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass architectureViewpointEClass = null;
@@ -80,7 +78,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass modelKindEClass = null;
@@ -88,7 +86,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass architectureModelEClass = null;
@@ -96,7 +94,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass architectureViewEClass = null;
@@ -104,7 +102,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass concernEClass = null;
@@ -112,7 +110,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass systemEClass = null;
@@ -120,7 +118,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass architectureEClass = null;
@@ -128,7 +126,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass architectureRationaleEClass = null;
@@ -136,7 +134,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass correspondenceEClass = null;
@@ -144,7 +142,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass correspondenceRuleEClass = null;
@@ -152,7 +150,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass architectureDecisionEClass = null;
@@ -160,7 +158,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass architectureFrameworkEClass = null;
@@ -170,7 +168,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package#eNS_URI
 	 * @see #init()
@@ -183,7 +181,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -193,7 +191,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	 *
 	 * <p>
 	 * This method is used to initialize {@link Iso42010Package#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -227,7 +225,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getADElement() {
@@ -237,7 +235,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getADElement_Name() {
@@ -247,7 +245,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getADElement_AffectedBy() {
@@ -257,7 +255,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getArchitectureDescription() {
@@ -267,7 +265,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDescription_Stakeholders() {
@@ -277,7 +275,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDescription_Concerns() {
@@ -287,7 +285,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDescription_Viewpoints() {
@@ -297,7 +295,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDescription_Views() {
@@ -307,7 +305,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDescription_System() {
@@ -317,7 +315,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDescription_Expresses() {
@@ -327,7 +325,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDescription_Rationales() {
@@ -337,7 +335,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDescription_Correspondences() {
@@ -347,7 +345,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDescription_Rules() {
@@ -357,7 +355,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDescription_Decisions() {
@@ -367,7 +365,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getStakeholder() {
@@ -377,7 +375,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getStakeholder_Concerns() {
@@ -387,7 +385,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getStakeholder_Viewpoints() {
@@ -397,7 +395,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getStakeholder_HasInterestIn() {
@@ -407,7 +405,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getArchitectureViewpoint() {
@@ -417,7 +415,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureViewpoint_ModelKinds() {
@@ -427,7 +425,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureViewpoint_Governs() {
@@ -437,7 +435,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureViewpoint_Frames() {
@@ -447,7 +445,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getModelKind() {
@@ -457,7 +455,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getModelKind_Governs() {
@@ -467,7 +465,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getModelKind_Viewpoint() {
@@ -477,7 +475,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getArchitectureModel() {
@@ -487,7 +485,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureModel_GovernedBy() {
@@ -497,7 +495,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureModel_View() {
@@ -507,7 +505,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getArchitectureView() {
@@ -517,7 +515,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureView_GovernedBy() {
@@ -527,7 +525,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureView_Models() {
@@ -537,7 +535,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureView_Addresses() {
@@ -547,7 +545,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getConcern() {
@@ -557,7 +555,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConcern_FramedBy() {
@@ -567,7 +565,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConcern_AddressedBy() {
@@ -577,7 +575,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConcern_Stakeholders() {
@@ -587,7 +585,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConcern_RaisedBy() {
@@ -597,7 +595,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConcern_Decisions() {
@@ -607,7 +605,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getSystem() {
@@ -617,7 +615,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getSystem_Name() {
@@ -627,7 +625,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getSystem_Stakeholders() {
@@ -637,7 +635,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getSystem_Exhibits() {
@@ -647,7 +645,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getArchitecture() {
@@ -657,7 +655,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitecture_ExhibitedIn() {
@@ -667,7 +665,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getArchitectureRationale() {
@@ -677,7 +675,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureRationale_Justifies() {
@@ -687,7 +685,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCorrespondence() {
@@ -697,7 +695,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCorrespondence_GovernedBy() {
@@ -707,7 +705,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCorrespondence_Relates() {
@@ -717,7 +715,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCorrespondenceRule() {
@@ -727,7 +725,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCorrespondenceRule_Governs() {
@@ -737,7 +735,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getArchitectureDecision() {
@@ -747,7 +745,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDecision_JustifiedBy() {
@@ -757,7 +755,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDecision_DependsUpon() {
@@ -767,7 +765,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDecision_Dependents() {
@@ -777,7 +775,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDecision_Raises() {
@@ -787,7 +785,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDecision_PertainsTo() {
@@ -797,7 +795,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureDecision_Affects() {
@@ -807,7 +805,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getArchitectureFramework() {
@@ -817,7 +815,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureFramework_Stakeholders() {
@@ -827,7 +825,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureFramework_Viewpoints() {
@@ -837,7 +835,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureFramework_Rules() {
@@ -847,7 +845,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getArchitectureFramework_Concerns() {
@@ -857,7 +855,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Iso42010Factory getIso42010Factory() {
@@ -867,7 +865,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -877,7 +875,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -969,7 +967,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -979,7 +977,7 @@ public class Iso42010PackageImpl extends EPackageImpl implements Iso42010Package
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

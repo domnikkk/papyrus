@@ -48,7 +48,6 @@ import org.eclipse.papyrus.uml.service.types.Activator;
 import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
 import org.eclipse.papyrus.uml.service.types.utils.ClassifierUtils;
 import org.eclipse.papyrus.uml.service.types.utils.ElementUtil;
-import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
 import org.eclipse.papyrus.uml.service.types.utils.RequestParameterUtils;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Classifier;
@@ -170,7 +169,7 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Complete the {@link Association} creation by:
 	 * 		adding its {@link Property} ends in the model
 	 * 		adding the UML Nature on the {@link Association}.
@@ -221,7 +220,7 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Add a command to destroy {@link Association} ends referenced by the {@link Association}
 	 * to delete.
 	 *
@@ -252,7 +251,7 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Add a command to destroy {@link Association} when only 1 end remains.
 	 *
 	 * </pre>
@@ -285,7 +284,7 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * <pre>
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Add a command to related association end during re-orient.
 	 *
 	 * </pre>

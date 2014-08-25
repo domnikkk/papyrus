@@ -101,7 +101,7 @@ public class AppliedStereotypeCommentCreationEditPolicy extends AppliedStereotyp
 
 	/**
 	 * return the number of visible compartment that represent a stereotype
-	 * 
+	 *
 	 * @param view
 	 *            the container view
 	 * @param eobject
@@ -239,7 +239,7 @@ public class AppliedStereotypeCommentCreationEditPolicy extends AppliedStereotyp
 
 	/**
 	 * method in oder to delete the comment
-	 * 
+	 *
 	 * @param domain
 	 *            the transactional editing domain
 	 * @param commentNode

@@ -31,7 +31,7 @@ public class ValidateSubtreeCommand extends AbstractValidateCommand {
 
 	/**
 	 * Constructor based on selected element and diagnostician
-	 * 
+	 *
 	 * @param selectedElement
 	 *            the element from which on a subtree should be validated
 	 * @param diagnostician

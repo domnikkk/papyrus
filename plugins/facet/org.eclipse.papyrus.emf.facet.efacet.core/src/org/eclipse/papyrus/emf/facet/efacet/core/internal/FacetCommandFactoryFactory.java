@@ -12,8 +12,8 @@
 package org.eclipse.papyrus.emf.facet.efacet.core.internal;
 
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.papyrus.emf.facet.efacet.core.IFacetCommandFactoryFactory;
 import org.eclipse.papyrus.emf.facet.efacet.core.IFacetCommandFactory;
+import org.eclipse.papyrus.emf.facet.efacet.core.IFacetCommandFactoryFactory;
 
 public class FacetCommandFactoryFactory implements IFacetCommandFactoryFactory {
 

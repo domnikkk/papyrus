@@ -37,7 +37,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.ParameterVal
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
@@ -45,7 +45,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EFacetFactory init() {
@@ -64,7 +64,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EFacetFactoryImpl() {
@@ -74,7 +74,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +120,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -136,7 +136,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FacetAttribute createFacetAttribute() {
@@ -147,7 +147,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FacetReference createFacetReference() {
@@ -158,7 +158,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FacetOperation createFacetOperation() {
@@ -169,7 +169,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FacetSet createFacetSet() {
@@ -180,7 +180,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Facet createFacet() {
@@ -191,7 +191,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Category createCategory() {
@@ -202,7 +202,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ParameterValue createParameterValue() {
@@ -213,7 +213,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DocumentedElement createDocumentedElement() {
@@ -224,7 +224,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Resource createResourceFromString(EDataType eDataType, String initialValue) {
@@ -234,7 +234,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertResourceToString(EDataType eDataType, Object instanceValue) {
@@ -244,7 +244,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EFacetPackage getEFacetPackage() {
@@ -254,7 +254,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

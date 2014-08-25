@@ -26,7 +26,6 @@ import org.eclipse.papyrus.uml.diagram.composite.custom.edit.command.CustomConne
 import org.eclipse.papyrus.uml.diagram.composite.edit.commands.RoleBindingCreateCommand;
 import org.eclipse.papyrus.uml.diagram.composite.edit.parts.ConnectorEditPart;
 import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
-import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
 
 /**
  * <pre>
@@ -40,7 +39,7 @@ public class CustomParameterItemSemanticEditPolicy extends org.eclipse.papyrus.u
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Connector connected to a Parameter
 	 * on its source end.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -59,7 +58,7 @@ public class CustomParameterItemSemanticEditPolicy extends org.eclipse.papyrus.u
 	 * <pre>
 	 * Calls a custom creation command to allow the creation of a Connector connected to a Parameter
 	 * on its target end.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

@@ -37,7 +37,7 @@ public interface PortRule extends EObject
 	 * If the meaning of the '<em>Visibility</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Visibility</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind
 	 * @see #setVisibility(VisibilityKind)
@@ -51,7 +51,7 @@ public interface PortRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getVisibility <em>Visibility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Visibility</em>' attribute.
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.VisibilityKind
@@ -67,7 +67,7 @@ public interface PortRule extends EObject
 	 * If the meaning of the '<em>Is Derived</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Derived</em>' attribute.
 	 * @see #setIsDerived(String)
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_IsDerived()
@@ -80,7 +80,7 @@ public interface PortRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsDerived <em>Is Derived</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Derived</em>' attribute.
 	 * @see #getIsDerived()
@@ -95,7 +95,7 @@ public interface PortRule extends EObject
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_Name()
@@ -108,7 +108,7 @@ public interface PortRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -123,7 +123,7 @@ public interface PortRule extends EObject
 	 * If the meaning of the '<em>Is Conjugated</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Is Conjugated</em>' attribute.
 	 * @see #setIsConjugated(String)
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_IsConjugated()
@@ -136,7 +136,7 @@ public interface PortRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getIsConjugated <em>Is Conjugated</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Is Conjugated</em>' attribute.
 	 * @see #getIsConjugated()
@@ -151,7 +151,7 @@ public interface PortRule extends EObject
 	 * If the meaning of the '<em>Type</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type</em>' containment reference.
 	 * @see #setType(TypeRule)
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_Type()
@@ -164,7 +164,7 @@ public interface PortRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getType <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Type</em>' containment reference.
 	 * @see #getType()
@@ -179,7 +179,7 @@ public interface PortRule extends EObject
 	 * If the meaning of the '<em>Multiplicity</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Multiplicity</em>' containment reference.
 	 * @see #setMultiplicity(MultiplicityRule)
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_Multiplicity()
@@ -192,7 +192,7 @@ public interface PortRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getMultiplicity <em>Multiplicity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Multiplicity</em>' containment reference.
 	 * @see #getMultiplicity()
@@ -207,7 +207,7 @@ public interface PortRule extends EObject
 	 * If the meaning of the '<em>Modifiers</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Modifiers</em>' containment reference.
 	 * @see #setModifiers(ModifiersRule)
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_Modifiers()
@@ -220,7 +220,7 @@ public interface PortRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getModifiers <em>Modifiers</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Modifiers</em>' containment reference.
 	 * @see #getModifiers()
@@ -235,7 +235,7 @@ public interface PortRule extends EObject
 	 * If the meaning of the '<em>Default</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Default</em>' containment reference.
 	 * @see #setDefault(DefaultValueRule)
 	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getPortRule_Default()
@@ -248,7 +248,7 @@ public interface PortRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.PortRule#getDefault <em>Default</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Default</em>' containment reference.
 	 * @see #getDefault()

@@ -29,7 +29,7 @@ public class FilterViewsLabelItemProvider extends AbstractContributionItemProvid
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seeorg.eclipse.gmf.runtime.common.ui.services.action.contributionitem.
 	 * AbstractContributionItemProvider#createAction(java.lang.String,
 	 * org.eclipse.gmf.runtime.common.ui.util.IWorkbenchPartDescriptor)

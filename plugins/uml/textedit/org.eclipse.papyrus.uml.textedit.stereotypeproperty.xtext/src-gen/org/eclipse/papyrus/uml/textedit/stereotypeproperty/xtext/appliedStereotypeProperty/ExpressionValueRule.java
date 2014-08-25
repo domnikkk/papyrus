@@ -3,7 +3,6 @@
 package org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.appliedStereotypeProperty;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.papyrus.uml.alf.alf.SequenceElement;
 
 /**
@@ -31,7 +30,7 @@ public interface ExpressionValueRule extends EObject
 	 * If the meaning of the '<em>Expression</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Expression</em>' containment reference.
 	 * @see #setExpression(SequenceElement)
 	 * @see org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.appliedStereotypeProperty.AppliedStereotypePropertyPackage#getExpressionValueRule_Expression()
@@ -44,7 +43,7 @@ public interface ExpressionValueRule extends EObject
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.appliedStereotypeProperty.ExpressionValueRule#getExpression <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Expression</em>' containment reference.
 	 * @see #getExpression()

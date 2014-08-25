@@ -4,23 +4,21 @@ package org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionco
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.papyrus.infra.extendedtypes.ActionConfiguration;
 import org.eclipse.papyrus.infra.extendedtypes.ConfigurationElement;
 import org.eclipse.papyrus.infra.extendedtypes.SemanticActionConfiguration;
-
-import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.*;
+import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfiguration;
+import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfigurationPackage;
+import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.ViewToDisplay;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfigurationPackage
  * @generated
  */
@@ -29,7 +27,7 @@ public class RuntimeValuesEditionActionConfigurationAdapterFactory extends Adapt
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static RuntimeValuesEditionActionConfigurationPackage modelPackage;
@@ -38,7 +36,7 @@ public class RuntimeValuesEditionActionConfigurationAdapterFactory extends Adapt
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RuntimeValuesEditionActionConfigurationAdapterFactory() {
@@ -52,7 +50,7 @@ public class RuntimeValuesEditionActionConfigurationAdapterFactory extends Adapt
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -71,7 +69,7 @@ public class RuntimeValuesEditionActionConfigurationAdapterFactory extends Adapt
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RuntimeValuesEditionActionConfigurationSwitch<Adapter> modelSwitch =
@@ -111,7 +109,7 @@ public class RuntimeValuesEditionActionConfigurationAdapterFactory extends Adapt
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
@@ -129,7 +127,7 @@ public class RuntimeValuesEditionActionConfigurationAdapterFactory extends Adapt
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfiguration
 	 * @generated
@@ -144,7 +142,7 @@ public class RuntimeValuesEditionActionConfigurationAdapterFactory extends Adapt
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.ViewToDisplay
 	 * @generated
@@ -159,7 +157,7 @@ public class RuntimeValuesEditionActionConfigurationAdapterFactory extends Adapt
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.ConfigurationElement
 	 * @generated
@@ -174,7 +172,7 @@ public class RuntimeValuesEditionActionConfigurationAdapterFactory extends Adapt
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.ActionConfiguration
 	 * @generated
@@ -189,7 +187,7 @@ public class RuntimeValuesEditionActionConfigurationAdapterFactory extends Adapt
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.SemanticActionConfiguration
 	 * @generated
@@ -203,7 +201,7 @@ public class RuntimeValuesEditionActionConfigurationAdapterFactory extends Adapt
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */

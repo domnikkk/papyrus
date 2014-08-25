@@ -45,7 +45,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Represents a creation command for a SysML parametric diagram
- * 
+ *
  * @author Laurent Wouters
  */
 public class ParametricDiagramCreateCommand extends AbstractPapyrusGmfCreateDiagramCommandHandler {

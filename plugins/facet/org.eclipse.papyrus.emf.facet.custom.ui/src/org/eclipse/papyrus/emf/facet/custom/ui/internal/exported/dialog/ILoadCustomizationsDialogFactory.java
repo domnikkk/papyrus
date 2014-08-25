@@ -13,9 +13,9 @@ package org.eclipse.papyrus.emf.facet.custom.ui.internal.exported.dialog;
 
 import java.util.List;
 
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.dialog.LoadCustomizationsDialogFactory;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialogCallbackWithPreCommit;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.swt.widgets.Shell;
 
 /**

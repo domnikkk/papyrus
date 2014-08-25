@@ -13,14 +13,14 @@ package org.eclipse.papyrus.emf.facet.efacet.ui.internal;
 
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.ICreateFacetInFacetSetWizard;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.ICreateFacetSetWizard;
 import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.IFacetChildrenWizard;
-import org.eclipse.jface.viewers.ISelection;
 
 /**
  * This interface provides methods used to create wizards that create {@link Facet}s and Facet elements.
- * 
+ *
  * @since 0.2
  * @deprecated This interface has been replaced by {@link IFacetUIFactory2}. No tracking bug needed because this API has not been released yet.
  */

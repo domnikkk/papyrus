@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.AndRule;
 import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.InvariantSemanticTypeConfigurationPackage;
 
@@ -30,7 +29,7 @@ public class AndRuleImpl extends ComposedRuleConfigurationImpl implements AndRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AndRuleImpl() {
@@ -40,7 +39,7 @@ public class AndRuleImpl extends ComposedRuleConfigurationImpl implements AndRul
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

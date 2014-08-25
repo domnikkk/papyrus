@@ -30,14 +30,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypedElement;
-import org.eclipse.papyrus.emf.facet.custom.ui.IContentPropertiesHandler;
-import org.eclipse.papyrus.emf.facet.custom.ui.IContentPropertiesHandlerFactory;
-import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedContentProvider;
-import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedTreeContentProvider;
-import org.eclipse.papyrus.emf.facet.efacet.core.FacetUtils;
-import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
-import org.eclipse.papyrus.emf.facet.efacet.core.exception.FacetManagerException;
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 import org.eclipse.papyrus.emf.facet.custom.core.exception.CustomizationException;
@@ -46,6 +38,14 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.EReferenceTreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeElement;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.TreeproxyFactory;
+import org.eclipse.papyrus.emf.facet.custom.ui.IContentPropertiesHandler;
+import org.eclipse.papyrus.emf.facet.custom.ui.IContentPropertiesHandlerFactory;
+import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedContentProvider;
+import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedTreeContentProvider;
+import org.eclipse.papyrus.emf.facet.efacet.core.FacetUtils;
+import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
+import org.eclipse.papyrus.emf.facet.efacet.core.exception.FacetManagerException;
+import org.eclipse.papyrus.emf.facet.util.core.Logger;
 
 @SuppressWarnings("deprecation")
 // @SuppressWarnings("deprecation") : Bug 380229 - [deprecated] ICustomizedContentProvider

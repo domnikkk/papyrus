@@ -15,11 +15,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.ATTRIBUTE_OP;
 import org.eclipse.papyrus.infra.gmfdiag.css.Angle;
 import org.eclipse.papyrus.infra.gmfdiag.css.Attribute;
@@ -63,7 +60,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.Uri;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CssFactoryImpl extends EFactoryImpl implements CssFactory
@@ -72,7 +69,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static CssFactory init()
@@ -95,7 +92,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CssFactoryImpl()
@@ -106,7 +103,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +189,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -214,7 +211,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -236,7 +233,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +246,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -262,7 +259,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +272,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -288,7 +285,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,7 +298,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -314,7 +311,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +324,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -340,7 +337,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -353,7 +350,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,7 +363,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -379,7 +376,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,7 +389,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -405,7 +402,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -418,7 +415,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -431,7 +428,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -444,7 +441,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -457,7 +454,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -470,7 +467,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -483,7 +480,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -496,7 +493,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -509,7 +506,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -522,7 +519,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -535,7 +532,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -548,7 +545,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -561,7 +558,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -574,7 +571,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -587,7 +584,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -600,7 +597,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -613,7 +610,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -626,7 +623,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -639,7 +636,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -652,7 +649,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -665,7 +662,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -678,7 +675,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -691,7 +688,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UNARY createUNARYFromString(EDataType eDataType, String initialValue)
@@ -706,7 +703,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertUNARYToString(EDataType eDataType, Object instanceValue)
@@ -717,7 +714,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public KIND createKINDFromString(EDataType eDataType, String initialValue)
@@ -732,7 +729,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertKINDToString(EDataType eDataType, Object instanceValue)
@@ -743,7 +740,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ATTRIBUTE_OP createATTRIBUTE_OPFromString(EDataType eDataType, String initialValue)
@@ -758,7 +755,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertATTRIBUTE_OPToString(EDataType eDataType, Object instanceValue)
@@ -769,7 +766,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -781,7 +778,7 @@ public class CssFactoryImpl extends EFactoryImpl implements CssFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

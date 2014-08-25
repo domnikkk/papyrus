@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.emf.facet.util.emf.catalog;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -48,7 +47,7 @@ public interface Catalog extends EObject {
 	 * <!-- begin-model-doc -->
 	 * "installedEntries" represents all the EObject initially registered through the registration extension point.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Installed Entries</em>' reference list.
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogPackage#getCatalog_InstalledEntries()
 	 * @model
@@ -66,7 +65,7 @@ public interface Catalog extends EObject {
 	 * <!-- begin-model-doc -->
 	 * The name of the Catalog.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogPackage#getCatalog_Name()
@@ -79,7 +78,7 @@ public interface Catalog extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()

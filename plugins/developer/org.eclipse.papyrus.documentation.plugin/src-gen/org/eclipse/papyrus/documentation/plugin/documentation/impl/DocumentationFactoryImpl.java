@@ -9,18 +9,21 @@ package org.eclipse.papyrus.documentation.plugin.documentation.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.documentation.plugin.documentation.*;
+import org.eclipse.papyrus.documentation.plugin.documentation.Comment;
+import org.eclipse.papyrus.documentation.plugin.documentation.Dependency;
+import org.eclipse.papyrus.documentation.plugin.documentation.Documentation;
+import org.eclipse.papyrus.documentation.plugin.documentation.DocumentationFactory;
+import org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage;
+import org.eclipse.papyrus.documentation.plugin.documentation.FileDependency;
+import org.eclipse.papyrus.documentation.plugin.documentation.Person;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DocumentationFactoryImpl extends EFactoryImpl implements DocumentationFactory {
@@ -28,7 +31,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DocumentationFactory init() {
@@ -47,7 +50,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DocumentationFactoryImpl() {
@@ -57,7 +60,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +84,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Documentation createDocumentation() {
@@ -92,7 +95,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Dependency createDependency() {
@@ -103,7 +106,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FileDependency createFileDependency() {
@@ -114,7 +117,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Person createPerson() {
@@ -125,7 +128,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Comment createComment() {
@@ -136,7 +139,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DocumentationPackage getDocumentationPackage() {
@@ -146,7 +149,7 @@ public class DocumentationFactoryImpl extends EFactoryImpl implements Documentat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

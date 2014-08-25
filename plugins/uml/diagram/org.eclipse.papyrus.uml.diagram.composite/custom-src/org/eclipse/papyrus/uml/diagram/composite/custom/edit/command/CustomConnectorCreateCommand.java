@@ -39,11 +39,11 @@ import org.eclipse.uml2.uml.UMLFactory;
 /**
  * <pre>
  * This class is a custom creation command for Connector.
- * 
+ *
  * Difficulties for Connector creation:
  * - differences between semantic (ConnectableEnd) graphical (ConnectableElement) ends of Connector
  * - requires to know not only the graphical end (Port, Property) but also the graphical parent in case of Port.
- * 
+ *
  * The Connector source and target are declared as ConnectorEnd in the GMFGEN model to ensure correct validation,
  * but the real source and target are ConnectableElement.
  *
@@ -109,7 +109,7 @@ public class CustomConnectorCreateCommand extends org.eclipse.papyrus.uml.diagra
 	/**
 	 * <pre>
 	 * Checks if the Connector can be created or not.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -141,7 +141,7 @@ public class CustomConnectorCreateCommand extends org.eclipse.papyrus.uml.diagra
 	/**
 	 * <pre>
 	 * Creates the new Connector.
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */
@@ -186,7 +186,7 @@ public class CustomConnectorCreateCommand extends org.eclipse.papyrus.uml.diagra
 	 * <pre>
 	 * This method is the exact copy of the inherited method, except that it uses the local getters
 	 * (_getSource(), _getTarget()).
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

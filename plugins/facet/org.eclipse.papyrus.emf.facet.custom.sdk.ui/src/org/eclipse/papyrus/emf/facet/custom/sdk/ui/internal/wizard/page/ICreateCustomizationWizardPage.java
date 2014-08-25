@@ -12,8 +12,8 @@
 package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.wizard.page;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.wizard.page.CreateCustomizationWizardPage;
 import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.wizard.page.CreateCustomizationWizardPage;
 
 /**
  * Interface to expose the services of {@link CreateCustomizationWizardPage}.

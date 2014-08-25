@@ -27,7 +27,7 @@ import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 
 /**
  * Represents the handler for the creation of table defined in a viewpoint
- * 
+ *
  * @author Laurent Wouters
  */
 public class PolicyDefinedTableHandler extends CreateNatTableEditorHandler {

@@ -45,84 +45,84 @@ import org.eclipse.papyrus.papyrusgmfgenextension.SpecificLocatorExternalLabel;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements PapyrusgmfgenextensionPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass extendedGenViewEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass commentedElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass propertyRefreshHookEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass externalHookEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass specificLocatorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass papyrusExtensionRootNodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass alternateCanvasEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass alternateGenTopLevelNodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass alternateGenLinkEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass mutatingCanvasEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass ownedEditpartEClass = null;
@@ -130,7 +130,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass specificDiagramUpdaterEClass = null;
@@ -138,7 +138,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass genNodeConstraintEClass = null;
@@ -146,7 +146,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass specificLocatorExternalLabelEClass = null;
@@ -154,7 +154,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass additionalEditPartCandiesEClass = null;
@@ -162,7 +162,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass editPartUsingDeleteServiceEClass = null;
@@ -170,7 +170,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass editPartUsingReorientServiceEClass = null;
@@ -178,7 +178,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass labelVisibilityPreferenceEClass = null;
@@ -186,7 +186,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass compartmentVisibilityPreferenceEClass = null;
@@ -194,7 +194,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass compartmentTitleVisibilityPreferenceEClass = null;
@@ -202,7 +202,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass constrainedByReferenceCompartmentItemSemanticEditPolicyEClass = null;
@@ -210,7 +210,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass externalElementTypesLibraryEClass = null;
@@ -218,7 +218,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass externalMetamodelTypeEClass = null;
@@ -226,7 +226,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass generateUsingElementTypeCreationCommandEClass = null;
@@ -234,7 +234,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass customDiagramUpdaterSingletonEClass = null;
@@ -244,7 +244,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#eNS_URI
 	 * @see #init()
@@ -256,7 +256,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -267,7 +267,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	 * <p>
 	 * This method is used to initialize {@link PapyrusgmfgenextensionPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -305,7 +305,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -315,7 +315,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -325,7 +325,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -335,7 +335,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -345,7 +345,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -355,7 +355,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -365,7 +365,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -375,7 +375,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -385,7 +385,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -395,7 +395,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -405,7 +405,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +415,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -425,7 +425,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -435,7 +435,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -445,7 +445,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -455,7 +455,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -465,7 +465,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -475,7 +475,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -485,7 +485,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -495,7 +495,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -505,7 +505,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -515,7 +515,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -525,7 +525,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -535,7 +535,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -545,7 +545,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -555,7 +555,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -565,7 +565,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -575,7 +575,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -585,7 +585,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -595,7 +595,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -605,7 +605,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -615,7 +615,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -625,7 +625,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -636,7 +636,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -647,7 +647,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -658,7 +658,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -669,7 +669,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -680,7 +680,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -691,7 +691,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -702,7 +702,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -713,7 +713,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -724,7 +724,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -735,7 +735,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -746,7 +746,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -757,7 +757,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -768,7 +768,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -779,7 +779,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -790,7 +790,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -801,7 +801,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -812,7 +812,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -823,7 +823,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -834,7 +834,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -845,7 +845,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -856,7 +856,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -867,7 +867,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -878,7 +878,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -889,7 +889,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -900,7 +900,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -911,7 +911,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -922,7 +922,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -933,7 +933,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -944,7 +944,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -955,7 +955,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -966,7 +966,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -977,7 +977,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -988,7 +988,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -999,7 +999,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1010,7 +1010,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1020,7 +1020,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1030,7 +1030,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -1039,7 +1039,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -1145,7 +1145,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -1154,7 +1154,7 @@ public class PapyrusgmfgenextensionPackageImpl extends EPackageImpl implements P
 	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

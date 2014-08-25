@@ -104,7 +104,7 @@ public class OpenHandler extends AbstractModelExplorerHandler implements IExecut
 
 	/**
 	 * Determines whether the current policy allows this object to be opened
-	 * 
+	 *
 	 * @param selection
 	 *            The object to open
 	 * @return <code>true</code> if the object can be opened

@@ -12,9 +12,9 @@
  */
 package org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.component.getorcreate;
 
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.wizard.IExtendedWizard;
 import org.eclipse.papyrus.emf.facet.util.ui.utils.PropertyElement2;
-import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 

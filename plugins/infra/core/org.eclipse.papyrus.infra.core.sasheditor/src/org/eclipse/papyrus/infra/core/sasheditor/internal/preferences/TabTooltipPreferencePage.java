@@ -36,7 +36,7 @@ public class TabTooltipPreferencePage extends FieldEditorPreferencePage implemen
 
 	/**
 	 * Subclasses may implements this method in order to provide the requested preferenceStore.
-	 * 
+	 *
 	 * @return
 	 */
 	protected IPreferenceStore createPreferenceStore() {
@@ -66,7 +66,7 @@ public class TabTooltipPreferencePage extends FieldEditorPreferencePage implemen
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
 	@Override

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,21 +30,21 @@ public class Expression extends SyntaxElement {
 	public int upper ;
 
 	//Constraints
-	
+
 	/*
 	 * The assignments after an expression are given by the result of the updateAssignments helper operation.
 	 */
 	public void checkExpressionAssignmentsAfterDerivation() {
-		
+
 	}
-	
+
 	/*
 	 * No name may be assigned more than once before or after an expression.
 	 */
 	public void checkExpressionUniqueAssignments() {
-		
+
 	}
-	
+
 	// Helper Operations
 	/*
 	 * Returns the assignments from before this expression updated for any assignments made in the
@@ -54,5 +54,5 @@ public class Expression extends SyntaxElement {
 	public List<AssignedSource> updateAssignments() {
 		return new ArrayList<AssignedSource>() ;
 	}
-	
+
 }

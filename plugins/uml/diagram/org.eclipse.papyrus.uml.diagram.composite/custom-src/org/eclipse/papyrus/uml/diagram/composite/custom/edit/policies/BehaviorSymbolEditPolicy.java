@@ -65,7 +65,7 @@ public class BehaviorSymbolEditPolicy extends GraphicalEditPolicy implements Not
 
 	/**
 	 * return the Port that represents the port
-	 * 
+	 *
 	 * @return may be null if nothing is founded
 	 */
 	protected Node getPortNode() {

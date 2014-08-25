@@ -100,7 +100,7 @@ public class Element extends DocumentObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.eface.core.IElement#attributeNames()
 	 */
 	public String[] attributeNames() {
@@ -109,7 +109,7 @@ public class Element extends DocumentObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.eface.core.IElement#attributeNamespaces()
 	 */
 	public String[] attributeNamespaces() {
@@ -118,7 +118,7 @@ public class Element extends DocumentObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @seecom.soyatec.eface.core.IElement#setAttribute(com.soyatec.eface.core. IAttribute)
 	 */
 	public void setAttribute(Attribute attribute) {
@@ -128,7 +128,7 @@ public class Element extends DocumentObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.eface.IElement#attributeNames(java.lang.String)
 	 */
 	public String[] attributeNames(String namespace) {
@@ -145,7 +145,7 @@ public class Element extends DocumentObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.eface.core.IElement#getAttribute(java.lang.String)
 	 */
 	public Attribute getAttribute(String name) {
@@ -155,7 +155,7 @@ public class Element extends DocumentObject {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.soyatec.eface.core.IElement#getAttribute(java.lang.String, java.lang.String)
 	 */
 	public Attribute getAttribute(String namespace, String name) {

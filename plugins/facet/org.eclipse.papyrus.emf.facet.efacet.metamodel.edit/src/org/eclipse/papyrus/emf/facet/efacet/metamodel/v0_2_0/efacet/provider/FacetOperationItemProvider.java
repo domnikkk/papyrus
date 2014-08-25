@@ -44,7 +44,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryF
  * This is the item provider adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FacetOperationItemProvider
@@ -59,7 +59,7 @@ public class FacetOperationItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FacetOperationItemProvider(AdapterFactory adapterFactory) {
@@ -70,7 +70,7 @@ public class FacetOperationItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class FacetOperationItemProvider
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
@@ -121,7 +121,7 @@ public class FacetOperationItemProvider
 	 * This adds a property descriptor for the Ordered feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addOrderedPropertyDescriptor(Object object) {
@@ -144,7 +144,7 @@ public class FacetOperationItemProvider
 	 * This adds a property descriptor for the Unique feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addUniquePropertyDescriptor(Object object) {
@@ -167,7 +167,7 @@ public class FacetOperationItemProvider
 	 * This adds a property descriptor for the Lower Bound feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addLowerBoundPropertyDescriptor(Object object) {
@@ -190,7 +190,7 @@ public class FacetOperationItemProvider
 	 * This adds a property descriptor for the Upper Bound feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addUpperBoundPropertyDescriptor(Object object) {
@@ -213,7 +213,7 @@ public class FacetOperationItemProvider
 	 * This adds a property descriptor for the Many feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addManyPropertyDescriptor(Object object) {
@@ -236,7 +236,7 @@ public class FacetOperationItemProvider
 	 * This adds a property descriptor for the Required feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addRequiredPropertyDescriptor(Object object) {
@@ -259,7 +259,7 @@ public class FacetOperationItemProvider
 	 * This adds a property descriptor for the EType feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addETypePropertyDescriptor(Object object) {
@@ -282,7 +282,7 @@ public class FacetOperationItemProvider
 	 * This adds a property descriptor for the EExceptions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addEExceptionsPropertyDescriptor(Object object) {
@@ -305,7 +305,7 @@ public class FacetOperationItemProvider
 	 * This adds a property descriptor for the Documentation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDocumentationPropertyDescriptor(Object object) {
@@ -328,7 +328,7 @@ public class FacetOperationItemProvider
 	 * This adds a property descriptor for the Categories feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addCategoriesPropertyDescriptor(Object object) {
@@ -351,7 +351,7 @@ public class FacetOperationItemProvider
 	 * This adds a property descriptor for the Override feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addOverridePropertyDescriptor(Object object) {
@@ -375,7 +375,7 @@ public class FacetOperationItemProvider
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -395,7 +395,7 @@ public class FacetOperationItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -410,7 +410,7 @@ public class FacetOperationItemProvider
 	 * This returns FacetOperation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -422,7 +422,7 @@ public class FacetOperationItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -438,7 +438,7 @@ public class FacetOperationItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -473,7 +473,7 @@ public class FacetOperationItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -535,7 +535,7 @@ public class FacetOperationItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

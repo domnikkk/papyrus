@@ -49,7 +49,7 @@ public interface SpecificLocatorExternalLabel extends ExternalHook {
 	 * If the meaning of the '<em>Gen External Node Label</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Gen External Node Label</em>' reference list.
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getSpecificLocatorExternalLabel_GenExternalNodeLabel()
 	 * @model

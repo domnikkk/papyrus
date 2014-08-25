@@ -24,7 +24,7 @@ import org.eclipse.papyrus.customization.properties.generation.wizard.widget.Ter
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSelectionFactory {
@@ -33,7 +33,7 @@ public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSele
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static FieldSelectionFactory init() {
@@ -52,7 +52,7 @@ public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSele
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FieldSelectionFactoryImpl() {
@@ -62,7 +62,7 @@ public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +82,7 @@ public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +98,7 @@ public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FieldSelection createFieldSelection() {
@@ -125,7 +125,7 @@ public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PropertyDefinition createPropertyDefinition() {
@@ -136,7 +136,7 @@ public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ContextElement createContextElement() {
@@ -147,7 +147,7 @@ public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public State createValueFromString(EDataType eDataType, String initialValue) {
@@ -157,7 +157,7 @@ public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertValueToString(EDataType eDataType, Object instanceValue) {
@@ -167,7 +167,7 @@ public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FieldSelectionPackage getFieldSelectionPackage() {
@@ -177,7 +177,7 @@ public class FieldSelectionFactoryImpl extends EFactoryImpl implements FieldSele
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

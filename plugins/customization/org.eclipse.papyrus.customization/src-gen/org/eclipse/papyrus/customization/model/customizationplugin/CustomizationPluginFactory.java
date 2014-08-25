@@ -107,7 +107,7 @@ public interface CustomizationPluginFactory extends EFactory {
 	 * Returns a new object of class '<em>Constraints Environment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Constraints Environment</em>'.
 	 * @generated
 	 */
@@ -117,7 +117,7 @@ public interface CustomizationPluginFactory extends EFactory {
 	 * Returns a new object of class '<em>Property View Environment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Property View Environment</em>'.
 	 * @generated
 	 */

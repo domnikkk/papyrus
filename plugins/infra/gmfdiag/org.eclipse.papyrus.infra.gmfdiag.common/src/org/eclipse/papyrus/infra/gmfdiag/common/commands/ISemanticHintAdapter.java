@@ -21,7 +21,7 @@ public interface ISemanticHintAdapter {
 
 	/**
 	 * Returns the semantic hint for this adapter
-	 * 
+	 *
 	 * @return the semantic hint for this adapter
 	 */
 	public String getSemanticHint();

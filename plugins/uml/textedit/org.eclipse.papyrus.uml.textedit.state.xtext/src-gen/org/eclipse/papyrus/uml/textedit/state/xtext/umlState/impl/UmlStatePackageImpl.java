@@ -8,9 +8,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.BehaviorKind;
 import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.DoRule;
 import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.EntryRule;
@@ -20,14 +18,13 @@ import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.StateRule;
 import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.SubmachineRule;
 import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.UmlStateFactory;
 import org.eclipse.papyrus.uml.textedit.state.xtext.umlState.UmlStatePackage;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
@@ -35,7 +32,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass stateRuleEClass = null;
@@ -43,7 +40,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass submachineRuleEClass = null;
@@ -51,7 +48,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass qualifiedNameEClass = null;
@@ -59,7 +56,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass entryRuleEClass = null;
@@ -67,7 +64,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass doRuleEClass = null;
@@ -75,7 +72,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass exitRuleEClass = null;
@@ -83,7 +80,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum behaviorKindEEnum = null;
@@ -93,7 +90,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.textedit.state.xtext.umlState.UmlStatePackage#eNS_URI
 	 * @see #init()
@@ -107,7 +104,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -117,7 +114,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	 *
 	 * <p>
 	 * This method is used to initialize {@link UmlStatePackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -155,7 +152,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -167,7 +164,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +176,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +188,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +200,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +212,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -227,7 +224,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +236,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -251,7 +248,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +260,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,7 +272,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -287,7 +284,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -299,7 +296,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +308,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,7 +320,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -335,7 +332,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -347,7 +344,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -359,7 +356,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -371,7 +368,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -383,7 +380,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -395,7 +392,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -407,7 +404,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -419,7 +416,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -431,7 +428,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -441,7 +438,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents()
@@ -486,7 +483,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -496,7 +493,7 @@ public class UmlStatePackageImpl extends EPackageImpl implements UmlStatePackage
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents()

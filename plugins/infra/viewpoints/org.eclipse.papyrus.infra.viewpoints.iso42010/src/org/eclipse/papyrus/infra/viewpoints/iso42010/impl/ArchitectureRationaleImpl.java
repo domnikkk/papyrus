@@ -16,15 +16,11 @@ package org.eclipse.papyrus.infra.viewpoints.iso42010.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureRationale;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
@@ -47,7 +43,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	 * The cached value of the '{@link #getJustifies() <em>Justifies</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getJustifies()
 	 * @generated
 	 * @ordered
@@ -57,7 +53,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ArchitectureRationaleImpl() {
@@ -67,7 +63,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +74,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureDecision> getJustifies() {
@@ -91,7 +87,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -107,7 +103,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +118,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +133,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -155,7 +151,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -171,7 +167,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -16,18 +16,23 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.infra.discovery.*;
+import org.eclipse.papyrus.infra.discovery.Category;
+import org.eclipse.papyrus.infra.discovery.DiscoveryDefinition;
+import org.eclipse.papyrus.infra.discovery.DiscoveryFactory;
+import org.eclipse.papyrus.infra.discovery.DiscoveryPackage;
+import org.eclipse.papyrus.infra.discovery.Group;
+import org.eclipse.papyrus.infra.discovery.InstallableComponent;
+import org.eclipse.papyrus.infra.discovery.Message;
+import org.eclipse.papyrus.infra.discovery.Overview;
+import org.eclipse.papyrus.infra.discovery.Severity;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFactory {
@@ -35,7 +40,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DiscoveryFactory init() {
@@ -54,7 +59,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiscoveryFactoryImpl() {
@@ -64,7 +69,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +95,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,7 +111,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +127,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public InstallableComponent createInstallableComponent() {
@@ -133,7 +138,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Overview createOverview() {
@@ -144,7 +149,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Category createCategory() {
@@ -155,7 +160,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiscoveryDefinition createDiscoveryDefinition() {
@@ -166,7 +171,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Group createGroup() {
@@ -177,7 +182,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Message createMessage() {
@@ -188,7 +193,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Severity createSeverityFromString(EDataType eDataType, String initialValue) {
@@ -202,7 +207,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertSeverityToString(EDataType eDataType, Object instanceValue) {
@@ -212,7 +217,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiscoveryPackage getDiscoveryPackage() {
@@ -222,7 +227,7 @@ public class DiscoveryFactoryImpl extends EFactoryImpl implements DiscoveryFacto
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

@@ -22,7 +22,7 @@ import org.eclipse.papyrus.infra.constraints.ValueProperty;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsFactory {
@@ -31,7 +31,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ConstraintsFactory init() {
@@ -50,7 +50,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintsFactoryImpl() {
@@ -60,7 +60,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -82,7 +82,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SimpleConstraint createSimpleConstraint() {
@@ -93,7 +93,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CompositeConstraint createCompositeConstraint() {
@@ -104,7 +104,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ValueProperty createValueProperty() {
@@ -115,7 +115,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ReferenceProperty createReferenceProperty() {
@@ -126,7 +126,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintsPackage getConstraintsPackage() {
@@ -136,7 +136,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

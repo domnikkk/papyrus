@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery;
 
 import org.eclipse.emf.ecore.EClassifier;
-
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
 
 /**
@@ -42,7 +41,7 @@ public interface OclQuery extends Query {
 	 * If the meaning of the '<em>Context</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Context</em>' reference.
 	 * @see #setContext(EClassifier)
 	 * @see org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQueryPackage#getOclQuery_Context()
@@ -55,7 +54,7 @@ public interface OclQuery extends Query {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQuery#getContext <em>Context</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Context</em>' reference.
 	 * @see #getContext()
@@ -70,7 +69,7 @@ public interface OclQuery extends Query {
 	 * If the meaning of the '<em>Ocl Expression</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Ocl Expression</em>' attribute.
 	 * @see #setOclExpression(String)
 	 * @see org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQueryPackage#getOclQuery_OclExpression()
@@ -83,7 +82,7 @@ public interface OclQuery extends Query {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQuery#getOclExpression <em>Ocl Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Ocl Expression</em>' attribute.
 	 * @see #getOclExpression()
@@ -94,7 +93,7 @@ public interface OclQuery extends Query {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return getOclExpression();'"
 	 * @generated
 	 */

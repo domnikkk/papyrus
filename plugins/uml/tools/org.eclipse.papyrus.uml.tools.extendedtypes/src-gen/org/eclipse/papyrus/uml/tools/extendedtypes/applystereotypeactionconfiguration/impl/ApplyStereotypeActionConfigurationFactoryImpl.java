@@ -15,18 +15,22 @@ package org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfigu
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.*;
+import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfiguration;
+import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationFactory;
+import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage;
+import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ConstantValue;
+import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.FeatureToSet;
+import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ListValue;
+import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.QueryExecutionValue;
+import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ApplyStereotypeActionConfigurationFactoryImpl extends EFactoryImpl implements ApplyStereotypeActionConfigurationFactory {
@@ -34,7 +38,7 @@ public class ApplyStereotypeActionConfigurationFactoryImpl extends EFactoryImpl 
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ApplyStereotypeActionConfigurationFactory init() {
@@ -53,7 +57,7 @@ public class ApplyStereotypeActionConfigurationFactoryImpl extends EFactoryImpl 
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ApplyStereotypeActionConfigurationFactoryImpl() {
@@ -63,7 +67,7 @@ public class ApplyStereotypeActionConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,7 +93,7 @@ public class ApplyStereotypeActionConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ApplyStereotypeActionConfiguration createApplyStereotypeActionConfiguration() {
@@ -100,7 +104,7 @@ public class ApplyStereotypeActionConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StereotypeToApply createStereotypeToApply() {
@@ -111,7 +115,7 @@ public class ApplyStereotypeActionConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FeatureToSet createFeatureToSet() {
@@ -122,7 +126,7 @@ public class ApplyStereotypeActionConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ListValue createListValue() {
@@ -133,7 +137,7 @@ public class ApplyStereotypeActionConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstantValue createConstantValue() {
@@ -144,7 +148,7 @@ public class ApplyStereotypeActionConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public QueryExecutionValue createQueryExecutionValue() {
@@ -155,7 +159,7 @@ public class ApplyStereotypeActionConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ApplyStereotypeActionConfigurationPackage getApplyStereotypeActionConfigurationPackage() {
@@ -165,7 +169,7 @@ public class ApplyStereotypeActionConfigurationFactoryImpl extends EFactoryImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

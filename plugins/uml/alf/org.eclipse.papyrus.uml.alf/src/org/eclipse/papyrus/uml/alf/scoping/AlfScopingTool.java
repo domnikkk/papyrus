@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -84,19 +84,19 @@ public abstract class AlfScopingTool {
 		// needs to make a second pass on the filtered list, to remove cases where aliases and names are the same, and represent the same element
 		List<EObject> filteredList = new ArrayList<EObject>() ;
 		for (int i = 0 ; i < intermediateFilteredList.size() ; i++) {
-			String classifierName = (intermediateFilteredList.get(i) instanceof Classifier) ? 
+			String classifierName = (intermediateFilteredList.get(i) instanceof Classifier) ?
 					((Classifier)intermediateFilteredList.get(i)).getName() :
 						((ElementImport)intermediateFilteredList.get(i)).getAlias()	;
-					String classifierQualifiedName = (intermediateFilteredList.get(i) instanceof Classifier) ? 
+					String classifierQualifiedName = (intermediateFilteredList.get(i) instanceof Classifier) ?
 							((Classifier)intermediateFilteredList.get(i)).getQualifiedName() :
 								((Classifier)((ElementImport)intermediateFilteredList.get(i)).getImportedElement()).getQualifiedName() ;
 							boolean duplicateFound = false ;
 							for (int j = i + 1 ; j < intermediateFilteredList.size() && !duplicateFound ; j++) {
-								String cddDuplicateClassifierName = (intermediateFilteredList.get(j) instanceof Classifier) ? 
+								String cddDuplicateClassifierName = (intermediateFilteredList.get(j) instanceof Classifier) ?
 										((Classifier)intermediateFilteredList.get(j)).getName() :
 											((ElementImport)intermediateFilteredList.get(j)).getAlias()	;
 										if (cddDuplicateClassifierName.equals(classifierName)) {
-											String cddDuplicateClassifierQualifiedName = (intermediateFilteredList.get(j) instanceof Classifier) ? 
+											String cddDuplicateClassifierQualifiedName = (intermediateFilteredList.get(j) instanceof Classifier) ?
 													((Classifier)intermediateFilteredList.get(j)).getQualifiedName() :
 														((Classifier)((ElementImport)intermediateFilteredList.get(j)).getImportedElement()).getQualifiedName() ;
 													if (cddDuplicateClassifierQualifiedName.equals(classifierQualifiedName)) {
@@ -104,8 +104,9 @@ public abstract class AlfScopingTool {
 													}
 										}
 							}
-							if (!duplicateFound)
+							if (!duplicateFound) {
 								filteredList.add(intermediateFilteredList.get(i)) ;
+							}
 		}
 
 		return filteredList ;
@@ -162,22 +163,23 @@ public abstract class AlfScopingTool {
 	 */
 	protected class OperationAndBehaviorNameStrategy implements AlfPartialScope.IGetNameStrategy {
 		public String getName(EObject element) {
-			if (element instanceof Operation)
+			if (element instanceof Operation) {
 				return ((Operation)element).getName();
-			else if (element instanceof Behavior)
+			} else if (element instanceof Behavior) {
 				return ((Behavior)element).getName() ;
-			else if (element instanceof ElementImport) {
+			} else if (element instanceof ElementImport) {
 				ElementImport eImport = (ElementImport)element ;
-				if (eImport.getAlias() != null)
+				if (eImport.getAlias() != null) {
 					return eImport.getAlias() ;
-				else
+				} else {
 					return ((Behavior)eImport.getImportedElement()).getName() ;
+				}
 			}
 			else if (element instanceof Reception) {
 				return ((Reception)element).getName() ;
-			}
-			else
+			} else {
 				return "Unexpected element kind..." ;
+			}
 		}
 	};
 
@@ -193,8 +195,9 @@ public abstract class AlfScopingTool {
 			}
 			else if (contextElement instanceof ElementImport) {
 				ElementImport eImport = (ElementImport)contextElement ;
-				if (eImport.getImportedElement() instanceof Package)
+				if (eImport.getImportedElement() instanceof Package) {
 					potentialContextPackage = (Package)eImport.getImportedElement() ;
+				}
 			}
 			if (potentialContextPackage != null) {
 				AlfPartialScope behaviorScope = AlfScopeProvider.scopingTool.getVisibleBehaviors(contextElement) ;
@@ -227,7 +230,7 @@ public abstract class AlfScopingTool {
 			}
 
 			nestedScopes.add(nestedList) ;
-			// then builds other scoping levels based on context classifier inheritance hierarchy 
+			// then builds other scoping levels based on context classifier inheritance hierarchy
 			List<Classifier> currentGenerals = new ArrayList<Classifier>() ;
 			currentGenerals.addAll(contextClassifier.getGenerals()) ;
 			List<Classifier> nextGenerals ;
@@ -236,8 +239,9 @@ public abstract class AlfScopingTool {
 				nestedList = new ArrayList<EObject>() ;
 				for (Classifier general : currentGenerals) {
 					nextGenerals.addAll(general.getGenerals()) ;
-					for (Operation o : general.getOperations())
+					for (Operation o : general.getOperations()) {
 						nestedList.add(o) ;
+					}
 							if (general instanceof Class) {
 								for (Reception r : ((Class)general).getOwnedReceptions()) {
 									nestedList.add(r) ;
@@ -249,8 +253,8 @@ public abstract class AlfScopingTool {
 			}
 
 			// finally feeds last scoping levels with behaviors (only if contextElement is not a Class)
-			if (! ((contextElement instanceof Classifier) || 
-					((contextElement instanceof ElementImport && 
+			if (! ((contextElement instanceof Classifier) ||
+					((contextElement instanceof ElementImport &&
 							((ElementImport)contextElement).getImportedElement() instanceof Classifier)))) {
 
 				AlfPartialScope behaviorScope = AlfScopeProvider.scopingTool.getVisibleBehaviors(contextElement) ;
@@ -269,10 +273,11 @@ public abstract class AlfScopingTool {
 	 */
 	protected class ReceptionsNameStrategy implements AlfPartialScope.IGetNameStrategy {
 		public String getName(EObject element) {
-			if (element instanceof Signal)
+			if (element instanceof Signal) {
 				return ((Signal)element).getName();
-			else
+			} else {
 				return "Unexpected element kind..." ;
+			}
 		}
 	};
 
@@ -290,9 +295,11 @@ public abstract class AlfScopingTool {
 
 			// add all the signals for which a Reception is defined
 			for (org.eclipse.uml2.uml.Feature f : contextClassifier.allFeatures()) {
-				if (f instanceof Reception)
-					if (((Reception)f).getSignal() != null)
+				if (f instanceof Reception) {
+					if (((Reception)f).getSignal() != null) {
 						nestedList.add(((Reception)f).getSignal()) ;
+					}
+				}
 			}
 
 			nestedScopes.add(nestedList) ;
@@ -306,9 +313,9 @@ public abstract class AlfScopingTool {
 	 */
 	protected class VariableOrParameterOrPropertyNameStrategy implements AlfPartialScope.IGetNameStrategy {
 		public String getName(EObject element) {
-			if (element instanceof Property)
+			if (element instanceof Property) {
 				return ((Property)element).getName();
-			else if (element instanceof LocalNameDeclarationStatement){
+			} else if (element instanceof LocalNameDeclarationStatement){
 				return ((LocalNameDeclarationStatement)element).getVarName() ;
 			}
 			else if (element instanceof InvocationOrAssignementOrDeclarationStatement) {
@@ -341,8 +348,9 @@ public abstract class AlfScopingTool {
 
 		public boolean containsALocalNameDeclaration(DocumentedStatement previousDocumentStatement) {
 			Statement statement = previousDocumentStatement.getStatement() ;
-			if (statement instanceof LocalNameDeclarationStatement)
+			if (statement instanceof LocalNameDeclarationStatement) {
 				return true ;
+			}
 			if (statement instanceof InvocationOrAssignementOrDeclarationStatement) {
 				//TODO : handle cases with implicit declarations, e.g., v = 14 ; // v is a variable of type Integer
 				InvocationOrAssignementOrDeclarationStatement cddDclStatement = (InvocationOrAssignementOrDeclarationStatement)statement;
@@ -352,27 +360,28 @@ public abstract class AlfScopingTool {
 			}
 			if (statement instanceof AcceptStatement) {
 				AcceptStatement cddDclStatement = (AcceptStatement)statement ;
-				if (cddDclStatement.getSimpleAccept() != null && cddDclStatement.getClause().getName() != null)
+				if (cddDclStatement.getSimpleAccept() != null && cddDclStatement.getClause().getName() != null) {
 					return true ;
+				}
 			}
 			return false;
 		}
 
 	}
-	
+
 	/*
 	 *  Strategies for Classifiers
 	 */
 	protected class ClassifiersNameStrategy implements AlfPartialScope.IGetNameStrategy {
 		public String getName(EObject element) {
-			if (element instanceof Classifier)
+			if (element instanceof Classifier) {
 				return ((Classifier)element).getName() ;
-			else if (element instanceof ElementImport) {
+			} else if (element instanceof ElementImport) {
 				ElementImport imported = (ElementImport)element ;
 				return imported.getAlias() != null ? imported.getAlias() : ((Classifier)imported.getImportedElement()).getName() ;
+			} else {
+				return "Unexpected element kind..." ;
 			}
-			else 
-				return "Unexpected element kind..." ; 
 		}
 	};
 
@@ -383,12 +392,13 @@ public abstract class AlfScopingTool {
 
 			// first checks if contextElement represents a Package. In this case, builds a scope containing all classifiers visible from this package
 			Package potentialContextPackage = null ;
-			if (contextElement instanceof Package)
+			if (contextElement instanceof Package) {
 				potentialContextPackage = (Package)contextElement ;
-			else if (contextElement instanceof ElementImport) {
+			} else if (contextElement instanceof ElementImport) {
 				ElementImport eImport = (ElementImport)contextElement ;
-				if (eImport.getImportedElement() instanceof Package)
+				if (eImport.getImportedElement() instanceof Package) {
 					potentialContextPackage = (Package)eImport.getImportedElement() ;
+				}
 			}
 			if (potentialContextPackage != null) {
 				List<EObject> importedClassifiers = processPublicallyImportedClassifiers(potentialContextPackage) ;
@@ -411,10 +421,11 @@ public abstract class AlfScopingTool {
 			for (ElementImport i : contextClassifier.getElementImports()) {
 				PackageableElement e = i.getImportedElement() ;
 				if (e instanceof Classifier) {
-					if (i.getAlias() != null)
+					if (i.getAlias() != null) {
 						nestedList.add(i) ;
-					else
+					} else {
 						nestedList.add(e) ;
+					}
 				}
 			}
 			nestedList = removeDuplicateClassifiers(nestedList) ;
@@ -443,8 +454,9 @@ public abstract class AlfScopingTool {
 			nestedList = new ArrayList<EObject>() ;
 			Namespace namespaceOfContextClassifier = contextClassifier.getNamespace() ;
 			for (Element e : namespaceOfContextClassifier.getOwnedElements()) {
-				if (e instanceof Classifier && e != contextClassifier)
+				if (e instanceof Classifier && e != contextClassifier) {
 					nestedList.add(e) ;
+				}
 			}
 			nestedScopes.add(nestedList) ;
 
@@ -454,11 +466,12 @@ public abstract class AlfScopingTool {
 		private List<EObject> processPublicallyImportedClassifiers (Package p){
 			List<EObject> importedClassifiers = new ArrayList<EObject>() ;
 			for (NamedElement n : p.getOwnedMembers()) {
-				if (n instanceof Classifier)
+				if (n instanceof Classifier) {
 					if (((Classifier)n).getVisibility() != VisibilityKind.PRIVATE_LITERAL) {
 
 						importedClassifiers.add(n) ;
 					}
+				}
 			}
 			for (ElementImport eImport : p.getElementImports()) {
 				if (eImport.getVisibility()!= VisibilityKind.PRIVATE_LITERAL) {
@@ -489,14 +502,14 @@ public abstract class AlfScopingTool {
 	 */
 	protected class PackageNameStrategy implements AlfPartialScope.IGetNameStrategy {
 		public String getName(EObject element) {
-			if (element instanceof Namespace)
+			if (element instanceof Namespace) {
 				return ((Namespace)element).getName() ;
-			else if (element instanceof ElementImport) {
+			} else if (element instanceof ElementImport) {
 				ElementImport eImport = (ElementImport)element ;
 				return eImport.getAlias() != null ? eImport.getAlias() : eImport.getImportedElement().getName() ;
-			}
-			else
+			} else {
 				return "Unexpected element kind..." ;
+			}
 		}
 	}
 
@@ -539,17 +552,19 @@ public abstract class AlfScopingTool {
 			List<EObject> importedPackages = new ArrayList<EObject>() ;
 
 			for (NamedElement ownedMember : namespace.getOwnedMembers()) {
-				if (ownedMember.getVisibility() != VisibilityKind.PRIVATE_LITERAL && ownedMember instanceof Package)
+				if (ownedMember.getVisibility() != VisibilityKind.PRIVATE_LITERAL && ownedMember instanceof Package) {
 					importedPackages.add(ownedMember) ;
+				}
 			}
 			for (ElementImport eImport : namespace.getElementImports()) {
 				if (eImport.getVisibility() != VisibilityKind.PRIVATE_LITERAL ) {
 					PackageableElement importedElement = eImport.getImportedElement() ;
 					if (importedElement instanceof Package) {
-						if (eImport.getAlias() != null)
+						if (eImport.getAlias() != null) {
 							importedPackages.add(eImport) ;
-						else
+						} else {
 							importedPackages.add(importedElement) ;
+						}
 					}
 				}
 			}
@@ -570,14 +585,14 @@ public abstract class AlfScopingTool {
 
 	protected class BehaviorsNameStrategy implements AlfPartialScope.IGetNameStrategy {
 		public String getName(EObject element) {
-			if (element instanceof Behavior)
+			if (element instanceof Behavior) {
 				return ((Behavior)element).getName() ;
-			else if (element instanceof ElementImport) {
+			} else if (element instanceof ElementImport) {
 				ElementImport imported = (ElementImport)element ;
 				return imported.getAlias() != null ? imported.getAlias() : ((Behavior)imported.getImportedElement()).getName() ;
+			} else {
+				return "Unexpected element kind..." ;
 			}
-			else 
-				return "Unexpected element kind..." ; 
 		}
 	};
 
@@ -588,12 +603,13 @@ public abstract class AlfScopingTool {
 
 			// first checks if contextElement represents a Package. In this case, builds a scope containing all behaviors visible from this package
 			Package potentialContextPackage = null ;
-			if (contextElement instanceof Package)
+			if (contextElement instanceof Package) {
 				potentialContextPackage = (Package)contextElement ;
-			else if (contextElement instanceof ElementImport) {
+			} else if (contextElement instanceof ElementImport) {
 				ElementImport eImport = (ElementImport)contextElement ;
-				if (eImport.getImportedElement() instanceof Package)
+				if (eImport.getImportedElement() instanceof Package) {
 					potentialContextPackage = (Package)eImport.getImportedElement() ;
+				}
 			}
 			if (potentialContextPackage != null) {
 				nestedScopes.add(processPublicallyImportedBehaviors(potentialContextPackage)) ;
@@ -613,10 +629,11 @@ public abstract class AlfScopingTool {
 			for (ElementImport i : contextClassifier.getElementImports()) {
 				PackageableElement e = i.getImportedElement() ;
 				if (e instanceof Classifier) {
-					if (i.getAlias() != null)
+					if (i.getAlias() != null) {
 						nestedList.add(i) ;
-					else
+					} else {
 						nestedList.add(e) ;
+					}
 				}
 			}
 			nestedList = removeDuplicateClassifiers(nestedList) ;
@@ -638,8 +655,9 @@ public abstract class AlfScopingTool {
 			List<EObject> importedBehaviors = new ArrayList<EObject>() ;
 			for (NamedElement n : p.getOwnedMembers()) {
 				if (n instanceof Behavior) {
-					if (((Behavior)n).getVisibility() != VisibilityKind.PRIVATE_LITERAL)
+					if (((Behavior)n).getVisibility() != VisibilityKind.PRIVATE_LITERAL) {
 						importedBehaviors.add(n) ;
+					}
 				}
 				else if (n instanceof Package) {
 					importedBehaviors.addAll(processPublicallyImportedBehaviors((Package)n)) ;
@@ -649,10 +667,11 @@ public abstract class AlfScopingTool {
 				if (eImport.getVisibility()!= VisibilityKind.PRIVATE_LITERAL) {
 					PackageableElement element = eImport.getImportedElement() ;
 					if (element instanceof Behavior) {
-						if (eImport.getAlias() != null)
+						if (eImport.getAlias() != null) {
 							importedBehaviors.add(eImport) ;
-						else
+						} else {
 							importedBehaviors.add(element) ;
+						}
 					}
 				}
 			}
@@ -690,7 +709,7 @@ public abstract class AlfScopingTool {
 			// add all the literals owned by the context enumeration at the first scoping level
 			nestedList.addAll(contextEnumeration.getOwnedLiterals()) ;
 			nestedScopes.add(nestedList) ;
-			// then builds other scoping levels based on context classifier inheritance hierarchy 
+			// then builds other scoping levels based on context classifier inheritance hierarchy
 
 			List<Classifier> currentGenerals = new ArrayList<Classifier>() ;
 			currentGenerals.addAll(contextEnumeration.getGenerals()) ;
@@ -701,8 +720,9 @@ public abstract class AlfScopingTool {
 				for (Classifier general : currentGenerals) {
 					nextGenerals.addAll(general.getGenerals()) ;
 					if (general instanceof Enumeration) {
-						for (EnumerationLiteral enumLiteral : ((Enumeration)general).getOwnedLiterals())
+						for (EnumerationLiteral enumLiteral : ((Enumeration)general).getOwnedLiterals()) {
 							nestedList.add(enumLiteral) ;
+						}
 					}
 				}
 				nestedScopes.add(nestedList) ;

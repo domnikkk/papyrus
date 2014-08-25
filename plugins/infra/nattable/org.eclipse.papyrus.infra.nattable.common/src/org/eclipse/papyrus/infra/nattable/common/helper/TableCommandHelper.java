@@ -27,7 +27,7 @@ import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 
 /**
  * Represents the command helper for viewpoints-based generic tables
- * 
+ *
  * @author Laurent Wouters
  */
 public class TableCommandHelper implements IViewTypeHelper {

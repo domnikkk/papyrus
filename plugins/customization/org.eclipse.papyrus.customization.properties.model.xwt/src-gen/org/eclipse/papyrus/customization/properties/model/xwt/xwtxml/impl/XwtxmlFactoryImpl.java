@@ -17,18 +17,25 @@ package org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.*;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Attribute;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.CDATA;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Comment;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.DocumentTypeDeclaration;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Element;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Namespace;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.ProcessingInstruction;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Root;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Text;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlFactory;
+import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
@@ -36,7 +43,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static XwtxmlFactory init() {
@@ -55,7 +62,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public XwtxmlFactoryImpl() {
@@ -65,7 +72,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +104,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +116,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +128,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,7 +140,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +152,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +164,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -169,7 +176,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +188,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +200,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,7 +212,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,7 +223,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

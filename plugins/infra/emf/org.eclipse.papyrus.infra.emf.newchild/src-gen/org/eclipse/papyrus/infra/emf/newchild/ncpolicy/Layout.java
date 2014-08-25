@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Layout</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage#getLayout()
  * @model
  * @generated
@@ -27,7 +27,7 @@ public enum Layout implements Enumerator {
 	 * The '<em><b>Hierarchical</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #HIERARCHICAL_VALUE
 	 * @generated
 	 * @ordered
@@ -38,7 +38,7 @@ public enum Layout implements Enumerator {
 	 * The '<em><b>Flat</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FLAT_VALUE
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public enum Layout implements Enumerator {
 	 * The '<em><b>Auto</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #AUTO_VALUE
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public enum Layout implements Enumerator {
 	 * If the meaning of '<em><b>Hierarchical</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #HIERARCHICAL
 	 * @model name="hierarchical"
 	 * @generated
@@ -78,7 +78,7 @@ public enum Layout implements Enumerator {
 	 * If the meaning of '<em><b>Flat</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #FLAT
 	 * @model name="flat"
 	 * @generated
@@ -93,7 +93,7 @@ public enum Layout implements Enumerator {
 	 * If the meaning of '<em><b>Auto</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #AUTO
 	 * @model name="auto"
 	 * @generated
@@ -105,7 +105,7 @@ public enum Layout implements Enumerator {
 	 * An array of all the '<em><b>Layout</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final Layout[] VALUES_ARRAY =
@@ -119,7 +119,7 @@ public enum Layout implements Enumerator {
 	 * A public read-only list of all the '<em><b>Layout</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<Layout> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -128,7 +128,7 @@ public enum Layout implements Enumerator {
 	 * Returns the '<em><b>Layout</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static Layout get(String literal) {
@@ -145,7 +145,7 @@ public enum Layout implements Enumerator {
 	 * Returns the '<em><b>Layout</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static Layout getByName(String name) {
@@ -162,7 +162,7 @@ public enum Layout implements Enumerator {
 	 * Returns the '<em><b>Layout</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static Layout get(int value) {
@@ -180,7 +180,7 @@ public enum Layout implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -188,7 +188,7 @@ public enum Layout implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -196,7 +196,7 @@ public enum Layout implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -205,7 +205,7 @@ public enum Layout implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private Layout(int value, String name, String literal) {
@@ -217,7 +217,7 @@ public enum Layout implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getValue() {
@@ -227,7 +227,7 @@ public enum Layout implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -237,7 +237,7 @@ public enum Layout implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLiteral() {
@@ -248,7 +248,7 @@ public enum Layout implements Enumerator {
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

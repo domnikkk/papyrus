@@ -32,7 +32,7 @@ public abstract class AbstractPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getLabel()
 	 */
 	@Override
@@ -40,7 +40,7 @@ public abstract class AbstractPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getDescription()
 	 */
 	@Override
@@ -48,7 +48,7 @@ public abstract class AbstractPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getID()
 	 */
 	@Override
@@ -56,7 +56,7 @@ public abstract class AbstractPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
 	 */
 	@Override
@@ -66,7 +66,7 @@ public abstract class AbstractPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getSemanticCommand(org.eclipse.emf.edit.domain.EditingDomain, org.eclipse.emf.ecore.EObject, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
 	@Override
@@ -77,7 +77,7 @@ public abstract class AbstractPasteStrategy implements IPasteStrategy {
 	/*
 	 * (non-Javadoc)
 	 * By default, if there is no specific graphical command use the semantic one
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getGraphicalCommand(org.eclipse.emf.edit.domain.EditingDomain, org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart,
 	 * org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
 	 */
@@ -99,7 +99,7 @@ public abstract class AbstractPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#prepare(org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard, java.util.List)
 	 */
 	@Override
@@ -109,7 +109,7 @@ public abstract class AbstractPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getImage()
 	 */
 	@Override
@@ -119,7 +119,7 @@ public abstract class AbstractPasteStrategy implements IPasteStrategy {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getPriority()
 	 */
 	@Override

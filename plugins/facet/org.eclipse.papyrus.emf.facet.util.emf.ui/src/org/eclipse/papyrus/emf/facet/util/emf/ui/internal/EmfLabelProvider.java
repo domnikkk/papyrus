@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.papyrus.emf.facet.util.emf.core.ModelUtils;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.utils.ImageProvider;
 import org.eclipse.papyrus.emf.facet.util.emf.ui.internal.utils.ImageUtils;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
 
 public class EmfLabelProvider extends LabelProvider {

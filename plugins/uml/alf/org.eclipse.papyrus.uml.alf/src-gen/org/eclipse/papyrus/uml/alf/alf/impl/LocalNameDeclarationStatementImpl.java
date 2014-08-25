@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.LocalNameDeclarationStatement;
 import org.eclipse.papyrus.uml.alf.alf.QualifiedNameWithBinding;
@@ -133,8 +130,9 @@ public class LocalNameDeclarationStatementImpl extends StatementImpl implements 
   {
     String oldVarName = varName;
     varName = newVarName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__VAR_NAME, oldVarName, varName));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__VAR_NAME, oldVarName, varName));
+	}
   }
 
   /**
@@ -159,7 +157,11 @@ public class LocalNameDeclarationStatementImpl extends StatementImpl implements 
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__TYPE, oldType, newType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -174,15 +176,20 @@ public class LocalNameDeclarationStatementImpl extends StatementImpl implements 
     if (newType != type)
     {
       NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__TYPE, null, msgs);
+      if (type != null) {
+		msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__TYPE, null, msgs);
+	}
+      if (newType != null) {
+		msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__TYPE, null, msgs);
+	}
       msgs = basicSetType(newType, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__TYPE, newType, newType));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__TYPE, newType, newType));
+	}
   }
 
   /**
@@ -204,8 +211,9 @@ public class LocalNameDeclarationStatementImpl extends StatementImpl implements 
   {
     boolean oldMultiplicityIndicator = multiplicityIndicator;
     multiplicityIndicator = newMultiplicityIndicator;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__MULTIPLICITY_INDICATOR, oldMultiplicityIndicator, multiplicityIndicator));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__MULTIPLICITY_INDICATOR, oldMultiplicityIndicator, multiplicityIndicator));
+	}
   }
 
   /**
@@ -230,7 +238,11 @@ public class LocalNameDeclarationStatementImpl extends StatementImpl implements 
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__INIT, oldInit, newInit);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -245,15 +257,20 @@ public class LocalNameDeclarationStatementImpl extends StatementImpl implements 
     if (newInit != init)
     {
       NotificationChain msgs = null;
-      if (init != null)
-        msgs = ((InternalEObject)init).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__INIT, null, msgs);
-      if (newInit != null)
-        msgs = ((InternalEObject)newInit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__INIT, null, msgs);
+      if (init != null) {
+		msgs = ((InternalEObject)init).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__INIT, null, msgs);
+	}
+      if (newInit != null) {
+		msgs = ((InternalEObject)newInit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__INIT, null, msgs);
+	}
       msgs = basicSetInit(newInit, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__INIT, newInit, newInit));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.LOCAL_NAME_DECLARATION_STATEMENT__INIT, newInit, newInit));
+	}
   }
 
   /**
@@ -378,7 +395,9 @@ public class LocalNameDeclarationStatementImpl extends StatementImpl implements 
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (varName: ");

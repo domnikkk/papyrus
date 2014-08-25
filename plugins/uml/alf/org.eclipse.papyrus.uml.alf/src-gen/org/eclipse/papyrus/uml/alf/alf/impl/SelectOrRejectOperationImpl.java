@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.SelectOrRejectOperation;
 import org.eclipse.papyrus.uml.alf.alf.SelectOrRejectOperator;
@@ -87,8 +84,9 @@ public class SelectOrRejectOperationImpl extends SequenceExpansionExpressionImpl
   {
     SelectOrRejectOperator oldOp = op;
     op = newOp == null ? OP_EDEFAULT : newOp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SELECT_OR_REJECT_OPERATION__OP, oldOp, op));
+    if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.SELECT_OR_REJECT_OPERATION__OP, oldOp, op));
+	}
   }
 
   /**
@@ -165,7 +163,9 @@ public class SelectOrRejectOperationImpl extends SequenceExpansionExpressionImpl
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+    if (eIsProxy()) {
+		return super.toString();
+	}
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (op: ");

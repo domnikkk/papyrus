@@ -87,7 +87,7 @@ public class TransitionEditorConfigurationContribution extends DefaultXtextDirec
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.xtext.glue.PopupEditorConfiguration#getTextToEdit(java.lang.Object)
 	 */
 	@SuppressWarnings("nls")
@@ -183,7 +183,7 @@ public class TransitionEditorConfigurationContribution extends DefaultXtextDirec
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor
 		 * , org.eclipse.core.runtime.IAdaptable)

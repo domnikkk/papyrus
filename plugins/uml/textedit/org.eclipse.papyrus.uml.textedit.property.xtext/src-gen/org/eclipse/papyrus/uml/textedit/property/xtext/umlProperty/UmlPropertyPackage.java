@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.UmlPropertyFactory
  * @model kind="package"
  * @generated
@@ -30,7 +30,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "umlProperty";
@@ -39,7 +39,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/uml/textedit/property/xtext/UmlProperty";
@@ -48,7 +48,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "umlProperty";
@@ -57,7 +57,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	UmlPropertyPackage eINSTANCE = org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl.init();
@@ -66,7 +66,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl <em>Property Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getPropertyRule()
 	 * @generated
@@ -77,7 +77,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -87,7 +87,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Is Derived</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -117,7 +117,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Multiplicity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +127,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Modifiers</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +137,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Default</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -147,7 +147,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The number of structural features of the '<em>Property Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -157,7 +157,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.TypeRuleImpl <em>Type Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.TypeRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getTypeRule()
 	 * @generated
@@ -168,7 +168,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +178,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -188,7 +188,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The number of structural features of the '<em>Type Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -198,7 +198,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.QualifiedNameImpl <em>Qualified Name</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.QualifiedNameImpl
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getQualifiedName()
 	 * @generated
@@ -209,7 +209,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Path</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -219,7 +219,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Remaining</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -229,7 +229,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The number of structural features of the '<em>Qualified Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -239,7 +239,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.MultiplicityRuleImpl <em>Multiplicity Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.MultiplicityRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getMultiplicityRule()
 	 * @generated
@@ -250,7 +250,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -260,7 +260,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The number of structural features of the '<em>Multiplicity Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -270,7 +270,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.BoundSpecificationImpl <em>Bound Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.BoundSpecificationImpl
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getBoundSpecification()
 	 * @generated
@@ -281,7 +281,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -291,7 +291,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The number of structural features of the '<em>Bound Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -301,7 +301,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.ModifiersRuleImpl <em>Modifiers Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.ModifiersRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getModifiersRule()
 	 * @generated
@@ -312,7 +312,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -322,7 +322,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The number of structural features of the '<em>Modifiers Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -332,7 +332,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.ModifierSpecificationImpl <em>Modifier Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.ModifierSpecificationImpl
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getModifierSpecification()
 	 * @generated
@@ -343,7 +343,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -353,7 +353,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Redefines</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -363,7 +363,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Subsets</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -373,7 +373,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The number of structural features of the '<em>Modifier Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -383,7 +383,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.RedefinesRuleImpl <em>Redefines Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.RedefinesRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getRedefinesRule()
 	 * @generated
@@ -394,7 +394,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -404,7 +404,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The number of structural features of the '<em>Redefines Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -414,7 +414,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.SubsetsRuleImpl <em>Subsets Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.SubsetsRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getSubsetsRule()
 	 * @generated
@@ -425,7 +425,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Property</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -435,7 +435,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The number of structural features of the '<em>Subsets Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -445,7 +445,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.DefaultValueRuleImpl <em>Default Value Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.DefaultValueRuleImpl
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getDefaultValueRule()
 	 * @generated
@@ -456,7 +456,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The feature id for the '<em><b>Default</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -466,7 +466,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The number of structural features of the '<em>Default Value Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -476,7 +476,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind <em>Visibility Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getVisibilityKind()
 	 * @generated
@@ -487,7 +487,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierKind <em>Modifier Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierKind
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getModifierKind()
 	 * @generated
@@ -499,7 +499,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule <em>Property Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Property Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule
 	 * @generated
@@ -510,7 +510,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getVisibility <em>Visibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Visibility</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getVisibility()
 	 * @see #getPropertyRule()
@@ -522,7 +522,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getIsDerived <em>Is Derived</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Is Derived</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getIsDerived()
 	 * @see #getPropertyRule()
@@ -534,7 +534,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getName()
 	 * @see #getPropertyRule()
@@ -546,7 +546,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getType()
 	 * @see #getPropertyRule()
@@ -558,7 +558,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getMultiplicity <em>Multiplicity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Multiplicity</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getMultiplicity()
 	 * @see #getPropertyRule()
@@ -570,7 +570,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getModifiers <em>Modifiers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Modifiers</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getModifiers()
 	 * @see #getPropertyRule()
@@ -582,7 +582,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getDefault <em>Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Default</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.PropertyRule#getDefault()
 	 * @see #getPropertyRule()
@@ -594,7 +594,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule <em>Type Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Type Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule
 	 * @generated
@@ -605,7 +605,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule#getPath()
 	 * @see #getTypeRule()
@@ -617,7 +617,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.TypeRule#getType()
 	 * @see #getTypeRule()
@@ -629,7 +629,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName <em>Qualified Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Qualified Name</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName
 	 * @generated
@@ -640,7 +640,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Path</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName#getPath()
 	 * @see #getQualifiedName()
@@ -652,7 +652,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName#getRemaining <em>Remaining</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Remaining</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.QualifiedName#getRemaining()
 	 * @see #getQualifiedName()
@@ -664,7 +664,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.MultiplicityRule <em>Multiplicity Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Multiplicity Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.MultiplicityRule
 	 * @generated
@@ -675,7 +675,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.MultiplicityRule#getBounds <em>Bounds</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Bounds</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.MultiplicityRule#getBounds()
 	 * @see #getMultiplicityRule()
@@ -687,7 +687,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification <em>Bound Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Bound Specification</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification
 	 * @generated
@@ -698,7 +698,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.BoundSpecification#getValue()
 	 * @see #getBoundSpecification()
@@ -710,7 +710,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifiersRule <em>Modifiers Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Modifiers Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifiersRule
 	 * @generated
@@ -721,7 +721,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifiersRule#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Values</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifiersRule#getValues()
 	 * @see #getModifiersRule()
@@ -733,7 +733,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification <em>Modifier Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Modifier Specification</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification
 	 * @generated
@@ -744,7 +744,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification#getValue()
 	 * @see #getModifierSpecification()
@@ -756,7 +756,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification#getRedefines <em>Redefines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Redefines</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification#getRedefines()
 	 * @see #getModifierSpecification()
@@ -768,7 +768,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification#getSubsets <em>Subsets</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Subsets</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierSpecification#getSubsets()
 	 * @see #getModifierSpecification()
@@ -780,7 +780,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule <em>Redefines Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Redefines Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule
 	 * @generated
@@ -791,7 +791,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule#getProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Property</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.RedefinesRule#getProperty()
 	 * @see #getRedefinesRule()
@@ -803,7 +803,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.SubsetsRule <em>Subsets Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Subsets Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.SubsetsRule
 	 * @generated
@@ -814,7 +814,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.SubsetsRule#getProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Property</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.SubsetsRule#getProperty()
 	 * @see #getSubsetsRule()
@@ -826,7 +826,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule <em>Default Value Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Default Value Rule</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule
 	 * @generated
@@ -837,7 +837,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule#getDefault <em>Default</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Default</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.DefaultValueRule#getDefault()
 	 * @see #getDefaultValueRule()
@@ -849,7 +849,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind <em>Visibility Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Visibility Kind</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind
 	 * @generated
@@ -860,7 +860,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierKind <em>Modifier Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Modifier Kind</em>'.
 	 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierKind
 	 * @generated
@@ -871,7 +871,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -887,7 +887,7 @@ public interface UmlPropertyPackage extends EPackage
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals
@@ -896,7 +896,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl <em>Property Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.PropertyRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getPropertyRule()
 		 * @generated
@@ -907,7 +907,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PROPERTY_RULE__VISIBILITY = eINSTANCE.getPropertyRule_Visibility();
@@ -916,7 +916,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Is Derived</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PROPERTY_RULE__IS_DERIVED = eINSTANCE.getPropertyRule_IsDerived();
@@ -925,7 +925,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PROPERTY_RULE__NAME = eINSTANCE.getPropertyRule_Name();
@@ -934,7 +934,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_RULE__TYPE = eINSTANCE.getPropertyRule_Type();
@@ -943,7 +943,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Multiplicity</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_RULE__MULTIPLICITY = eINSTANCE.getPropertyRule_Multiplicity();
@@ -952,7 +952,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Modifiers</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_RULE__MODIFIERS = eINSTANCE.getPropertyRule_Modifiers();
@@ -961,7 +961,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Default</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PROPERTY_RULE__DEFAULT = eINSTANCE.getPropertyRule_Default();
@@ -970,7 +970,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.TypeRuleImpl <em>Type Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.TypeRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getTypeRule()
 		 * @generated
@@ -981,7 +981,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Path</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TYPE_RULE__PATH = eINSTANCE.getTypeRule_Path();
@@ -990,7 +990,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference TYPE_RULE__TYPE = eINSTANCE.getTypeRule_Type();
@@ -999,7 +999,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.QualifiedNameImpl <em>Qualified Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.QualifiedNameImpl
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getQualifiedName()
 		 * @generated
@@ -1010,7 +1010,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Path</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference QUALIFIED_NAME__PATH = eINSTANCE.getQualifiedName_Path();
@@ -1019,7 +1019,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Remaining</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference QUALIFIED_NAME__REMAINING = eINSTANCE.getQualifiedName_Remaining();
@@ -1028,7 +1028,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.MultiplicityRuleImpl <em>Multiplicity Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.MultiplicityRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getMultiplicityRule()
 		 * @generated
@@ -1039,7 +1039,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Bounds</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MULTIPLICITY_RULE__BOUNDS = eINSTANCE.getMultiplicityRule_Bounds();
@@ -1048,7 +1048,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.BoundSpecificationImpl <em>Bound Specification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.BoundSpecificationImpl
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getBoundSpecification()
 		 * @generated
@@ -1059,7 +1059,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute BOUND_SPECIFICATION__VALUE = eINSTANCE.getBoundSpecification_Value();
@@ -1068,7 +1068,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.ModifiersRuleImpl <em>Modifiers Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.ModifiersRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getModifiersRule()
 		 * @generated
@@ -1079,7 +1079,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MODIFIERS_RULE__VALUES = eINSTANCE.getModifiersRule_Values();
@@ -1088,7 +1088,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.ModifierSpecificationImpl <em>Modifier Specification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.ModifierSpecificationImpl
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getModifierSpecification()
 		 * @generated
@@ -1099,7 +1099,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MODIFIER_SPECIFICATION__VALUE = eINSTANCE.getModifierSpecification_Value();
@@ -1108,7 +1108,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Redefines</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MODIFIER_SPECIFICATION__REDEFINES = eINSTANCE.getModifierSpecification_Redefines();
@@ -1117,7 +1117,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Subsets</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MODIFIER_SPECIFICATION__SUBSETS = eINSTANCE.getModifierSpecification_Subsets();
@@ -1126,7 +1126,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.RedefinesRuleImpl <em>Redefines Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.RedefinesRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getRedefinesRule()
 		 * @generated
@@ -1137,7 +1137,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference REDEFINES_RULE__PROPERTY = eINSTANCE.getRedefinesRule_Property();
@@ -1146,7 +1146,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.SubsetsRuleImpl <em>Subsets Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.SubsetsRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getSubsetsRule()
 		 * @generated
@@ -1157,7 +1157,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SUBSETS_RULE__PROPERTY = eINSTANCE.getSubsetsRule_Property();
@@ -1166,7 +1166,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.DefaultValueRuleImpl <em>Default Value Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.DefaultValueRuleImpl
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getDefaultValueRule()
 		 * @generated
@@ -1177,7 +1177,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '<em><b>Default</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DEFAULT_VALUE_RULE__DEFAULT = eINSTANCE.getDefaultValueRule_Default();
@@ -1186,7 +1186,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind <em>Visibility Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.VisibilityKind
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getVisibilityKind()
 		 * @generated
@@ -1197,7 +1197,7 @@ public interface UmlPropertyPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierKind <em>Modifier Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.ModifierKind
 		 * @see org.eclipse.papyrus.uml.textedit.property.xtext.umlProperty.impl.UmlPropertyPackageImpl#getModifierKind()
 		 * @generated

@@ -40,7 +40,7 @@ public class FixPortsLocationOnOpening {
 
 	/**
 	 * This method fix the diagram Port and FlowPort locations.
-	 * 
+	 *
 	 * @param diagram
 	 *            the diagram
 	 */

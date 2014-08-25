@@ -2,6 +2,8 @@ package org.eclipse.papyrus.infra.core.sasheditor.contentprovider;
 
 import java.util.List;
 
+import org.eclipse.papyrus.infra.core.sasheditor.internal.SashWindowsContainer;
+
 /**
  * This is the model for a Sash widget. A Sash contains two children (of type Sash or Folder)
  * separated by a sash. The sash can be moved, resizing the children.

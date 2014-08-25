@@ -22,7 +22,7 @@ public interface IInvariantElementMatcher<T extends InvariantRuleConfiguration> 
 
 	/**
 	 * Initialize the element matcher with the given configuration
-	 * 
+	 *
 	 * @param configuration
 	 *            the runtime configuration of the matcher
 	 */

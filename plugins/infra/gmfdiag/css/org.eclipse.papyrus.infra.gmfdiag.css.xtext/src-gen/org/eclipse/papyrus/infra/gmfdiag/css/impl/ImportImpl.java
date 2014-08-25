@@ -15,17 +15,12 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
-
 import org.eclipse.papyrus.infra.gmfdiag.css.CssPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.Import;
 import org.eclipse.papyrus.infra.gmfdiag.css.Uri;
@@ -51,7 +46,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	 * The default value of the '{@link #getString() <em>String</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getString()
 	 * @generated
 	 * @ordered
@@ -62,7 +57,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	 * The cached value of the '{@link #getString() <em>String</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getString()
 	 * @generated
 	 * @ordered
@@ -73,7 +68,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	 * The cached value of the '{@link #getUri() <em>Uri</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUri()
 	 * @generated
 	 * @ordered
@@ -84,7 +79,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	 * The cached value of the '{@link #getMedia() <em>Media</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getMedia()
 	 * @generated
 	 * @ordered
@@ -94,7 +89,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ImportImpl()
@@ -105,7 +100,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,7 +112,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +124,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +140,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +152,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetUri(Uri newUri, NotificationChain msgs)
@@ -179,7 +174,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -207,7 +202,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +218,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,7 +235,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +256,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -287,7 +282,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,7 +306,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -332,7 +327,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -33,7 +33,7 @@ import org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableValue;
 
 /**
  * Represents the observable value of a diagram's owner in the case where the diagram does not yet have the viewpoints-compatible style for holding the value itself
- * 
+ *
  * @author Laurent Wouters
  */
 public class LegacyOwnerObservable extends AbstractObservableValue {
@@ -48,7 +48,7 @@ public class LegacyOwnerObservable extends AbstractObservableValue {
 
 	/**
 	 * Initializes the observables
-	 * 
+	 *
 	 * @param diagram
 	 *            The diagram to be observed
 	 * @param domain
@@ -66,7 +66,7 @@ public class LegacyOwnerObservable extends AbstractObservableValue {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#isStale()
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class LegacyOwnerObservable extends AbstractObservableValue {
 
 	/**
 	 * Builds the listener for the EObjectValue property of the style
-	 * 
+	 *
 	 * @param style
 	 *            The style to be observed
 	 */
@@ -119,7 +119,7 @@ public class LegacyOwnerObservable extends AbstractObservableValue {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.IObservableValue#getValueType()
 	 */
 	public Object getValueType() {
@@ -128,7 +128,7 @@ public class LegacyOwnerObservable extends AbstractObservableValue {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doGetValue()
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class LegacyOwnerObservable extends AbstractObservableValue {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doSetValue(java.lang.Object)
 	 */
 	@Override

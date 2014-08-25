@@ -367,7 +367,7 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 	/*
 	 * (non-Javadoc)
 	 * this method update the after and previous attributes to update the layout
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.toolbox.notification.view.ICloseCallBack#closed(java.lang.Object)
 	 */
 	public void callBack(Object element) {

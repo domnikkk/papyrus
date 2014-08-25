@@ -15,9 +15,9 @@ package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.impl.QueryImpl;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.QueryPackage;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.URIImageQuery;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.impl.QueryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +37,7 @@ public class URIImageQueryImpl extends QueryImpl implements URIImageQuery {
 	 * The default value of the '{@link #getUri() <em>Uri</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUri()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class URIImageQueryImpl extends QueryImpl implements URIImageQuery {
 	 * The cached value of the '{@link #getUri() <em>Uri</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUri()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class URIImageQueryImpl extends QueryImpl implements URIImageQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected URIImageQueryImpl() {
@@ -68,7 +68,7 @@ public class URIImageQueryImpl extends QueryImpl implements URIImageQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class URIImageQueryImpl extends QueryImpl implements URIImageQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getUri() {
@@ -89,7 +89,7 @@ public class URIImageQueryImpl extends QueryImpl implements URIImageQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setUri(String newUri) {
@@ -103,7 +103,7 @@ public class URIImageQueryImpl extends QueryImpl implements URIImageQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,7 +118,7 @@ public class URIImageQueryImpl extends QueryImpl implements URIImageQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +134,7 @@ public class URIImageQueryImpl extends QueryImpl implements URIImageQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,7 +150,7 @@ public class URIImageQueryImpl extends QueryImpl implements URIImageQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class URIImageQueryImpl extends QueryImpl implements URIImageQuery {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

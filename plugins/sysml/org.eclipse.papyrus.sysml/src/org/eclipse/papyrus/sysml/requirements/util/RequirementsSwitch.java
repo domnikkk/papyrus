@@ -16,7 +16,14 @@ package org.eclipse.papyrus.sysml.requirements.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.eclipse.papyrus.sysml.requirements.*;
+import org.eclipse.papyrus.sysml.requirements.Copy;
+import org.eclipse.papyrus.sysml.requirements.DeriveReqt;
+import org.eclipse.papyrus.sysml.requirements.Requirement;
+import org.eclipse.papyrus.sysml.requirements.RequirementRelated;
+import org.eclipse.papyrus.sysml.requirements.RequirementsPackage;
+import org.eclipse.papyrus.sysml.requirements.Satisfy;
+import org.eclipse.papyrus.sysml.requirements.TestCase;
+import org.eclipse.papyrus.sysml.requirements.Verify;
 
 /**
  * <!-- begin-user-doc --> The <b>Switch</b> for the model's inheritance

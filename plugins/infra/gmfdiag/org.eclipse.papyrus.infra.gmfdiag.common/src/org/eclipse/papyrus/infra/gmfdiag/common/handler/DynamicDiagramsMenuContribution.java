@@ -28,7 +28,7 @@ import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 
 /**
  * Represents the dynamic contribution of a policy to menus
- * 
+ *
  * @author Laurent Wouters
  */
 public class DynamicDiagramsMenuContribution extends DynamicContribution {
@@ -40,7 +40,7 @@ public class DynamicDiagramsMenuContribution extends DynamicContribution {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param id
 	 */
 	public DynamicDiagramsMenuContribution(String id) {

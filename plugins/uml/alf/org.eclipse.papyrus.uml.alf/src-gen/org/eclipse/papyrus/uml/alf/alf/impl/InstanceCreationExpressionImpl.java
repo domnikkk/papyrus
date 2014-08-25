@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
 import org.eclipse.papyrus.uml.alf.alf.InstanceCreationExpression;
 import org.eclipse.papyrus.uml.alf.alf.InstanceCreationTuple;
@@ -106,7 +103,11 @@ public class InstanceCreationExpressionImpl extends ValueSpecificationImpl imple
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_EXPRESSION__CONSTRUCTOR, oldConstructor, newConstructor);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -121,15 +122,20 @@ public class InstanceCreationExpressionImpl extends ValueSpecificationImpl imple
     if (newConstructor != constructor)
     {
       NotificationChain msgs = null;
-      if (constructor != null)
-        msgs = ((InternalEObject)constructor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_EXPRESSION__CONSTRUCTOR, null, msgs);
-      if (newConstructor != null)
-        msgs = ((InternalEObject)newConstructor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_EXPRESSION__CONSTRUCTOR, null, msgs);
+      if (constructor != null) {
+		msgs = ((InternalEObject)constructor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_EXPRESSION__CONSTRUCTOR, null, msgs);
+	}
+      if (newConstructor != null) {
+		msgs = ((InternalEObject)newConstructor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_EXPRESSION__CONSTRUCTOR, null, msgs);
+	}
       msgs = basicSetConstructor(newConstructor, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_EXPRESSION__CONSTRUCTOR, newConstructor, newConstructor));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_EXPRESSION__CONSTRUCTOR, newConstructor, newConstructor));
+	}
   }
 
   /**
@@ -154,7 +160,11 @@ public class InstanceCreationExpressionImpl extends ValueSpecificationImpl imple
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_EXPRESSION__TUPLE, oldTuple, newTuple);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -169,15 +179,20 @@ public class InstanceCreationExpressionImpl extends ValueSpecificationImpl imple
     if (newTuple != tuple)
     {
       NotificationChain msgs = null;
-      if (tuple != null)
-        msgs = ((InternalEObject)tuple).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_EXPRESSION__TUPLE, null, msgs);
-      if (newTuple != null)
-        msgs = ((InternalEObject)newTuple).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_EXPRESSION__TUPLE, null, msgs);
+      if (tuple != null) {
+		msgs = ((InternalEObject)tuple).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_EXPRESSION__TUPLE, null, msgs);
+	}
+      if (newTuple != null) {
+		msgs = ((InternalEObject)newTuple).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_EXPRESSION__TUPLE, null, msgs);
+	}
       msgs = basicSetTuple(newTuple, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_EXPRESSION__TUPLE, newTuple, newTuple));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_EXPRESSION__TUPLE, newTuple, newTuple));
+	}
   }
 
   /**
@@ -202,7 +217,11 @@ public class InstanceCreationExpressionImpl extends ValueSpecificationImpl imple
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_EXPRESSION__SUFFIX, oldSuffix, newSuffix);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -217,15 +236,20 @@ public class InstanceCreationExpressionImpl extends ValueSpecificationImpl imple
     if (newSuffix != suffix)
     {
       NotificationChain msgs = null;
-      if (suffix != null)
-        msgs = ((InternalEObject)suffix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_EXPRESSION__SUFFIX, null, msgs);
-      if (newSuffix != null)
-        msgs = ((InternalEObject)newSuffix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_EXPRESSION__SUFFIX, null, msgs);
+      if (suffix != null) {
+		msgs = ((InternalEObject)suffix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_EXPRESSION__SUFFIX, null, msgs);
+	}
+      if (newSuffix != null) {
+		msgs = ((InternalEObject)newSuffix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.INSTANCE_CREATION_EXPRESSION__SUFFIX, null, msgs);
+	}
       msgs = basicSetSuffix(newSuffix, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_EXPRESSION__SUFFIX, newSuffix, newSuffix));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.INSTANCE_CREATION_EXPRESSION__SUFFIX, newSuffix, newSuffix));
+	}
   }
 
   /**

@@ -52,10 +52,10 @@ import org.eclipse.papyrus.infra.core.serviceregistry.internal.StartStartupEntry
  *   // Add your services
  *   serviceRegistry.add( ...);
  *   serviceRegistry.add( ...);
- * 
+ *
  *   // start the services
  *   serviceRegistry.startRegistry();
- * 
+ *
  *   // Retrieve a service
  *   myService = serviceRegistry.getService( serviceKey );
  * </code>
@@ -70,7 +70,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.internal.StartStartupEntry
  *   // Add your new services
  *   serviceRegistry.add( key1, ...);
  *   serviceRegistry.add( key2, ...);
- * 
+ *
  *   // start the new services
  *   serviceRegistry.startRegistry(key1, key2);
  * </code>
@@ -334,7 +334,7 @@ public class ServicesRegistry {
 	/**
 	 * Remove the specified Registry as parent of this registry.
 	 * .
-	 * 
+	 *
 	 * @param parentRegistry
 	 */
 	public void addParentRegistry(ServicesRegistry parentRegistry) {
@@ -580,7 +580,7 @@ public class ServicesRegistry {
 	/**
 	 * Return true if the service is instantiated. Return false otherwise.
 	 * The service type is converted to its name, then the method is performed.
-	 * 
+	 *
 	 * @see #isStarted(Class)
 	 *
 	 * @return
@@ -592,7 +592,7 @@ public class ServicesRegistry {
 	/**
 	 * Return true if the service is instantiated. Return false otherwise.
 	 * The service type is converted to its name, then the method is performed.
-	 * 
+	 *
 	 * @see #isStarted(Class)
 	 *
 	 * @return
@@ -612,7 +612,7 @@ public class ServicesRegistry {
 
 	/**
 	 * Return the state of the specified service.
-	 * 
+	 *
 	 * @param key
 	 * @param searchInParents
 	 * @return
@@ -651,7 +651,7 @@ public class ServicesRegistry {
 	 * All services are first created, then initialized and finally
 	 * started. If an error occur on a service during one of this step, the
 	 * service is removed from the registry and and the error is logged.
-	 * 
+	 *
 	 * @throws ServiceMultiException
 	 *
 	 * @throws ServiceException
@@ -1382,7 +1382,7 @@ public class ServicesRegistry {
 
 		/**
 		 * Try to get the entry from the registries.
-		 * 
+		 *
 		 * @param key
 		 * @return
 		 */

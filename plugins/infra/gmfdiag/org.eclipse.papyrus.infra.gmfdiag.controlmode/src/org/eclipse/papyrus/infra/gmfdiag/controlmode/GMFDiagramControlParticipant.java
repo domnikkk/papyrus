@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.services.controlmode.participants.IUncontrolCom
 
 /**
  * Particiant that will and diagram control
- * 
+ *
  * @author adaussy
  *
  */

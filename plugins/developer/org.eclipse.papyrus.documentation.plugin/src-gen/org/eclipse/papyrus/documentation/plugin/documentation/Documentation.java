@@ -7,7 +7,6 @@
 package org.eclipse.papyrus.documentation.plugin.documentation;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EModelElement;
 
 /**
@@ -43,7 +42,7 @@ public interface Documentation extends EModelElement {
 	 * If the meaning of the '<em>Description</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage#getDocumentation_Description()
@@ -56,7 +55,7 @@ public interface Documentation extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.documentation.plugin.documentation.Documentation#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
@@ -72,7 +71,7 @@ public interface Documentation extends EModelElement {
 	 * If the meaning of the '<em>Implicit Dependencies</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Implicit Dependencies</em>' containment reference list.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage#getDocumentation_ImplicitDependencies()
 	 * @model containment="true"
@@ -88,7 +87,7 @@ public interface Documentation extends EModelElement {
 	 * If the meaning of the '<em>Referent</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Referent</em>' containment reference list.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage#getDocumentation_Referent()
 	 * @model containment="true"
@@ -104,7 +103,7 @@ public interface Documentation extends EModelElement {
 	 * If the meaning of the '<em>Additional Comments</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Additional Comments</em>' containment reference list.
 	 * @see org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPackage#getDocumentation_AdditionalComments()
 	 * @model containment="true"

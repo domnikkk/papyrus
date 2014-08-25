@@ -69,7 +69,7 @@ public class ObjectFlowUtil {
 
 	/**
 	 * Check condition on Object flows
-	 * 
+	 *
 	 * @param container
 	 *            container of the object flow
 	 * @param linkInstance

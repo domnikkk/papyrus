@@ -34,7 +34,7 @@ public interface IObservableList<E> extends List<E> {
 
 	/**
 	 * Remove the listener from the list.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeListener(IObservableListListener<E> listener);

@@ -38,7 +38,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	 * The cached value of the '{@link #getDrawerConfigurations() <em>Drawer Configurations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDrawerConfigurations()
 	 * @generated
 	 * @ordered
@@ -49,7 +49,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	 * The cached value of the '{@link #getRequiredProfiles() <em>Required Profiles</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRequiredProfiles()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PaletteConfigurationImpl() {
@@ -69,7 +69,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<DrawerConfiguration> getDrawerConfigurations() {
@@ -93,7 +93,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<String> getRequiredProfiles() {
@@ -106,7 +106,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -160,7 +160,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

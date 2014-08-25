@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -177,7 +177,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 
 	/**
 	 * @author CEA LIST
-	 * 
+	 *
 	 *         A command for updating the context UML model
 	 */
 	protected static class UpdateImportCommand extends AbstractTransactionalCommand {
@@ -188,7 +188,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 
 		/*
 		 * (non-Javadoc)
-		 * 
+		 *
 		 * @see
 		 * org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor
 		 * , org.eclipse.core.runtime.IAdaptable)
@@ -228,7 +228,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 
 	/**
 	 * @param tupleElement
-	 * 
+	 *
 	 *        Checks the following rule:
 	 *        1. the expression associated with the tuple must not encapsulate any error
 	 */
@@ -244,7 +244,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 	/**
 	 * @param statement
 	 *        LocalNameDeclarationStatement
-	 * 
+	 *
 	 *        Checks the following rules:
 	 *        1. the local variable name must be available
 	 *        2. the type must be resolved
@@ -308,7 +308,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 	/**
 	 * @param statement
 	 *        IfStatement
-	 * 
+	 *
 	 *        Checks the following rule:
 	 *        1. The condition associated with each clause must be a boolean expression
 	 */
@@ -333,7 +333,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 	/**
 	 * @param statement
 	 *        WhileStatement
-	 * 
+	 *
 	 *        Checks the following rule:
 	 *        1. The condition associated with the while must be a boolean expression
 	 */
@@ -354,7 +354,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 	/**
 	 * @param statement
 	 *        DoStatement
-	 * 
+	 *
 	 *        Checks the following rule:
 	 *        1. The condition associated with the DoStatement must be a boolean expression
 	 */
@@ -375,7 +375,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 	/**
 	 * @param statement
 	 *        ForStatement
-	 * 
+	 *
 	 *        Checks the following rule:
 	 *        1. Loop variable names must not be available (i.e., not used in the scope of the statement)
 	 *        2. Loop variable names must not duplicate (i.e., two loop variables for this statement must not have the same name)
@@ -517,7 +517,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 
 	/**
 	 * @param statement
-	 * 
+	 *
 	 *        Checks the following rule:
 	 *        1. That a return value is actually expected from the context of the ALF specification
 	 *        2. If a return value is expected, the returned value must be type/multiplicity compatible
@@ -579,7 +579,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 
 	/**
 	 * @param statement
-	 * 
+	 *
 	 *        Checks the following rules:
 	 *        1. Checks that the context classifier is active
 	 *        2. Each AcceptClause.name (if specified) must be available.
@@ -674,14 +674,14 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 
 	/**
 	 * @param statement
-	 * 
+	 *
 	 *        Checks the following rules:
 	 *        1. The static type of the target expression must be a Class
 	 *        and it must evaluate to a single object
 	 *        2. All qualified names in from or to lists must resolve to classes
 	 *        3. All the classes in the from and to lists must be subclasses of the static type of the target expression
 	 *        4. None of them may have a common superclass of the static type of the target expression (i.e., disjoint subclasses)
-	 * 
+	 *
 	 */
 	@Check
 	public void checkClassifyStatement(ClassifyStatement statement) {
@@ -734,7 +734,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 					error(error.getLabel(), error.getErrorSource(), error.getStructuralFeature(), INSIGNIFICANT_INDEX);
 					errorFound = true;
 				} else {
-					Classifier actualType = type.extractActualType(type);
+					Classifier actualType = TypeFacade.extractActualType(type);
 					if(actualType == null || !(actualType instanceof Class)) {
 						String errorMessage = "All types in the 'from' list must be Classes";
 						int index = fromClause.getQualifiedNameList().getQualifiedName().indexOf(name);
@@ -754,7 +754,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 					error(error.getLabel(), error.getErrorSource(), error.getStructuralFeature(), INSIGNIFICANT_INDEX);
 					errorFound = true;
 				} else {
-					Classifier actualType = type.extractActualType(type);
+					Classifier actualType = TypeFacade.extractActualType(type);
 					if(actualType == null || !(actualType instanceof Class)) {
 						String errorMessage = "All types in the 'from' list must be Classes";
 						int index = toClause.getQualifiedNameList().getQualifiedName().indexOf(name);
@@ -966,7 +966,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 
 	/**
 	 * @param statement
-	 * 
+	 *
 	 *        Checks the following rule:
 	 *        1. typePart_OR_assignedPart_OR_invocationPart must resolve to a type
 	 *        2. the variable name must be available
@@ -1034,9 +1034,9 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 
 
 	/**
-	 * 
+	 *
 	 * @param statement
-	 * 
+	 *
 	 *        Checks the following rules:
 	 *        1. The left part must be assignable, i.e.:
 	 *        1.a It must resolve to a property, or
@@ -1149,7 +1149,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 
 	/**
 	 * @param statement
-	 * 
+	 *
 	 *        Checks the following rule:
 	 *        1. The associated SuperInvocationExpression must be valid
 	 */
@@ -1165,7 +1165,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 
 	/**
 	 * @param statement
-	 * 
+	 *
 	 *        Checks the following rules:
 	 *        1. The associated ThisExpression must be valid
 	 *        2. If an assignment is specified:
@@ -1293,7 +1293,7 @@ public class AlfJavaValidator extends AbstractAlfJavaValidator {
 
 	/**
 	 * @param statement
-	 * 
+	 *
 	 *        Checks the following rule:
 	 *        1. The InstanceCreationExpression must be valid
 	 *        2. If a suffix is specified, it must resolve to an invocation

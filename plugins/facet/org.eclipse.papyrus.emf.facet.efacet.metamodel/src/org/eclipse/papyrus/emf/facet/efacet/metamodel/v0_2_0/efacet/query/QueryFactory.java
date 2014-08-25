@@ -35,7 +35,7 @@ public interface QueryFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	QueryFactory eINSTANCE = org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.impl.QueryFactoryImpl.init();
@@ -44,7 +44,7 @@ public interface QueryFactory extends EFactory {
 	 * Returns a new object of class '<em>Navigation Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Navigation Query</em>'.
 	 * @generated
 	 */
@@ -54,7 +54,7 @@ public interface QueryFactory extends EFactory {
 	 * Returns a new object of class '<em>Is One Of Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Is One Of Query</em>'.
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public interface QueryFactory extends EFactory {
 	 * Returns a new object of class '<em>String Literal Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>String Literal Query</em>'.
 	 * @generated
 	 */
@@ -74,7 +74,7 @@ public interface QueryFactory extends EFactory {
 	 * Returns a new object of class '<em>True Literal Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>True Literal Query</em>'.
 	 * @generated
 	 */
@@ -84,7 +84,7 @@ public interface QueryFactory extends EFactory {
 	 * Returns a new object of class '<em>False Literal Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>False Literal Query</em>'.
 	 * @generated
 	 */
@@ -94,7 +94,7 @@ public interface QueryFactory extends EFactory {
 	 * Returns a new object of class '<em>Null Literal Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Null Literal Query</em>'.
 	 * @generated
 	 */
@@ -104,7 +104,7 @@ public interface QueryFactory extends EFactory {
 	 * Returns a new object of class '<em>Integer Literal Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Integer Literal Query</em>'.
 	 * @generated
 	 * @since 0.2
@@ -126,7 +126,7 @@ public interface QueryFactory extends EFactory {
 	 * Returns a new object of class '<em>EObject Literal Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>EObject Literal Query</em>'.
 	 * @generated
 	 * @since 0.2
@@ -137,7 +137,7 @@ public interface QueryFactory extends EFactory {
 	 * Returns a new object of class '<em>Operation Call Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Operation Call Query</em>'.
 	 * @generated
 	 * @since 0.2
@@ -148,7 +148,7 @@ public interface QueryFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

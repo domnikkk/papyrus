@@ -40,7 +40,7 @@ public interface PropertyRefreshHook extends ExternalHook {
 	 * If the meaning of the '<em>Triggering Condition</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Triggering Condition</em>' attribute.
 	 * @see #setTriggeringCondition(String)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getPropertyRefreshHook_TriggeringCondition()
@@ -53,7 +53,7 @@ public interface PropertyRefreshHook extends ExternalHook {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.PropertyRefreshHook#getTriggeringCondition <em>Triggering Condition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Triggering Condition</em>' attribute.
 	 * @see #getTriggeringCondition()
@@ -68,7 +68,7 @@ public interface PropertyRefreshHook extends ExternalHook {
 	 * If the meaning of the '<em>Action</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Action</em>' attribute.
 	 * @see #setAction(String)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getPropertyRefreshHook_Action()
@@ -81,7 +81,7 @@ public interface PropertyRefreshHook extends ExternalHook {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.PropertyRefreshHook#getAction <em>Action</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Action</em>' attribute.
 	 * @see #getAction()

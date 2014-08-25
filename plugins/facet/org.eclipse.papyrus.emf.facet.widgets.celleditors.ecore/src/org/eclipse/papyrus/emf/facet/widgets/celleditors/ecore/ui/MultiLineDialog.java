@@ -11,11 +11,11 @@
  *****************************************************************************/
 package org.eclipse.papyrus.emf.facet.widgets.celleditors.ecore.ui;
 
-import org.eclipse.papyrus.emf.facet.widgets.celleditors.ecore.Activator;
-import org.eclipse.papyrus.emf.facet.widgets.celleditors.ecore.Messages;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.IDialogSettings;
+import org.eclipse.papyrus.emf.facet.widgets.celleditors.ecore.Activator;
+import org.eclipse.papyrus.emf.facet.widgets.celleditors.ecore.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;

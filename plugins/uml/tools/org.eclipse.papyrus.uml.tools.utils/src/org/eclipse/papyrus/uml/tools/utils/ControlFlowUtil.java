@@ -26,7 +26,7 @@ public class ControlFlowUtil {
 
 	/**
 	 * Check condition on control flows
-	 * 
+	 *
 	 * @param container
 	 *            container of the object flow
 	 * @param linkInstance

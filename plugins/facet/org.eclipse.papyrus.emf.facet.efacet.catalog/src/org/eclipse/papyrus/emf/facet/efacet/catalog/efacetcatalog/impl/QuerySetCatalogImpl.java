@@ -53,7 +53,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	 * The cached value of the '{@link #getInstalledEntries() <em>Installed Entries</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getInstalledEntries()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -83,7 +83,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected QuerySetCatalogImpl() {
@@ -93,7 +93,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +104,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<EObject> getInstalledEntries() {
@@ -117,7 +117,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -127,7 +127,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(final String newName) {
@@ -141,7 +141,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EList<QuerySet> getInstalledQuerySets() {
@@ -160,7 +160,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -204,7 +204,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +226,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -245,7 +245,7 @@ public class QuerySetCatalogImpl extends EObjectImpl implements QuerySetCatalog 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

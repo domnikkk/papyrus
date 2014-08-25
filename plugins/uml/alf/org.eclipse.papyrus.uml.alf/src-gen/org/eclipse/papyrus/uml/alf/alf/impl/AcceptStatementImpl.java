@@ -4,12 +4,9 @@ package org.eclipse.papyrus.uml.alf.alf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.uml.alf.alf.AcceptClause;
 import org.eclipse.papyrus.uml.alf.alf.AcceptStatement;
 import org.eclipse.papyrus.uml.alf.alf.AlfPackage;
@@ -106,7 +103,11 @@ public class AcceptStatementImpl extends StatementImpl implements AcceptStatemen
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_STATEMENT__CLAUSE, oldClause, newClause);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -121,15 +122,20 @@ public class AcceptStatementImpl extends StatementImpl implements AcceptStatemen
     if (newClause != clause)
     {
       NotificationChain msgs = null;
-      if (clause != null)
-        msgs = ((InternalEObject)clause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_STATEMENT__CLAUSE, null, msgs);
-      if (newClause != null)
-        msgs = ((InternalEObject)newClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_STATEMENT__CLAUSE, null, msgs);
+      if (clause != null) {
+		msgs = ((InternalEObject)clause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_STATEMENT__CLAUSE, null, msgs);
+	}
+      if (newClause != null) {
+		msgs = ((InternalEObject)newClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_STATEMENT__CLAUSE, null, msgs);
+	}
       msgs = basicSetClause(newClause, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_STATEMENT__CLAUSE, newClause, newClause));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_STATEMENT__CLAUSE, newClause, newClause));
+	}
   }
 
   /**
@@ -154,7 +160,11 @@ public class AcceptStatementImpl extends StatementImpl implements AcceptStatemen
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_STATEMENT__SIMPLE_ACCEPT, oldSimpleAccept, newSimpleAccept);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -169,15 +179,20 @@ public class AcceptStatementImpl extends StatementImpl implements AcceptStatemen
     if (newSimpleAccept != simpleAccept)
     {
       NotificationChain msgs = null;
-      if (simpleAccept != null)
-        msgs = ((InternalEObject)simpleAccept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_STATEMENT__SIMPLE_ACCEPT, null, msgs);
-      if (newSimpleAccept != null)
-        msgs = ((InternalEObject)newSimpleAccept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_STATEMENT__SIMPLE_ACCEPT, null, msgs);
+      if (simpleAccept != null) {
+		msgs = ((InternalEObject)simpleAccept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_STATEMENT__SIMPLE_ACCEPT, null, msgs);
+	}
+      if (newSimpleAccept != null) {
+		msgs = ((InternalEObject)newSimpleAccept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_STATEMENT__SIMPLE_ACCEPT, null, msgs);
+	}
       msgs = basicSetSimpleAccept(newSimpleAccept, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_STATEMENT__SIMPLE_ACCEPT, newSimpleAccept, newSimpleAccept));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_STATEMENT__SIMPLE_ACCEPT, newSimpleAccept, newSimpleAccept));
+	}
   }
 
   /**
@@ -202,7 +217,11 @@ public class AcceptStatementImpl extends StatementImpl implements AcceptStatemen
     if (eNotificationRequired())
     {
       ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_STATEMENT__COMPOUND_ACCEPT, oldCompoundAccept, newCompoundAccept);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      if (msgs == null) {
+		msgs = notification;
+	} else {
+		msgs.add(notification);
+	}
     }
     return msgs;
   }
@@ -217,15 +236,20 @@ public class AcceptStatementImpl extends StatementImpl implements AcceptStatemen
     if (newCompoundAccept != compoundAccept)
     {
       NotificationChain msgs = null;
-      if (compoundAccept != null)
-        msgs = ((InternalEObject)compoundAccept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_STATEMENT__COMPOUND_ACCEPT, null, msgs);
-      if (newCompoundAccept != null)
-        msgs = ((InternalEObject)newCompoundAccept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_STATEMENT__COMPOUND_ACCEPT, null, msgs);
+      if (compoundAccept != null) {
+		msgs = ((InternalEObject)compoundAccept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_STATEMENT__COMPOUND_ACCEPT, null, msgs);
+	}
+      if (newCompoundAccept != null) {
+		msgs = ((InternalEObject)newCompoundAccept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlfPackage.ACCEPT_STATEMENT__COMPOUND_ACCEPT, null, msgs);
+	}
       msgs = basicSetCompoundAccept(newCompoundAccept, msgs);
-      if (msgs != null) msgs.dispatch();
+      if (msgs != null) {
+		msgs.dispatch();
+	}
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_STATEMENT__COMPOUND_ACCEPT, newCompoundAccept, newCompoundAccept));
+    else if (eNotificationRequired()) {
+		eNotify(new ENotificationImpl(this, Notification.SET, AlfPackage.ACCEPT_STATEMENT__COMPOUND_ACCEPT, newCompoundAccept, newCompoundAccept));
+	}
   }
 
   /**

@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.uml.properties.preferences;
 
 import org.eclipse.jface.preference.PreferencePage;
+import org.eclipse.papyrus.uml.properties.widgets.ExpressionLanguageEditor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.IWorkbench;

@@ -58,7 +58,7 @@ public abstract class AbstractPreferenceKeyDialog extends org.eclipse.jface.dial
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#createDialogArea(org.eclipse.swt.widgets.Composite)
 	 */
 	@Override

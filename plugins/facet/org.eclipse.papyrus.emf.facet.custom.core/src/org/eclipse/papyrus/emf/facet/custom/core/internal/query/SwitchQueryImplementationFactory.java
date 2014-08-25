@@ -11,13 +11,13 @@
 package org.eclipse.papyrus.emf.facet.custom.core.internal.query;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
+import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementSwitchQuery;
 import org.eclipse.papyrus.emf.facet.efacet.core.IDerivedTypedElementManager;
 import org.eclipse.papyrus.emf.facet.efacet.core.exception.DerivedTypedElementException;
 import org.eclipse.papyrus.emf.facet.efacet.core.query.IQueryImplementation;
 import org.eclipse.papyrus.emf.facet.efacet.core.query.IQueryImplementationFactory;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.Query;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementSwitchQuery;
 import org.osgi.framework.Bundle;
 
 public class SwitchQueryImplementationFactory implements

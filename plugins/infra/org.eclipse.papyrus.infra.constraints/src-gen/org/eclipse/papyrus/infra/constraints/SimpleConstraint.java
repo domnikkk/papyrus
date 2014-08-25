@@ -34,7 +34,7 @@ public interface SimpleConstraint extends ConstraintDescriptor {
 	 * If the meaning of the '<em>Constraint Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Constraint Type</em>' reference.
 	 * @see #setConstraintType(ConstraintType)
 	 * @see org.eclipse.papyrus.infra.constraints.ConstraintsPackage#getSimpleConstraint_ConstraintType()
@@ -47,7 +47,7 @@ public interface SimpleConstraint extends ConstraintDescriptor {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.constraints.SimpleConstraint#getConstraintType <em>Constraint Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Constraint Type</em>' reference.
 	 * @see #getConstraintType()
@@ -63,7 +63,7 @@ public interface SimpleConstraint extends ConstraintDescriptor {
 	 * If the meaning of the '<em>Properties</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Properties</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.constraints.ConstraintsPackage#getSimpleConstraint_Properties()
 	 * @model containment="true"

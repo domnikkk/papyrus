@@ -217,7 +217,7 @@ public class CachedResourcesEditorInput extends URIEditorInput {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.ui.URIEditorInput#equals(java.lang.Object)
 	 */
 	@Override

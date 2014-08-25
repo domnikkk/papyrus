@@ -92,7 +92,7 @@ public abstract class ChangeStereotypedShapeEditPolicy extends GraphicalEditPoli
 
 	/**
 	 * get all semantic link that are source or target of the graphical edit part
-	 * 
+	 *
 	 * @param gmfpart
 	 *            the graphical editpart for each we look for source and target link
 	 * @return a list of eobject
@@ -121,7 +121,7 @@ public abstract class ChangeStereotypedShapeEditPolicy extends GraphicalEditPoli
 
 	/**
 	 * drop a set of link into the container
-	 * 
+	 *
 	 * @param gmfparent
 	 *            the parent which contain the links
 	 * @param elementToDrop

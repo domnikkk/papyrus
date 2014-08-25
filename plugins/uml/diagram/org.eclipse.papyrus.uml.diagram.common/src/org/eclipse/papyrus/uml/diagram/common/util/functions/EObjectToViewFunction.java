@@ -22,7 +22,7 @@ import com.google.common.base.Function;
 /**
  * Transform an EObject to a View
  * If the EObject passed into apply is not a view then return null
- * 
+ *
  * @author adaussy
  *
  */

@@ -36,7 +36,7 @@ import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 
 /**
  * Represents the dynamic contribution of a policy to menus
- * 
+ *
  * @author Laurent Wouters
  */
 public class GMFDiagramViewTypeHelper implements IViewTypeHelper {

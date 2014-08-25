@@ -17,9 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.papyrus.infra.discovery.Category;
 import org.eclipse.papyrus.infra.discovery.DiscoveryDefinition;
 import org.eclipse.papyrus.infra.discovery.DiscoveryFactory;
@@ -34,14 +32,14 @@ import org.eclipse.papyrus.infra.discovery.Severity;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass installableComponentEClass = null;
@@ -49,7 +47,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass overviewEClass = null;
@@ -57,7 +55,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass categoryEClass = null;
@@ -65,7 +63,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass discoveryDefinitionEClass = null;
@@ -73,7 +71,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass groupEClass = null;
@@ -81,7 +79,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass messageEClass = null;
@@ -89,7 +87,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum severityEEnum = null;
@@ -99,7 +97,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	 * package URI value.
 	 * <p>
 	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.discovery.DiscoveryPackage#eNS_URI
 	 * @see #init()
@@ -112,7 +110,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -122,7 +120,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	 *
 	 * <p>
 	 * This method is used to initialize {@link DiscoveryPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -156,7 +154,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getInstallableComponent() {
@@ -166,7 +164,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_Name() {
@@ -176,7 +174,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_Provider() {
@@ -186,7 +184,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_SitesURLS() {
@@ -196,7 +194,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_Description() {
@@ -206,7 +204,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getInstallableComponent_Overview() {
@@ -216,7 +214,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getInstallableComponent_Category() {
@@ -226,7 +224,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_Id() {
@@ -236,7 +234,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_License() {
@@ -246,7 +244,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_Selected() {
@@ -256,7 +254,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_Available() {
@@ -266,7 +264,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_Installed() {
@@ -276,7 +274,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getInstallableComponent_Groups() {
@@ -286,7 +284,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_Image32() {
@@ -296,7 +294,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_Incubation() {
@@ -306,7 +304,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getInstallableComponent_Messages() {
@@ -316,7 +314,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_Visible() {
@@ -326,7 +324,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getInstallableComponent_HiddingFeatureID() {
@@ -336,7 +334,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getOverview() {
@@ -346,7 +344,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getOverview_Summary() {
@@ -356,7 +354,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getOverview_Screenshot() {
@@ -366,7 +364,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getOverview_Url() {
@@ -376,7 +374,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCategory() {
@@ -386,7 +384,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCategory_Name() {
@@ -396,7 +394,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCategory_Description() {
@@ -406,7 +404,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCategory_Components() {
@@ -416,7 +414,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCategory_Relevance() {
@@ -426,7 +424,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCategory_Overview() {
@@ -436,7 +434,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getCategory_Image48() {
@@ -446,7 +444,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDiscoveryDefinition() {
@@ -456,7 +454,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiscoveryDefinition_Categories() {
@@ -466,7 +464,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiscoveryDefinition_Filters() {
@@ -476,7 +474,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getGroup() {
@@ -486,7 +484,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getGroup_Name() {
@@ -496,7 +494,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMessage() {
@@ -506,7 +504,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessage_Title() {
@@ -516,7 +514,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessage_Message() {
@@ -526,7 +524,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessage_Icon() {
@@ -536,7 +534,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getSeverity() {
@@ -546,7 +544,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiscoveryFactory getDiscoveryFactory() {
@@ -556,7 +554,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -566,7 +564,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -627,7 +625,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -637,7 +635,7 @@ public class DiscoveryPackageImpl extends EPackageImpl implements DiscoveryPacka
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {

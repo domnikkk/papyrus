@@ -11,9 +11,9 @@
  */
 package org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.util.wizard.page;
 
+import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.wizard.page.ICustomizationPropertyWizardPage;
-import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;

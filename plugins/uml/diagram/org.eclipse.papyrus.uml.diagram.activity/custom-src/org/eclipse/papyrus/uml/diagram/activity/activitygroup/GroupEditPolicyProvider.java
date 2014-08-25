@@ -46,7 +46,7 @@ public class GroupEditPolicyProvider implements IEditPolicyProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.gmf.runtime.common.core.service.IProvider#addProviderChangeListener(org.eclipse.gmf.runtime.common.core.service.IProviderChangeListener
 	 * )
@@ -57,7 +57,7 @@ public class GroupEditPolicyProvider implements IEditPolicyProvider {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#removeProviderChangeListener(org.eclipse.gmf.runtime.common.core.service.
 	 * IProviderChangeListener)
 	 */

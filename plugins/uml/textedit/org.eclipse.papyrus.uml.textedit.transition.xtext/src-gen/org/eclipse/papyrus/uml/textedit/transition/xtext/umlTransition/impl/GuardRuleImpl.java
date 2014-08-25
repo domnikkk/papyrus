@@ -3,12 +3,9 @@
 package org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.GuardRule;
 import org.eclipse.papyrus.uml.textedit.transition.xtext.umlTransition.UmlTransitionPackage;
 
@@ -31,7 +28,7 @@ public class GuardRuleImpl extends MinimalEObjectImpl.Container implements Guard
 	 * The default value of the '{@link #getConstraint() <em>Constraint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstraint()
 	 * @generated
 	 * @ordered
@@ -42,7 +39,7 @@ public class GuardRuleImpl extends MinimalEObjectImpl.Container implements Guard
 	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getConstraint()
 	 * @generated
 	 * @ordered
@@ -52,7 +49,7 @@ public class GuardRuleImpl extends MinimalEObjectImpl.Container implements Guard
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GuardRuleImpl()
@@ -63,7 +60,7 @@ public class GuardRuleImpl extends MinimalEObjectImpl.Container implements Guard
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +72,7 @@ public class GuardRuleImpl extends MinimalEObjectImpl.Container implements Guard
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,7 +84,7 @@ public class GuardRuleImpl extends MinimalEObjectImpl.Container implements Guard
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +100,7 @@ public class GuardRuleImpl extends MinimalEObjectImpl.Container implements Guard
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +117,7 @@ public class GuardRuleImpl extends MinimalEObjectImpl.Container implements Guard
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +135,7 @@ public class GuardRuleImpl extends MinimalEObjectImpl.Container implements Guard
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -156,7 +153,7 @@ public class GuardRuleImpl extends MinimalEObjectImpl.Container implements Guard
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +170,7 @@ public class GuardRuleImpl extends MinimalEObjectImpl.Container implements Guard
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

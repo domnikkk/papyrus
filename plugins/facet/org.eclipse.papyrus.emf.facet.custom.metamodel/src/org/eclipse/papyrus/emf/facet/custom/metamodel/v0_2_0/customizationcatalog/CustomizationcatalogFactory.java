@@ -29,7 +29,7 @@ public interface CustomizationcatalogFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	CustomizationcatalogFactory eINSTANCE = org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.customizationcatalog.impl.CustomizationcatalogFactoryImpl.init();
@@ -38,7 +38,7 @@ public interface CustomizationcatalogFactory extends EFactory {
 	 * Returns a new object of class '<em>Customization Catalog</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Customization Catalog</em>'.
 	 * @generated
 	 */
@@ -48,7 +48,7 @@ public interface CustomizationcatalogFactory extends EFactory {
 	 * Returns a new object of class '<em>Customization Properties Catalog</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return a new object of class '<em>Customization Properties Catalog</em>'.
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface CustomizationcatalogFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

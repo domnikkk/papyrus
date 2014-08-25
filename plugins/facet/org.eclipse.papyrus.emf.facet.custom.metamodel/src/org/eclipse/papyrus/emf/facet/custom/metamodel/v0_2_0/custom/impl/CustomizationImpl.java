@@ -16,9 +16,9 @@ package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetSetImpl;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
+import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetSetImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +39,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	 * The default value of the '{@link #isMustBeLoadedByDefault() <em>Must Be Loaded By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isMustBeLoadedByDefault()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	 * The cached value of the '{@link #isMustBeLoadedByDefault() <em>Must Be Loaded By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isMustBeLoadedByDefault()
 	 * @generated
 	 * @ordered
@@ -61,7 +61,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	 * The default value of the '{@link #getRank() <em>Rank</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRank()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	 * The cached value of the '{@link #getRank() <em>Rank</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRank()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CustomizationImpl() {
@@ -92,7 +92,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isMustBeLoadedByDefault() {
@@ -113,7 +113,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setMustBeLoadedByDefault(boolean newMustBeLoadedByDefault) {
@@ -127,7 +127,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getRank() {
@@ -137,7 +137,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRank(int newRank) {
@@ -151,7 +151,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -168,7 +168,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,7 +187,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +223,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

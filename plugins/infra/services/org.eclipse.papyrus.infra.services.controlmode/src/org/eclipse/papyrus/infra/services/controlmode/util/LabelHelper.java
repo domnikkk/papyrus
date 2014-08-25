@@ -18,7 +18,7 @@ import org.eclipse.emf.edit.provider.IItemLabelProvider;
 
 /**
  * General label helper
- * 
+ *
  * @author adaussy
  *
  */

@@ -22,7 +22,7 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.OrphanViewPolicy;
  * <pre>
  * This policy is used to suppress orphan node view in GMF view.
  * The policy to remove orphan connection is more complex.
- * 
+ *
  * See RemoveOrphanViewPolicy in Class Diagram
  * </pre>
  */

@@ -12,8 +12,8 @@
 package org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.wizard.page;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.wizard.page.CreateFacetSetWizardPage;
 import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.wizard.page.CreateFacetSetWizardPage;
 
 /**
  * @see CreateFacetSetWizardPage

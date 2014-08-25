@@ -1,6 +1,5 @@
 package org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.serializer;
 
-import com.google.inject.Inject;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.services.UmlCollaborationUseGrammarAccess;
 import org.eclipse.papyrus.uml.textedit.collaborationuse.xtext.umlCollaborationUse.CollaborationUseRule;
@@ -11,6 +10,8 @@ import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.BoundSpecificatio
 import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.MultiplicityRule;
 import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.QualifiedName;
 import org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class UmlCollaborationUseSemanticSequencer extends UmlCommonSemanticSequencer {

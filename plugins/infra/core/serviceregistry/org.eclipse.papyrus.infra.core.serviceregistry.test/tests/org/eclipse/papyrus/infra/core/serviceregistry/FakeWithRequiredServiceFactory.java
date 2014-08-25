@@ -1,7 +1,5 @@
 package org.eclipse.papyrus.infra.core.serviceregistry;
 
-import org.eclipse.papyrus.infra.core.serviceregistry.IServiceFactory;
-import org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry;
 
 
 /**

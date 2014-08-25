@@ -35,7 +35,7 @@ public interface IPapyrusDiagnostician extends EValidator.SubstitutionLabelProvi
 
 	/**
 	 * use to initialize with the good context during the execution of a command
-	 * 
+	 *
 	 * @param adapterFactory
 	 * @param progressMonitor
 	 */

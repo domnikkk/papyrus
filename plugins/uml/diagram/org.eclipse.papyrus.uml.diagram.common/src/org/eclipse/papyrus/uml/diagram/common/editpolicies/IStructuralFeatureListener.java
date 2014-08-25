@@ -21,21 +21,21 @@ import com.google.common.collect.ImmutableSet;
 
 /**
  * This interface is used in order to listen some structural feature with a specific event.
- * 
+ *
  * @author arthur daussy
  *
  */
 public interface IStructuralFeatureListener extends NotificationPreCommitListener {
 	/**
 	 * Set of all structural feature to listen
-	 * 
+	 *
 	 * @return
 	 */
 	ImmutableSet<EStructuralFeature> getEStructuralFeaturesToListen();
 
 	/**
 	 * Event type to listen
-	 * 
+	 *
 	 * @param type
 	 * @return
 	 */

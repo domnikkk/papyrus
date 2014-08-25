@@ -85,7 +85,7 @@ public class ResourceUtils {
 
 	/**
 	 * Default options to save emf files used in Papyrus
-	 * 
+	 *
 	 * @return
 	 */
 	public static Map<String, Object> getSaveOptions() {

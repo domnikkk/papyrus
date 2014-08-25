@@ -19,7 +19,7 @@ import org.eclipse.emf.edit.provider.ReflectiveItemProvider;
 
 /**
  * Utility methods for provider
- * 
+ *
  * @author tfaure
  *
  */
@@ -27,7 +27,7 @@ public class ProviderUtil {
 
 	/**
 	 * Return the label of the eobject
-	 * 
+	 *
 	 * @param eobject
 	 * @return
 	 */

@@ -55,7 +55,7 @@ public interface IPageLifeCycleEventsListener extends IPageChangedListener {
 
 	/**
 	 * This event is never thrown actually.
-	 * 
+	 *
 	 * @param page
 	 *            The page firing the event.
 	 */

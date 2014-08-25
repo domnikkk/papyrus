@@ -21,14 +21,14 @@ import org.eclipse.uml2.uml.NamedElement;
  * Providing qualified name in the tool-tip message shown in the model explorer
  *
  * Originally, this class was intended for stereotypes, now the handling of stereotypes is done in
- * 
+ *
  * @see org.eclipse.papyrus.uml.service.validation.UMLDiagnostician.
  */
 public class UMLDecorationService extends DecorationService {
 
 	/**
 	 * Initial message for UML elements
-	 * 
+	 *
 	 * @return the qualified name of the element, if it is a named element
 	 */
 	@Override

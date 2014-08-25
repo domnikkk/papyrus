@@ -16,15 +16,11 @@ package org.eclipse.papyrus.infra.viewpoints.iso42010.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureDecision;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureView;
 import org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint;
@@ -54,7 +50,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	 * The cached value of the '{@link #getFramedBy() <em>Framed By</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getFramedBy()
 	 * @generated
 	 * @ordered
@@ -65,7 +61,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	 * The cached value of the '{@link #getAddressedBy() <em>Addressed By</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAddressedBy()
 	 * @generated
 	 * @ordered
@@ -76,7 +72,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	 * The cached value of the '{@link #getStakeholders() <em>Stakeholders</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStakeholders()
 	 * @generated
 	 * @ordered
@@ -87,7 +83,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	 * The cached value of the '{@link #getRaisedBy() <em>Raised By</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRaisedBy()
 	 * @generated
 	 * @ordered
@@ -98,7 +94,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	 * The cached value of the '{@link #getDecisions() <em>Decisions</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDecisions()
 	 * @generated
 	 * @ordered
@@ -108,7 +104,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConcernImpl() {
@@ -118,7 +114,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +125,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureViewpoint> getFramedBy() {
@@ -142,7 +138,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureView> getAddressedBy() {
@@ -155,7 +151,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Stakeholder> getStakeholders() {
@@ -168,7 +164,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureDecision> getRaisedBy() {
@@ -181,7 +177,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ArchitectureDecision> getDecisions() {
@@ -194,7 +190,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -218,7 +214,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -241,7 +237,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,7 +260,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -298,7 +294,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,7 +322,7 @@ public class ConcernImpl extends ADElementImpl implements Concern {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

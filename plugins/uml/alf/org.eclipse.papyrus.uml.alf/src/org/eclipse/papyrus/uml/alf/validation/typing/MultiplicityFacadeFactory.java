@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.uml.alf.alf.LoopVariableDefinition;
 import org.eclipse.uml2.uml.MultiplicityElement;
 
 public class MultiplicityFacadeFactory {
-	
+
 	public static MultiplicityFacadeFactory eInstance = new MultiplicityFacadeFactory() ;
 
 	public MultiplicityFacade createMultiplicityFacade(int lowerBound, int upperBound, boolean isUnique, boolean isOrdered) {
@@ -30,18 +30,19 @@ public class MultiplicityFacadeFactory {
 		result.setIsOrdered(isOrdered) ;
 		return result ;
 	}
-	
+
 	public MultiplicityFacade createMultiplicityFacade(int upperBound) {
-		if (upperBound == -1)
+		if (upperBound == -1) {
 			return createMultiplicityFacade(0, upperBound, false, true) ;
-		else 
+		} else {
 			return createMultiplicityFacade(upperBound, upperBound, true, false) ;
+		}
 	}
 
 	public MultiplicityFacade createMultiplicityFacade() {
 		return createMultiplicityFacade(1, 1, true, false) ;
 	}
-	
+
 	public MultiplicityFacade createMultiplicityFacade(EObject multiplicityElement) {
 		// To be overriden
 		if (multiplicityElement instanceof MultiplicityElement) {
@@ -61,5 +62,5 @@ public class MultiplicityFacadeFactory {
 		}
 		return createMultiplicityFacade() ;
 	}
-	
+
 }
