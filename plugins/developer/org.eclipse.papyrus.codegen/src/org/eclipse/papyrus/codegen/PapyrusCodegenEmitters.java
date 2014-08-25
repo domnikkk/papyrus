@@ -12,6 +12,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.codegen;
 
+import org.eclipse.gmf.codegen.xtend.ui.handlers.CodegenEmittersWithXtend2;
 import org.eclipse.gmf.common.UnexpectedBehaviourException;
 import org.eclipse.gmf.internal.common.codegen.JavaClassEmitter;
 
