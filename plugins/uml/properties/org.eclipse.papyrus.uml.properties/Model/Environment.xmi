@@ -37,7 +37,7 @@
       name="Stereotype Appearance Factory"
       factoryClass="org.eclipse.papyrus.uml.properties.modelelement.StereotypeAppearanceFactory"/>
   <modelElementFactories
-      name="Applied Comments Model Element Factory"
+      name="Comments Model Element Factory"
       factoryClass="org.eclipse.papyrus.uml.properties.modelelement.CommentModelElementFactory"/>
   <modelElementFactories
       name="Profile definitions"

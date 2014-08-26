@@ -9,16 +9,20 @@
  * Contributors:
  *  Sebastien Poissonnet (CEA LIST) sebastien.poissonnet@cea.fr
  *  Christian W. Damus (CEA) - bug 323802
+ *  Gabriel Pascual (ALL4TEC) - Bug 441228
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
 import org.eclipse.core.databinding.observable.IObservable;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.infra.widgets.creation.ReferenceValueFactory;
 import org.eclipse.papyrus.uml.properties.databinding.AppliedCommentsObservableList;
+import org.eclipse.papyrus.uml.properties.databinding.OwnedCommentsObservableList;
 import org.eclipse.papyrus.views.properties.modelelement.EMFModelElement;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.UMLPackage;
 
 public class CommentModelElement extends EMFModelElement {
 
@@ -48,6 +52,15 @@ public class CommentModelElement extends EMFModelElement {
 	protected IObservable doGetObservable(String propertyPath) {
 		if (APPLIED_COMMENTS_PROPERTY.equals(propertyPath)) {
 			return new AppliedCommentsObservableList(domain, (Element) source);
+		}
+
+		EStructuralFeature feature = getFeature(propertyPath);
+		if (feature == null) {
+			return null;
+		}
+
+		if (UMLPackage.eINSTANCE.getElement_OwnedComment().equals(feature)) {
+			return new OwnedCommentsObservableList(domain, source);
 		}
 		return super.doGetObservable(propertyPath);
 	}
