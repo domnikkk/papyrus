@@ -223,10 +223,17 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 				return null;
 			}
 
+			public EObject getEditObject() {
+				if (objectToEdit instanceof EObject) {
+					return (EObject)objectToEdit;
+				}
+				return null;
+			}
+				
 			public void initResource(XtextResource resource) {
 				try {
 					if (resource instanceof BaseResource) {
-						PivotUtil.setParserContext((BaseResource) resource, getContextObject());
+						PivotUtil.setParserContext((BaseResource) resource, getEditObject());
 					}
 				} catch (ParserException e) {
 				}
