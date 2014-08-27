@@ -405,8 +405,14 @@
     <sourceLocator
         rootFolder="${papyrus.git.clone.location/tests/junit/plugins}">
       <predicate
-          xsi:type="predicates:NamePredicate"
-          pattern="org\.eclipse\.papyrus\.junit\.utils"/>
+          xsi:type="predicates:OrPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="org\.eclipse\.papyrus\.junit\.framework"/>
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="org\.eclipse\.papyrus\.junit\.utils"/>
+      </predicate>
     </sourceLocator>
   </setupTask>
   <project name="main"
@@ -471,14 +477,7 @@
         <sourceLocator
             rootFolder="${papyrus.git.clone.location/tests/junit/plugins/infra}"/>
         <sourceLocator
-            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/core}">
-          <predicate
-              xsi:type="predicates:NotPredicate">
-            <operand
-                xsi:type="predicates:NamePredicate"
-                pattern="org\.eclipse\.papyrus\.(?:infra\.core\.)?sasheditor\.di\.tests"/>
-          </predicate>
-        </sourceLocator>
+            rootFolder="${papyrus.git.clone.location/tests/junit/plugins/core}"/>
       </setupTask>
       <setupTask
           xsi:type="setup.workingsets:WorkingSetTask">
@@ -1152,7 +1151,8 @@
       <setupTask
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
-            rootFolder="${papyrus.git.clone.location/releng}"/>
+            rootFolder="${papyrus.git.clone.location/releng}"
+            locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="setup.workingsets:WorkingSetTask">
@@ -1161,7 +1161,7 @@
             id="papyrus-releng">
           <predicate
               xsi:type="predicates:LocationPredicate"
-              pattern="${papyrus.git.clone.location/releng/.*}"/>
+              pattern="${papyrus.git.clone.location/releng(?:/.+)?}"/>
         </workingSet>
       </setupTask>
       <stream
